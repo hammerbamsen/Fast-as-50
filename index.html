@@ -1738,40 +1738,14 @@ function checkReadiness(readiness) { const existing = document.getElementById('r
 }
 
 // ── Fetch data.json og render ─────────────────────────────────
-async function init() {
-  // Beregn dato lokalt — altid korrekt uanset cache
-  const now = new Date();
-  const dk_days = ["Søndag","Mandag","Tirsdag","Onsdag","Torsdag","Fredag","Lørdag"];
-  const dk_months = ["jan","feb","mar","apr","maj","jun","jul","aug","sep","okt","nov","dec"];
-  D.dayName = dk_days[now.getDay()];
-  D.date = `${now.getDate()}. ${dk_months[now.getMonth()]}`;
-
-  // Render med defaults først — ingen loading screen
-  // Gendan completed-state fra localStorage
-  const todayStr = new Date().toISOString().split("T")[0];
-  const lastDoneInit = localStorage.getItem("session_done_date");
-  if (lastDoneInit === todayStr) {
-    const raw = localStorage.getItem("session_done_" + todayStr);
-    if (raw) {
-      try {
-        const parsed = JSON.parse(raw);
-        sessionDoneList = Array.isArray(parsed) ? parsed : (parsed === "1" || parsed === 1 ? [true] : []);
-      } catch(e) {
-        sessionDoneList = raw === "1" ? [true] : [];
-      }
-    }
-  }
-  renderNav();
-  updateMeta();
-  const initialPage = location.hash.slice(1);
-  const validPages = PAGES.filter(p=>!p.href).map(p=>p.id);
-  navigate(validPages.includes(initialPage) ? initialPage : "today");
-
-  // Hent friske data i baggrunden
-  try {
-    const r = await fetch("https://raw.githubusercontent.com/hammerbamsen/fast-as-50/main/data.json?t=" + Date.now());
-    if (r.ok) {
-      const remote = await r.json();
+// ── applyRemote: ét sted der mapper data.json → D ─────────────
+// Baggrund (25/7-26): init() mappede ~40 felter, pollData() kun ~9.
+// week_sessions / today / all_weeks / weekFocus blev derfor aldrig
+// opdateret uden en ægte sideindlæsning — og iOS genoptager en PWA fra
+// hjemmeskærmen uden at loade forfra. Planen kunne stå frosset i dagevis
+// mens AF-streak og coach-tekst opdaterede fint ved siden af.
+// Begge kaldere bruger nu denne funktion, så de ikke kan drifte fra hinanden.
+function applyRemote(remote) {
       const m = remote.meta || {};
       if (m.updated)                    D.lastUpdated            = m.updated;
       const luEl = document.getElementById('last-updated');
@@ -1839,10 +1813,47 @@ async function init() {
         else if (remote.today.session) D.today = remote.today.session;
       }
 
-      // Re-render med friske data — ryd cache så alle sider genrenderes
-      updateMeta();
-      pageCache = {};
-      navigate(activePage);
+  // Re-render med friske data — ryd cache så alle sider genrenderes
+  updateMeta();
+  pageCache = {};
+  navigate(activePage);
+}
+
+async function init() {
+  // Beregn dato lokalt — altid korrekt uanset cache
+  const now = new Date();
+  const dk_days = ["Søndag","Mandag","Tirsdag","Onsdag","Torsdag","Fredag","Lørdag"];
+  const dk_months = ["jan","feb","mar","apr","maj","jun","jul","aug","sep","okt","nov","dec"];
+  D.dayName = dk_days[now.getDay()];
+  D.date = `${now.getDate()}. ${dk_months[now.getMonth()]}`;
+
+  // Render med defaults først — ingen loading screen
+  // Gendan completed-state fra localStorage
+  const todayStr = new Date().toISOString().split("T")[0];
+  const lastDoneInit = localStorage.getItem("session_done_date");
+  if (lastDoneInit === todayStr) {
+    const raw = localStorage.getItem("session_done_" + todayStr);
+    if (raw) {
+      try {
+        const parsed = JSON.parse(raw);
+        sessionDoneList = Array.isArray(parsed) ? parsed : (parsed === "1" || parsed === 1 ? [true] : []);
+      } catch(e) {
+        sessionDoneList = raw === "1" ? [true] : [];
+      }
+    }
+  }
+  renderNav();
+  updateMeta();
+  const initialPage = location.hash.slice(1);
+  const validPages = PAGES.filter(p=>!p.href).map(p=>p.id);
+  navigate(validPages.includes(initialPage) ? initialPage : "today");
+
+  // Hent friske data i baggrunden
+  try {
+    const r = await fetch("https://raw.githubusercontent.com/hammerbamsen/fast-as-50/main/data.json?t=" + Date.now());
+    if (r.ok) {
+      const remote = await r.json();
+      applyRemote(remote);
     }
   } catch(e) {
     console.log("data.json ikke tilgængelig, bruger defaults");
@@ -1862,32 +1873,18 @@ init();
       if (txt === lastDataJson) return; // ingen ændring
       lastDataJson = txt;
       const remote = JSON.parse(txt);
-      // Opdatér kun AF-relaterede felter for hurtig visning
-      if (remote.af) {
-        D.afDays.weekDone = parseInt(remote.af.weekDone) || 0;
-        D.afDays.streak   = parseInt(remote.af.streak)   || 0;
-      }
-      if (remote.kpis?.afStreak) {
-        // Opdatér i D.kpis array
-        const afKpi = D.kpis.find(k => k.label === 'AF STREAK');
-        if (afKpi) afKpi.value = remote.kpis.afStreak.value;
-      }
-      if (remote.coachHighlight) D.coachHighlight = remote.coachHighlight;
-      if (remote.coachAssessmentHtml) D.coachAssessmentHtml = remote.coachAssessmentHtml;
-      if (remote.coachAssessmentTs) D.coachAssessmentTs = remote.coachAssessmentTs;
-      if ('coachAssessmentStale' in remote) D.coachAssessmentStale = remote.coachAssessmentStale;
-      if ('coachAssessmentError' in remote) D.coachAssessmentError = remote.coachAssessmentError;
-      if ('credentials' in remote) D.credentials = remote.credentials;
-      if ('credentialsCheckedTs' in remote) D.credentialsCheckedTs = remote.credentialsCheckedTs;
-      if ('event_structure_warnings' in remote) D.event_structure_warnings = remote.event_structure_warnings || [];
-      if (remote.af_history) D.afHistory = remote.af_history;
-      if (remote.af_log) D.af_log = remote.af_log;
-      // Re-render aktiv side
-      pageCache = {};
-      navigate(activePage);
+      applyRemote(remote);
     } catch(e) {}
   }
   setInterval(pollData, 10000);
+
+  // iOS fryser setInterval når appen er i baggrunden — og genoptager en PWA
+  // fra hjemmeskærmen uden at loade forfra. Hent derfor friske data straks
+  // når appen kommer i forgrunden.
+  document.addEventListener('visibilitychange', () => {
+    if (document.visibilityState === 'visible') pollData();
+  });
+  window.addEventListener('pageshow', () => pollData());
 })();
 
 // ── Refresh-knap: bed om en FRISK kørsel, vent, hent så data ──
