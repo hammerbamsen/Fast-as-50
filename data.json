@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-07-25 06:43",
+    "updated": "2026-07-25 08:57",
     "week": 8,
     "totalWeeks": 14,
     "blockType": "BUILD",
@@ -11,31 +11,31 @@
   },
   "kpis": {
     "weight": {
-      "value": "71,9",
+      "value": "73,0",
       "unit": "kg",
-      "sub": "Sidst målt 24/7 · Mål <70 kg · snit 71,7 kg",
+      "sub": "Mål <70 kg · snit 72,2 kg",
       "color": "#E67E22"
     },
     "fat": {
-      "value": "21,4",
+      "value": "21,8",
       "unit": "%",
       "sub": "Mål <20%",
       "color": "#E67E22"
     },
     "ctl": {
-      "value": "52,3",
+      "value": "51,1",
       "unit": "",
       "sub": "Uge 8-mål 60 · Slutmål 56 (uge 14)",
       "color": "#E67E22"
     },
     "tsb": {
-      "value": "-17,1",
+      "value": "-11,7",
       "unit": "",
       "sub": "Hård blok · CTL−ATL, frisk >0",
       "color": "#E67E22"
     },
     "sleep": {
-      "value": "7,6",
+      "value": "7,5",
       "unit": "t",
       "sub": "Snit 7,5t · mål 7t",
       "color": "#2874A6"
@@ -47,7 +47,7 @@
       "color": "#E67E22"
     },
     "hrv": {
-      "value": "63,9",
+      "value": "64,0",
       "unit": "ms",
       "sub": "Snit 7d",
       "color": "#7A6A58"
@@ -55,7 +55,7 @@
     "tssComp": {
       "value": "239",
       "unit": "TSS",
-      "sub": "239 af 594 planlagt TSS",
+      "sub": "239 af 544 planlagt TSS",
       "color": "#C0392B"
     },
     "bikeKm": {
@@ -82,18 +82,10 @@
     "target": 5,
     "streak": 7
   },
-  "coachSpeech": "Lørdag — uge 8 af 14. {HL} Godt: 5/7 AF-dage — ugens mål er ramt. Fokus: 239 af 594 TSS er i hus — 3 sessioner tilbage, heriblandt Svøm 2500m, Langløb 21 km Z2. Cykel Z2 45 min er misset — vinduet er lukket. Keep moving forward.  \"Det er ikke at have for lidt, der gør et menneske fattigt, men at ville have mere.\" — Seneca",
-  "coachHighlight": "Søvn på 7,6 timer er solid",
+  "coachSpeech": "Lørdag — uge 8 af 14. {HL} Godt: 5/7 AF-dage — ugens mål er ramt. Vægt på 73,0 kg — Vægten er 1.1 kg højere end seneste måling (2026-07-24) — sandsynligvis væske/natrium snarere end fedt, ikke et disciplinproblem. Giv den et par dage før du dømmer tallet. Fokus: 239 af 544 TSS er i hus — 2 sessioner tilbage, heriblandt Langløb 21 km Z2, Cykel Z2 60 min. Cykel Z2 45 min er misset — vinduet er lukket. Keep moving forward.  \"Det er ikke at have for lidt, der gør et menneske fattigt, men at ville have mere.\" — Seneca",
+  "coachHighlight": "Søvn på 7,5 timer er solid",
   "weekFocus": "Byg videre på Mallorca-formen med kontrolleret intensitet mod uge ni",
   "today": [
-    {
-      "discipline": "swim",
-      "title": "Svøm 2500m",
-      "duration": "",
-      "zone": "–",
-      "desc": "",
-      "completed": false
-    },
     {
       "discipline": "run",
       "title": "Langløb 21 km Z2",
@@ -178,13 +170,6 @@
     },
     {
       "day": "Lør",
-      "disc": "swim",
-      "label": "Svøm 2500m",
-      "done": false,
-      "today": true
-    },
-    {
-      "day": "Lør",
       "disc": "run",
       "label": "Langløb 21 km Z2",
       "done": false,
@@ -205,7 +190,7 @@
     48.8,
     47.2,
     49.7,
-    52.3
+    51.1
   ],
   "weightHistory": [
     {
@@ -501,7 +486,11 @@
       "v": 71.9,
       "real": true
     },
-    null
+    {
+      "date": "2026-07-25",
+      "v": 73.0,
+      "real": true
+    }
   ],
   "hrvHistory": [
     {
@@ -949,7 +938,11 @@
       "v": 74.0,
       "real": true
     },
-    null
+    {
+      "date": "2026-07-25",
+      "v": 65.0,
+      "real": true
+    }
   ],
   "sleepHistory": [
     {
@@ -1393,7 +1386,11 @@
       "v": 8.8,
       "real": true
     },
-    null
+    {
+      "date": "2026-07-25",
+      "v": 6.8,
+      "real": true
+    }
   ],
   "tsbHistory": [
     {
@@ -1843,7 +1840,7 @@
     },
     {
       "date": "2026-07-25",
-      "v": -17.1,
+      "v": -11.6,
       "real": true
     }
   ],
@@ -2386,13 +2383,6 @@
         },
         {
           "day": "Lør",
-          "disc": "swim",
-          "label": "Svøm 2500m",
-          "done": false,
-          "today": true
-        },
-        {
-          "day": "Lør",
           "disc": "run",
           "label": "Langløb 21 km Z2",
           "done": false,
@@ -2435,6 +2425,13 @@
           "day": "Tor",
           "disc": "run",
           "label": "THRESHOLD-TEST løb 30 min (opdatér pace-zoner efter)",
+          "done": false,
+          "today": false
+        },
+        {
+          "day": "Fre",
+          "disc": "swim",
+          "label": "Svøm 2500m (valgfri)",
           "done": false,
           "today": false
         },
@@ -2747,7 +2744,7 @@
     "run": 98.0,
     "openwater": 39.0,
     "bike": 224.0,
-    "planned": 713.0,
+    "planned": 648.0,
     "actual_total": 507.0
   },
   "fatHistory": [
@@ -3044,13 +3041,17 @@
       "v": 21.4,
       "real": true
     },
-    null
+    {
+      "date": "2026-07-25",
+      "v": 21.8,
+      "real": true
+    }
   ],
-  "coachAssessmentHtml": "<p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\"><strong>Dag 55 af 98 · Lørdag · Uge 8</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">💪 <strong>Træning & load</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">CTL på 52.3 er stærkt for uge 8 — godt over det oprindelige mål på 56 ved uge 14, og du er allerede der. TSB på -17.1 er håndterbart og godt inden for Friels grænse. Mandag på Sa Calobra leverede god NP trods kuperet terræn, og onsdagsløbet ramte step-målet præcist. I dag mangler du stadig svømningen på 2500m — get it done, og du lukker ugen flot ud.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">⚖️ <strong>Krop & kost</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Ingen aktuel vægt- eller fedtprocentmåling denne uge — intet at vurdere her. Få en måling ind snarest så vi kan følge retningen på begge tal.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">🎯 <strong>AF-status & fokus for resten af ugen</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Du er på 5 AF-dage ud af 6 dage i ugen — det er præcis målet ramt i god tid. I morgen er der en Z2-cykeltur på 60 min — hold wattene i den rigtige zone og luk ugen stille og roligt af. TSB har brug for at komme op inden uge 9, så søndag er ikke dagen for at presse — bare gennemfør.</p>",
-  "coachAssessmentTs": "01:01",
+  "coachAssessmentHtml": "<p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\"><strong>Dag 55 af 98 · Lørdag · Uge 8</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">💪 <strong>Træning & load</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">CTL er steget til 51.1 med TSB på -11.7 — kroppen er belastet, men inden for rammerne. Langløbet på 21 km Z2 er endnu ikke i gang, og det er det vigtigste enkeltpas du kan gøre i dag for at holde loaden på rette kurs. Hold tempoet roligt og konsekvent — formålet er akkumulation af aerob tid, ikke at imponere med splits. Svømmen tirsdag viste næsten nul tid i Z4, så næste åbent-vands-session skal have mindst ét hurtigt interval bygget ind for at ramme det mål.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">⚖️ <strong>Krop & kost</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Vægten er oppe på 73.0 kg — 1.1 kg over seneste måling — men det er sandsynligvis væske og natrium snarere end fedt, så giv det et par dage før du dømmer tallet. Fedtprocenten er 21.8 %, som er 0.4 procentpoint over seneste måling og 1.8 point fra dit mål på under 20 %. Vægt og fedtprocent peger begge i den forkerte retning lige nu, men det er et enkelt datapunkt efter en rejseuge — mønsteret over de næste 7–10 dage er det der tæller. Hold protein og grøntsager i front, og undgå at kompensere med ekstra kalorier efter de lange pas.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">🎯 <strong>AF-status & fokus for resten af ugen</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Du er på 5 AF-dage ud af 6 dage — præcis hvor du skal være i forhold til ugsmålet. Søndagens cykeltur på 60 min Z2 er et kontrolleret afsluttende pas — hold wattene i struktureret Z2 og brug det som aktiv restitution efter langløbet. Prioritér søvn og væskeindtag i aften og natten — det er det der afgør om du kommer frisk til søndagens tur.</p>",
+  "coachAssessmentTs": "06:57",
   "commute_pairing_warnings": [],
   "warnings": [],
-  "tsb": -17.1,
+  "tsb": -11.7,
   "swimHistory": [
     {
       "week": 1,
@@ -3103,7 +3104,7 @@
   ],
   "coachAssessmentLastActId": "i168712939",
   "weekFocusWeek": 8,
-  "coachAssessmentPlanAtGen": "Svøm 2500m",
+  "coachAssessmentPlanAtGen": "Langløb 21 km Z2",
   "weightGoal": 70,
   "bodyFatGoal": 20,
   "weightMovingAvg7": [
@@ -3196,7 +3197,7 @@
     null,
     null,
     null,
-    null
+    72.17
   ],
   "fatMovingAvg7": [
     null,
@@ -3288,10 +3289,10 @@
     null,
     null,
     null,
-    null
+    21.23
   ],
-  "weightToGoal": 1.9,
-  "bodyFatToGoal": 1.4,
+  "weightToGoal": 3.0,
+  "bodyFatToGoal": 1.8,
   "ctlPlan": [
     34,
     36,
@@ -3320,10 +3321,10 @@
       "note": "Nøgle virker"
     }
   },
-  "credentialsCheckedTs": "2026-07-25T04:43:36.809295",
-  "coachAssessmentTsFull": "2026-07-25T01:01:42.723430",
-  "coachAssessmentWeightAtGen": 71.9,
+  "credentialsCheckedTs": "2026-07-25T06:57:27.845296",
+  "coachAssessmentTsFull": "2026-07-25T06:57:27.845278",
+  "coachAssessmentWeightAtGen": 73.0,
   "coachAssessmentAfAtGen": 5,
   "event_structure_warnings": [],
-  "coachAssessmentFatAtGen": 21.4
+  "coachAssessmentFatAtGen": 21.8
 }
