@@ -934,6 +934,26 @@ async function sendSubscriptionToBackend(subJson){
   }
 }
 renderPushToggle("push-toggle");
+
+// ── Frisk data når appen kommer i forgrunden ──────────────────
+// Baggrund (25/7-26): siden hentede kun plan.json ved en ægte sideindlæsning.
+// iOS genoptager en PWA fra hjemmeskærmen uden reload, så planen kunne stå
+// frosset i dagevis. Vi invaliderer cachen og gen-renderer med samme idiom
+// som resten af filen bruger efter en redigering (PLAN_CACHE=null; main()).
+// Guard: sker IKKE mens en sheet er åben, så igangværende redigering bevares.
+(function(){
+  let lastRefresh = Date.now();
+  function refreshIfIdle(){
+    if (document.visibilityState !== "visible") return;
+    if (typeof SHEET_STATE !== "undefined" && SHEET_STATE) return;
+    if (Date.now() - lastRefresh < 5000) return;
+    lastRefresh = Date.now();
+    if (typeof PLAN_CACHE !== "undefined") PLAN_CACHE = null;
+    if (typeof main === "function") main();
+  }
+  document.addEventListener("visibilitychange", refreshIfIdle);
+  window.addEventListener("pageshow", refreshIfIdle);
+})();
 </script>
 </body>
 </html>
