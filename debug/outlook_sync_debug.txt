@@ -1,14 +1,13 @@
 Token OK
 Uge 9: 2026-07-27 til 2026-08-02
-  Slettet: 🏃 Løb Z1 30 min let
+6 workouts fra Intervals
+  Slettet: 🏊 Svøm 1500m let teknisk
+  Slettet: 🏃 THRESHOLD-TEST løb 30 min (opdatér pace-zoner efter)
   Slettet: 🏊 Svøm 1500m let teknisk
   Slettet: 🚴 FTP-TEST 20 min (opdatér zoner efter)
-  Slettet: 🏃 THRESHOLD-TEST løb 30 min (opdatér pace-zoner efter)
-  Slettet: 🏊 Svøm 2500m (valgfri)
-  Slettet: 🏃 Løb Z2 60 min
-  Slettet: 🏊 Svøm 2000m teknisk
-Slettet: 7
-6 workouts fra Intervals
+  Slettet: 🏃 Løb Z2 90 min
+  Slettet: 🏊 Svøm 1500m let teknisk (valgfri)
+Slettet: 6
   Oprettet: 2026-07-27 🏊 Svøm 1500m let teknisk
   Oprettet: 2026-07-28 🏃 THRESHOLD-TEST løb 30 min (opdatér pace-zoner efter)
   Oprettet: 2026-07-29 🏊 Svøm 1500m let teknisk
