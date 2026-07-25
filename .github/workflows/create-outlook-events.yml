@@ -7,6 +7,10 @@ on:
         description: 'Uge nummer (1-14)'
         required: true
         default: '2'
+  schedule:
+    # Søndag 18:00 UTC = 20:00 CET — sikkerhedsnet efter søndagsrutinen.
+    # Fanger Intervals-ændringer lavet via direkte PUT, som build-workouts.yml ikke ser.
+    - cron: '0 18 * * 0'
   repository_dispatch:
     types: [workouts-built]
   workflow_call:
@@ -28,6 +32,29 @@ jobs:
         with:
           python-version: '3.11'
       - run: pip install requests
+
+      - name: Bestem uge
+        id: uge
+        env:
+          WEEK_IN: ${{ inputs.week || github.event.inputs.week || github.event.client_payload.week }}
+        run: |
+          set -euo pipefail
+          if [ -n "${WEEK_IN:-}" ]; then
+            WEEK="$WEEK_IN"
+            echo "Uge fra input: $WEEK"
+          elif [ "${{ github.event_name }}" = "schedule" ]; then
+            WEEK=$(python3 -c "
+          from datetime import date
+          PLAN_START = date(2026, 6, 1)
+          cur = min(max((date.today() - PLAN_START).days // 7 + 1, 1), 14)
+          print(min(cur + 1, 14))
+          ")
+            echo "Uge beregnet fra cron (kommende uge): $WEEK"
+          else
+            echo "FEJL: week-input mangler og eventet er ikke schedule — afbryder"; exit 1
+          fi
+          echo "week=$WEEK" >> "$GITHUB_OUTPUT"
+
       - name: Slet og genopret Traening-events i Outlook
         env:
           AZURE_CLIENT_ID:      ${{ secrets.AZURE_CLIENT_ID }}
@@ -35,10 +62,10 @@ jobs:
           AZURE_CLIENT_SECRET:  ${{ secrets.AZURE_CLIENT_SECRET }}
           INTERVALS_API_KEY:    ${{ secrets.INTERVALS_API_KEY }}
           INTERVALS_ATHLETE_ID: ${{ secrets.INTERVALS_ATHLETE_ID }}
-          WEEK: ${{ inputs.week || github.event.inputs.week || github.event.client_payload.week }}
+          WEEK: ${{ steps.uge.outputs.week }}
         run: |
           set -o pipefail
-          if [ -z "$WEEK" ]; then echo "FEJL: week-input mangler — afbryder (ingen default)"; exit 1; fi
+          if [ -z "$WEEK" ]; then echo "FEJL: week mangler efter beregning — afbryder"; exit 1; fi
           python3 .github/workflows/scripts/sync_outlook.py 2>&1 | tee /tmp/sync_out.txt
       - name: Gem debug-log
         if: always()
