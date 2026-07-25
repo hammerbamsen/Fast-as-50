@@ -137,9 +137,21 @@ def structural_flags(plan, athlete="kennet"):
     vo2_per_week = {w: 0 for w in range(1, total_weeks + 1)}
     run_dates = []
 
+    # Løbsdage er ikke træningspas. Selve løbet (og taper/race-ugernes
+    # bevidst hyppige, korte shakeouts) må ikke udløse max_runs /
+    # consecutive_runs — ellers står de to vigtigste uger permanent røde og
+    # de ægte signaler drukner.
+    race_dates = {r.get("date") for r in (plan.get("races") or []) if r.get("date")}
+
+    def _load_rules_apply(week_no):
+        bt = (weeks_meta.get(week_no, {}).get("blockType") or "").upper()
+        return not bt.startswith(("TAPER", "RACE"))
+
     for d in days:
         w = _week_no(d["date"], plan_start)
         if not 1 <= w <= total_weeks:
+            continue
+        if d["date"] in race_dates:
             continue
         day_has_run = False
         for e in d["entries"]:
@@ -154,7 +166,7 @@ def structural_flags(plan, athlete="kennet"):
 
     # Max 3 løb/uge — HARD (reset-år: beskyt knæ/fascia)
     for w, n in runs_per_week.items():
-        if n > MAX_RUNS_PER_WEEK:
+        if n > MAX_RUNS_PER_WEEK and _load_rules_apply(w):
             flags.append({"week": w, "rule": "max_runs", "level": "HARD",
                           "msg": f"{n} løbedage i uge {w} (max {MAX_RUNS_PER_WEEK})"})
 
@@ -163,6 +175,8 @@ def structural_flags(plan, athlete="kennet"):
     for a, b in zip(run_dates, run_dates[1:]):
         if (b - a).days == 1:
             w = _week_no(b.isoformat(), plan_start)
+            if not _load_rules_apply(w):
+                continue
             flags.append({"week": w, "rule": "consecutive_runs", "level": "HARD",
                           "msg": f"Fortløbende løbedage {a.isoformat()} + {b.isoformat()}"})
 

@@ -383,3 +383,57 @@ def test_plan_without_optional_flag_unchanged():
     p = friel.project_fitness(mk_plan(days), seed_ctl=40, seed_atl=40,
                               seed_date="2026-05-31")
     assert p["2026-06-01"]["ctl"] > 40.0
+
+
+# ── Løbsdage og taper/race-uger (løbe-regler undtages) ──────────────────────
+
+def mk_race_plan(block_by_week, days, races=None):
+    weeks = [{"week": i + 1, "blockType": b, "tssTarget": 200}
+             for i, b in enumerate(block_by_week)]
+    p = mk_plan(days, weeks=weeks, total_weeks=len(block_by_week))
+    p["races"] = races or []
+    return p
+
+
+def test_race_day_not_counted_as_run():
+    """Selve løbet er ikke et træningspas — det må ikke tælle i max_runs."""
+    days = [day("2026-06-01", RUN), day("2026-06-03", RUN),
+            day("2026-06-05", RUN), day("2026-06-07", RUN)]
+    races = [{"name": "Test", "date": "2026-06-07", "priority": "A"}]
+    p = mk_race_plan(["BUILD"], days, races)
+    assert not any(f["rule"] == "max_runs" for f in friel.structural_flags(p))
+    # uden races-listen udløses reglen stadig
+    p2 = mk_race_plan(["BUILD"], days, [])
+    assert any(f["rule"] == "max_runs" for f in friel.structural_flags(p2))
+
+
+def test_taper_week_exempt_from_run_rules():
+    days = [day("2026-06-01", RUN), day("2026-06-02", RUN),
+            day("2026-06-03", RUN), day("2026-06-04", RUN)]
+    p = mk_race_plan(["TAPER"], days)
+    flags = friel.structural_flags(p)
+    assert not any(f["rule"] in ("max_runs", "consecutive_runs") for f in flags)
+
+
+def test_race_week_exempt_from_run_rules():
+    days = [day("2026-06-01", RUN), day("2026-06-02", RUN),
+            day("2026-06-03", RUN), day("2026-06-04", RUN)]
+    p = mk_race_plan(["RACE"], days)
+    flags = friel.structural_flags(p)
+    assert not any(f["rule"] in ("max_runs", "consecutive_runs") for f in flags)
+
+
+def test_build_week_still_flagged():
+    """Undtagelsen må ikke lække ud i build-uger."""
+    days = [day("2026-06-01", RUN), day("2026-06-02", RUN),
+            day("2026-06-03", RUN), day("2026-06-04", RUN)]
+    p = mk_race_plan(["BUILD"], days)
+    flags = friel.structural_flags(p)
+    assert any(f["rule"] == "max_runs" for f in flags)
+    assert any(f["rule"] == "consecutive_runs" for f in flags)
+
+
+def test_missing_races_key_is_safe():
+    days = [day("2026-06-01", RUN), day("2026-06-02", RUN)]
+    p = mk_plan(days)          # ingen 'races'-nøgle overhovedet
+    assert any(f["rule"] == "consecutive_runs" for f in friel.structural_flags(p))

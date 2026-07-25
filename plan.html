@@ -211,13 +211,22 @@ function dayCard(day, todayIso){
       <span><span class="nm">${esc(w.name)}</span>${opt?`<span class="badge-opt">Valgfri</span>`:""}
       <span class="mt" style="display:block">${fmtDur(w.moving_time)}${e.note?` · ${esc(e.note)}`:""}</span></span></span>`;
   }).join("");
+  // Hvile-entries paa en dag der ogsaa har pas: noten skal stadig vises.
+  const restNotes = (day.entries||[]).filter(e=>!e.workout && e.note).map(e=>
+    `<span style="display:flex;align-items:center;gap:8px;margin-top:2px">
+      <span class="dot" style="background:var(--cream-d)"></span>
+      <span class="mt">${esc(e.note)}</span></span>`).join("");
   const details = workouts.map(e=>esc(e.workout.description||"")).filter(Boolean).join("\n\n");
   return `<div class="day ${isToday?"today":""}">
     <div class="day-row" onclick="this.parentElement.classList.toggle('open')">${dn}
-      <div class="wo">${rows}</div>
+      <div class="wo">${rows}${restNotes}</div>
       ${details?`<i class="ti ti-chevron-down chev" style="font-size:16px"></i>`:""}</div>
     ${details?`<div class="day-detail">${details}</div>`:""}
-    ${workouts.map(en => `<div class="day-actions">
+    ${(day.entries||[]).filter(en=>en.id).map(en => !en.workout ? `<div class="day-actions">
+      <div style="font-size:11px;color:var(--muted);margin-bottom:4px">${esc(en.note||"Hvile")}</div>
+      <button onclick="event.stopPropagation(); openSheet('adjust','${en.id}','${day.date}')"><i class="ti ti-note" style="font-size:14px;vertical-align:-2px"></i> Note</button>
+      <button onclick="event.stopPropagation(); openSheet('swap_template','${en.id}','${day.date}')"><i class="ti ti-plus" style="font-size:14px;vertical-align:-2px"></i> Tilføj pas</button>
+    </div>` : `<div class="day-actions">
       ${workouts.length>1?`<div style="font-size:11px;color:var(--muted);margin-bottom:4px">${esc(en.workout.name)}</div>`:""}
       <button onclick="event.stopPropagation(); openSheet('adjust','${en.id}','${day.date}')"><i class="ti ti-adjustments" style="font-size:14px;vertical-align:-2px"></i> Justér</button>
       <button onclick="event.stopPropagation(); openSheet('move','${en.id}','${day.date}')"><i class="ti ti-arrows-move" style="font-size:14px;vertical-align:-2px"></i> Flyt</button>
