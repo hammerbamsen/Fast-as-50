@@ -31,31 +31,9 @@ week_start = plan_start + timedelta(weeks=WEEK-1)
 week_end   = week_start + timedelta(days=6)
 print(f'Uge {WEEK}: {week_start} til {week_end}')
 
-# TRIN 1: Slet alle eksisterende Traening-events i perioden
-url    = f'{GRAPH}/calendarView'
-params = {'startDateTime': f'{week_start}T00:00:00',
-          'endDateTime':   f'{week_end}T23:59:59',
-          '$select': 'id,subject,categories', '$top': '50'}
-existing = []
-while url:
-    r = requests.get(url, headers=hdrs_get, params=params, timeout=TIMEOUT)
-    params = None
-    body   = r.json()
-    existing.extend(body.get('value', []))
-    url = body.get('@odata.nextLink')
-
-deleted = 0
-for e in existing:
-    if any(c in ('Træning', 'Traening') for c in e.get('categories', [])):
-        dr = requests.delete(f'{GRAPH}/events/{e["id"]}', headers=hdrs, timeout=TIMEOUT)
-        if dr.status_code in (204, 404):
-            print(f'  Slettet: {e["subject"]}')
-            deleted += 1
-        else:
-            print(f'  FEJL slet {e["subject"]}: {dr.status_code}')
-print(f'Slettet: {deleted}')
-
-# TRIN 2: Hent workouts fra Intervals
+# TRIN 1: Hent workouts fra Intervals FØRST.
+# Rækkefølgen er kritisk: sletter vi før vi ved at der er noget at oprette,
+# efterlader en Intervals-fejl kalenderen tom. Gælder især uovervåget cron-kørsel.
 r = requests.get(
     f'https://intervals.icu/api/v1/athlete/{ATHLETE_ID}/events',
     auth=('API_KEY', API_KEY),
@@ -82,6 +60,30 @@ START_HOUR = {
     'RIDE': (7, 0), 'VIRTUAL_RIDE': (7, 0),
     'WEIGHTTRAINING': (7, 0), 'WEIGHT_TRAINING': (7, 0), 'WEIGHTS': (7, 0),
 }
+
+# TRIN 2: Slet eksisterende Traening-events — først nu, hvor workouts er i hus
+url    = f'{GRAPH}/calendarView'
+params = {'startDateTime': f'{week_start}T00:00:00',
+          'endDateTime':   f'{week_end}T23:59:59',
+          '$select': 'id,subject,categories', '$top': '50'}
+existing = []
+while url:
+    r = requests.get(url, headers=hdrs_get, params=params, timeout=TIMEOUT)
+    params = None
+    body   = r.json()
+    existing.extend(body.get('value', []))
+    url = body.get('@odata.nextLink')
+
+deleted = 0
+for e in existing:
+    if any(c in ('Træning', 'Traening') for c in e.get('categories', [])):
+        dr = requests.delete(f'{GRAPH}/events/{e["id"]}', headers=hdrs, timeout=TIMEOUT)
+        if dr.status_code in (204, 404):
+            print(f'  Slettet: {e["subject"]}')
+            deleted += 1
+        else:
+            print(f'  FEJL slet {e["subject"]}: {dr.status_code}')
+print(f'Slettet: {deleted}')
 
 # TRIN 3: Opret nye events
 ok = err = 0
