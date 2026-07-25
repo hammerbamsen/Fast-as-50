@@ -479,6 +479,37 @@ async function init() {
 }
 
 init();
+
+// ── Frisk data når appen kommer i forgrunden ──────────────────
+// Baggrund (25/7-26): køen bygges i init(), som kun kører ved en ægte
+// sideindlæsning. iOS genoptager en PWA fra hjemmeskærmen uden reload, så
+// appen kunne vise gårsdagens spørgsmål. Vi henter data og genopbygger køen.
+// Guards: sker IKKE midt i et ubesvaret spørgsmål, IKKE under setup-flowet,
+// og IKKE mens du bladrer i en tidligere uge. Data hentes FØR view røres,
+// så der ikke blinker en "HENTER DATA..."-skærm.
+(function(){
+  let lastRefresh = Date.now(), running = false;
+  async function refreshIfIdle(){
+    if (document.visibilityState !== "visible") return;
+    if (running) return;
+    if (!getSecret()) return;
+    if (qIdx < queue.length) return;
+    if (viewWeekOffset !== 0) return;
+    if (Date.now() - lastRefresh < 5000) return;
+    running = true;
+    try {
+      await syncFromIntervals();
+      queue = buildQueue();
+      qIdx = 0;
+      queue.length === 0 ? showDone() : showQuestion(queue[0]);
+      lastRefresh = Date.now();
+    } catch(e) {
+      console.log("Foregrund-refresh fejl:", e && e.message);
+    } finally { running = false; }
+  }
+  document.addEventListener("visibilitychange", refreshIfIdle);
+  window.addEventListener("pageshow", refreshIfIdle);
+})();
 </script>
 </body>
 </html>
