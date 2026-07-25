@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-07-25 17:40",
+    "updated": "2026-07-25 17:53",
     "week": 8,
     "totalWeeks": 14,
     "blockType": "BUILD",
@@ -71,7 +71,7 @@
       "color": "#C0392B"
     },
     "afStreak": {
-      "value": "7",
+      "value": "0",
       "unit": "",
       "sub": "Dage i træk · mål 5/uge",
       "color": "#59182A"
@@ -80,7 +80,7 @@
   "af": {
     "weekDone": 5,
     "target": 5,
-    "streak": 7
+    "streak": 0
   },
   "coachSpeech": "Lørdag — uge 8 af 14. {HL} Godt: 5/7 AF-dage — ugens mål er ramt. Vægt på 72,8 kg — Vægten er 0.9 kg højere end seneste måling (2026-07-24) — sandsynligvis væske/natrium snarere end fedt, ikke et disciplinproblem. Giv den et par dage før du dømmer tallet. Fokus: 372 af 544 TSS er i hus — Cykel Z2 60 min står tilbage. Cykel Z2 45 min er misset — vinduet er lukket. Keep moving forward.  \"Det er ikke at have for lidt, der gør et menneske fattigt, men at ville have mere.\" — Seneca",
   "coachHighlight": "Søvn på 7,5 timer er solid",
@@ -1904,7 +1904,8 @@
     "2026-07-21": 0,
     "2026-07-22": 0,
     "2026-07-23": 0,
-    "2026-07-24": 0
+    "2026-07-24": 0,
+    "2026-07-25": 1
   },
   "all_weeks": {
     "1": {
@@ -3326,7 +3327,7 @@
       "note": "Nøgle virker"
     }
   },
-  "credentialsCheckedTs": "2026-07-25T15:40:23.505648",
+  "credentialsCheckedTs": "2026-07-25T15:53:15.762148",
   "coachAssessmentTsFull": "2026-07-25T15:40:23.505630",
   "coachAssessmentWeightAtGen": 72.8,
   "coachAssessmentAfAtGen": 5,
