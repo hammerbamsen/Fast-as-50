@@ -1,6 +1,6 @@
 {
   "version": 3,
-  "updated": "2026-07-17",
+  "updated": "2026-07-25",
   "program": {
     "name": "Fast as Fifty",
     "start": "2026-06-01",
@@ -2961,49 +2961,7 @@
         },
         {
           "date": "2026-07-24",
-          "entries": [
-            {
-              "workout": {
-                "name": "Svøm 2500m",
-                "type": "Swim",
-                "moving_time": 3900,
-                "description": "- 400m varm-op 10m freeride\n\n5x\n- 200m Z3 4m freeride\n- 30s pause 1m freeride\n\n- 400m teknik 8m freeride\n- 300m cool 5m freeride",
-                "workout_doc": {
-                  "steps": [
-                    {
-                      "text": "400m varm-op",
-                      "duration": 600
-                    },
-                    {
-                      "reps": 5,
-                      "text": "5x",
-                      "steps": [
-                        {
-                          "text": "200m Z3",
-                          "duration": 240
-                        },
-                        {
-                          "text": "30s pause",
-                          "duration": 60
-                        }
-                      ]
-                    },
-                    {
-                      "text": "400m teknik",
-                      "duration": 480
-                    },
-                    {
-                      "text": "300m cool",
-                      "duration": 300
-                    }
-                  ]
-                },
-                "load": 50
-              },
-              "note": "Svøm 2500m",
-              "id": "38920037"
-            }
-          ]
+          "entries": []
         },
         {
           "date": "2026-07-25",
@@ -3290,6 +3248,47 @@
               "workout": null,
               "note": "Musik i Gentofte — hvile (fre 31. jul)",
               "id": "d27c8083"
+            },
+            {
+              "workout": {
+                "name": "Svøm 2500m (valgfri)",
+                "type": "Swim",
+                "moving_time": 3900,
+                "description": "- 400m varm-op 10m freeride\n\n5x\n- 200m Z3 4m freeride\n- 30s pause 1m freeride\n\n- 400m teknik 8m freeride\n- 300m cool 5m freeride",
+                "workout_doc": {
+                  "steps": [
+                    {
+                      "text": "400m varm-op",
+                      "duration": 600
+                    },
+                    {
+                      "reps": 5,
+                      "text": "5x",
+                      "steps": [
+                        {
+                          "text": "200m Z3",
+                          "duration": 240
+                        },
+                        {
+                          "text": "30s pause",
+                          "duration": 60
+                        }
+                      ]
+                    },
+                    {
+                      "text": "400m teknik",
+                      "duration": 480
+                    },
+                    {
+                      "text": "300m cool",
+                      "duration": 300
+                    }
+                  ]
+                },
+                "load": 50
+              },
+              "note": "Valgfri — kun hvis frisk og overskud. Ellers hviledag (musik i Gentofte om aftenen).",
+              "id": "f8caaaba"
             }
           ]
         },
