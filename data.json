@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-07-25 08:57",
+    "updated": "2026-07-25 09:00",
     "week": 8,
     "totalWeeks": 14,
     "blockType": "BUILD",
@@ -3047,8 +3047,8 @@
       "real": true
     }
   ],
-  "coachAssessmentHtml": "<p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\"><strong>Dag 55 af 98 · Lørdag · Uge 8</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">💪 <strong>Træning & load</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">CTL er steget til 51.1 med TSB på -11.7 — kroppen er belastet, men inden for rammerne. Langløbet på 21 km Z2 er endnu ikke i gang, og det er det vigtigste enkeltpas du kan gøre i dag for at holde loaden på rette kurs. Hold tempoet roligt og konsekvent — formålet er akkumulation af aerob tid, ikke at imponere med splits. Svømmen tirsdag viste næsten nul tid i Z4, så næste åbent-vands-session skal have mindst ét hurtigt interval bygget ind for at ramme det mål.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">⚖️ <strong>Krop & kost</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Vægten er oppe på 73.0 kg — 1.1 kg over seneste måling — men det er sandsynligvis væske og natrium snarere end fedt, så giv det et par dage før du dømmer tallet. Fedtprocenten er 21.8 %, som er 0.4 procentpoint over seneste måling og 1.8 point fra dit mål på under 20 %. Vægt og fedtprocent peger begge i den forkerte retning lige nu, men det er et enkelt datapunkt efter en rejseuge — mønsteret over de næste 7–10 dage er det der tæller. Hold protein og grøntsager i front, og undgå at kompensere med ekstra kalorier efter de lange pas.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">🎯 <strong>AF-status & fokus for resten af ugen</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Du er på 5 AF-dage ud af 6 dage — præcis hvor du skal være i forhold til ugsmålet. Søndagens cykeltur på 60 min Z2 er et kontrolleret afsluttende pas — hold wattene i struktureret Z2 og brug det som aktiv restitution efter langløbet. Prioritér søvn og væskeindtag i aften og natten — det er det der afgør om du kommer frisk til søndagens tur.</p>",
-  "coachAssessmentTs": "06:57",
+  "coachAssessmentHtml": "<p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\"><strong>Dag 55 af 98 · Lørdag · Uge 8</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">💪 <strong>Træning & load</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">CTL er på 51.1 – solidt, men under uge 8-målet på 60. Det afspejler ugens karakter: Mallorca-blokken bag dig, og hjemkomst-dagene har naturligt givet lavere TSS end en fuld træningsuge. TSB på -11.7 er helt acceptabelt – du er i kontrolleret akkumulering, ikke overtrænet. Langløbet på 21 km Z2 ligger endnu foran dig i dag – hold pacen rolig og kontrolleret, det er her du henter ugens vigtigste aerobe stimulus.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">⚖️ <strong>Krop & kost</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Vægten er oppe på 73.0 kg – 1.1 kg over seneste måling – men det er sandsynligvis væske og natrium efter rejse, ikke et reelt fedttab i bakgear. Giv det et par dage, inden du dømmer tallet. Fedtprocenten er steget 0.4 point til 21.8 %, og der er stadig 1.8 procentpoint til målet under 20 % – det er den måling der tæller mest på sigt. Vægten alene siger ingenting: det er fedtprocenten der skal ned, og den kræver konsistent aerob volumen – præcis det du bygger nu.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">🎯 <strong>AF-status & fokus for resten af ugen</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Du er på 5 AF-dage ud af 6 dage gået i ugen – det er stærkt og helt på linje med ugemålet. Streaken er på 7 dage. Fokus nu: gennemfør langløbet roligt i Z2 i dag, og lad søndagens cykeltur på 60 min blive en kontrolleret afslutning på ugen uden at presse TSB yderligere ned.</p>",
+  "coachAssessmentTs": "07:00",
   "commute_pairing_warnings": [],
   "warnings": [],
   "tsb": -11.7,
@@ -3321,8 +3321,8 @@
       "note": "Nøgle virker"
     }
   },
-  "credentialsCheckedTs": "2026-07-25T06:57:27.845296",
-  "coachAssessmentTsFull": "2026-07-25T06:57:27.845278",
+  "credentialsCheckedTs": "2026-07-25T07:00:37.612465",
+  "coachAssessmentTsFull": "2026-07-25T07:00:37.612447",
   "coachAssessmentWeightAtGen": 73.0,
   "coachAssessmentAfAtGen": 5,
   "event_structure_warnings": [],
