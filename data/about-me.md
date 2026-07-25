@@ -218,6 +218,8 @@ data.json opdateres via GitHub Contents API direkte — vent ikke på launchd/Ma
 Intervals.icu blokerer GitHub Actions IPs; direkte Intervals-kald kører fra Claude's sandbox eller lokalt.
 
 Outlook-push: trigger `create-outlook-events.yml` via workflow_dispatch.
+
+**Outlook-sync er ALTID sidste skridt (tilføjet 25/7-2026).** Outlook har ingen watcher på Intervals. Auto-kæden `build-workouts.yml → outlook-sync` fyrer kun når build-workouts kører — så enhver ændring lavet med direkte PUT til Intervals (søndagsrutinen, mid-week-justeringer) efterlader Outlook forældet indtil `create-outlook-events.yml` dispatches manuelt. Rodårsag fundet 25/7: syncen kørte kl. 07:53 på gammel uge 9, omlægningen skete 08:40–12:00, Outlook opdaterede aldrig. Sikkerhedsnet: cron søndag 18:00 UTC (20:00 CET) beregner selv kommende uge — men cron'en er backup, ikke undskyldning for at springe skridtet over.
 Verificer derefter via calendar_search — workflow-success er ikke nok.
 
 SHA til GitHub Contents API: hent frisk SHA umiddelbart før PUT. Brug aldrig cached SHA.
@@ -250,6 +252,7 @@ Foreslå ny samtale når: mange tool-kald, gentagne fejl, meget kode, ~50+ beske
 ☐ Har jeg verificeret OUTPUT — ikke bare status?
 ☐ Har jeg tjekket eksisterende Intervals-events inden POST?
 ☐ Er data.json opdateret via GitHub API?
+☐ Har jeg dispatchet `create-outlook-events.yml` EFTER sidste Intervals-ændring?
 ☐ Er Outlook verificeret via calendar_search?
 
 ---
