@@ -1,19 +1,19 @@
 {
   "meta": {
-    "updated": "2026-07-25 01:01",
+    "updated": "2026-07-25 03:01",
     "week": 8,
     "totalWeeks": 14,
     "blockType": "BUILD",
-    "daysToMedoc": 43,
-    "daysToChristiansborg": 36,
-    "dayName": "Fredag",
-    "date": "24. jul"
+    "daysToMedoc": 42,
+    "daysToChristiansborg": 35,
+    "dayName": "Lørdag",
+    "date": "25. jul"
   },
   "kpis": {
     "weight": {
       "value": "71,9",
       "unit": "kg",
-      "sub": "Mål <70 kg · snit 71,7 kg",
+      "sub": "Sidst målt 24/7 · Mål <70 kg · snit 71,7 kg",
       "color": "#E67E22"
     },
     "fat": {
@@ -23,16 +23,16 @@
       "color": "#E67E22"
     },
     "ctl": {
-      "value": "49,2",
+      "value": "52,3",
       "unit": "",
       "sub": "Uge 8-mål 60 · Slutmål 56 (uge 14)",
       "color": "#E67E22"
     },
     "tsb": {
-      "value": "-3,1",
+      "value": "-17,1",
       "unit": "",
-      "sub": "Form · CTL−ATL, frisk >0",
-      "color": "#27AE60"
+      "sub": "Hård blok · CTL−ATL, frisk >0",
+      "color": "#E67E22"
     },
     "sleep": {
       "value": "7,6",
@@ -47,7 +47,7 @@
       "color": "#E67E22"
     },
     "hrv": {
-      "value": "62,1",
+      "value": "63,9",
       "unit": "ms",
       "sub": "Snit 7d",
       "color": "#7A6A58"
@@ -82,17 +82,25 @@
     "target": 5,
     "streak": 7
   },
-  "coachSpeech": "Fredag — tre dage tilbage af uge 8. {HL} Godt: 5/7 AF-dage — ugens mål er ramt. Fokus: 239 af 594 TSS er i hus — 3 sessioner tilbage, heriblandt Svøm 2500m, Langløb 21 km Z2. Cykel Z2 45 min er misset — vinduet er lukket. Vægt på 71,9 kg — hold protein højt og undgå lette kulhydrater om aftenen. Keep moving forward.  \"AF-dage er ikke et offer — de er en investering i morgendagens energi.\"",
+  "coachSpeech": "Lørdag — uge 8 af 14. {HL} Godt: 5/7 AF-dage — ugens mål er ramt. Fokus: 239 af 594 TSS er i hus — 3 sessioner tilbage, heriblandt Svøm 2500m, Langløb 21 km Z2. Cykel Z2 45 min er misset — vinduet er lukket. Keep moving forward.  \"Det er ikke at have for lidt, der gør et menneske fattigt, men at ville have mere.\" — Seneca",
   "coachHighlight": "Søvn på 7,6 timer er solid",
   "weekFocus": "Byg videre på Mallorca-formen med kontrolleret intensitet mod uge ni",
   "today": [
     {
-      "discipline": "commute",
-      "title": "Gentofte Cykling",
+      "discipline": "swim",
+      "title": "Svøm 2500m",
       "duration": "",
       "zone": "–",
       "desc": "",
-      "completed": true
+      "completed": false
+    },
+    {
+      "discipline": "run",
+      "title": "Langløb 21 km Z2",
+      "duration": "",
+      "zone": "–",
+      "desc": "",
+      "completed": false
     }
   ],
   "week_sessions": [
@@ -166,20 +174,21 @@
       "disc": "commute",
       "label": "Gentofte Cykling",
       "done": true,
-      "extra": true,
-      "today": true
+      "extra": true
     },
     {
       "day": "Lør",
       "disc": "swim",
       "label": "Svøm 2500m",
-      "done": false
+      "done": false,
+      "today": true
     },
     {
       "day": "Lør",
       "disc": "run",
       "label": "Langløb 21 km Z2",
-      "done": false
+      "done": false,
+      "today": true
     },
     {
       "day": "Søn",
@@ -196,14 +205,9 @@
     48.8,
     47.2,
     49.7,
-    49.2
+    52.3
   ],
   "weightHistory": [
-    {
-      "date": "2026-04-26",
-      "v": 75.0,
-      "real": true
-    },
     {
       "date": "2026-04-27",
       "v": 75.0,
@@ -496,14 +500,10 @@
       "date": "2026-07-24",
       "v": 71.9,
       "real": true
-    }
+    },
+    null
   ],
   "hrvHistory": [
-    {
-      "date": "2026-04-26",
-      "v": 55.0,
-      "real": true
-    },
     {
       "date": "2026-04-27",
       "v": 38.0,
@@ -948,14 +948,10 @@
       "date": "2026-07-24",
       "v": 74.0,
       "real": true
-    }
+    },
+    null
   ],
   "sleepHistory": [
-    {
-      "date": "2026-04-26",
-      "v": 9.1,
-      "real": true
-    },
     {
       "date": "2026-04-27",
       "v": 6.4,
@@ -1396,14 +1392,10 @@
       "date": "2026-07-24",
       "v": 8.8,
       "real": true
-    }
+    },
+    null
   ],
   "tsbHistory": [
-    {
-      "date": "2026-04-26",
-      "v": -20.4,
-      "real": true
-    },
     {
       "date": "2026-04-27",
       "v": -17.0,
@@ -1847,6 +1839,11 @@
     {
       "date": "2026-07-24",
       "v": -3.1,
+      "real": true
+    },
+    {
+      "date": "2026-07-25",
+      "v": -17.1,
       "real": true
     }
   ],
@@ -2385,20 +2382,21 @@
           "disc": "commute",
           "label": "Gentofte Cykling",
           "done": true,
-          "extra": true,
-          "today": true
+          "extra": true
         },
         {
           "day": "Lør",
           "disc": "swim",
           "label": "Svøm 2500m",
-          "done": false
+          "done": false,
+          "today": true
         },
         {
           "day": "Lør",
           "disc": "run",
           "label": "Langløb 21 km Z2",
-          "done": false
+          "done": false,
+          "today": true
         },
         {
           "day": "Søn",
@@ -2738,7 +2736,7 @@
     {
       "week": 8,
       "done": 5,
-      "total": 5,
+      "total": 6,
       "label": "Uge 8"
     }
   ],
@@ -2753,11 +2751,6 @@
     "actual_total": 507.0
   },
   "fatHistory": [
-    {
-      "date": "2026-04-26",
-      "v": 23.3,
-      "real": true
-    },
     {
       "date": "2026-04-27",
       "v": 23.8,
@@ -3050,13 +3043,14 @@
       "date": "2026-07-24",
       "v": 21.4,
       "real": true
-    }
+    },
+    null
   ],
-  "coachAssessmentHtml": "<p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\"><strong>Dag 54 af 98 · Fredag · Uge 8</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">💪 <strong>Træning & load</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">CTL ligger på 49.2 mod et ugemål på 60 — det er et klart underskud, men det afspejler ugens karakter: Mallorca gav relativt lave TSS-bidrag fra lange, kuperede ture med meget coasting, og ugen har ikke haft tung struktureret belastning. Svømningen tirsdag manglede tid i Z4 — næste gang du svømmer i Christiansborg-tempo, byg et par kortere accelerationsindsatser ind så HR når op. Lørdag og søndag har du stadig svøm, langløb og cykel tilbage — dem skal du bruge bevidst til at lukke gabet mod ugemålet. TSB på -3.1 er helt uproblematisk og giver dig grønt lys for to solide træningsdage.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">⚖️ <strong>Krop & kost</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">71.9 kg er 1.9 kg fra målet, men fedtprocenten på 21.4 % er det vigtigste tal her — og den er gået *op* med 0.9 procentpoint siden den 23. juli. Det er et advarselstegn: vægten falder ikke tilstrækkeligt hurtigt til at kompensere, og det tyder på at du har mistet muskelmasse i stedet for fedt. I et capacity-år er det præcis det du *ikke* vil have. Kig på proteinindtaget — sørg for at du rammer minimum 1.6–1.8 g protein pr. kilo kropsvægt dagligt, særligt på dage med styrke og lange løbepas.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">🎯 <strong>AF-status & fokus for resten af ugen</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Du er på 5 AF-dage ud af 5 dage gået i ugen — det er rent. Streaken er oppe på 7 dage, og den er værd at beskytte hen over weekenden. Lørdag er din tungeste dag med både 2500m svøm og 21 km langløb — hold langløbet disciplineret i Z2 og lad ikke de friske ben friste dig til at drive tempoet op. Søndagens cykel på 60 min Z2 er opsamlingen — hold strukturen og brug den til at få de sidste TSS-point på plads inden uge ni.</p>",
-  "coachAssessmentTs": "21:37",
+  "coachAssessmentHtml": "<p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\"><strong>Dag 55 af 98 · Lørdag · Uge 8</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">💪 <strong>Træning & load</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">CTL på 52.3 er stærkt for uge 8 — godt over det oprindelige mål på 56 ved uge 14, og du er allerede der. TSB på -17.1 er håndterbart og godt inden for Friels grænse. Mandag på Sa Calobra leverede god NP trods kuperet terræn, og onsdagsløbet ramte step-målet præcist. I dag mangler du stadig svømningen på 2500m — get it done, og du lukker ugen flot ud.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">⚖️ <strong>Krop & kost</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Ingen aktuel vægt- eller fedtprocentmåling denne uge — intet at vurdere her. Få en måling ind snarest så vi kan følge retningen på begge tal.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">🎯 <strong>AF-status & fokus for resten af ugen</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Du er på 5 AF-dage ud af 6 dage i ugen — det er præcis målet ramt i god tid. I morgen er der en Z2-cykeltur på 60 min — hold wattene i den rigtige zone og luk ugen stille og roligt af. TSB har brug for at komme op inden uge 9, så søndag er ikke dagen for at presse — bare gennemfør.</p>",
+  "coachAssessmentTs": "01:01",
   "commute_pairing_warnings": [],
   "warnings": [],
-  "tsb": -3.1,
+  "tsb": -17.1,
   "swimHistory": [
     {
       "week": 1,
@@ -3109,7 +3103,7 @@
   ],
   "coachAssessmentLastActId": "i168712939",
   "weekFocusWeek": 8,
-  "coachAssessmentPlanAtGen": "Gentofte Cykling",
+  "coachAssessmentPlanAtGen": "Svøm 2500m",
   "weightGoal": 70,
   "bodyFatGoal": 20,
   "weightMovingAvg7": [
@@ -3119,7 +3113,6 @@
     null,
     null,
     null,
-    75.07,
     75.17,
     75.33,
     75.15,
@@ -3202,6 +3195,7 @@
     null,
     null,
     null,
+    null,
     null
   ],
   "fatMovingAvg7": [
@@ -3211,7 +3205,6 @@
     null,
     null,
     null,
-    23.17,
     22.77,
     22.47,
     22.73,
@@ -3294,6 +3287,7 @@
     null,
     null,
     null,
+    null,
     null
   ],
   "weightToGoal": 1.9,
@@ -3326,8 +3320,8 @@
       "note": "Nøgle virker"
     }
   },
-  "credentialsCheckedTs": "2026-07-24T23:01:49.472056",
-  "coachAssessmentTsFull": "2026-07-24T21:37:56.348463",
+  "credentialsCheckedTs": "2026-07-25T01:01:42.723447",
+  "coachAssessmentTsFull": "2026-07-25T01:01:42.723430",
   "coachAssessmentWeightAtGen": 71.9,
   "coachAssessmentAfAtGen": 5,
   "event_structure_warnings": [],
