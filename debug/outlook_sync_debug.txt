@@ -1,22 +1,19 @@
 Token OK
-Uge 8: 2026-07-20 til 2026-07-26
-  Slettet: 🚴 Cykel Sa Calobra via Puig Major
-  Slettet: 🏊 Svøm 2000m åbent vand (Christiansborg-tempo)
-  Slettet: 🏃 Løb 16 km Z1–Z2 til fyret
-  Slettet: 💪 Styrke A Functional Strength 2 sæt
-  Slettet: 🚴 Cykel Z2 45 min
-  Slettet: 🏊 Svøm 2500m
-  Slettet: 🏃 Langløb 21 km Z2
-  Slettet: 🚴 Cykel Z2 90 min
-Slettet: 8
-8 workouts fra Intervals
-  Oprettet: 2026-07-20 🚴 Cykel Sa Calobra via Puig Major
-  Oprettet: 2026-07-21 🏊 Svøm 2000m åbent vand (Christiansborg-tempo)
-  Oprettet: 2026-07-22 🏃 Løb 16 km Z1–Z2 til fyret
-  Oprettet: 2026-07-23 💪 Styrke A Functional Strength 2 sæt
-  Oprettet: 2026-07-23 🚴 Cykel Z2 45 min
-  Oprettet: 2026-07-25 🏊 Svøm 2500m
-  Oprettet: 2026-07-25 🏃 Langløb 21 km Z2
-  Oprettet: 2026-07-26 🚴 Cykel Z2 60 min
-Oprettet: 8 | Fejl: 0
+Uge 9: 2026-07-27 til 2026-08-02
+  Slettet: 🏃 Løb Z1 30 min let
+  Slettet: 🏊 Svøm 1500m let teknisk
+  Slettet: FTP-TEST 20 min (opdatér zoner efter)
+  Slettet: THRESHOLD-TEST løb 30 min (opdatér pace-zoner efter)
+  Slettet: 🏃 Løb Z2 60 min
+  Slettet: 🏊 Svøm 2000m teknisk
+Slettet: 6
+7 workouts fra Intervals
+  Oprettet: 2026-07-27 🏃 Løb Z1 30 min let
+  Oprettet: 2026-07-28 🏊 Svøm 1500m let teknisk
+  Oprettet: 2026-07-29 🚴 FTP-TEST 20 min (opdatér zoner efter)
+  Oprettet: 2026-07-30 🏃 THRESHOLD-TEST løb 30 min (opdatér pace-zoner efter)
+  Oprettet: 2026-07-31 🏊 Svøm 2500m (valgfri)
+  Oprettet: 2026-08-01 🏃 Løb Z2 60 min
+  Oprettet: 2026-08-02 🏊 Svøm 2000m teknisk
+Oprettet: 7 | Fejl: 0
 DONE
