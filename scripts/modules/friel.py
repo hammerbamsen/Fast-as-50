@@ -197,19 +197,29 @@ def project_fitness(plan, seed_ctl, seed_atl, seed_date):
     CTL/ATL/TSB-projektion pr. dag ud fra ugentlige TSS-targets (jævnt fordelt
     på træningsdage). Seedet med FAKTISK Intervals-fitness — ikke lærebogsstart.
     Returnerer {date_iso: {"ctl":…, "atl":…, "tsb":…}} fra seed-dato til planslut.
+
+    Valgfrie entries (entry["optional"] is True) vises konservativt: dagen
+    bliver i NÆVNEREN (training_days), men får 0 TSS. Uge-totalen falder
+    dermed med den valgfrie dags andel — projektionen svarer til scenariet
+    "passet springes over". Ville dagen også ryge ud af nævneren, blev den
+    samme uge-TSS blot fordelt på færre dage, og projektionen ville være
+    uændret — altså ingen effekt.
     """
     plan_start = date.fromisoformat(plan["program"]["start"])
     total_weeks = plan["program"]["totalWeeks"]
     weeks_meta = {w["week"]: w for w in plan["weeks"]}
     days = plan["athletes"]["kennet"]["days"]
 
-    training_days = {}   # week -> antal dage med workout
-    day_has_wo = {}
+    training_days = {}   # week -> antal dage med workout (valgfrie tæller MED)
+    day_has_wo = {}      # dag -> har OBLIGATORISK workout (valgfrie tæller IKKE)
     for d in days:
         w = _week_no(d["date"], plan_start)
-        has = any(e.get("workout") for e in d["entries"])
-        day_has_wo[d["date"]] = has
-        if has:
+        entries = d["entries"]
+        has_any = any(e.get("workout") for e in entries)
+        has_required = any(e.get("workout") and not e.get("optional")
+                           for e in entries)
+        day_has_wo[d["date"]] = has_required
+        if has_any:
             training_days[w] = training_days.get(w, 0) + 1
 
     out = {}

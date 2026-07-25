@@ -494,7 +494,12 @@ def make_plan():
     for d in plan["athletes"]["kennet"]["days"]:
         dt = date.fromisoformat(d["date"])
         for e in d["entries"]:
-            out.append((dt, e.get("workout"), e.get("note", "")))
+            wo = e.get("workout")
+            # Valgfrit pas: markér i selve event-navnet, så det er synligt i
+            # Intervals og Outlook. Kopi — plan.json's navn røres ikke.
+            if wo and e.get("optional") and "(valgfri)" not in wo.get("name", "").lower():
+                wo = {**wo, "name": f"{wo.get('name', '')} (valgfri)"}
+            out.append((dt, wo, e.get("note", "")))
     return out
 
 def friel_report():

@@ -88,3 +88,38 @@ def test_hash_includes_readiness():
     high = plan_view.inputs_hash(raw, 46.8, 57.4, "2026-07-07", readiness="HIGH")
     assert base == none          # readiness=None -> uændret (bagudkompatibelt)
     assert low != base and high != base and low != high
+
+
+def test_optional_entry_lowers_projection():
+    """T-optional: 'optional': true saenker CTL-projektionen (konservativt)."""
+    import copy
+    p2 = copy.deepcopy(PLAN)
+    marked = None
+    for d in p2["athletes"]["kennet"]["days"]:
+        if d["date"] <= "2026-07-15":
+            continue
+        for e in d["entries"]:
+            if e.get("workout") and not e.get("optional"):
+                e["optional"] = True
+                marked = d["date"]
+                break
+        if marked:
+            break
+    assert marked, "ingen kandidat-entry efter seed-dato"
+
+    base = plan_view.compute(PLAN, **SEED)["kennet"]["projection"]
+    opt = plan_view.compute(p2, **SEED)["kennet"]["projection"]
+    assert len(base) == len(opt)
+    assert opt[-1]["ctl"] < base[-1]["ctl"]
+
+
+def test_optional_flag_changes_inputs_hash():
+    """Flaget skal bryde hash-guarden, saa plan_view.json skrives om."""
+    import copy
+    p2 = copy.deepcopy(PLAN)
+    p2["athletes"]["kennet"]["days"][0]["entries"][0]["optional"] = True
+    a = plan_view.inputs_hash(json.dumps(PLAN, ensure_ascii=False),
+                              46.8, 57.4, "2026-07-07")
+    b = plan_view.inputs_hash(json.dumps(p2, ensure_ascii=False),
+                              46.8, 57.4, "2026-07-07")
+    assert a != b

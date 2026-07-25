@@ -3251,7 +3251,7 @@
             },
             {
               "workout": {
-                "name": "Svøm 2500m (valgfri)",
+                "name": "Svøm 2500m",
                 "type": "Swim",
                 "moving_time": 3900,
                 "description": "- 400m varm-op 10m freeride\n\n5x\n- 200m Z3 4m freeride\n- 30s pause 1m freeride\n\n- 400m teknik 8m freeride\n- 300m cool 5m freeride",
@@ -3287,7 +3287,8 @@
                 },
                 "load": 50
               },
-              "note": "Valgfri — kun hvis frisk og overskud. Ellers hviledag (musik i Gentofte om aftenen).",
+              "note": "Valgfri — kun hvis frisk og overskud. Musik i Gentofte fre 31/7 – søn 2/8.",
+              "optional": true,
               "id": "f8caaaba"
             }
           ]

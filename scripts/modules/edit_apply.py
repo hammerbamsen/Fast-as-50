@@ -90,6 +90,15 @@ def _simulate_mutation(plan: dict, action: str, entry_id: str,
         else:
             src_entry.pop("done_at", None)
 
+    elif action == "toggle_optional":
+        # Valgfrit pas: bliver stående i Intervals/Outlook (med "(valgfri)" i
+        # navnet), men tæller ikke med i CTL-projektionen — friel viser det
+        # konservative scenarie hvor passet springes over.
+        if src_entry.get("optional"):
+            src_entry.pop("optional", None)
+        else:
+            src_entry["optional"] = True
+
     elif action == "swap_template":
         # params: {template_id, note?}
         tpl = _find_template(params["template_id"])

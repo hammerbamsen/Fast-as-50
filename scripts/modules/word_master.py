@@ -138,6 +138,8 @@ def _week_page(doc, week_meta: dict, days_data: list, note_key: str,
                         details.append(e["note"])
                     continue
                 nm = wo.get("name", "")
+                if e.get("optional") and "(valgfri)" not in nm.lower():
+                    nm += " (valgfri)"
                 if wo.get("moving_time"):
                     nm += f" · {_fmt_dur(wo['moving_time'])}"
                 names.append(nm)

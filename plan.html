@@ -82,6 +82,10 @@ h1 { font-size:22px; font-weight:700; }
 .day-actions button { background:var(--white); border:1px solid var(--cream-d); border-radius:8px; padding:8px 14px; font-family:'Hanken Grotesk',sans-serif; font-size:13px; color:var(--wine); cursor:pointer; }
 .day-actions button:hover { background:var(--cream); }
 .day-actions button.danger { color:var(--hard); }
+.wo-opt { opacity:.6; }
+.badge-opt { display:inline-block; margin-left:6px; padding:1px 7px; border-radius:999px;
+  background:var(--cream-d); color:var(--muted); font-size:10px; letter-spacing:.04em;
+  text-transform:uppercase; vertical-align:1px; }
 
 /* Bottom sheet */
 .sheet-bg { position:fixed; inset:0; background:rgba(26,16,8,.4); z-index:200; display:none; }
@@ -201,10 +205,10 @@ function dayCard(day, todayIso){
       </div>`:""}</div>`;
   }
   const rows = workouts.map(e=>{
-    const w=e.workout, disc=DISC[w.type]||"free";
-    return `<span style="display:flex;align-items:center;gap:8px;margin-top:2px">
+    const w=e.workout, disc=DISC[w.type]||"free", opt=!!e.optional;
+    return `<span class="${opt?"wo-opt":""}" style="display:flex;align-items:center;gap:8px;margin-top:2px">
       <span class="dot" style="background:var(--${disc})"></span>
-      <span><span class="nm">${esc(w.name)}</span>
+      <span><span class="nm">${esc(w.name)}</span>${opt?`<span class="badge-opt">Valgfri</span>`:""}
       <span class="mt" style="display:block">${fmtDur(w.moving_time)}${e.note?` · ${esc(e.note)}`:""}</span></span></span>`;
   }).join("");
   const details = workouts.map(e=>esc(e.workout.description||"")).filter(Boolean).join("\n\n");
@@ -218,6 +222,7 @@ function dayCard(day, todayIso){
       <button onclick="event.stopPropagation(); openSheet('adjust','${w.id}','${day.date}')"><i class="ti ti-adjustments" style="font-size:14px;vertical-align:-2px"></i> Justér</button>
       <button onclick="event.stopPropagation(); openSheet('move','${w.id}','${day.date}')"><i class="ti ti-arrows-move" style="font-size:14px;vertical-align:-2px"></i> Flyt</button>
       <button onclick="event.stopPropagation(); openSheet('swap_template','${w.id}','${day.date}')"><i class="ti ti-refresh" style="font-size:14px;vertical-align:-2px"></i> Skift pas</button>
+      <button onclick="event.stopPropagation(); openSheet('toggle_optional','${w.id}','${day.date}')"><i class="ti ti-circle-dashed" style="font-size:14px;vertical-align:-2px"></i> ${w.optional?"Gør obligatorisk":"Gør valgfri"}</button>
       <button class="danger" onclick="event.stopPropagation(); openSheet('cancel','${w.id}','${day.date}')"><i class="ti ti-x" style="font-size:14px;vertical-align:-2px"></i> Aflys</button>
     </div>`).join("")}</div>`;
 }
@@ -701,6 +706,17 @@ async function renderSheet(){
         <span>${t.type||"hvile"}${t.moving_time?` · ${Math.round(t.moving_time/60)} min`:""}</span></div>`).join("")}</div>
       <div id="sheet-msg"></div>
       <div class="btn-row"><button class="secondary" onclick="closeSheet()">Fortryd</button></div>`;
+  }
+  else if (s.action === "toggle_optional"){
+    const isOpt = !!(entry && entry.optional);
+    const t = isOpt ? "Gør obligatorisk" : "Gør valgfri";
+    sheet.innerHTML = `<h3>${t}</h3><div class="sub">${dateStr} · ${esc(wo?.name||"")}</div>
+      <p style="font-size:14px;margin:12px 0">${isOpt
+        ? "Passet tæller igen fuldt med i CTL-projektionen, og \"(valgfri)\" fjernes fra navnet i Intervals og Outlook."
+        : "Passet bliver stående i Intervals og Outlook med \"(valgfri)\" i navnet, men tæller ikke med i CTL-projektionen. Projektionen viser det konservative scenarie hvor passet springes over."}</p>
+      <div id="sheet-msg"></div>
+      <div class="btn-row"><button class="secondary" onclick="closeSheet()">Fortryd</button>
+      <button class="primary" onclick="submitEdit()">${t}</button></div>`;
   }
   else if (s.action === "cancel"){
     sheet.innerHTML = `<h3>Aflys pas</h3><div class="sub">${dateStr} · ${esc(wo?.name||"")}</div>

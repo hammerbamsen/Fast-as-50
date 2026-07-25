@@ -331,3 +331,55 @@ def test_validate_passes_readiness_through():
     flags = friel.validate(p, seed_ctl=45, seed_atl=45, seed_date="2026-05-31",
                            readiness="LOW", current_week=1)
     assert any(f["rule"] == "low_readiness" for f in flags)
+
+
+# ── Valgfrie pas (optional) ──────────────────────────────────────────────────
+
+def opt_day(d, *workouts):
+    """Dag hvor alle pas er markeret valgfrie."""
+    return {"date": d, "entries": [{"workout": w, "note": "", "optional": True}
+                                   for w in workouts]}
+
+
+def _proj_end(plan):
+    p = friel.project_fitness(plan, seed_ctl=40, seed_atl=40,
+                              seed_date="2026-05-31")
+    return p[max(p)]["ctl"]
+
+
+def test_optional_day_lowers_projection():
+    """Valgfri dag => uge-TSS falder med dagens andel (konservativt scenarie)."""
+    base_days = [day("2026-06-01", BIKE), day("2026-06-03", BIKE),
+                 day("2026-06-05", BIKE), day("2026-06-06", BIKE)]
+    opt_days = [day("2026-06-01", BIKE), day("2026-06-03", BIKE),
+                day("2026-06-05", BIKE), opt_day("2026-06-06", BIKE)]
+    assert _proj_end(mk_plan(opt_days)) < _proj_end(mk_plan(base_days))
+
+
+def test_optional_day_does_not_redistribute_load():
+    """Nævneren er uændret: de obligatoriske dage bliver IKKE tungere.
+
+    Kontrol: fjernes den valgfrie dag helt fra planen, fordeles samme uge-TSS
+    paa 3 dage og projektionen bliver hoejere end med flaget.
+    """
+    opt_days = [day("2026-06-01", BIKE), day("2026-06-03", BIKE),
+                day("2026-06-05", BIKE), opt_day("2026-06-06", BIKE)]
+    dropped = [day("2026-06-01", BIKE), day("2026-06-03", BIKE),
+               day("2026-06-05", BIKE)]
+    assert _proj_end(mk_plan(opt_days)) < _proj_end(mk_plan(dropped))
+
+
+def test_optional_run_still_counts_in_structural_rules():
+    """Worst case: et valgfrit loeb KAN koeres — max_runs skal stadig fange det."""
+    days = [day("2026-06-01", RUN), day("2026-06-03", RUN),
+            day("2026-06-05", RUN), opt_day("2026-06-07", RUN)]
+    flags = friel.structural_flags(mk_plan(days))
+    assert any(f["rule"] == "max_runs" and f["week"] == 1 for f in flags)
+
+
+def test_plan_without_optional_flag_unchanged():
+    """Bagudkompatibilitet: planer uden 'optional' projekterer som foer."""
+    days = [day("2026-06-01", BIKE), day("2026-06-03", BIKE)]
+    p = friel.project_fitness(mk_plan(days), seed_ctl=40, seed_atl=40,
+                              seed_date="2026-05-31")
+    assert p["2026-06-01"]["ctl"] > 40.0
