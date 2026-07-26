@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-07-26 09:10",
+    "updated": "2026-07-26 11:33",
     "week": 8,
     "totalWeeks": 14,
     "blockType": "BUILD",
@@ -23,16 +23,16 @@
       "color": "#E67E22"
     },
     "ctl": {
-      "value": "51,0",
+      "value": "52,1",
       "unit": "",
       "sub": "Uge 8-mål 60 · Slutmål 43 (uge 14)",
       "color": "#27AE60"
     },
     "tsb": {
-      "value": "-9,6",
+      "value": "-14,6",
       "unit": "",
-      "sub": "Form · CTL−ATL, frisk >0",
-      "color": "#27AE60"
+      "sub": "Hård blok · CTL−ATL, frisk >0",
+      "color": "#E67E22"
     },
     "sleep": {
       "value": "7,8",
@@ -82,7 +82,7 @@
     "target": 5,
     "streak": 1
   },
-  "coachSpeech": "Søndag — afslut uge 8 stærkt. {HL} Godt: 6/7 AF-dage — ugens mål er ramt. Fokus: 417 af 544 TSS er i hus. Cykel Z2 45 min er misset — vinduet er lukket. Vægt på 72,4 kg — hold protein højt og undgå lette kulhydrater om aftenen. Keep moving forward. 📊 Store billede: CTL 51,0 er 9.0 point BAG ugeplanen (planmål uge 8: 60). Vægten har tabt 2.8 kg over de seneste 85 dage (75,2 → 72,4 kg).  \"Det er ikke om at have tid. Det er om at tage den.\"",
+  "coachSpeech": "Søndag — afslut uge 8 stærkt. {HL} Godt: 6/7 AF-dage — ugens mål er ramt. Fokus: 417 af 544 TSS er i hus. Cykel Z2 45 min er misset — vinduet er lukket. Vægt på 72,4 kg — hold protein højt og undgå lette kulhydrater om aftenen. Keep moving forward. 📊 Store billede: CTL 52,1 er 7.9 point BAG ugeplanen (planmål uge 8: 60). Vægten har tabt 2.8 kg over de seneste 85 dage (75,2 → 72,4 kg).  \"Det er ikke om at have tid. Det er om at tage den.\"",
   "coachHighlight": "Søvn på 7,8 timer er solid",
   "weekFocus": "Byg videre på Mallorca-formen med kontrolleret intensitet mod uge ni",
   "today": [
@@ -127,8 +127,7 @@
       "completion_pct": null,
       "actual_tss": 98,
       "actual_mins": 98,
-      "planned_mins": null,
-      "intervals_compliance": 103.2
+      "planned_mins": null
     },
     {
       "day": "Tor",
@@ -177,8 +176,7 @@
       "completion_pct": null,
       "actual_tss": 133,
       "actual_mins": 109,
-      "planned_mins": null,
-      "intervals_compliance": 101.5
+      "planned_mins": null
     },
     {
       "day": "Søn",
@@ -190,8 +188,7 @@
       "completion_pct": 105,
       "actual_tss": 45,
       "actual_mins": 63,
-      "planned_mins": 60,
-      "intervals_compliance": 97.8
+      "planned_mins": 60
     }
   ],
   "ctlCurve": [
@@ -202,7 +199,7 @@
     48.8,
     47.2,
     49.7,
-    51.0
+    52.1
   ],
   "weightHistory": [
     null,
@@ -1852,7 +1849,7 @@
     },
     {
       "date": "2026-07-26",
-      "v": -9.6,
+      "v": -14.6,
       "real": true
     }
   ],
@@ -2354,8 +2351,7 @@
           "completion_pct": null,
           "actual_tss": 98,
           "actual_mins": 98,
-          "planned_mins": null,
-          "intervals_compliance": 103.2
+          "planned_mins": null
         },
         {
           "day": "Tor",
@@ -2404,8 +2400,7 @@
           "completion_pct": null,
           "actual_tss": 133,
           "actual_mins": 109,
-          "planned_mins": null,
-          "intervals_compliance": 101.5
+          "planned_mins": null
         },
         {
           "day": "Søn",
@@ -2417,8 +2412,7 @@
           "completion_pct": 105,
           "actual_tss": 45,
           "actual_mins": 63,
-          "planned_mins": 60,
-          "intervals_compliance": 97.8
+          "planned_mins": 60
         }
       ],
       "blockType": "BUILD",
@@ -3076,7 +3070,7 @@
       "message": "HRV 46,0 ms — 30% under 7d-snit (65,4 ms). Kroppen er presset."
     }
   ],
-  "tsb": -9.6,
+  "tsb": -14.6,
   "swimHistory": [
     {
       "week": 1,
@@ -3346,7 +3340,7 @@
       "note": "Nøgle virker"
     }
   },
-  "credentialsCheckedTs": "2026-07-26T07:10:21.258284",
+  "credentialsCheckedTs": "2026-07-26T09:33:04.669661",
   "coachAssessmentTsFull": "2026-07-26T06:16:12.691945",
   "coachAssessmentWeightAtGen": 72.4,
   "coachAssessmentAfAtGen": 6,
