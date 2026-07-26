@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-07-26 06:05",
+    "updated": "2026-07-26 06:47",
     "week": 8,
     "totalWeeks": 14,
     "blockType": "BUILD",
@@ -11,13 +11,13 @@
   },
   "kpis": {
     "weight": {
-      "value": "72,8",
+      "value": "72,4",
       "unit": "kg",
-      "sub": "Sidst målt 25/7 · Mål <70 kg · snit 72,1 kg",
+      "sub": "Mål <70 kg · snit 72,2 kg",
       "color": "#E67E22"
     },
     "fat": {
-      "value": "21,5",
+      "value": "21,6",
       "unit": "%",
       "sub": "Mål <20%",
       "color": "#E67E22"
@@ -35,7 +35,7 @@
       "color": "#27AE60"
     },
     "sleep": {
-      "value": "7,7",
+      "value": "7,8",
       "unit": "t",
       "sub": "Snit 7,5t · mål 7t",
       "color": "#2874A6"
@@ -47,7 +47,7 @@
       "color": "#27AE60"
     },
     "hrv": {
-      "value": "68,1",
+      "value": "65,4",
       "unit": "ms",
       "sub": "Snit 7d",
       "color": "#7A6A58"
@@ -82,8 +82,8 @@
     "target": 5,
     "streak": 0
   },
-  "coachSpeech": "Søndag — afslut uge 8 stærkt. {HL} Godt: 5/7 AF-dage — ugens mål er ramt. Fokus: 372 af 544 TSS er i hus — Cykel Z2 60 min står tilbage. Cykel Z2 45 min er misset — vinduet er lukket. Keep moving forward. 📊 Store billede: CTL 51,1 er 8.9 point BAG ugeplanen (planmål uge 8: 60).  \"Det er ikke om at have tid. Det er om at tage den.\"",
-  "coachHighlight": "Søvn på 7,7 timer er solid",
+  "coachSpeech": "Søndag — afslut uge 8 stærkt. {HL} Godt: 5/7 AF-dage — ugens mål er ramt. Fokus: 372 af 544 TSS er i hus — Cykel Z2 60 min står tilbage. Cykel Z2 45 min er misset — vinduet er lukket. Vægt på 72,4 kg — hold protein højt og undgå lette kulhydrater om aftenen. Keep moving forward. 📊 Store billede: CTL 51,1 er 8.9 point BAG ugeplanen (planmål uge 8: 60). Vægten har tabt 2.8 kg over de seneste 85 dage (75,2 → 72,4 kg).  \"Det er ikke om at have tid. Det er om at tage den.\"",
+  "coachHighlight": "Søvn på 7,8 timer er solid",
   "weekFocus": "Byg videre på Mallorca-formen med kontrolleret intensitet mod uge ni",
   "today": [
     {
@@ -492,7 +492,11 @@
       "v": 72.8,
       "real": true
     },
-    null
+    {
+      "date": "2026-07-26",
+      "v": 72.4,
+      "real": true
+    }
   ],
   "hrvHistory": [
     {
@@ -940,7 +944,11 @@
       "v": 65.0,
       "real": true
     },
-    null
+    {
+      "date": "2026-07-26",
+      "v": 46.0,
+      "real": true
+    }
   ],
   "sleepHistory": [
     {
@@ -1384,7 +1392,11 @@
       "v": 6.8,
       "real": true
     },
-    null
+    {
+      "date": "2026-07-26",
+      "v": 8.6,
+      "real": true
+    }
   ],
   "tsbHistory": [
     {
@@ -3035,12 +3047,22 @@
       "v": 21.5,
       "real": true
     },
-    null
+    {
+      "date": "2026-07-26",
+      "v": 21.6,
+      "real": true
+    }
   ],
-  "coachAssessmentHtml": "<p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\"><strong>Dag 56 af 98 · Søndag · Uge 8</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">💪 <strong>Træning & load</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">CTL er 51,1 og TSB er -9,7 — kroppen er frisk nok til at afslutte ugen med dagens cykeltur i Z2. Ugen har indeholdt Sa Calobra, et langt løb, svøm i åbent vand og et solidt langløb lørdag — det er et ordentligt stykke arbejde. På Sa Calobra lå kun 29,6% i Z2+Z3-power, men med 24,8% coasting og NP=132W afspejler det terrænet snarere end manglende indsats — NP er det retvisende mål her. Lørdag-langløbet ramte Z2-pacezonerne fint, men 30% af tiden lå i en hurtigere pacezone end target med lav HR-Z1 — næste langløb skal startes roligere så HR og pace følges ad fra begyndelsen.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">⚖️ <strong>Krop & kost</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Der er ingen aktuel vægt- eller fedtprocentmåling denne uge, så der er intet at vurdere her.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">🎯 <strong>AF-status & fokus for resten af ugen</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Du har 5 AF-dage ud af 7 dage gået i ugen — det rammer ugesmålet præcist. Dagens cykeltur i Z2 på 60 minutter er endnu ikke forsøgt — tag den stille og kontrolleret i Z2-watt og luk ugen på en god måde.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">📊 <strong>Store billede</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">CTL er 51,1 mod ugeplanen på 60 — du er 8,9 point bag skemaet. Det er et reelt gap, men det skal ses i lyset af at dette har været en uge med rejse og varieret belastning snarere end et fuldt struktureret blokmønster. Gapet siger noget om hvad de kommende uger skal levere, men ikke at noget er gået galt denne uge.</p>",
-  "coachAssessmentTs": "00:06",
+  "coachAssessmentHtml": "<p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\"><strong>Dag 56 af 98 · Søndag · Uge 8</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">💪 <strong>Træning & load</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">CTL på 51,1 med TSB på -9,7 viser en uge med reel belastning — Sa Calobra, 16 km til fyret, 21 km langløb og 2000m åbent vand er en solid blok. Søndagens Z2-cykel er ikke gennemført endnu, så der er stadig en bid tilbage i dag. Zone-compliance er blandet: løbene ramte målet fint, men svømningen manglede tid i Z4, og Sa Calobra-turen havde for meget tid i de lave watt-zoner — husk ved næste kuperet cykeltur at bruge NP som styringsredskab frem for rå tid-i-zone. Misset torsdag Z2 45 min er den eneste reelle lakune denne uge.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">⚖️ <strong>Krop & kost</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Vægt 72,4 kg — 2,4 kg fra målet under 70 kg. Fedtprocenten er 21,6 %, altså 1,6 procentpoint fra <20 %-målet, og den er faktisk steget 0,1 point siden sidst. Det er et signal: vægten bevæger sig i den rigtige retning, men kropssammensætningen følger ikke med lige nu. Det tyder på at vægttabet pt. har en komponent af muskelmasse — i et capacity-år er det ikke en acceptabel handel. Protein og styrketræning skal prioriteres skarpt de kommende uger.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">🎯 <strong>AF-status & fokus for resten af ugen</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">5 AF-dage ud af 7 dage — du er præcis på mål. Ugen slutter i dag, så det handler om at lande søndagens cykeltur og gå ind i uge 9 med en ren tavle.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">📊 <strong>Store billede</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">CTL på 51,1 er 8,9 point bag ugeplanen (mål uge 8: 60) — det er et mærkbart efterslæb, men det afspejler ugens karakter med rejse og kontrolleret belastning snarere end en fejl i enkeltpas. Vægten har bevæget sig 2,8 kg nedad over 85 dage (75,2 → 72,4 kg), hvilket er et fornuftigt tempo — men fedtprocenten skal nu følge med, ellers er fremskridtet ikke det det ser ud til.</p>",
+  "coachAssessmentTs": "04:48",
   "commute_pairing_warnings": [],
-  "warnings": [],
+  "warnings": [
+    {
+      "type": "hrv",
+      "level": "warn",
+      "message": "HRV 46,0 ms — 30% under 7d-snit (65,4 ms). Kroppen er presset."
+    }
+  ],
   "tsb": -9.7,
   "swimHistory": [
     {
@@ -3187,7 +3209,7 @@
     null,
     null,
     72.1,
-    72.1
+    72.18
   ],
   "fatMovingAvg7": [
     null,
@@ -3279,10 +3301,10 @@
     null,
     null,
     21.13,
-    21.13
+    21.25
   ],
-  "weightToGoal": 2.8,
-  "bodyFatToGoal": 1.5,
+  "weightToGoal": 2.4,
+  "bodyFatToGoal": 1.6,
   "ctlPlan": [
     34,
     36,
@@ -3311,10 +3333,10 @@
       "note": "Nøgle virker"
     }
   },
-  "credentialsCheckedTs": "2026-07-26T04:05:55.309503",
-  "coachAssessmentTsFull": "2026-07-26T00:06:52.923341",
-  "coachAssessmentWeightAtGen": 72.8,
+  "credentialsCheckedTs": "2026-07-26T04:48:07.942177",
+  "coachAssessmentTsFull": "2026-07-26T04:48:07.942160",
+  "coachAssessmentWeightAtGen": 72.4,
   "coachAssessmentAfAtGen": 5,
   "event_structure_warnings": [],
-  "coachAssessmentFatAtGen": 21.5
+  "coachAssessmentFatAtGen": 21.6
 }
