@@ -209,9 +209,19 @@ Efter hver handling:
 
 ### Regel 5: Fast as Fifty — systemregler
 
-Workout-master er Intervals.icu. Rækkefølge: Intervals → build_workouts.py → Outlook. Aldrig omvendt.
+**MASTER ER `data/plan.json` — IKKE Intervals (rettet 26/7-2026).**
+Rækkefølge: `data/plan.json` → `build-workouts.yml` → Intervals → `create-outlook-events.yml` → Outlook.
 
-Inden POST til Intervals: GET eksisterende events, slet dem der erstattes, POST nye.
+`build_workouts.py` læser `plan.json → athletes.kennet.days` og genopbygger Intervals-events fra bunden (delete + POST, nye event-ID'er). Derfor:
+
+- **Redigér ALDRIG en workout med direkte PUT til Intervals.** Ændringen overlever kun indtil næste build og bliver så rullet tilbage uden varsel.
+- `build-workouts.yml` kører på **cron hver søndag kl. 05:00 UTC** — men GitHub throttler, så den kan fyre timer senere (fyrede 07:28 UTC den 26/7). Antag aldrig at cron'en er "overstået".
+- Enhver planændring rettes i `data/plan.json`, pushes, hvorefter `build-workouts.yml` dispatches med `week_only=<uge>`.
+- Outlook-sync dispatches ALTID til sidst — build-workouts trigger den ikke selv ved workflow_dispatch.
+
+**Rodårsag 26/7-2026:** tre direkte PUT'er til Intervals blev verificeret korrekt kl. 07:26 og slettet af søndags-cron'en kl. 07:28. Kennet så svøm i Outlook mandag morgen. Fejlen var ikke sync — den var at redigere i output i stedet for i kilden.
+
+Inden POST til Intervals (kun relevant for ad-hoc events uden for plan.json): GET eksisterende events, slet dem der erstattes, POST nye.
 Aldrig POST uden forudgående GET+slet — ellers dobbelt-events.
 
 data.json opdateres via GitHub Contents API direkte — vent ikke på launchd/Mac.
