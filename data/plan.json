@@ -1,6 +1,6 @@
 {
  "version": 3,
- "updated": "2026-07-25",
+ "updated": "2026-07-26",
  "program": {
   "name": "Fast as Fifty",
   "start": "2026-06-01",
@@ -3121,6 +3121,35 @@
      "entries": [
       {
        "workout": {
+        "name": "Løb Z1 30 min let",
+        "type": "Run",
+        "moving_time": 1800,
+        "description": "- Let løb 30m >5:35/km Pace",
+        "workout_doc": {
+         "steps": [
+          {
+           "pace": {
+            "end": 78,
+            "start": 65,
+            "units": "%pace"
+           },
+           "text": "Let løb >5:35/km",
+           "duration": 1800
+          }
+         ]
+        },
+        "load": 28
+       },
+       "note": "Let løb Z1 30 min — ægte Z1, HRV lav",
+       "id": "d72f5301"
+      }
+     ]
+    },
+    {
+     "date": "2026-07-28",
+     "entries": [
+      {
+       "workout": {
         "name": "Svøm 1500m let teknisk",
         "type": "Swim",
         "moving_time": 2700,
@@ -3149,13 +3178,13 @@
         },
         "load": 25
        },
-       "note": "Svøm let 1500m — ben hviler efter 21 km",
-       "id": "d72f5301"
+       "note": "Svøm let 1500m — hviledag for benene mellem løb",
+       "id": "7aa7f0e8"
       }
      ]
     },
     {
-     "date": "2026-07-28",
+     "date": "2026-07-29",
      "entries": [
       {
        "workout": {
@@ -3205,45 +3234,7 @@
         },
         "load": 60
        },
-       "note": "THRESHOLD-TEST løb 30 min — sætter pace-zoner for marathon-blokken",
-       "id": "7aa7f0e8"
-      }
-     ]
-    },
-    {
-     "date": "2026-07-29",
-     "entries": [
-      {
-       "workout": {
-        "name": "Svøm 1500m let teknisk",
-        "type": "Swim",
-        "moving_time": 2700,
-        "description": "- 400m varm-op Z1 8m freeride\n\n5x\n- 100m teknik Z1-Z2 2m freeride\n\n- 300m cool 6m freeride",
-        "workout_doc": {
-         "steps": [
-          {
-           "text": "400m varm-op Z1",
-           "duration": 480
-          },
-          {
-           "reps": 5,
-           "text": "5x",
-           "steps": [
-            {
-             "text": "100m teknik Z1-Z2",
-             "duration": 120
-            }
-           ]
-          },
-          {
-           "text": "300m cool",
-           "duration": 360
-          }
-         ]
-        },
-        "load": 25
-       },
-       "note": "Svøm 1500m — morgen (arbejdstung dag)",
+       "note": "Threshold-test 30 min — morgen, før Pill in SE",
        "id": "f95d11d6"
       }
      ]
