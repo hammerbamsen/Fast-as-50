@@ -1,5 +1,5 @@
 {
- "generated": "2026-07-26T00:06:55Z",
+ "generated": "2026-07-26T04:48:09Z",
  "kennet": {
   "seed": {
    "date": "2026-07-26",
@@ -292,6 +292,13 @@
     "flags": [
      {
       "week": 8,
+      "rule": "low_readiness",
+      "level": "WARN",
+      "msg": "Lav readiness i dag (HRV/søvn) — overvej at reducere dagens/ugens belastning",
+      "historic": true
+     },
+     {
+      "week": 8,
       "rule": "plan_actual_mismatch",
       "level": "WARN",
       "msg": "Logget hike-aktivitet i uge 8, men ugens plan indeholder ikke hike"
@@ -366,6 +373,13 @@
     "historic": true
    },
    {
+    "week": 8,
+    "rule": "low_readiness",
+    "level": "WARN",
+    "msg": "Lav readiness i dag (HRV/søvn) — overvej at reducere dagens/ugens belastning",
+    "historic": true
+   },
+   {
     "week": 12,
     "rule": "vo2_missing",
     "level": "WARN",
@@ -435,7 +449,7 @@
    "suggestion": null,
    "phase_guard": null
   },
-  "readiness": "NORMAL"
+  "readiness": "LOW"
  },
- "inputsHash": "9f77ea44c2e92627"
+ "inputsHash": "72a482011fe01e33"
 }
