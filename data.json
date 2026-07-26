@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-07-26 06:54",
+    "updated": "2026-07-26 08:15",
     "week": 8,
     "totalWeeks": 14,
     "blockType": "BUILD",
@@ -23,13 +23,13 @@
       "color": "#E67E22"
     },
     "ctl": {
-      "value": "51,1",
+      "value": "51,0",
       "unit": "",
       "sub": "Uge 8-mål 60 · Slutmål 43 (uge 14)",
       "color": "#27AE60"
     },
     "tsb": {
-      "value": "-9,7",
+      "value": "-9,6",
       "unit": "",
       "sub": "Form · CTL−ATL, frisk >0",
       "color": "#27AE60"
@@ -53,13 +53,13 @@
       "color": "#7A6A58"
     },
     "tssComp": {
-      "value": "372",
+      "value": "417",
       "unit": "TSS",
-      "sub": "372 af 544 planlagt TSS",
+      "sub": "417 af 544 planlagt TSS",
       "color": "#E67E22"
     },
     "bikeKm": {
-      "value": "83,0",
+      "value": "116,1",
       "unit": "km",
       "sub": "Cykel denne uge",
       "color": "#27AE60"
@@ -82,7 +82,7 @@
     "target": 5,
     "streak": 1
   },
-  "coachSpeech": "Søndag — afslut uge 8 stærkt. {HL} Godt: 6/7 AF-dage — ugens mål er ramt. Fokus: 372 af 544 TSS er i hus — Cykel Z2 60 min står tilbage. Cykel Z2 45 min er misset — vinduet er lukket. Vægt på 72,4 kg — hold protein højt og undgå lette kulhydrater om aftenen. Keep moving forward. 📊 Store billede: CTL 51,1 er 8.9 point BAG ugeplanen (planmål uge 8: 60). Vægten har tabt 2.8 kg over de seneste 85 dage (75,2 → 72,4 kg).  \"Det er ikke om at have tid. Det er om at tage den.\"",
+  "coachSpeech": "Søndag — afslut uge 8 stærkt. {HL} Godt: 6/7 AF-dage — ugens mål er ramt. Fokus: 417 af 544 TSS er i hus. Cykel Z2 45 min er misset — vinduet er lukket. Vægt på 72,4 kg — hold protein højt og undgå lette kulhydrater om aftenen. Keep moving forward. 📊 Store billede: CTL 51,0 er 9.0 point BAG ugeplanen (planmål uge 8: 60). Vægten har tabt 2.8 kg over de seneste 85 dage (75,2 → 72,4 kg).  \"Det er ikke om at have tid. Det er om at tage den.\"",
   "coachHighlight": "Søvn på 7,8 timer er solid",
   "weekFocus": "Byg videre på Mallorca-formen med kontrolleret intensitet mod uge ni",
   "today": [
@@ -92,7 +92,7 @@
       "duration": "",
       "zone": "–",
       "desc": "",
-      "completed": false
+      "completed": true
     }
   ],
   "week_sessions": [
@@ -184,8 +184,14 @@
       "day": "Søn",
       "disc": "bike",
       "label": "Cykel Z2 60 min",
-      "done": false,
-      "today": true
+      "done": true,
+      "today": true,
+      "completion": "done",
+      "completion_pct": 105,
+      "actual_tss": 45,
+      "actual_mins": 63,
+      "planned_mins": 60,
+      "intervals_compliance": 97.8
     }
   ],
   "ctlCurve": [
@@ -196,7 +202,7 @@
     48.8,
     47.2,
     49.7,
-    51.1
+    51.0
   ],
   "weightHistory": [
     null,
@@ -1846,7 +1852,7 @@
     },
     {
       "date": "2026-07-26",
-      "v": -9.7,
+      "v": -9.6,
       "real": true
     }
   ],
@@ -2405,8 +2411,14 @@
           "day": "Søn",
           "disc": "bike",
           "label": "Cykel Z2 60 min",
-          "done": false,
-          "today": true
+          "done": true,
+          "today": true,
+          "completion": "done",
+          "completion_pct": 105,
+          "actual_tss": 45,
+          "actual_mins": 63,
+          "planned_mins": 60,
+          "intervals_compliance": 97.8
         }
       ],
       "blockType": "BUILD",
@@ -2745,14 +2757,14 @@
     }
   ],
   "train_mins": {
+    "bike": 287.0,
     "run": 207.0,
     "commute": 56.0,
     "walk": 60.0,
     "strength": 30.0,
     "openwater": 39.0,
-    "bike": 224.0,
     "planned": 648.0,
-    "actual_total": 616.0
+    "actual_total": 679.0
   },
   "fatHistory": [
     null,
@@ -3054,8 +3066,8 @@
       "real": true
     }
   ],
-  "coachAssessmentHtml": "<p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\"><strong>Dag 56 af 98 · Søndag · Uge 8</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">💪 <strong>Træning & load</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">CTL ligger på 51,1 med TSB på -9,7 — kroppen bærer en passende belastning uden at være i underskud. Ugen har indeholdt stærke pas: Sa Calobra, 2000m åbent vand i Christiansborg-tempo, 16 km til fyret og 21 km langløb. Cykel Z2 i dag er endnu ikke gennemført — sæt dig på sadlen og hold wattene i Z2 hele vejen igennem, det runder ugen pænt af. Det eneste missede pas var Z2 45 min torsdag, og det er allerede lagt bag jer.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">⚖️ <strong>Krop & kost</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Vægten er 72,4 kg — 2,4 kg fra målet under 70 kg. Fedtprocenten er 21,6 %, altså 1,6 procentpoint fra målet under 20 %. Fedtprocenten er steget 0,1 point siden sidst, mens vægten ikke har rykket sig nok til at kompensere — det betyder at fremgangen er beskeden, og der ikke er tale om ægte kropsomkomposition endnu. Hold fokus på kostens kvalitet og timing, særligt på restitutionsdage, så du taber fedt frem for muskel.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">🎯 <strong>AF-status & fokus for resten af ugen</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Du har 6 AF-dage ud af 7 dage gået i ugen — det er over målet på 5, godt klaret. Ugens eneste opgave nu er dagens cykeltur i Z2 — gennemfør den, og ugen er afsluttet på en god måde.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">📊 <strong>Store billede</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">CTL på 51,1 er 8,9 point bag ugeplanen på 60 — det er et reelt efterslæb at forholde sig til fremover. Til sammenligning: vægten er faldet 2,8 kg over de seneste 85 dage (75,2 → 72,4 kg), hvilket er en stabil retning, men fedtprocentudviklingen skal følge med for at kalde det reel fremgang.</p>",
-  "coachAssessmentTs": "04:54",
+  "coachAssessmentHtml": "<p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\"><strong>Dag 56 af 98 · Søndag · Uge 8</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">💪 <strong>Træning & load</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">CTL ligger på 51,0 med TSB på -9,6 — kroppen er belastet, men inden for sikre rammer. Ugen har været markant: Sa Calobra, 2000m åbent vand, 16 km løb, 21 km langløb og en afsluttende Z2-cykeltur har tilsammen givet en solid blok. Zone-compliacen var god på løb og søndagens cykeltur, mens svømningen manglede intensitet i de øverste zoner — næste gang du svømmer Christiansborg-tempo, skal der være bid i intervallerne, ikke kun afstand. Det missede Z2-pas torsdag vejede ikke tungt — ugen leverede alligevel et højt volumen.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">⚖️ <strong>Krop & kost</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Vægten er 72,4 kg — 2,4 kg fra målet under 70 kg. Fedtprocenten er 21,6 %, 1,6 procentpoint fra målet under 20 %. Det kritiske her er, at fedtprocenten faktisk gik 0,1 point *op* siden sidst — selv om vægten falder. Det tyder på at tabet ikke er rent fedt, men blandet med muskelmasse. I et capacity-år er det et advarselstegn, ikke fremgang. Sørg for tilstrækkeligt protein og kalorier rundt om de hårde pas — underernæring under høj belastning koster dig muskel, ikke fedt.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">🎯 <strong>AF-status & fokus for resten af ugen</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Du er på 6 AF-dage ud af 7 dage — det er stærkt. Ugen er i mål på det punkt. Fokus nu er restitution: du har kørt en hård blok, og kroppen skal bruge søndagsaftenen til at absorbere den.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">📊 <strong>Store billede</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">CTL er 51,0 — det er 9,0 point bag ugeplanen, der siger 60 for uge 8. Det er en reel forskel, men den afspejler formentlig en bevidst lettere tilgang i rejse- og omstillingsuger tidligere i blokken — ikke manglende indsats. Over de seneste 85 dage er vægten gået fra 75,2 til 72,4 kg, altså minus 2,8 kg. Det er en fin tendens i absolutte tal, men fedtprocentens manglende reaktion betyder at kursen skal justeres mod mere kvalitet i tabet — ikke blot vægt.</p>",
+  "coachAssessmentTs": "06:16",
   "commute_pairing_warnings": [],
   "warnings": [
     {
@@ -3064,7 +3076,7 @@
       "message": "HRV 46,0 ms — 30% under 7d-snit (65,4 ms). Kroppen er presset."
     }
   ],
-  "tsb": -9.7,
+  "tsb": -9.6,
   "swimHistory": [
     {
       "week": 1,
@@ -3115,7 +3127,7 @@
       "cumulative": 18178.0
     }
   ],
-  "coachAssessmentLastActId": "i169027265",
+  "coachAssessmentLastActId": "i169260209",
   "weekFocusWeek": 8,
   "coachAssessmentPlanAtGen": "Cykel Z2 60 min",
   "weightGoal": 70,
@@ -3334,8 +3346,8 @@
       "note": "Nøgle virker"
     }
   },
-  "credentialsCheckedTs": "2026-07-26T04:54:36.683495",
-  "coachAssessmentTsFull": "2026-07-26T04:54:36.683467",
+  "credentialsCheckedTs": "2026-07-26T06:16:12.691962",
+  "coachAssessmentTsFull": "2026-07-26T06:16:12.691945",
   "coachAssessmentWeightAtGen": 72.4,
   "coachAssessmentAfAtGen": 6,
   "event_structure_warnings": [],
