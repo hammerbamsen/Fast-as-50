@@ -2428,22 +2428,22 @@
       "sessions": [
         {
           "day": "Man",
-          "disc": "swim",
-          "label": "Svøm 1500m let teknisk",
+          "disc": "run",
+          "label": "Løb Z1 30 min let",
           "done": false,
           "today": false
         },
         {
           "day": "Tir",
-          "disc": "run",
-          "label": "THRESHOLD-TEST løb 30 min (opdatér pace-zoner efter)",
+          "disc": "swim",
+          "label": "Svøm 1500m let teknisk",
           "done": false,
           "today": false
         },
         {
           "day": "Ons",
-          "disc": "swim",
-          "label": "Svøm 1500m let teknisk",
+          "disc": "run",
+          "label": "THRESHOLD-TEST løb 30 min (opdatér pace-zoner efter)",
           "done": false,
           "today": false
         },
@@ -2470,7 +2470,7 @@
         }
       ],
       "blockType": "BUILD",
-      "focus": "Build-uge 9 — 3 løb · 1 cykel · 1 svøm · 1 styrke · én VO2-stimulus. Fokus: konsistens over intensitet."
+      "focus": "Uge 9 — aflastning + retest. 3 løb (man/ons/fre, aldrig to dage i træk) · 2 svøm · FTP- og threshold-test opdaterer zonerne. Musik i Gentofte fre-søn: hold weekenden let."
     },
     "10": {
       "sessions": [
