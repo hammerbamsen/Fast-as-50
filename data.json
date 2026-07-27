@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-07-27 06:59",
+    "updated": "2026-07-27 07:00",
     "week": 9,
     "totalWeeks": 14,
     "blockType": "BUILD",
@@ -2962,8 +2962,8 @@
       "real": true
     }
   ],
-  "coachAssessmentHtml": "<p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\"><strong>Dag 57 af 98 · Mandag · Uge 9</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">💪 <strong>Træning & load</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">CTL ligger på 51,5 — det er godt over ugemålet på 48, og TSB på -10,1 er uproblematisk. Du er i god form og har plads til at arbejde. Dagens løb på 30 min Z1 er endnu ikke gennemført — hold det let og kontrolleret, tempo og intensitet skal forblive i Z1 hele vejen. Onsdag og torsdag er de vigtigste dage: threshold-test og FTP-test sætter dine zoner for resten af blokken, så dem skal du møde frisk.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">⚖️ <strong>Krop & kost</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Vægten er 72,3 kg — 2,3 kg fra målet — og fedtprocenten er 21,1 %, altså 1,1 procentpoint fra målet om under 20 %. Fedtprocenten er faldet 0,5 point siden sidst, og det er det rigtige signal: du taber fedt, ikke muskelmasse. Fortsæt i det spor — et lille dagligt kalorieunderskud med tilstrækkeligt protein beskytter muskelmassen og understøtter de kommende tests.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">🎯 <strong>AF-status & fokus for resten af ugen</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Du er 0 AF-dage inde i en uge der er 1 dag gammel — det er neutralt, ugen er stadig åben. Målet er 5 AF-dage, og du har al mulighed for at lande det. Ugens kerne er de to tests onsdag og torsdag — bevar energien til dem, og lad hverdagene imellem være det de skal: restitution og teknisk svøm, ikke ekstra belastning.</p>",
-  "coachAssessmentTs": "04:59",
+  "coachAssessmentHtml": "<p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\"><strong>Dag 57 af 98 · Mandag · Uge 9</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">💪 <strong>Træning & load</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">CTL ligger på 51.5 — det er over ugens plan på 48, og TSB på -10.1 viser at kroppen stadig bærer lidt træthed fra de seneste uger. Ugen her handler om at sætte pejlemærker: threshold-testen onsdag og FTP-testen torsdag giver dig opdaterede zoner at arbejde med fremover. Start blødt i dag — Z1 løbeturen er præcis det rigtige, og den må ikke krybbe op i Z2.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">⚖️ <strong>Krop & kost</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">72.3 kg og 21.1% fedt — du er 2.3 kg fra vægmålet og 1.1 procentpoint fra fedtprocent-målet. Fedtprocenten er faldet 0.5 point siden sidst, hvilket er den rigtige retning: du taber faktisk fedt, ikke muskelmasse. Det er ægte fremgang. Hold energiunderskuddet moderat — testugerne kræver at du er ernæringsunderstøttet nok til at give reelle målinger.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">🎯 <strong>AF-status & fokus for resten af ugen</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Mandagen er i gang, og AF-status er 0 ud af 1 dag gået — der er stadig alt at spille for denne uge. Fem alkoholfri dage er fuldt opnåeligt. Ugens egentlige opgave er de to tests: giv dem respekt, men uden at overinvestere i de lette dage op til. Bevar energien — musikugen venter.</p>",
+  "coachAssessmentTs": "05:00",
   "commute_pairing_warnings": [],
   "warnings": [],
   "tsb": -10.1,
@@ -3242,8 +3242,8 @@
       "note": "Nøgle virker"
     }
   },
-  "credentialsCheckedTs": "2026-07-27T04:59:50.020571",
-  "coachAssessmentTsFull": "2026-07-27T04:59:50.020553",
+  "credentialsCheckedTs": "2026-07-27T05:00:27.052215",
+  "coachAssessmentTsFull": "2026-07-27T05:00:27.052199",
   "coachAssessmentWeightAtGen": 72.3,
   "coachAssessmentAfAtGen": 0,
   "event_structure_warnings": [],
