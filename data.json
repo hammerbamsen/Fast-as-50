@@ -1,13 +1,13 @@
 {
   "meta": {
-    "updated": "2026-07-27 02:00",
-    "week": 8,
+    "updated": "2026-07-27 05:55",
+    "week": 9,
     "totalWeeks": 14,
     "blockType": "BUILD",
-    "daysToMedoc": 41,
-    "daysToChristiansborg": 34,
-    "dayName": "Søndag",
-    "date": "26. jul"
+    "daysToMedoc": 40,
+    "daysToChristiansborg": 33,
+    "dayName": "Mandag",
+    "date": "27. jul"
   },
   "kpis": {
     "weight": {
@@ -23,52 +23,52 @@
       "color": "#E67E22"
     },
     "ctl": {
-      "value": "52,1",
+      "value": "51,5",
       "unit": "",
-      "sub": "Uge 8-mål 60 · Slutmål 43 (uge 14)",
+      "sub": "Uge 9-mål 48 · Slutmål 43 (uge 14)",
       "color": "#27AE60"
     },
     "tsb": {
-      "value": "-14,6",
+      "value": "-10,1",
       "unit": "",
       "sub": "Hård blok · CTL−ATL, frisk >0",
       "color": "#E67E22"
     },
     "sleep": {
-      "value": "7,8",
+      "value": "7,7",
       "unit": "t",
       "sub": "Snit 7,5t · mål 7t",
       "color": "#2874A6"
     },
     "runKm": {
-      "value": "38,1",
+      "value": "0,0",
       "unit": "km",
       "sub": "Mål 40+ km uge 10",
-      "color": "#27AE60"
+      "color": "#7A6A58"
     },
     "hrv": {
-      "value": "65,4",
+      "value": "65,7",
       "unit": "ms",
       "sub": "Snit 7d",
       "color": "#7A6A58"
     },
     "tssComp": {
-      "value": "417",
+      "value": "0",
       "unit": "TSS",
-      "sub": "417 af 544 planlagt TSS",
-      "color": "#E67E22"
+      "sub": "0 af 272 planlagt TSS",
+      "color": "#7A6A58"
     },
     "bikeKm": {
-      "value": "116,1",
+      "value": "0,0",
       "unit": "km",
       "sub": "Cykel denne uge",
-      "color": "#27AE60"
+      "color": "#7A6A58"
     },
     "swimM": {
-      "value": "1578",
+      "value": "0",
       "unit": "m",
       "sub": "Svøm denne uge · mål 2000m (Christiansborg)",
-      "color": "#C0392B"
+      "color": "#7A6A58"
     },
     "afStreak": {
       "value": "1",
@@ -78,70 +78,59 @@
     }
   },
   "af": {
-    "weekDone": 6,
+    "weekDone": 0,
     "target": 5,
     "streak": 1
   },
-  "coachSpeech": "Søndag — afslut uge 8 stærkt. {HL} Godt: 6/7 AF-dage — ugens mål er ramt. Fokus: 417 af 544 TSS er i hus — Cykel Z2 60 min står tilbage. 5 sessioner er misset — vinduerne er lukket. Keep moving forward. 📊 Store billede: CTL 52,1 er 7.9 point BAG ugeplanen (planmål uge 8: 60).  \"Kroppen tror, hvad sindet siger.\"",
-  "coachHighlight": "Søvn på 7,8 timer er solid",
-  "weekFocus": "Byg videre på Mallorca-formen med kontrolleret intensitet mod uge ni",
+  "coachSpeech": "Ny uge starter — uge 9 af 14. Build-uge. {HL} Godt: Søvn på 7,7 timer er solid. Ny uge med 1 dages streak i ryggen. Hold den. Alt peger den rigtige vej. Hold ilden ved — ikke sluk den.  \"Kroppen tror, hvad sindet siger.\"",
+  "coachHighlight": "Fuld uge foran — i dag: Løb Z1 30 min let",
+  "weekFocus": "Sæt pejlemærker med tests og bevar energien til musikugen",
   "today": [
     {
-      "discipline": "bike",
-      "title": "Cykel Sa Calobra via Puig Major",
+      "discipline": "run",
+      "title": "Løb Z1 30 min let",
       "duration": "",
       "zone": "–",
       "desc": "",
-      "completed": true
+      "completed": false
     }
   ],
   "week_sessions": [
     {
       "day": "Man",
-      "disc": "bike",
-      "label": "Cykel Sa Calobra via Puig Major",
-      "done": true,
-      "today": true,
-      "completion": "done",
-      "completion_pct": null,
-      "actual_tss": 83,
-      "actual_mins": 224,
-      "planned_mins": null
+      "disc": "run",
+      "label": "Løb Z1 30 min let",
+      "done": false,
+      "today": true
     },
     {
       "day": "Tir",
       "disc": "swim",
-      "label": "Svøm 2000m åbent vand (Christiansborg-tempo)",
+      "label": "Svøm 1500m let teknisk",
       "done": false
     },
     {
       "day": "Ons",
       "disc": "run",
-      "label": "Løb 16 km Z1–Z2 til fyret",
-      "done": false
-    },
-    {
-      "day": "Tor",
-      "disc": "strength",
-      "label": "Styrke A Functional Strength 2 sæt",
+      "label": "THRESHOLD-TEST løb 30 min (opdatér pace-zoner efter)",
       "done": false
     },
     {
       "day": "Tor",
       "disc": "bike",
-      "label": "Cykel Z2 45 min",
+      "label": "FTP-TEST 20 min (opdatér zoner efter)",
+      "done": false
+    },
+    {
+      "day": "Fre",
+      "disc": "run",
+      "label": "Løb Z2 90 min",
       "done": false
     },
     {
       "day": "Lør",
-      "disc": "run",
-      "label": "Langløb 21 km Z2",
-      "done": false
-    },
-    {
-      "day": "Søn",
-      "disc": "bike",
-      "label": "Cykel Z2 60 min",
+      "disc": "swim",
+      "label": "Svøm 1500m let teknisk (valgfri)",
       "done": false
     }
   ],
@@ -153,10 +142,10 @@
     48.8,
     47.2,
     49.7,
-    52.1
+    52.1,
+    51.5
   ],
   "weightHistory": [
-    null,
     null,
     null,
     null,
@@ -453,14 +442,10 @@
       "date": "2026-07-26",
       "v": 72.4,
       "real": true
-    }
+    },
+    null
   ],
   "hrvHistory": [
-    {
-      "date": "2026-04-28",
-      "v": 42.0,
-      "real": true
-    },
     {
       "date": "2026-04-29",
       "v": 41.0,
@@ -905,14 +890,10 @@
       "date": "2026-07-26",
       "v": 46.0,
       "real": true
-    }
+    },
+    null
   ],
   "sleepHistory": [
-    {
-      "date": "2026-04-28",
-      "v": 9.2,
-      "real": true
-    },
     {
       "date": "2026-04-29",
       "v": 8.6,
@@ -1353,14 +1334,10 @@
       "date": "2026-07-26",
       "v": 8.6,
       "real": true
-    }
+    },
+    null
   ],
   "tsbHistory": [
-    {
-      "date": "2026-04-28",
-      "v": -21.0,
-      "real": true
-    },
     {
       "date": "2026-04-29",
       "v": -16.3,
@@ -1804,6 +1781,11 @@
     {
       "date": "2026-07-26",
       "v": -14.6,
+      "real": true
+    },
+    {
+      "date": "2026-07-27",
+      "v": -10.0,
       "real": true
     }
   ],
@@ -2278,49 +2260,50 @@
           "day": "Man",
           "disc": "bike",
           "label": "Cykel Sa Calobra via Puig Major",
-          "done": true,
-          "today": true,
-          "completion": "done",
-          "completion_pct": null,
-          "actual_tss": 83,
-          "actual_mins": 224,
-          "planned_mins": null
+          "done": false,
+          "today": false
         },
         {
           "day": "Tir",
           "disc": "swim",
           "label": "Svøm 2000m åbent vand (Christiansborg-tempo)",
-          "done": false
+          "done": false,
+          "today": false
         },
         {
           "day": "Ons",
           "disc": "run",
           "label": "Løb 16 km Z1–Z2 til fyret",
-          "done": false
+          "done": false,
+          "today": false
         },
         {
           "day": "Tor",
           "disc": "strength",
           "label": "Styrke A Functional Strength 2 sæt",
-          "done": false
+          "done": false,
+          "today": false
         },
         {
           "day": "Tor",
           "disc": "bike",
           "label": "Cykel Z2 45 min",
-          "done": false
+          "done": false,
+          "today": false
         },
         {
           "day": "Lør",
           "disc": "run",
           "label": "Langløb 21 km Z2",
-          "done": false
+          "done": false,
+          "today": false
         },
         {
           "day": "Søn",
           "disc": "bike",
           "label": "Cykel Z2 60 min",
-          "done": false
+          "done": false,
+          "today": false
         }
       ],
       "blockType": "BUILD",
@@ -2333,46 +2316,41 @@
           "disc": "run",
           "label": "Løb Z1 30 min let",
           "done": false,
-          "today": false
+          "today": true
         },
         {
           "day": "Tir",
           "disc": "swim",
           "label": "Svøm 1500m let teknisk",
-          "done": false,
-          "today": false
+          "done": false
         },
         {
           "day": "Ons",
           "disc": "run",
           "label": "THRESHOLD-TEST løb 30 min (opdatér pace-zoner efter)",
-          "done": false,
-          "today": false
+          "done": false
         },
         {
           "day": "Tor",
           "disc": "bike",
           "label": "FTP-TEST 20 min (opdatér zoner efter)",
-          "done": false,
-          "today": false
+          "done": false
         },
         {
           "day": "Fre",
           "disc": "run",
           "label": "Løb Z2 90 min",
-          "done": false,
-          "today": false
+          "done": false
         },
         {
           "day": "Lør",
           "disc": "swim",
           "label": "Svøm 1500m let teknisk (valgfri)",
-          "done": false,
-          "today": false
+          "done": false
         }
       ],
       "blockType": "BUILD",
-      "focus": "Uge 9 — aflastning + retest. 3 løb (man/ons/fre, aldrig to dage i træk) · 2 svøm · FTP- og threshold-test opdaterer zonerne. Musik i Gentofte fre-søn: hold weekenden let."
+      "focus": "Sæt pejlemærker med tests og bevar energien til musikugen"
     },
     "10": {
       "sessions": [
@@ -2665,17 +2643,10 @@
     }
   ],
   "train_mins": {
-    "bike": 287.0,
-    "run": 207.0,
-    "commute": 56.0,
-    "walk": 60.0,
-    "strength": 30.0,
-    "openwater": 39.0,
     "planned": 340.0,
-    "actual_total": 679.0
+    "actual_total": 0
   },
   "fatHistory": [
-    null,
     null,
     null,
     null,
@@ -2972,19 +2943,20 @@
       "date": "2026-07-26",
       "v": 21.6,
       "real": true
-    }
+    },
+    null
   ],
-  "coachAssessmentHtml": "<p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\"><strong>Dag 57 af 98 · Søndag · Uge 8</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">💪 <strong>Træning & load</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">CTL er 52,1 med TSB på -14,6 — kroppen har trukket et ordentligt læs denne uge. Sa Calobra-turen blev gennemført med 29,6% i Z2+Z3, men NP på 132W er det reelle billede på en hård, kuperet rute med meget coasting — ikke en fejl, men terrænet sætter dagsordenen. Til næste lignende bjergtur: skru wattene op på de flade passager, så du holder Z2-zonen bedre oppe. Langløbet og søndagens cykeltur ramte begge on target — godt arbejde der.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">⚖️ <strong>Krop & kost</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Ingen aktuel vægt- eller fedtprocentmåling denne uge — ingen vurdering mulig. Mål begge dele konsekvent, gerne samme tidspunkt morgen, så vi kan følge om det er fedt eller muskelmasse der bevæger sig.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">🎯 <strong>AF-status & fokus for resten af ugen</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Seks AF-dage ud af syv dage — det er stærkt, og du er godt over ugemålet på fem. Streak er stadig i gang. Der er ikke mere tilbage af ugen at tabe det på.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">📊 <strong>Store billede</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">CTL på 52,1 er 7,9 point bag ugeplanens mål på 60 — det er et mærkbart underskud, og det afspejler en uge med flere missede pas. Det er ikke katastrofalt, men det betyder at uge ni skal levere solidt og struktureret, uden at TSB presses ned under -30. Hold fokus på at ramme planens indhold næste uge — pas for pas.</p>",
-  "coachAssessmentTs": "00:00",
+  "coachAssessmentHtml": "<p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\"><strong>Dag 57 af 98 · Mandag · Uge 9</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">💪 <strong>Træning & load</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">CTL på 51.5 er allerede over ugemålet på 48 — du er foran planen med god margin. TSB på -10.1 er fint, du har luft i tanken til testene midt på ugen. I dag er et let løb på 30 min Z1 — hold det roligt, det er et opvarmningspas til en uge der indeholder to deciderede tests. Gem benet til onsdag og torsdag.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">⚖️ <strong>Krop & kost</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Der er ingen aktuel vægt- eller fedtprocentmåling denne uge, så der er intet at vurdere på. Tjek ind med badevægten og helst en fedtprocent-måling, så vi har noget konkret at navigere efter.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">🎯 <strong>AF-status & fokus for resten af ugen</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Mandag er stadig i gang, så du er 0/1 på AF — det er præcis der du er lige nu, hverken bagud eller foran. Ugen handler om to pejlemærker: threshold-test på onsdag og FTP-test på torsdag, og dem skal du gå ind til frisk. Det er altså en god uge at holde alkoholen nede — ikke kun for AF-tællingen, men fordi restitution og søvnkvalitet direkte påvirker testkvaliteten. Fem AF-dage er fuldt realistisk, og to gode tests er den egentlige gevinst.</p>",
+  "coachAssessmentTs": "03:56",
   "commute_pairing_warnings": [],
   "warnings": [
     {
       "type": "hrv",
       "level": "warn",
-      "message": "HRV 46,0 ms — 30% under 7d-snit (65,4 ms). Kroppen er presset."
+      "message": "HRV 46,0 ms — 30% under 7d-snit (65,7 ms). Kroppen er presset."
     }
   ],
-  "tsb": -14.6,
+  "tsb": -10.1,
   "swimHistory": [
     {
       "week": 1,
@@ -3033,15 +3005,20 @@
       "date": "2026-07-20",
       "meters": 1578.0,
       "cumulative": 18178.0
+    },
+    {
+      "week": 9,
+      "date": "2026-07-27",
+      "meters": 0,
+      "cumulative": 18178.0
     }
   ],
-  "coachAssessmentLastActId": "i169260209",
-  "weekFocusWeek": 8,
-  "coachAssessmentPlanAtGen": "Cykel Sa Calobra via Puig Major",
+  "coachAssessmentLastActId": null,
+  "weekFocusWeek": 9,
+  "coachAssessmentPlanAtGen": "Løb Z1 30 min let",
   "weightGoal": 70,
   "bodyFatGoal": 20,
   "weightMovingAvg7": [
-    null,
     null,
     null,
     null,
@@ -3130,10 +3107,10 @@
     null,
     null,
     72.1,
+    72.18,
     72.18
   ],
   "fatMovingAvg7": [
-    null,
     null,
     null,
     null,
@@ -3222,6 +3199,7 @@
     null,
     null,
     21.13,
+    21.25,
     21.25
   ],
   "weightToGoal": 2.4,
@@ -3254,10 +3232,10 @@
       "note": "Nøgle virker"
     }
   },
-  "credentialsCheckedTs": "2026-07-27T00:00:14.555353",
-  "coachAssessmentTsFull": "2026-07-27T00:00:14.555334",
+  "credentialsCheckedTs": "2026-07-27T03:56:13.150440",
+  "coachAssessmentTsFull": "2026-07-27T03:56:13.150422",
   "coachAssessmentWeightAtGen": 72.4,
-  "coachAssessmentAfAtGen": 6,
+  "coachAssessmentAfAtGen": 0,
   "event_structure_warnings": [],
   "coachAssessmentFatAtGen": 21.6
 }
