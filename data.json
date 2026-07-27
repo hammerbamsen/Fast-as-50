@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-07-27 23:38",
+    "updated": "2026-07-28 01:02",
     "week": 9,
     "totalWeeks": 14,
     "blockType": "BUILD",
@@ -2998,8 +2998,8 @@
       "real": true
     }
   ],
-  "coachAssessmentHtml": "<p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\"><strong>Dag 57 af 98 · Mandag · Uge 9</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">💪 <strong>Træning & load</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">CTL er på 51.5 — det er 3.5 over ugemålet på 48, og TSB på -11.7 viser at kroppen bærer en lille gæld, men intet alarmerende. Mandagens løb blev gennemført, men 70% af tiden lå i en hurtigere pace-zone end planlagt — til næste lette løbetur (fredag Z2) er opgaven at sænke tempoet fra start, ikke undervejs. Ugen byder på to tests: threshold-løb onsdag og FTP-cykel torsdag — de giver opdaterede zoner og et reelt pejlemærke på formen.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">⚖️ <strong>Krop & kost</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Vægten er 72.3 kg — 2.3 kg fra målet — og fedtprocenten er 21.1%, altså 1.1 procentpoint fra målet på under 20%. Fedtprocenten er faldet 0.5 point siden sidst, mens vægten ikke er opdateret siden da — det er det rigtige signal: kroppen skifter sammensætning, ikke bare vægt. Hold fast i det mønster: det er fedtprocenten der afgør om fremgangen er reel.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">🎯 <strong>AF-status & fokus for resten af ugen</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Du er i gang med dag 1 og har endnu ingen AF-dag denne uge — der er god plads til at ramme de 5 inden søndag. Ugefokus er pejlemærker og at bevare energien til musikugen, så lad tests'ene gøre arbejdet onsdag og torsdag uden at jagte dem — kør dem kontrolleret og aflæs hvad tallene fortæller.</p>",
-  "coachAssessmentTs": "16:20",
+  "coachAssessmentHtml": "<p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\"><strong>Dag 57 af 98 · Mandag · Uge 9</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">💪 <strong>Træning & load</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">CTL ligger på 51.5 — det er over ugemålet på 48, og TSB på -11.7 er helt inden for det acceptable. I dag løb du 42 minutter i stedet for de planlagte 30, og tempoet var for højt: kun 29.6% af tiden lå i pace-Z1, mens størstedelen foregik i en hurtigere zone. Næste gang du har en Z1-løbetur, sæt farten endnu mere ned fra start — det er sværere end det lyder, men det er præcis det Z1 kræver. Onsdag venter en threshold-test og torsdag en FTP-test, så det er godt at have benet lidt i bagagen.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">⚖️ <strong>Krop & kost</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Du vejer 72.3 kg og har 21.1% fedt — der er 2.3 kg til målvægten og 1.1 procentpoint til fedtprocent-målet på under 20%. Fedtprocenten er faldet 0.5 point siden sidst, og det er det rigtige signal: du taber fedt, ikke muskelmasse. Hold den linje — tilstrækkelig protein og undgå at spise dig i underskud på dage med hård træning, ellers risikerer du at miste muskler i stedet for fedt.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">🎯 <strong>AF-status & fokus for resten af ugen</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Du er 0 for 1 på AF-dage hidtil i ugen — det er fint, ugen er kun lige begyndt. Fem AF-dage ud af syv er målet, og det er fuldt ud realistisk. Ugens vigtigste opgave er de to tests onsdag og torsdag — kom frisk og fokuseret ind til dem, og sørg for at notere resultater med det samme, så du har opdaterede zoner til resten af blokken.</p>",
+  "coachAssessmentTs": "23:02",
   "commute_pairing_warnings": [],
   "warnings": [],
   "tsb": -11.7,
@@ -3278,8 +3278,8 @@
       "note": "Nøgle virker"
     }
   },
-  "credentialsCheckedTs": "2026-07-27T21:38:36.175518",
-  "coachAssessmentTsFull": "2026-07-27T16:20:32.564976",
+  "credentialsCheckedTs": "2026-07-27T23:02:25.120250",
+  "coachAssessmentTsFull": "2026-07-27T23:02:25.120232",
   "coachAssessmentWeightAtGen": 72.3,
   "coachAssessmentAfAtGen": 0,
   "event_structure_warnings": [],
