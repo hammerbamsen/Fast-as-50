@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-07-27 05:55",
+    "updated": "2026-07-27 06:59",
     "week": 9,
     "totalWeeks": 14,
     "blockType": "BUILD",
@@ -11,13 +11,13 @@
   },
   "kpis": {
     "weight": {
-      "value": "72,4",
+      "value": "72,3",
       "unit": "kg",
-      "sub": "Sidst målt 26/7 · Mål <70 kg · snit 72,2 kg",
+      "sub": "Mål <70 kg · snit 72,2 kg",
       "color": "#E67E22"
     },
     "fat": {
-      "value": "21,6",
+      "value": "21,1",
       "unit": "%",
       "sub": "Mål <20%",
       "color": "#E67E22"
@@ -35,7 +35,7 @@
       "color": "#E67E22"
     },
     "sleep": {
-      "value": "7,7",
+      "value": "7,9",
       "unit": "t",
       "sub": "Snit 7,5t · mål 7t",
       "color": "#2874A6"
@@ -47,7 +47,7 @@
       "color": "#7A6A58"
     },
     "hrv": {
-      "value": "65,7",
+      "value": "65,0",
       "unit": "ms",
       "sub": "Snit 7d",
       "color": "#7A6A58"
@@ -82,7 +82,7 @@
     "target": 5,
     "streak": 1
   },
-  "coachSpeech": "Ny uge starter — uge 9 af 14. Build-uge. {HL} Godt: Søvn på 7,7 timer er solid. Ny uge med 1 dages streak i ryggen. Hold den. Alt peger den rigtige vej. Hold ilden ved — ikke sluk den.  \"Kroppen tror, hvad sindet siger.\"",
+  "coachSpeech": "Ny uge starter — uge 9 af 14. Build-uge. {HL} Godt: Søvn på 7,9 timer er solid. Ny uge med 1 dages streak i ryggen. Hold den. Fokus: Vægt på 72,3 kg — hold protein højt og undgå lette kulhydrater om aftenen. Keep moving forward.  \"Kroppen tror, hvad sindet siger.\"",
   "coachHighlight": "Fuld uge foran — i dag: Løb Z1 30 min let",
   "weekFocus": "Sæt pejlemærker med tests og bevar energien til musikugen",
   "today": [
@@ -443,7 +443,11 @@
       "v": 72.4,
       "real": true
     },
-    null
+    {
+      "date": "2026-07-27",
+      "v": 72.3,
+      "real": true
+    }
   ],
   "hrvHistory": [
     {
@@ -891,7 +895,11 @@
       "v": 46.0,
       "real": true
     },
-    null
+    {
+      "date": "2026-07-27",
+      "v": 60.0,
+      "real": true
+    }
   ],
   "sleepHistory": [
     {
@@ -1335,7 +1343,11 @@
       "v": 8.6,
       "real": true
     },
-    null
+    {
+      "date": "2026-07-27",
+      "v": 9.2,
+      "real": true
+    }
   ],
   "tsbHistory": [
     {
@@ -2944,18 +2956,16 @@
       "v": 21.6,
       "real": true
     },
-    null
-  ],
-  "coachAssessmentHtml": "<p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\"><strong>Dag 57 af 98 · Mandag · Uge 9</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">💪 <strong>Træning & load</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">CTL på 51.5 er allerede over ugemålet på 48 — du er foran planen med god margin. TSB på -10.1 er fint, du har luft i tanken til testene midt på ugen. I dag er et let løb på 30 min Z1 — hold det roligt, det er et opvarmningspas til en uge der indeholder to deciderede tests. Gem benet til onsdag og torsdag.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">⚖️ <strong>Krop & kost</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Der er ingen aktuel vægt- eller fedtprocentmåling denne uge, så der er intet at vurdere på. Tjek ind med badevægten og helst en fedtprocent-måling, så vi har noget konkret at navigere efter.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">🎯 <strong>AF-status & fokus for resten af ugen</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Mandag er stadig i gang, så du er 0/1 på AF — det er præcis der du er lige nu, hverken bagud eller foran. Ugen handler om to pejlemærker: threshold-test på onsdag og FTP-test på torsdag, og dem skal du gå ind til frisk. Det er altså en god uge at holde alkoholen nede — ikke kun for AF-tællingen, men fordi restitution og søvnkvalitet direkte påvirker testkvaliteten. Fem AF-dage er fuldt realistisk, og to gode tests er den egentlige gevinst.</p>",
-  "coachAssessmentTs": "03:56",
-  "commute_pairing_warnings": [],
-  "warnings": [
     {
-      "type": "hrv",
-      "level": "warn",
-      "message": "HRV 46,0 ms — 30% under 7d-snit (65,7 ms). Kroppen er presset."
+      "date": "2026-07-27",
+      "v": 21.1,
+      "real": true
     }
   ],
+  "coachAssessmentHtml": "<p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\"><strong>Dag 57 af 98 · Mandag · Uge 9</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">💪 <strong>Træning & load</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">CTL ligger på 51,5 — det er godt over ugemålet på 48, og TSB på -10,1 er uproblematisk. Du er i god form og har plads til at arbejde. Dagens løb på 30 min Z1 er endnu ikke gennemført — hold det let og kontrolleret, tempo og intensitet skal forblive i Z1 hele vejen. Onsdag og torsdag er de vigtigste dage: threshold-test og FTP-test sætter dine zoner for resten af blokken, så dem skal du møde frisk.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">⚖️ <strong>Krop & kost</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Vægten er 72,3 kg — 2,3 kg fra målet — og fedtprocenten er 21,1 %, altså 1,1 procentpoint fra målet om under 20 %. Fedtprocenten er faldet 0,5 point siden sidst, og det er det rigtige signal: du taber fedt, ikke muskelmasse. Fortsæt i det spor — et lille dagligt kalorieunderskud med tilstrækkeligt protein beskytter muskelmassen og understøtter de kommende tests.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">🎯 <strong>AF-status & fokus for resten af ugen</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Du er 0 AF-dage inde i en uge der er 1 dag gammel — det er neutralt, ugen er stadig åben. Målet er 5 AF-dage, og du har al mulighed for at lande det. Ugens kerne er de to tests onsdag og torsdag — bevar energien til dem, og lad hverdagene imellem være det de skal: restitution og teknisk svøm, ikke ekstra belastning.</p>",
+  "coachAssessmentTs": "04:59",
+  "commute_pairing_warnings": [],
+  "warnings": [],
   "tsb": -10.1,
   "swimHistory": [
     {
@@ -3108,7 +3118,7 @@
     null,
     72.1,
     72.18,
-    72.18
+    72.2
   ],
   "fatMovingAvg7": [
     null,
@@ -3200,10 +3210,10 @@
     null,
     21.13,
     21.25,
-    21.25
+    21.22
   ],
-  "weightToGoal": 2.4,
-  "bodyFatToGoal": 1.6,
+  "weightToGoal": 2.3,
+  "bodyFatToGoal": 1.1,
   "ctlPlan": [
     34,
     36,
@@ -3232,10 +3242,10 @@
       "note": "Nøgle virker"
     }
   },
-  "credentialsCheckedTs": "2026-07-27T03:56:13.150440",
-  "coachAssessmentTsFull": "2026-07-27T03:56:13.150422",
-  "coachAssessmentWeightAtGen": 72.4,
+  "credentialsCheckedTs": "2026-07-27T04:59:50.020571",
+  "coachAssessmentTsFull": "2026-07-27T04:59:50.020553",
+  "coachAssessmentWeightAtGen": 72.3,
   "coachAssessmentAfAtGen": 0,
   "event_structure_warnings": [],
-  "coachAssessmentFatAtGen": 21.6
+  "coachAssessmentFatAtGen": 21.1
 }
