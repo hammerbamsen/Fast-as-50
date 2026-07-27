@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-07-27 11:09",
+    "updated": "2026-07-27 12:08",
     "week": 9,
     "totalWeeks": 14,
     "blockType": "BUILD",
@@ -23,16 +23,16 @@
       "color": "#E67E22"
     },
     "ctl": {
-      "value": "50,5",
+      "value": "51,5",
       "unit": "",
       "sub": "Uge 9-mål 48 · Slutmål 43 (uge 14)",
       "color": "#27AE60"
     },
     "tsb": {
-      "value": "-6,8",
+      "value": "-11,7",
       "unit": "",
-      "sub": "Form · CTL−ATL, frisk >0",
-      "color": "#27AE60"
+      "sub": "Hård blok · CTL−ATL, frisk >0",
+      "color": "#E67E22"
     },
     "sleep": {
       "value": "7,9",
@@ -41,10 +41,10 @@
       "color": "#2874A6"
     },
     "runKm": {
-      "value": "0,0",
+      "value": "7,7",
       "unit": "km",
       "sub": "Mål 40+ km uge 10",
-      "color": "#7A6A58"
+      "color": "#C0392B"
     },
     "hrv": {
       "value": "65,0",
@@ -53,9 +53,9 @@
       "color": "#7A6A58"
     },
     "tssComp": {
-      "value": "8",
+      "value": "52",
       "unit": "TSS",
-      "sub": "8 af 272 planlagt TSS",
+      "sub": "52 af 272 planlagt TSS",
       "color": "#C0392B"
     },
     "bikeKm": {
@@ -82,7 +82,7 @@
     "target": 5,
     "streak": 1
   },
-  "coachSpeech": "Ny uge starter — uge 9 af 14. Build-uge. {HL} Godt: Ny uge med 1 dages streak i ryggen. Hold den. Fokus: 8 af 272 TSS er i hus — 6 sessioner tilbage, heriblandt Løb Z1 30 min let, Svøm 1500m let teknisk. Vægt på 72,3 kg — hold protein højt og undgå lette kulhydrater om aftenen. Keep moving forward.  \"Kroppen tror, hvad sindet siger.\"",
+  "coachSpeech": "Ny uge starter — uge 9 af 14. Build-uge. {HL} Godt: Ny uge med 1 dages streak i ryggen. Hold den. Fokus: 52 af 272 TSS er i hus — 5 sessioner tilbage, heriblandt Svøm 1500m let teknisk, THRESHOLD-TEST løb 30 min (opdatér pace-zoner efter). Vægt på 72,3 kg — hold protein højt og undgå lette kulhydrater om aftenen. Keep moving forward.  \"Kroppen tror, hvad sindet siger.\"",
   "coachHighlight": "Søvn på 7,9 timer er solid",
   "weekFocus": "Sæt pejlemærker med tests og bevar energien til musikugen",
   "today": [
@@ -92,7 +92,7 @@
       "duration": "",
       "zone": "–",
       "desc": "",
-      "completed": false
+      "completed": true
     },
     {
       "discipline": "strength",
@@ -108,8 +108,13 @@
       "day": "Man",
       "disc": "run",
       "label": "Løb Z1 30 min let",
-      "done": false,
-      "today": true
+      "done": true,
+      "today": true,
+      "completion": "done",
+      "completion_pct": 140,
+      "actual_tss": 44,
+      "actual_mins": 42,
+      "planned_mins": 30
     },
     {
       "day": "Man",
@@ -159,7 +164,7 @@
     47.2,
     49.7,
     51.0,
-    50.5
+    51.5
   ],
   "weightHistory": [
     null,
@@ -1813,7 +1818,7 @@
     },
     {
       "date": "2026-07-27",
-      "v": -6.9,
+      "v": -11.7,
       "real": true
     }
   ],
@@ -2343,8 +2348,13 @@
           "day": "Man",
           "disc": "run",
           "label": "Løb Z1 30 min let",
-          "done": false,
-          "today": true
+          "done": true,
+          "today": true,
+          "completion": "done",
+          "completion_pct": 140,
+          "actual_tss": 44,
+          "actual_mins": 42,
+          "planned_mins": 30
         },
         {
           "day": "Man",
@@ -2679,9 +2689,10 @@
     }
   ],
   "train_mins": {
+    "run": 42.0,
     "strength": 28.0,
     "planned": 340.0,
-    "actual_total": 28.0
+    "actual_total": 70.0
   },
   "fatHistory": [
     null,
@@ -2987,11 +2998,11 @@
       "real": true
     }
   ],
-  "coachAssessmentHtml": "<p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\"><strong>Dag 57 af 98 · Mandag · Uge 9</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">💪 <strong>Træning & load</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">CTL på 50.5 er allerede over ugemålet på 48 — du er foran planen. TSB på -6.8 er uproblematisk og giver plads til ugens to tests uden at presse TSB ned i rødt. Dagens lette løb på 30 min Z1 er ikke gennemført endnu — hold det roligt og brug det som opvarmning til den mere krævende uge der venter med threshold- og FTP-tests onsdag og torsdag.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">⚖️ <strong>Krop & kost</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">72.3 kg og 21.1 % fedt — du er 2.3 kg fra vægtmålet og 1.1 procentpoint fra fedtprocent-målet på under 20 %. Fedtprocenten er faldet 0.5 point siden sidst, og det er det vigtige signal her: kroppen rekomponerer sig i den rigtige retning. Hold proteindisciplinen oppe i testugerne — det er let at spise sig over vedligehold når træningen føles hård.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">🎯 <strong>AF-status & fokus for resten af ugen</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Du er 0 AF-dage inde i ugen — der er god plads til at ramme målet på 5. Ugens fokus er tests og at spare skud til Marathon Médoc-musikugen: lad Z1-løbet i dag være præcis det, det siger — let. Testene onsdag og torsdag er ugens eneste hårde arbejde, og det er der de energier skal bruges.</p>",
-  "coachAssessmentTs": "09:09",
+  "coachAssessmentHtml": "<p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\"><strong>Dag 57 af 98 · Mandag · Uge 9</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">💪 <strong>Træning & load</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">CTL ligger på 51.5 — det er 3.5 over ugemålet på 48, og det er en god position at gå ind i testene fra. TSB på -11.7 er helt uproblematisk og giver rum til at ramme threshold- og FTP-testerne friskt. Løbet i dag kørte for hurtigt i pacezonerne — kun 30% af tiden lå i Z1, mens resten var i hurtigere zoner. Til næste lette løb (fredag er Z2, ikke Z1, men princippet holder): sænk tempoet bevidst, selvom det føles kunstigt langsomt.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">⚖️ <strong>Krop & kost</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">72.3 kg og 21.1% fedt — du er 2.3 kg fra vægmålet og 1.1 procentpoint fra fedtprocent-målet på under 20%. Fedtprocenten er faldet 0.5 point siden sidst, og det er det rigtige signal: du mister fedt, ikke muskelmasse. Hold den kurs — det er kropssammensætningen der tæller, ikke kun vægten på badevægten.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">🎯 <strong>AF-status & fokus for resten af ugen</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">0 AF-dage ud af 1 dag gået i ugen — det er åbent, og der er god plads til at ramme målet på 5 denne uge. Ugens to tests (onsdag: threshold-løb, torsdag: FTP-cykel) er de vigtigste sessioner — gå ind i dem frisk og afventende, ikke med et forudbestemt resultat. Hold energien i reserve til musikugen, og lad testene sætte dine nye zoner — ikke omvendt.</p>",
+  "coachAssessmentTs": "10:08",
   "commute_pairing_warnings": [],
   "warnings": [],
-  "tsb": -6.8,
+  "tsb": -11.7,
   "swimHistory": [
     {
       "week": 1,
@@ -3048,7 +3059,7 @@
       "cumulative": 18178.0
     }
   ],
-  "coachAssessmentLastActId": "i169626784",
+  "coachAssessmentLastActId": "i169640378",
   "weekFocusWeek": 9,
   "coachAssessmentPlanAtGen": "Løb Z1 30 min let",
   "weightGoal": 70,
@@ -3267,8 +3278,8 @@
       "note": "Nøgle virker"
     }
   },
-  "credentialsCheckedTs": "2026-07-27T09:09:37.333776",
-  "coachAssessmentTsFull": "2026-07-27T09:09:37.333760",
+  "credentialsCheckedTs": "2026-07-27T10:08:23.244001",
+  "coachAssessmentTsFull": "2026-07-27T10:08:23.243984",
   "coachAssessmentWeightAtGen": 72.3,
   "coachAssessmentAfAtGen": 0,
   "event_structure_warnings": [],
