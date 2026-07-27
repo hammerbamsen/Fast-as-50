@@ -1,5 +1,5 @@
 {
- "generated": "2026-07-27T03:56:15Z",
+ "generated": "2026-07-27T04:59:52Z",
  "kennet": {
   "seed": {
    "date": "2026-07-27",
@@ -297,15 +297,7 @@
     "week": 9,
     "projEndCtl": 48.5,
     "deviation": 0.5,
-    "flags": [
-     {
-      "week": 9,
-      "rule": "low_readiness",
-      "level": "WARN",
-      "msg": "Lav readiness i dag (HRV/søvn) — overvej at reducere dagens/ugens belastning",
-      "historic": false
-     }
-    ]
+    "flags": []
    },
    {
     "week": 10,
@@ -367,13 +359,6 @@
     "level": "WARN",
     "msg": "Ingen VO2-stimulus i build-uge 3",
     "historic": true
-   },
-   {
-    "week": 9,
-    "rule": "low_readiness",
-    "level": "WARN",
-    "msg": "Lav readiness i dag (HRV/søvn) — overvej at reducere dagens/ugens belastning",
-    "historic": false
    },
    {
     "week": 12,
@@ -445,7 +430,7 @@
    "suggestion": null,
    "phase_guard": null
   },
-  "readiness": "LOW"
+  "readiness": "NORMAL"
  },
- "inputsHash": "0855591425f942af"
+ "inputsHash": "3d45e7af5a318339"
 }
