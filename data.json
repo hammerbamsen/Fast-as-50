@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-07-27 00:33",
+    "updated": "2026-07-27 02:00",
     "week": 8,
     "totalWeeks": 14,
     "blockType": "BUILD",
@@ -13,7 +13,7 @@
     "weight": {
       "value": "72,4",
       "unit": "kg",
-      "sub": "Mål <70 kg · snit 72,2 kg",
+      "sub": "Sidst målt 26/7 · Mål <70 kg · snit 72,2 kg",
       "color": "#E67E22"
     },
     "fat": {
@@ -82,13 +82,13 @@
     "target": 5,
     "streak": 1
   },
-  "coachSpeech": "Søndag — afslut uge 8 stærkt. {HL} Godt: 6/7 AF-dage — ugens mål er ramt. Fokus: 417 af 544 TSS er i hus. Cykel Z2 45 min er misset — vinduet er lukket. Vægt på 72,4 kg — hold protein højt og undgå lette kulhydrater om aftenen. Keep moving forward. 📊 Store billede: CTL 52,1 er 7.9 point BAG ugeplanen (planmål uge 8: 60). Vægten har tabt 2.8 kg over de seneste 85 dage (75,2 → 72,4 kg).  \"Det er ikke om at have tid. Det er om at tage den.\"",
+  "coachSpeech": "Søndag — afslut uge 8 stærkt. {HL} Godt: 6/7 AF-dage — ugens mål er ramt. Fokus: 417 af 544 TSS er i hus — Cykel Z2 60 min står tilbage. 5 sessioner er misset — vinduerne er lukket. Keep moving forward. 📊 Store billede: CTL 52,1 er 7.9 point BAG ugeplanen (planmål uge 8: 60).  \"Kroppen tror, hvad sindet siger.\"",
   "coachHighlight": "Søvn på 7,8 timer er solid",
   "weekFocus": "Byg videre på Mallorca-formen med kontrolleret intensitet mod uge ni",
   "today": [
     {
       "discipline": "bike",
-      "title": "Cykel Z2 60 min",
+      "title": "Cykel Sa Calobra via Puig Major",
       "duration": "",
       "zone": "–",
       "desc": "",
@@ -101,6 +101,7 @@
       "disc": "bike",
       "label": "Cykel Sa Calobra via Puig Major",
       "done": true,
+      "today": true,
       "completion": "done",
       "completion_pct": null,
       "actual_tss": 83,
@@ -111,34 +112,19 @@
       "day": "Tir",
       "disc": "swim",
       "label": "Svøm 2000m åbent vand (Christiansborg-tempo)",
-      "done": true,
-      "completion": "done",
-      "completion_pct": null,
-      "actual_tss": 20,
-      "actual_mins": 39,
-      "planned_mins": null
+      "done": false
     },
     {
       "day": "Ons",
       "disc": "run",
       "label": "Løb 16 km Z1–Z2 til fyret",
-      "done": true,
-      "completion": "done",
-      "completion_pct": null,
-      "actual_tss": 98,
-      "actual_mins": 98,
-      "planned_mins": null
+      "done": false
     },
     {
       "day": "Tor",
       "disc": "strength",
       "label": "Styrke A Functional Strength 2 sæt",
-      "done": true,
-      "completion": "done",
-      "completion_pct": null,
-      "actual_tss": 10,
-      "actual_mins": 30,
-      "planned_mins": null
+      "done": false
     },
     {
       "day": "Tor",
@@ -147,48 +133,16 @@
       "done": false
     },
     {
-      "day": "Tor",
-      "disc": "commute",
-      "label": "Gentofte Cykling",
-      "done": true,
-      "extra": true
-    },
-    {
-      "day": "Tor",
-      "disc": "walk",
-      "label": "Gentofte Gang",
-      "done": true,
-      "extra": true
-    },
-    {
-      "day": "Fre",
-      "disc": "commute",
-      "label": "Gentofte Cykling",
-      "done": true,
-      "extra": true
-    },
-    {
       "day": "Lør",
       "disc": "run",
       "label": "Langløb 21 km Z2",
-      "done": true,
-      "completion": "done",
-      "completion_pct": null,
-      "actual_tss": 133,
-      "actual_mins": 109,
-      "planned_mins": null
+      "done": false
     },
     {
       "day": "Søn",
       "disc": "bike",
       "label": "Cykel Z2 60 min",
-      "done": true,
-      "today": true,
-      "completion": "done",
-      "completion_pct": 105,
-      "actual_tss": 45,
-      "actual_mins": 63,
-      "planned_mins": 60
+      "done": false
     }
   ],
   "ctlCurve": [
@@ -2325,6 +2279,7 @@
           "disc": "bike",
           "label": "Cykel Sa Calobra via Puig Major",
           "done": true,
+          "today": true,
           "completion": "done",
           "completion_pct": null,
           "actual_tss": 83,
@@ -2335,34 +2290,19 @@
           "day": "Tir",
           "disc": "swim",
           "label": "Svøm 2000m åbent vand (Christiansborg-tempo)",
-          "done": true,
-          "completion": "done",
-          "completion_pct": null,
-          "actual_tss": 20,
-          "actual_mins": 39,
-          "planned_mins": null
+          "done": false
         },
         {
           "day": "Ons",
           "disc": "run",
           "label": "Løb 16 km Z1–Z2 til fyret",
-          "done": true,
-          "completion": "done",
-          "completion_pct": null,
-          "actual_tss": 98,
-          "actual_mins": 98,
-          "planned_mins": null
+          "done": false
         },
         {
           "day": "Tor",
           "disc": "strength",
           "label": "Styrke A Functional Strength 2 sæt",
-          "done": true,
-          "completion": "done",
-          "completion_pct": null,
-          "actual_tss": 10,
-          "actual_mins": 30,
-          "planned_mins": null
+          "done": false
         },
         {
           "day": "Tor",
@@ -2371,48 +2311,16 @@
           "done": false
         },
         {
-          "day": "Tor",
-          "disc": "commute",
-          "label": "Gentofte Cykling",
-          "done": true,
-          "extra": true
-        },
-        {
-          "day": "Tor",
-          "disc": "walk",
-          "label": "Gentofte Gang",
-          "done": true,
-          "extra": true
-        },
-        {
-          "day": "Fre",
-          "disc": "commute",
-          "label": "Gentofte Cykling",
-          "done": true,
-          "extra": true
-        },
-        {
           "day": "Lør",
           "disc": "run",
           "label": "Langløb 21 km Z2",
-          "done": true,
-          "completion": "done",
-          "completion_pct": null,
-          "actual_tss": 133,
-          "actual_mins": 109,
-          "planned_mins": null
+          "done": false
         },
         {
           "day": "Søn",
           "disc": "bike",
           "label": "Cykel Z2 60 min",
-          "done": true,
-          "today": true,
-          "completion": "done",
-          "completion_pct": 105,
-          "actual_tss": 45,
-          "actual_mins": 63,
-          "planned_mins": 60
+          "done": false
         }
       ],
       "blockType": "BUILD",
@@ -2748,6 +2656,12 @@
       "done": 6,
       "total": 7,
       "label": "Uge 8"
+    },
+    {
+      "week": 9,
+      "done": 0,
+      "total": 1,
+      "label": "Uge 9"
     }
   ],
   "train_mins": {
@@ -2757,7 +2671,7 @@
     "walk": 60.0,
     "strength": 30.0,
     "openwater": 39.0,
-    "planned": 648.0,
+    "planned": 340.0,
     "actual_total": 679.0
   },
   "fatHistory": [
@@ -3060,8 +2974,8 @@
       "real": true
     }
   ],
-  "coachAssessmentHtml": "<p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\"><strong>Dag 56 af 98 · Søndag · Uge 8</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">💪 <strong>Træning & load</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">CTL er 52,1 og TSB er -14,6 — kroppen bærer en meningsfuld belastning uden at gå over grænsen. Ugen har haft god bredde: Sa Calobra, 2000m åbent vand, 16 km til fyret, styrke, langløb og en solid Z2-afslutning på cyklen i dag. Det eneste missede pas var Z2-cyklen torsdag. Til næste lignende langløb: hold dig i den langsommere ende af Z2-pace — lørdag trak du for hurtigt i starten, og HR nåede ikke at følge med.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">⚖️ <strong>Krop & kost</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Vægten er 72,4 kg — 2,4 kg fra målet under 70. Fedtprocenten er 21,6 %, 1,6 procentpoint fra målet under 20 %. Det er kombinationen der tæller: fedtprocenten er steget 0,1 point siden sidst, mens vægten er faldet — det antyder at du har mistet lidt muskelmasse, ikke fedt. Det er et advarselstegn i et capacity-år. Tjek proteinindtag og recovery-kost — der skal fedtet ned, ikke muskelmassen.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">🎯 <strong>AF-status & fokus for resten af ugen</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Du har 6 AF-dage ud af 7 dage gået — det er stærkt og over ugens mål på 5. Ugen slutter, som den begyndte: med kontrol. Intet planlagt i dag mere — brug resten af søndagen på restitution og en god aftenmad.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">📊 <strong>Store billede</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">CTL er 52,1 — du er 7,9 point bag ugeplanen på 60. Det afspejler ugens karakter snarere end manglende indsats: Mallorca-ugen indeholdt lange ture med meget coasting og gåture, som naturligt giver lavere TSS end strukturerede pas. Vægten har bevæget sig 2,8 kg ned over 85 dage — en kontrolleret og realistisk kurve. Nu gælder det om at holde retningen og sikre at fedtprocenten begynder at følge med ned.</p>",
-  "coachAssessmentTs": "19:11",
+  "coachAssessmentHtml": "<p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\"><strong>Dag 57 af 98 · Søndag · Uge 8</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">💪 <strong>Træning & load</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">CTL er 52,1 med TSB på -14,6 — kroppen har trukket et ordentligt læs denne uge. Sa Calobra-turen blev gennemført med 29,6% i Z2+Z3, men NP på 132W er det reelle billede på en hård, kuperet rute med meget coasting — ikke en fejl, men terrænet sætter dagsordenen. Til næste lignende bjergtur: skru wattene op på de flade passager, så du holder Z2-zonen bedre oppe. Langløbet og søndagens cykeltur ramte begge on target — godt arbejde der.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">⚖️ <strong>Krop & kost</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Ingen aktuel vægt- eller fedtprocentmåling denne uge — ingen vurdering mulig. Mål begge dele konsekvent, gerne samme tidspunkt morgen, så vi kan følge om det er fedt eller muskelmasse der bevæger sig.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">🎯 <strong>AF-status & fokus for resten af ugen</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Seks AF-dage ud af syv dage — det er stærkt, og du er godt over ugemålet på fem. Streak er stadig i gang. Der er ikke mere tilbage af ugen at tabe det på.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">📊 <strong>Store billede</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">CTL på 52,1 er 7,9 point bag ugeplanens mål på 60 — det er et mærkbart underskud, og det afspejler en uge med flere missede pas. Det er ikke katastrofalt, men det betyder at uge ni skal levere solidt og struktureret, uden at TSB presses ned under -30. Hold fokus på at ramme planens indhold næste uge — pas for pas.</p>",
+  "coachAssessmentTs": "00:00",
   "commute_pairing_warnings": [],
   "warnings": [
     {
@@ -3123,7 +3037,7 @@
   ],
   "coachAssessmentLastActId": "i169260209",
   "weekFocusWeek": 8,
-  "coachAssessmentPlanAtGen": "Cykel Z2 60 min",
+  "coachAssessmentPlanAtGen": "Cykel Sa Calobra via Puig Major",
   "weightGoal": 70,
   "bodyFatGoal": 20,
   "weightMovingAvg7": [
@@ -3340,8 +3254,8 @@
       "note": "Nøgle virker"
     }
   },
-  "credentialsCheckedTs": "2026-07-26T22:33:54.469817",
-  "coachAssessmentTsFull": "2026-07-26T19:11:32.153544",
+  "credentialsCheckedTs": "2026-07-27T00:00:14.555353",
+  "coachAssessmentTsFull": "2026-07-27T00:00:14.555334",
   "coachAssessmentWeightAtGen": 72.4,
   "coachAssessmentAfAtGen": 6,
   "event_structure_warnings": [],
