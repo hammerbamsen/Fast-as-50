@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-07-28 14:43",
+    "updated": "2026-07-28 16:59",
     "week": 9,
     "totalWeeks": 14,
     "blockType": "BUILD",
@@ -2502,7 +2502,7 @@
         {
           "day": "Ons",
           "disc": "bike",
-          "label": "Cykel bjerg-intervaller Z4 Mallorca",
+          "label": "Sa Calobra TEST via Puig Major",
           "done": false,
           "today": false
         },
@@ -3314,7 +3314,7 @@
       "note": "Nøgle virker"
     }
   },
-  "credentialsCheckedTs": "2026-07-28T12:43:20.344490",
+  "credentialsCheckedTs": "2026-07-28T14:59:16.755684",
   "coachAssessmentTsFull": "2026-07-28T12:43:20.344472",
   "coachAssessmentWeightAtGen": 72.1,
   "coachAssessmentAfAtGen": 2,
