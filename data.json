@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-07-28 06:11",
+    "updated": "2026-07-28 09:13",
     "week": 9,
     "totalWeeks": 14,
     "blockType": "BUILD",
@@ -11,25 +11,25 @@
   },
   "kpis": {
     "weight": {
-      "value": "72,3",
+      "value": "72,1",
       "unit": "kg",
-      "sub": "Sidst målt 27/7 · Mål <70 kg · snit 72,2 kg",
+      "sub": "Mål <70 kg · snit 72,2 kg",
       "color": "#E67E22"
     },
     "fat": {
-      "value": "21,1",
+      "value": "21,9",
       "unit": "%",
       "sub": "Mål <20%",
       "color": "#E67E22"
     },
     "ctl": {
-      "value": "50,9",
+      "value": "50,8",
       "unit": "",
       "sub": "Uge 9-mål 48 · Slutmål 43 (uge 14)",
       "color": "#27AE60"
     },
     "tsb": {
-      "value": "-7,2",
+      "value": "-7,3",
       "unit": "",
       "sub": "Form · CTL−ATL, frisk >0",
       "color": "#27AE60"
@@ -55,7 +55,7 @@
     "tssComp": {
       "value": "52",
       "unit": "TSS",
-      "sub": "52 af 272 planlagt TSS",
+      "sub": "52 af 260 planlagt TSS",
       "color": "#C0392B"
     },
     "bikeKm": {
@@ -82,13 +82,13 @@
     "target": 5,
     "streak": 1
   },
-  "coachSpeech": "Tirsdag — uge 9 af 14. {HL} Fokus: 52 af 272 TSS er i hus — 5 sessioner tilbage, heriblandt Svøm 1500m let teknisk, THRESHOLD-TEST løb 30 min (opdatér pace-zoner efter). 0 AF-dage i 2 afsluttede dage — 5 mangler i 5 dage tilbage. Keep moving forward.  \"Du bliver til det, du gør ofte.\"",
+  "coachSpeech": "Tirsdag — uge 9 af 14. {HL} Fokus: 52 af 260 TSS er i hus — 5 sessioner tilbage, heriblandt FTP-TEST 20 min (opdatér zoner efter), Svøm 1500m let teknisk. Vægt på 72,1 kg — hold protein højt og undgå lette kulhydrater om aftenen. 0 AF-dage i 2 afsluttede dage — 5 mangler i 5 dage tilbage. Hård uge — men det er sådan formen bygges. Hold ved.  \"Du bliver til det, du gør ofte.\"",
   "coachHighlight": "Søvn på 8,0 timer er solid",
   "weekFocus": "Sæt pejlemærker med tests og bevar energien til musikugen",
   "today": [
     {
-      "discipline": "swim",
-      "title": "Svøm 1500m let teknisk",
+      "discipline": "bike",
+      "title": "FTP-TEST 20 min (opdatér zoner efter)",
       "duration": "",
       "zone": "–",
       "desc": "",
@@ -116,21 +116,21 @@
     },
     {
       "day": "Tir",
-      "disc": "swim",
-      "label": "Svøm 1500m let teknisk",
+      "disc": "bike",
+      "label": "FTP-TEST 20 min (opdatér zoner efter)",
       "done": false,
       "today": true
     },
     {
       "day": "Ons",
-      "disc": "run",
-      "label": "THRESHOLD-TEST løb 30 min (opdatér pace-zoner efter)",
+      "disc": "swim",
+      "label": "Svøm 1500m let teknisk",
       "done": false
     },
     {
       "day": "Tor",
-      "disc": "bike",
-      "label": "FTP-TEST 20 min (opdatér zoner efter)",
+      "disc": "run",
+      "label": "THRESHOLD-TEST løb 20 min (opdatér pace-zoner efter)",
       "done": false
     },
     {
@@ -155,7 +155,7 @@
     47.2,
     49.7,
     51.0,
-    50.9
+    50.8
   ],
   "weightHistory": [
     null,
@@ -459,7 +459,11 @@
       "v": 72.3,
       "real": true
     },
-    null
+    {
+      "date": "2026-07-28",
+      "v": 72.1,
+      "real": true
+    }
   ],
   "hrvHistory": [
     {
@@ -1804,12 +1808,12 @@
     },
     {
       "date": "2026-07-27",
-      "v": -11.7,
+      "v": -8.6,
       "real": true
     },
     {
       "date": "2026-07-28",
-      "v": -7.2,
+      "v": -7.3,
       "real": true
     }
   ],
@@ -2355,21 +2359,21 @@
         },
         {
           "day": "Tir",
-          "disc": "swim",
-          "label": "Svøm 1500m let teknisk",
+          "disc": "bike",
+          "label": "FTP-TEST 20 min (opdatér zoner efter)",
           "done": false,
           "today": true
         },
         {
           "day": "Ons",
-          "disc": "run",
-          "label": "THRESHOLD-TEST løb 30 min (opdatér pace-zoner efter)",
+          "disc": "swim",
+          "label": "Svøm 1500m let teknisk",
           "done": false
         },
         {
           "day": "Tor",
-          "disc": "bike",
-          "label": "FTP-TEST 20 min (opdatér zoner efter)",
+          "disc": "run",
+          "label": "THRESHOLD-TEST løb 20 min (opdatér pace-zoner efter)",
           "done": false
         },
         {
@@ -2413,8 +2417,8 @@
         },
         {
           "day": "Tor",
-          "disc": "openwater",
-          "label": "OW-svøm 2500m SAMMENHÆNGENDE (Christiansborg-generalprøve)",
+          "disc": "bike",
+          "label": "Cykel Z2 45 min",
           "done": false,
           "today": false
         },
@@ -2427,8 +2431,8 @@
         },
         {
           "day": "Fre",
-          "disc": "bike",
-          "label": "Cykel Z2 45 min",
+          "disc": "openwater",
+          "label": "OW-svøm 2500m SAMMENHÆNGENDE (Christiansborg-generalprøve)",
           "done": false,
           "today": false
         },
@@ -2681,7 +2685,7 @@
   "train_mins": {
     "run": 42.0,
     "strength": 28.0,
-    "planned": 340.0,
+    "planned": 330.0,
     "actual_total": 70.0
   },
   "fatHistory": [
@@ -2986,13 +2990,17 @@
       "v": 21.1,
       "real": true
     },
-    null
+    {
+      "date": "2026-07-28",
+      "v": 21.9,
+      "real": true
+    }
   ],
-  "coachAssessmentHtml": "<p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\"><strong>Dag 58 af 98 · Tirsdag · Uge 9</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">💪 <strong>Træning & load</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">CTL ligger på 50.9 — det er over ugemålets 48, og TSB på -7.2 er fuldt håndterbart. Mandagens løb gik lidt for hurtigt: kun 30% af tiden lå i mål-pace-zonen, selvom HR viste Z1 — sænk tempoet markant til næste Z1-løb. Dagens svøm er endnu ikke gennemført — hold den teknisk og let, det er ikke en konditionsøvelse i dag, men en kalibrering.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">⚖️ <strong>Krop & kost</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Der er ingen aktuel vægt- eller fedtprocentmåling at vurdere ud fra — hop på vægten og tag en fedtprocentmåling, så der er noget konkret at styre efter.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">🎯 <strong>AF-status & fokus for resten af ugen</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Du har 0 AF-dage ud af 2 dage i ugen — der er plads til at rette op. Ugens vigtigste opgaver er threshold-testen onsdag og FTP-testen torsdag, som begge sætter nye zoner for resten af blokken — kom udhvilet til dem. Bevar energien: testene er pejlemærker, ikke præstationer.</p>",
-  "coachAssessmentTs": "00:55",
+  "coachAssessmentHtml": "<p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\"><strong>Dag 58 af 98 · Tirsdag · Uge 9</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">💪 <strong>Træning & load</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">CTL på 50.8 ligger allerede over ugens mål på 48 — du er foran planen, og TSB på -7.3 er uproblematisk. Mandagens løb gik lidt for hurtigt: HR nåede ikke at følge med det høje tempo, og kun 33% af tiden lå i Z1-pace. Tag det med til næste lette løbetur — sænk tempoet aktivt fra start, selv om det føles overdrevet roligt. Nu handler det om at få FTP-testen overstået i dag: giv den fuldt gas i de 20 minutter, opdatér zonerne bagefter, og lad det sætte rammen for resten af ugens tests.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">⚖️ <strong>Krop & kost</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Vægten er 72.1 kg — 2.1 kg fra målet. Fedtprocenten er steget 0.8 point siden sidst til 21.9%, mens vægten ikke har bevæget sig tilsvarende nedad. Det tyder på at kroppen holder fast i fedt og muligvis mister lidt muskelmasse — ikke en sejr, selvom tallet ser roligt ud. Du er 1.9 procentpoint fra <20%-målet. Hold øje med proteinindtaget og undgå at spise dig i underskud på de hårde test-dage.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">🎯 <strong>AF-status & fokus for resten af ugen</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Du har 0 AF-dage ud af 2 dage gået — der er stadig 5 dage tilbage til at nå de 5. FTP-testen i dag og threshold-testen torsdag er ugens to ankerpunkter — alt andet er støtteværk. Hold energien samlet om de to tests, og lad de lette svømmepas onsdag og lørdag fungere som restitution, ikke præstation.</p>",
+  "coachAssessmentTs": "07:14",
   "commute_pairing_warnings": [],
   "warnings": [],
-  "tsb": -7.2,
+  "tsb": -7.3,
   "swimHistory": [
     {
       "week": 1,
@@ -3051,7 +3059,7 @@
   ],
   "coachAssessmentLastActId": "i169640378",
   "weekFocusWeek": 9,
-  "coachAssessmentPlanAtGen": "Svøm 1500m let teknisk",
+  "coachAssessmentPlanAtGen": "FTP-TEST 20 min (opdatér zoner efter)",
   "weightGoal": 70,
   "bodyFatGoal": 20,
   "weightMovingAvg7": [
@@ -3144,7 +3152,7 @@
     72.1,
     72.18,
     72.2,
-    72.2
+    72.18
   ],
   "fatMovingAvg7": [
     null,
@@ -3236,10 +3244,10 @@
     21.13,
     21.25,
     21.22,
-    21.22
+    21.33
   ],
-  "weightToGoal": 2.3,
-  "bodyFatToGoal": 1.1,
+  "weightToGoal": 2.1,
+  "bodyFatToGoal": 1.9,
   "ctlPlan": [
     34,
     36,
@@ -3268,10 +3276,10 @@
       "note": "Nøgle virker"
     }
   },
-  "credentialsCheckedTs": "2026-07-28T04:11:14.493472",
-  "coachAssessmentTsFull": "2026-07-28T00:55:41.457415",
-  "coachAssessmentWeightAtGen": 72.3,
+  "credentialsCheckedTs": "2026-07-28T07:14:12.318165",
+  "coachAssessmentTsFull": "2026-07-28T07:14:12.318150",
+  "coachAssessmentWeightAtGen": 72.1,
   "coachAssessmentAfAtGen": 0,
   "event_structure_warnings": [],
-  "coachAssessmentFatAtGen": 21.1
+  "coachAssessmentFatAtGen": 21.9
 }
