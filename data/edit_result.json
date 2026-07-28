@@ -226,5 +226,22 @@
   "athlete": "kennet",
   "request_ts": "2026-07-28T05:56:54+00:00",
   "request_id": "rms48tlm02kok"
+ },
+ "rms48v17n71dq": {
+  "status": "ok",
+  "gate": {
+   "status": "ok",
+   "flags": [],
+   "msg": "Godkendt"
+  },
+  "dates_changed": [
+   "2026-07-30",
+   "2026-07-30"
+  ],
+  "plan_commit": "7388c59ee3d21487aa91a0135cf9ae734f4b51b1",
+  "sync_errors": [],
+  "athlete": "kennet",
+  "request_ts": "2026-07-28T05:58:01+00:00",
+  "request_id": "rms48v17n71dq"
  }
 }
