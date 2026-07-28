@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-07-28 10:34",
+    "updated": "2026-07-28 10:45",
     "week": 9,
     "totalWeeks": 14,
     "blockType": "BUILD",
@@ -3287,10 +3287,91 @@
       "note": "Nøgle virker"
     }
   },
-  "credentialsCheckedTs": "2026-07-28T08:34:42.401566",
+  "credentialsCheckedTs": "2026-07-28T08:45:08.634438",
   "coachAssessmentTsFull": "2026-07-28T08:05:08.743919",
   "coachAssessmentWeightAtGen": 72.1,
   "coachAssessmentAfAtGen": 0,
   "event_structure_warnings": [],
-  "coachAssessmentFatAtGen": 21.9
+  "coachAssessmentFatAtGen": 21.9,
+  "zones": {
+    "runThreshold": "4:20/km",
+    "bikeFtpW": 278,
+    "run": {
+      "Z1": ">5:34/km",
+      "Z2": "4:56-5:33/km",
+      "Z3": "4:26-4:55/km",
+      "Z4": "4:13-4:25/km",
+      "Z5": "3:53-4:12/km",
+      "Z6": "<3:52/km"
+    },
+    "bike": {
+      "Z1": "44-56% FTP",
+      "Z2": "56-76% FTP",
+      "Z3": "76-91% FTP",
+      "Z4": "91-100% FTP",
+      "Z5": "106-115% FTP"
+    },
+    "thresholdSec": 260,
+    "ftpW": 278,
+    "runPct": {
+      "Z1": [
+        null,
+        78
+      ],
+      "Z2": [
+        78,
+        88
+      ],
+      "Z3": [
+        88,
+        98
+      ],
+      "Z4": [
+        98,
+        103
+      ],
+      "Z5": [
+        103,
+        112
+      ],
+      "Z6": [
+        112,
+        null
+      ]
+    },
+    "bikePct": {
+      "Z1": [
+        null,
+        55.56
+      ],
+      "Z2": [
+        55.56,
+        75.93
+      ],
+      "Z3": [
+        75.93,
+        90.74
+      ],
+      "Z4": [
+        90.74,
+        105.56
+      ],
+      "Z5": [
+        105.56,
+        120.37
+      ],
+      "Z6": [
+        120.37,
+        null
+      ]
+    },
+    "bikeWatt": {
+      "Z1": "<154 W",
+      "Z2": "154-211 W",
+      "Z3": "211-252 W",
+      "Z4": "252-293 W",
+      "Z5": "293-335 W",
+      "Z6": ">335 W"
+    }
+  }
 }
