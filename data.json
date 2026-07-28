@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-07-28 09:13",
+    "updated": "2026-07-28 10:04",
     "week": 9,
     "totalWeeks": 14,
     "blockType": "BUILD",
@@ -23,16 +23,16 @@
       "color": "#E67E22"
     },
     "ctl": {
-      "value": "50,8",
+      "value": "52,7",
       "unit": "",
       "sub": "Uge 9-mål 48 · Slutmål 43 (uge 14)",
       "color": "#27AE60"
     },
     "tsb": {
-      "value": "-7,3",
+      "value": "-16,2",
       "unit": "",
-      "sub": "Form · CTL−ATL, frisk >0",
-      "color": "#27AE60"
+      "sub": "Hård blok · CTL−ATL, frisk >0",
+      "color": "#E67E22"
     },
     "sleep": {
       "value": "8,0",
@@ -53,16 +53,16 @@
       "color": "#7A6A58"
     },
     "tssComp": {
-      "value": "52",
+      "value": "133",
       "unit": "TSS",
-      "sub": "52 af 260 planlagt TSS",
+      "sub": "133 af 260 planlagt TSS",
       "color": "#C0392B"
     },
     "bikeKm": {
-      "value": "0,0",
+      "value": "41,4",
       "unit": "km",
       "sub": "Cykel denne uge",
-      "color": "#7A6A58"
+      "color": "#E67E22"
     },
     "swimM": {
       "value": "0",
@@ -82,7 +82,7 @@
     "target": 5,
     "streak": 1
   },
-  "coachSpeech": "Tirsdag — uge 9 af 14. {HL} Fokus: 52 af 260 TSS er i hus — 5 sessioner tilbage, heriblandt FTP-TEST 20 min (opdatér zoner efter), Svøm 1500m let teknisk. Vægt på 72,1 kg — hold protein højt og undgå lette kulhydrater om aftenen. 0 AF-dage i 2 afsluttede dage — 5 mangler i 5 dage tilbage. Hård uge — men det er sådan formen bygges. Hold ved.  \"Du bliver til det, du gør ofte.\"",
+  "coachSpeech": "Tirsdag — uge 9 af 14. {HL} Fokus: 133 af 260 TSS er i hus — 4 sessioner tilbage, heriblandt Svøm 1500m let teknisk, THRESHOLD-TEST løb 20 min (opdatér pace-zoner efter). Vægt på 72,1 kg — hold protein højt og undgå lette kulhydrater om aftenen. 0 AF-dage i 2 afsluttede dage — 5 mangler i 5 dage tilbage. Hård uge — men det er sådan formen bygges. Hold ved.  \"Du bliver til det, du gør ofte.\"",
   "coachHighlight": "Søvn på 8,0 timer er solid",
   "weekFocus": "Sæt pejlemærker med tests og bevar energien til musikugen",
   "today": [
@@ -92,7 +92,7 @@
       "duration": "",
       "zone": "–",
       "desc": "",
-      "completed": false
+      "completed": true
     }
   ],
   "week_sessions": [
@@ -118,8 +118,13 @@
       "day": "Tir",
       "disc": "bike",
       "label": "FTP-TEST 20 min (opdatér zoner efter)",
-      "done": false,
-      "today": true
+      "done": true,
+      "today": true,
+      "completion": "done",
+      "completion_pct": 365,
+      "actual_tss": 81,
+      "actual_mins": 73,
+      "planned_mins": 20
     },
     {
       "day": "Ons",
@@ -155,7 +160,7 @@
     47.2,
     49.7,
     51.0,
-    50.8
+    52.7
   ],
   "weightHistory": [
     null,
@@ -1813,7 +1818,7 @@
     },
     {
       "date": "2026-07-28",
-      "v": -7.3,
+      "v": -16.1,
       "real": true
     }
   ],
@@ -2361,8 +2366,13 @@
           "day": "Tir",
           "disc": "bike",
           "label": "FTP-TEST 20 min (opdatér zoner efter)",
-          "done": false,
-          "today": true
+          "done": true,
+          "today": true,
+          "completion": "done",
+          "completion_pct": 365,
+          "actual_tss": 81,
+          "actual_mins": 73,
+          "planned_mins": 20
         },
         {
           "day": "Ons",
@@ -2683,10 +2693,11 @@
     }
   ],
   "train_mins": {
+    "bike": 73.0,
     "run": 42.0,
     "strength": 28.0,
     "planned": 330.0,
-    "actual_total": 70.0
+    "actual_total": 143.0
   },
   "fatHistory": [
     null,
@@ -2996,11 +3007,11 @@
       "real": true
     }
   ],
-  "coachAssessmentHtml": "<p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\"><strong>Dag 58 af 98 · Tirsdag · Uge 9</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">💪 <strong>Træning & load</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">CTL på 50.8 ligger allerede over ugens mål på 48 — du er foran planen, og TSB på -7.3 er uproblematisk. Mandagens løb gik lidt for hurtigt: HR nåede ikke at følge med det høje tempo, og kun 33% af tiden lå i Z1-pace. Tag det med til næste lette løbetur — sænk tempoet aktivt fra start, selv om det føles overdrevet roligt. Nu handler det om at få FTP-testen overstået i dag: giv den fuldt gas i de 20 minutter, opdatér zonerne bagefter, og lad det sætte rammen for resten af ugens tests.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">⚖️ <strong>Krop & kost</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Vægten er 72.1 kg — 2.1 kg fra målet. Fedtprocenten er steget 0.8 point siden sidst til 21.9%, mens vægten ikke har bevæget sig tilsvarende nedad. Det tyder på at kroppen holder fast i fedt og muligvis mister lidt muskelmasse — ikke en sejr, selvom tallet ser roligt ud. Du er 1.9 procentpoint fra <20%-målet. Hold øje med proteinindtaget og undgå at spise dig i underskud på de hårde test-dage.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">🎯 <strong>AF-status & fokus for resten af ugen</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Du har 0 AF-dage ud af 2 dage gået — der er stadig 5 dage tilbage til at nå de 5. FTP-testen i dag og threshold-testen torsdag er ugens to ankerpunkter — alt andet er støtteværk. Hold energien samlet om de to tests, og lad de lette svømmepas onsdag og lørdag fungere som restitution, ikke præstation.</p>",
-  "coachAssessmentTs": "07:14",
+  "coachAssessmentHtml": "<p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\"><strong>Dag 58 af 98 · Tirsdag · Uge 9</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">💪 <strong>Træning & load</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">CTL på 52.7 er solidt over ugemålet på 48 — ugen har allerede leveret god kvalitet med løb, styrke og nu en gennemført FTP-test. TSB på -16.2 er inden for Friel-grænsen, men du er ikke langt fra at mærke ophobningen. FTP-testen viste fin zone-fordeling med 46% i Z2-området og bevidste stigninger udover det — et godt pejlemærke for dine nye zoner. Til din næste FTP-lignende indsats: husk at zone-opdateringen fra i dag er fundamentet for alt fremadrettet arbejde — brug de nye tal fra nu af.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">⚖️ <strong>Krop & kost</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Vægten på 72.1 kg er 2.1 kg fra målet, men fedtprocenten på 21.9% er det der kræver opmærksomhed — den er steget 0.8 procentpoint siden 27. juli og er nu 1.9 point fra målet på under 20%. Det betyder at du ikke taber fedt i øjeblikket — og i et capacity-år er det netop fedtet, ikke muskelmassen, der skal falde. Kost og søvn er dit vigtigste redskab her — træningsvolumen alene løser det ikke. Hold proteinet højt og vær skarp på de kalorier der ikke støtter restitution.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">🎯 <strong>AF-status & fokus for resten af ugen</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Du har 0 AF-dage ud af 2 dage gået i ugen — der er stadig god plads til at nå de 5, men det kræver konsistens herfra. Ugens fokus er pejlemærker og energi til musikugen — torsdag bringer threshold-løbetesten, og den bliver endnu bedre hvis du ankommer frisk. Hav pace-zonerne klar inden torsdag, og lad resten af ugen understøtte testen — ikke undergrave den.</p>",
+  "coachAssessmentTs": "08:05",
   "commute_pairing_warnings": [],
   "warnings": [],
-  "tsb": -7.3,
+  "tsb": -16.2,
   "swimHistory": [
     {
       "week": 1,
@@ -3057,7 +3068,7 @@
       "cumulative": 18178.0
     }
   ],
-  "coachAssessmentLastActId": "i169640378",
+  "coachAssessmentLastActId": "i169968083",
   "weekFocusWeek": 9,
   "coachAssessmentPlanAtGen": "FTP-TEST 20 min (opdatér zoner efter)",
   "weightGoal": 70,
@@ -3276,8 +3287,8 @@
       "note": "Nøgle virker"
     }
   },
-  "credentialsCheckedTs": "2026-07-28T07:14:12.318165",
-  "coachAssessmentTsFull": "2026-07-28T07:14:12.318150",
+  "credentialsCheckedTs": "2026-07-28T08:05:08.743935",
+  "coachAssessmentTsFull": "2026-07-28T08:05:08.743919",
   "coachAssessmentWeightAtGen": 72.1,
   "coachAssessmentAfAtGen": 0,
   "event_structure_warnings": [],
