@@ -1,0 +1,32 @@
+name: Sæt zoner i Intervals.icu (fra plan.json)
+
+on:
+  workflow_dispatch:
+    inputs:
+      sport:
+        description: 'Hvilken sport (bike, run, both)'
+        required: false
+        default: 'bike'
+      dry_run:
+        description: 'true = vis kun hvad der ville ske, ingen skrivning'
+        required: false
+        default: 'true'
+
+permissions:
+  contents: read
+
+jobs:
+  set-zones:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: pip install requests
+      - name: Skub zoner til Intervals.icu
+        env:
+          INTERVALS_API_KEY: ${{ secrets.INTERVALS_API_KEY }}
+          SPORT: ${{ github.event.inputs.sport || 'bike' }}
+          DRY_RUN: ${{ github.event.inputs.dry_run || 'true' }}
+        run: python3 scripts/set_zones.py
