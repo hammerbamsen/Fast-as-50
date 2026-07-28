@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-07-28 20:14",
+    "updated": "2026-07-28 22:01",
     "week": 9,
     "totalWeeks": 14,
     "blockType": "BUILD",
@@ -3034,8 +3034,8 @@
       "real": true
     }
   ],
-  "coachAssessmentHtml": "<p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\"><strong>Dag 58 af 98 · Tirsdag · Uge 9</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">💪 <strong>Træning & load</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">CTL ligger på 53,1 — markant over ugemålet på 48, og TSB er -17,6, hvilket er kontrolleret negativt og stadig langt fra grænsen på -30. FTP-testen i dag viste god power-struktur: 46% i Z2 og resten i højere zoner, præcis som forventet i en testprotokol. Til mandagens løb: næste gang du laver Z1-løb, sænk tempoet — to tredjedele af turen lå i en hurtigere pace-zone end target, og det æder restitution du ikke behøver bruge.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">⚖️ <strong>Krop & kost</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">72,1 kg er 2,1 kg fra målet — men fedtprocenten på 21,9 % er steget 0,8 point siden sidst og ligger 1,9 point fra målet på under 20 %. Det betyder at den seneste periode ikke har bevæget sig i den rigtige retning: kroppen holder på fedtvæv, og det er det der skal adresseres. Hold proteinindtaget højt og sørg for at energiunderskuddet er moderat — et for stort underskud i en træningsuge som denne giver netop dette mønster.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">🎯 <strong>AF-status & fokus for resten af ugen</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">To dage inde i ugen, to AF-dage — du er på sporet. Resten af ugen byder på threshold-testen torsdag og to svømpas — hold energien der og lad musikugen være pejlemærket. Det er ikke en uge for ekstra belastning.</p>",
-  "coachAssessmentTs": "12:43",
+  "coachAssessmentHtml": "<p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\"><strong>Dag 58 af 98 · Tirsdag · Uge 9</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">💪 <strong>Træning & load</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">FTP-testen er i hus, og du landede godt med watt-fordelingen — over halvdelen af tiden over Z2 er præcis hvad en 20-minutters test skal se ud. CTL er på 53.1, klart over ugeplanen på 48, og TSB er -17.6, så du er belastet men inden for grænsen. Mandagens løb gik for hurtigt — over to tredjedele af tiden lå du over Z1-target. Tag det med til torsdag og Fredag: sæt tempoet markant ned fra start, også selv om det føles kunstigt langsomt.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">⚖️ <strong>Krop & kost</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Vægten er 72.1 kg — 2.1 kg fra målet. Fedtprocenten er steget 0.8 procentpoint siden sidst til 21.9 %, og det er det vigtigste tal her. Du er endnu 1.9 procentpoint fra <20 %-målet, og retningen er den forkerte. Vægten alene fortæller ikke historien — fokus skal ligge på at beskytte muskelmasse og reducere fedt, og det kræver at mad og søvn prioriteres mindst ligeså seriøst som træningen.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">🎯 <strong>AF-status & fokus for resten af ugen</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Du er 2 ud af 2 dage i denne uge uden alkohol — stærkt start og streaken er oppe på 3 dage. Resten af ugen er teknisk og præcisionsorienteret: rolig svøm onsdag, tærskeltest på løb torsdag, og en lang Z2-tur fredag. Bevar energien — ugen her er et pejlemærke, ikke en præstationsuge.</p>",
+  "coachAssessmentTs": "20:01",
   "commute_pairing_warnings": [],
   "warnings": [],
   "tsb": -17.6,
@@ -3314,8 +3314,8 @@
       "note": "Nøgle virker"
     }
   },
-  "credentialsCheckedTs": "2026-07-28T18:14:45.223550",
-  "coachAssessmentTsFull": "2026-07-28T12:43:20.344472",
+  "credentialsCheckedTs": "2026-07-28T20:01:21.459316",
+  "coachAssessmentTsFull": "2026-07-28T20:01:21.459299",
   "coachAssessmentWeightAtGen": 72.1,
   "coachAssessmentAfAtGen": 2,
   "event_structure_warnings": [],
