@@ -139,6 +139,19 @@ def main():
     data['meta']['totalWeeks']           = TOTAL_WEEKS
     data['ctlPlan']                      = CTL_PLAN
 
+    # --- Zoner: plan.json er master, dashboardet laeser dem herfra (28/7-2026) ---
+    # index.html havde hardcodede fallbacks (260 sek/km, 270 W) og fulgte aldrig
+    # med naar en test flyttede taersklen. Ikke-blokerende: fejler laesningen,
+    # bevares den zones-blok der allerede stod i data.json.
+    try:
+        from pathlib import Path as _Path
+        _plan_path = _Path(__file__).resolve().parent.parent / 'data' / 'plan.json'
+        _zones = json.loads(_plan_path.read_text(encoding='utf-8'))['athletes']['kennet']['zones']
+        data['zones'] = _zones
+        print(f"  Zoner -> data.json: {_zones.get('runThreshold')} / {_zones.get('ftpW')} W")
+    except Exception as _e:
+        print(f"  Zoner kunne ikke laeses fra plan.json (ikke-blokerende): {_e}")
+
     # --- Mål (sættes FØR KPI-blokken bygges, da den læser disse felter) ---
     data['weightGoal']   = 70
     data['bodyFatGoal']  = 20

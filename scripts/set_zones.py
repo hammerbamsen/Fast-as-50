@@ -14,6 +14,7 @@ Env:
 import json
 import os
 import sys
+from datetime import datetime, timezone
 
 import requests
 
@@ -21,6 +22,7 @@ ATHLETE = "i599466"
 BASE = f"https://intervals.icu/api/v1/athlete/{ATHLETE}/sport-settings"
 SPORT_IDS = {"bike": 2484017, "run": 2484018}
 PLAN = "data/plan.json"
+SYNC_LOG = "data/zone_sync.json"
 
 
 def target_value(sport, zones):
@@ -61,6 +63,13 @@ def main():
 
     print(f"MODE: {'DRY-RUN (ingen skrivning)' if dry else 'LIVE'}  SPORT: {sports}")
     failures = []
+    log = {
+        "ts": datetime.now(timezone.utc).isoformat(timespec="seconds"),
+        "mode": "dry-run" if dry else "live",
+        "run": os.environ.get("GITHUB_RUN_ID", ""),
+        "sports": sports,
+        "results": [],
+    }
 
     for sport in sports:
         sid = SPORT_IDS[sport]
@@ -74,8 +83,14 @@ def main():
         print(f"\n--- {sport.upper()} (id {sid}, types={cur.get('types')}) ---")
         print(f"  {field}: {have}  ->  {want}")
 
+        rec = {"sport": sport, "id": sid, "field": field,
+               "before": have, "target": want,
+               "written": False, "verified": None}
+        log["results"].append(rec)
+
         if same(field, have, want):
             print("  uaendret, springer over")
+            rec["verified"] = True
             continue
         if dry:
             print("  DRY-RUN: ingen PUT sendt")
@@ -90,19 +105,31 @@ def main():
             resp = requests.put(BASE, auth=auth, json=[body], timeout=30)
             path = BASE
         print(f"  PUT {path} -> HTTP {resp.status_code}")
+        rec["http"] = resp.status_code
         if resp.status_code >= 300:
+            rec["verified"] = False
             failures.append(f"{sport}: PUT {resp.status_code} {resp.text[:200]}")
             continue
+        rec["written"] = True
 
         # Verificer INDHOLD, ikke status
         v = requests.get(BASE, auth=auth, timeout=30)
         v.raise_for_status()
         after = {s["id"]: s for s in v.json()}.get(sid, {}).get(field)
         print(f"  VERIFIKATION re-GET: {field} = {after}")
-        if not same(field, after, want):
+        rec["after"] = after
+        rec["verified"] = same(field, after, want)
+        if not rec["verified"]:
             failures.append(f"{sport}: re-GET viser {after}, forventede {want}")
         else:
             print("  OK")
+
+    log["failures"] = failures
+    log["ok"] = not failures
+    with open(SYNC_LOG, "w", encoding="utf-8") as fh:
+        json.dump(log, fh, indent=2, ensure_ascii=False)
+        fh.write("\n")
+    print(f"\nSkrev {SYNC_LOG}")
 
     if failures:
         print("\nFEJL:")

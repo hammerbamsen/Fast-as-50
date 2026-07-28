@@ -231,3 +231,63 @@ def test_workout_library_loadable():
     assert len(ids) == len(set(ids)), "Duplikate template-ids"
     assert "hvile" in ids
     assert "cykel-z2-90" in ids
+
+
+# -- set_zones (28/7-2026) ----------------------------------------------------
+
+def test_set_zones_ftp_updates_derived_watt():
+    plan = _plan_copy()
+    res = edit_apply.apply_edit(json.dumps(plan), "set_zones", "zones",
+                                {"ftpW": 300})
+    assert res["status"] == "ok"
+    z = json.loads(res["new_plan_raw"])["athletes"]["kennet"]["zones"]
+    assert z["ftpW"] == 300
+    assert z["bikeFtpW"] == 300           # legacy-spejl følger med
+    assert z["bikeWatt"]["Z4"] == "272-317 W"
+    assert z["run"] == plan["athletes"]["kennet"]["zones"]["run"]  # løb urørt
+
+
+def test_set_zones_threshold_updates_derived_pace():
+    plan = _plan_copy()
+    res = edit_apply.apply_edit(json.dumps(plan), "set_zones", "zones",
+                                {"thresholdSec": 250})
+    assert res["status"] == "ok"
+    z = json.loads(res["new_plan_raw"])["athletes"]["kennet"]["zones"]
+    assert z["thresholdSec"] == 250
+    assert z["runThreshold"] == "4:10/km"
+    assert z["run"]["Z4"] == "4:03-4:15/km"
+    assert z["bikeWatt"] == plan["athletes"]["kennet"]["zones"]["bikeWatt"]
+
+
+def test_set_zones_roundtrip_is_identity():
+    """Sæt de vaerdier planen allerede har -> zones skal vaere uaendret."""
+    plan = _plan_copy()
+    z0 = plan["athletes"]["kennet"]["zones"]
+    res = edit_apply.apply_edit(json.dumps(plan), "set_zones", "zones",
+                                {"thresholdSec": z0["thresholdSec"],
+                                 "ftpW": z0["ftpW"]})
+    z1 = json.loads(res["new_plan_raw"])["athletes"]["kennet"]["zones"]
+    assert z1 == z0
+
+
+def test_set_zones_changes_no_dates():
+    """dates_changed skal vaere tom — ellers rammer orkestratoren Intervals."""
+    plan = _plan_copy()
+    res = edit_apply.apply_edit(json.dumps(plan), "set_zones", "zones",
+                                {"ftpW": 285})
+    assert res["dates_changed"] == []
+
+
+def test_set_zones_leaves_days_untouched():
+    plan = _plan_copy()
+    res = edit_apply.apply_edit(json.dumps(plan), "set_zones", "zones",
+                                {"ftpW": 285, "thresholdSec": 255})
+    new = json.loads(res["new_plan_raw"])
+    assert new["athletes"]["kennet"]["days"] == plan["athletes"]["kennet"]["days"]
+
+
+@pytest.mark.parametrize("params", [{"ftpW": 40}, {"thresholdSec": 900}, {}])
+def test_set_zones_rejects_nonsense(params):
+    plan = _plan_copy()
+    with pytest.raises(ValueError):
+        edit_apply.apply_edit(json.dumps(plan), "set_zones", "zones", params)

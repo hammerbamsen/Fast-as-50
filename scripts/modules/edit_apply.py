@@ -22,6 +22,7 @@ from datetime import date, datetime, timezone
 from typing import Optional
 
 from . import friel
+from . import zones as zone_math
 
 
 # -- Friel-gate ---------------------------------------------------------------
@@ -51,6 +52,19 @@ def _simulate_mutation(plan: dict, action: str, entry_id: str,
         if "fitnessSeed" in sim:
             restored["fitnessSeed"] = sim["fitnessSeed"]
         return restored, "restore", ""
+
+    # Særtilfælde: zoner hører til atleten, ikke til en entry. Håndteres før
+    # entry-opslaget, præcis som restore_from_commit.
+    if action == "set_zones":
+        z = sim["athletes"][athlete].get("zones")
+        if not z:
+            raise ValueError(f"Atlet {athlete!r} har ingen zones-blok")
+        sim["athletes"][athlete]["zones"] = zone_math.set_zones(
+            z,
+            threshold_sec=params.get("thresholdSec"),
+            ftp_w=params.get("ftpW"),
+        )
+        return sim, "zones", ""
 
     ath = sim["athletes"][athlete]
 
@@ -263,7 +277,10 @@ def apply_edit(plan_json_raw: str, action: str, entry_id: str,
         plan, action, entry_id, params or {}, athlete=athlete)
     gate = gate_check(plan, sim_plan, confirmed_warn=confirmed_warn, athlete=athlete)
 
-    dates = [primary_date] + ([extra_date] if extra_date else [])
+    # set_zones rører ingen dage. Uden dette ville orkestratoren forsøge
+    # intervals_delete_date("zones") og outlook_sync_date("zones", ...).
+    dates = [] if action == "set_zones" else (
+        [primary_date] + ([extra_date] if extra_date else []))
     result = {
         "status": gate["status"],
         "gate": gate,

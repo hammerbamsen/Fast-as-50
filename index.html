@@ -323,10 +323,15 @@ const C = {
 
 // ── Zoneberegner (9/7-2026): dynamiske zoner fra tærskel + FTP ────────────
 // Faktorer kalibreret så defaults (4:20 min/km, 270 W) reproducerer de
-// oprindelige zoner eksakt. localStorage: fast50_thr_sec / fast50_ftp.
+// oprindelige zoner eksakt. Kilde: data.json -> D.zones (fra plan.json).
 const ZONE_CALC = {
-  thrSec(){ return parseInt(localStorage.getItem('fast50_thr_sec')) || 260; },
-  ftp(){ return parseInt(localStorage.getItem('fast50_ftp')) || 270; },
+  // 28/7-2026: zoner kommer fra data/plan.json via data.json (D.zones).
+  // Før dette var 260/270 hardcodede fallbacks, og dashboardet fulgte aldrig
+  // med når en test flyttede tærsklen — plan.json og appen kunne stå med
+  // hvert sit tal i ubestemt tid. localStorage er fjernet med vilje:
+  // plan.json er master, og Beregn-knappen skriver nu DERTIL.
+  thrSec(){ return (D && D.zones && D.zones.thresholdSec) || 260; },
+  ftp(){ return (D && D.zones && D.zones.ftpW) || 270; },
   fmtPace(s){ return Math.floor(s/60) + ':' + String(Math.round(s%60)).padStart(2,'0'); },
   runZones(){
     const t = this.thrSec();
@@ -365,27 +370,54 @@ function saveZoneCalc(){
   const sec = parseInt(m[1])*60 + parseInt(m[2]);
   if(sec < 150 || sec > 480){ alert('Tempo uden for rimeligt interval (2:30\u20138:00)'); return; }
   if(!w || w < 100 || w > 500){ alert('FTP skal v\u00e6re 100\u2013500 W'); return; }
-  localStorage.setItem('fast50_thr_sec', sec);
-  localStorage.setItem('fast50_ftp', w);
-  render();
+  saveZonesToPlan(sec, w);
+}
+
+// Skriver zonerne til data/plan.json gennem Worker'ens /plan-edit.
+// Alt udledt (pace-baand, watt-baand) genberegnes server-side i
+// modules/zones.py — klienten sender KUN de to kildevaerdier.
+async function saveZonesToPlan(sec, w){
+  const btn = document.getElementById('zc-save');
+  const msg = document.getElementById('zc-msg');
+  const say = t => { if (msg) msg.textContent = t; };
+  if (btn) { btn.disabled = true; btn.textContent = 'Gemmer\u2026'; }
+  const requestId = 'z' + Date.now().toString(36) + Math.random().toString(36).slice(2,6);
+  try {
+    await dispatchViaWorker('/plan-edit', {
+      requestId, action: 'set_zones', entryId: 'zones',
+      params: { thresholdSec: sec, ftpW: w }, confirmedWarn: false
+    });
+  } catch(e) {
+    say('Kunne ikke sende: ' + (e.message || e));
+    if (btn) { btn.disabled = false; btn.textContent = 'Beregn'; }
+    return;
+  }
+  say('Sendt \u2014 opdaterer plan.json\u2026');
+  for (let i = 0; i < 40; i++){
+    await new Promise(r => setTimeout(r, 3000));
+    try {
+      const r = await fetch('https://raw.githubusercontent.com/hammerbamsen/fast-as-50/main/data/edit_result.json?t=' + Date.now());
+      if (!r.ok) continue;
+      const res = (await r.json())[requestId];
+      if (!res) continue;
+      if (res.status === 'ok') {
+        D.zones = Object.assign({}, D.zones, { thresholdSec: sec, ftpW: w });
+        say('Gemt. Zonerne opdateres n\u00e6ste gang data.json k\u00f8rer.');
+        render();
+      } else {
+        say('Afvist: ' + ((res.gate && res.gate.msg) || res.status));
+      }
+      if (btn) { btn.disabled = false; btn.textContent = 'Beregn'; }
+      return;
+    } catch(_e) {}
+  }
+  say('Timeout \u2014 tjek Actions. \u00c6ndringen kan stadig v\u00e6re g\u00e5et igennem.');
+  if (btn) { btn.disabled = false; btn.textContent = 'Beregn'; }
 }
 
 const DISC_LABEL = { run:"LØB", bike:"CYKEL", swim:"SVØM", strength:"STYRKE", free:"FRI", walk:"GÅ", hike:"HIKE", commute:"PENDL", openwater:"OW" };
 
 const STATIC = {
-  zones_run:[
-    { label:"Z2", name:"Aerob base",  range:"4:56–5:34", color:"#2874A6" },
-    { label:"Z3", name:"Tempo",       range:"4:26–4:55", color:"#27AE60" },
-    { label:"Z4", name:"Threshold",   range:"4:13–4:25", color:"#F39C12" },
-    { label:"Z5", name:"VO2max",      range:"3:53–4:12", color:"#E67E22" },
-    { label:"Z6", name:"Anaerob",     range:"< 3:52",    color:"#C0392B" },
-  ],
-  zones_bike:[
-    { label:"Z2", name:"Aerob base",  range:"150–205 W", color:"#2874A6" },
-    { label:"Z3", name:"Tempo",       range:"205–245 W", color:"#27AE60" },
-    { label:"Z4", name:"Threshold",   range:"245–285 W", color:"#F39C12" },
-    { label:"Z5", name:"VO2max",      range:"285–325 W", color:"#E67E22" },
-  ],
   periodization:[
     {w:1,t:"build",l:"B1"},{w:2,t:"build",l:"B2"},{w:3,t:"build",l:"B3"},{w:4,t:"recovery",l:"R"},
     {w:5,t:"build",l:"B4"},{w:6,t:"build",l:"B5"},{w:7,t:"build",l:"B6"},{w:8,t:"recovery",l:"R"},
@@ -412,6 +444,7 @@ const STATIC = {
 
 // ── Dynamic data (fra data.json) ──────────────────────────────
 let D = {
+  zones: null,   // sat fra data.json (kilde: data/plan.json)
   week:1, totalWeeks:14, blockType:"BUILD",
   daysToMedoc:93, daysToChristiansborg:86,
   dayName:"", date:"",
@@ -1228,7 +1261,8 @@ function renderOverview() {
     <div style="display:flex;gap:10px;align-items:flex-end;flex-wrap:wrap">
       <div style="flex:1;min-width:110px"><div style="font-family:'Space Mono',monospace;font-size:9px;color:var(--muted);letter-spacing:.06em;margin-bottom:4px">T\u00c6RSKEL (MIN/KM)</div><input id="zc-pace" value="${ZONE_CALC.fmtPace(ZONE_CALC.thrSec())}" inputmode="numeric" style="width:100%;padding:9px 10px;border:1px solid var(--cream-d);border-radius:8px;font-family:'Space Mono',monospace;font-size:14px;background:var(--white)"></div>
       <div style="flex:1;min-width:110px"><div style="font-family:'Space Mono',monospace;font-size:9px;color:var(--muted);letter-spacing:.06em;margin-bottom:4px">FTP (W)</div><input id="zc-ftp" value="${ZONE_CALC.ftp()}" inputmode="numeric" style="width:100%;padding:9px 10px;border:1px solid var(--cream-d);border-radius:8px;font-family:'Space Mono',monospace;font-size:14px;background:var(--white)"></div>
-      <button onclick="saveZoneCalc()" style="background:var(--wine);color:#fff;border:none;border-radius:8px;padding:10px 16px;font-family:'Hanken Grotesk',sans-serif;font-size:13px;font-weight:600;cursor:pointer">Beregn</button>
+      <button id="zc-save" onclick="saveZoneCalc()" style="background:var(--wine);color:#fff;border:none;border-radius:8px;padding:10px 16px;font-family:'Hanken Grotesk',sans-serif;font-size:13px;font-weight:600;cursor:pointer">Beregn</button>
+      <div id="zc-msg" style="font-family:'Space Mono',monospace;font-size:10px;color:var(--muted);margin-top:8px;min-height:12px"></div>
     </div>
   </div>
   <div class="card">
@@ -1751,6 +1785,7 @@ function applyRemote(remote) {
       const luEl = document.getElementById('last-updated');
       if (luEl) luEl.textContent = m.updated || D.lastUpdated || '—';
       checkStaleness(m.updated); fetch("https://raw.githubusercontent.com/hammerbamsen/fast-as-50/main/data/plan_view.json?t=" + Date.now()).then(rv=>rv.ok?rv.json():null).then(view=>checkReadiness(view&&view.kennet&&view.kennet.readiness)).catch(()=>{});
+      if (remote.zones)                 D.zones                  = remote.zones;
       if (m.week)                       D.week                   = m.week;
       if (m.totalWeeks)                 D.totalWeeks             = m.totalWeeks;
       if (Array.isArray(remote.ctlPlan) && remote.ctlPlan.length) CTL_PLAN = remote.ctlPlan;
