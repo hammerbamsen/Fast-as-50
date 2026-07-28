@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-07-28 10:04",
+    "updated": "2026-07-28 10:34",
     "week": 9,
     "totalWeeks": 14,
     "blockType": "BUILD",
@@ -23,13 +23,13 @@
       "color": "#E67E22"
     },
     "ctl": {
-      "value": "52,7",
+      "value": "52,5",
       "unit": "",
       "sub": "Uge 9-mål 48 · Slutmål 43 (uge 14)",
       "color": "#27AE60"
     },
     "tsb": {
-      "value": "-16,2",
+      "value": "-14,9",
       "unit": "",
       "sub": "Hård blok · CTL−ATL, frisk >0",
       "color": "#E67E22"
@@ -55,7 +55,7 @@
     "tssComp": {
       "value": "133",
       "unit": "TSS",
-      "sub": "133 af 260 planlagt TSS",
+      "sub": "133 af 249 planlagt TSS",
       "color": "#C0392B"
     },
     "bikeKm": {
@@ -82,7 +82,7 @@
     "target": 5,
     "streak": 1
   },
-  "coachSpeech": "Tirsdag — uge 9 af 14. {HL} Fokus: 133 af 260 TSS er i hus — 4 sessioner tilbage, heriblandt Svøm 1500m let teknisk, THRESHOLD-TEST løb 20 min (opdatér pace-zoner efter). Vægt på 72,1 kg — hold protein højt og undgå lette kulhydrater om aftenen. 0 AF-dage i 2 afsluttede dage — 5 mangler i 5 dage tilbage. Hård uge — men det er sådan formen bygges. Hold ved.  \"Du bliver til det, du gør ofte.\"",
+  "coachSpeech": "Tirsdag — uge 9 af 14. {HL} Fokus: 133 af 249 TSS er i hus — 4 sessioner tilbage, heriblandt Svøm 1500m let teknisk, THRESHOLD-TEST løb 20 min (opdatér pace-zoner efter). Vægt på 72,1 kg — hold protein højt og undgå lette kulhydrater om aftenen. 0 AF-dage i 2 afsluttede dage — 5 mangler i 5 dage tilbage. Hård uge — men det er sådan formen bygges. Hold ved.  \"Du bliver til det, du gør ofte.\"",
   "coachHighlight": "Søvn på 8,0 timer er solid",
   "weekFocus": "Sæt pejlemærker med tests og bevar energien til musikugen",
   "today": [
@@ -160,7 +160,7 @@
     47.2,
     49.7,
     51.0,
-    52.7
+    52.5
   ],
   "weightHistory": [
     null,
@@ -1818,7 +1818,7 @@
     },
     {
       "date": "2026-07-28",
-      "v": -16.1,
+      "v": -14.9,
       "real": true
     }
   ],
@@ -3011,7 +3011,7 @@
   "coachAssessmentTs": "08:05",
   "commute_pairing_warnings": [],
   "warnings": [],
-  "tsb": -16.2,
+  "tsb": -14.9,
   "swimHistory": [
     {
       "week": 1,
@@ -3287,7 +3287,7 @@
       "note": "Nøgle virker"
     }
   },
-  "credentialsCheckedTs": "2026-07-28T08:05:08.743935",
+  "credentialsCheckedTs": "2026-07-28T08:34:42.401566",
   "coachAssessmentTsFull": "2026-07-28T08:05:08.743919",
   "coachAssessmentWeightAtGen": 72.1,
   "coachAssessmentAfAtGen": 0,
