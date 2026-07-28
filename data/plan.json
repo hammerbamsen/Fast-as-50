@@ -3247,7 +3247,7 @@
         "name": "FTP-TEST 20 min (opdatér zoner efter)",
         "type": "Ride",
         "moving_time": 3900,
-        "description": "- Varm-op progressiv 20m ramp 45-72% FTP\n- Åbner 5 min 5m 91-100% FTP\n- Let 5m 44-56% FTP\n- 20 MIN ALL-OUT TEST — jævn max-indsats 20m freeride\n- Cool-down 15m ramp 60-40% FTP\n\nEfter testen: nyt FTP = 95% af 20-min snit-watt. Opdatér i Intervals → Settings.",
+        "description": "- Varm-op progressiv 20m ramp 45-72% FTP\n- Åbner 5 min 5m 91-100% FTP\n- Let 5m 44-56% FTP\n- 20 MIN ALL-OUT TEST — jævn max-indsats 20m freeride\n- Cool-down 15m ramp 60-40% FTP\n\nEfter testen: nyt FTP = 95% af 20-min snit-watt — watt ganges direkte, modsat løb hvor pace divideres med 0,95. Eks: 285W snit → 271W FTP. Opdatér i Intervals → Settings. Gentag test hver 3.-4. måned.",
         "workout_doc": {
          "steps": [
           {
