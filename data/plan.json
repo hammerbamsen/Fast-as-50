@@ -3188,10 +3188,10 @@
      "entries": [
       {
        "workout": {
-        "name": "THRESHOLD-TEST løb 30 min (opdatér pace-zoner efter)",
+        "name": "THRESHOLD-TEST løb 20 min (opdatér pace-zoner efter)",
         "type": "Run",
-        "moving_time": 3900,
-        "description": "- Varm-op 15m >5:35/km Pace\n\n3x\n- Stride 20 sek 1m freeride\n- Jog 40 sek 1m freeride\n\n- 30 MIN TEST — jævn max-indsats, flad rute 30m freeride\n- Cool-down 10m >5:35/km Pace\n\nEfter testen: threshold-pace = snit af sidste 20 min. Opdatér zoner i Intervals + config.",
+        "moving_time": 3300,
+        "description": "- Varm-op 15m >5:35/km Pace\n\n3x\n- Stride 20 sek 1m freeride\n- Jog 40 sek 1m freeride\n\n- 20 MIN TEST — jævn max-indsats, flad rute 20m freeride\n- Cool-down 10m >5:35/km Pace\n\nEfter testen: threshold-pace = 95% af testens gennemsnitsfart (snit-pace × 1,05). Eks: 4:05/km snit → 4:18/km threshold. Opdatér zoner i Intervals + config.",
         "workout_doc": {
          "steps": [
           {
@@ -3218,8 +3218,8 @@
            ]
           },
           {
-           "text": "30 MIN TEST — jævn max-indsats, flad rute",
-           "duration": 1800
+           "text": "20 MIN TEST — jævn max-indsats, flad rute",
+           "duration": 1200
           },
           {
            "pace": {
@@ -3232,9 +3232,9 @@
           }
          ]
         },
-        "load": 60
+        "load": 48
        },
-       "note": "Threshold-test 30 min — morgen, før Pill in SE",
+       "note": "Threshold-test 20 min — morgen, før Pill in SE",
        "id": "f95d11d6"
       }
      ]
