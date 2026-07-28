@@ -53,13 +53,52 @@ if not workouts:
 TYPE_EMOJI = {
     'Run': '🏃', 'Ride': '🚴', 'Swim': '🏊',
     'WeightTraining': '💪', 'Walk': '🚶',
+    # Manglede -> faldt tilbage til vaegtstang paa alle OW-svom (28/7-2026)
+    'OpenWaterSwim': '🏊', 'VirtualRide': '🚴', 'VirtualRun': '🏃',
+    'TrailRun': '🏃', 'Hike': '🥾', 'Gravel Ride': '🚴',
 }
 START_HOUR = {
-    'SWIM': (6, 0), 'OW': (6, 0),
+    'SWIM': (6, 0), 'OW': (6, 0), 'OPENWATERSWIM': (6, 0),
     'RUN': (6, 30), 'TRAIL_RUN': (6, 30),
     'RIDE': (7, 0), 'VIRTUAL_RIDE': (7, 0),
     'WEIGHTTRAINING': (7, 0), 'WEIGHT_TRAINING': (7, 0), 'WEIGHTS': (7, 0),
 }
+
+# Tidspunkt-overrides fra plan.json — SAMME kilde som build_workouts.py.
+# Uden dette havde dette script sin egen tidstabel, og et pas flyttet til
+# eftermiddagen i plan.json landede alligevel 06:30 i kalenderen (28/7-2026).
+import json as _json
+
+def _load_time_overrides():
+    here = os.path.dirname(os.path.abspath(__file__))
+    for p in ('data/plan.json',
+              os.path.join(here, '..', '..', '..', 'data', 'plan.json')):
+        try:
+            with open(p, encoding='utf-8') as f:
+                raw = _json.load(f)['athletes']['kennet'].get('timeOverrides', {})
+        except Exception:
+            continue
+        out = {}
+        for k, v in raw.items():
+            out[k] = ({s.lower(): tuple(t) for s, t in v.items()}
+                      if isinstance(v, dict) else tuple(v))
+        print(f'timeOverrides: {len(out)} dato(er) fra {p}')
+        return out
+    print('  ADVARSEL: timeOverrides kunne ikke laeses — bruger standardtider')
+    return {}
+
+TIME_OVERRIDES = _load_time_overrides()
+
+def _start_for(dt, wtype):
+    """dt er 'YYYY-MM-DD'. Dict-override slaar op pr. disciplin."""
+    ov = TIME_OVERRIDES.get(dt)
+    if isinstance(ov, dict):
+        hit = ov.get((wtype or '').lower())
+        if hit:
+            return hit
+    elif ov:
+        return ov
+    return START_HOUR.get((wtype or '').upper(), (6, 0))
 
 # TRIN 2: Slet eksisterende Traening-events — først nu, hvor workouts er i hus
 url    = f'{GRAPH}/calendarView'
@@ -94,7 +133,7 @@ for w in workouts:
     dur   = w.get('moving_time') or 3600
     desc  = w.get('description', '')
     emoji = TYPE_EMOJI.get(wtype, '🏋')
-    sh, sm = START_HOUR.get(wtype.upper(), (6, 0))
+    sh, sm = _start_for(dt, wtype)
     end_min = sh * 60 + sm + dur // 60
     eh, em  = end_min // 60, end_min % 60
     event = {
