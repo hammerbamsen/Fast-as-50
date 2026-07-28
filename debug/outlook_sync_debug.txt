@@ -1,17 +1,12 @@
 Token OK
-Uge 9: 2026-07-27 til 2026-08-02
-6 workouts fra Intervals
-  Slettet: 🏃 Løb Z1 30 min let
-  Slettet: FTP-TEST 20 min (opdatér zoner efter)
-  Slettet: 🏃 THRESHOLD-TEST løb 20 min (opdatér pace-zoner efter)
-  Slettet: Svøm 1500m let teknisk
-  Slettet: 🏃 Løb Z2 90 min
-  Slettet: 🏊 Svøm 1500m let teknisk (valgfri)
-Slettet: 6
-  Oprettet: 2026-07-27 🏃 Løb Z1 30 min let
-  Oprettet: 2026-07-28 🚴 FTP-TEST 20 min (opdatér zoner efter)
-  Oprettet: 2026-07-29 🏃 THRESHOLD-TEST løb 20 min (opdatér pace-zoner efter)
-  FEJL opret 2026-07-30 Svøm 1500m let teknisk: 400 {"error":{"code":"InvalidDateTime","message":"The value '2026-07-30T26:00:00' of parameter 'DateTime' is invalid."}}
-  Oprettet: 2026-07-31 🏃 Løb Z2 90 min
-  Oprettet: 2026-08-01 🏊 Svøm 1500m let teknisk (valgfri)
-Oprettet: 5 | Fejl: 1
+Uge 14: 2026-08-31 til 2026-09-06
+4 workouts fra Intervals
+  Slettet: 🏃 Løb let Z1 25 min
+  Slettet: 🏃 Shakeout løb + strides
+Slettet: 2
+  Oprettet: 2026-08-31 🏃 Løb Z2 50 min
+  Oprettet: 2026-09-01 🏃 Løb Z2 40 min + 6×1 min race-pace
+  Oprettet: 2026-09-03 🏃 Shakeout løb + strides
+  Oprettet: 2026-09-04 🏃 Løb Z1 15 min let
+Oprettet: 4 | Fejl: 0
+DONE
