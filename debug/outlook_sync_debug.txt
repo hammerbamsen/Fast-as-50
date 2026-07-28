@@ -1,10 +1,10 @@
 Token OK
 Uge 11: 2026-08-10 til 2026-08-16
 7 workouts fra Intervals
-timeOverrides: 2 dato(er) fra data/plan.json
+timeOverrides: 3 dato(er) fra data/plan.json
   Slettet: 🚴 Cykel Z2 120 min Mallorca
   Slettet: 🏃 Løb Z2 75 min
-  Slettet: 🚴 Cykel bjerg-intervaller Z4 Mallorca
+  Slettet: 🚴 Sa Calobra TEST via Puig Major
   Slettet: 🏃 Lang løb Z2 28 km (150 min)
   Slettet: 🏊 Svøm 2000m teknisk
   Slettet: 🏃 Løb Z1 30 min let
