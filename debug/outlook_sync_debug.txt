@@ -1,20 +1,14 @@
 Token OK
-Uge 10: 2026-08-03 til 2026-08-09
-7 workouts fra Intervals
-  Slettet: 💪 Styrke A Functional Strength 3 sæt
-  Slettet: 🏃 Løb VO2 4×5 min Z4-Z5
-  Slettet: 🚴 Hometrainer 3×15 min Z3 90 min
-  Slettet: 🏃 Løb Z2 35 min
-  Slettet: 🚴 Cykel Z2 45 min
-  Slettet: 🏋 OW-svøm 2500m SAMMENHÆNGENDE (Christiansborg-generalprøve)
-  Slettet: 🏃 Lang løb Z2 29 km (155 min)
-Slettet: 7
-  Oprettet: 2026-08-03 💪 Styrke A Functional Strength 3 sæt
-  Oprettet: 2026-08-04 🏃 Løb VO2 4×5 min Z4-Z5
-  Oprettet: 2026-08-05 🚴 Hometrainer 3×15 min Z3 90 min
-  Oprettet: 2026-08-06 🚴 Cykel Z2 45 min
-  Oprettet: 2026-08-06 🏃 Løb Z2 35 min
-  Oprettet: 2026-08-07 🏋 OW-svøm 2500m SAMMENHÆNGENDE (Christiansborg-generalprøve)
-  Oprettet: 2026-08-08 🏃 Lang løb Z2 29 km (155 min)
-Oprettet: 7 | Fejl: 0
+Uge 14: 2026-08-31 til 2026-09-06
+4 workouts fra Intervals
+  Slettet: 🏃 Løb Z2 50 min
+  Slettet: 🏃 Løb Z2 40 min + 6×1 min race-pace
+  Slettet: 🏃 Shakeout løb + strides
+  Slettet: 🏃 Løb Z1 15 min let
+Slettet: 4
+  Oprettet: 2026-08-31 🏃 Løb Z2 50 min
+  Oprettet: 2026-09-01 🏃 Løb Z2 40 min + 6×1 min race-pace
+  Oprettet: 2026-09-03 🏃 Shakeout løb + strides
+  Oprettet: 2026-09-04 🏃 Løb Z1 15 min let
+Oprettet: 4 | Fejl: 0
 DONE
