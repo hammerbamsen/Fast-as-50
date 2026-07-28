@@ -69,13 +69,38 @@ DK_MONTHS  = ["jan","feb","mar","apr","maj","jun","jul","aug","sep","okt","nov",
 # 2/7-26 -- se sessions.py: compute_run_pace_zone_secs).
 # Z2 matcher tilfældigvis ICU's egen tabel, men Z3-Z6 gør ikke -- derfor
 # beregnes løb-zone-tid altid ud fra rå pace-stream mod DISSE grænser.
-RUN_PACE_ZONES_SEC_PER_KM = {
-    'Z1': (335, 99999),   # langsommere end 5:35/km
-    'Z2': (296, 334),     # 4:56-5:34/km
-    'Z3': (266, 295),     # 4:26-4:55/km
-    'Z4': (253, 265),     # 4:13-4:25/km
-    'Z5': (233, 252),     # 3:53-4:12/km
-    'Z6': (0, 232),       # hurtigere end 3:52/km
+# UDLEDES nu af plan.json -> athletes.kennet.zones (28/7-2026).
+# thresholdSec + runPct er eneste kilde. Ren matematik:
+#   hurtigste = ceil(thr*100/hi)    langsomste = ceil(thr*100/lo)-1
+# Ændrer du threshold i plan.json, følger disse grænser automatisk med.
+import math as _math
+
+def _derive_run_pace_zones():
+    z = ((PLAN or {}).get('athletes', {}).get('kennet', {}) or {}).get('zones') or {}
+    thr, pct = z.get('thresholdSec'), z.get('runPct')
+    if not thr or not pct:
+        return None
+    def _fast(p):
+        return _math.ceil(thr * 100 / p)
+    out = {}
+    for name, band in pct.items():
+        lo, hi = band[0], band[1]
+        if lo is None:
+            out[name] = (_fast(hi), 99999)
+        elif hi is None:
+            out[name] = (0, _fast(lo) - 1)
+        else:
+            out[name] = (_fast(hi), _fast(lo) - 1)
+    return out
+
+RUN_PACE_ZONES_SEC_PER_KM = _derive_run_pace_zones() or {
+    # Fallback — kun hvis plan.json mangler zones-blokken.
+    'Z1': (334, 99999),
+    'Z2': (296, 333),
+    'Z3': (266, 295),
+    'Z4': (253, 265),
+    'Z5': (233, 252),
+    'Z6': (0, 232),
 }
 
 
