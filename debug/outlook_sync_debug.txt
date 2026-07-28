@@ -1,18 +1,20 @@
 Token OK
-Uge 9: 2026-07-27 til 2026-08-02
-6 workouts fra Intervals
-  Slettet: 🏃 Løb Z1 30 min let
-  Slettet: 🏊 Svøm 1500m let teknisk
-  Slettet: 🏃 THRESHOLD-TEST løb 20 min (opdatér pace-zoner efter)
-  Slettet: 🚴 FTP-TEST 20 min (opdatér zoner efter)
-  Slettet: 🏃 Løb Z2 90 min
-  Slettet: 🏊 Svøm 1500m let teknisk (valgfri)
-Slettet: 6
-  Oprettet: 2026-07-27 🏃 Løb Z1 30 min let
-  Oprettet: 2026-07-28 🏊 Svøm 1500m let teknisk
-  Oprettet: 2026-07-29 🏃 THRESHOLD-TEST løb 20 min (opdatér pace-zoner efter)
-  Oprettet: 2026-07-30 🚴 FTP-TEST 20 min (opdatér zoner efter)
-  Oprettet: 2026-07-31 🏃 Løb Z2 90 min
-  Oprettet: 2026-08-01 🏊 Svøm 1500m let teknisk (valgfri)
-Oprettet: 6 | Fejl: 0
+Uge 10: 2026-08-03 til 2026-08-09
+7 workouts fra Intervals
+  Slettet: 💪 Styrke A Functional Strength 3 sæt
+  Slettet: 🏃 Løb VO2 4×5 min Z4-Z5
+  Slettet: 🚴 Hometrainer 3×15 min Z3 90 min
+  Slettet: 🏋 OW-svøm 2500m SAMMENHÆNGENDE (Christiansborg-generalprøve)
+  Slettet: 🏃 Løb Z2 35 min
+  Slettet: 🚴 Cykel Z2 45 min
+  Slettet: 🏃 Lang løb Z2 29 km (155 min)
+Slettet: 7
+  Oprettet: 2026-08-03 💪 Styrke A Functional Strength 3 sæt
+  Oprettet: 2026-08-04 🏃 Løb VO2 4×5 min Z4-Z5
+  Oprettet: 2026-08-05 🚴 Hometrainer 3×15 min Z3 90 min
+  Oprettet: 2026-08-06 🚴 Cykel Z2 45 min
+  Oprettet: 2026-08-06 🏃 Løb Z2 35 min
+  Oprettet: 2026-08-07 🏋 OW-svøm 2500m SAMMENHÆNGENDE (Christiansborg-generalprøve)
+  Oprettet: 2026-08-08 🏃 Lang løb Z2 29 km (155 min)
+Oprettet: 7 | Fejl: 0
 DONE
