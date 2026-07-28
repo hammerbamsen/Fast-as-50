@@ -28,14 +28,14 @@ Opdatering juni 2026:
 - delete_existing filtrerer korrekt på category=WORKOUT
 """
 
-import json, os, sys, time, requests
+import json, math, os, sys, time, requests
 from datetime import date, timedelta
 
 ATHLETE_ID  = "i599466"
 BASE        = f"https://intervals.icu/api/v1/athlete/{ATHLETE_ID}"
 PLAN_START  = date(2026, 6, 1)
-FTP         = 270   # watt
-THRESHOLD   = 260   # sek/km = 4:20/km
+# FTP/THRESHOLD er FJERNET (28/7-2026). De var døde konstanter — intet i
+# scriptet læste dem. Sandheden er data/plan.json -> athletes.kennet.zones.
 # ── Microsoft Graph / Outlook Calendar ─────────────────────────
 GRAPH_BASE   = "https://graph.microsoft.com/v1.0"
 AZURE_TENANT = "003c17d1-406c-4f3a-ba81-5ac09bf49036"
@@ -119,15 +119,46 @@ def notify_make(action, event_id=None, payload=None, dt=None):
     elif action == "create" and payload:
         outlook_create(payload)
 
+# ── Sandhedslaget: data/plan.json ───────────────────────────────
+PLAN_JSON = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "data", "plan.json")
+
+def load_plan_json():
+    """Sandhedslaget: data/plan.json (v3) — begge atleter, alle dage."""
+    with open(PLAN_JSON, encoding="utf-8") as f:
+        return json.load(f)
+
 # ── Zone-definitioner ───────────────────────────────────────────
-# Løb: absolut pace til description | %pace til workout_doc
-RUN_ZONES = {
-    "Z1": {"desc": ">5:35/km",       "doc": {"start": 65,  "end": 78,  "units": "%pace"}},
-    "Z2": {"desc": "4:56-5:34/km",   "doc": {"start": 78,  "end": 88,  "units": "%pace"}},
-    "Z3": {"desc": "4:26-4:55/km",   "doc": {"start": 88,  "end": 98,  "units": "%pace"}},
-    "Z4": {"desc": "4:13-4:25/km",   "doc": {"start": 98,  "end": 103, "units": "%pace"}},
-    "Z5": {"desc": "3:53-4:05/km",   "doc": {"start": 106, "end": 110, "units": "%pace"}},
+# INGEN hardkodede pace-strenge (28/7-2026). Teksten UDLEDES af
+# thresholdSec i plan.json + den %pace-band passet faktisk bruger.
+# Ren matematik: hurtig = ceil(thr*100/hi), langsom = ceil(thr*100/lo)-1.
+# Ændrer du threshold ét sted, følger alt med.
+RUN_DOC_PCT = {
+    "Z1": (65,  78),
+    "Z2": (78,  88),
+    "Z3": (88,  98),
+    "Z4": (98, 103),
+    "Z5": (106, 110),
 }
+
+def _threshold_sec():
+    return load_plan_json()["athletes"]["kennet"]["zones"]["thresholdSec"]
+
+def _fmt_pace(sec):
+    return f"{int(sec)//60}:{int(sec)%60:02d}"
+
+def _pace_text(thr, lo, hi):
+    fast = math.ceil(thr * 100 / hi)
+    if lo <= 65:                       # åben restitutionsband
+        return ">" + _fmt_pace(fast) + "/km"
+    return f"{_fmt_pace(fast)}-{_fmt_pace(math.ceil(thr * 100 / lo) - 1)}/km"
+
+def _build_run_zones():
+    thr = _threshold_sec()
+    return {z: {"desc": _pace_text(thr, lo, hi),
+                "doc": {"start": lo, "end": hi, "units": "%pace"}}
+            for z, (lo, hi) in RUN_DOC_PCT.items()}
+
+RUN_ZONES = _build_run_zones()
 
 # Cykel: absolut % FTP til description | %ftp til workout_doc
 BIKE_ZONES = {
@@ -441,16 +472,17 @@ def bike_ftp_test():
             "workout_doc": doc}
 
 def run_threshold_test():
-    """30-min løbetest — snit-pace for sidste 20 min = ny threshold."""
+    """20-min løbetest — threshold = 95% af testens gennemsnitsFART.
+    Pace divideres med 0,95 (~ x1,053). Gang ALDRIG pace med 0,95."""
     desc, doc = build([
         s_run(15, "Z1", "Varm-op"),
         s_reps(3, [s_free(1, "Stride 20 sek"), s_free(1, "Jog 40 sek")]),
-        s_free(30, "30 MIN TEST — jævn max-indsats, flad rute"),
+        s_free(20, "20 MIN TEST — jævn max-indsats, flad rute"),
         s_run(10, "Z1", "Cool-down"),
     ])
-    return {"name": "THRESHOLD-TEST løb 30 min (opdatér pace-zoner efter)", "type": "Run",
-            "moving_time": 65*60,
-            "description": desc + "\n\nEfter testen: threshold-pace = snit af sidste 20 min. Opdatér zoner i Intervals + config.",
+    return {"name": "THRESHOLD-TEST løb 20 min (opdatér pace-zoner efter)", "type": "Run",
+            "moving_time": 55*60,
+            "description": desc + "\n\nEfter testen: threshold-pace = 95% af testens gennemsnitsfart (snit-pace / 0,95). Opdatér zoner i Intervals + plan.json.",
             "workout_doc": doc}
 
 def ow_swim(tot_min=45, label="Open water"):
@@ -478,12 +510,6 @@ def bike_sa_calobra():
             "moving_time": 280*60, "description": desc, "workout_doc": doc}
 
 # ── 14-ugers plan ───────────────────────────────────────────────
-PLAN_JSON = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "data", "plan.json")
-
-def load_plan_json():
-    """Sandhedslaget: data/plan.json (v3) — begge atleter, alle dage."""
-    with open(PLAN_JSON, encoding="utf-8") as f:
-        return json.load(f)
 
 def make_plan():
     """Kennets plan som (date, workout_dict|None, note)-tupler — læst fra plan.json.
@@ -528,9 +554,21 @@ def friel_report():
 # Tidspunkt-overrides for dage hvor standardtid (se _start_hour) ikke
 # passer med Kennets skema (job/møder/workshop fylder standard-vinduet).
 def _load_time_overrides():
+    """To formater, begge understøttet (28/7-2026):
+         "2026-06-25": [16, 0]            -> gælder hele dagen
+         "2026-08-06": {"Run": [15, 30]}  -> gælder kun den disciplin
+    Dict-formatet kom til fordi en dag kan have svøm 06:00 OG løb 15:30,
+    og det gamle format kun kunne rumme ét tidspunkt pr. dato."""
     try:
         raw = load_plan_json()["athletes"]["kennet"].get("timeOverrides", {})
-        return {date.fromisoformat(k): tuple(v) for k, v in raw.items()}
+        out = {}
+        for k, v in raw.items():
+            dt = date.fromisoformat(k)
+            if isinstance(v, dict):
+                out[dt] = {sp.lower(): tuple(t) for sp, t in v.items()}
+            else:
+                out[dt] = tuple(v)
+        return out
     except Exception:
         return {}
 
@@ -547,8 +585,12 @@ def _start_hour(wo_type):
 
 def _start_end(wo, dt):
     """Returner (start_iso, end_iso) for et workout."""
-    if dt in TIME_OVERRIDES:
-        sh, sm = TIME_OVERRIDES[dt]
+    ov = TIME_OVERRIDES.get(dt)
+    if isinstance(ov, dict):
+        hit = ov.get((wo.get("type") or "").lower())
+        sh, sm = hit if hit else _start_hour(wo.get("type", ""))
+    elif ov:
+        sh, sm = ov
     else:
         sh, sm = _start_hour(wo.get("type", ""))
     start_mins = sh * 60 + sm
