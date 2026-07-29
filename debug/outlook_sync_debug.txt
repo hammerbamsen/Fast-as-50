@@ -1,14 +1,14 @@
 Token OK
 Uge 2: 2026-06-08 til 2026-06-14
 7 workouts fra Intervals
-timeOverrides: 1 dato(er) fra data/plan.json
-  Slettet: Styrke A Functional Strength 3 sæt
-  Slettet: Løb Z2 45 min
-  Slettet: Løb Z2 45 min
-  Slettet: Cykel Z2 60 min Mallorca
-  Slettet: Cykel bjerg-intervaller Z4 Mallorca
-  Slettet: Cykel Z2 150 min Mallorca
-  Slettet: Svøm 1500m let teknisk
+timeOverrides: 3 dato(er) fra data/plan.json
+  Slettet: 💪 Styrke A Functional Strength 3 sæt
+  Slettet: 🏃 Løb Z2 45 min
+  Slettet: 🏃 Løb Z2 45 min
+  Slettet: 🚴 Cykel Z2 60 min Mallorca
+  Slettet: 🚴 Cykel bjerg-intervaller Z4 Mallorca
+  Slettet: 🚴 Cykel Z2 150 min Mallorca
+  Slettet: 🏊 Svøm 1500m let teknisk
 Slettet: 7
   Oprettet: 2026-06-08 💪 Styrke A Functional Strength 3 sæt
   Oprettet: 2026-06-09 🏃 Løb Z2 45 min
