@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-07-29 23:29",
+    "updated": "2026-07-30 00:32",
     "week": 9,
     "totalWeeks": 14,
     "blockType": "BUILD",
@@ -3034,8 +3034,8 @@
       "real": true
     }
   ],
-  "coachAssessmentHtml": "<p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\"><strong>Dag 59 af 98 · Onsdag · Uge 9</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">💪 <strong>Træning & load</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">CTL ligger på 51.2 — det er 3 point over ugemålet på 48, og TSB på -7.1 er helt i den grønne zone. Mandagens løb viste for høj pace i forhold til Z1-målet — til torsdagens threshold-test skal du starte roligere og lade tempoet komme til dig, ikke omvendt. FTP-testen tirsdag landede on target med god fordelingen over power-zonerne. Energiniveauet er solidt til torsdagens løbetest.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">⚖️ <strong>Krop & kost</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Vægten er 72.5 kg — 2.5 kg fra målet — og fedtprocenten er steget 0.1 point til 22.0 % siden sidst, mens vægten har stået stille. Det er et varselstegn: kroppen slipper ikke fedt, og når fedtprocenten stiger, tyder det på at muskelmasse er tabt i stedet. Det er præcis det forkerte i et capacity-år — tjek om du spiser nok protein, særligt på træningsdage.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">🎯 <strong>AF-status & fokus for resten af ugen</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Du har 2 AF-dage ud af 3 dage gået — det er stærkt. Resten af ugen er Fredag den naturlige kandidat til endnu en AF-dag, og Søndag ligeså. Torsdagens threshold-test er ugens vigtigste session — gem energien til den.</p>",
-  "coachAssessmentTs": "16:31",
+  "coachAssessmentHtml": "<p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\"><strong>Dag 59 af 98 · Onsdag · Uge 9</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">💪 <strong>Træning & load</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">CTL ligger på 51.2 — klart over ugemålets 48, og TSB på -7.1 er et sundhedstegn på at du arbejder uden at grave for dybt. FTP-testen tirsdag ramte zonerne godt. Mandagens løb gik for hurtigt i pacen — HR nåede ikke at følge med, men kroppen arbejdede alligevel hårdere end planlagt. Næste gang du løber Z1, sænk tempoet bevidst fra start, selv om det føles absurd roligt.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">⚖️ <strong>Krop & kost</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Vægten er 72.5 kg — 2.5 kg fra målet. Fedtprocenten er 22.0 %, altså 2 procentpoint over dit mål på under 20 %. Det er fedtprocenten der skal bevæge sig — ikke bare vægten. Fedtprocenten er steget 0.1 point siden sidst, og det er et signal om at holde øje med proteindækning og ikke tabe muskelmasse undervejs.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">🎯 <strong>AF-status & fokus for resten af ugen</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Du er på 2 AF-dage ud af 3 dage i ugen — det er stærkt. Torsdag venter threshold-testen i løb, som er den vigtigste resterende indsats denne uge — giv den fokus og friske ben. Fredag og søndag er rolige, så energien er godt fordelt frem mod musikugen.</p>",
+  "coachAssessmentTs": "22:32",
   "commute_pairing_warnings": [],
   "warnings": [
     {
@@ -3320,8 +3320,8 @@
       "note": "Nøgle virker"
     }
   },
-  "credentialsCheckedTs": "2026-07-29T21:29:35.934523",
-  "coachAssessmentTsFull": "2026-07-29T16:31:42.021438",
+  "credentialsCheckedTs": "2026-07-29T22:32:39.873631",
+  "coachAssessmentTsFull": "2026-07-29T22:32:39.873614",
   "coachAssessmentWeightAtGen": 72.5,
   "coachAssessmentAfAtGen": 2,
   "event_structure_warnings": [],
