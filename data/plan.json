@@ -1,6 +1,6 @@
 {
   "version": 3,
-  "updated": "2026-07-26",
+  "updated": "2026-07-17",
   "program": {
     "name": "Fast as Fifty",
     "start": "2026-06-01",
@@ -104,8 +104,8 @@
       "week": 9,
       "start": "2026-07-27",
       "blockType": "RECOVERY",
-      "ctlTarget": 48,
-      "tssTarget": 270,
+      "ctlTarget": 56,
+      "tssTarget": 200,
       "location": "Gentofte",
       "note": "Fuld aflastning + FTP- og threshold-retest. Musik i Gentofte fre-søn."
     },
@@ -113,7 +113,7 @@
       "week": 10,
       "start": "2026-08-03",
       "blockType": "BUILD",
-      "ctlTarget": 50,
+      "ctlTarget": 61,
       "tssTarget": 420,
       "location": "Gentofte → fly søn 9.",
       "note": "Langtur 28-30 km. Open water-svøm starter."
@@ -122,7 +122,7 @@
       "week": 11,
       "start": "2026-08-10",
       "blockType": "BUILD+",
-      "ctlTarget": 53,
+      "ctlTarget": 67,
       "tssTarget": 500,
       "location": "Mallorca (hjem søn 16.)",
       "note": "Camp #2. TSB-gulv -35 overvåges dagligt."
@@ -131,7 +131,7 @@
       "week": 12,
       "start": "2026-08-17",
       "blockType": "BUILD",
-      "ctlTarget": 51,
+      "ctlTarget": 63,
       "tssTarget": 300,
       "location": "Gentofte → Norge lør",
       "note": "Sidste langtur 32 km tirsdag. OW-svøm x2."
@@ -140,7 +140,7 @@
       "week": 13,
       "start": "2026-08-24",
       "blockType": "TAPER",
-      "ctlTarget": 47,
+      "ctlTarget": 59,
       "tssTarget": 180,
       "location": "Norge → hjem man. RACE lør",
       "note": "Christiansborg Rundt lør 29. aug — svømmes UTAPERET (2000 m, bevidst valg). Marathon-vedligehold: 19 km ons."
@@ -149,7 +149,7 @@
       "week": 14,
       "start": "2026-08-31",
       "blockType": "RACE",
-      "ctlTarget": 43,
+      "ctlTarget": 56,
       "tssTarget": 120,
       "location": "Gentofte → Bordeaux tor",
       "note": "Marathon du Médoc lør 5. sep. Ren taper + race-ernæringsplan."
@@ -251,14 +251,13 @@
       "source": "intervals",
       "zones": {
         "runThreshold": "4:20/km",
-        "bikeFtpW": 278,
+        "bikeFtpW": 270,
         "run": {
-          "Z1": ">5:34/km",
-          "Z2": "4:56-5:33/km",
+          "Z1": ">5:35/km",
+          "Z2": "4:56-5:34/km",
           "Z3": "4:26-4:55/km",
           "Z4": "4:13-4:25/km",
-          "Z5": "3:53-4:12/km",
-          "Z6": "<3:52/km"
+          "Z5": "3:53-4:05/km"
         },
         "bike": {
           "Z1": "44-56% FTP",
@@ -266,87 +265,15 @@
           "Z3": "76-91% FTP",
           "Z4": "91-100% FTP",
           "Z5": "106-115% FTP"
-        },
-        "thresholdSec": 260,
-        "ftpW": 278,
-        "runPct": {
-          "Z1": [
-            null,
-            78
-          ],
-          "Z2": [
-            78,
-            88
-          ],
-          "Z3": [
-            88,
-            98
-          ],
-          "Z4": [
-            98,
-            103
-          ],
-          "Z5": [
-            103,
-            112
-          ],
-          "Z6": [
-            112,
-            null
-          ]
-        },
-        "bikePct": {
-          "Z1": [
-            null,
-            55.56
-          ],
-          "Z2": [
-            55.56,
-            75.93
-          ],
-          "Z3": [
-            75.93,
-            90.74
-          ],
-          "Z4": [
-            90.74,
-            105.56
-          ],
-          "Z5": [
-            105.56,
-            120.37
-          ],
-          "Z6": [
-            120.37,
-            null
-          ]
-        },
-        "bikeWatt": {
-          "Z1": "<154 W",
-          "Z2": "154-211 W",
-          "Z3": "211-252 W",
-          "Z4": "252-293 W",
-          "Z5": "293-335 W",
-          "Z6": ">335 W"
         }
       },
       "timeOverrides": {
         "2026-06-25": [
           16,
           0
-        ],
-        "2026-08-06": {
-          "Run": [
-            15,
-            30
-          ]
-        },
-        "2026-08-12": [
-          6,
-          0
         ]
       },
-      "actualsThroughWeek": 8,
+      "actualsThroughWeek": 5,
       "days": [
         {
           "date": "2026-06-01",
@@ -2839,29 +2766,46 @@
           "entries": [
             {
               "workout": {
-                "name": "Svøm 2000m åbent vand (Christiansborg-tempo)",
-                "type": "Swim",
-                "moving_time": 2400,
-                "description": "Åbent vand, Sóller. Roligt Christiansborg-tempo + teknik/sigt.",
+                "name": "Cykel Z2 120 min Mallorca",
+                "type": "Ride",
+                "moving_time": 7200,
+                "description": "- Varm-op 10m ramp 45-68% FTP\n- Aerob base 105m 56-76% FTP\n- Cool-down 5m ramp 68-45% FTP",
                 "workout_doc": {
                   "steps": [
                     {
-                      "text": "300m varm-op roligt",
-                      "duration": 450
+                      "ramp": true,
+                      "power": {
+                        "start": 45,
+                        "end": 68,
+                        "units": "%ftp"
+                      },
+                      "duration": 600,
+                      "warmup": true
                     },
                     {
-                      "text": "1400m jævnt Christiansborg-tempo m/ sigt",
-                      "duration": 1500
+                      "text": "Aerob base 56-76% FTP",
+                      "power": {
+                        "start": 56,
+                        "end": 76,
+                        "units": "%ftp"
+                      },
+                      "duration": 6300
                     },
                     {
-                      "text": "300m let cool",
-                      "duration": 450
+                      "ramp": true,
+                      "power": {
+                        "start": 68,
+                        "end": 45,
+                        "units": "%ftp"
+                      },
+                      "duration": 300,
+                      "cooldown": true
                     }
                   ]
                 },
-                "load": 42
+                "load": 90
               },
-              "note": "Svøm 2000m åbent vand — Christiansborg-tempo",
+              "note": "Cykel Z2 2t — 37°-dagen. VENTIL: skær eller drop hvis HRV <45 eller søvn <6t.",
               "id": "c8898c19"
             }
           ]
@@ -2871,81 +2815,44 @@
           "entries": [
             {
               "workout": {
-                "name": "Løb 16 km Z1–Z2 til fyret",
+                "name": "Lang løb Z2 90 min",
                 "type": "Run",
-                "moving_time": 5100,
-                "description": "- Varm-op 10m >5:35/km Pace\n- Base rolig beskyt lilletaaen 70m 4:56-5:34/km Pace\n- Cool-down 5m >5:35/km Pace",
+                "moving_time": 5400,
+                "description": "- Varm-op 15m >5:35/km Pace\n- Lang base 65m 4:56-5:34/km Pace\n- Cool-down 10m >5:35/km Pace",
                 "workout_doc": {
                   "steps": [
                     {
+                      "text": "Varm-op >5:35/km",
                       "pace": {
-                        "units": "secs/km",
-                        "value": 335
+                        "start": 65,
+                        "end": 78,
+                        "units": "%pace"
                       },
-                      "text": "Varm-op",
+                      "duration": 900
+                    },
+                    {
+                      "text": "Lang base 4:56-5:34/km",
+                      "pace": {
+                        "start": 78,
+                        "end": 88,
+                        "units": "%pace"
+                      },
+                      "duration": 3900
+                    },
+                    {
+                      "text": "Cool-down >5:35/km",
+                      "pace": {
+                        "start": 65,
+                        "end": 78,
+                        "units": "%pace"
+                      },
                       "duration": 600
-                    },
-                    {
-                      "pace": {
-                        "end": 334,
-                        "start": 296,
-                        "units": "secs/km"
-                      },
-                      "text": "Base rolig beskyt lilletaaen",
-                      "duration": 4200
-                    },
-                    {
-                      "pace": {
-                        "units": "secs/km",
-                        "value": 335
-                      },
-                      "text": "Cool-down",
-                      "duration": 300
                     }
-                  ],
-                  "locales": [],
-                  "options": {},
-                  "distance": 16068.586908474299,
-                  "duration": 5100,
-                  "zoneTimes": [
-                    {
-                      "id": "Z1",
-                      "secs": 0
-                    },
-                    {
-                      "id": "Z2",
-                      "secs": 5100
-                    },
-                    {
-                      "id": "Z3",
-                      "secs": 0
-                    },
-                    {
-                      "id": "Z4",
-                      "secs": 0
-                    },
-                    {
-                      "id": "Z5",
-                      "secs": 0
-                    },
-                    {
-                      "id": "Z6",
-                      "secs": 0
-                    },
-                    {
-                      "id": "Z7",
-                      "secs": 0
-                    }
-                  ],
-                  "strain_score": null,
-                  "average_watts": 0,
-                  "normalized_power": 0,
-                  "variability_index": null,
-                  "polarization_index": 0
+                  ]
                 },
                 "load": 95
               },
-              "note": "Løb 16 km Z1–Z2 til fyret",
+              "note": "Lang løb Z2 90 min — formiddag før aftenflyet hjem (ons 22.)",
               "id": "904e1db3"
             }
           ]
@@ -3054,88 +2961,93 @@
         },
         {
           "date": "2026-07-24",
-          "entries": []
+          "entries": [
+            {
+              "workout": {
+                "name": "Svøm 2500m",
+                "type": "Swim",
+                "moving_time": 3900,
+                "description": "- 400m varm-op 10m freeride\n\n5x\n- 200m Z3 4m freeride\n- 30s pause 1m freeride\n\n- 400m teknik 8m freeride\n- 300m cool 5m freeride",
+                "workout_doc": {
+                  "steps": [
+                    {
+                      "text": "400m varm-op",
+                      "duration": 600
+                    },
+                    {
+                      "reps": 5,
+                      "text": "5x",
+                      "steps": [
+                        {
+                          "text": "200m Z3",
+                          "duration": 240
+                        },
+                        {
+                          "text": "30s pause",
+                          "duration": 60
+                        }
+                      ]
+                    },
+                    {
+                      "text": "400m teknik",
+                      "duration": 480
+                    },
+                    {
+                      "text": "300m cool",
+                      "duration": 300
+                    }
+                  ]
+                },
+                "load": 50
+              },
+              "note": "Svøm 2500m",
+              "id": "38920037"
+            }
+          ]
         },
         {
           "date": "2026-07-25",
           "entries": [
             {
               "workout": {
-                "name": "Langløb 21 km Z2",
+                "name": "Lang løb Z2 26 km (140 min)",
                 "type": "Run",
-                "moving_time": 7080,
-                "description": "- Varm-op 15m >5:35/km Pace\n- Lang base rolig 93m 4:56-5:34/km Pace\n- Cool-down 10m >5:35/km Pace",
+                "moving_time": 8400,
+                "description": "- Varm-op 15m >5:35/km Pace\n- Lang base 26 km 115m 4:56-5:34/km Pace\n- Cool-down 10m >5:35/km Pace",
                 "workout_doc": {
                   "steps": [
                     {
+                      "text": "Varm-op >5:35/km",
                       "pace": {
-                        "units": "secs/km",
-                        "value": 335
+                        "start": 65,
+                        "end": 78,
+                        "units": "%pace"
                       },
-                      "text": "Varm-op",
                       "duration": 900
                     },
                     {
+                      "text": "Lang base 26 km 4:56-5:34/km",
                       "pace": {
-                        "end": 334,
-                        "start": 296,
-                        "units": "secs/km"
+                        "start": 78,
+                        "end": 88,
+                        "units": "%pace"
                       },
-                      "text": "Lang base rolig",
-                      "duration": 5580
+                      "duration": 6900
                     },
                     {
+                      "text": "Cool-down >5:35/km",
                       "pace": {
-                        "units": "secs/km",
-                        "value": 335
+                        "start": 65,
+                        "end": 78,
+                        "units": "%pace"
                       },
-                      "text": "Cool-down",
                       "duration": 600
                     }
-                  ],
-                  "locales": [],
-                  "options": {},
-                  "distance": 22256.58102914784,
-                  "duration": 7080,
-                  "zoneTimes": [
-                    {
-                      "id": "Z1",
-                      "secs": 0
-                    },
-                    {
-                      "id": "Z2",
-                      "secs": 7080
-                    },
-                    {
-                      "id": "Z3",
-                      "secs": 0
-                    },
-                    {
-                      "id": "Z4",
-                      "secs": 0
-                    },
-                    {
-                      "id": "Z5",
-                      "secs": 0
-                    },
-                    {
-                      "id": "Z6",
-                      "secs": 0
-                    },
-                    {
-                      "id": "Z7",
-                      "secs": 0
-                    }
-                  ],
-                  "strain_score": null,
-                  "average_watts": 0,
-                  "normalized_power": 0,
-                  "variability_index": null,
-                  "polarization_index": 0
+                  ]
                 },
-                "load": 131
+                "load": 150
               },
-              "note": "Langløb 21 km Z2 — marathon-ladder start",
+              "note": "Lang løb 26 km — marathon-ladder start",
               "id": "b8956c90"
             }
           ]
@@ -3145,46 +3057,46 @@
           "entries": [
             {
               "workout": {
-                "name": "Cykel Z2 60 min",
+                "name": "Cykel Z2 90 min",
                 "type": "Ride",
-                "moving_time": 3600,
-                "description": "- Varm-op 10m ramp 45-68% FTP\n- Aerob base 45m 56-76% FTP\n- Cool-down 5m ramp 68-45% FTP",
+                "moving_time": 5400,
+                "description": "- Varm-op 10m ramp 45-68% FTP\n- Aerob base 75m 56-76% FTP\n- Cool-down 5m ramp 68-45% FTP",
                 "workout_doc": {
                   "steps": [
                     {
                       "ramp": true,
                       "power": {
-                        "end": 68,
                         "start": 45,
+                        "end": 68,
                         "units": "%ftp"
                       },
-                      "warmup": true,
-                      "duration": 600
+                      "duration": 600,
+                      "warmup": true
                     },
                     {
                       "text": "Aerob base 56-76% FTP",
                       "power": {
-                        "end": 76,
                         "start": 56,
+                        "end": 76,
                         "units": "%ftp"
                       },
-                      "duration": 2700
+                      "duration": 4500
                     },
                     {
                       "ramp": true,
                       "power": {
-                        "end": 45,
                         "start": 68,
+                        "end": 45,
                         "units": "%ftp"
                       },
-                      "cooldown": true,
-                      "duration": 300
+                      "duration": 300,
+                      "cooldown": true
                     }
                   ]
                 },
-                "load": 46
+                "load": 70
               },
-              "note": "Cykel Z2 60 min recovery-spin",
+              "note": "Cykel Z2 90 min recovery-spin",
               "id": "9729275a"
             }
           ]
@@ -3201,87 +3113,24 @@
                 "workout_doc": {
                   "steps": [
                     {
+                      "text": "Let løb >5:35/km",
                       "pace": {
-                        "end": 78,
                         "start": 65,
+                        "end": 78,
                         "units": "%pace"
                       },
-                      "text": "Let løb >5:35/km",
                       "duration": 1800
                     }
                   ]
-                },
-                "load": 28
+                }
               },
-              "note": "Let løb Z1 30 min — ægte Z1, HRV lav",
+              "note": "Let løb 30 min — frekvens, ikke belastning",
               "id": "d72f5301"
             }
           ]
         },
         {
           "date": "2026-07-28",
-          "entries": [
-            {
-              "workout": {
-                "name": "FTP-TEST 20 min (opdatér zoner efter)",
-                "type": "Ride",
-                "moving_time": 3900,
-                "description": "- Varm-op progressiv 20m ramp 45-72% FTP\n- Åbner 5 min 5m 91-100% FTP\n- Let 5m 44-56% FTP\n- 20 MIN ALL-OUT TEST — jævn max-indsats 20m freeride\n- Cool-down 15m ramp 60-40% FTP\n\nEfter testen: nyt FTP = 95% af 20-min snit-watt — watt ganges direkte, modsat løb hvor pace divideres med 0,95. Eks: 285W snit → 271W FTP. Opdatér i Intervals → Settings. Gentag test hver 3.-4. måned.",
-                "workout_doc": {
-                  "steps": [
-                    {
-                      "ramp": true,
-                      "power": {
-                        "end": 72,
-                        "start": 45,
-                        "units": "%ftp"
-                      },
-                      "warmup": true,
-                      "duration": 1200
-                    },
-                    {
-                      "text": "Åbner 5 min 91-100% FTP",
-                      "power": {
-                        "end": 100,
-                        "start": 91,
-                        "units": "%ftp"
-                      },
-                      "duration": 300
-                    },
-                    {
-                      "text": "Let 44-56% FTP",
-                      "power": {
-                        "end": 56,
-                        "start": 44,
-                        "units": "%ftp"
-                      },
-                      "duration": 300
-                    },
-                    {
-                      "text": "20 MIN ALL-OUT TEST — jævn max-indsats",
-                      "duration": 1200
-                    },
-                    {
-                      "ramp": true,
-                      "power": {
-                        "end": 40,
-                        "start": 60,
-                        "units": "%ftp"
-                      },
-                      "cooldown": true,
-                      "duration": 900
-                    }
-                  ]
-                },
-                "load": 49
-              },
-              "note": "FTP-TEST 20 min — morgen (arbejdstung dag)",
-              "id": "57a2242c"
-            }
-          ]
-        },
-        {
-          "date": "2026-07-29",
           "entries": [
             {
               "workout": {
@@ -3313,8 +3162,18 @@
                 },
                 "load": 25
               },
-              "note": "Svøm let 1500m — hviledag for benene mellem løb",
+              "note": "Svøm let 1500m",
               "id": "7aa7f0e8"
+            }
+          ]
+        },
+        {
+          "date": "2026-07-29",
+          "entries": [
+            {
+              "workout": null,
+              "note": "Svøm droppet — ingen erstatning i dag (rykket til fredag, se 31/7)",
+              "id": "42b7803a"
             }
           ]
         },
@@ -3323,19 +3182,19 @@
           "entries": [
             {
               "workout": {
-                "name": "THRESHOLD-TEST løb 20 min (opdatér pace-zoner efter)",
+                "name": "THRESHOLD-TEST løb 30 min + forlængelse (langt løb)",
                 "type": "Run",
-                "moving_time": 3300,
-                "description": "- Varm-op 15m >5:34/km Pace\n\n3x\n- Stride 20 sek 1m freeride\n- Jog 40 sek 1m freeride\n\n- 20 MIN TEST — jævn max-indsats, flad rute 20m freeride\n- Cool-down 10m >5:34/km Pace\n\nEfter testen: threshold-pace = 95% af testens gennemsnitsfart (snit-pace × 1,05). Eks: 4:05/km snit → 4:18/km threshold. Opdatér zoner i Intervals + config.",
+                "moving_time": 5460,
+                "description": "- Varm-op 15m >5:35/km Pace\n\n3x\n- Stride 20 sek 1m freeride\n- Jog 40 sek 1m freeride\n\n- 30 MIN TEST — jævn max-indsats, flad rute 30m freeride\n- Forlængelse — let løb Z1-Z2 30m freeride\n- Cool-down 10m >5:35/km Pace\n\nEfter testen: threshold-pace = snit af sidste 20 min. Opdatér zoner i Intervals + config.\nForlængelsen erstatter fredagens langløb — hold den strikt i Z1-Z2, skær kortere hvis pulsen driver eller benene føles tunge.",
                 "workout_doc": {
                   "steps": [
                     {
+                      "text": "Varm-op >5:35/km",
                       "pace": {
-                        "end": 78,
                         "start": 65,
+                        "end": 78,
                         "units": "%pace"
                       },
-                      "text": "Varm-op >5:34/km",
                       "duration": 900
                     },
                     {
@@ -3353,24 +3212,32 @@
                       ]
                     },
                     {
-                      "text": "20 MIN TEST — jævn max-indsats, flad rute",
-                      "duration": 1200
+                      "text": "30 MIN TEST — jævn max-indsats, flad rute",
+                      "duration": 1800
                     },
                     {
+                      "text": "Forlængelse — let løb Z1-Z2",
                       "pace": {
-                        "end": 78,
                         "start": 65,
+                        "end": 78,
                         "units": "%pace"
                       },
-                      "text": "Cool-down >5:34/km",
+                      "duration": 1800
+                    },
+                    {
+                      "text": "Cool-down >5:35/km",
+                      "pace": {
+                        "start": 65,
+                        "end": 78,
+                        "units": "%pace"
+                      },
                       "duration": 600
                     }
                   ]
-                },
-                "load": 48
+                }
               },
-              "note": "Threshold-test 20 min — morgen, før Pill in SE",
-              "id": "f95d11d6"
+              "note": "THRESHOLD-TEST + forlængelse — bliver ugens lange løb (erstatter fredag)",
+              "id": "35919655"
             }
           ]
         },
@@ -3379,59 +3246,7 @@
           "entries": [
             {
               "workout": {
-                "name": "Løb Z2 90 min",
-                "type": "Run",
-                "moving_time": 5400,
-                "description": "- Varm-op 15m >5:34/km Pace\n- Lang base 65m 4:56-5:33/km Pace\n- Cool-down 10m >5:34/km Pace",
-                "workout_doc": {
-                  "steps": [
-                    {
-                      "pace": {
-                        "end": 78,
-                        "start": 65,
-                        "units": "%pace"
-                      },
-                      "text": "Varm-op >5:34/km",
-                      "duration": 900
-                    },
-                    {
-                      "pace": {
-                        "end": 88,
-                        "start": 78,
-                        "units": "%pace"
-                      },
-                      "text": "Lang base 4:56-5:33/km",
-                      "duration": 3900
-                    },
-                    {
-                      "pace": {
-                        "end": 78,
-                        "start": 65,
-                        "units": "%pace"
-                      },
-                      "text": "Cool-down >5:34/km",
-                      "duration": 600
-                    }
-                  ]
-                },
-                "load": 85
-              },
-              "note": "Løb Z2 90 min — morgen, før Musik i Gentofte",
-              "id": "f8caaaba"
-            },
-            {
-              "workout": null,
-              "note": "Musik i Gentofte fre 31/7 – lør 1/8",
-              "id": "d27c8083"
-            }
-          ]
-        },
-        {
-          "date": "2026-08-01",
-          "entries": [
-            {
-              "workout": {
-                "name": "Svøm 1500m let teknisk (valgfri)",
+                "name": "Svøm 1500m let teknisk",
                 "type": "Swim",
                 "moving_time": 2700,
                 "description": "- 400m varm-op Z1 8m freeride\n\n5x\n- 100m teknik Z1-Z2 2m freeride\n\n- 300m cool 6m freeride",
@@ -3459,9 +3274,18 @@
                 },
                 "load": 25
               },
-              "note": "Svøm 1500m valgfri — Musik i Gentofte",
-              "id": "7a5571dd",
-              "optional": true
+              "note": "Svøm 1500m — flyttet fra onsdag 29/7. Fredagens oprindelige langløb er fjernet, torsdag dækker det nu",
+              "id": "cf437e2f"
+            }
+          ]
+        },
+        {
+          "date": "2026-08-01",
+          "entries": [
+            {
+              "workout": null,
+              "note": "Valgfri svøm fjernet — ugens svøm er rykket til fredag 31/7",
+              "id": "7516e2a4"
             }
           ]
         },
@@ -3469,9 +3293,27 @@
           "date": "2026-08-02",
           "entries": [
             {
-              "workout": null,
-              "note": "HVILEDAG — efter Musik i Gentofte",
-              "id": "4a20e955"
+              "workout": {
+                "name": "Løb Z1 30 min let (valgfri)",
+                "type": "Run",
+                "moving_time": 1800,
+                "description": "- Let løb 30m >5:35/km Pace (valgfri — kun hvis kroppen er frisk)",
+                "workout_doc": {
+                  "steps": [
+                    {
+                      "text": "Let løb >5:35/km",
+                      "pace": {
+                        "start": 65,
+                        "end": 78,
+                        "units": "%pace"
+                      },
+                      "duration": 1800
+                    }
+                  ]
+                }
+              },
+              "note": "Nyt valgfrit Z1-løb — erstatter en svøm 2000m der lå i plan.json uden nogensinde at være i Outlook",
+              "id": "f88da29c"
             }
           ]
         },
@@ -3540,11 +3382,11 @@
                 "name": "Løb VO2 4×5 min Z4-Z5",
                 "type": "Run",
                 "moving_time": 4200,
-                "description": "- Varm-op 15m >5:34/km Pace\n\n4x\n- Interval 5m 4:13-4:25/km Pace\n- Pause 3m >5:34/km Pace\n\n- Cool-down 10m >5:34/km Pace",
+                "description": "- Varm-op 15m >5:35/km Pace\n\n4x\n- Interval 5m 4:13-4:25/km Pace\n- Pause 3m >5:35/km Pace\n\n- Cool-down 10m >5:35/km Pace",
                 "workout_doc": {
                   "steps": [
                     {
-                      "text": "Varm-op >5:34/km",
+                      "text": "Varm-op >5:35/km",
                       "pace": {
                         "start": 65,
                         "end": 78,
@@ -3566,7 +3408,7 @@
                           "duration": 300
                         },
                         {
-                          "text": "Pause >5:34/km",
+                          "text": "Pause >5:35/km",
                           "pace": {
                             "start": 65,
                             "end": 78,
@@ -3577,7 +3419,7 @@
                       ]
                     },
                     {
-                      "text": "Cool-down >5:34/km",
+                      "text": "Cool-down >5:35/km",
                       "pace": {
                         "start": 65,
                         "end": 78,
@@ -3661,6 +3503,78 @@
           "entries": [
             {
               "workout": {
+                "name": "OW-svøm Open water 45 min",
+                "type": "OpenWaterSwim",
+                "moving_time": 2700,
+                "description": "- Tilvænning + let svøm langs kant 10m freeride\n- Open water: kontinuerlig svøm, sigtning hver 8.-10. tag 25m freeride\n- Let ud-svøm + exit-rutine 10m freeride",
+                "workout_doc": {
+                  "steps": [
+                    {
+                      "text": "Tilvænning + let svøm langs kant",
+                      "duration": 600
+                    },
+                    {
+                      "text": "Open water: kontinuerlig svøm, sigtning hver 8.-10. tag",
+                      "duration": 1500
+                    },
+                    {
+                      "text": "Let ud-svøm + exit-rutine",
+                      "duration": 600
+                    }
+                  ]
+                }
+              },
+              "note": "OW-svøm 45 min — Christiansborg-prep starter",
+              "id": "cc084f1c"
+            },
+            {
+              "workout": {
+                "name": "Løb Z2 35 min",
+                "type": "Run",
+                "moving_time": 2100,
+                "description": "- Varm-op 10m >5:35/km Pace\n- Base 20m 4:56-5:34/km Pace\n- Cool-down 5m >5:35/km Pace",
+                "workout_doc": {
+                  "steps": [
+                    {
+                      "text": "Varm-op >5:35/km",
+                      "pace": {
+                        "start": 65,
+                        "end": 78,
+                        "units": "%pace"
+                      },
+                      "duration": 600
+                    },
+                    {
+                      "text": "Base 4:56-5:34/km",
+                      "pace": {
+                        "start": 78,
+                        "end": 88,
+                        "units": "%pace"
+                      },
+                      "duration": 1200
+                    },
+                    {
+                      "text": "Cool-down >5:35/km",
+                      "pace": {
+                        "start": 65,
+                        "end": 78,
+                        "units": "%pace"
+                      },
+                      "duration": 300
+                    }
+                  ]
+                }
+              },
+              "note": "Let løb 35 min efter OW-svøm",
+              "id": "034518a1"
+            }
+          ]
+        },
+        {
+          "date": "2026-08-07",
+          "entries": [
+            {
+              "workout": {
                 "name": "Cykel Z2 45 min",
                 "type": "Ride",
                 "moving_time": 2700,
@@ -3699,77 +3613,8 @@
                   ]
                 }
               },
-              "note": "Let Z2-spin 45 min — flyttet til torsdag; fredag holdes løbefri før 29 km langtur lørdag (Friel: undgå fortløbende løbedage)",
+              "note": "Let Z2-spin 45 min — byttet fra løb (Friel: undgå fortløbende løb før 29 km langtur)",
               "id": "187b1b82"
-            },
-            {
-              "workout": {
-                "name": "Løb Z2 35 min",
-                "type": "Run",
-                "moving_time": 2100,
-                "description": "- Varm-op 10m >5:34/km Pace\n- Base 20m 4:56-5:33/km Pace\n- Cool-down 5m >5:34/km Pace",
-                "workout_doc": {
-                  "steps": [
-                    {
-                      "text": "Varm-op >5:34/km",
-                      "pace": {
-                        "start": 65,
-                        "end": 78,
-                        "units": "%pace"
-                      },
-                      "duration": 600
-                    },
-                    {
-                      "text": "Base 4:56-5:33/km",
-                      "pace": {
-                        "start": 78,
-                        "end": 88,
-                        "units": "%pace"
-                      },
-                      "duration": 1200
-                    },
-                    {
-                      "text": "Cool-down >5:34/km",
-                      "pace": {
-                        "start": 65,
-                        "end": 78,
-                        "units": "%pace"
-                      },
-                      "duration": 300
-                    }
-                  ]
-                }
-              },
-              "note": "Let løb 35 min om eftermiddagen — svøm flyttet til fredag morgen",
-              "id": "034518a1"
-            }
-          ]
-        },
-        {
-          "date": "2026-08-07",
-          "entries": [
-            {
-              "workout": {
-                "name": "OW-svøm 2500m SAMMENHÆNGENDE (Christiansborg-generalprøve)",
-                "type": "OpenWaterSwim",
-                "moving_time": 3000,
-                "description": "- 200m indsvømning rolig 5m freeride\n- 2500m SAMMENHÆNGENDE — ingen pauser, racetempo-føling 45m freeride\n\nFormål: distancen i ét stykke før Christiansborg 29/8. Ikke en test — jævnt tempo, orienter hver 6.-8. tag.",
-                "workout_doc": {
-                  "steps": [
-                    {
-                      "text": "200m indsvømning rolig",
-                      "duration": 300
-                    },
-                    {
-                      "text": "2500m SAMMENHÆNGENDE — ingen pauser, jævnt racetempo",
-                      "duration": 2700
-                    }
-                  ]
-                },
-                "load": 45
-              },
-              "note": "OW-svøm 2500m i ét stræk — generalprøve til Christiansborg 29/8 (flyttet til fredag morgen)",
-              "id": "cc084f1c"
             }
           ]
         },
@@ -3781,11 +3626,11 @@
                 "name": "Lang løb Z2 29 km (155 min)",
                 "type": "Run",
                 "moving_time": 9300,
-                "description": "- Varm-op 15m >5:34/km Pace\n- Lang base 29 km 130m 4:56-5:33/km Pace\n- Cool-down 10m >5:34/km Pace",
+                "description": "- Varm-op 15m >5:35/km Pace\n- Lang base 29 km 130m 4:56-5:34/km Pace\n- Cool-down 10m >5:35/km Pace",
                 "workout_doc": {
                   "steps": [
                     {
-                      "text": "Varm-op >5:34/km",
+                      "text": "Varm-op >5:35/km",
                       "pace": {
                         "start": 65,
                         "end": 78,
@@ -3794,7 +3639,7 @@
                       "duration": 900
                     },
                     {
-                      "text": "Lang base 29 km 4:56-5:33/km",
+                      "text": "Lang base 29 km 4:56-5:34/km",
                       "pace": {
                         "start": 78,
                         "end": 88,
@@ -3803,7 +3648,7 @@
                       "duration": 7800
                     },
                     {
-                      "text": "Cool-down >5:34/km",
+                      "text": "Cool-down >5:35/km",
                       "pace": {
                         "start": 65,
                         "end": 78,
@@ -3885,11 +3730,11 @@
                 "name": "Løb Z2 75 min",
                 "type": "Run",
                 "moving_time": 4500,
-                "description": "- Varm-op 10m >5:34/km Pace\n- Base 60m 4:56-5:33/km Pace\n- Cool-down 5m >5:34/km Pace",
+                "description": "- Varm-op 10m >5:35/km Pace\n- Base 60m 4:56-5:34/km Pace\n- Cool-down 5m >5:35/km Pace",
                 "workout_doc": {
                   "steps": [
                     {
-                      "text": "Varm-op >5:34/km",
+                      "text": "Varm-op >5:35/km",
                       "pace": {
                         "start": 65,
                         "end": 78,
@@ -3898,7 +3743,7 @@
                       "duration": 600
                     },
                     {
-                      "text": "Base 4:56-5:33/km",
+                      "text": "Base 4:56-5:34/km",
                       "pace": {
                         "start": 78,
                         "end": 88,
@@ -3907,7 +3752,7 @@
                       "duration": 3600
                     },
                     {
-                      "text": "Cool-down >5:34/km",
+                      "text": "Cool-down >5:35/km",
                       "pace": {
                         "start": 65,
                         "end": 78,
@@ -3928,81 +3773,60 @@
           "entries": [
             {
               "workout": {
-                "name": "Sa Calobra TEST via Puig Major",
+                "name": "Cykel bjerg-intervaller Z4 Mallorca",
                 "type": "Ride",
-                "moving_time": 15900,
-                "description": "- Varm-op Fornalutx til Sóller 20m ramp 45-65% FTP\n- Puig Major opstigning Z2 — spar benene 65m 65-75% FTP\n- Tunnel til Coll dels Reis 20m 55-70% FTP\n- Nedkørsel Sa Calobra — kontrolleret, ingen watt-mål 25m freeride\n- SA CALOBRA TEST — jævn max-indsats, 105% FTP 35m freeride\n- Cool-down på toppen 10m 44-56% FTP\n- Retur over Puig Major Z2 70m 60-72% FTP\n- Cool-down ned til Fornalutx 20m ramp 65-45% FTP\n\nTesten: Sa Calobra 9,45 km / 627 hm. Kør jævnt — NP skal ligge tæt på snittet, ingen ryk på svingene. Vær nede ved havnen kl. 08:00, før turistbusserne. PR 35:18, sat på 275 W i 31 grader efter 85 km.",
+                "moving_time": 7200,
+                "description": "- Varm-op til bjerg 30m ramp 50-76% FTP\n\n5x\n- Z4 opstigning 7m 91-100% FTP\n- Ned 4m 44-56% FTP\n\n- Cool-down hjem 25m ramp 76-50% FTP",
                 "workout_doc": {
                   "steps": [
                     {
+                      "ramp": true,
                       "power": {
-                        "start": 45,
-                        "end": 65,
+                        "start": 50,
+                        "end": 76,
                         "units": "%ftp"
                       },
-                      "duration": 1200,
-                      "ramp": true,
+                      "duration": 1800,
                       "warmup": true
                     },
                     {
-                      "power": {
-                        "start": 65,
-                        "end": 75,
-                        "units": "%ftp"
-                      },
-                      "duration": 3900,
-                      "text": "Puig Major opstigning Z2 — spar benene"
+                      "reps": 5,
+                      "text": "5x",
+                      "steps": [
+                        {
+                          "text": "Z4 opstigning 91-100% FTP",
+                          "power": {
+                            "start": 91,
+                            "end": 100,
+                            "units": "%ftp"
+                          },
+                          "duration": 420
+                        },
+                        {
+                          "text": "Ned 44-56% FTP",
+                          "power": {
+                            "start": 44,
+                            "end": 56,
+                            "units": "%ftp"
+                          },
+                          "duration": 240
+                        }
+                      ]
                     },
                     {
-                      "power": {
-                        "start": 55,
-                        "end": 70,
-                        "units": "%ftp"
-                      },
-                      "duration": 1200,
-                      "text": "Tunnel til Coll dels Reis"
-                    },
-                    {
-                      "text": "Nedkørsel Sa Calobra — kontrolleret, ingen watt-mål",
-                      "duration": 1500
-                    },
-                    {
-                      "text": "SA CALOBRA TEST — jævn max-indsats, 105% FTP",
-                      "duration": 2100
-                    },
-                    {
-                      "power": {
-                        "start": 44,
-                        "end": 56,
-                        "units": "%ftp"
-                      },
-                      "duration": 600,
-                      "text": "Cool-down på toppen"
-                    },
-                    {
-                      "power": {
-                        "start": 60,
-                        "end": 72,
-                        "units": "%ftp"
-                      },
-                      "duration": 4200,
-                      "text": "Retur over Puig Major Z2"
-                    },
-                    {
-                      "power": {
-                        "start": 65,
-                        "end": 45,
-                        "units": "%ftp"
-                      },
-                      "duration": 1200,
                       "ramp": true,
+                      "power": {
+                        "start": 76,
+                        "end": 50,
+                        "units": "%ftp"
+                      },
+                      "duration": 1500,
                       "cooldown": true
                     }
                   ]
-                },
-                "load": 230
+                }
               },
-              "note": "Sa Calobra formtest — tidlig afgang, jævn max-indsats",
+              "note": "Cykel bjerg Z4 Mallorca — VO2 stimulus",
               "id": "f869a41d"
             }
           ]
@@ -4015,11 +3839,11 @@
                 "name": "Lang løb Z2 28 km (150 min)",
                 "type": "Run",
                 "moving_time": 9000,
-                "description": "- Varm-op 15m >5:34/km Pace\n- Lang base 28 km 125m 4:56-5:33/km Pace\n- Cool-down 10m >5:34/km Pace",
+                "description": "- Varm-op 15m >5:35/km Pace\n- Lang base 28 km 125m 4:56-5:34/km Pace\n- Cool-down 10m >5:35/km Pace",
                 "workout_doc": {
                   "steps": [
                     {
-                      "text": "Varm-op >5:34/km",
+                      "text": "Varm-op >5:35/km",
                       "pace": {
                         "start": 65,
                         "end": 78,
@@ -4028,7 +3852,7 @@
                       "duration": 900
                     },
                     {
-                      "text": "Lang base 28 km 4:56-5:33/km",
+                      "text": "Lang base 28 km 4:56-5:34/km",
                       "pace": {
                         "start": 78,
                         "end": 88,
@@ -4037,7 +3861,7 @@
                       "duration": 7500
                     },
                     {
-                      "text": "Cool-down >5:34/km",
+                      "text": "Cool-down >5:35/km",
                       "pace": {
                         "start": 65,
                         "end": 78,
@@ -4155,11 +3979,11 @@
                 "name": "Løb Z1 30 min let",
                 "type": "Run",
                 "moving_time": 1800,
-                "description": "- Let løb 30m >5:34/km Pace",
+                "description": "- Let løb 30m >5:35/km Pace",
                 "workout_doc": {
                   "steps": [
                     {
-                      "text": "Let løb >5:34/km",
+                      "text": "Let løb >5:35/km",
                       "pace": {
                         "start": 65,
                         "end": 78,
@@ -4224,11 +4048,11 @@
                 "name": "Lang løb Z2 32 km (170 min)",
                 "type": "Run",
                 "moving_time": 10200,
-                "description": "- Varm-op 15m >5:34/km Pace\n- Lang base 32 km 145m 4:56-5:33/km Pace\n- Cool-down 10m >5:34/km Pace",
+                "description": "- Varm-op 15m >5:35/km Pace\n- Lang base 32 km 145m 4:56-5:34/km Pace\n- Cool-down 10m >5:35/km Pace",
                 "workout_doc": {
                   "steps": [
                     {
-                      "text": "Varm-op >5:34/km",
+                      "text": "Varm-op >5:35/km",
                       "pace": {
                         "start": 65,
                         "end": 78,
@@ -4237,7 +4061,7 @@
                       "duration": 900
                     },
                     {
-                      "text": "Lang base 32 km 4:56-5:33/km",
+                      "text": "Lang base 32 km 4:56-5:34/km",
                       "pace": {
                         "start": 78,
                         "end": 88,
@@ -4246,7 +4070,7 @@
                       "duration": 8700
                     },
                     {
-                      "text": "Cool-down >5:34/km",
+                      "text": "Cool-down >5:35/km",
                       "pace": {
                         "start": 65,
                         "end": 78,
@@ -4349,11 +4173,11 @@
                 "name": "Shakeout løb + strides",
                 "type": "Run",
                 "moving_time": 1200,
-                "description": "- Let løb 10m >5:34/km Pace\n\n4x\n- Stride 20 sek 1m freeride\n- Jog 40 sek 1m freeride\n\n- Cool-down 5m >5:34/km Pace",
+                "description": "- Let løb 10m >5:35/km Pace\n\n4x\n- Stride 20 sek 1m freeride\n- Jog 40 sek 1m freeride\n\n- Cool-down 5m >5:35/km Pace",
                 "workout_doc": {
                   "steps": [
                     {
-                      "text": "Let løb >5:34/km",
+                      "text": "Let løb >5:35/km",
                       "pace": {
                         "start": 65,
                         "end": 78,
@@ -4376,7 +4200,7 @@
                       ]
                     },
                     {
-                      "text": "Cool-down >5:34/km",
+                      "text": "Cool-down >5:35/km",
                       "pace": {
                         "start": 65,
                         "end": 78,
@@ -4410,11 +4234,11 @@
                 "name": "Løb Z2 50 min",
                 "type": "Run",
                 "moving_time": 3000,
-                "description": "- Varm-op 10m >5:34/km Pace\n- Base 35m 4:56-5:33/km Pace\n- Cool-down 5m >5:34/km Pace",
+                "description": "- Varm-op 10m >5:35/km Pace\n- Base 35m 4:56-5:34/km Pace\n- Cool-down 5m >5:35/km Pace",
                 "workout_doc": {
                   "steps": [
                     {
-                      "text": "Varm-op >5:34/km",
+                      "text": "Varm-op >5:35/km",
                       "pace": {
                         "start": 65,
                         "end": 78,
@@ -4423,7 +4247,7 @@
                       "duration": 600
                     },
                     {
-                      "text": "Base 4:56-5:33/km",
+                      "text": "Base 4:56-5:34/km",
                       "pace": {
                         "start": 78,
                         "end": 88,
@@ -4432,7 +4256,7 @@
                       "duration": 2100
                     },
                     {
-                      "text": "Cool-down >5:34/km",
+                      "text": "Cool-down >5:35/km",
                       "pace": {
                         "start": 65,
                         "end": 78,
@@ -4492,11 +4316,11 @@
                 "name": "Løb Z2 50 min",
                 "type": "Run",
                 "moving_time": 3000,
-                "description": "- Varm-op 10m >5:34/km Pace\n- Base 35m 4:56-5:33/km Pace\n- Cool-down 5m >5:34/km Pace",
+                "description": "- Varm-op 10m >5:35/km Pace\n- Base 35m 4:56-5:34/km Pace\n- Cool-down 5m >5:35/km Pace",
                 "workout_doc": {
                   "steps": [
                     {
-                      "text": "Varm-op >5:34/km",
+                      "text": "Varm-op >5:35/km",
                       "pace": {
                         "start": 65,
                         "end": 78,
@@ -4505,7 +4329,7 @@
                       "duration": 600
                     },
                     {
-                      "text": "Base 4:56-5:33/km",
+                      "text": "Base 4:56-5:34/km",
                       "pace": {
                         "start": 78,
                         "end": 88,
@@ -4514,7 +4338,7 @@
                       "duration": 2100
                     },
                     {
-                      "text": "Cool-down >5:34/km",
+                      "text": "Cool-down >5:35/km",
                       "pace": {
                         "start": 65,
                         "end": 78,
@@ -4538,11 +4362,11 @@
                 "name": "Mellemlang løb Z2 19 km (100 min)",
                 "type": "Run",
                 "moving_time": 6000,
-                "description": "- Varm-op 10m >5:34/km Pace\n- Base 19 km 85m 4:56-5:33/km Pace\n- Cool-down 5m >5:34/km Pace",
+                "description": "- Varm-op 10m >5:35/km Pace\n- Base 19 km 85m 4:56-5:34/km Pace\n- Cool-down 5m >5:35/km Pace",
                 "workout_doc": {
                   "steps": [
                     {
-                      "text": "Varm-op >5:34/km",
+                      "text": "Varm-op >5:35/km",
                       "pace": {
                         "start": 65,
                         "end": 78,
@@ -4551,7 +4375,7 @@
                       "duration": 600
                     },
                     {
-                      "text": "Base 19 km 4:56-5:33/km",
+                      "text": "Base 19 km 4:56-5:34/km",
                       "pace": {
                         "start": 78,
                         "end": 88,
@@ -4560,7 +4384,7 @@
                       "duration": 5100
                     },
                     {
-                      "text": "Cool-down >5:34/km",
+                      "text": "Cool-down >5:35/km",
                       "pace": {
                         "start": 65,
                         "end": 78,
@@ -4641,11 +4465,11 @@
                 "name": "Løb Z1 40 min let",
                 "type": "Run",
                 "moving_time": 2400,
-                "description": "- Let løb 40m >5:34/km Pace",
+                "description": "- Let løb 40m >5:35/km Pace",
                 "workout_doc": {
                   "steps": [
                     {
-                      "text": "Let løb >5:34/km",
+                      "text": "Let løb >5:35/km",
                       "pace": {
                         "start": 65,
                         "end": 78,
@@ -4669,11 +4493,11 @@
                 "name": "Løb Z2 50 min",
                 "type": "Run",
                 "moving_time": 3000,
-                "description": "- Varm-op 10m >5:34/km Pace\n- Base 35m 4:56-5:33/km Pace\n- Cool-down 5m >5:34/km Pace",
+                "description": "- Varm-op 10m >5:35/km Pace\n- Base 35m 4:56-5:34/km Pace\n- Cool-down 5m >5:35/km Pace",
                 "workout_doc": {
                   "steps": [
                     {
-                      "text": "Varm-op >5:34/km",
+                      "text": "Varm-op >5:35/km",
                       "pace": {
                         "start": 65,
                         "end": 78,
@@ -4682,7 +4506,7 @@
                       "duration": 600
                     },
                     {
-                      "text": "Base 4:56-5:33/km",
+                      "text": "Base 4:56-5:34/km",
                       "pace": {
                         "start": 78,
                         "end": 88,
@@ -4691,7 +4515,7 @@
                       "duration": 2100
                     },
                     {
-                      "text": "Cool-down >5:34/km",
+                      "text": "Cool-down >5:35/km",
                       "pace": {
                         "start": 65,
                         "end": 78,
@@ -4715,11 +4539,11 @@
                 "name": "Løb Z2 40 min + 6×1 min race-pace",
                 "type": "Run",
                 "moving_time": 2400,
-                "description": "- Varm-op 10m >5:34/km Pace\n- Base 13m 4:56-5:33/km Pace\n\n6x\n- Race-pace 1 min 1m 4:56-5:33/km Pace\n- Jog 1 min 1m freeride\n\n- Cool-down 5m >5:34/km Pace",
+                "description": "- Varm-op 10m >5:35/km Pace\n- Base 13m 4:56-5:34/km Pace\n\n6x\n- Race-pace 1 min 1m 4:56-5:34/km Pace\n- Jog 1 min 1m freeride\n\n- Cool-down 5m >5:35/km Pace",
                 "workout_doc": {
                   "steps": [
                     {
-                      "text": "Varm-op >5:34/km",
+                      "text": "Varm-op >5:35/km",
                       "pace": {
                         "start": 65,
                         "end": 78,
@@ -4728,7 +4552,7 @@
                       "duration": 600
                     },
                     {
-                      "text": "Base 4:56-5:33/km",
+                      "text": "Base 4:56-5:34/km",
                       "pace": {
                         "start": 78,
                         "end": 88,
@@ -4741,7 +4565,7 @@
                       "text": "6x",
                       "steps": [
                         {
-                          "text": "Race-pace 1 min 4:56-5:33/km",
+                          "text": "Race-pace 1 min 4:56-5:34/km",
                           "pace": {
                             "start": 78,
                             "end": 88,
@@ -4756,7 +4580,7 @@
                       ]
                     },
                     {
-                      "text": "Cool-down >5:34/km",
+                      "text": "Cool-down >5:35/km",
                       "pace": {
                         "start": 65,
                         "end": 78,
@@ -4795,11 +4619,11 @@
                 "name": "Shakeout løb + strides",
                 "type": "Run",
                 "moving_time": 1200,
-                "description": "- Let løb 10m >5:34/km Pace\n\n4x\n- Stride 20 sek 1m freeride\n- Jog 40 sek 1m freeride\n\n- Cool-down 5m >5:34/km Pace",
+                "description": "- Let løb 10m >5:35/km Pace\n\n4x\n- Stride 20 sek 1m freeride\n- Jog 40 sek 1m freeride\n\n- Cool-down 5m >5:35/km Pace",
                 "workout_doc": {
                   "steps": [
                     {
-                      "text": "Let løb >5:34/km",
+                      "text": "Let løb >5:35/km",
                       "pace": {
                         "start": 65,
                         "end": 78,
@@ -4822,7 +4646,7 @@
                       ]
                     },
                     {
-                      "text": "Cool-down >5:34/km",
+                      "text": "Cool-down >5:35/km",
                       "pace": {
                         "start": 65,
                         "end": 78,
@@ -4851,11 +4675,11 @@
                 "name": "Løb Z1 15 min let",
                 "type": "Run",
                 "moving_time": 900,
-                "description": "- Let løb 15m >5:34/km Pace",
+                "description": "- Let løb 15m >5:35/km Pace",
                 "workout_doc": {
                   "steps": [
                     {
-                      "text": "Let løb >5:34/km",
+                      "text": "Let løb >5:35/km",
                       "pace": {
                         "start": 65,
                         "end": 78,

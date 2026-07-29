@@ -234,6 +234,12 @@ Verificer derefter via calendar_search — workflow-success er ikke nok.
 
 SHA til GitHub Contents API: hent frisk SHA umiddelbart før PUT. Brug aldrig cached SHA.
 
+**Drift + adgangsproblem fundet 29/7-2026 (uge 9):** en Cowork-session uden GitHub-adgang skulle flytte en svøm/løb-uge og opdagede at `plan.json` for fredag (31/7) og lørdag (1/8) slet ikke matchede Outlook — filen sagde hviledag/60 min løb, Outlook viste 90 min langløb/valgfri svøm. Der lå desuden en "spøgelses-svøm" (2000m, søn 2/8) i plan.json som aldrig var kommet til Outlook. To adskilte fejl:
+1. **Adgang:** Cowork-sessioner har som udgangspunkt IKKE GitHub-adgang, uanset hvad tidligere sessioner har gjort. Der findes ingen GitHub-connector i Claudes standard-directory. Løsningen er device-broen til Mac'en (`~/Developer/fast-as-50`) — men den har ingen netværksadgang, så `git pull`/commit/push skal køres af Kennet selv (eller den lokale Claude Code-session) i et rigtigt terminalvindue.
+2. **Drift:** selv efter frisk `git pull` matchede plan.json stadig ikke Outlook for de dage — dvs. nogen har rettet direkte i Intervals/Outlook uden at skrive det tilbage til plan.json. Samme mønster som 25/7 og 26/7-hændelserne ovenfor.
+
+Lær af det, gælder enhver session fremover: (a) antag ALDRIG GitHub-adgang — tjek det eksplicit i starten; (b) kør `git pull` i `~/Developer/fast-as-50` FØR plan.json læses, hver gang; (c) sammenlign plan.json mod live Outlook for den aktuelle uge før du redigerer — "master" er kun master hvis den rent faktisk er fulgt med.
+
 ### Regel 6: Aldrig Kennet i terminalen
 
 Udtøm alle API- og tool-muligheder før terminal overvejes.
