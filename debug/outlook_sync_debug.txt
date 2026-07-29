@@ -1,21 +1,18 @@
 Token OK
-Uge 2: 2026-06-08 til 2026-06-14
-7 workouts fra Intervals
+Uge 9: 2026-07-27 til 2026-08-02
+5 workouts fra Intervals
 timeOverrides: 3 dato(er) fra data/plan.json
-  Slettet: 💪 Styrke A Functional Strength 3 sæt
-  Slettet: 🏃 Løb Z2 45 min
-  Slettet: 🏃 Løb Z2 45 min
-  Slettet: 🚴 Cykel Z2 60 min Mallorca
-  Slettet: 🚴 Cykel bjerg-intervaller Z4 Mallorca
-  Slettet: 🚴 Cykel Z2 150 min Mallorca
+  Slettet: 🏃 Løb Z1 30 min let
+  Slettet: 🚴 FTP-TEST 20 min (opdatér zoner efter)
   Slettet: 🏊 Svøm 1500m let teknisk
-Slettet: 7
-  Oprettet: 2026-06-08 💪 Styrke A Functional Strength 3 sæt
-  Oprettet: 2026-06-09 🏃 Løb Z2 45 min
-  Oprettet: 2026-06-10 🏃 Løb Z2 45 min
-  Oprettet: 2026-06-11 🚴 Cykel Z2 60 min Mallorca
-  Oprettet: 2026-06-12 🚴 Cykel bjerg-intervaller Z4 Mallorca
-  Oprettet: 2026-06-13 🚴 Cykel Z2 150 min Mallorca
-  Oprettet: 2026-06-14 🏊 Svøm 1500m let teknisk
-Oprettet: 7 | Fejl: 0
+  Slettet: 🏃 THRESHOLD-TEST løb 20 min (opdatér pace-zoner efter)
+  Slettet: 🏃 Løb Z2 90 min
+  Slettet: 🏊 Svøm 1500m let teknisk (valgfri)
+Slettet: 6
+  Oprettet: 2026-07-27 🏃 Løb Z1 30 min let
+  Oprettet: 2026-07-28 🚴 FTP-TEST 20 min (opdatér zoner efter)
+  Oprettet: 2026-07-30 🏃 THRESHOLD-TEST løb 20 min + forlængelse (langt løb)
+  Oprettet: 2026-07-31 🏊 Svøm 1500m let teknisk
+  Oprettet: 2026-08-02 🏃 Løb Z1 30 min let (valgfri)
+Oprettet: 5 | Fejl: 0
 DONE
