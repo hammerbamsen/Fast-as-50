@@ -227,7 +227,7 @@ Aldrig POST uden forudgående GET+slet — ellers dobbelt-events.
 data.json opdateres via GitHub Contents API direkte — vent ikke på launchd/Mac.
 Intervals.icu blokerer GitHub Actions IPs; direkte Intervals-kald kører fra Claude's sandbox eller lokalt.
 
-Outlook-push: trigger `create-outlook-events.yml` via workflow_dispatch.
+Outlook-push: trigger `create-outlook-events.yml` via workflow_dispatch **med eksplicit `-f week=<uge>`**. Input hedder `week` (IKKE `week_only` som i build-workouts.yml) og har `default: '2'` — mangler input'et, kører den stille og roligt uge 2 uden fejl. Korrekt kald: `gh workflow run create-outlook-events.yml -f week=<uge>`.
 
 **Outlook-sync er ALTID sidste skridt (tilføjet 25/7-2026).** Outlook har ingen watcher på Intervals. Auto-kæden `build-workouts.yml → outlook-sync` fyrer kun når build-workouts kører — så enhver ændring lavet med direkte PUT til Intervals (søndagsrutinen, mid-week-justeringer) efterlader Outlook forældet indtil `create-outlook-events.yml` dispatches manuelt. Rodårsag fundet 25/7: syncen kørte kl. 07:53 på gammel uge 9, omlægningen skete 08:40–12:00, Outlook opdaterede aldrig. Sikkerhedsnet: cron søndag 18:00 UTC (20:00 CET) beregner selv kommende uge — men cron'en er backup, ikke undskyldning for at springe skridtet over.
 Verificer derefter via calendar_search — workflow-success er ikke nok.
@@ -240,6 +240,18 @@ SHA til GitHub Contents API: hent frisk SHA umiddelbart før PUT. Brug aldrig ca
 2. **Selvforskyldt fejl (ikke drift):** sessionen troede fejlagtigt at plan.json var ude af sync med Outlook — den var IKKE. Efter et korrekt `git pull` matchede plan.json rent faktisk Outlook 1:1 for alle dage. Fejlen opstod fordi sessionen genindlæste og redigerede filen ud fra en forældet cache i sit eget sandbox (ikke fra den friske pull), og skrev hele filen om med `json.dump` i stedet for en minimal, targeted rettelse. Det første commit (f1d44ca4) rullede derved FTP (278W→270W), pace-zoner og CTL-mål for uge 9-14 tilbage til gamle værdier — helt ved siden af den egentlige opgave. Fejlen blev fanget FØR skade på Intervals ved at diffe `git diff HEAD~1 HEAD` og se at langt flere felter end de 5 tiltænkte dage var ændret.
 
 Lær af det, gælder enhver session fremover: (a) antag ALDRIG GitHub-adgang — tjek det eksplicit i starten; (b) kør `git pull` FØR plan.json læses, og genindlæs filen fra disk umiddelbart før redigering — brug aldrig en tidligere staged/cached kopi; (c) skriv ALDRIG hele plan.json om med `json.dump` — lav minimale, targeted ændringer i de specifikke dage; (d) kør ALTID `git diff HEAD~1 HEAD --stat` efter commit, FØR push, og bekræft at kun de tiltænkte felter er ændret — en diff der er markant større end forventet er et alarmsignal, ikke støj der kan ignoreres.
+
+**Tjekliste — læs FØR enhver plan.json-ændring (destilleret fra 29/7-2026-hændelsen):**
+
+1. Tjek eksplicit om der er GitHub-adgang i denne session. Antag nej som udgangspunkt.
+2. Bed Kennet køre `git pull` FØRST, hver gang — også selvom en tidligere session "lige har gjort det".
+3. Genindlæs filen fra disk umiddelbart før redigering. Brug aldrig en cached/staged kopi fra tidligere i samtalen.
+4. Lav kun minimale, targeted ændringer i de specifikke dage/felter — aldrig `json.dump` af hele filen.
+5. Diff ALTID mod originalen (`git diff HEAD~1 HEAD --stat` eller programmatisk) FØR push. En diff der er større end forventet = stop og undersøg, ikke antag det er støj.
+6. Læs den faktiske workflow-YAML/scriptet FØR du giver Kennet en `gh workflow run`-kommando — gæt aldrig et input-navn eller en default-værdi. (`build-workouts.yml` bruger `week_only`, `create-outlook-events.yml` bruger `week` med default `'2'` — to forskellige navne, nem faldgrube.)
+7. Device-broen til Mac'en kan hverken slette filer eller nå netværket — brug den kun til at læse/skrive filer, aldrig til git-operationer (pull/push/merge) eller `gh`-kommandoer. De skal altid køres af Kennet selv i et rigtigt terminalvindue.
+8. Efter et workflow melder "success": verificér selv i Outlook/Intervals via API — spørg ikke Kennet om screenshots af workflow-status, det er ikke det samme som verifikation.
+9. Efter en plan.json-ændring: tjek at hele kæden er kørt igennem, ikke kun Outlook — `regen-docx.yml` skal have kørt (docx-filerne regenereret) OG `sync-onedrive.yml` skal have kørt derefter (så OneDrive-kopierne er opdaterede). Et push til plan.json trigger-teoretisk begge automatisk, men det er en kendt skrøbelig kæde (se `regen-docx.yml`'s egen kommentar om PAT-pushes der ikke trigger) — tjek `git log --oneline -3 -- data/Fast_as_Fifty_Masterplan_2026.docx` og bekræft nyeste commit er nyere end din egen plan.json-ændring. Er den ikke, dispatch `regen-docx.yml` manuelt.
 
 ### Regel 6: Aldrig Kennet i terminalen
 
