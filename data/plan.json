@@ -3297,17 +3297,17 @@
               "workout": {
                 "name": "THRESHOLD-TEST løb 20 min + forlængelse (langt løb)",
                 "type": "Run",
-                "moving_time": 5100,
-                "description": "- Varm-op 15m >5:34/km Pace\n\n3x\n- Stride 20 sek 1m freeride\n- Jog 40 sek 1m freeride\n\n- 20 MIN TEST — jævn max-indsats, flad rute 20m freeride\n- Cool-down 10m >5:34/km Pace\n\nEfter testen: threshold-pace = 95% af testens gennemsnitsfart (snit-pace × 1,05). Eks: 4:05/km snit → 4:18/km threshold. Opdatér zoner i Intervals + config.\n- Forlængelse — let løb Z1-Z2 30m freeride",
+                "moving_time": 4680,
+                "description": "- Varm-op 15m >5:34/km Pace\n\n3x\n- Stride 20s 3:53-4:12/km Pace\n- Jog 40s >5:34/km Pace\n\n- 20 MIN TEST: jævn max-indsats, flad rute 20m freeride\n- Forlængelse: let løb 30m 4:56-5:34/km Pace\n- Cool-down 10m >5:34/km Pace\n\nEfter testen: threshold-pace = testens snit-pace ÷ 0,95 (dvs. langsommere pace). Eks: 4:05/km snit → 4:18/km threshold. Opdatér zoner i plan.json + Intervals.",
                 "workout_doc": {
                   "steps": [
                     {
+                      "text": "Varm-op >5:34/km",
                       "pace": {
-                        "end": 78,
                         "start": 65,
+                        "end": 78,
                         "units": "%pace"
                       },
-                      "text": "Varm-op >5:34/km",
                       "duration": 900
                     },
                     {
@@ -3315,35 +3315,45 @@
                       "text": "3x",
                       "steps": [
                         {
-                          "text": "Stride 20 sek",
-                          "duration": 60
+                          "text": "Stride 20s 3:53-4:12/km",
+                          "pace": {
+                            "start": 103,
+                            "end": 112,
+                            "units": "%pace"
+                          },
+                          "duration": 20
                         },
                         {
-                          "text": "Jog 40 sek",
-                          "duration": 60
+                          "text": "Jog 40s >5:34/km",
+                          "pace": {
+                            "start": 65,
+                            "end": 78,
+                            "units": "%pace"
+                          },
+                          "duration": 40
                         }
                       ]
                     },
                     {
-                      "text": "20 MIN TEST — jævn max-indsats, flad rute",
+                      "text": "20 MIN TEST: jævn max-indsats, flad rute",
                       "duration": 1200
                     },
                     {
-                      "text": "Forlængelse — let løb Z1-Z2",
+                      "text": "Forlængelse: let løb 4:56-5:34/km",
                       "pace": {
-                        "start": 65,
-                        "end": 78,
+                        "start": 78,
+                        "end": 88,
                         "units": "%pace"
                       },
                       "duration": 1800
                     },
                     {
+                      "text": "Cool-down >5:34/km",
                       "pace": {
-                        "end": 78,
                         "start": 65,
+                        "end": 78,
                         "units": "%pace"
                       },
-                      "text": "Cool-down >5:34/km",
                       "duration": 600
                     }
                   ]
@@ -3411,7 +3421,7 @@
                 "name": "Løb Z1 30 min let (valgfri)",
                 "type": "Run",
                 "moving_time": 1800,
-                "description": "- Let løb 30m >5:35/km Pace (valgfri — kun hvis kroppen er frisk)",
+                "description": "- Let løb 30m >5:35/km Pace (valgfri, kun hvis kroppen er frisk)",
                 "workout_doc": {
                   "steps": [
                     {
@@ -3887,7 +3897,7 @@
                 "name": "Sa Calobra TEST via Puig Major",
                 "type": "Ride",
                 "moving_time": 15900,
-                "description": "- Varm-op Fornalutx til Sóller 20m ramp 45-65% FTP\n- Puig Major opstigning Z2 — spar benene 65m 65-75% FTP\n- Tunnel til Coll dels Reis 20m 55-70% FTP\n- Nedkørsel Sa Calobra — kontrolleret, ingen watt-mål 25m freeride\n- SA CALOBRA TEST — jævn max-indsats, 105% FTP 35m freeride\n- Cool-down på toppen 10m 44-56% FTP\n- Retur over Puig Major Z2 70m 60-72% FTP\n- Cool-down ned til Fornalutx 20m ramp 65-45% FTP\n\nTesten: Sa Calobra 9,45 km / 627 hm. Kør jævnt — NP skal ligge tæt på snittet, ingen ryk på svingene. Vær nede ved havnen kl. 08:00, før turistbusserne. PR 35:18, sat på 275 W i 31 grader efter 85 km.",
+                "description": "- Varm-op Fornalutx til Sóller 20m ramp 45-65% FTP\n- Puig Major opstigning Z2, spar benene 65m 65-75% FTP\n- Tunnel til Coll dels Reis 20m 55-70% FTP\n- Nedkørsel Sa Calobra, kontrolleret, ingen watt-mål 25m freeride\n- SA CALOBRA TEST: jævn max-indsats 35m 103-105% FTP\n- Cool-down på toppen 10m 44-56% FTP\n- Retur over Puig Major Z2 70m 60-72% FTP\n- Cool-down ned til Fornalutx 20m ramp 65-45% FTP\n\nTesten: Sa Calobra 9,45 km / 627 hm. Kør jævnt, NP skal ligge tæt på snittet, ingen ryk på svingene. Vær nede ved havnen kl. 08:00, før turistbusserne. PR 35:18, sat på 275 W i 31 grader efter 85 km.",
                 "workout_doc": {
                   "steps": [
                     {
@@ -3907,7 +3917,7 @@
                         "units": "%ftp"
                       },
                       "duration": 3900,
-                      "text": "Puig Major opstigning Z2 — spar benene"
+                      "text": "Puig Major opstigning Z2, spar benene"
                     },
                     {
                       "power": {
@@ -3919,12 +3929,17 @@
                       "text": "Tunnel til Coll dels Reis"
                     },
                     {
-                      "text": "Nedkørsel Sa Calobra — kontrolleret, ingen watt-mål",
+                      "text": "Nedkørsel Sa Calobra, kontrolleret, ingen watt-mål",
                       "duration": 1500
                     },
                     {
-                      "text": "SA CALOBRA TEST — jævn max-indsats, 105% FTP",
-                      "duration": 2100
+                      "text": "SA CALOBRA TEST: jævn max-indsats",
+                      "duration": 2100,
+                      "power": {
+                        "start": 103,
+                        "end": 105,
+                        "units": "%ftp"
+                      }
                     },
                     {
                       "power": {
@@ -4304,8 +4319,8 @@
               "workout": {
                 "name": "Shakeout løb + strides",
                 "type": "Run",
-                "moving_time": 1200,
-                "description": "- Let løb 10m >5:34/km Pace\n\n4x\n- Stride 20 sek 1m freeride\n- Jog 40 sek 1m freeride\n\n- Cool-down 5m >5:34/km Pace",
+                "moving_time": 1140,
+                "description": "- Let løb 10m >5:34/km Pace\n\n4x\n- Stride 20s 3:53-4:12/km Pace\n- Jog 40s >5:34/km Pace\n\n- Cool-down 5m >5:34/km Pace",
                 "workout_doc": {
                   "steps": [
                     {
@@ -4322,12 +4337,22 @@
                       "text": "4x",
                       "steps": [
                         {
-                          "text": "Stride 20 sek",
-                          "duration": 60
+                          "text": "Stride 20s 3:53-4:12/km",
+                          "pace": {
+                            "start": 103,
+                            "end": 112,
+                            "units": "%pace"
+                          },
+                          "duration": 20
                         },
                         {
-                          "text": "Jog 40 sek",
-                          "duration": 60
+                          "text": "Jog 40s >5:34/km",
+                          "pace": {
+                            "start": 65,
+                            "end": 78,
+                            "units": "%pace"
+                          },
+                          "duration": 40
                         }
                       ]
                     },
@@ -4671,7 +4696,7 @@
                 "name": "Løb Z2 40 min + 6×1 min race-pace",
                 "type": "Run",
                 "moving_time": 2400,
-                "description": "- Varm-op 10m >5:34/km Pace\n- Base 13m 4:56-5:33/km Pace\n\n6x\n- Race-pace 1 min 1m 4:56-5:33/km Pace\n- Jog 1 min 1m freeride\n\n- Cool-down 5m >5:34/km Pace",
+                "description": "- Varm-op 10m >5:34/km Pace\n- Base 13m 4:56-5:33/km Pace\n\n6x\n- Race-pace 1 min 1m 4:56-5:33/km Pace\n- Jog 1m >5:34/km Pace\n\n- Cool-down 5m >5:34/km Pace",
                 "workout_doc": {
                   "steps": [
                     {
@@ -4706,8 +4731,13 @@
                           "duration": 60
                         },
                         {
-                          "text": "Jog 1 min",
-                          "duration": 60
+                          "text": "Jog >5:34/km",
+                          "duration": 60,
+                          "pace": {
+                            "start": 65,
+                            "end": 78,
+                            "units": "%pace"
+                          }
                         }
                       ]
                     },
@@ -4750,8 +4780,8 @@
               "workout": {
                 "name": "Shakeout løb + strides",
                 "type": "Run",
-                "moving_time": 1200,
-                "description": "- Let løb 10m >5:34/km Pace\n\n4x\n- Stride 20 sek 1m freeride\n- Jog 40 sek 1m freeride\n\n- Cool-down 5m >5:34/km Pace",
+                "moving_time": 1140,
+                "description": "- Let løb 10m >5:34/km Pace\n\n4x\n- Stride 20s 3:53-4:12/km Pace\n- Jog 40s >5:34/km Pace\n\n- Cool-down 5m >5:34/km Pace",
                 "workout_doc": {
                   "steps": [
                     {
@@ -4768,12 +4798,22 @@
                       "text": "4x",
                       "steps": [
                         {
-                          "text": "Stride 20 sek",
-                          "duration": 60
+                          "text": "Stride 20s 3:53-4:12/km",
+                          "pace": {
+                            "start": 103,
+                            "end": 112,
+                            "units": "%pace"
+                          },
+                          "duration": 20
                         },
                         {
-                          "text": "Jog 40 sek",
-                          "duration": 60
+                          "text": "Jog 40s >5:34/km",
+                          "pace": {
+                            "start": 65,
+                            "end": 78,
+                            "units": "%pace"
+                          },
+                          "duration": 40
                         }
                       ]
                     },
