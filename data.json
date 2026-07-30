@@ -1,13 +1,13 @@
 {
   "meta": {
-    "updated": "2026-07-30 02:00",
+    "updated": "2026-07-30 05:17",
     "week": 9,
     "totalWeeks": 14,
     "blockType": "BUILD",
-    "daysToMedoc": 38,
-    "daysToChristiansborg": 31,
-    "dayName": "Onsdag",
-    "date": "29. jul"
+    "daysToMedoc": 37,
+    "daysToChristiansborg": 30,
+    "dayName": "Torsdag",
+    "date": "30. jul"
   },
   "kpis": {
     "weight": {
@@ -23,19 +23,19 @@
       "color": "#E67E22"
     },
     "ctl": {
-      "value": "51,2",
+      "value": "51,1",
       "unit": "",
       "sub": "Uge 9-mål 48 · Slutmål 43 (uge 14)",
       "color": "#27AE60"
     },
     "tsb": {
-      "value": "-7,1",
+      "value": "-5,8",
       "unit": "",
       "sub": "Form · CTL−ATL, frisk >0",
       "color": "#27AE60"
     },
     "sleep": {
-      "value": "7,9",
+      "value": "8,0",
       "unit": "t",
       "sub": "Snit 7,5t · mål 7t",
       "color": "#2874A6"
@@ -47,7 +47,7 @@
       "color": "#C0392B"
     },
     "hrv": {
-      "value": "63,4",
+      "value": "62,3",
       "unit": "ms",
       "sub": "Snit 7d",
       "color": "#7A6A58"
@@ -82,7 +82,7 @@
     "target": 5,
     "streak": 3
   },
-  "coachSpeech": "Onsdag — uge 9 af 14. {HL} Godt: Søvn på 7,9 timer er solid. Fokus: 2 AF-dage i 3 afsluttede dage — 3 mangler i 4 dage tilbage. Keep moving forward.  \"AF-dage er ikke et offer — de er en investering i morgendagens energi.\"",
+  "coachSpeech": "Torsdag — uge 9 af 14. {HL} Godt: Søvn på 8,0 timer er solid. Fokus: 2 AF-dage i 4 afsluttede dage — 3 mangler i 3 dage tilbage. Keep moving forward.  \"AF-dage er ikke et offer — de er en investering i morgendagens energi.\"",
   "coachHighlight": "94 procent af ugens TSS er i hus",
   "weekFocus": "Sæt pejlemærker med tests og bevar energien til musikugen",
   "today": [
@@ -3033,10 +3033,10 @@
     {
       "type": "hrv",
       "level": "warn",
-      "message": "HRV 55,0 ms — 13% under 7d-snit (63,4 ms). Kroppen er presset."
+      "message": "HRV 55,0 ms — 12% under 7d-snit (62,3 ms). Kroppen er presset."
     }
   ],
-  "tsb": -7.1,
+  "tsb": -5.8,
   "swimHistory": [
     {
       "week": 1,
@@ -3312,7 +3312,7 @@
       "note": "Nøgle virker"
     }
   },
-  "credentialsCheckedTs": "2026-07-30T00:00:13.680851",
+  "credentialsCheckedTs": "2026-07-30T03:17:23.133566",
   "coachAssessmentTsFull": "2026-07-30T00:00:13.680834",
   "coachAssessmentWeightAtGen": 72.5,
   "coachAssessmentAfAtGen": 2,
