@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-07-30 17:31",
+    "updated": "2026-07-30 19:27",
     "week": 9,
     "totalWeeks": 14,
     "blockType": "BUILD",
@@ -3079,8 +3079,8 @@
       "real": true
     }
   ],
-  "coachAssessmentHtml": "<p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\"><strong>Dag 60 af 98 · Torsdag · Uge 9</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">💪 <strong>Træning & load</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">CTL ligger på 53,7 — markant over ugemålet på 48, og det afspejler, at du har lagt reelt arbejde ind denne uge. TSB på -17,8 er håndterbart, men du er i minus, og de to næste dage skal holdes rolige. Threshold-testen i dag gav en vigtig datakendsgerning: pacezonerne var for hurtige ift. target, og HR nåede ikke at følge med — til næste lignende session handler det om at starte roligere og lade tempoet stige kontrolleret. Det samme gjaldt mandagens Z1-løb, så det er et mønster der er værd at holde øje med fremover.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">⚖️ <strong>Krop & kost</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">72,7 kg og 22,0 % fedt — du er 2,7 kg fra vægmålet og 2 procentpoint fra fedtprocent-målet. Fedtprocenten har stået stille siden 29. juli, og det er det tal der tæller mest: hvis vægten falder uden at fedtprocenten følger med, er det muskelmasse du mister — ikke fedt. Prioritér protein og pas på at spare for meget på kalorieindtaget i en uge med høj træningsbelastning.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">🎯 <strong>AF-status & fokus for resten af ugen</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">4 AF-dage ud af 4 dage gået — det er stærkt og holder streaken på 5 dage i live. Fredag er et let teknisk svømmepas på 1500m, og det er præcis den rette tone at afslutte ugen på med TSB i minus. Søndag er et valgfrit Z1-løb — tag det kun med hvis benene føles friske, ellers er hvile det klogere valg.</p>",
-  "coachAssessmentTs": "09:41",
+  "coachAssessmentHtml": "<p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\"><strong>Dag 60 af 98 · Torsdag · Uge 9</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">💪 <strong>Træning & load</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">CTL på 53.7 er langt over ugemålets 48 — ugen har leveret mere belastning end planlagt, og TSB på -17.8 er stadig inden for sikker zone. Tærskeltesten i dag viste god indsats, men pace-zonerne sad ikke præcist: 47% af tiden lå hurtigere end target-zonen, og til næste lignende session skal du bevidst sænke tempoet i de rolige segmenter for at holde dig i target-pace. Det er klassisk at HR halter efter en for høj pace — det er ikke et tegn på at intensiteten var for lav, men på at du løb for hurtigt.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">⚖️ <strong>Krop & kost</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Vægt 72.7 kg og fedtprocent 22.0 % — du er 2.7 kg fra vægmålet og 2 procentpoint fra fedtprocentmålet. Fedtprocenten er uændret siden 29. juli, hvilket betyder at det vægttab der er sket, ikke er kommet fra fedt alene — det er kropssammensætningen der afgør fremgangen, ikke vægten alene. Hold fokus på proteinindtag og undgå at spare for meget på kalorieindtaget i en uge med høj belastning som denne — du har brug for restitution, ikke et kalorieunderskud der æder muskelmasse.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">🎯 <strong>AF-status & fokus for resten af ugen</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">4 AF-dage ud af 4 dage gået i ugen — det er stærkt. Fredag er der teknisk svøm på 1500m, som er et godt, lavbelastet pas der passer fint ind inden musikugen. Hold energien i reserve — ugen har allerede leveret det den skulle med to tests og solid CTL-opbygning.</p>",
+  "coachAssessmentTs": "17:27",
   "commute_pairing_warnings": [],
   "warnings": [],
   "tsb": -17.8,
@@ -3359,8 +3359,8 @@
       "note": "Nøgle virker"
     }
   },
-  "credentialsCheckedTs": "2026-07-30T15:31:21.509146",
-  "coachAssessmentTsFull": "2026-07-30T09:41:49.249031",
+  "credentialsCheckedTs": "2026-07-30T17:27:56.804239",
+  "coachAssessmentTsFull": "2026-07-30T17:27:56.804222",
   "coachAssessmentWeightAtGen": 72.7,
   "coachAssessmentAfAtGen": 4,
   "event_structure_warnings": [],
