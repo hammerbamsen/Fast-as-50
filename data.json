@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-07-30 08:32",
+    "updated": "2026-07-30 11:13",
     "week": 9,
     "totalWeeks": 14,
     "blockType": "BUILD",
@@ -29,7 +29,7 @@
       "color": "#27AE60"
     },
     "tsb": {
-      "value": "-17,4",
+      "value": "-17,5",
       "unit": "",
       "sub": "Hård blok · CTL−ATL, frisk >0",
       "color": "#E67E22"
@@ -55,7 +55,7 @@
     "tssComp": {
       "value": "274",
       "unit": "TSS",
-      "sub": "274 af 178 planlagt TSS",
+      "sub": "274 af 182 planlagt TSS",
       "color": "#27AE60"
     },
     "bikeKm": {
@@ -83,7 +83,7 @@
     "streak": 5
   },
   "coachSpeech": "Torsdag — uge 9 af 14. {HL} Godt: Søvn på 7,9 timer er solid. 4 AF-dage i 4 gennemførte dage — på rette spor. 1 mere og ugens mål er i hus. Fokus: Vægt på 72,7 kg — hold protein højt og undgå lette kulhydrater om aftenen. Keep moving forward.  \"AF-dage er ikke et offer — de er en investering i morgendagens energi.\"",
-  "coachHighlight": "154 procent af ugens TSS er i hus",
+  "coachHighlight": "151 procent af ugens TSS er i hus",
   "weekFocus": "Sæt pejlemærker med tests og bevar energien til musikugen",
   "today": [
     {
@@ -1839,7 +1839,7 @@
     },
     {
       "date": "2026-07-30",
-      "v": -17.4,
+      "v": -17.5,
       "real": true
     }
   ],
@@ -3058,7 +3058,7 @@
   "coachAssessmentTs": "06:23",
   "commute_pairing_warnings": [],
   "warnings": [],
-  "tsb": -17.4,
+  "tsb": -17.5,
   "swimHistory": [
     {
       "week": 1,
@@ -3334,22 +3334,22 @@
       "note": "Nøgle virker"
     }
   },
-  "credentialsCheckedTs": "2026-07-30T06:32:32.059547",
+  "credentialsCheckedTs": "2026-07-30T09:13:50.423694",
   "coachAssessmentTsFull": "2026-07-30T06:23:03.904426",
   "coachAssessmentWeightAtGen": 72.7,
   "coachAssessmentAfAtGen": 4,
   "event_structure_warnings": [],
   "coachAssessmentFatAtGen": 22.0,
   "zones": {
-    "runThreshold": "4:20/km",
+    "runThreshold": "4:24/km",
     "bikeFtpW": 278,
     "run": {
-      "Z1": ">5:34/km",
-      "Z2": "4:56-5:33/km",
-      "Z3": "4:26-4:55/km",
-      "Z4": "4:13-4:25/km",
-      "Z5": "3:53-4:12/km",
-      "Z6": "<3:52/km"
+      "Z1": ">5:39/km",
+      "Z2": "5:00-5:38/km",
+      "Z3": "4:30-4:59/km",
+      "Z4": "4:17-4:29/km",
+      "Z5": "3:56-4:16/km",
+      "Z6": "<3:55/km"
     },
     "bike": {
       "Z1": "44-56% FTP",
@@ -3358,7 +3358,7 @@
       "Z4": "91-100% FTP",
       "Z5": "106-115% FTP"
     },
-    "thresholdSec": 260,
+    "thresholdSec": 264,
     "ftpW": 278,
     "runPct": {
       "Z1": [
