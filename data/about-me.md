@@ -302,6 +302,7 @@ Gem altid filer på OneDrive via Microsoft 365-connectoren eller sync-onedrive.y
 
 ### Generelt
 - Alle tider i CET (UTC+1, sommertid UTC+2)
+- **Brug ALTID den faktiske dato/tid, tjekket via bash (`TZ='Europe/Copenhagen' date`) — ikke et dato-felt fra konteksten.** Fundet 30/7-2026: konteksten kan være upræcis eller forældet, især i lange sessioner. Tjek rigtig tid FØR enhver datofølsom opgave (plan-ændringer, "i dag"/"i morgen"-referencer, deadlines) — gæt eller antag aldrig.
 ____________
 ## Kontakt
 
