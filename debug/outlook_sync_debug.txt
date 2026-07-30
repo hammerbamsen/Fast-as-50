@@ -4,11 +4,10 @@ Uge 9: 2026-07-27 til 2026-08-02
 timeOverrides: 3 dato(er) fra data/plan.json
   Slettet: 🏃 Løb Z1 30 min let
   Slettet: 🚴 FTP-TEST 20 min (opdatér zoner efter)
+  Slettet: 🏃 THRESHOLD-TEST løb 20 min + forlængelse (langt løb)
   Slettet: 🏊 Svøm 1500m let teknisk
-  Slettet: 🏃 THRESHOLD-TEST løb 20 min (opdatér pace-zoner efter)
-  Slettet: 🏃 Løb Z2 90 min
-  Slettet: 🏊 Svøm 1500m let teknisk (valgfri)
-Slettet: 6
+  Slettet: 🏃 Løb Z1 30 min let (valgfri)
+Slettet: 5
   Oprettet: 2026-07-27 🏃 Løb Z1 30 min let
   Oprettet: 2026-07-28 🚴 FTP-TEST 20 min (opdatér zoner efter)
   Oprettet: 2026-07-30 🏃 THRESHOLD-TEST løb 20 min + forlængelse (langt løb)

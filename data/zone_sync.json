@@ -1,29 +1,21 @@
 {
-  "ts": "2026-07-28T08:49:49+00:00",
+  "ts": "2026-07-30T06:47:08+00:00",
   "mode": "live",
-  "run": "30343959501",
+  "run": "30520679433",
   "sports": [
-    "bike",
     "run"
   ],
   "results": [
-    {
-      "sport": "bike",
-      "id": 2484017,
-      "field": "ftp",
-      "before": 278,
-      "target": 278,
-      "written": false,
-      "verified": true
-    },
     {
       "sport": "run",
       "id": 2484018,
       "field": "threshold_pace",
       "before": 3.8461537,
-      "target": 3.8461538461538463,
-      "written": false,
-      "verified": true
+      "target": 3.787878787878788,
+      "written": true,
+      "verified": true,
+      "http": 200,
+      "after": 3.7878788
     }
   ],
   "failures": [],

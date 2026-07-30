@@ -28,3 +28,13 @@
 ### Planændring 13/07 14:49
 - **mandag 2026-07-13** (uge 7, move): Svøm 2000m teknisk (60 min); Styrke A Functional Strength 3 sæt (60 min) → Svøm 2000m teknisk (60 min)
 - **tirsdag 2026-07-14** (uge 7, move): Løb VO2 5×3 min Z4 (65 min) [hårdt] → Løb VO2 5×3 min Z4 (65 min) [hårdt]; Styrke A Functional Strength 3 sæt (60 min)
+
+### Zoneændring 30/07 — ny løbetærskel
+
+- **20-min løbetest 30/07** (Garmin Fenix 8, aktivitet i170664601): snit **4:18/km**, HR 164 snit / 172 max, intensitet 97 %, kadence 85, hele testen i Z4.
+- Første to km var op ad bakke (+2,3 % og +1 % gradient). Højdejusteret svarer testen til ca. **4:11–4:14/km**.
+- **Løbetærskel opdateret: 4:20 → 4:24/km** (264 sek/km). Kennet valgte den let konservative ende af det højdejusterede interval.
+- Netto **4 sek/km langsommere** end den gamle baseline, som formentlig var for optimistisk. Alle løbezoner er skaleret tilsvarende (Z2 5:00–5:38, Z4 4:17–4:29).
+- Cykel-FTP uændret 278 W (testet 28/07).
+- Vurdering: HR 164/172 ser submaksimalt ud for 20 min alt-ud, og pacingen var ujævn. Tærsklen kan vise sig lidt lav — men i reset-året med knæ/fascia som begrænsning er det den rigtige fejlretning.
+
