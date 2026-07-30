@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-07-30 08:06",
+    "updated": "2026-07-30 08:22",
     "week": 9,
     "totalWeeks": 14,
     "blockType": "BUILD",
@@ -23,16 +23,16 @@
       "color": "#E67E22"
     },
     "ctl": {
-      "value": "51,1",
+      "value": "53,6",
       "unit": "",
       "sub": "Uge 9-mål 48 · Slutmål 43 (uge 14)",
       "color": "#27AE60"
     },
     "tsb": {
-      "value": "-5,8",
+      "value": "-17,4",
       "unit": "",
-      "sub": "Form · CTL−ATL, frisk >0",
-      "color": "#27AE60"
+      "sub": "Hård blok · CTL−ATL, frisk >0",
+      "color": "#E67E22"
     },
     "sleep": {
       "value": "7,9",
@@ -41,10 +41,10 @@
       "color": "#2874A6"
     },
     "runKm": {
-      "value": "7,7",
+      "value": "24,3",
       "unit": "km",
       "sub": "Mål 40+ km uge 10",
-      "color": "#C0392B"
+      "color": "#27AE60"
     },
     "hrv": {
       "value": "63,2",
@@ -53,9 +53,9 @@
       "color": "#7A6A58"
     },
     "tssComp": {
-      "value": "168",
+      "value": "274",
       "unit": "TSS",
-      "sub": "168 af 178 planlagt TSS",
+      "sub": "274 af 178 planlagt TSS",
       "color": "#27AE60"
     },
     "bikeKm": {
@@ -83,7 +83,7 @@
     "streak": 5
   },
   "coachSpeech": "Torsdag — uge 9 af 14. {HL} Godt: Søvn på 7,9 timer er solid. 4 AF-dage i 4 gennemførte dage — på rette spor. 1 mere og ugens mål er i hus. Fokus: Vægt på 72,7 kg — hold protein højt og undgå lette kulhydrater om aftenen. Keep moving forward.  \"AF-dage er ikke et offer — de er en investering i morgendagens energi.\"",
-  "coachHighlight": "94 procent af ugens TSS er i hus",
+  "coachHighlight": "154 procent af ugens TSS er i hus",
   "weekFocus": "Sæt pejlemærker med tests og bevar energien til musikugen",
   "today": [
     {
@@ -92,7 +92,7 @@
       "duration": "",
       "zone": "–",
       "desc": "",
-      "completed": false
+      "completed": true
     }
   ],
   "week_sessions": [
@@ -143,8 +143,13 @@
       "day": "Tor",
       "disc": "run",
       "label": "THRESHOLD-TEST løb 20 min + forlængelse (langt løb)",
-      "done": false,
-      "today": true
+      "done": true,
+      "today": true,
+      "completion": "done",
+      "completion_pct": 410,
+      "actual_tss": 106,
+      "actual_mins": 82,
+      "planned_mins": 20
     },
     {
       "day": "Fre",
@@ -168,7 +173,7 @@
     47.2,
     49.7,
     51.0,
-    51.1
+    53.6
   ],
   "weightHistory": [
     {
@@ -1834,7 +1839,7 @@
     },
     {
       "date": "2026-07-30",
-      "v": -5.8,
+      "v": -17.4,
       "real": true
     }
   ],
@@ -2411,8 +2416,13 @@
           "day": "Tor",
           "disc": "run",
           "label": "THRESHOLD-TEST løb 20 min + forlængelse (langt løb)",
-          "done": false,
-          "today": true
+          "done": true,
+          "today": true,
+          "completion": "done",
+          "completion_pct": 410,
+          "actual_tss": 106,
+          "actual_mins": 82,
+          "planned_mins": 20
         },
         {
           "day": "Fre",
@@ -2721,12 +2731,12 @@
     }
   ],
   "train_mins": {
+    "run": 124.0,
     "walk": 192.0,
     "bike": 73.0,
-    "run": 42.0,
     "strength": 28.0,
     "planned": 248.0,
-    "actual_total": 335.0
+    "actual_total": 417.0
   },
   "fatHistory": [
     {
@@ -3044,11 +3054,11 @@
       "real": true
     }
   ],
-  "coachAssessmentHtml": "<p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\"><strong>Dag 60 af 98 · Torsdag · Uge 9</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">💪 <strong>Træning & load</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">CTL på 51.1 er markant over ugemålet på 48 — det er stærkt, og du har god form i benene. TSB på -5.8 er fin: du er let belastet, men langt fra overbelastet. Mandag-løbet gik lidt for stærkt — tempoet var hurtigere end Z1-target, og HR nåede ikke at indhente det. Tag det med til næste lette løb: langsom start, roligere pace end det føles nødvendigt. Fokus nu er dagens threshold-test — det er det vigtigste pas denne uge, og det skal sidde præcist.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">⚖️ <strong>Krop & kost</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">72.7 kg og 22.0 % fedt — du er 2.7 kg fra vægmålet og 2 procentpoint fra fedtmålet. Fedtprocenten har ikke rykket sig siden 29. juli, og det er det vigtigste signal her: vægten bevæger sig ikke hurtigt nok til at trække fedtprocenten med ned. I et capacity-år er det fedtprocenten der skal falde, ikke muskelmassen — så sørg for at kosten understøtter præcist det. Protein højt, kalorieunderskuddet moderat.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">🎯 <strong>AF-status & fokus</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">4 AF-dage ud af 4 dage gået i ugen — det er perfekt ratio og streaken kører videre på dag 5. Resten af ugen er let: et teknisk svøm fredag og et valgfrit Z1-løb søndag. Bevar energien til musikugen — det er meningen med denne uge.</p>",
-  "coachAssessmentTs": "03:42",
+  "coachAssessmentHtml": "<p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\"><strong>Dag 60 af 98 · Torsdag · Uge 9</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">💪 <strong>Træning & load</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">CTL ligger på 53,6 — det er markant over ugemålet på 48, og TSB er -17,4, så du er i akkumuleret træthed men stadig inden for sikker margin. Tærskeltesten i dag viste det samme mønster som mandag: tempoet løb foran pulsen, og 43 % i målt pace-zone er under de 55 % du sigter efter. Til næste tærskeltest eller langt løb: start bevidst langsommere end det føles rigtigt — lad HR sætte tempoet, ikke benene. Fredag er svøm, og den skal du bruge til at lade op, ikke præstere.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">⚖️ <strong>Krop & kost</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">72,7 kg og 22,0 % fedt — du er 2,7 kg fra vægmålet og 2 procentpoint fra fedtprocentmålet. Fedtprocenten har ikke rykket sig siden sidst, så selvom vægten er faldet lidt, er det endnu ikke dokumenteret fedttab — det kan være væskesvingninger. Prioritér søvn og protein i de næste dage, især efter to testuger i træk — musklerne skal have byggesten for at fedtprocenten kan begynde at falde. Husk at vægten på under 70 kg kun er en sejr hvis fedtprocenten følger med ned.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">🎯 <strong>AF-status & fokus for resten af ugen</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">4 AF-dage ud af 4 dage — du er på sporet og har momentum med en streak på 5 dage. Fredag og weekend er din chance for at lande på ukens mål: hold fast og lad musikugen nærme sig med fuld energi. Søndagens lette løb er valgfri — vurder det ud fra hvordan du føler dig lørdag, ikke ud fra ambition.</p>",
+  "coachAssessmentTs": "06:23",
   "commute_pairing_warnings": [],
   "warnings": [],
-  "tsb": -5.8,
+  "tsb": -17.4,
   "swimHistory": [
     {
       "week": 1,
@@ -3105,7 +3115,7 @@
       "cumulative": 18178.0
     }
   ],
-  "coachAssessmentLastActId": "i170505145",
+  "coachAssessmentLastActId": "i170664601",
   "weekFocusWeek": 9,
   "coachAssessmentPlanAtGen": "THRESHOLD-TEST løb 20 min + forlængelse (langt løb)",
   "weightGoal": 70,
@@ -3324,8 +3334,8 @@
       "note": "Nøgle virker"
     }
   },
-  "credentialsCheckedTs": "2026-07-30T06:06:53.243041",
-  "coachAssessmentTsFull": "2026-07-30T03:42:46.704061",
+  "credentialsCheckedTs": "2026-07-30T06:23:03.904442",
+  "coachAssessmentTsFull": "2026-07-30T06:23:03.904426",
   "coachAssessmentWeightAtGen": 72.7,
   "coachAssessmentAfAtGen": 4,
   "event_structure_warnings": [],
