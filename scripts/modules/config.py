@@ -63,7 +63,8 @@ DK_MONTHS  = ["jan","feb","mar","apr","maj","jun","jul","aug","sep","okt","nov",
 
 # (BLOCK_TYPES defineres ovenfor af Goal Engine / plan.json)
 
-# Friel-baserede løb-pace-zoner (sek/km), baseret på threshold 4:20/km.
+# Friel-baserede løb-pace-zoner (sek/km). Tærsklen læses fra plan.json
+# (thresholdSec) -- ingen fast værdi hardcodet her.
 # VIGTIGT: Intervals.icu's egen pace_zone_times bruger en generisk 7-zone
 # %-tabel der IKKE matcher disse grænser for Z3 og opefter (verificeret
 # 2/7-26 -- se sessions.py: compute_run_pace_zone_secs).
