@@ -10,8 +10,17 @@ permissions:
 jobs:
   send-to-intervals:
     runs-on: ubuntu-latest
+    # 2026-07-30: FLYTTET UD AF kpi-update-gruppen.
+    # GitHub tillader kun ÉN ventende kørsel pr. concurrency-gruppe — også med
+    # cancel-in-progress: false. Når webhook-receiver.yml fik en byrge af
+    # aktivitets-events (29/7 kl. 05:22-05:24), stod AF-registreringen i kø og
+    # blev cancelled efter 9 sekunder uden at køre et enkelt step. Worker'en
+    # havde allerede svaret 200, så af.html viste grønt "gemt" mens dagen
+    # aldrig nåede Intervals. Egen gruppe = brugerskabte, ikke-idempotente
+    # skrivninger konkurrerer aldrig med byrge-trafik. data.json-race mod en
+    # samtidig update-kpi-kørsel er dækket af push-steppets fetch/rebase-loop.
     concurrency:
-      group: kpi-update
+      group: af-registrering
       cancel-in-progress: false
     steps:
       - name: Send til Intervals.icu
