@@ -1,7 +1,7 @@
 {
-  "ts": "2026-07-30T06:45:41+00:00",
-  "mode": "dry-run",
-  "run": "30520603912",
+  "ts": "2026-07-30T06:47:08+00:00",
+  "mode": "live",
+  "run": "30520679433",
   "sports": [
     "run"
   ],
@@ -12,8 +12,10 @@
       "field": "threshold_pace",
       "before": 3.8461537,
       "target": 3.787878787878788,
-      "written": false,
-      "verified": null
+      "written": true,
+      "verified": true,
+      "http": 200,
+      "after": 3.7878788
     }
   ],
   "failures": [],
