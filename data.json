@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-07-30 00:32",
+    "updated": "2026-07-30 02:00",
     "week": 9,
     "totalWeeks": 14,
     "blockType": "BUILD",
@@ -13,7 +13,7 @@
     "weight": {
       "value": "72,5",
       "unit": "kg",
-      "sub": "Mål <70 kg · snit 72,2 kg",
+      "sub": "Sidst målt 29/7 · Mål <70 kg · snit 72,2 kg",
       "color": "#E67E22"
     },
     "fat": {
@@ -82,17 +82,17 @@
     "target": 5,
     "streak": 3
   },
-  "coachSpeech": "Onsdag — uge 9 af 14. {HL} Godt: Søvn på 7,9 timer er solid. Fokus: Vægt på 72,5 kg — hold protein højt og undgå lette kulhydrater om aftenen. 2 AF-dage i 3 afsluttede dage — 3 mangler i 4 dage tilbage. Keep moving forward.  \"Hvil er ikke det modsatte af fremskridt — det er en del af det.\"",
+  "coachSpeech": "Onsdag — uge 9 af 14. {HL} Godt: Søvn på 7,9 timer er solid. Fokus: 2 AF-dage i 3 afsluttede dage — 3 mangler i 4 dage tilbage. Keep moving forward.  \"AF-dage er ikke et offer — de er en investering i morgendagens energi.\"",
   "coachHighlight": "94 procent af ugens TSS er i hus",
   "weekFocus": "Sæt pejlemærker med tests og bevar energien til musikugen",
   "today": [
     {
-      "discipline": "walk",
-      "title": "Gentofte Gang",
+      "discipline": "run",
+      "title": "THRESHOLD-TEST løb 20 min + forlængelse (langt løb)",
       "duration": "",
       "zone": "–",
       "desc": "",
-      "completed": true
+      "completed": false
     }
   ],
   "week_sessions": [
@@ -137,14 +137,14 @@
       "disc": "walk",
       "label": "Gentofte Gang",
       "done": true,
-      "extra": true,
-      "today": true
+      "extra": true
     },
     {
       "day": "Tor",
       "disc": "run",
       "label": "THRESHOLD-TEST løb 20 min + forlængelse (langt løb)",
-      "done": false
+      "done": false,
+      "today": true
     },
     {
       "day": "Fre",
@@ -168,10 +168,9 @@
     47.2,
     49.7,
     51.0,
-    51.2
+    51.1
   ],
   "weightHistory": [
-    null,
     {
       "date": "2026-05-02",
       "v": 75.2,
@@ -480,14 +479,10 @@
       "date": "2026-07-29",
       "v": 72.5,
       "real": true
-    }
+    },
+    null
   ],
   "hrvHistory": [
-    {
-      "date": "2026-05-01",
-      "v": 41.0,
-      "real": true
-    },
     {
       "date": "2026-05-02",
       "v": 35.0,
@@ -932,14 +927,10 @@
       "date": "2026-07-29",
       "v": 55.0,
       "real": true
-    }
+    },
+    null
   ],
   "sleepHistory": [
-    {
-      "date": "2026-05-01",
-      "v": 6.6,
-      "real": true
-    },
     {
       "date": "2026-05-02",
       "v": 8.2,
@@ -1380,14 +1371,10 @@
       "date": "2026-07-29",
       "v": 7.7,
       "real": true
-    }
+    },
+    null
   ],
   "tsbHistory": [
-    {
-      "date": "2026-05-01",
-      "v": -18.9,
-      "real": true
-    },
     {
       "date": "2026-05-02",
       "v": -21.3,
@@ -1831,6 +1818,11 @@
     {
       "date": "2026-07-29",
       "v": -7.1,
+      "real": true
+    },
+    {
+      "date": "2026-07-30",
+      "v": -5.8,
       "real": true
     }
   ],
@@ -2399,14 +2391,14 @@
           "disc": "walk",
           "label": "Gentofte Gang",
           "done": true,
-          "extra": true,
-          "today": true
+          "extra": true
         },
         {
           "day": "Tor",
           "disc": "run",
           "label": "THRESHOLD-TEST løb 20 min + forlængelse (langt løb)",
-          "done": false
+          "done": false,
+          "today": true
         },
         {
           "day": "Fre",
@@ -2710,7 +2702,7 @@
     {
       "week": 9,
       "done": 2,
-      "total": 3,
+      "total": 4,
       "label": "Uge 9"
     }
   ],
@@ -2723,7 +2715,6 @@
     "actual_total": 335.0
   },
   "fatHistory": [
-    null,
     {
       "date": "2026-05-02",
       "v": 22.4,
@@ -3032,10 +3023,11 @@
       "date": "2026-07-29",
       "v": 22.0,
       "real": true
-    }
+    },
+    null
   ],
-  "coachAssessmentHtml": "<p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\"><strong>Dag 59 af 98 · Onsdag · Uge 9</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">💪 <strong>Træning & load</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">CTL ligger på 51.2 — klart over ugemålets 48, og TSB på -7.1 er et sundhedstegn på at du arbejder uden at grave for dybt. FTP-testen tirsdag ramte zonerne godt. Mandagens løb gik for hurtigt i pacen — HR nåede ikke at følge med, men kroppen arbejdede alligevel hårdere end planlagt. Næste gang du løber Z1, sænk tempoet bevidst fra start, selv om det føles absurd roligt.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">⚖️ <strong>Krop & kost</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Vægten er 72.5 kg — 2.5 kg fra målet. Fedtprocenten er 22.0 %, altså 2 procentpoint over dit mål på under 20 %. Det er fedtprocenten der skal bevæge sig — ikke bare vægten. Fedtprocenten er steget 0.1 point siden sidst, og det er et signal om at holde øje med proteindækning og ikke tabe muskelmasse undervejs.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">🎯 <strong>AF-status & fokus for resten af ugen</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Du er på 2 AF-dage ud af 3 dage i ugen — det er stærkt. Torsdag venter threshold-testen i løb, som er den vigtigste resterende indsats denne uge — giv den fokus og friske ben. Fredag og søndag er rolige, så energien er godt fordelt frem mod musikugen.</p>",
-  "coachAssessmentTs": "22:32",
+  "coachAssessmentHtml": "<p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\"><strong>Dag 60 af 98 · Onsdag · Uge 9</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">💪 <strong>Træning & load</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">CTL er på 51.2 — godt over ugemålets 48, og TSB på -7.1 er komfortabelt inden for grænsen. Ugen har allerede leveret en FTP-test og et løb, og nu venter today's threshold-test på løb: 20 min hård indsats efterfulgt af forlængelse til et langt løb. Husk på løbstesten fra mandag — tempo var over target-zonen, så start testen roligt og lad indsatsen bygge kontrolleret frem for at løbe for hurtigt fra start.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">⚖️ <strong>Krop & kost</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Der er ingen aktuel måling af vægt eller fedtprocent — så der er ikke noget at vurdere her. Tag en måling, så vi har noget konkret at arbejde med.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">🎯 <strong>AF-status & fokus for resten af ugen</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Du er på 2 AF-dage ud af 3 dage — det er en god rytme. Med fredag og søndag som lette pas er der god plads til at lande på 5 AF-dage, hvis du holder linjen resten af ugen. Fokus nu: Gennemfør testen i dag, og spar på energien frem mod musikugen.</p>",
+  "coachAssessmentTs": "00:00",
   "commute_pairing_warnings": [],
   "warnings": [
     {
@@ -3103,11 +3095,10 @@
   ],
   "coachAssessmentLastActId": "i170505145",
   "weekFocusWeek": 9,
-  "coachAssessmentPlanAtGen": "Gentofte Gang",
+  "coachAssessmentPlanAtGen": "THRESHOLD-TEST løb 20 min + forlængelse (langt løb)",
   "weightGoal": 70,
   "bodyFatGoal": 20,
   "weightMovingAvg7": [
-    null,
     null,
     null,
     75.33,
@@ -3196,10 +3187,10 @@
     72.18,
     72.2,
     72.18,
-    72.23
+    72.23,
+    72.33
   ],
   "fatMovingAvg7": [
-    null,
     null,
     null,
     22.47,
@@ -3288,7 +3279,8 @@
     21.25,
     21.22,
     21.33,
-    21.43
+    21.43,
+    21.58
   ],
   "weightToGoal": 2.5,
   "bodyFatToGoal": 2.0,
@@ -3320,8 +3312,8 @@
       "note": "Nøgle virker"
     }
   },
-  "credentialsCheckedTs": "2026-07-29T22:32:39.873631",
-  "coachAssessmentTsFull": "2026-07-29T22:32:39.873614",
+  "credentialsCheckedTs": "2026-07-30T00:00:13.680851",
+  "coachAssessmentTsFull": "2026-07-30T00:00:13.680834",
   "coachAssessmentWeightAtGen": 72.5,
   "coachAssessmentAfAtGen": 2,
   "event_structure_warnings": [],
