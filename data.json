@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-07-31 19:39",
+    "updated": "2026-07-31 21:25",
     "week": 9,
     "totalWeeks": 14,
     "blockType": "BUILD",
@@ -3083,8 +3083,8 @@
       "real": true
     }
   ],
-  "coachAssessmentHtml": "<p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\"><strong>Dag 61 af 98 · Fredag · Uge 9</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">💪 <strong>Træning & load</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">CTL er på 51.7 — det er klart over ugemålets 48, og TSB på -6.8 viser at du bærer et moderat akkumuleret load uden at være i rødt. Ugens store løft kom fra torsdag, hvor threshold-testen og Gentofte-cyklingen tilsammen trak rigtigt godt. En gennemgående mønster i løb denne uge er at pace har ligget over target-zone, mens HR ikke nåede at følge med — til næste Z1/Z2-løb gælder det om at starte roligere end det føles nødvendigt, og holde det der.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">⚖️ <strong>Krop & kost</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">71.9 kg og 21.7 % fedt — du er 1.9 kg fra vægmålet og 1.7 procentpoint fra fedtprocent-målet på under 20 %. Fedtprocenten er faldet 0.3 point siden 30. juli, og det er det rigtige signal: kroppen bevæger sig i den rigtige retning, og det sker uden at du taber muskelmasse. Hold fast i det — vægten alene er ikke målet, sammensætningen er.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">🎯 <strong>AF-status & fokus for resten af ugen</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">4 AF-dage ud af 5 dage gået er en solid kurs — det giver dig god luft ind mod weekenden. Musikugen nærmer sig, og det er præcis det du skal passe på: bevare energien, ikke presse flere høje TSS-dage ind. Søndagens lette Z1-løb er valgfrit — brug det kun hvis benene føles friske, ikke som et must.</p>",
-  "coachAssessmentTs": "13:14",
+  "coachAssessmentHtml": "<p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\"><strong>Dag 61 af 98 · Fredag · Uge 9</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">💪 <strong>Træning & load</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">CTL er på 51.7 — langt over ugemålets 48, og TSB på -6.8 er komfortabelt inden for grænsen. Det er en solid uge med både FTP-test, tærskeltest på løb og teknisk svøm i dag. Løbeturene mandag og torsdag endte begge for hurtigt i pace — sænk tempoet næste gang du løber Z1/Z2, så HR kan følge med og du faktisk rammer zonen.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">⚖️ <strong>Krop & kost</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Vægten er 71.9 kg — 1.9 kg fra målet — og fedtprocenten er 21.7 %, altså 1.7 procentpoint fra målet på under 20 %. Fedtprocenten er faldet 0.3 point siden seneste måling, hvilket er det rigtige signal: du taber fedt, ikke muskelmasse. Hold det spor — den bevægelse er mere værd end en hurtig tallefald på vægten.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">🎯 <strong>AF-status & fokus for resten af ugen</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">4 AF-dage ud af 5 dage er gået — det er præcis det tempo der skal til. Lørdag er fri, så det er naturligt at holde AF der også. Søndagens lette løb er valgfrit — med en god CTL og musikuge forude er det helt legitimt at springe det over og gå ind i uge 10 med energi i benene.</p>",
+  "coachAssessmentTs": "19:25",
   "commute_pairing_warnings": [],
   "warnings": [
     {
@@ -3369,8 +3369,8 @@
       "note": "Nøgle virker"
     }
   },
-  "credentialsCheckedTs": "2026-07-31T17:39:54.406375",
-  "coachAssessmentTsFull": "2026-07-31T13:14:48.870158",
+  "credentialsCheckedTs": "2026-07-31T19:25:47.700151",
+  "coachAssessmentTsFull": "2026-07-31T19:25:47.700135",
   "coachAssessmentWeightAtGen": 71.9,
   "coachAssessmentAfAtGen": 4,
   "event_structure_warnings": [],
