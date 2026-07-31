@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-07-31 15:14",
+    "updated": "2026-07-31 16:55",
     "week": 9,
     "totalWeeks": 14,
     "blockType": "BUILD",
@@ -71,7 +71,7 @@
       "color": "#C0392B"
     },
     "afStreak": {
-      "value": "5",
+      "value": "0",
       "unit": "",
       "sub": "Dage i træk · mål 5/uge",
       "color": "#59182A"
@@ -80,7 +80,7 @@
   "af": {
     "weekDone": 4,
     "target": 5,
-    "streak": 5
+    "streak": 0
   },
   "coachSpeech": "Fredag — tre dage tilbage af uge 9. {HL} Godt: Søvn på 8,0 timer er solid. Fokus: Vægt på 71,9 kg — hold protein højt og undgå lette kulhydrater om aftenen. 4 AF-dage i 5 afsluttede dage — 1 mangler i 2 dage tilbage. Keep moving forward.  \"Keep moving forward.\"",
   "coachHighlight": "161 procent af ugens TSS er i hus",
@@ -1916,7 +1916,8 @@
     "2026-07-27": 0,
     "2026-07-28": 0,
     "2026-07-29": 0,
-    "2026-07-30": 0
+    "2026-07-30": 0,
+    "2026-07-31": 1
   },
   "all_weeks": {
     "1": {
@@ -3368,7 +3369,7 @@
       "note": "Nøgle virker"
     }
   },
-  "credentialsCheckedTs": "2026-07-31T13:14:48.870174",
+  "credentialsCheckedTs": "2026-07-31T14:55:45.844241",
   "coachAssessmentTsFull": "2026-07-31T13:14:48.870158",
   "coachAssessmentWeightAtGen": 71.9,
   "coachAssessmentAfAtGen": 4,
