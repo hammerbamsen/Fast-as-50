@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-08-01 23:25",
+    "updated": "2026-08-02 00:27",
     "week": 9,
     "totalWeeks": 14,
     "blockType": "BUILD",
@@ -3082,8 +3082,8 @@
       "real": true
     }
   ],
-  "coachAssessmentHtml": "<p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\"><strong>Dag 62 af 98 · Lørdag · Uge 9</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">💪 <strong>Træning & load</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">CTL på 50.5 er godt over ugemålets 48 — du har leveret mere end planen krævede. TSB på -0.2 er næsten neutralt, så du er hverken frisk eller træt: præcis det rigtige sted at være dagen før en hviledag. To tests denne uge (FTP og tærskelpace) giver dig opdaterede zoner at arbejde med fremover. Zonecompliance på løbeturene viser samme mønster begge gange: du løber for hurtigt til det zone-mål der er sat — sænk tempoet på de lette ture næste uge.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">⚖️ <strong>Krop & kost</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">72.6 kg og 20.6 % fedt — du mangler 2.6 kg til vægtmålet og 0.6 procentpoint til fedtmålet. Fedtprocenten er faldet 1.1 point siden 31. juli, og det er det vigtige signal: du taber fedt, ikke muskelmasse. Hold fast i det spor — det er præcis det en capacity-sæson skal producere. Vægten følger langsomt efter, men retningen er rigtig.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">🎯 <strong>AF-status & fokus for resten af ugen</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">4 AF-dage ud af 6 dage gået svarer til en god rate, og du har stadig i dag og søndag til at lande ugen rigtigt. Søndag er der et valgfrit let løb — tag det kun hvis kroppen inviterer til det, ikke af pligtfølelse. Ugefokuset er bevaret energi til musikugen, og det afspejler load'en fint: tests er klaret, formen er kortlagt, nu skal der restituteres.</p>",
-  "coachAssessmentTs": "16:00",
+  "coachAssessmentHtml": "<p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\"><strong>Dag 62 af 98 · Lørdag · Uge 9</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">💪 <strong>Træning & load</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">CTL er 50,5 — det er 2,5 over ugemålet på 48, og TSB på -0,2 viser at du er næsten i præcis balance. Det er et stærkt sted at være på en hviledag. Ugen har leveret to vigtige tests (FTP og løbetærskel) plus teknisk svøm, og zoneanalysen viser én klar tendens: dine løbeture kører konsekvent for hurtigt i starten — pace-zone rammes ikke, fordi tempoet er for højt, ikke for lavt. Næste gang du løber Z1 eller starter et langt løb, så hold håndbremsen i de første 10 minutter.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">⚖️ <strong>Krop & kost</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">72,6 kg og 20,6% fedt — du er 2,6 kg fra vægtmålet og 0,6 procentpoint fra fedtprocent-målet på under 20%. Fedtprocenten er faldet 1,1 point siden 31. juli, og det er den vigtigste nyhed her: du taber fedt, ikke muskelmasse, og det er præcis det rigtige mønster i et capacity-år. Hold kursen — det er kost og søvn der afgør resten, ikke mere træning.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">🎯 <strong>AF-status & fokus for resten af ugen</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Du har 4 AF-dage ud af 6 dage gået — det er en god rate, og en alkoholfri lørdag lander dig på 5/6. Søndagens valgfrie Z1-løb kan du roligt lade være et valg — kroppen er i balance, og du behøver ikke hente noget. Musikugen starter snart, og det bedste du kan gøre nu er at gå ind i den udhvilet.</p>",
+  "coachAssessmentTs": "22:27",
   "commute_pairing_warnings": [],
   "warnings": [
     {
@@ -3368,8 +3368,8 @@
       "note": "Nøgle virker"
     }
   },
-  "credentialsCheckedTs": "2026-08-01T21:25:57.137508",
-  "coachAssessmentTsFull": "2026-08-01T16:00:48.652110",
+  "credentialsCheckedTs": "2026-08-01T22:27:48.077240",
+  "coachAssessmentTsFull": "2026-08-01T22:27:48.077222",
   "coachAssessmentWeightAtGen": 72.6,
   "coachAssessmentAfAtGen": 4,
   "event_structure_warnings": [],
