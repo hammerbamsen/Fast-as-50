@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-08-01 10:21",
+    "updated": "2026-08-01 10:46",
     "week": 9,
     "totalWeeks": 14,
     "blockType": "BUILD",
@@ -3082,8 +3082,8 @@
       "real": true
     }
   ],
-  "coachAssessmentHtml": "<p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\"><strong>Dag 62 af 98 · Lørdag · Uge 9</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">💪 <strong>Træning & load</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">CTL på 50.5 ligger godt over ugemålets 48 — ugen har leveret mere end planlagt. TSB på -0.2 viser at du er i næsten perfekt balance: hverken overbelastet eller underpræsteret. Løbene mandag og torsdag viste samme mønster: tempoet lå for højt ift. pace-zone-målet — næste gang du sætter pace til Z1 eller Z2, så sænk det et gear mere end du tror er nødvendigt, og lad pulsen sætte grænsen. Hvilen i dag er ikke spildtid — den er en aktiv del af at holde TSB i nul.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">⚖️ <strong>Krop & kost</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">72.6 kg og 20.6% fedt — fedtprocenten er faldet 1.1 procentpoint siden 31. juli, og det er det vigtige signal her. Du er 2.6 kg fra vægmålet og 0.6 procentpoint fra fedtprocent-målet på under 20% — og retningen på begge er god. Fortsæt med at prioritere protein og undgå at spise dig ud af kalorie-underskuddet efter hårde pas.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">🎯 <strong>AF-status & fokus for resten af ugen</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">4 AF-dage ud af 6 dage — det er solidt, og søndagens lette løb ændrer ikke på den ligning. En rolig søndag med Z1-løb passer perfekt til at lukke ugen af med overskud i benene før musikugen. Brug resten af weekenden på at sove godt og spise ordentligt — det er der næste uges kapacitet bygges.</p>",
-  "coachAssessmentTs": "05:55",
+  "coachAssessmentHtml": "<p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\"><strong>Dag 62 af 98 · Lørdag · Uge 9</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">💪 <strong>Træning & load</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">CTL er 50,5 — det er 2,5 point over ugemålet på 48, og TSB ligger nærmest nul ved -0,2, så du er velrestitueret og i god balance. Testen tirsdag og tærskeltesten torsdag er i boks, og svømningen fredag gav et teknisk og roligt afsluttende pas. Et mønster at tage med videre: løbene mandag og torsdag viste begge, at du løber for hurtigt — pace-zonen rammer ikke Z1/Z2-målet, fordi tempoet er for højt. Næste gang du sætter i gang på en rolig løbetur, skal farten sættes lavere end det føles nødvendigt.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">⚖️ <strong>Krop & kost</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Du vejer 72,6 kg og er 2,6 kg fra målet under 70 kg — og fedtprocenten er 20,6 %, som er 0,6 procentpoint fra målet under 20 %. Fedtprocenten er faldet 1,1 point siden 31. juli, og det er det vigtigste tal her: du mister fedt, ikke muskelmasse, og det er ægte fremgang i et capacity-år. Fortsæt i det spor — der er stadig plads til at nå begge mål inden løbene i slutningen af august og starten af september.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">🎯 <strong>AF-status & fokus for resten af ugen</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Du har 4 alkoholfrie dage ud af 6 dage i ugen — det er et solidt udgangspunkt med én dag tilbage. Hold det i dag, og du rammer ugens mål på 5. Ugen har leveret det den skulle: tests er sat, energien er bevaret, og du er klar til musikugen med en CTL der er foran planen og en krop i balance.</p>",
+  "coachAssessmentTs": "08:47",
   "commute_pairing_warnings": [],
   "warnings": [
     {
@@ -3368,8 +3368,8 @@
       "note": "Nøgle virker"
     }
   },
-  "credentialsCheckedTs": "2026-08-01T08:21:21.544724",
-  "coachAssessmentTsFull": "2026-08-01T05:55:32.410008",
+  "credentialsCheckedTs": "2026-08-01T08:47:11.776049",
+  "coachAssessmentTsFull": "2026-08-01T08:47:11.776033",
   "coachAssessmentWeightAtGen": 72.6,
   "coachAssessmentAfAtGen": 4,
   "event_structure_warnings": [],
