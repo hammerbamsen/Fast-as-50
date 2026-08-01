@@ -1,19 +1,19 @@
 {
   "meta": {
-    "updated": "2026-08-01 01:30",
+    "updated": "2026-08-01 04:49",
     "week": 9,
     "totalWeeks": 14,
     "blockType": "BUILD",
-    "daysToMedoc": 36,
-    "daysToChristiansborg": 29,
-    "dayName": "Fredag",
-    "date": "31. jul"
+    "daysToMedoc": 35,
+    "daysToChristiansborg": 28,
+    "dayName": "Lørdag",
+    "date": "1. aug"
   },
   "kpis": {
     "weight": {
       "value": "71,9",
       "unit": "kg",
-      "sub": "Mål <70 kg · snit 72,3 kg",
+      "sub": "Sidst målt 31/7 · Mål <70 kg · snit 72,4 kg",
       "color": "#E67E22"
     },
     "fat": {
@@ -23,19 +23,19 @@
       "color": "#E67E22"
     },
     "ctl": {
-      "value": "51,7",
+      "value": "50,5",
       "unit": "",
       "sub": "Uge 9-mål 48 · Slutmål 43 (uge 14)",
       "color": "#27AE60"
     },
     "tsb": {
-      "value": "-6,8",
+      "value": "-0,2",
       "unit": "",
       "sub": "Form · CTL−ATL, frisk >0",
       "color": "#27AE60"
     },
     "sleep": {
-      "value": "8,0",
+      "value": "7,9",
       "unit": "t",
       "sub": "Snit 7,5t · mål 7t",
       "color": "#2874A6"
@@ -47,7 +47,7 @@
       "color": "#27AE60"
     },
     "hrv": {
-      "value": "60,4",
+      "value": "58,4",
       "unit": "ms",
       "sub": "Snit 7d",
       "color": "#7A6A58"
@@ -82,17 +82,17 @@
     "target": 5,
     "streak": 0
   },
-  "coachSpeech": "Fredag — tre dage tilbage af uge 9. {HL} Godt: Søvn på 8,0 timer er solid. Fokus: Vægt på 71,9 kg — hold protein højt og undgå lette kulhydrater om aftenen. 4 AF-dage i 5 afsluttede dage — 1 mangler i 2 dage tilbage. Keep moving forward.  \"Keep moving forward.\"",
+  "coachSpeech": "Lørdag — uge 9 af 14. {HL} Godt: Søvn på 7,9 timer er solid. Fokus: 4 AF-dage i 6 afsluttede dage — 1 mangler i 1 dage tilbage. Keep moving forward.  \"Den bedste træning er den, du faktisk gennemfører.\"",
   "coachHighlight": "161 procent af ugens TSS er i hus",
   "weekFocus": "Sæt pejlemærker med tests og bevar energien til musikugen",
   "today": [
     {
-      "discipline": "swim",
-      "title": "Svøm 1500m let teknisk",
+      "discipline": "rest",
+      "title": "Hviledag",
       "duration": "",
       "zone": "–",
-      "desc": "",
-      "completed": true
+      "desc": "Ingen planlagt træning i dag.",
+      "completed": false
     }
   ],
   "week_sessions": [
@@ -162,7 +162,6 @@
       "disc": "swim",
       "label": "Svøm 1500m let teknisk",
       "done": true,
-      "today": true,
       "completion": "done",
       "completion_pct": null,
       "actual_tss": 16,
@@ -186,14 +185,9 @@
     47.2,
     49.7,
     51.0,
-    51.7
+    50.5
   ],
   "weightHistory": [
-    {
-      "date": "2026-05-03",
-      "v": 75.3,
-      "real": true
-    },
     {
       "date": "2026-05-04",
       "v": 75.5,
@@ -502,14 +496,10 @@
       "date": "2026-07-31",
       "v": 71.9,
       "real": true
-    }
+    },
+    null
   ],
   "hrvHistory": [
-    {
-      "date": "2026-05-03",
-      "v": 33.0,
-      "real": true
-    },
     {
       "date": "2026-05-04",
       "v": 65.0,
@@ -954,14 +944,10 @@
       "date": "2026-07-31",
       "v": 47.0,
       "real": true
-    }
+    },
+    null
   ],
   "sleepHistory": [
-    {
-      "date": "2026-05-03",
-      "v": 8.6,
-      "real": true
-    },
     {
       "date": "2026-05-04",
       "v": 8.4,
@@ -1402,14 +1388,10 @@
       "date": "2026-07-31",
       "v": 8.3,
       "real": true
-    }
+    },
+    null
   ],
   "tsbHistory": [
-    {
-      "date": "2026-05-03",
-      "v": -17.1,
-      "real": true
-    },
     {
       "date": "2026-05-04",
       "v": -12.7,
@@ -1853,6 +1835,11 @@
     {
       "date": "2026-07-31",
       "v": -6.8,
+      "real": true
+    },
+    {
+      "date": "2026-08-01",
+      "v": -0.2,
       "real": true
     }
   ],
@@ -2449,7 +2436,6 @@
           "disc": "swim",
           "label": "Svøm 1500m let teknisk",
           "done": true,
-          "today": true,
           "completion": "done",
           "completion_pct": null,
           "actual_tss": 16,
@@ -2753,7 +2739,7 @@
     {
       "week": 9,
       "done": 4,
-      "total": 5,
+      "total": 6,
       "label": "Uge 9"
     }
   ],
@@ -2768,11 +2754,6 @@
     "actual_total": 461.0
   },
   "fatHistory": [
-    {
-      "date": "2026-05-03",
-      "v": 22.1,
-      "real": true
-    },
     {
       "date": "2026-05-04",
       "v": 22.9,
@@ -3081,19 +3062,20 @@
       "date": "2026-07-31",
       "v": 21.7,
       "real": true
-    }
+    },
+    null
   ],
-  "coachAssessmentHtml": "<p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\"><strong>Dag 61 af 98 · Fredag · Uge 9</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">💪 <strong>Træning & load</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">CTL er på 51.7 — langt over ugemålets 48, og TSB på -6.8 er komfortabelt inden for grænsen. Det er en solid uge med både FTP-test, tærskeltest på løb og teknisk svøm i dag. Løbeturene mandag og torsdag endte begge for hurtigt i pace — sænk tempoet næste gang du løber Z1/Z2, så HR kan følge med og du faktisk rammer zonen.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">⚖️ <strong>Krop & kost</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Vægten er 71.9 kg — 1.9 kg fra målet — og fedtprocenten er 21.7 %, altså 1.7 procentpoint fra målet på under 20 %. Fedtprocenten er faldet 0.3 point siden seneste måling, hvilket er det rigtige signal: du taber fedt, ikke muskelmasse. Hold det spor — den bevægelse er mere værd end en hurtig tallefald på vægten.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">🎯 <strong>AF-status & fokus for resten af ugen</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">4 AF-dage ud af 5 dage er gået — det er præcis det tempo der skal til. Lørdag er fri, så det er naturligt at holde AF der også. Søndagens lette løb er valgfrit — med en god CTL og musikuge forude er det helt legitimt at springe det over og gå ind i uge 10 med energi i benene.</p>",
-  "coachAssessmentTs": "19:25",
+  "coachAssessmentHtml": "<p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\"><strong>Dag 62 af 98 · Lørdag · Uge 9</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">💪 <strong>Træning & load</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">CTL ligger på 50.5 — solidt over ugemålet på 48, og TSB på -0.2 viser at du er i næsten perfekt balance. Ugen har haft god struktur med FTP-test tirsdag og tærskeltest torsdag, begge gennemført. På løbene mandag og torsdag lå du konsekvent hurtigere end målzonen — HR nåede ikke at følge med, men pacing var over target. Næste gang du løber Z1, gå langsommere end det føles nødvendigt — det er meningen.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">⚖️ <strong>Krop & kost</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Der er ingen aktuel vægt- eller fedtprocentmåling at vurdere ud fra i dag.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">🎯 <strong>AF-status & fokus for resten af ugen</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Du har 4 AF-dage ud af 6 dage gået — det er stærkt og holder kursen mod ugemålet på 5. I dag er hviledagen, og søndagens løb er valgfrit. Hold det let hvis du tager det — kroppen er klar til musikugen med et TSB tæt på nul, og det skal den forblive.</p>",
+  "coachAssessmentTs": "02:50",
   "commute_pairing_warnings": [],
   "warnings": [
     {
       "type": "hrv",
       "level": "warn",
-      "message": "HRV 47,0 ms — 22% under 7d-snit (60,4 ms). Kroppen er presset."
+      "message": "HRV 47,0 ms — 20% under 7d-snit (58,4 ms). Kroppen er presset."
     }
   ],
-  "tsb": -6.8,
+  "tsb": -0.2,
   "swimHistory": [
     {
       "week": 1,
@@ -3152,17 +3134,16 @@
   ],
   "coachAssessmentLastActId": "i170995358",
   "weekFocusWeek": 9,
-  "coachAssessmentPlanAtGen": "Svøm 1500m let teknisk",
+  "coachAssessmentPlanAtGen": "",
   "weightGoal": 70,
   "bodyFatGoal": 20,
   "weightMovingAvg7": [
     null,
     null,
-    75.13,
-    75.08,
-    75.02,
     75.0,
-    74.99,
+    74.95,
+    74.94,
+    74.93,
     74.99,
     74.9,
     74.94,
@@ -3245,16 +3226,16 @@
     72.18,
     72.23,
     72.39,
-    72.39
+    72.39,
+    72.32
   ],
   "fatMovingAvg7": [
     null,
     null,
-    22.83,
-    22.93,
-    23.08,
-    23.18,
-    23.16,
+    23.2,
+    23.32,
+    23.4,
+    23.33,
     23.36,
     23.44,
     23.47,
@@ -3337,7 +3318,8 @@
     21.33,
     21.43,
     21.64,
-    21.69
+    21.69,
+    21.72
   ],
   "weightToGoal": 1.9,
   "bodyFatToGoal": 1.7,
@@ -3369,8 +3351,8 @@
       "note": "Nøgle virker"
     }
   },
-  "credentialsCheckedTs": "2026-07-31T23:30:44.824010",
-  "coachAssessmentTsFull": "2026-07-31T19:25:47.700135",
+  "credentialsCheckedTs": "2026-08-01T02:50:00.279972",
+  "coachAssessmentTsFull": "2026-08-01T02:50:00.279956",
   "coachAssessmentWeightAtGen": 71.9,
   "coachAssessmentAfAtGen": 4,
   "event_structure_warnings": [],
