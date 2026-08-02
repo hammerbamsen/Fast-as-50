@@ -1,7 +1,7 @@
 Token OK
 Uge 10: 2026-08-03 til 2026-08-09
 7 workouts fra Intervals
-timeOverrides: 7 dato(er) fra data/plan.json
+timeOverrides: 8 dato(er) fra data/plan.json
   Slettet: 🏊 Svøm 1500m teknisk
   Slettet: 🏃 Løb Z1 30 min let
   Slettet: 🚴 Hometrainer 3×15 min Z3 90 min
@@ -10,9 +10,9 @@ timeOverrides: 7 dato(er) fra data/plan.json
   Slettet: 🏊 OW-svøm 2500m SAMMENHÆNGENDE (Christiansborg-generalprøve)
   Slettet: 🏃 Lang løb Z2 29 km (155 min)
 Slettet: 7
-  Oprettet: 2026-08-03 🏊 Svøm 1500m teknisk
+  Oprettet: 2026-08-03 🚴 Hometrainer 3×15 min Z3 90 min
   Oprettet: 2026-08-04 🏃 Løb Z1 30 min let
-  Oprettet: 2026-08-05 🚴 Hometrainer 3×15 min Z3 90 min
+  Oprettet: 2026-08-05 🏊 Svøm 1500m teknisk
   Oprettet: 2026-08-05 💪 Styrke A Functional Strength 2 sæt
   Oprettet: 2026-08-06 🏃 Løb VO2 4×5 min Z4-Z5
   Oprettet: 2026-08-07 🏊 OW-svøm 2500m SAMMENHÆNGENDE (Christiansborg-generalprøve)
