@@ -1,7 +1,7 @@
 Token OK
 Uge 10: 2026-08-03 til 2026-08-09
 6 workouts fra Intervals
-timeOverrides: 4 dato(er) fra data/plan.json
+timeOverrides: 7 dato(er) fra data/plan.json
   Slettet: 💪 Styrke A Functional Strength 2 sæt
   Slettet: 🏃 Løb Z1 30 min let
   Slettet: 🚴 Hometrainer 3×15 min Z3 90 min
