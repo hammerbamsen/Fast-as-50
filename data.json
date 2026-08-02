@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-08-02 04:49",
+    "updated": "2026-08-02 07:58",
     "week": 9,
     "totalWeeks": 14,
     "blockType": "BUILD",
@@ -35,7 +35,7 @@
       "color": "#27AE60"
     },
     "sleep": {
-      "value": "7,9",
+      "value": "7,5",
       "unit": "t",
       "sub": "Snit 7,5t · mål 7t",
       "color": "#2874A6"
@@ -47,7 +47,7 @@
       "color": "#27AE60"
     },
     "hrv": {
-      "value": "52,4",
+      "value": "49,9",
       "unit": "ms",
       "sub": "Snit 7d",
       "color": "#7A6A58"
@@ -82,7 +82,7 @@
     "target": 5,
     "streak": 0
   },
-  "coachSpeech": "Søndag — afslut uge 9 stærkt. {HL} Godt: Søvn på 7,9 timer er solid. Fokus: 4 AF-dage i 7 afsluttede dage — 1 mangler i 0 dage tilbage. Keep moving forward. 📊 Store billede: CTL 50,0 er 2.0 point FORAN ugeplanen (planmål uge 9: 48).  \"Kroppen tror, hvad sindet siger.\"",
+  "coachSpeech": "Søndag — afslut uge 9 stærkt. {HL} Godt: Søvn på 7,5 timer er solid. Fokus: 4 AF-dage i 7 afsluttede dage — 1 mangler i 0 dage tilbage. Keep moving forward. 📊 Store billede: CTL 50,0 er 2.0 point FORAN ugeplanen (planmål uge 9: 48).  \"Kroppen tror, hvad sindet siger.\"",
   "coachHighlight": "161 procent af ugens TSS er i hus",
   "weekFocus": "Sæt pejlemærker med tests og bevar energien til musikugen",
   "today": [
@@ -946,7 +946,11 @@
       "v": 23.0,
       "real": true
     },
-    null
+    {
+      "date": "2026-08-02",
+      "v": 32.0,
+      "real": true
+    }
   ],
   "sleepHistory": [
     {
@@ -1390,7 +1394,11 @@
       "v": 6.9,
       "real": true
     },
-    null
+    {
+      "date": "2026-08-02",
+      "v": 4.3,
+      "real": true
+    }
   ],
   "tsbHistory": [
     {
@@ -3075,7 +3083,7 @@
     {
       "type": "hrv",
       "level": "warn",
-      "message": "HRV 23,0 ms — 56% under 7d-snit (52,4 ms). Kroppen er presset."
+      "message": "HRV 32,0 ms — 36% under 7d-snit (49,9 ms). Kroppen er presset."
     }
   ],
   "tsb": 1.9,
@@ -3354,7 +3362,7 @@
       "note": "Nøgle virker"
     }
   },
-  "credentialsCheckedTs": "2026-08-02T02:49:15.307790",
+  "credentialsCheckedTs": "2026-08-02T05:58:24.119809",
   "coachAssessmentTsFull": "2026-08-02T02:49:15.307774",
   "coachAssessmentWeightAtGen": 72.6,
   "coachAssessmentAfAtGen": 4,
