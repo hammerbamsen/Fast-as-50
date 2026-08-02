@@ -341,13 +341,27 @@
             0
           ]
         },
-        "2026-08-12": [
-          6,
-          0
-        ],
+        "2026-08-12": {
+          "Hike": [
+            18,
+            0
+          ]
+        },
         "2026-08-05": [
           6,
           15
+        ],
+        "2026-08-10": [
+          6,
+          0
+        ],
+        "2026-08-13": [
+          6,
+          30
+        ],
+        "2026-08-15": [
+          6,
+          30
         ]
       },
       "actualsThroughWeek": 8,
@@ -3725,100 +3739,6 @@
           "entries": [
             {
               "workout": {
-                "name": "Cykel Z2 120 min Mallorca",
-                "type": "Ride",
-                "moving_time": 7200,
-                "description": "- Varm-op 10m ramp 45-68% FTP\n- Aerob base 105m 56-76% FTP\n- Cool-down 5m ramp 68-45% FTP",
-                "workout_doc": {
-                  "steps": [
-                    {
-                      "ramp": true,
-                      "power": {
-                        "start": 45,
-                        "end": 68,
-                        "units": "%ftp"
-                      },
-                      "duration": 600,
-                      "warmup": true
-                    },
-                    {
-                      "text": "Aerob base 56-76% FTP",
-                      "power": {
-                        "start": 56,
-                        "end": 76,
-                        "units": "%ftp"
-                      },
-                      "duration": 6300
-                    },
-                    {
-                      "ramp": true,
-                      "power": {
-                        "start": 68,
-                        "end": 45,
-                        "units": "%ftp"
-                      },
-                      "duration": 300,
-                      "cooldown": true
-                    }
-                  ]
-                }
-              },
-              "note": "Cykel base 2t Mallorca (skåret fra 3t — marathon-prioritet)",
-              "id": "7fd0cab0"
-            }
-          ]
-        },
-        {
-          "date": "2026-08-11",
-          "entries": [
-            {
-              "workout": {
-                "name": "Løb Z2 75 min",
-                "type": "Run",
-                "moving_time": 4500,
-                "description": "- Varm-op 10m >5:39/km Pace\n- Base 60m 5:00-5:38/km Pace\n- Cool-down 5m >5:39/km Pace",
-                "workout_doc": {
-                  "steps": [
-                    {
-                      "text": "Varm-op >5:39/km",
-                      "pace": {
-                        "start": 65,
-                        "end": 78,
-                        "units": "%pace"
-                      },
-                      "duration": 600
-                    },
-                    {
-                      "text": "Base 5:00-5:38/km",
-                      "pace": {
-                        "start": 78,
-                        "end": 88,
-                        "units": "%pace"
-                      },
-                      "duration": 3600
-                    },
-                    {
-                      "text": "Cool-down >5:39/km",
-                      "pace": {
-                        "start": 65,
-                        "end": 78,
-                        "units": "%pace"
-                      },
-                      "duration": 300
-                    }
-                  ]
-                }
-              },
-              "note": "Løb Z2 75 min Mallorca",
-              "id": "7f50a85e"
-            }
-          ]
-        },
-        {
-          "date": "2026-08-12",
-          "entries": [
-            {
-              "workout": {
                 "name": "Sa Calobra TEST via Puig Major",
                 "type": "Ride",
                 "moving_time": 15900,
@@ -3898,64 +3818,13 @@
                 },
                 "load": 230
               },
-              "note": "Sa Calobra formtest — tidlig afgang, jævn max-indsats",
-              "id": "f869a41d"
+              "note": "Sa Calobra formtest — flyttet fra onsdag (gæster + hike). Jævn max-indsats, tidlig afgang",
+              "id": "7fd0cab0"
             }
           ]
         },
         {
-          "date": "2026-08-13",
-          "entries": [
-            {
-              "workout": {
-                "name": "Svøm 2000m teknisk",
-                "type": "Swim",
-                "moving_time": 3600,
-                "description": "- 400m varm-op Z1 10m freeride\n\n6x\n- 100m teknik Z2 2m freeride\n\n\n8x\n- 100m moderat Z3 2m freeride\n- 30s pause 1m freeride\n\n- 400m cool Z1 10m freeride",
-                "workout_doc": {
-                  "steps": [
-                    {
-                      "text": "400m varm-op Z1",
-                      "duration": 600
-                    },
-                    {
-                      "reps": 6,
-                      "text": "6x",
-                      "steps": [
-                        {
-                          "text": "100m teknik Z2",
-                          "duration": 120
-                        }
-                      ]
-                    },
-                    {
-                      "reps": 8,
-                      "text": "8x",
-                      "steps": [
-                        {
-                          "text": "100m moderat Z3",
-                          "duration": 120
-                        },
-                        {
-                          "text": "30s pause",
-                          "duration": 60
-                        }
-                      ]
-                    },
-                    {
-                      "text": "400m cool Z1",
-                      "duration": 600
-                    }
-                  ]
-                }
-              },
-              "note": "Svøm 2000m — flyttet fra fredag. Aktiv restitution dagen efter Sa Calobra",
-              "id": "2bb43fd8"
-            }
-          ]
-        },
-        {
-          "date": "2026-08-14",
+          "date": "2026-08-11",
           "entries": [
             {
               "workout": {
@@ -3995,20 +3864,43 @@
                   ]
                 }
               },
-              "note": "Lang løb 28 km — flyttet fra torsdag, 2 dage efter Sa Calobra-testen",
-              "id": "7cd4c2e7"
+              "note": "Lang løb 28 km — flyttet til tirsdag. Giver 7 dage til 32 km tirsdag 18/8",
+              "id": "7f50a85e"
             }
           ]
         },
         {
-          "date": "2026-08-15",
+          "date": "2026-08-12",
           "entries": [
             {
               "workout": {
-                "name": "Cykel Z2 150 min Mallorca",
+                "name": "Hike 3 timer Z1-Z2",
+                "type": "Hike",
+                "moving_time": 10800,
+                "description": "- Hike Z1-Z2 180m freeride",
+                "workout_doc": {
+                  "steps": [
+                    {
+                      "text": "Hike Z1-Z2",
+                      "duration": 10800
+                    }
+                  ]
+                }
+              },
+              "note": "Hike 3 timer om aftenen med gæsterne — aktiv restitution, ikke træning",
+              "id": "f869a41d"
+            }
+          ]
+        },
+        {
+          "date": "2026-08-13",
+          "entries": [
+            {
+              "workout": {
+                "name": "Cykel Z2 75 min let",
                 "type": "Ride",
-                "moving_time": 9000,
-                "description": "- Varm-op 10m ramp 45-68% FTP\n- Aerob base 135m 56-76% FTP\n- Cool-down 5m ramp 68-45% FTP",
+                "moving_time": 4500,
+                "description": "- Varm-op 10m ramp 45-68% FTP\n- Aerob base 60m 56-76% FTP\n- Cool-down 5m ramp 68-45% FTP",
                 "workout_doc": {
                   "steps": [
                     {
@@ -4028,7 +3920,7 @@
                         "end": 76,
                         "units": "%ftp"
                       },
-                      "duration": 8100
+                      "duration": 3600
                     },
                     {
                       "ramp": true,
@@ -4043,7 +3935,101 @@
                   ]
                 }
               },
-              "note": "Cykel Z2 2,5t Mallorca — let løb fjernet (dagen efter 28 km)",
+              "note": "Let cykel 75 min tidligt — svøm udgår (gæster fra onsdag)",
+              "id": "2bb43fd8"
+            }
+          ]
+        },
+        {
+          "date": "2026-08-14",
+          "entries": [
+            {
+              "workout": {
+                "name": "Løb Z2 40 min let",
+                "type": "Run",
+                "moving_time": 2400,
+                "description": "- Varm-op 10m >5:39/km Pace\n- Base 25m 5:00-5:38/km Pace\n- Cool-down 5m >5:39/km Pace",
+                "workout_doc": {
+                  "steps": [
+                    {
+                      "text": "Varm-op >5:39/km",
+                      "pace": {
+                        "start": 65,
+                        "end": 78,
+                        "units": "%pace"
+                      },
+                      "duration": 600
+                    },
+                    {
+                      "text": "Base 5:00-5:38/km",
+                      "pace": {
+                        "start": 78,
+                        "end": 88,
+                        "units": "%pace"
+                      },
+                      "duration": 1500
+                    },
+                    {
+                      "text": "Cool-down >5:39/km",
+                      "pace": {
+                        "start": 65,
+                        "end": 78,
+                        "units": "%pace"
+                      },
+                      "duration": 300
+                    }
+                  ]
+                }
+              },
+              "note": "Let løb 40 min tidligt — langturen er rykket til tirsdag",
+              "id": "7cd4c2e7"
+            }
+          ]
+        },
+        {
+          "date": "2026-08-15",
+          "entries": [
+            {
+              "workout": {
+                "name": "Cykel Z2 90 min Mallorca",
+                "type": "Ride",
+                "moving_time": 5400,
+                "description": "- Varm-op 10m ramp 45-68% FTP\n- Aerob base 75m 56-76% FTP\n- Cool-down 5m ramp 68-45% FTP",
+                "workout_doc": {
+                  "steps": [
+                    {
+                      "ramp": true,
+                      "power": {
+                        "start": 45,
+                        "end": 68,
+                        "units": "%ftp"
+                      },
+                      "duration": 600,
+                      "warmup": true
+                    },
+                    {
+                      "text": "Aerob base 56-76% FTP",
+                      "power": {
+                        "start": 56,
+                        "end": 76,
+                        "units": "%ftp"
+                      },
+                      "duration": 4500
+                    },
+                    {
+                      "ramp": true,
+                      "power": {
+                        "start": 68,
+                        "end": 45,
+                        "units": "%ftp"
+                      },
+                      "duration": 300,
+                      "cooldown": true
+                    }
+                  ]
+                }
+              },
+              "note": "Cykel Z2 90 min tidligt — skåret fra 2,5t (ugen er tung, The Corrs om eftermiddagen)",
               "id": "a8e1c48d"
             }
           ]
