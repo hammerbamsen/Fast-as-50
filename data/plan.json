@@ -347,10 +347,16 @@
             0
           ]
         },
-        "2026-08-05": [
-          6,
-          15
-        ],
+        "2026-08-05": {
+          "Ride": [
+            6,
+            15
+          ],
+          "WeightTraining": [
+            16,
+            0
+          ]
+        },
         "2026-08-10": [
           6,
           0
@@ -3446,54 +3452,48 @@
           "entries": [
             {
               "workout": {
-                "name": "Styrke A Functional Strength 2 sæt",
-                "type": "WeightTraining",
-                "moving_time": 2700,
-                "description": "2x\n- Thruster 12.5kg ×10 1m freeride\n- Renegade Row ×8 1m freeride\n- Push-up ×10 1m freeride\n- KB Swing 16kg ×15 1m freeride\n- RDL ×10 1m freeride\n- Bulgarian Split Squat ×8/ben 1m freeride\n- Pause 90 sek 2m freeride\n\n- Walk Z1 30m freeride",
+                "name": "Svøm 1500m teknisk",
+                "type": "Swim",
+                "moving_time": 2400,
+                "description": "- 300m varm-op Z1 8m freeride\n\n5x\n- 100m teknik Z2 2m freeride\n\n\n5x\n- 100m moderat Z3 2m freeride\n- 30s pause 1m freeride\n\n- 200m cool Z1 5m freeride",
                 "workout_doc": {
                   "steps": [
                     {
-                      "reps": 2,
-                      "text": "2x",
+                      "text": "300m varm-op Z1",
+                      "duration": 480
+                    },
+                    {
+                      "reps": 5,
+                      "text": "5x",
                       "steps": [
                         {
-                          "text": "Thruster 12.5kg ×10",
-                          "duration": 60
-                        },
-                        {
-                          "text": "Renegade Row ×8",
-                          "duration": 60
-                        },
-                        {
-                          "text": "Push-up ×10",
-                          "duration": 60
-                        },
-                        {
-                          "text": "KB Swing 16kg ×15",
-                          "duration": 60
-                        },
-                        {
-                          "text": "RDL ×10",
-                          "duration": 60
-                        },
-                        {
-                          "text": "Bulgarian Split Squat ×8/ben",
-                          "duration": 60
-                        },
-                        {
-                          "text": "Pause 90 sek",
+                          "text": "100m teknik Z2",
                           "duration": 120
                         }
                       ]
                     },
                     {
-                      "text": "Walk Z1",
-                      "duration": 1800
+                      "reps": 5,
+                      "text": "5x",
+                      "steps": [
+                        {
+                          "text": "100m moderat Z3",
+                          "duration": 120
+                        },
+                        {
+                          "text": "30s pause",
+                          "duration": 60
+                        }
+                      ]
+                    },
+                    {
+                      "text": "200m cool Z1",
+                      "duration": 300
                     }
                   ]
                 }
               },
-              "note": "Styrke A 2 sæt — reduceret (HRV lav) + gang 30 min",
+              "note": "Svøm 1500m — let start på ugen (HRV lav). Gang 30 min om aftenen. Styrke flyttet til onsdag",
               "id": "925bfcc2"
             }
           ]
@@ -3586,6 +3586,58 @@
               },
               "note": "Hometrainer 3×15 Z3",
               "id": "8f8a5800"
+            },
+            {
+              "workout": {
+                "name": "Styrke A Functional Strength 2 sæt",
+                "type": "WeightTraining",
+                "moving_time": 2700,
+                "description": "2x\n- Thruster 12.5kg ×10 1m freeride\n- Renegade Row ×8 1m freeride\n- Push-up ×10 1m freeride\n- KB Swing 16kg ×15 1m freeride\n- RDL ×10 1m freeride\n- Bulgarian Split Squat ×8/ben 1m freeride\n- Pause 90 sek 2m freeride\n\n- Walk Z1 30m freeride",
+                "workout_doc": {
+                  "steps": [
+                    {
+                      "reps": 2,
+                      "text": "2x",
+                      "steps": [
+                        {
+                          "text": "Thruster 12.5kg ×10",
+                          "duration": 60
+                        },
+                        {
+                          "text": "Renegade Row ×8",
+                          "duration": 60
+                        },
+                        {
+                          "text": "Push-up ×10",
+                          "duration": 60
+                        },
+                        {
+                          "text": "KB Swing 16kg ×15",
+                          "duration": 60
+                        },
+                        {
+                          "text": "RDL ×10",
+                          "duration": 60
+                        },
+                        {
+                          "text": "Bulgarian Split Squat ×8/ben",
+                          "duration": 60
+                        },
+                        {
+                          "text": "Pause 90 sek",
+                          "duration": 120
+                        }
+                      ]
+                    },
+                    {
+                      "text": "Walk Z1",
+                      "duration": 1800
+                    }
+                  ]
+                }
+              },
+              "note": "Styrke A 2 sæt — flyttet fra mandag. Kontrolleret, lette vægte (VO2-løb torsdag 07:00)",
+              "id": "b3f1a7d2"
             }
           ]
         },
