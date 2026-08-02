@@ -38,3 +38,18 @@
 - Cykel-FTP uændret 278 W (testet 28/07).
 - Vurdering: HR 164/172 ser submaksimalt ud for 20 min alt-ud, og pacingen var ujævn. Tærsklen kan vise sig lidt lav — men i reset-året med knæ/fascia som begrænsning er det den rigtige fejlretning.
 
+
+### Planændring 02/08 — søndagscheck-in uge 10-11
+
+- **søndag 2026-08-02** (uge 9): valgfrit Z1-løb droppet → gåtur. HRV 23-32 (7d-snit 50), søvn 4,3t.
+- **mandag 2026-08-03** (uge 10, adjust): Styrke A 3 sæt (60 min) → Styrke A 2 sæt (45 min)
+- **tirsdag 2026-08-04** (uge 10, move): Løb VO2 4×5 min Z4-Z5 (70 min) [hårdt] → Løb Z1 30 min let (30 min)
+- **onsdag 2026-08-05** (uge 10): Hometrainer 3×15 Z3 rykket til 06:15 (møde med Martin 08:00)
+- **torsdag 2026-08-06** (uge 10, move): Cykel Z2 45 min + Løb Z2 35 min → Løb VO2 4×5 min Z4-Z5 (70 min) [hårdt]
+- **torsdag 2026-08-13** (uge 11, move): Lang løb Z2 28 km (150 min) [langt] → Svøm 2000m teknisk (60 min)
+- **fredag 2026-08-14** (uge 11, move): Svøm 2000m teknisk (60 min) → Lang løb Z2 28 km (150 min) [langt]
+- **lørdag 2026-08-15** (uge 11, remove): Løb Z1 30 min let fjernet (dagen efter 28 km)
+
+Begrundelse: HRV-kollaps efter weekenden — intensitet skubbet 2 dage. Uge 11 omlagt så det lange løb ikke ligger dagen efter Sa Calobra-testen (230 TSS).
+
+Teknisk: 59 pace-felter på 15 løbedage rettet fra gammel tærskel (4:20) til ny (4:24). Intervals fik ellers targets 4 sek/km for hurtige.
