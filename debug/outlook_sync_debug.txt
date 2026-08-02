@@ -1,19 +1,20 @@
 Token OK
-Uge 11: 2026-08-10 til 2026-08-16
-6 workouts fra Intervals
+Uge 10: 2026-08-03 til 2026-08-09
+7 workouts fra Intervals
 timeOverrides: 7 dato(er) fra data/plan.json
-  Slettet: 🚴 Cykel Z2 120 min Mallorca
-  Slettet: 🏃 Løb Z2 75 min
-  Slettet: 🚴 Sa Calobra TEST via Puig Major
-  Slettet: 🏊 Svøm 2000m teknisk
-  Slettet: 🏃 Lang løb Z2 28 km (150 min)
-  Slettet: 🚴 Cykel Z2 150 min Mallorca
+  Slettet: 💪 Styrke A Functional Strength 2 sæt
+  Slettet: 🏃 Løb Z1 30 min let
+  Slettet: 🚴 Hometrainer 3×15 min Z3 90 min
+  Slettet: 🏃 Løb VO2 4×5 min Z4-Z5
+  Slettet: 🏊 OW-svøm 2500m SAMMENHÆNGENDE (Christiansborg-generalprøve)
+  Slettet: 🏃 Lang løb Z2 29 km (155 min)
 Slettet: 6
-  Oprettet: 2026-08-10 🚴 Sa Calobra TEST via Puig Major
-  Oprettet: 2026-08-11 🏃 Lang løb Z2 28 km (150 min)
-  Oprettet: 2026-08-12 🥾 Hike 3 timer Z1-Z2
-  Oprettet: 2026-08-13 🚴 Cykel Z2 75 min let
-  Oprettet: 2026-08-14 🏃 Løb Z2 40 min let
-  Oprettet: 2026-08-15 🚴 Cykel Z2 90 min Mallorca
-Oprettet: 6 | Fejl: 0
+  Oprettet: 2026-08-03 🏊 Svøm 1500m teknisk
+  Oprettet: 2026-08-04 🏃 Løb Z1 30 min let
+  Oprettet: 2026-08-05 🚴 Hometrainer 3×15 min Z3 90 min
+  Oprettet: 2026-08-05 💪 Styrke A Functional Strength 2 sæt
+  Oprettet: 2026-08-06 🏃 Løb VO2 4×5 min Z4-Z5
+  Oprettet: 2026-08-07 🏊 OW-svøm 2500m SAMMENHÆNGENDE (Christiansborg-generalprøve)
+  Oprettet: 2026-08-08 🏃 Lang løb Z2 29 km (155 min)
+Oprettet: 7 | Fejl: 0
 DONE
