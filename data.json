@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-08-02 10:42",
+    "updated": "2026-08-02 12:10",
     "week": 9,
     "totalWeeks": 14,
     "blockType": "BUILD",
@@ -23,13 +23,13 @@
       "color": "#E67E22"
     },
     "ctl": {
-      "value": "49,7",
+      "value": "50,9",
       "unit": "",
       "sub": "Uge 9-mål 48 · Slutmål 43 (uge 14)",
       "color": "#27AE60"
     },
     "tsb": {
-      "value": "3,5",
+      "value": "-2,4",
       "unit": "",
       "sub": "Form · CTL−ATL, frisk >0",
       "color": "#27AE60"
@@ -41,7 +41,7 @@
       "color": "#2874A6"
     },
     "runKm": {
-      "value": "24,3",
+      "value": "32,4",
       "unit": "km",
       "sub": "Mål 40+ km uge 10",
       "color": "#27AE60"
@@ -53,9 +53,9 @@
       "color": "#7A6A58"
     },
     "tssComp": {
-      "value": "310",
+      "value": "363",
       "unit": "TSS",
-      "sub": "310 af 150 planlagt TSS",
+      "sub": "363 af 150 planlagt TSS",
       "color": "#27AE60"
     },
     "bikeKm": {
@@ -82,13 +82,21 @@
     "target": 5,
     "streak": 1
   },
-  "coachSpeech": "Søndag — afslut uge 9 stærkt. {HL} Godt: Søvn på 7,5 timer er solid. 5/7 AF-dage — ugens mål er ramt. Stærk uge. 4 uger til Christiansborg — hold sporet. 📊 Store billede: CTL 49,7 er 1.7 point FORAN ugeplanen (planmål uge 9: 48).  \"Kroppen tror, hvad sindet siger.\"",
-  "coachHighlight": "207 procent af ugens TSS er i hus",
+  "coachSpeech": "Søndag — afslut uge 9 stærkt. {HL} Godt: Søvn på 7,5 timer er solid. 5/7 AF-dage — ugens mål er ramt. Stærk uge. 4 uger til Christiansborg — hold sporet. 📊 Store billede: CTL 50,9 er 2.9 point FORAN ugeplanen (planmål uge 9: 48).  \"Kroppen tror, hvad sindet siger.\"",
+  "coachHighlight": "242 procent af ugens TSS er i hus",
   "weekFocus": "Sæt pejlemærker med tests og bevar energien til musikugen",
   "today": [
     {
       "discipline": "walk",
       "title": "Gentofte Gang",
+      "duration": "",
+      "zone": "–",
+      "desc": "",
+      "completed": true
+    },
+    {
+      "discipline": "run",
+      "title": "Gentofte Løb",
       "duration": "",
       "zone": "–",
       "desc": "",
@@ -175,6 +183,14 @@
       "done": true,
       "extra": true,
       "today": true
+    },
+    {
+      "day": "Søn",
+      "disc": "run",
+      "label": "Gentofte Løb",
+      "done": true,
+      "extra": true,
+      "today": true
     }
   ],
   "ctlCurve": [
@@ -186,7 +202,7 @@
     47.2,
     49.7,
     51.0,
-    49.7
+    50.9
   ],
   "weightHistory": [
     {
@@ -1848,7 +1864,7 @@
     },
     {
       "date": "2026-08-02",
-      "v": 3.5,
+      "v": -2.4,
       "real": true
     }
   ],
@@ -2460,6 +2476,14 @@
           "done": true,
           "extra": true,
           "today": true
+        },
+        {
+          "day": "Søn",
+          "disc": "run",
+          "label": "Gentofte Løb",
+          "done": true,
+          "extra": true,
+          "today": true
         }
       ],
       "blockType": "BUILD",
@@ -2469,8 +2493,8 @@
       "sessions": [
         {
           "day": "Man",
-          "disc": "strength",
-          "label": "Styrke A Functional Strength 2 sæt",
+          "disc": "swim",
+          "label": "Svøm 1500m teknisk",
           "done": false,
           "today": false
         },
@@ -2485,6 +2509,13 @@
           "day": "Ons",
           "disc": "bike",
           "label": "Hometrainer 3×15 min Z3 90 min",
+          "done": false,
+          "today": false
+        },
+        {
+          "day": "Ons",
+          "disc": "strength",
+          "label": "Styrke A Functional Strength 2 sæt",
           "done": false,
           "today": false
         },
@@ -2742,14 +2773,14 @@
     }
   ],
   "train_mins": {
+    "run": 163.0,
     "walk": 246.0,
     "openwater": 32.0,
     "commute": 12.0,
-    "run": 124.0,
     "bike": 73.0,
     "strength": 28.0,
     "planned": 218.0,
-    "actual_total": 515.0
+    "actual_total": 554.0
   },
   "fatHistory": [
     {
@@ -3063,8 +3094,8 @@
     },
     null
   ],
-  "coachAssessmentHtml": "<p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\"><strong>Dag 63 af 98 · Søndag · Uge 9</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">💪 <strong>Træning & load</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">En fuld testuge er i mål — FTP-test, threshold-løbetest og Gentofte Gang tre dage i træk. CTL er kommet op på 49,7 med TSB på 3,5, så kroppen er belastet men ikke i underskud. Begge løbeture viste samme mønster: tempoet løb foran zonemålet, mens HR ikke nåede at følge med. Tag det med ind i næste løb — sænk farten markant i starten, så pace og HR mødes i den rigtige zone fra første kilometer.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">⚖️ <strong>Krop & kost</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Ingen aktuel vægt- eller fedtprocentmåling denne uge, så der er ikke noget at vurdere på kropssammensætningen. Mål og notér begge tal — ikke kun vægten — så vi har noget konkret at arbejde med.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">🎯 <strong>AF-status & fokus for resten af ugen</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Du har 5 AF-dage ud af 7 dage gået — det er præcis målet opfyldt. Musikugen starter nu, og planen er tydelig: bevar energien, hold benene i gang med lette bevægelser, og lad kroppen samle sig til de to mål i slutningen af august og starten af september.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">📊 <strong>Store billede</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">CTL på 49,7 er 1,7 point foran ugeplanens mål på 48 — en solid testuge har givet lidt ekstra. Det er godt, men pas på ikke at jagte det yderligere i musikugen. Ruten frem mod uge 14-målet på 43 kræver faktisk en kontrolleret nedtrapning herfra — ikke mere gas.</p>",
-  "coachAssessmentTs": "08:42",
+  "coachAssessmentHtml": "<p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\"><strong>Dag 63 af 98 · Søndag · Uge 9</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">💪 <strong>Træning & load</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">CTL er 50,9 og TSB er -2,4 — du er velladet og i grønt. Ugen har indeholdt en FTP-test, en tærskeltest på løb og en teknisk svømning, og Gentofte Gang sluttede ugen stille og roligt af. Løbene tirsdag og torsdag viser samme mønster: du løber hurtigere end target-zonen tilsiger, og HR når ikke at følge med — så kroppen opfatter det som hårdere end tallene umiddelbart viser. Tag det med til næste rolige løbetur: sæt tempoet ned, inden du tænker HR.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">⚖️ <strong>Krop & kost</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Der er ingen aktuel måling denne uge, så der er intet at vurdere på.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">🎯 <strong>AF-status & fokus for resten af ugen</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Du har 5 AF-dage ud af 7 dage gået i ugen — det rammer ugemålet præcist. Streaken er 1 dag, og det er ikke det vigtige her — det vigtige er at du er i mål med AF-målet for ugen. Fokus nu er at gå ind i musikugen med TSB i positiv retning og energien intakt.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">📊 <strong>Store billede</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">CTL på 50,9 er 2,9 point foran ugeplanen (planmål uge 9: 48) — det er en solid forspring, og det er bygget op uden at TSB er kørt ned i rødt. Næste skridt er at bevare det forspring uden at overbygge: capacity-mode betyder at du beskytter fundamentet, ikke presser det.</p>",
+  "coachAssessmentTs": "10:10",
   "commute_pairing_warnings": [],
   "warnings": [
     {
@@ -3073,7 +3104,7 @@
       "message": "HRV 32,0 ms — 36% under 7d-snit (49,9 ms). Kroppen er presset."
     }
   ],
-  "tsb": 3.5,
+  "tsb": -2.4,
   "swimHistory": [
     {
       "week": 1,
@@ -3130,7 +3161,7 @@
       "cumulative": 19536.0
     }
   ],
-  "coachAssessmentLastActId": "i171635526",
+  "coachAssessmentLastActId": "i171658573",
   "weekFocusWeek": 9,
   "coachAssessmentPlanAtGen": "Gentofte Gang",
   "weightGoal": 70,
@@ -3349,8 +3380,8 @@
       "note": "Nøgle virker"
     }
   },
-  "credentialsCheckedTs": "2026-08-02T08:42:51.992130",
-  "coachAssessmentTsFull": "2026-08-02T08:42:51.992115",
+  "credentialsCheckedTs": "2026-08-02T10:10:17.431374",
+  "coachAssessmentTsFull": "2026-08-02T10:10:17.431360",
   "coachAssessmentWeightAtGen": 72.6,
   "coachAssessmentAfAtGen": 5,
   "event_structure_warnings": [],
