@@ -53,3 +53,16 @@
 Begrundelse: HRV-kollaps efter weekenden — intensitet skubbet 2 dage. Uge 11 omlagt så det lange løb ikke ligger dagen efter Sa Calobra-testen (230 TSS).
 
 Teknisk: 59 pace-felter på 15 løbedage rettet fra gammel tærskel (4:20) til ny (4:24). Intervals fik ellers targets 4 sek/km for hurtige.
+
+### Planændring 02/08 (2) — uge 11 tilpasset gæster på Mallorca
+
+- **mandag 2026-08-10** (uge 11, move): Cykel Z2 120 min → Sa Calobra TEST via Puig Major (265 min) [hårdt]
+- **tirsdag 2026-08-11** (uge 11, move): Løb Z2 75 min → Lang løb Z2 28 km (150 min) [langt]
+- **onsdag 2026-08-12** (uge 11, move): Sa Calobra TEST → Hike 3 timer Z1-Z2 (180 min), kl. 18:00
+- **torsdag 2026-08-13** (uge 11, remove/replace): Svøm 2000m teknisk → Cykel Z2 75 min let, kl. 06:30
+- **fredag 2026-08-14** (uge 11, move): Lang løb 28 km → Løb Z2 40 min let, kl. 06:30
+- **lørdag 2026-08-15** (uge 11, adjust): Cykel Z2 150 min → 90 min, kl. 06:30
+
+Rammer: gæster fra onsdag til søndag, hike 3 timer onsdag aften, ingen svømning efter onsdag, kun korte tidlige pas torsdag-lørdag. Langturen flyttet til tirsdag giver 7 dage til 32 km tirsdag 18/8 (mod 4 før).
+
+Bemærk: testen ligger nu to dage efter 29 km-langturen 8/8 — tallet bliver formentlig 1-2 % under reelt potentiale. Ugen lander ~585 TSS mod mål 500, TSB forventet −30 til −35 søndag.
