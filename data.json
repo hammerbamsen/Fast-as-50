@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-08-02 17:37",
+    "updated": "2026-08-02 17:51",
     "week": 9,
     "totalWeeks": 14,
     "blockType": "BUILD",
@@ -71,18 +71,18 @@
       "color": "#C0392B"
     },
     "afStreak": {
-      "value": "1",
+      "value": "0",
       "unit": "",
       "sub": "Dage i træk · mål 5/uge",
       "color": "#59182A"
     }
   },
   "af": {
-    "weekDone": 5,
+    "weekDone": 4,
     "target": 5,
-    "streak": 1
+    "streak": 0
   },
-  "coachSpeech": "Søndag — afslut uge 9 stærkt. {HL} Godt: Søvn på 7,5 timer er solid. 5/7 AF-dage — ugens mål er ramt. Stærk uge. 4 uger til Christiansborg — hold sporet. 📊 Store billede: CTL 50,9 er 2.9 point FORAN ugeplanen (planmål uge 9: 48).  \"Kroppen tror, hvad sindet siger.\"",
+  "coachSpeech": "Søndag — afslut uge 9 stærkt. {HL} Godt: Søvn på 7,5 timer er solid. Fokus: 4 AF-dage i 7 afsluttede dage — 1 mangler i 0 dage tilbage. Alle sessioner i hus. Juster de små ting, og resten følger. 📊 Store billede: CTL 50,9 er 2.9 point FORAN ugeplanen (planmål uge 9: 48).  \"Kroppen tror, hvad sindet siger.\"",
   "coachHighlight": "242 procent af ugens TSS er i hus",
   "weekFocus": "Sæt pejlemærker med tests og bevar energien til musikugen",
   "today": [
@@ -1931,7 +1931,7 @@
     "2026-07-30": 0,
     "2026-07-31": 1,
     "2026-08-01": 1,
-    "2026-08-02": 0
+    "2026-08-02": 1
   },
   "all_weeks": {
     "1": {
@@ -2493,8 +2493,8 @@
       "sessions": [
         {
           "day": "Man",
-          "disc": "swim",
-          "label": "Svøm 1500m teknisk",
+          "disc": "bike",
+          "label": "Hometrainer 3×15 min Z3 90 min",
           "done": false,
           "today": false
         },
@@ -2507,8 +2507,8 @@
         },
         {
           "day": "Ons",
-          "disc": "bike",
-          "label": "Hometrainer 3×15 min Z3 90 min",
+          "disc": "swim",
+          "label": "Svøm 1500m teknisk",
           "done": false,
           "today": false
         },
@@ -2767,7 +2767,7 @@
     },
     {
       "week": 9,
-      "done": 5,
+      "done": 4,
       "total": 7,
       "label": "Uge 9"
     }
@@ -3094,8 +3094,8 @@
     },
     null
   ],
-  "coachAssessmentHtml": "<p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\"><strong>Dag 63 af 98 · Søndag · Uge 9</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">💪 <strong>Træning & load</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">CTL ligger på 50,9 med TSB på -2,4 — kroppen er i god balance efter en uge med både FTP-test, tærskeltest og teknisk svøm. Løbeturene viste et mønster der går igen: pace løber foran HR, og resultatet er at du ender for hurtigt uden at det føles hårdt. Næste gang du har en Z1-løbetur, skal du bremse dig selv aktivt fra starten — pace er facit, ikke HR. Ugen er solidt gennemført.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">⚖️ <strong>Krop & kost</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Der er ingen aktuel vægt- eller fedtprocentmåling denne uge, så der er intet at vurdere på — hop på vægten og tag en fedtprocentmåling, så vi har noget at arbejde med.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">🎯 <strong>AF-status & fokus for resten af ugen</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Du har 5 AF-dage ud af 7 dage gået i ugen — målet er nået. Stregen er 1 dag, så der er ikke noget momentum at miste her, men dagsresultatet er i hus. Ugen har handlet om at sætte pejlemærker med tests og bevare energien til musikugen — og det er præcis hvad der er sket.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">📊 <strong>Store billede</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">CTL på 50,9 er 2,9 point foran planmålet for uge 9 (48) — det er et godt sted at være i et capacity-år. Vær opmærksom på at det ikke er en invitation til at skrue op; bufferen giver rum til at restituere ordentligt, ikke til at bygge endnu mere load. Kapaciteten er der — næste opgave er at bevare den ind i de sidste uger.</p>",
-  "coachAssessmentTs": "10:16",
+  "coachAssessmentHtml": "<p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\"><strong>Dag 63 af 98 · Søndag · Uge 9</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">💪 <strong>Træning & load</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">CTL er 50,9 og TSB er -2,4 — kroppen er fresh og belastningen sidder rigtigt. Ugen har leveret både FTP-test og threshold-løbetest plus teknisk svøm, så grundlaget er solidt dokumenteret. Zone-compliance på løbene viser et tilbagevendende mønster: pacen løber foran HR, og det betyder reelt at du løber hurtigere end zonen tillader — sænk tempoet i de lette løb næste gang, ikke indsatsen. Svømmen ramte 100% Z1 — præcis som planlagt.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">⚖️ <strong>Krop & kost</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Ingen aktuel vægt- eller fedtprocentmåling denne uge — intet at vurdere.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">🎯 <strong>AF-status & fokus for resten af ugen</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Du har 4 AF-dage ud af 7 dage gået i ugen — det er solidt og tæt på ugemålet på 5. Ugen har handlet om at sætte pejlemærker med to tests, og det er klaret. Nu er det musikugen der venter — bevar energien, hold dig frisk og lad kroppen konsolidere det arbejde du har lagt ind.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">📊 <strong>Store billede</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">CTL 50,9 er 2,9 point foran ugeplanen (planmål uge 9: 48) — du er foran skema uden at have overbelastet dig. Det er præcis den kapacitetsopbygning reset-året handler om: mere form end planlagt, kroppen klar og TSB tæt på nul. Fortsæt den linje ind i uge 10.</p>",
+  "coachAssessmentTs": "15:51",
   "commute_pairing_warnings": [],
   "warnings": [
     {
@@ -3380,10 +3380,10 @@
       "note": "Nøgle virker"
     }
   },
-  "credentialsCheckedTs": "2026-08-02T15:37:41.443923",
-  "coachAssessmentTsFull": "2026-08-02T10:16:57.396040",
+  "credentialsCheckedTs": "2026-08-02T15:51:57.404969",
+  "coachAssessmentTsFull": "2026-08-02T15:51:57.404952",
   "coachAssessmentWeightAtGen": 72.6,
-  "coachAssessmentAfAtGen": 5,
+  "coachAssessmentAfAtGen": 4,
   "event_structure_warnings": [],
   "coachAssessmentFatAtGen": 20.6,
   "zones": {
