@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-08-02 07:58",
+    "updated": "2026-08-02 08:51",
     "week": 9,
     "totalWeeks": 14,
     "blockType": "BUILD",
@@ -71,18 +71,18 @@
       "color": "#C0392B"
     },
     "afStreak": {
-      "value": "0",
+      "value": "1",
       "unit": "",
       "sub": "Dage i træk · mål 5/uge",
       "color": "#59182A"
     }
   },
   "af": {
-    "weekDone": 4,
+    "weekDone": 5,
     "target": 5,
-    "streak": 0
+    "streak": 1
   },
-  "coachSpeech": "Søndag — afslut uge 9 stærkt. {HL} Godt: Søvn på 7,5 timer er solid. Fokus: 4 AF-dage i 7 afsluttede dage — 1 mangler i 0 dage tilbage. Keep moving forward. 📊 Store billede: CTL 50,0 er 2.0 point FORAN ugeplanen (planmål uge 9: 48).  \"Kroppen tror, hvad sindet siger.\"",
+  "coachSpeech": "Søndag — afslut uge 9 stærkt. {HL} Godt: Søvn på 7,5 timer er solid. 5/7 AF-dage — ugens mål er ramt. Alt peger den rigtige vej. Hold ilden ved — ikke sluk den. 📊 Store billede: CTL 50,0 er 2.0 point FORAN ugeplanen (planmål uge 9: 48).  \"Kroppen tror, hvad sindet siger.\"",
   "coachHighlight": "161 procent af ugens TSS er i hus",
   "weekFocus": "Sæt pejlemærker med tests og bevar energien til musikugen",
   "today": [
@@ -1914,7 +1914,8 @@
     "2026-07-29": 0,
     "2026-07-30": 0,
     "2026-07-31": 1,
-    "2026-08-01": 1
+    "2026-08-01": 1,
+    "2026-08-02": 0
   },
   "all_weeks": {
     "1": {
@@ -2749,7 +2750,7 @@
     },
     {
       "week": 9,
-      "done": 4,
+      "done": 5,
       "total": 7,
       "label": "Uge 9"
     }
@@ -3076,8 +3077,8 @@
     },
     null
   ],
-  "coachAssessmentHtml": "<p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\"><strong>Dag 63 af 98 · Søndag · Uge 9</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">💪 <strong>Træning & load</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">CTL er 50,0 med TSB på 1,9 — du er velrestitueret og i god balance efter en uge med to tests og et langt løb. Zone-compliancen viser et klart mønster: du løber konsekvent hurtigere end target-pace, og HR når ikke at følge med — det er ikke et tegn på at du er for stærk, det er et tegn på at du skal sænke tempoet på dine lette løb. Svømningen og FTP-testen ramte målet præcist. Dagens lette Z1-løb er valgfrit — hvis du tager den, så brug den som en ægte restitutionstur og hold pace lavere end det føles nødvendigt.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">⚖️ <strong>Krop & kost</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Der er ingen aktuel vægt- eller fedtprocentmåling denne uge, så ingen opdatering her.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">🎯 <strong>AF-status & fokus for resten af ugen</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Du har 4 AF-dage ud af 7 dage — det er solidt og på niveau med ugenmålet. Musikugen er i sigte, så hold energien høj og undgå at planlægge dig ind i noget tungt. Hvis du tager løbeturen i dag, er det et bonus-restitutionspas — ikke et must.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">📊 <strong>Store billede</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">CTL på 50,0 er 2,0 point foran ugeplanen (planmål uge 9: 48) — du har bygget mere end nødvendigt, og det er en god position at gå ind i musikugen fra. Det betyder også at du har plads til at holde igen næste uge uden at gå i minus på planen. Fokus nu er at bevare det du har bygget, ikke at tilføje mere.</p>",
-  "coachAssessmentTs": "02:49",
+  "coachAssessmentHtml": "<p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\"><strong>Dag 63 af 98 · Søndag · Uge 9</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">💪 <strong>Træning & load</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">CTL er 50,0 med en TSB på +1,9 — kroppen er i balance efter en uge med både FTP-test, løbetærskeltest og teknisk svøm. Zone-compliance viser et mønster: på begge løbeture lå du for hurtigt i pace, selvom HR ikke nåede at følge med. Det er ikke et konditionsproblem — det er et tempostyringsproblem. Tag det med til næste lette løbetur: sæt tempo efter pace, ikke efter hvordan det føles i benene.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">⚖️ <strong>Krop & kost</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Der er ingen aktuel vægt- eller fedtprocentmåling denne uge, så der er intet at vurdere her.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">🎯 <strong>AF-status & fokus</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Du har 5 AF-dage ud af 7 dage — målet er nået. Det valgfri løb i dag kan du tage eller lade ligge uden at det ændrer på noget. Resten af søndagen handler om at bevare energien til musikugen — det er præcis den filosofi capacity-mode kræver.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">📊 <strong>Store billede</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">CTL på 50,0 er 2,0 point foran ugeplanen (planmål uge 9: 48) — det er en lille buffer, ikke en invitation til at presse mere ind. Husk at målet for uge 14 er 43, ikke 50+. Hold tempoet i planen og lad kroppen gøre arbejdet uden at du overinvesterer nu.</p>",
+  "coachAssessmentTs": "06:52",
   "commute_pairing_warnings": [],
   "warnings": [
     {
@@ -3362,10 +3363,10 @@
       "note": "Nøgle virker"
     }
   },
-  "credentialsCheckedTs": "2026-08-02T05:58:24.119809",
-  "coachAssessmentTsFull": "2026-08-02T02:49:15.307774",
+  "credentialsCheckedTs": "2026-08-02T06:52:08.911168",
+  "coachAssessmentTsFull": "2026-08-02T06:52:08.911150",
   "coachAssessmentWeightAtGen": 72.6,
-  "coachAssessmentAfAtGen": 4,
+  "coachAssessmentAfAtGen": 5,
   "event_structure_warnings": [],
   "coachAssessmentFatAtGen": 20.6,
   "zones": {
