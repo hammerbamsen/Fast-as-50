@@ -348,10 +348,6 @@
           ]
         },
         "2026-08-05": {
-          "Ride": [
-            6,
-            15
-          ],
           "WeightTraining": [
             16,
             0
@@ -368,7 +364,13 @@
         "2026-08-15": [
           6,
           30
-        ]
+        ],
+        "2026-08-03": {
+          "Ride": [
+            6,
+            15
+          ]
+        }
       },
       "actualsThroughWeek": 8,
       "days": [
@@ -3452,85 +3454,6 @@
           "entries": [
             {
               "workout": {
-                "name": "Svøm 1500m teknisk",
-                "type": "Swim",
-                "moving_time": 2400,
-                "description": "- 300m varm-op Z1 8m freeride\n\n5x\n- 100m teknik Z2 2m freeride\n\n\n5x\n- 100m moderat Z3 2m freeride\n- 30s pause 1m freeride\n\n- 200m cool Z1 5m freeride",
-                "workout_doc": {
-                  "steps": [
-                    {
-                      "text": "300m varm-op Z1",
-                      "duration": 480
-                    },
-                    {
-                      "reps": 5,
-                      "text": "5x",
-                      "steps": [
-                        {
-                          "text": "100m teknik Z2",
-                          "duration": 120
-                        }
-                      ]
-                    },
-                    {
-                      "reps": 5,
-                      "text": "5x",
-                      "steps": [
-                        {
-                          "text": "100m moderat Z3",
-                          "duration": 120
-                        },
-                        {
-                          "text": "30s pause",
-                          "duration": 60
-                        }
-                      ]
-                    },
-                    {
-                      "text": "200m cool Z1",
-                      "duration": 300
-                    }
-                  ]
-                }
-              },
-              "note": "Svøm 1500m — let start på ugen (HRV lav). Gang 30 min om aftenen. Styrke flyttet til onsdag",
-              "id": "925bfcc2"
-            }
-          ]
-        },
-        {
-          "date": "2026-08-04",
-          "entries": [
-            {
-              "workout": {
-                "name": "Løb Z1 30 min let",
-                "type": "Run",
-                "moving_time": 1800,
-                "description": "- Let løb 30m >5:39/km Pace",
-                "workout_doc": {
-                  "steps": [
-                    {
-                      "text": "Let løb >5:39/km",
-                      "pace": {
-                        "start": 65,
-                        "end": 78,
-                        "units": "%pace"
-                      },
-                      "duration": 1800
-                    }
-                  ]
-                }
-              },
-              "note": "Ekstra let Z1-løb 30 min — VO2 flyttet til torsdag (HRV-restitution)",
-              "id": "cbf5dfd1"
-            }
-          ]
-        },
-        {
-          "date": "2026-08-05",
-          "entries": [
-            {
-              "workout": {
                 "name": "Hometrainer 3×15 min Z3 90 min",
                 "type": "Ride",
                 "moving_time": 5400,
@@ -3584,8 +3507,87 @@
                   ]
                 }
               },
-              "note": "Hometrainer 3×15 Z3",
+              "note": "Hometrainer 3×15 Z3 — byttet med mandagens svøm (2/8). Kør lav Z3 (205-220W) hvis HRV stadig er lav. Gang 30 min om aftenen.",
               "id": "8f8a5800"
+            }
+          ]
+        },
+        {
+          "date": "2026-08-04",
+          "entries": [
+            {
+              "workout": {
+                "name": "Løb Z1 30 min let",
+                "type": "Run",
+                "moving_time": 1800,
+                "description": "- Let løb 30m >5:39/km Pace",
+                "workout_doc": {
+                  "steps": [
+                    {
+                      "text": "Let løb >5:39/km",
+                      "pace": {
+                        "start": 65,
+                        "end": 78,
+                        "units": "%pace"
+                      },
+                      "duration": 1800
+                    }
+                  ]
+                }
+              },
+              "note": "Ekstra let Z1-løb 30 min — VO2 flyttet til torsdag (HRV-restitution)",
+              "id": "cbf5dfd1"
+            }
+          ]
+        },
+        {
+          "date": "2026-08-05",
+          "entries": [
+            {
+              "workout": {
+                "name": "Svøm 1500m teknisk",
+                "type": "Swim",
+                "moving_time": 2400,
+                "description": "- 300m varm-op Z1 8m freeride\n\n5x\n- 100m teknik Z2 2m freeride\n\n\n5x\n- 100m moderat Z3 2m freeride\n- 30s pause 1m freeride\n\n- 200m cool Z1 5m freeride",
+                "workout_doc": {
+                  "steps": [
+                    {
+                      "text": "300m varm-op Z1",
+                      "duration": 480
+                    },
+                    {
+                      "reps": 5,
+                      "text": "5x",
+                      "steps": [
+                        {
+                          "text": "100m teknik Z2",
+                          "duration": 120
+                        }
+                      ]
+                    },
+                    {
+                      "reps": 5,
+                      "text": "5x",
+                      "steps": [
+                        {
+                          "text": "100m moderat Z3",
+                          "duration": 120
+                        },
+                        {
+                          "text": "30s pause",
+                          "duration": 60
+                        }
+                      ]
+                    },
+                    {
+                      "text": "200m cool Z1",
+                      "duration": 300
+                    }
+                  ]
+                }
+              },
+              "note": "Svøm 1500m teknisk — byttet fra mandag. Let onsdag før VO2-løb torsdag 07:00.",
+              "id": "925bfcc2"
             },
             {
               "workout": {
