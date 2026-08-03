@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-08-03 03:06",
+    "updated": "2026-08-03 07:03",
     "week": 10,
     "totalWeeks": 14,
     "blockType": "BUILD",
@@ -11,13 +11,13 @@
   },
   "kpis": {
     "weight": {
-      "value": "72,6",
+      "value": "72,9",
       "unit": "kg",
-      "sub": "Sidst målt 1/8 · Mål <70 kg · snit 72,4 kg",
+      "sub": "Mål <70 kg · snit 72,4 kg",
       "color": "#E67E22"
     },
     "fat": {
-      "value": "20,6",
+      "value": "21,8",
       "unit": "%",
       "sub": "Mål <20%",
       "color": "#E67E22"
@@ -35,7 +35,7 @@
       "color": "#27AE60"
     },
     "sleep": {
-      "value": "7,3",
+      "value": "7,4",
       "unit": "t",
       "sub": "Snit 7,5t · mål 7t",
       "color": "#2874A6"
@@ -47,7 +47,7 @@
       "color": "#7A6A58"
     },
     "hrv": {
-      "value": "50,4",
+      "value": "50,9",
       "unit": "ms",
       "sub": "Snit 7d",
       "color": "#7A6A58"
@@ -82,7 +82,7 @@
     "target": 5,
     "streak": 0
   },
-  "coachSpeech": "Ny uge starter — uge 10 af 14. Build-uge. {HL} Godt: Søvn på 7,3 timer er solid. Ny uge med 0 dages streak i ryggen. Hold den. Alt peger den rigtige vej. Hold ilden ved — ikke sluk den.  \"Sæt målet højt, men sæt i dag realistisk.\"",
+  "coachSpeech": "Ny uge starter — uge 10 af 14. Build-uge. {HL} Godt: Søvn på 7,4 timer er solid. Ny uge med 0 dages streak i ryggen. Hold den. Fokus: Vægt på 72,9 kg — hold protein højt og undgå lette kulhydrater om aftenen. Keep moving forward.  \"Sæt målet højt, men sæt i dag realistisk.\"",
   "coachHighlight": "Fuld uge foran — i dag: Hometrainer 3×15 min Z3 90 min",
   "weekFocus": "Svømmefokus og første VO2-stimulus sætter fart mod Christiansborg",
   "today": [
@@ -458,7 +458,11 @@
       "real": true
     },
     null,
-    null
+    {
+      "date": "2026-08-03",
+      "v": 72.9,
+      "real": true
+    }
   ],
   "hrvHistory": [
     {
@@ -906,7 +910,11 @@
       "v": 32.0,
       "real": true
     },
-    null
+    {
+      "date": "2026-08-03",
+      "v": 54.0,
+      "real": true
+    }
   ],
   "sleepHistory": [
     {
@@ -1350,7 +1358,11 @@
       "v": 4.3,
       "real": true
     },
-    null
+    {
+      "date": "2026-08-03",
+      "v": 7.9,
+      "real": true
+    }
   ],
   "tsbHistory": [
     {
@@ -2958,18 +2970,16 @@
       "real": true
     },
     null,
-    null
-  ],
-  "coachAssessmentHtml": "<p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\"><strong>Dag 64 af 98 · Mandag · Uge 10</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">💪 <strong>Træning & load</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">CTL på 51.3 er allerede over ugemålet på 50 — god position. TSB på -3.9 er neutral og giver grønt lys for dagens hometrainer-session. Tre blokke á 15 min i Z3 er ikke heroisk — men det er præcis det, der skal til nu. Hold wattene stabile gennem alle tre intervaller og lad ikke det sidste falde.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">⚖️ <strong>Krop & kost</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Ingen aktuel vægt- eller fedtprocentmåling — intet at vurdere her. Hop på vægten og mål fedtprocenten, så vi har noget konkret at arbejde med.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">🎯 <strong>AF-status & fokus for resten af ugen</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">0 AF-dage ud af 1 dag gået i ugen — mandag er endnu ikke afsluttet, så der er stadig mulighed for at holde stregen ren i dag. Ugen byder på en krævende VO2-session torsdag og en 2500m generalprøve fredag, der begge kræver at du møder op frisk. Hold alkoholen væk i weekenden særligt — det er der restitutionen afgøres.</p>",
-  "coachAssessmentTs": "01:06",
-  "commute_pairing_warnings": [],
-  "warnings": [
     {
-      "type": "hrv",
-      "level": "warn",
-      "message": "HRV 32,0 ms — 37% under 7d-snit (50,4 ms). Kroppen er presset."
+      "date": "2026-08-03",
+      "v": 21.8,
+      "real": true
     }
   ],
+  "coachAssessmentHtml": "<p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\"><strong>Dag 64 af 98 · Mandag · Uge 10</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">💪 <strong>Træning & load</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">CTL ligger på 51.3 — du er foran ugemålet på 50, og TSB på -3.9 er helt i orden. Kroppen er frisk og klar til belastning. Dagens hometrainer-pas venter: 3×15 min Z3 i 90 min — hold wattene stabilt i Z3 igennem alle tre intervaller, og lad ikke de sidste minutter glide ned i Z2. Ugen har et tungt program foran sig med VO2-løb torsdag og generalprøvesvøm fredag, så lav en god indsats i dag uden at overbyde.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">⚖️ <strong>Krop & kost</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Vægten er 72.9 kg — 2.9 kg fra målet under 70. Fedtprocenten er 21.8 %, som er 1.8 procentpoint over målet på under 20 % — og den er steget 1.2 point siden begyndelsen af august, hvilket er et advarselstegn du ikke må ignorere. Stiger fedtprocenten mens vægten er relativt stabil, er det ikke et energibalanceproblem alene — det kan betyde at muskelmassen går tilbage. Kig på proteinindtaget og sørg for at styrketræningen fredag sidder fast.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">🎯 <strong>AF-status & fokus for resten af ugen</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Du har 0 AF-dage ud af 1 dag gået i ugen — der er endnu ingen registreret alkoholfri dag. Ugen er ikke tabt, men der er ingen buffer: 5 AF-dage kræver at de resterende dage næsten alle lander rigtigt. Ugens vigtigste pas er OW-svømmen fredag — 2500 m sammenhængende er din reelle Christiansborg-generalprøve, og den skal du møde udhvilet. Prioriter søvn og kost de næste dage, så du er skarp når det gælder.</p>",
+  "coachAssessmentTs": "05:04",
+  "commute_pairing_warnings": [],
+  "warnings": [],
   "tsb": -3.9,
   "swimHistory": [
     {
@@ -3128,7 +3138,7 @@
     72.39,
     72.36,
     72.35,
-    72.36
+    72.45
   ],
   "fatMovingAvg7": [
     null,
@@ -3220,10 +3230,10 @@
     21.69,
     21.56,
     21.55,
-    21.64
+    21.67
   ],
-  "weightToGoal": 2.6,
-  "bodyFatToGoal": 0.6,
+  "weightToGoal": 2.9,
+  "bodyFatToGoal": 1.8,
   "ctlPlan": [
     34,
     36,
@@ -3252,12 +3262,12 @@
       "note": "Nøgle virker"
     }
   },
-  "credentialsCheckedTs": "2026-08-03T01:06:43.964429",
-  "coachAssessmentTsFull": "2026-08-03T01:06:43.964412",
-  "coachAssessmentWeightAtGen": 72.6,
+  "credentialsCheckedTs": "2026-08-03T05:04:02.778711",
+  "coachAssessmentTsFull": "2026-08-03T05:04:02.778695",
+  "coachAssessmentWeightAtGen": 72.9,
   "coachAssessmentAfAtGen": 0,
   "event_structure_warnings": [],
-  "coachAssessmentFatAtGen": 20.6,
+  "coachAssessmentFatAtGen": 21.8,
   "zones": {
     "runThreshold": "4:24/km",
     "bikeFtpW": 278,
