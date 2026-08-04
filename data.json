@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-08-04 04:33",
+    "updated": "2026-08-04 07:15",
     "week": 10,
     "totalWeeks": 14,
     "blockType": "BUILD",
@@ -11,13 +11,13 @@
   },
   "kpis": {
     "weight": {
-      "value": "72,9",
+      "value": "72,3",
       "unit": "kg",
-      "sub": "Sidst målt 3/8 · Mål <70 kg · snit 72,5 kg",
+      "sub": "Mål <70 kg · snit 72,4 kg",
       "color": "#E67E22"
     },
     "fat": {
-      "value": "21,8",
+      "value": "21,1",
       "unit": "%",
       "sub": "Mål <20%",
       "color": "#E67E22"
@@ -41,21 +41,21 @@
       "color": "#2874A6"
     },
     "runKm": {
-      "value": "0,0",
+      "value": "4,8",
       "unit": "km",
       "sub": "Mål 40+ km uge 10",
-      "color": "#7A6A58"
+      "color": "#C0392B"
     },
     "hrv": {
-      "value": "49,6",
+      "value": "51,6",
       "unit": "ms",
       "sub": "Snit 7d",
       "color": "#7A6A58"
     },
     "tssComp": {
-      "value": "87",
+      "value": "115",
       "unit": "TSS",
-      "sub": "87 af 410 planlagt TSS",
+      "sub": "115 af 410 planlagt TSS",
       "color": "#C0392B"
     },
     "bikeKm": {
@@ -82,7 +82,7 @@
     "target": 5,
     "streak": 0
   },
-  "coachSpeech": "Tirsdag — uge 10 af 14. {HL} Fokus: 87 af 410 TSS er i hus — 6 sessioner tilbage, heriblandt Løb Z1 30 min let, Svøm 1500m teknisk. 0 AF-dage i 2 afsluttede dage — 5 mangler i 5 dage tilbage. Keep moving forward.  \"Det er ikke om at have tid. Det er om at tage den.\"",
+  "coachSpeech": "Tirsdag — uge 10 af 14. {HL} Fokus: 115 af 410 TSS er i hus — 5 sessioner tilbage, heriblandt Svøm 1500m teknisk, Styrke A Functional Strength 2 sæt. Vægt på 72,3 kg — hold protein højt og undgå lette kulhydrater om aftenen. 0 AF-dage i 2 afsluttede dage — 5 mangler i 5 dage tilbage. Hård uge — men det er sådan formen bygges. Hold ved.  \"Det er ikke om at have tid. Det er om at tage den.\"",
   "coachHighlight": "Søvn på 7,1 timer er solid",
   "weekFocus": "Svømmefokus og første VO2-stimulus sætter fart mod Christiansborg",
   "today": [
@@ -92,7 +92,7 @@
       "duration": "",
       "zone": "–",
       "desc": "",
-      "completed": false
+      "completed": true
     }
   ],
   "week_sessions": [
@@ -119,8 +119,14 @@
       "day": "Tir",
       "disc": "run",
       "label": "Løb Z1 30 min let",
-      "done": false,
-      "today": true
+      "done": true,
+      "today": true,
+      "completion": "done",
+      "completion_pct": 90,
+      "actual_tss": 28,
+      "actual_mins": 27,
+      "planned_mins": 30,
+      "intervals_compliance": 100.0
     },
     {
       "day": "Ons",
@@ -471,7 +477,11 @@
       "v": 72.9,
       "real": true
     },
-    null
+    {
+      "date": "2026-08-04",
+      "v": 72.2,
+      "real": true
+    }
   ],
   "hrvHistory": [
     {
@@ -919,7 +929,11 @@
       "v": 54.0,
       "real": true
     },
-    null
+    {
+      "date": "2026-08-04",
+      "v": 66.0,
+      "real": true
+    }
   ],
   "sleepHistory": [
     {
@@ -1363,7 +1377,11 @@
       "v": 7.9,
       "real": true
     },
-    null
+    {
+      "date": "2026-08-04",
+      "v": 7.1,
+      "real": true
+    }
   ],
   "tsbHistory": [
     {
@@ -2403,8 +2421,14 @@
           "day": "Tir",
           "disc": "run",
           "label": "Løb Z1 30 min let",
-          "done": false,
-          "today": true
+          "done": true,
+          "today": true,
+          "completion": "done",
+          "completion_pct": 90,
+          "actual_tss": 28,
+          "actual_mins": 27,
+          "planned_mins": 30,
+          "intervals_compliance": 100.0
         },
         {
           "day": "Ons",
@@ -2675,10 +2699,11 @@
     }
   ],
   "train_mins": {
+    "run": 27.0,
     "walk": 52.0,
     "bike": 91.0,
     "planned": 480.0,
-    "actual_total": 143.0
+    "actual_total": 170.0
   },
   "fatHistory": [
     {
@@ -2986,10 +3011,14 @@
       "v": 21.8,
       "real": true
     },
-    null
+    {
+      "date": "2026-08-04",
+      "v": 21.1,
+      "real": true
+    }
   ],
-  "coachAssessmentHtml": "<p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\"><strong>Dag 65 af 98 · Tirsdag · Uge 10</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">💪 <strong>Træning & load</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">CTL ligger på 51.2 og er allerede over ugemålet på 50 — ugen er i god form, selv med kun to dage gået. TSB på -2.6 er tæt på nul, så du er frisk og klar. Mandagens hometrainer-session ramte Z3 on target — 54% i target-zone på kuperet terræn med coasting er præcis det der forventes. Løb Z1 i dag er ikke forsøgt endnu — hold det ægte let, under din Z1-grænse, og brug det som aktiv restitution inden VO2-arbejdet torsdag.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">⚖️ <strong>Krop & kost</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Der er ingen aktuel vægt- eller fedtprocentmåling at vurdere ud fra i dag — så der er ikke noget at sige her endnu.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">🎯 <strong>AF-status & fokus for resten af ugen</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Du har 0 AF-dage ud af 2 dage gået i ugen — du er bagud i forhold til hvor du gerne skal være. Der er stadig 5 dage tilbage til at lande 5 AF-dage, men det kræver at du holder dem fra nu af. Ugens store prøvesten er fredag: 2500m OW sammenhængende som Christiansborg-generalprøve — det er der du finder ud af hvor du reelt står i vandet.</p>",
-  "coachAssessmentTs": "02:33",
+  "coachAssessmentHtml": "<p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\"><strong>Dag 65 af 98 · Tirsdag · Uge 10</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">💪 <strong>Træning & load</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">CTL er på 51.2 og rammer ugens mål på 50 — du er foran planen, og TSB på -2.6 viser at du bærer lasten fint. Løbeturen i dag blev gennemført, men 64.9% af tiden lå du over Z1 i pace — tempo var for højt, selvom HR nåede at følge med i Z1. Næste gang du løber Z1 (torsdag bliver VO2, så næste lette løb er næste uge) — gå langsommere end det føles nødvendigt. Resten af ugen er krævende: VO2-intervaller torsdag og 2500m sammenhængende OW fredag er de to vigtigste pas — spar dig til dem.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">⚖️ <strong>Krop & kost</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Vægten er 72.3 kg — 2.3 kg fra målet. Fedtprocenten er 21.1%, ned 0.7 point siden 3. august — det er ægte fremgang i kropssammensætning. Du er stadig 1.1 procentpoint fra 20%-målet, og det er der du skal have opmærksomheden, ikke kun på vægten. Bliv ved med at prioritere protein og hold kalorieunderskuddet moderat — du har brug for brændstof til VO2-pas og 29 km lørdag.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">🎯 <strong>AF-status & fokus for resten af ugen</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Du har 0 AF-dage ud af 2 dage i ugen — der er stadig 5 dage tilbage til at ramme målet på 5. Det er helt realistisk, men kræver bevidst valg hver aften. Ugefokus er svøm og første VO2-stimulus: fredag er generalprøven på Christiansborg-distancen — 2500m sammenhængende i OW. Kom velforberedt og veludhvilet til den.</p>",
+  "coachAssessmentTs": "05:15",
   "commute_pairing_warnings": [],
   "warnings": [],
   "tsb": -2.6,
@@ -3055,7 +3084,7 @@
       "cumulative": 19536.0
     }
   ],
-  "coachAssessmentLastActId": "i171995751",
+  "coachAssessmentLastActId": "i172245713",
   "weekFocusWeek": 10,
   "coachAssessmentPlanAtGen": "Løb Z1 30 min let",
   "weightGoal": 70,
@@ -3150,7 +3179,7 @@
     72.36,
     72.35,
     72.45,
-    72.52
+    72.47
   ],
   "fatMovingAvg7": [
     null,
@@ -3242,10 +3271,10 @@
     21.56,
     21.55,
     21.67,
-    21.62
+    21.53
   ],
-  "weightToGoal": 2.9,
-  "bodyFatToGoal": 1.8,
+  "weightToGoal": 2.2,
+  "bodyFatToGoal": 1.1,
   "ctlPlan": [
     34,
     36,
@@ -3274,12 +3303,12 @@
       "note": "Nøgle virker"
     }
   },
-  "credentialsCheckedTs": "2026-08-04T02:33:45.567771",
-  "coachAssessmentTsFull": "2026-08-04T02:33:45.567753",
-  "coachAssessmentWeightAtGen": 72.9,
+  "credentialsCheckedTs": "2026-08-04T05:15:49.075440",
+  "coachAssessmentTsFull": "2026-08-04T05:15:49.075424",
+  "coachAssessmentWeightAtGen": 72.3,
   "coachAssessmentAfAtGen": 0,
   "event_structure_warnings": [],
-  "coachAssessmentFatAtGen": 21.8,
+  "coachAssessmentFatAtGen": 21.1,
   "zones": {
     "runThreshold": "4:24/km",
     "bikeFtpW": 278,
