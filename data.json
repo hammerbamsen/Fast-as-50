@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-08-04 19:48",
+    "updated": "2026-08-04 21:37",
     "week": 10,
     "totalWeeks": 14,
     "blockType": "BUILD",
@@ -3042,8 +3042,8 @@
       "real": true
     }
   ],
-  "coachAssessmentHtml": "<p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\"><strong>Dag 65 af 98 · Tirsdag · Uge 10</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">💪 <strong>Træning & load</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">CTL ligger på 51.2 — foran ugemålet på 50, og TSB på -4.5 er komfortabelt langt fra den røde grænse. Løbeturen i dag var gennemført, men tempoet var konsekvent over Z1 — HR nåede aldrig at følge med, og 65% af tiden lå i en hurtigere pace-zone end planlagt. Til næste Z1-løb (lørdag er Z2, så kig mod en kommende rolig session) skal du simpelthen gå langsommere end det føles nødvendigt — HR-Z1 bekræfter at du faktisk løb for hurtigt i benene. Resten af ugen er tung: VO2-intervaller torsdag og 2500m OW-generalprøve fredag kræver at du møder dem frisk.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">⚖️ <strong>Krop & kost</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Vægten er 72.3 kg — 2.3 kg fra målet. Fedtprocenten er 21.1%, ned 0.7 point siden august, og det er den vigtigere nyhed: du mister faktisk fedt, ikke muskelmasse. Det er præcis den rigtige retning i et capacity-år. Der er stadig 1.1 procentpoint til målet på under 20%, så fortsæt kursen — et kaloriemæssigt let underskud kombineret med den stigende træningsmængde de næste uger arbejder i din favør.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">🎯 <strong>AF-status & fokus</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Du er 0 AF-dage ud af 2 dage gået i ugen — der er stadig god tid til at nå målet på 5 denne uge. Resten af ugen er domineret af svøm: 1500m teknisk onsdag og 2500m sammenhængende fredag er kernen mod Christiansborg. Sæt al opmærksomhed på OW-generalprøven fredag — den er ugens vigtigste svar på om du er klar til 2000m åbent vand den 29. august.</p>",
-  "coachAssessmentTs": "13:16",
+  "coachAssessmentHtml": "<p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\"><strong>Dag 65 af 98 · Tirsdag · Uge 10</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">💪 <strong>Træning & load</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">CTL ligger på 51.2 — du er foran ugemålet på 50, og TSB på -4.5 er komfortabelt. Mandagens hometrainer-blok ramte Z3 præcist, og dagens løb kom godt igennem — men tempoet var for højt: 65% af løbet lå hurtigere end Z1-target, og HR nåede aldrig at indhente den høje pace. Til næste Z1-løb (lørdag er Z2, men gælder næste gang du sætter gang i et let løb) skal du aktivt sænke tempoet fra starten — ikke vente på at kroppen finder rytmen. Resten af ugen har tyngde: VO2-pas torsdag og generalprøven på 2500m fredag er de afgørende sessioner.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">⚖️ <strong>Krop & kost</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Vægten er 72.3 kg — 2.3 kg fra mål — og fedtprocenten er 21.1%, altså 1.1 procentpoint over målet på under 20%. Fedtprocenten er faldet 0.7 point siden 3. august, og det er det vigtige signal: kroppen taber fedt, ikke muskelmasse. Det er præcis den retning du vil have i et capacity-år. Hold energiunderskuddet moderat — nok til at trenden fortsætter, men ikke så hårdt at det går ud over VO2-passet torsdag og generalprøven fredag.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">🎯 <strong>AF-status & fokus for resten af ugen</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Du har 0 AF-dage ud af 2 dage i ugen indtil nu — der er stadig god tid til at nå målet på 5 denne uge. De næste dage er tunge træningsdage, og alkohol vil direkte påvirke restitutionen inden VO2-passet torsdag og 2500m-generalprøven fredag — hold hovedet koldt der. Svøm teknisk onsdag er din chance for at finpudse rytmen inden fredag; brug den bevidst.</p>",
+  "coachAssessmentTs": "19:37",
   "commute_pairing_warnings": [],
   "warnings": [],
   "tsb": -4.5,
@@ -3328,8 +3328,8 @@
       "note": "Nøgle virker"
     }
   },
-  "credentialsCheckedTs": "2026-08-04T17:48:51.768012",
-  "coachAssessmentTsFull": "2026-08-04T13:16:09.370033",
+  "credentialsCheckedTs": "2026-08-04T19:37:45.668434",
+  "coachAssessmentTsFull": "2026-08-04T19:37:45.668415",
   "coachAssessmentWeightAtGen": 72.3,
   "coachAssessmentAfAtGen": 0,
   "event_structure_warnings": [],
