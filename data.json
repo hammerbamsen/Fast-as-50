@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-08-05 20:04",
+    "updated": "2026-08-05 22:08",
     "week": 10,
     "totalWeeks": 14,
     "blockType": "BUILD",
@@ -3089,8 +3089,8 @@
       "real": true
     }
   ],
-  "coachAssessmentHtml": "<p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\"><strong>Dag 66 af 98 · Onsdag · Uge 10</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">💪 <strong>Træning & load</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">CTL på 51.4 ligger allerede over ugemålet på 50 – ugen er solidt bygget op. TSB på -9.8 er helt komfortabelt – du er belastet, men langt fra overbelastet. Svømningen i dag var teknisk fokus, og HR nåede ikke tilstrækkeligt op i Z2 – næste tekniske svømpas er en god anledning til at bygge lidt mere varme ind fra start, så HR faktisk aktiveres. Torsdag og fredag er de tunge løft denne uge – vær frisk.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">⚖️ <strong>Krop & kost</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">72,1 kg er 2,1 kg fra målet – men fedtprocenten på 21,6 % er steget 0,5 point siden 4. august, og det er det egentlige problem. Vægten er faldet lidt, men fedtprocenten er gået op – det er et tegn på at du har mistet muskelmasse, ikke fedt. I et capacity-år er det et advarselstegn: du vil ikke ankomme til Médoc lettere men svagere. Hold proteinniveauet højt, særligt på styrkedage og hårde løbedage, og vær varsom med kalorieunderskud i uger med høj belastning.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">🎯 <strong>AF-status & fokus for resten af ugen</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Du har 2 AF-dage ud af 3 dage i ugen – det er en god start. De resterende fire dage giver dig god plads til at nå de 5. Torsdag er VO2-løbet den vigtigste session i resten af ugen – sov godt i aften og hold igen på alt unødvendigt stress frem til da. Fredag er generalprøven på 2500m OW, og det er den session du skal ankomme til med overskud.</p>",
-  "coachAssessmentTs": "12:34",
+  "coachAssessmentHtml": "<p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\"><strong>Dag 66 af 98 · Onsdag · Uge 10</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">💪 <strong>Træning & load</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">CTL ligger på 51.4 mod et ugemål på 50 — du er foran planen. TSB på -9.8 er uproblematisk, og du har stadig god margin til -30-grænsen. Svømningen i dag gav lav HR-tid i Z2, hvilket du kan bruge som bevidst fokus næste gang du svømmer teknisk: hold en rolig, kontinuert intensitet frem for kortere burst-intervaller. Torsdag er næste store stimulus med VO2-løbet — hav det i baghovedet når du planlægger onsdag aften.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">⚖️ <strong>Krop & kost</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Vægten er 72.1 kg — 2.1 kg fra målet. Fedtprocenten er 21.6 %, altså 1.6 procentpoint fra målet på under 20 %, og den er steget 0.5 point siden 4. august. Det er det vigtigste signal her: vægten er gået ned i perioden, men fedtprocenten er gået op — det tyder på tabt muskelmasse snarere end fedttab, og det er et advarselstegn i et capacity-år. Prioritér proteinindtag rundt om styrketræningen og undgå at spise dig i underskud på hårde træningsdage.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">🎯 <strong>AF-status & fokus for resten af ugen</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Du har 2 AF-dage ud af 3 dage i ugen — det er en god rate. Resten af ugen har du tre krævende pas: VO2-løb torsdag, 2500m OW-generalprøve fredag og det lange løb lørdag. Med fedtprocenten i den forkerte retning er det ikke ugen til at skære kalorier — men alkoholfri aftener beskytter søvn og restitution op mod de pas, der betyder mest.</p>",
+  "coachAssessmentTs": "20:08",
   "commute_pairing_warnings": [],
   "warnings": [],
   "tsb": -9.8,
@@ -3375,8 +3375,8 @@
       "note": "Nøgle virker"
     }
   },
-  "credentialsCheckedTs": "2026-08-05T18:04:33.103938",
-  "coachAssessmentTsFull": "2026-08-05T12:34:43.156082",
+  "credentialsCheckedTs": "2026-08-05T20:08:35.090448",
+  "coachAssessmentTsFull": "2026-08-05T20:08:35.090431",
   "coachAssessmentWeightAtGen": 72.1,
   "coachAssessmentAfAtGen": 2,
   "event_structure_warnings": [],
