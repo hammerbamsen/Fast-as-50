@@ -345,6 +345,10 @@
           "Hike": [
             18,
             0
+          ],
+          "OpenWaterSwim": [
+            6,
+            30
           ]
         },
         "2026-08-05": {
@@ -370,7 +374,11 @@
             6,
             15
           ]
-        }
+        },
+        "2026-08-11": [
+          6,
+          0
+        ]
       },
       "actualsThroughWeek": 8,
       "days": [
@@ -3793,6 +3801,29 @@
           "entries": [
             {
               "workout": {
+                "name": "Løb Fornalutx – Far des Cap Gros loop 21,3 km",
+                "type": "Run",
+                "moving_time": 7662,
+                "description": "- Rute: Fornalutx – Far des Cap Gros loop, 21,28 km / 502 hm stigning / 493 hm fald\n- Indsats effort-baseret Z1-Z2 — IKKE pace-styret: 502 hm på 21 km giver naturligt højere puls opad end fladt Z2, det er forventet\n- Vejledende snit-tempo iflg. rute 6:00/km, måltid ca. 2:07:42\n- Hold roligt tempo i nedkørsler, pas på fødder/ankler på sti",
+                "workout_doc": {
+                  "steps": [
+                    {
+                      "text": "Fornalutx – Far des Cap Gros loop, effort-baseret Z1-Z2, pace følger terræn",
+                      "duration": 7662
+                    }
+                  ]
+                }
+              },
+              "note": "Erstatter Sa Calobra-testen (flyttet til tirsdag) — afgang 06:00, hjemme ca. 08:08, god margin før håndværkermøde kl 09:00",
+              "id": "0b13ed2d"
+            }
+          ]
+        },
+        {
+          "date": "2026-08-11",
+          "entries": [
+            {
+              "workout": {
                 "name": "Sa Calobra TEST via Puig Major",
                 "type": "Ride",
                 "moving_time": 15900,
@@ -3872,60 +3903,40 @@
                 },
                 "load": 230
               },
-              "note": "Sa Calobra formtest — flyttet fra onsdag (gæster + hike). Jævn max-indsats, tidlig afgang",
-              "id": "7fd0cab0"
-            }
-          ]
-        },
-        {
-          "date": "2026-08-11",
-          "entries": [
-            {
-              "workout": {
-                "name": "Lang løb Z2 28 km (150 min)",
-                "type": "Run",
-                "moving_time": 9000,
-                "description": "- Varm-op 15m >5:39/km Pace\n- Lang base 28 km 125m 5:00-5:38/km Pace\n- Cool-down 10m >5:39/km Pace",
-                "workout_doc": {
-                  "steps": [
-                    {
-                      "text": "Varm-op >5:39/km",
-                      "pace": {
-                        "start": 65,
-                        "end": 78,
-                        "units": "%pace"
-                      },
-                      "duration": 900
-                    },
-                    {
-                      "text": "Lang base 28 km 5:00-5:38/km",
-                      "pace": {
-                        "start": 78,
-                        "end": 88,
-                        "units": "%pace"
-                      },
-                      "duration": 7500
-                    },
-                    {
-                      "text": "Cool-down >5:39/km",
-                      "pace": {
-                        "start": 65,
-                        "end": 78,
-                        "units": "%pace"
-                      },
-                      "duration": 600
-                    }
-                  ]
-                }
-              },
-              "note": "Lang løb 28 km — flyttet til tirsdag. Giver 7 dage til 32 km tirsdag 18/8",
-              "id": "7f50a85e"
+              "note": "Sa Calobra formtest — flyttet fra mandag pga. håndværkermøde kl 09:00. Tidlig afgang 06:00, ved havnen kl 08:00 før turistbusserne",
+              "id": "022d0b30"
             }
           ]
         },
         {
           "date": "2026-08-12",
           "entries": [
+            {
+              "workout": {
+                "name": "OW-svøm 800-1500m",
+                "type": "OpenWaterSwim",
+                "moving_time": 1800,
+                "description": "- Tilvænning + let svøm langs kant 5m freeride\n- Kontinuerlig svøm 800-1500m, sigtning hver 8.-10. tag 20m freeride\n- Let ud-svøm + exit-rutine 5m freeride",
+                "workout_doc": {
+                  "steps": [
+                    {
+                      "text": "Tilvænning + let svøm langs kant",
+                      "duration": 300
+                    },
+                    {
+                      "text": "Kontinuerlig svøm 800-1500m, sigtning hver 8.-10. tag",
+                      "duration": 1200
+                    },
+                    {
+                      "text": "Let ud-svøm + exit-rutine",
+                      "duration": 300
+                    }
+                  ]
+                }
+              },
+              "note": "OW-svøm 800-1500m — inden gæsterne kommer",
+              "id": "4d3bc880"
+            },
             {
               "workout": {
                 "name": "Hike 3 timer Z1-Z2",
