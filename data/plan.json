@@ -4847,6 +4847,1969 @@
               "id": "7a4e28f9"
             }
           ]
+        },
+        {
+          "date": "2026-09-21",
+          "entries": [
+            {
+              "workout": {
+                "name": "Styrke Unilateral A 3 sæt",
+                "type": "WeightTraining",
+                "moving_time": 2700,
+                "description": "3x\n- Bulgarian Split Squat 12.5kg ×8/ben 1m freeride\n- Enarms Row 20kg ×10/arm 1m freeride\n- Step-up 30cm 10kg ×8/ben 1m freeride\n- Enbens RDL 10kg ×8/ben 1m freeride\n- Pause 60 sek 2m freeride\n\n- Walk Z1 24m freeride",
+                "workout_doc": {
+                  "steps": [
+                    {
+                      "reps": 3,
+                      "text": "3x",
+                      "steps": [
+                        {
+                          "text": "Bulgarian Split Squat 12.5kg ×8/ben",
+                          "duration": 60
+                        },
+                        {
+                          "text": "Enarms Row 20kg ×10/arm",
+                          "duration": 60
+                        },
+                        {
+                          "text": "Step-up 30cm 10kg ×8/ben",
+                          "duration": 60
+                        },
+                        {
+                          "text": "Enbens RDL 10kg ×8/ben",
+                          "duration": 60
+                        },
+                        {
+                          "text": "Pause 60 sek",
+                          "duration": 120
+                        }
+                      ]
+                    },
+                    {
+                      "text": "Walk Z1",
+                      "duration": 1440
+                    }
+                  ]
+                }
+              },
+              "note": "Styrke 2x/uge starter — unilateralt (2027-sporet)",
+              "id": "9c9272a7"
+            }
+          ]
+        },
+        {
+          "date": "2026-09-22",
+          "entries": [
+            {
+              "workout": {
+                "name": "Cykel Z2 70 min",
+                "type": "Ride",
+                "moving_time": 4200,
+                "description": "- Varm-op 10m ramp 45-68% FTP\n- Aerob base 55m 56-76% FTP\n- Cool-down 5m ramp 68-45% FTP",
+                "workout_doc": {
+                  "steps": [
+                    {
+                      "ramp": true,
+                      "power": {
+                        "start": 45,
+                        "end": 68,
+                        "units": "%ftp"
+                      },
+                      "duration": 600,
+                      "warmup": true
+                    },
+                    {
+                      "text": "Aerob base 56-76% FTP",
+                      "power": {
+                        "start": 56,
+                        "end": 76,
+                        "units": "%ftp"
+                      },
+                      "duration": 3300
+                    },
+                    {
+                      "ramp": true,
+                      "power": {
+                        "start": 68,
+                        "end": 45,
+                        "units": "%ftp"
+                      },
+                      "duration": 300,
+                      "cooldown": true
+                    }
+                  ]
+                }
+              },
+              "note": "Cykel Z2 — cykel er primær fra uge 3",
+              "id": "1ad7f007"
+            }
+          ]
+        },
+        {
+          "date": "2026-09-23",
+          "entries": [
+            {
+              "workout": {
+                "name": "Løb Z2 45 min",
+                "type": "Run",
+                "moving_time": 2700,
+                "description": "- Varm-op 10m >5:39/km Pace\n- Base 30m 5:00-5:38/km Pace\n- Cool-down 5m >5:39/km Pace",
+                "workout_doc": {
+                  "steps": [
+                    {
+                      "text": "Varm-op >5:39/km",
+                      "pace": {
+                        "start": 65,
+                        "end": 78,
+                        "units": "%pace"
+                      },
+                      "duration": 600
+                    },
+                    {
+                      "text": "Base 5:00-5:38/km",
+                      "pace": {
+                        "start": 78,
+                        "end": 88,
+                        "units": "%pace"
+                      },
+                      "duration": 1800
+                    },
+                    {
+                      "text": "Cool-down >5:39/km",
+                      "pace": {
+                        "start": 65,
+                        "end": 78,
+                        "units": "%pace"
+                      },
+                      "duration": 300
+                    }
+                  ]
+                }
+              },
+              "note": "Løb Z2",
+              "id": "8eb6ad9c"
+            }
+          ]
+        },
+        {
+          "date": "2026-09-24",
+          "entries": [
+            {
+              "workout": {
+                "name": "Styrke Unilateral B 3 sæt",
+                "type": "WeightTraining",
+                "moving_time": 2700,
+                "description": "3x\n- Walking Lunge 10kg ×10/ben 1m freeride\n- Enbens Glute Bridge ×12/ben 1m freeride\n- Enarms Overhead Press 10kg ×8/arm 1m freeride\n- Sideplanke ×30 sek/side 1m freeride\n- Pause 60 sek 2m freeride\n\n- Walk Z1 24m freeride",
+                "workout_doc": {
+                  "steps": [
+                    {
+                      "reps": 3,
+                      "text": "3x",
+                      "steps": [
+                        {
+                          "text": "Walking Lunge 10kg ×10/ben",
+                          "duration": 60
+                        },
+                        {
+                          "text": "Enbens Glute Bridge ×12/ben",
+                          "duration": 60
+                        },
+                        {
+                          "text": "Enarms Overhead Press 10kg ×8/arm",
+                          "duration": 60
+                        },
+                        {
+                          "text": "Sideplanke ×30 sek/side",
+                          "duration": 60
+                        },
+                        {
+                          "text": "Pause 60 sek",
+                          "duration": 120
+                        }
+                      ]
+                    },
+                    {
+                      "text": "Walk Z1",
+                      "duration": 1440
+                    }
+                  ]
+                }
+              },
+              "note": "Styrke Unilateral B",
+              "id": "31db8482"
+            }
+          ]
+        },
+        {
+          "date": "2026-09-25",
+          "entries": [
+            {
+              "workout": {
+                "name": "Cykel Z2+Z3 105 min",
+                "type": "Ride",
+                "moving_time": 6300,
+                "description": "- Varm-op 15m ramp 45-68% FTP\n- Aerob base 25m 56-76% FTP\n- Sweet spot-blok 50m 76-91% FTP\n- Cool-down 15m ramp 76-45% FTP",
+                "workout_doc": {
+                  "steps": [
+                    {
+                      "ramp": true,
+                      "power": {
+                        "start": 45,
+                        "end": 68,
+                        "units": "%ftp"
+                      },
+                      "duration": 900,
+                      "warmup": true
+                    },
+                    {
+                      "text": "Aerob base 56-76% FTP",
+                      "power": {
+                        "start": 56,
+                        "end": 76,
+                        "units": "%ftp"
+                      },
+                      "duration": 1500
+                    },
+                    {
+                      "text": "Sweet spot-blok 76-91% FTP",
+                      "power": {
+                        "start": 76,
+                        "end": 91,
+                        "units": "%ftp"
+                      },
+                      "duration": 3000
+                    },
+                    {
+                      "ramp": true,
+                      "power": {
+                        "start": 76,
+                        "end": 45,
+                        "units": "%ftp"
+                      },
+                      "duration": 900,
+                      "cooldown": true
+                    }
+                  ]
+                }
+              },
+              "note": "Cykel Z2+Z3",
+              "id": "b191f07b"
+            }
+          ]
+        },
+        {
+          "date": "2026-09-26",
+          "entries": [
+            {
+              "workout": {
+                "name": "Cykel Z2 160 min",
+                "type": "Ride",
+                "moving_time": 9600,
+                "description": "- Varm-op 10m ramp 45-68% FTP\n- Aerob base 145m 56-76% FTP\n- Cool-down 5m ramp 68-45% FTP",
+                "workout_doc": {
+                  "steps": [
+                    {
+                      "ramp": true,
+                      "power": {
+                        "start": 45,
+                        "end": 68,
+                        "units": "%ftp"
+                      },
+                      "duration": 600,
+                      "warmup": true
+                    },
+                    {
+                      "text": "Aerob base 56-76% FTP",
+                      "power": {
+                        "start": 56,
+                        "end": 76,
+                        "units": "%ftp"
+                      },
+                      "duration": 8700
+                    },
+                    {
+                      "ramp": true,
+                      "power": {
+                        "start": 68,
+                        "end": 45,
+                        "units": "%ftp"
+                      },
+                      "duration": 300,
+                      "cooldown": true
+                    }
+                  ]
+                }
+              },
+              "note": "Lang cykel Z2 — ugens nøgletur",
+              "id": "9004b3f2"
+            }
+          ]
+        },
+        {
+          "date": "2026-09-27",
+          "entries": [
+            {
+              "workout": {
+                "name": "Lang løb Z2 50 min",
+                "type": "Run",
+                "moving_time": 3000,
+                "description": "- Varm-op 10m >5:39/km Pace\n- Lang base 35m 5:00-5:38/km Pace\n- Cool-down 5m >5:39/km Pace",
+                "workout_doc": {
+                  "steps": [
+                    {
+                      "text": "Varm-op >5:39/km",
+                      "pace": {
+                        "start": 65,
+                        "end": 78,
+                        "units": "%pace"
+                      },
+                      "duration": 600
+                    },
+                    {
+                      "text": "Lang base 5:00-5:38/km",
+                      "pace": {
+                        "start": 78,
+                        "end": 88,
+                        "units": "%pace"
+                      },
+                      "duration": 2100
+                    },
+                    {
+                      "text": "Cool-down >5:39/km",
+                      "pace": {
+                        "start": 65,
+                        "end": 78,
+                        "units": "%pace"
+                      },
+                      "duration": 300
+                    }
+                  ]
+                }
+              },
+              "note": "Løb Z2",
+              "id": "eecc2948"
+            }
+          ]
+        },
+        {
+          "date": "2026-09-28",
+          "entries": [
+            {
+              "workout": {
+                "name": "Styrke Unilateral A 3 sæt",
+                "type": "WeightTraining",
+                "moving_time": 2700,
+                "description": "3x\n- Bulgarian Split Squat 12.5kg ×8/ben 1m freeride\n- Enarms Row 20kg ×10/arm 1m freeride\n- Step-up 30cm 10kg ×8/ben 1m freeride\n- Enbens RDL 10kg ×8/ben 1m freeride\n- Pause 60 sek 2m freeride\n\n- Walk Z1 24m freeride",
+                "workout_doc": {
+                  "steps": [
+                    {
+                      "reps": 3,
+                      "text": "3x",
+                      "steps": [
+                        {
+                          "text": "Bulgarian Split Squat 12.5kg ×8/ben",
+                          "duration": 60
+                        },
+                        {
+                          "text": "Enarms Row 20kg ×10/arm",
+                          "duration": 60
+                        },
+                        {
+                          "text": "Step-up 30cm 10kg ×8/ben",
+                          "duration": 60
+                        },
+                        {
+                          "text": "Enbens RDL 10kg ×8/ben",
+                          "duration": 60
+                        },
+                        {
+                          "text": "Pause 60 sek",
+                          "duration": 120
+                        }
+                      ]
+                    },
+                    {
+                      "text": "Walk Z1",
+                      "duration": 1440
+                    }
+                  ]
+                }
+              },
+              "note": "Styrke Unilateral A",
+              "id": "e2f5e455"
+            }
+          ]
+        },
+        {
+          "date": "2026-09-29",
+          "entries": [
+            {
+              "workout": {
+                "name": "Cykel Z2 75 min",
+                "type": "Ride",
+                "moving_time": 4500,
+                "description": "- Varm-op 10m ramp 45-68% FTP\n- Aerob base 60m 56-76% FTP\n- Cool-down 5m ramp 68-45% FTP",
+                "workout_doc": {
+                  "steps": [
+                    {
+                      "ramp": true,
+                      "power": {
+                        "start": 45,
+                        "end": 68,
+                        "units": "%ftp"
+                      },
+                      "duration": 600,
+                      "warmup": true
+                    },
+                    {
+                      "text": "Aerob base 56-76% FTP",
+                      "power": {
+                        "start": 56,
+                        "end": 76,
+                        "units": "%ftp"
+                      },
+                      "duration": 3600
+                    },
+                    {
+                      "ramp": true,
+                      "power": {
+                        "start": 68,
+                        "end": 45,
+                        "units": "%ftp"
+                      },
+                      "duration": 300,
+                      "cooldown": true
+                    }
+                  ]
+                }
+              },
+              "note": "Cykel Z2 — cykel er primær fra uge 3",
+              "id": "d57eabaa"
+            }
+          ]
+        },
+        {
+          "date": "2026-09-30",
+          "entries": [
+            {
+              "workout": {
+                "name": "Løb Z2 50 min",
+                "type": "Run",
+                "moving_time": 3000,
+                "description": "- Varm-op 10m >5:39/km Pace\n- Base 35m 5:00-5:38/km Pace\n- Cool-down 5m >5:39/km Pace",
+                "workout_doc": {
+                  "steps": [
+                    {
+                      "text": "Varm-op >5:39/km",
+                      "pace": {
+                        "start": 65,
+                        "end": 78,
+                        "units": "%pace"
+                      },
+                      "duration": 600
+                    },
+                    {
+                      "text": "Base 5:00-5:38/km",
+                      "pace": {
+                        "start": 78,
+                        "end": 88,
+                        "units": "%pace"
+                      },
+                      "duration": 2100
+                    },
+                    {
+                      "text": "Cool-down >5:39/km",
+                      "pace": {
+                        "start": 65,
+                        "end": 78,
+                        "units": "%pace"
+                      },
+                      "duration": 300
+                    }
+                  ]
+                }
+              },
+              "note": "Løb Z2",
+              "id": "5acbb789"
+            }
+          ]
+        },
+        {
+          "date": "2026-10-01",
+          "entries": [
+            {
+              "workout": {
+                "name": "Styrke Unilateral B 3 sæt",
+                "type": "WeightTraining",
+                "moving_time": 2700,
+                "description": "3x\n- Walking Lunge 10kg ×10/ben 1m freeride\n- Enbens Glute Bridge ×12/ben 1m freeride\n- Enarms Overhead Press 10kg ×8/arm 1m freeride\n- Sideplanke ×30 sek/side 1m freeride\n- Pause 60 sek 2m freeride\n\n- Walk Z1 24m freeride",
+                "workout_doc": {
+                  "steps": [
+                    {
+                      "reps": 3,
+                      "text": "3x",
+                      "steps": [
+                        {
+                          "text": "Walking Lunge 10kg ×10/ben",
+                          "duration": 60
+                        },
+                        {
+                          "text": "Enbens Glute Bridge ×12/ben",
+                          "duration": 60
+                        },
+                        {
+                          "text": "Enarms Overhead Press 10kg ×8/arm",
+                          "duration": 60
+                        },
+                        {
+                          "text": "Sideplanke ×30 sek/side",
+                          "duration": 60
+                        },
+                        {
+                          "text": "Pause 60 sek",
+                          "duration": 120
+                        }
+                      ]
+                    },
+                    {
+                      "text": "Walk Z1",
+                      "duration": 1440
+                    }
+                  ]
+                }
+              },
+              "note": "Styrke Unilateral B",
+              "id": "9e776597"
+            }
+          ]
+        },
+        {
+          "date": "2026-10-02",
+          "entries": [
+            {
+              "workout": {
+                "name": "Cykel Z2+Z3 105 min",
+                "type": "Ride",
+                "moving_time": 6300,
+                "description": "- Varm-op 15m ramp 45-68% FTP\n- Aerob base 25m 56-76% FTP\n- Sweet spot-blok 50m 76-91% FTP\n- Cool-down 15m ramp 76-45% FTP",
+                "workout_doc": {
+                  "steps": [
+                    {
+                      "ramp": true,
+                      "power": {
+                        "start": 45,
+                        "end": 68,
+                        "units": "%ftp"
+                      },
+                      "duration": 900,
+                      "warmup": true
+                    },
+                    {
+                      "text": "Aerob base 56-76% FTP",
+                      "power": {
+                        "start": 56,
+                        "end": 76,
+                        "units": "%ftp"
+                      },
+                      "duration": 1500
+                    },
+                    {
+                      "text": "Sweet spot-blok 76-91% FTP",
+                      "power": {
+                        "start": 76,
+                        "end": 91,
+                        "units": "%ftp"
+                      },
+                      "duration": 3000
+                    },
+                    {
+                      "ramp": true,
+                      "power": {
+                        "start": 76,
+                        "end": 45,
+                        "units": "%ftp"
+                      },
+                      "duration": 900,
+                      "cooldown": true
+                    }
+                  ]
+                }
+              },
+              "note": "Cykel Z2+Z3",
+              "id": "032cc9a2"
+            }
+          ]
+        },
+        {
+          "date": "2026-10-03",
+          "entries": [
+            {
+              "workout": {
+                "name": "Cykel Z2 165 min",
+                "type": "Ride",
+                "moving_time": 9900,
+                "description": "- Varm-op 10m ramp 45-68% FTP\n- Aerob base 150m 56-76% FTP\n- Cool-down 5m ramp 68-45% FTP",
+                "workout_doc": {
+                  "steps": [
+                    {
+                      "ramp": true,
+                      "power": {
+                        "start": 45,
+                        "end": 68,
+                        "units": "%ftp"
+                      },
+                      "duration": 600,
+                      "warmup": true
+                    },
+                    {
+                      "text": "Aerob base 56-76% FTP",
+                      "power": {
+                        "start": 56,
+                        "end": 76,
+                        "units": "%ftp"
+                      },
+                      "duration": 9000
+                    },
+                    {
+                      "ramp": true,
+                      "power": {
+                        "start": 68,
+                        "end": 45,
+                        "units": "%ftp"
+                      },
+                      "duration": 300,
+                      "cooldown": true
+                    }
+                  ]
+                }
+              },
+              "note": "Lang cykel Z2 — ugens nøgletur",
+              "id": "f9dee8bd"
+            }
+          ]
+        },
+        {
+          "date": "2026-10-04",
+          "entries": [
+            {
+              "workout": {
+                "name": "Lang løb Z2 50 min",
+                "type": "Run",
+                "moving_time": 3000,
+                "description": "- Varm-op 10m >5:39/km Pace\n- Lang base 35m 5:00-5:38/km Pace\n- Cool-down 5m >5:39/km Pace",
+                "workout_doc": {
+                  "steps": [
+                    {
+                      "text": "Varm-op >5:39/km",
+                      "pace": {
+                        "start": 65,
+                        "end": 78,
+                        "units": "%pace"
+                      },
+                      "duration": 600
+                    },
+                    {
+                      "text": "Lang base 5:00-5:38/km",
+                      "pace": {
+                        "start": 78,
+                        "end": 88,
+                        "units": "%pace"
+                      },
+                      "duration": 2100
+                    },
+                    {
+                      "text": "Cool-down >5:39/km",
+                      "pace": {
+                        "start": 65,
+                        "end": 78,
+                        "units": "%pace"
+                      },
+                      "duration": 300
+                    }
+                  ]
+                }
+              },
+              "note": "Løb Z2",
+              "id": "3fb578f1"
+            }
+          ]
+        },
+        {
+          "date": "2026-10-05",
+          "entries": [
+            {
+              "workout": {
+                "name": "Styrke Unilateral recovery 2 sæt",
+                "type": "WeightTraining",
+                "moving_time": 2100,
+                "description": "2x\n- Bulgarian Split Squat kropsvægt ×10/ben 1m freeride\n- Enbens RDL kropsvægt ×10/ben 1m freeride\n- Sideplanke ×20 sek/side 1m freeride\n- Pause 60 sek 2m freeride\n\n- Walk Z1 19m freeride",
+                "workout_doc": {
+                  "steps": [
+                    {
+                      "reps": 2,
+                      "text": "2x",
+                      "steps": [
+                        {
+                          "text": "Bulgarian Split Squat kropsvægt ×10/ben",
+                          "duration": 60
+                        },
+                        {
+                          "text": "Enbens RDL kropsvægt ×10/ben",
+                          "duration": 60
+                        },
+                        {
+                          "text": "Sideplanke ×20 sek/side",
+                          "duration": 60
+                        },
+                        {
+                          "text": "Pause 60 sek",
+                          "duration": 120
+                        }
+                      ]
+                    },
+                    {
+                      "text": "Walk Z1",
+                      "duration": 1140
+                    }
+                  ]
+                }
+              },
+              "note": "Styrke recovery",
+              "id": "9f9a81e4"
+            }
+          ]
+        },
+        {
+          "date": "2026-10-06",
+          "entries": [
+            {
+              "workout": {
+                "name": "Cykel Z2 70 min",
+                "type": "Ride",
+                "moving_time": 4200,
+                "description": "- Varm-op 10m ramp 45-68% FTP\n- Aerob base 55m 56-76% FTP\n- Cool-down 5m ramp 68-45% FTP",
+                "workout_doc": {
+                  "steps": [
+                    {
+                      "ramp": true,
+                      "power": {
+                        "start": 45,
+                        "end": 68,
+                        "units": "%ftp"
+                      },
+                      "duration": 600,
+                      "warmup": true
+                    },
+                    {
+                      "text": "Aerob base 56-76% FTP",
+                      "power": {
+                        "start": 56,
+                        "end": 76,
+                        "units": "%ftp"
+                      },
+                      "duration": 3300
+                    },
+                    {
+                      "ramp": true,
+                      "power": {
+                        "start": 68,
+                        "end": 45,
+                        "units": "%ftp"
+                      },
+                      "duration": 300,
+                      "cooldown": true
+                    }
+                  ]
+                }
+              },
+              "note": "Cykel Z2",
+              "id": "d2d7cf9b"
+            }
+          ]
+        },
+        {
+          "date": "2026-10-07",
+          "entries": [
+            {
+              "workout": {
+                "name": "Løb Z2 45 min",
+                "type": "Run",
+                "moving_time": 2700,
+                "description": "- Varm-op 10m >5:39/km Pace\n- Base 30m 5:00-5:38/km Pace\n- Cool-down 5m >5:39/km Pace",
+                "workout_doc": {
+                  "steps": [
+                    {
+                      "text": "Varm-op >5:39/km",
+                      "pace": {
+                        "start": 65,
+                        "end": 78,
+                        "units": "%pace"
+                      },
+                      "duration": 600
+                    },
+                    {
+                      "text": "Base 5:00-5:38/km",
+                      "pace": {
+                        "start": 78,
+                        "end": 88,
+                        "units": "%pace"
+                      },
+                      "duration": 1800
+                    },
+                    {
+                      "text": "Cool-down >5:39/km",
+                      "pace": {
+                        "start": 65,
+                        "end": 78,
+                        "units": "%pace"
+                      },
+                      "duration": 300
+                    }
+                  ]
+                }
+              },
+              "note": "Løb Z2",
+              "id": "64726e4d"
+            }
+          ]
+        },
+        {
+          "date": "2026-10-08",
+          "entries": [
+            {
+              "workout": {
+                "name": "Styrke Unilateral recovery 2 sæt",
+                "type": "WeightTraining",
+                "moving_time": 2100,
+                "description": "2x\n- Bulgarian Split Squat kropsvægt ×10/ben 1m freeride\n- Enbens RDL kropsvægt ×10/ben 1m freeride\n- Sideplanke ×20 sek/side 1m freeride\n- Pause 60 sek 2m freeride\n\n- Walk Z1 19m freeride",
+                "workout_doc": {
+                  "steps": [
+                    {
+                      "reps": 2,
+                      "text": "2x",
+                      "steps": [
+                        {
+                          "text": "Bulgarian Split Squat kropsvægt ×10/ben",
+                          "duration": 60
+                        },
+                        {
+                          "text": "Enbens RDL kropsvægt ×10/ben",
+                          "duration": 60
+                        },
+                        {
+                          "text": "Sideplanke ×20 sek/side",
+                          "duration": 60
+                        },
+                        {
+                          "text": "Pause 60 sek",
+                          "duration": 120
+                        }
+                      ]
+                    },
+                    {
+                      "text": "Walk Z1",
+                      "duration": 1140
+                    }
+                  ]
+                }
+              },
+              "note": "Styrke recovery",
+              "id": "8eb5c69d"
+            }
+          ]
+        },
+        {
+          "date": "2026-10-09",
+          "entries": [
+            {
+              "workout": {
+                "name": "FTP-TEST 20 min (opdatér zoner efter)",
+                "type": "Ride",
+                "moving_time": 3900,
+                "description": "- Varm-op progressiv 20m ramp 45-72% FTP\n- Åbner 5 min 5m 91-100% FTP\n- Let 5m 44-56% FTP\n- 20 MIN ALL-OUT TEST — jævn max-indsats 20m freeride\n- Cool-down 15m ramp 60-40% FTP\n\nEfter testen: nyt FTP = 95% af 20-min snit-watt. Opdatér i Intervals → Settings.",
+                "workout_doc": {
+                  "steps": [
+                    {
+                      "ramp": true,
+                      "power": {
+                        "start": 45,
+                        "end": 72,
+                        "units": "%ftp"
+                      },
+                      "duration": 1200,
+                      "warmup": true
+                    },
+                    {
+                      "text": "Åbner 5 min 91-100% FTP",
+                      "power": {
+                        "start": 91,
+                        "end": 100,
+                        "units": "%ftp"
+                      },
+                      "duration": 300
+                    },
+                    {
+                      "text": "Let 44-56% FTP",
+                      "power": {
+                        "start": 44,
+                        "end": 56,
+                        "units": "%ftp"
+                      },
+                      "duration": 300
+                    },
+                    {
+                      "text": "20 MIN ALL-OUT TEST — jævn max-indsats",
+                      "duration": 1200
+                    },
+                    {
+                      "ramp": true,
+                      "power": {
+                        "start": 60,
+                        "end": 40,
+                        "units": "%ftp"
+                      },
+                      "duration": 900,
+                      "cooldown": true
+                    }
+                  ]
+                }
+              },
+              "note": "Baseline for 2027-sporet — watt beskyttes under cuttet, ikke jages",
+              "id": "59e96f75"
+            }
+          ]
+        },
+        {
+          "date": "2026-10-10",
+          "entries": [
+            {
+              "workout": {
+                "name": "Cykel Z2 140 min",
+                "type": "Ride",
+                "moving_time": 8400,
+                "description": "- Varm-op 10m ramp 45-68% FTP\n- Aerob base 125m 56-76% FTP\n- Cool-down 5m ramp 68-45% FTP",
+                "workout_doc": {
+                  "steps": [
+                    {
+                      "ramp": true,
+                      "power": {
+                        "start": 45,
+                        "end": 68,
+                        "units": "%ftp"
+                      },
+                      "duration": 600,
+                      "warmup": true
+                    },
+                    {
+                      "text": "Aerob base 56-76% FTP",
+                      "power": {
+                        "start": 56,
+                        "end": 76,
+                        "units": "%ftp"
+                      },
+                      "duration": 7500
+                    },
+                    {
+                      "ramp": true,
+                      "power": {
+                        "start": 68,
+                        "end": 45,
+                        "units": "%ftp"
+                      },
+                      "duration": 300,
+                      "cooldown": true
+                    }
+                  ]
+                }
+              },
+              "note": "Lang cykel Z2",
+              "id": "3a3cde33"
+            }
+          ]
+        },
+        {
+          "date": "2026-10-11",
+          "entries": [
+            {
+              "workout": null,
+              "note": "Hvile — recovery-uge",
+              "id": "a16a7ce2"
+            }
+          ]
+        },
+        {
+          "date": "2026-10-12",
+          "entries": [
+            {
+              "workout": {
+                "name": "Styrke Unilateral A 3 sæt",
+                "type": "WeightTraining",
+                "moving_time": 2700,
+                "description": "3x\n- Bulgarian Split Squat 12.5kg ×8/ben 1m freeride\n- Enarms Row 20kg ×10/arm 1m freeride\n- Step-up 30cm 10kg ×8/ben 1m freeride\n- Enbens RDL 10kg ×8/ben 1m freeride\n- Pause 60 sek 2m freeride\n\n- Walk Z1 24m freeride",
+                "workout_doc": {
+                  "steps": [
+                    {
+                      "reps": 3,
+                      "text": "3x",
+                      "steps": [
+                        {
+                          "text": "Bulgarian Split Squat 12.5kg ×8/ben",
+                          "duration": 60
+                        },
+                        {
+                          "text": "Enarms Row 20kg ×10/arm",
+                          "duration": 60
+                        },
+                        {
+                          "text": "Step-up 30cm 10kg ×8/ben",
+                          "duration": 60
+                        },
+                        {
+                          "text": "Enbens RDL 10kg ×8/ben",
+                          "duration": 60
+                        },
+                        {
+                          "text": "Pause 60 sek",
+                          "duration": 120
+                        }
+                      ]
+                    },
+                    {
+                      "text": "Walk Z1",
+                      "duration": 1440
+                    }
+                  ]
+                }
+              },
+              "note": "Styrke Unilateral A",
+              "id": "33b27dbb"
+            }
+          ]
+        },
+        {
+          "date": "2026-10-13",
+          "entries": [
+            {
+              "workout": {
+                "name": "Cykel Z2 80 min",
+                "type": "Ride",
+                "moving_time": 4800,
+                "description": "- Varm-op 10m ramp 45-68% FTP\n- Aerob base 65m 56-76% FTP\n- Cool-down 5m ramp 68-45% FTP",
+                "workout_doc": {
+                  "steps": [
+                    {
+                      "ramp": true,
+                      "power": {
+                        "start": 45,
+                        "end": 68,
+                        "units": "%ftp"
+                      },
+                      "duration": 600,
+                      "warmup": true
+                    },
+                    {
+                      "text": "Aerob base 56-76% FTP",
+                      "power": {
+                        "start": 56,
+                        "end": 76,
+                        "units": "%ftp"
+                      },
+                      "duration": 3900
+                    },
+                    {
+                      "ramp": true,
+                      "power": {
+                        "start": 68,
+                        "end": 45,
+                        "units": "%ftp"
+                      },
+                      "duration": 300,
+                      "cooldown": true
+                    }
+                  ]
+                }
+              },
+              "note": "Cykel Z2 — cykel er primær fra uge 3",
+              "id": "697a452d"
+            }
+          ]
+        },
+        {
+          "date": "2026-10-14",
+          "entries": [
+            {
+              "workout": {
+                "name": "Løb Z2 50 min",
+                "type": "Run",
+                "moving_time": 3000,
+                "description": "- Varm-op 10m >5:39/km Pace\n- Base 35m 5:00-5:38/km Pace\n- Cool-down 5m >5:39/km Pace",
+                "workout_doc": {
+                  "steps": [
+                    {
+                      "text": "Varm-op >5:39/km",
+                      "pace": {
+                        "start": 65,
+                        "end": 78,
+                        "units": "%pace"
+                      },
+                      "duration": 600
+                    },
+                    {
+                      "text": "Base 5:00-5:38/km",
+                      "pace": {
+                        "start": 78,
+                        "end": 88,
+                        "units": "%pace"
+                      },
+                      "duration": 2100
+                    },
+                    {
+                      "text": "Cool-down >5:39/km",
+                      "pace": {
+                        "start": 65,
+                        "end": 78,
+                        "units": "%pace"
+                      },
+                      "duration": 300
+                    }
+                  ]
+                }
+              },
+              "note": "Løb Z2",
+              "id": "1baf83a1"
+            }
+          ]
+        },
+        {
+          "date": "2026-10-15",
+          "entries": [
+            {
+              "workout": {
+                "name": "Styrke Unilateral B 3 sæt",
+                "type": "WeightTraining",
+                "moving_time": 2700,
+                "description": "3x\n- Walking Lunge 10kg ×10/ben 1m freeride\n- Enbens Glute Bridge ×12/ben 1m freeride\n- Enarms Overhead Press 10kg ×8/arm 1m freeride\n- Sideplanke ×30 sek/side 1m freeride\n- Pause 60 sek 2m freeride\n\n- Walk Z1 24m freeride",
+                "workout_doc": {
+                  "steps": [
+                    {
+                      "reps": 3,
+                      "text": "3x",
+                      "steps": [
+                        {
+                          "text": "Walking Lunge 10kg ×10/ben",
+                          "duration": 60
+                        },
+                        {
+                          "text": "Enbens Glute Bridge ×12/ben",
+                          "duration": 60
+                        },
+                        {
+                          "text": "Enarms Overhead Press 10kg ×8/arm",
+                          "duration": 60
+                        },
+                        {
+                          "text": "Sideplanke ×30 sek/side",
+                          "duration": 60
+                        },
+                        {
+                          "text": "Pause 60 sek",
+                          "duration": 120
+                        }
+                      ]
+                    },
+                    {
+                      "text": "Walk Z1",
+                      "duration": 1440
+                    }
+                  ]
+                }
+              },
+              "note": "Styrke Unilateral B",
+              "id": "35e596ea"
+            }
+          ]
+        },
+        {
+          "date": "2026-10-16",
+          "entries": [
+            {
+              "workout": {
+                "name": "Cykel Z2+Z3 115 min",
+                "type": "Ride",
+                "moving_time": 6900,
+                "description": "- Varm-op 15m ramp 45-68% FTP\n- Aerob base 30m 56-76% FTP\n- Sweet spot-blok 55m 76-91% FTP\n- Cool-down 15m ramp 76-45% FTP",
+                "workout_doc": {
+                  "steps": [
+                    {
+                      "ramp": true,
+                      "power": {
+                        "start": 45,
+                        "end": 68,
+                        "units": "%ftp"
+                      },
+                      "duration": 900,
+                      "warmup": true
+                    },
+                    {
+                      "text": "Aerob base 56-76% FTP",
+                      "power": {
+                        "start": 56,
+                        "end": 76,
+                        "units": "%ftp"
+                      },
+                      "duration": 1800
+                    },
+                    {
+                      "text": "Sweet spot-blok 76-91% FTP",
+                      "power": {
+                        "start": 76,
+                        "end": 91,
+                        "units": "%ftp"
+                      },
+                      "duration": 3300
+                    },
+                    {
+                      "ramp": true,
+                      "power": {
+                        "start": 76,
+                        "end": 45,
+                        "units": "%ftp"
+                      },
+                      "duration": 900,
+                      "cooldown": true
+                    }
+                  ]
+                }
+              },
+              "note": "Cykel Z2+Z3",
+              "id": "8c529b45"
+            }
+          ]
+        },
+        {
+          "date": "2026-10-17",
+          "entries": [
+            {
+              "workout": {
+                "name": "Cykel Z2 175 min",
+                "type": "Ride",
+                "moving_time": 10500,
+                "description": "- Varm-op 10m ramp 45-68% FTP\n- Aerob base 160m 56-76% FTP\n- Cool-down 5m ramp 68-45% FTP",
+                "workout_doc": {
+                  "steps": [
+                    {
+                      "ramp": true,
+                      "power": {
+                        "start": 45,
+                        "end": 68,
+                        "units": "%ftp"
+                      },
+                      "duration": 600,
+                      "warmup": true
+                    },
+                    {
+                      "text": "Aerob base 56-76% FTP",
+                      "power": {
+                        "start": 56,
+                        "end": 76,
+                        "units": "%ftp"
+                      },
+                      "duration": 9600
+                    },
+                    {
+                      "ramp": true,
+                      "power": {
+                        "start": 68,
+                        "end": 45,
+                        "units": "%ftp"
+                      },
+                      "duration": 300,
+                      "cooldown": true
+                    }
+                  ]
+                }
+              },
+              "note": "Lang cykel Z2 — ugens nøgletur",
+              "id": "42eadbf1"
+            }
+          ]
+        },
+        {
+          "date": "2026-10-18",
+          "entries": [
+            {
+              "workout": {
+                "name": "Lang løb Z2 55 min",
+                "type": "Run",
+                "moving_time": 3300,
+                "description": "- Varm-op 10m >5:39/km Pace\n- Lang base 40m 5:00-5:38/km Pace\n- Cool-down 5m >5:39/km Pace",
+                "workout_doc": {
+                  "steps": [
+                    {
+                      "text": "Varm-op >5:39/km",
+                      "pace": {
+                        "start": 65,
+                        "end": 78,
+                        "units": "%pace"
+                      },
+                      "duration": 600
+                    },
+                    {
+                      "text": "Lang base 5:00-5:38/km",
+                      "pace": {
+                        "start": 78,
+                        "end": 88,
+                        "units": "%pace"
+                      },
+                      "duration": 2400
+                    },
+                    {
+                      "text": "Cool-down >5:39/km",
+                      "pace": {
+                        "start": 65,
+                        "end": 78,
+                        "units": "%pace"
+                      },
+                      "duration": 300
+                    }
+                  ]
+                }
+              },
+              "note": "Løb Z2",
+              "id": "2df9cc87"
+            }
+          ]
+        },
+        {
+          "date": "2026-10-19",
+          "entries": [
+            {
+              "workout": {
+                "name": "Styrke Unilateral A 3 sæt",
+                "type": "WeightTraining",
+                "moving_time": 2700,
+                "description": "3x\n- Bulgarian Split Squat 12.5kg ×8/ben 1m freeride\n- Enarms Row 20kg ×10/arm 1m freeride\n- Step-up 30cm 10kg ×8/ben 1m freeride\n- Enbens RDL 10kg ×8/ben 1m freeride\n- Pause 60 sek 2m freeride\n\n- Walk Z1 24m freeride",
+                "workout_doc": {
+                  "steps": [
+                    {
+                      "reps": 3,
+                      "text": "3x",
+                      "steps": [
+                        {
+                          "text": "Bulgarian Split Squat 12.5kg ×8/ben",
+                          "duration": 60
+                        },
+                        {
+                          "text": "Enarms Row 20kg ×10/arm",
+                          "duration": 60
+                        },
+                        {
+                          "text": "Step-up 30cm 10kg ×8/ben",
+                          "duration": 60
+                        },
+                        {
+                          "text": "Enbens RDL 10kg ×8/ben",
+                          "duration": 60
+                        },
+                        {
+                          "text": "Pause 60 sek",
+                          "duration": 120
+                        }
+                      ]
+                    },
+                    {
+                      "text": "Walk Z1",
+                      "duration": 1440
+                    }
+                  ]
+                }
+              },
+              "note": "Styrke Unilateral A",
+              "id": "27c49631"
+            }
+          ]
+        },
+        {
+          "date": "2026-10-20",
+          "entries": [
+            {
+              "workout": {
+                "name": "Cykel Z2 85 min",
+                "type": "Ride",
+                "moving_time": 5100,
+                "description": "- Varm-op 10m ramp 45-68% FTP\n- Aerob base 70m 56-76% FTP\n- Cool-down 5m ramp 68-45% FTP",
+                "workout_doc": {
+                  "steps": [
+                    {
+                      "ramp": true,
+                      "power": {
+                        "start": 45,
+                        "end": 68,
+                        "units": "%ftp"
+                      },
+                      "duration": 600,
+                      "warmup": true
+                    },
+                    {
+                      "text": "Aerob base 56-76% FTP",
+                      "power": {
+                        "start": 56,
+                        "end": 76,
+                        "units": "%ftp"
+                      },
+                      "duration": 4200
+                    },
+                    {
+                      "ramp": true,
+                      "power": {
+                        "start": 68,
+                        "end": 45,
+                        "units": "%ftp"
+                      },
+                      "duration": 300,
+                      "cooldown": true
+                    }
+                  ]
+                }
+              },
+              "note": "Cykel Z2 — cykel er primær fra uge 3",
+              "id": "4af601af"
+            }
+          ]
+        },
+        {
+          "date": "2026-10-21",
+          "entries": [
+            {
+              "workout": {
+                "name": "Løb Z2 50 min",
+                "type": "Run",
+                "moving_time": 3000,
+                "description": "- Varm-op 10m >5:39/km Pace\n- Base 35m 5:00-5:38/km Pace\n- Cool-down 5m >5:39/km Pace",
+                "workout_doc": {
+                  "steps": [
+                    {
+                      "text": "Varm-op >5:39/km",
+                      "pace": {
+                        "start": 65,
+                        "end": 78,
+                        "units": "%pace"
+                      },
+                      "duration": 600
+                    },
+                    {
+                      "text": "Base 5:00-5:38/km",
+                      "pace": {
+                        "start": 78,
+                        "end": 88,
+                        "units": "%pace"
+                      },
+                      "duration": 2100
+                    },
+                    {
+                      "text": "Cool-down >5:39/km",
+                      "pace": {
+                        "start": 65,
+                        "end": 78,
+                        "units": "%pace"
+                      },
+                      "duration": 300
+                    }
+                  ]
+                }
+              },
+              "note": "Løb Z2",
+              "id": "0bd207fa"
+            }
+          ]
+        },
+        {
+          "date": "2026-10-22",
+          "entries": [
+            {
+              "workout": {
+                "name": "Styrke Unilateral B 3 sæt",
+                "type": "WeightTraining",
+                "moving_time": 2700,
+                "description": "3x\n- Walking Lunge 10kg ×10/ben 1m freeride\n- Enbens Glute Bridge ×12/ben 1m freeride\n- Enarms Overhead Press 10kg ×8/arm 1m freeride\n- Sideplanke ×30 sek/side 1m freeride\n- Pause 60 sek 2m freeride\n\n- Walk Z1 24m freeride",
+                "workout_doc": {
+                  "steps": [
+                    {
+                      "reps": 3,
+                      "text": "3x",
+                      "steps": [
+                        {
+                          "text": "Walking Lunge 10kg ×10/ben",
+                          "duration": 60
+                        },
+                        {
+                          "text": "Enbens Glute Bridge ×12/ben",
+                          "duration": 60
+                        },
+                        {
+                          "text": "Enarms Overhead Press 10kg ×8/arm",
+                          "duration": 60
+                        },
+                        {
+                          "text": "Sideplanke ×30 sek/side",
+                          "duration": 60
+                        },
+                        {
+                          "text": "Pause 60 sek",
+                          "duration": 120
+                        }
+                      ]
+                    },
+                    {
+                      "text": "Walk Z1",
+                      "duration": 1440
+                    }
+                  ]
+                }
+              },
+              "note": "Styrke Unilateral B",
+              "id": "e1166224"
+            }
+          ]
+        },
+        {
+          "date": "2026-10-23",
+          "entries": [
+            {
+              "workout": {
+                "name": "Cykel Z2+Z3 120 min",
+                "type": "Ride",
+                "moving_time": 7200,
+                "description": "- Varm-op 15m ramp 45-68% FTP\n- Aerob base 30m 56-76% FTP\n- Sweet spot-blok 60m 76-91% FTP\n- Cool-down 15m ramp 76-45% FTP",
+                "workout_doc": {
+                  "steps": [
+                    {
+                      "ramp": true,
+                      "power": {
+                        "start": 45,
+                        "end": 68,
+                        "units": "%ftp"
+                      },
+                      "duration": 900,
+                      "warmup": true
+                    },
+                    {
+                      "text": "Aerob base 56-76% FTP",
+                      "power": {
+                        "start": 56,
+                        "end": 76,
+                        "units": "%ftp"
+                      },
+                      "duration": 1800
+                    },
+                    {
+                      "text": "Sweet spot-blok 76-91% FTP",
+                      "power": {
+                        "start": 76,
+                        "end": 91,
+                        "units": "%ftp"
+                      },
+                      "duration": 3600
+                    },
+                    {
+                      "ramp": true,
+                      "power": {
+                        "start": 76,
+                        "end": 45,
+                        "units": "%ftp"
+                      },
+                      "duration": 900,
+                      "cooldown": true
+                    }
+                  ]
+                }
+              },
+              "note": "Cykel Z2+Z3",
+              "id": "a245d99b"
+            }
+          ]
+        },
+        {
+          "date": "2026-10-24",
+          "entries": [
+            {
+              "workout": {
+                "name": "Cykel Z2 185 min",
+                "type": "Ride",
+                "moving_time": 11100,
+                "description": "- Varm-op 10m ramp 45-68% FTP\n- Aerob base 170m 56-76% FTP\n- Cool-down 5m ramp 68-45% FTP",
+                "workout_doc": {
+                  "steps": [
+                    {
+                      "ramp": true,
+                      "power": {
+                        "start": 45,
+                        "end": 68,
+                        "units": "%ftp"
+                      },
+                      "duration": 600,
+                      "warmup": true
+                    },
+                    {
+                      "text": "Aerob base 56-76% FTP",
+                      "power": {
+                        "start": 56,
+                        "end": 76,
+                        "units": "%ftp"
+                      },
+                      "duration": 10200
+                    },
+                    {
+                      "ramp": true,
+                      "power": {
+                        "start": 68,
+                        "end": 45,
+                        "units": "%ftp"
+                      },
+                      "duration": 300,
+                      "cooldown": true
+                    }
+                  ]
+                }
+              },
+              "note": "Lang cykel Z2 — ugens nøgletur",
+              "id": "fd95e5b7"
+            }
+          ]
+        },
+        {
+          "date": "2026-10-25",
+          "entries": [
+            {
+              "workout": {
+                "name": "Lang løb Z2 60 min",
+                "type": "Run",
+                "moving_time": 3600,
+                "description": "- Varm-op 10m >5:39/km Pace\n- Lang base 45m 5:00-5:38/km Pace\n- Cool-down 5m >5:39/km Pace",
+                "workout_doc": {
+                  "steps": [
+                    {
+                      "text": "Varm-op >5:39/km",
+                      "pace": {
+                        "start": 65,
+                        "end": 78,
+                        "units": "%pace"
+                      },
+                      "duration": 600
+                    },
+                    {
+                      "text": "Lang base 5:00-5:38/km",
+                      "pace": {
+                        "start": 78,
+                        "end": 88,
+                        "units": "%pace"
+                      },
+                      "duration": 2700
+                    },
+                    {
+                      "text": "Cool-down >5:39/km",
+                      "pace": {
+                        "start": 65,
+                        "end": 78,
+                        "units": "%pace"
+                      },
+                      "duration": 300
+                    }
+                  ]
+                }
+              },
+              "note": "Løb Z2",
+              "id": "3d3f047e"
+            }
+          ]
+        },
+        {
+          "date": "2026-10-26",
+          "entries": [
+            {
+              "workout": {
+                "name": "Styrke Unilateral recovery 2 sæt",
+                "type": "WeightTraining",
+                "moving_time": 2100,
+                "description": "2x\n- Bulgarian Split Squat kropsvægt ×10/ben 1m freeride\n- Enbens RDL kropsvægt ×10/ben 1m freeride\n- Sideplanke ×20 sek/side 1m freeride\n- Pause 60 sek 2m freeride\n\n- Walk Z1 19m freeride",
+                "workout_doc": {
+                  "steps": [
+                    {
+                      "reps": 2,
+                      "text": "2x",
+                      "steps": [
+                        {
+                          "text": "Bulgarian Split Squat kropsvægt ×10/ben",
+                          "duration": 60
+                        },
+                        {
+                          "text": "Enbens RDL kropsvægt ×10/ben",
+                          "duration": 60
+                        },
+                        {
+                          "text": "Sideplanke ×20 sek/side",
+                          "duration": 60
+                        },
+                        {
+                          "text": "Pause 60 sek",
+                          "duration": 120
+                        }
+                      ]
+                    },
+                    {
+                      "text": "Walk Z1",
+                      "duration": 1140
+                    }
+                  ]
+                }
+              },
+              "note": "Styrke recovery",
+              "id": "9201e6df"
+            }
+          ]
+        },
+        {
+          "date": "2026-10-27",
+          "entries": [
+            {
+              "workout": {
+                "name": "Cykel Z2 75 min",
+                "type": "Ride",
+                "moving_time": 4500,
+                "description": "- Varm-op 10m ramp 45-68% FTP\n- Aerob base 60m 56-76% FTP\n- Cool-down 5m ramp 68-45% FTP",
+                "workout_doc": {
+                  "steps": [
+                    {
+                      "ramp": true,
+                      "power": {
+                        "start": 45,
+                        "end": 68,
+                        "units": "%ftp"
+                      },
+                      "duration": 600,
+                      "warmup": true
+                    },
+                    {
+                      "text": "Aerob base 56-76% FTP",
+                      "power": {
+                        "start": 56,
+                        "end": 76,
+                        "units": "%ftp"
+                      },
+                      "duration": 3600
+                    },
+                    {
+                      "ramp": true,
+                      "power": {
+                        "start": 68,
+                        "end": 45,
+                        "units": "%ftp"
+                      },
+                      "duration": 300,
+                      "cooldown": true
+                    }
+                  ]
+                }
+              },
+              "note": "Cykel Z2",
+              "id": "7260158f"
+            }
+          ]
+        },
+        {
+          "date": "2026-10-28",
+          "entries": [
+            {
+              "workout": {
+                "name": "Løb Z2 45 min",
+                "type": "Run",
+                "moving_time": 2700,
+                "description": "- Varm-op 10m >5:39/km Pace\n- Base 30m 5:00-5:38/km Pace\n- Cool-down 5m >5:39/km Pace",
+                "workout_doc": {
+                  "steps": [
+                    {
+                      "text": "Varm-op >5:39/km",
+                      "pace": {
+                        "start": 65,
+                        "end": 78,
+                        "units": "%pace"
+                      },
+                      "duration": 600
+                    },
+                    {
+                      "text": "Base 5:00-5:38/km",
+                      "pace": {
+                        "start": 78,
+                        "end": 88,
+                        "units": "%pace"
+                      },
+                      "duration": 1800
+                    },
+                    {
+                      "text": "Cool-down >5:39/km",
+                      "pace": {
+                        "start": 65,
+                        "end": 78,
+                        "units": "%pace"
+                      },
+                      "duration": 300
+                    }
+                  ]
+                }
+              },
+              "note": "Løb Z2",
+              "id": "61a02f1b"
+            }
+          ]
+        },
+        {
+          "date": "2026-10-29",
+          "entries": [
+            {
+              "workout": {
+                "name": "Styrke Unilateral recovery 2 sæt",
+                "type": "WeightTraining",
+                "moving_time": 2100,
+                "description": "2x\n- Bulgarian Split Squat kropsvægt ×10/ben 1m freeride\n- Enbens RDL kropsvægt ×10/ben 1m freeride\n- Sideplanke ×20 sek/side 1m freeride\n- Pause 60 sek 2m freeride\n\n- Walk Z1 19m freeride",
+                "workout_doc": {
+                  "steps": [
+                    {
+                      "reps": 2,
+                      "text": "2x",
+                      "steps": [
+                        {
+                          "text": "Bulgarian Split Squat kropsvægt ×10/ben",
+                          "duration": 60
+                        },
+                        {
+                          "text": "Enbens RDL kropsvægt ×10/ben",
+                          "duration": 60
+                        },
+                        {
+                          "text": "Sideplanke ×20 sek/side",
+                          "duration": 60
+                        },
+                        {
+                          "text": "Pause 60 sek",
+                          "duration": 120
+                        }
+                      ]
+                    },
+                    {
+                      "text": "Walk Z1",
+                      "duration": 1140
+                    }
+                  ]
+                }
+              },
+              "note": "Styrke recovery — Stelvio couples-tilmelding deadline i dag (med Eva)",
+              "id": "d780e834"
+            }
+          ]
+        },
+        {
+          "date": "2026-10-30",
+          "entries": [
+            {
+              "workout": null,
+              "note": "Hvile — recovery-uge",
+              "id": "45538945"
+            }
+          ]
+        },
+        {
+          "date": "2026-10-31",
+          "entries": [
+            {
+              "workout": {
+                "name": "Cykel Z2 160 min",
+                "type": "Ride",
+                "moving_time": 9600,
+                "description": "- Varm-op 10m ramp 45-68% FTP\n- Aerob base 145m 56-76% FTP\n- Cool-down 5m ramp 68-45% FTP",
+                "workout_doc": {
+                  "steps": [
+                    {
+                      "ramp": true,
+                      "power": {
+                        "start": 45,
+                        "end": 68,
+                        "units": "%ftp"
+                      },
+                      "duration": 600,
+                      "warmup": true
+                    },
+                    {
+                      "text": "Aerob base 56-76% FTP",
+                      "power": {
+                        "start": 56,
+                        "end": 76,
+                        "units": "%ftp"
+                      },
+                      "duration": 8700
+                    },
+                    {
+                      "ramp": true,
+                      "power": {
+                        "start": 68,
+                        "end": 45,
+                        "units": "%ftp"
+                      },
+                      "duration": 300,
+                      "cooldown": true
+                    }
+                  ]
+                }
+              },
+              "note": "Lang cykel Z2",
+              "id": "e32e2079"
+            }
+          ]
+        },
+        {
+          "date": "2026-11-01",
+          "entries": [
+            {
+              "workout": {
+                "name": "Løb Z2 30 min",
+                "type": "Run",
+                "moving_time": 1800,
+                "description": "- Varm-op 10m >5:39/km Pace\n- Base 15m 5:00-5:38/km Pace\n- Cool-down 5m >5:39/km Pace",
+                "workout_doc": {
+                  "steps": [
+                    {
+                      "text": "Varm-op >5:39/km",
+                      "pace": {
+                        "start": 65,
+                        "end": 78,
+                        "units": "%pace"
+                      },
+                      "duration": 600
+                    },
+                    {
+                      "text": "Base 5:00-5:38/km",
+                      "pace": {
+                        "start": 78,
+                        "end": 88,
+                        "units": "%pace"
+                      },
+                      "duration": 900
+                    },
+                    {
+                      "text": "Cool-down >5:39/km",
+                      "pace": {
+                        "start": 65,
+                        "end": 78,
+                        "units": "%pace"
+                      },
+                      "duration": 300
+                    }
+                  ]
+                }
+              },
+              "note": "Løb Z2 let",
+              "id": "f26f7f17"
+            }
+          ]
         }
       ]
     },
