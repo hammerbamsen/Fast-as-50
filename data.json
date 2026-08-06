@@ -1,19 +1,19 @@
 {
   "meta": {
-    "updated": "2026-08-06 00:59",
+    "updated": "2026-08-06 02:05",
     "week": 10,
     "totalWeeks": 14,
     "blockType": "BUILD",
-    "daysToMedoc": 31,
-    "daysToChristiansborg": 24,
-    "dayName": "Onsdag",
-    "date": "5. aug"
+    "daysToMedoc": 30,
+    "daysToChristiansborg": 23,
+    "dayName": "Torsdag",
+    "date": "6. aug"
   },
   "kpis": {
     "weight": {
       "value": "72,1",
       "unit": "kg",
-      "sub": "Mål <70 kg · snit 72,4 kg",
+      "sub": "Sidst målt 5/8 · Mål <70 kg · snit 72,4 kg",
       "color": "#E67E22"
     },
     "fat": {
@@ -23,7 +23,7 @@
       "color": "#E67E22"
     },
     "ctl": {
-      "value": "51,4",
+      "value": "51,7",
       "unit": "",
       "sub": "Uge 10-mål 50 · Slutmål 43 (uge 14)",
       "color": "#27AE60"
@@ -47,7 +47,7 @@
       "color": "#C0392B"
     },
     "hrv": {
-      "value": "50,2",
+      "value": "49,6",
       "unit": "ms",
       "sub": "Snit 7d",
       "color": "#7A6A58"
@@ -82,33 +82,17 @@
     "target": 5,
     "streak": 3
   },
-  "coachSpeech": "Onsdag — uge 10 af 14. {HL} Godt: 3 AF-dage i 3 gennemførte dage — på rette spor. 2 mere og ugens mål er i hus. Fokus: 163 af 410 TSS er i hus — 3 sessioner tilbage, heriblandt Løb VO2 4×5 min Z4-Z5, OW-svøm 2500m SAMMENHÆNGENDE (Christiansborg-generalprøve). Vægt på 72,1 kg — hold protein højt og undgå lette kulhydrater om aftenen. Keep moving forward.  \"AF-dage er ikke et offer — de er en investering i morgendagens energi.\"",
+  "coachSpeech": "Torsdag — uge 10 af 14. {HL} Fokus: 163 af 410 TSS er i hus — 3 sessioner tilbage, heriblandt Løb VO2 4×5 min Z4-Z5, OW-svøm 2500m SAMMENHÆNGENDE (Christiansborg-generalprøve). 3 AF-dage i 4 afsluttede dage — 2 mangler i 3 dage tilbage. Keep moving forward.  \"Du har magt over dit sind — ikke over yderomstændigheder. Indse det, og du finder styrke.\" — Marcus Aurelius",
   "coachHighlight": "Søvn på 7,3 timer er solid",
   "weekFocus": "Svømmefokus og første VO2-stimulus sætter fart mod Christiansborg",
   "today": [
     {
-      "discipline": "swim",
-      "title": "Svøm 1500m teknisk",
+      "discipline": "run",
+      "title": "Løb VO2 4×5 min Z4-Z5",
       "duration": "",
       "zone": "–",
       "desc": "",
-      "completed": true
-    },
-    {
-      "discipline": "strength",
-      "title": "Styrke A Functional Strength 2 sæt",
-      "duration": "",
-      "zone": "–",
-      "desc": "",
-      "completed": true
-    },
-    {
-      "discipline": "walk",
-      "title": "Gentofte Gang",
-      "duration": "",
-      "zone": "–",
-      "desc": "",
-      "completed": true
+      "completed": false
     }
   ],
   "week_sessions": [
@@ -155,7 +139,6 @@
       "disc": "swim",
       "label": "Svøm 1500m teknisk",
       "done": true,
-      "today": true,
       "completion": "done",
       "completion_pct": null,
       "actual_tss": 15,
@@ -167,7 +150,6 @@
       "disc": "strength",
       "label": "Styrke A Functional Strength 2 sæt",
       "done": true,
-      "today": true,
       "completion": "done",
       "completion_pct": null,
       "actual_tss": 7,
@@ -179,14 +161,14 @@
       "disc": "walk",
       "label": "Gentofte Gang",
       "done": true,
-      "extra": true,
-      "today": true
+      "extra": true
     },
     {
       "day": "Tor",
       "disc": "run",
       "label": "Løb VO2 4×5 min Z4-Z5",
-      "done": false
+      "done": false,
+      "today": true
     },
     {
       "day": "Fre",
@@ -211,14 +193,9 @@
     49.7,
     51.0,
     50.9,
-    51.4
+    51.7
   ],
   "weightHistory": [
-    {
-      "date": "2026-05-08",
-      "v": 74.9,
-      "real": true
-    },
     {
       "date": "2026-05-09",
       "v": 74.9,
@@ -523,14 +500,10 @@
       "date": "2026-08-05",
       "v": 72.1,
       "real": true
-    }
+    },
+    null
   ],
   "hrvHistory": [
-    {
-      "date": "2026-05-08",
-      "v": 53.0,
-      "real": true
-    },
     {
       "date": "2026-05-09",
       "v": 25.0,
@@ -975,14 +948,10 @@
       "date": "2026-08-05",
       "v": 55.0,
       "real": true
-    }
+    },
+    null
   ],
   "sleepHistory": [
-    {
-      "date": "2026-05-08",
-      "v": 8.1,
-      "real": true
-    },
     {
       "date": "2026-05-09",
       "v": 7.5,
@@ -1423,14 +1392,10 @@
       "date": "2026-08-05",
       "v": 9.3,
       "real": true
-    }
+    },
+    null
   ],
   "tsbHistory": [
-    {
-      "date": "2026-05-08",
-      "v": -2.3,
-      "real": true
-    },
     {
       "date": "2026-05-09",
       "v": -4.7,
@@ -1873,6 +1838,11 @@
     },
     {
       "date": "2026-08-05",
+      "v": -9.8,
+      "real": true
+    },
+    {
+      "date": "2026-08-06",
       "v": -9.8,
       "real": true
     }
@@ -2486,7 +2456,6 @@
           "disc": "swim",
           "label": "Svøm 1500m teknisk",
           "done": true,
-          "today": true,
           "completion": "done",
           "completion_pct": null,
           "actual_tss": 15,
@@ -2498,7 +2467,6 @@
           "disc": "strength",
           "label": "Styrke A Functional Strength 2 sæt",
           "done": true,
-          "today": true,
           "completion": "done",
           "completion_pct": null,
           "actual_tss": 7,
@@ -2510,14 +2478,14 @@
           "disc": "walk",
           "label": "Gentofte Gang",
           "done": true,
-          "extra": true,
-          "today": true
+          "extra": true
         },
         {
           "day": "Tor",
           "disc": "run",
           "label": "Løb VO2 4×5 min Z4-Z5",
-          "done": false
+          "done": false,
+          "today": true
         },
         {
           "day": "Fre",
@@ -2765,7 +2733,7 @@
     {
       "week": 10,
       "done": 3,
-      "total": 3,
+      "total": 4,
       "label": "Uge 10"
     }
   ],
@@ -2779,11 +2747,6 @@
     "actual_total": 315.0
   },
   "fatHistory": [
-    {
-      "date": "2026-05-08",
-      "v": 23.7,
-      "real": true
-    },
     {
       "date": "2026-05-09",
       "v": 23.0,
@@ -3088,10 +3051,11 @@
       "date": "2026-08-05",
       "v": 21.6,
       "real": true
-    }
+    },
+    null
   ],
-  "coachAssessmentHtml": "<p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\"><strong>Dag 66 af 98 · Onsdag · Uge 10</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">💪 <strong>Træning & load</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">CTL på 51.4 er allerede over ugemålet på 50 — ugen leverer. TSB på -9.8 er komfortabel: du er belastet, men langt fra rød zone. Svømningen i dag var teknisk fokuseret og gav forventeligt lav HR — læring til næste tekniske svømpas er at bygge lidt mere kontinuitet ind, så HR-zonen har chance for at stige. Torsdag venter VO2-pas med 4×5 min Z4-Z5 — det er ukens vigtigste indsats, og TSB giver dig råd til at trykke på.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">⚖️ <strong>Krop & kost</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">72.1 kg er 2.1 kg fra målet — men fedtprocenten på 21.6 % er steget 0.5 point siden 4. august, og det er det vigtigste signal lige nu. Vægten bevæger sig ikke hurtigt nok ned, og fedtprocenten peger i den forkerte retning — det antyder at det der tabes ikke er fedt. Hold ekstra øje med protein og søvn, som begge beskytter muskelmasse under kalorieunderskud. Fedtprocenten skal ned under 20 % — og det kræver mere end blot lidt færre kalorier; kvaliteten af maden tæller.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">🎯 <strong>AF-status & fokus for resten af ugen</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">3 AF-dage ud af 3 dage i ugen — du er i fuld kontrol. Hold det kørende torsdag og fredag, og du er tæt på ugesmålet på 5. Fredag er generalprøven på Christiansborg: 2500m sammenhængende OW — det er den session der afgør om du er klar til at svømme distancen med ro. Lørdag venter 29 km Z2 — hold hjertefrekvensen disciplineret og pas på at starte for hurtigt efter en hård uge.</p>",
-  "coachAssessmentTs": "20:13",
+  "coachAssessmentHtml": "<p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\"><strong>Dag 67 af 98 · Torsdag · Uge 10</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">💪 <strong>Træning & load</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">CTL ligger på 51.7 — over ugemålet på 50 — og TSB på -9.8 viser en sund belastning uden at nærme sig grænsen. Tirsdagens løb lå for højt i tempo: HR nåede ikke at følge med, og pace-zonen landede under Z1-målet — sænk farten næste gang du løber let. Dagens VO2-session er endnu ikke gennemført: 4×5 min Z4-Z5 med fuld recovery imellem. Hold fokus — det er det vigtigste løfterum i ugen.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">⚖️ <strong>Krop & kost</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Der er ingen aktuel vejning eller fedtprocentmåling denne uge, så der er intet at vurdere på kroppen lige nu. Mål begge dele — vægt alene fortæller dig næsten ingenting om fremskridt mod målet.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">🎯 <strong>AF-status & fokus for resten af ugen</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Du har 3 AF-dage ud af 4 dage i ugen — det er stærkt. Fredag er en stor dag: 2500m sammenhængende OW-svøm som generalprøve for Christiansborg — det er her du finder ud af, hvad du kan. Lørdag venter 29 km i Z2 — hold dig i zonen, det er ikke en testdag. Hold alkoholen væk de næste to dage, så lander du på 5/5 eller tæt på.</p>",
+  "coachAssessmentTs": "00:06",
   "commute_pairing_warnings": [],
   "warnings": [],
   "tsb": -9.8,
@@ -3159,7 +3123,7 @@
   ],
   "coachAssessmentLastActId": "i172717080",
   "weekFocusWeek": 10,
-  "coachAssessmentPlanAtGen": "Svøm 1500m teknisk",
+  "coachAssessmentPlanAtGen": "Løb VO2 4×5 min Z4-Z5",
   "weightGoal": 70,
   "bodyFatGoal": 20,
   "weightMovingAvg7": [
@@ -3167,9 +3131,8 @@
     null,
     75.03,
     75.0,
-    74.98,
-    74.98,
-    74.96,
+    75.0,
+    74.97,
     74.97,
     74.98,
     75.06,
@@ -3252,16 +3215,16 @@
     72.35,
     72.45,
     72.47,
-    72.4
+    72.4,
+    72.34
   ],
   "fatMovingAvg7": [
     null,
     null,
-    23.4,
+    23.33,
     23.43,
-    23.48,
-    23.45,
-    23.36,
+    23.4,
+    23.3,
     23.3,
     23.36,
     23.12,
@@ -3344,7 +3307,8 @@
     21.55,
     21.67,
     21.53,
-    21.47
+    21.47,
+    21.36
   ],
   "weightToGoal": 2.1,
   "bodyFatToGoal": 1.6,
@@ -3376,8 +3340,8 @@
       "note": "Nøgle virker"
     }
   },
-  "credentialsCheckedTs": "2026-08-05T22:59:06.164580",
-  "coachAssessmentTsFull": "2026-08-05T20:13:53.026404",
+  "credentialsCheckedTs": "2026-08-06T00:06:06.975880",
+  "coachAssessmentTsFull": "2026-08-06T00:06:06.975863",
   "coachAssessmentWeightAtGen": 72.1,
   "coachAssessmentAfAtGen": 3,
   "event_structure_warnings": [],
