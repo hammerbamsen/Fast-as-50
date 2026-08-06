@@ -105,6 +105,30 @@ RUN_PACE_ZONES_SEC_PER_KM = _derive_run_pace_zones() or {
 }
 
 
+def _derive_bike_zone_watts():
+    """(lo, hi) watt pr. zone, udledt af ftpW + bikePct i plan.json.
+
+    Samme princip som løbezonerne: plan.json er eneste kilde, så en FTP-test
+    slår automatisk igennem. Bruges til rep-for-rep-vurdering af
+    cykelintervaller.
+    """
+    z = ((PLAN or {}).get('athletes', {}).get('kennet', {}) or {}).get('zones') or {}
+    ftp, pct = z.get('ftpW'), z.get('bikePct')
+    if not ftp or not pct:
+        return {}
+    out = {}
+    for name, band in pct.items():
+        lo, hi = band[0], band[1]
+        out[name] = (
+            int(round(ftp * lo / 100)) if lo is not None else 0,
+            int(round(ftp * hi / 100)) if hi is not None else 99999,
+        )
+    return out
+
+
+BIKE_ZONES_WATTS = _derive_bike_zone_watts()
+
+
 def api_get(url, auth=None, params=None, timeout=20, retries=3):
     """requests.get med exponential backoff retry på transiente fejl."""
     for attempt in range(retries):

@@ -1,9 +1,39 @@
 """Sessions, aktiviteter og planlagte workouts fra Intervals.icu."""
+import math as _math
 import re
 from datetime import date, timedelta
-from .config import (TOTAL_WEEKS, BASE, AUTH, api_get, fix_enc, fmt, color_for, ctl_plan_for_week,
-                      DAY_SHORT, BLOCK_TYPES, RUN_PACE_ZONES_SEC_PER_KM)
+from .config import (PLAN as _PLAN, TOTAL_WEEKS, BASE, AUTH, api_get, fix_enc, fmt, color_for, ctl_plan_for_week,
+                      DAY_SHORT, BLOCK_TYPES, RUN_PACE_ZONES_SEC_PER_KM, BIKE_ZONES_WATTS)
 from .af import monday_this_week
+
+# ── Rep-for-rep-analyse af intervalpas ───────────────────────────────────────
+# Et stykke tæller som "arbejde" hvis det er hurtigere/hårdere end target-zonens
+# svage kant plus en tolerance. Tolerancen skal være stor nok til at fange en
+# rep der blev løbet lidt for langsomt, men lille nok til at pauser aldrig
+# ryger med (pauserne ligger typisk 50+ sek/km langsommere end target).
+PACE_WORK_TOLERANCE_SEC  = 20    # sek/km under Z-bandets langsomme kant
+BIKE_WORK_TOLERANCE_PCT  = 8     # % under zonens nedre watt-grænse
+MIN_REP_PIECE_SECS       = 15    # kortere stykker er støj (GPS-udsving)
+MIN_REP_SECS             = 60    # en merged rep skal have reel varighed
+REP_DRIFT_MIN            = 4     # mindre drift end dette er ikke et signal
+REP_FLAG_MARK            = {'ok': '✅', 'fast': '⚡for hårdt', 'slow': '⚠️for blødt'}
+
+
+def _threshold_sec():
+    """Løbetærskel i sek/km fra plan.json (samme kilde som zonerne)."""
+    z = ((_PLAN or {}).get('athletes', {}).get('kennet', {}) or {}).get('zones') or {}
+    return z.get('thresholdSec')
+
+
+def _ftp_watts():
+    z = ((_PLAN or {}).get('athletes', {}).get('kennet', {}) or {}).get('zones') or {}
+    return z.get('ftpW')
+
+
+def bike_zone_watts(zone):
+    """(lo, hi) watt for en cykelzone. (None, None) hvis ukendt."""
+    band = (BIKE_ZONES_WATTS or {}).get(zone)
+    return (band[0], band[1]) if band else (None, None)
 
 
 def get_activities_since(days=10):
@@ -187,6 +217,263 @@ def compute_run_pace_zone_secs(act_id):
                 secs[i] += 1
                 break
     return secs
+
+
+def count_planned_reps(ev):
+    """Antal planlagte arbejdsintervaller på et event.
+
+    Primært fra workout_doc (reps på et gruppe-step), sekundært fra navnet
+    ('4×5 min', '5x3 min'). Returnerer None hvis det ikke kan udledes — så
+    undlader vi at påstå at reps mangler.
+    """
+    doc = (ev or {}).get('workout_doc') or {}
+    total = 0
+    for step in (doc.get('steps') or []):
+        if isinstance(step, dict) and step.get('steps'):
+            total += int(step.get('reps') or 1)
+    if total:
+        return total
+    m = re.search(r'(\d+)\s*[x×]\s*\d', fix_enc((ev or {}).get('name', '') or ''))
+    return int(m.group(1)) if m else None
+
+
+def planned_target_from_event(ev, disc):
+    """(lo, hi) target for arbejdsintervallerne, læst af eventets workout_doc.
+
+    Navnet må IKKE være kilden. 'Løb VO2 4×5 min Z4-Z5' hed sådan fordi
+    intervallet dengang var 4:13-4:25/km; da pace-strengene blev rettet til
+    4:17-4:29 (rene Z4) fulgte navnet ikke med. En navne-baseret zone-detektion
+    valgte 'Z5' og dømte derfor korrekt udførte Z4-reps som "for bløde".
+
+    workout_doc bærer den faktiske target-procent (%pace / %ftp) og er samme
+    kilde som Garmin bygger passet ud fra. Returnerer (None, None) hvis den
+    ikke kan udledes -- så falder kalderen tilbage til zone-båndet.
+    """
+    doc = (ev or {}).get('workout_doc') or {}
+    key = 'pace' if disc == 'run' else 'power'
+    best = None
+    for step in (doc.get('steps') or []):
+        if not isinstance(step, dict):
+            continue
+        # Arbejdstrin ligger i gruppe-steps (dem med reps)
+        children = step.get('steps') if step.get('steps') else []
+        for child in children:
+            t = (child or {}).get(key) or {}
+            lo_p, hi_p = t.get('start'), t.get('end')
+            if lo_p is None or hi_p is None:
+                continue
+            # Højeste intensitet i gruppen = arbejdstrinnet (pausen er lavere)
+            if best is None or hi_p > best[1]:
+                best = (lo_p, hi_p)
+    if not best:
+        return (None, None)
+    lo_p, hi_p = best
+
+    if disc == 'run':
+        thr = _threshold_sec()
+        if not thr:
+            return (None, None)
+        # %pace: højere procent = hurtigere. sek/km = thr*100/pct
+        return (_math.ceil(thr * 100 / hi_p), _math.ceil(thr * 100 / lo_p) - 1)
+
+    ftp = _ftp_watts()
+    if not ftp:
+        return (None, None)
+    return (int(round(ftp * lo_p / 100)), int(round(ftp * hi_p / 100)))
+
+
+def _pace_str(secs_per_km):
+    """252.4 -> '4:12'."""
+    if not secs_per_km or secs_per_km <= 0:
+        return '-'
+    s = int(round(secs_per_km))
+    return f"{s // 60}:{s % 60:02d}"
+
+
+def get_interval_reps(act_id, planned_zone, disc, streams=None, intervals=None,
+                      target=None):
+    """Rep-for-rep-analyse af et intervalpas.
+
+    Hvorfor ikke bare Intervals' egen opdeling: `type` er 'WORK' på stort set
+    ALT (også opvarmning, pauser og cool-down) og `label` er altid None —
+    Intervals matcher ikke mod den planlagte struktur, den auto-detekterer
+    pace-/watt-skift. Oveni splittes én rep typisk i to stykker når tempoet
+    ændrer sig undervejs (verificeret 6/8-26: rep 1 lå som 254s@4:13 + 46s@4:09).
+
+    Derfor: merge sammenhængende detekterede stykker der er hurtigere/hårdere
+    end target-zonens nedre kant + tolerance, og vægt pace/watt/HR efter tid.
+
+    Returnerer liste af dicts:
+      {'n', 'secs', 'pace_sec' (løb), 'watts' (cykel), 'hr', 'in_zone_pct',
+       'flag': 'ok'/'fast'/'slow'}
+    Tom liste hvis der ikke kan udledes reps.
+    """
+    if not act_id:
+        return []
+
+    # target kommer primært fra eventets workout_doc (den faktiske planlagte
+    # pace/watt) -- zone-navnet er kun fallback, se planned_target_from_event.
+    lo, hi = target if target and target[0] is not None else (None, None)
+    if disc == 'run':
+        if lo is None:
+            band = RUN_PACE_ZONES_SEC_PER_KM.get(planned_zone)
+            if not band:
+                return []
+            lo, hi = band[0], band[1]      # sek/km: lo = hurtigst, hi = langsomst
+        work_cut = hi + PACE_WORK_TOLERANCE_SEC
+    elif disc == 'bike':
+        if lo is None:
+            lo, hi = bike_zone_watts(planned_zone)
+        if lo is None:
+            return []
+        work_cut = lo - (lo * BIKE_WORK_TOLERANCE_PCT / 100.0)
+    else:
+        return []
+
+    if intervals is None:
+        r = api_get(f'https://intervals.icu/api/v1/activity/{act_id}/intervals', auth=AUTH)
+        if not r or r.status_code != 200:
+            return []
+        try:
+            intervals = (r.json() or {}).get('icu_intervals') or []
+        except Exception:
+            return []
+    if not intervals:
+        return []
+
+    def _effort(iv):
+        """Intensitetsmål for et stykke: sek/km for løb, watt for cykel."""
+        if disc == 'run':
+            sp = iv.get('average_speed')
+            return (1000.0 / sp) if sp and sp > 0 else None
+        return iv.get('average_watts')
+
+    def _is_work(iv):
+        e = _effort(iv)
+        if e is None or (iv.get('moving_time') or 0) < MIN_REP_PIECE_SECS:
+            return False
+        return e < work_cut if disc == 'run' else e > work_cut
+
+    # Merge sammenhængende arbejdsstykker til reps
+    groups, cur = [], []
+    for iv in intervals:
+        if _is_work(iv):
+            cur.append(iv)
+        elif cur:
+            groups.append(cur)
+            cur = []
+    if cur:
+        groups.append(cur)
+    groups = [g for g in groups if sum(x.get('moving_time') or 0 for x in g) >= MIN_REP_SECS]
+    if not groups:
+        return []
+
+    # Rå stream til in-zone-% pr. rep (samme kilde som Friel-zoneberegningen)
+    if streams is None:
+        types = 'time,velocity_smooth' if disc == 'run' else 'time,watts'
+        rs = api_get(f'https://intervals.icu/api/v1/activity/{act_id}/streams',
+                     auth=AUTH, params={'types': types})
+        streams = {}
+        if rs and rs.status_code == 200:
+            try:
+                streams = {s['type']: s.get('data', []) for s in rs.json()}
+            except Exception:
+                streams = {}
+    series = (streams or {}).get('velocity_smooth' if disc == 'run' else 'watts') or []
+
+    reps = []
+    for n, grp in enumerate(groups, 1):
+        secs = sum(x.get('moving_time') or 0 for x in grp)
+        if not secs:
+            continue
+        eff = sum((_effort(x) or 0) * (x.get('moving_time') or 0) for x in grp) / secs
+        hrs = [x for x in grp if x.get('average_heartrate')]
+        hr = (round(sum(x['average_heartrate'] * (x.get('moving_time') or 0) for x in hrs)
+                    / sum(x.get('moving_time') or 0 for x in hrs)) if hrs else None)
+
+        in_zone_pct = None
+        s_i, e_i = grp[0].get('start_index'), grp[-1].get('end_index')
+        if series and s_i is not None and e_i is not None and e_i >= s_i:
+            win = series[s_i:e_i + 1]
+            vals = []
+            for v in win:
+                if v is None or v <= 0:
+                    continue
+                vals.append(1000.0 / v if disc == 'run' else v)
+            if vals:
+                in_zone_pct = round(sum(1 for v in vals if lo <= v <= hi) / len(vals) * 100, 1)
+
+        if disc == 'run':
+            flag = 'ok' if lo <= eff <= hi else ('fast' if eff < lo else 'slow')
+        else:
+            flag = 'ok' if lo <= eff <= hi else ('fast' if eff > hi else 'slow')
+
+        rep = {'n': n, 'secs': int(secs), 'hr': hr,
+               'in_zone_pct': in_zone_pct, 'flag': flag}
+        if disc == 'run':
+            rep['pace_sec'] = round(eff, 1)
+        else:
+            rep['watts'] = round(eff)
+        reps.append(rep)
+    return reps
+
+
+def _half_drift(vals):
+    """Drift = snit af sidste halvdel minus snit af første halvdel.
+
+    Rep 1 vs. sidste rep alene er misvisende når tempoet veksler: 4:13 · 4:20 ·
+    4:12 · 4:19 er ikke et drop-off på 6 sek/km, det er overpacing hver anden
+    rep. Halvdel-mod-halvdel fanger reel udtrætning i stedet.
+    """
+    n = len(vals) // 2
+    if n < 1:
+        return 0
+    first = sum(vals[:n]) / n
+    last = sum(vals[-n:]) / n
+    return round(last - first)
+
+
+def summarize_reps(reps, planned_zone, disc, planned_reps=None, target=None):
+    """Én linje der beskriver rep-for-rep-udførelsen — det coachen skal dømme på.
+
+    Sessionsgennemsnit skjuler præcis det der betyder noget på et intervalpas:
+    om rep 1 blev løbet for hurtigt og rep 4 faldt fra.
+    """
+    if not reps:
+        return None
+    if disc == 'run':
+        band = target if target and target[0] is not None else (
+            RUN_PACE_ZONES_SEC_PER_KM.get(planned_zone) or (0, 0))
+        target_txt = f"target {_pace_str(band[0])}–{_pace_str(band[1])}/km"
+        vals = [r['pace_sec'] for r in reps]
+        parts = [f"{_pace_str(r['pace_sec'])} {REP_FLAG_MARK[r['flag']]}" for r in reps]
+        unit = 'sek/km'
+        drift = _half_drift(vals)              # positiv = langsommere til sidst
+    else:
+        lo, hi = target if target and target[0] is not None else bike_zone_watts(planned_zone)
+        target_txt = f"target {lo}–{hi}W"
+        vals = [r['watts'] for r in reps]
+        parts = [f"{r['watts']}W {REP_FLAG_MARK[r['flag']]}" for r in reps]
+        unit = 'W'
+        drift = -_half_drift(vals)             # positiv = svagere til sidst
+
+    line = f"{len(reps)} reps ({target_txt}): " + " · ".join(parts)
+    if planned_reps and planned_reps != len(reps):
+        line += f" — BEMÆRK: {planned_reps} reps var planlagt, {len(reps)} udført"
+
+    n_fast = sum(1 for r in reps if r['flag'] == 'fast')
+    n_slow = sum(1 for r in reps if r['flag'] == 'slow')
+    if n_fast:
+        line += (f" — {n_fast} af {len(reps)} reps var HÅRDERE end target "
+                 f"(overpacing, ikke en sejr)")
+    if n_slow:
+        line += f" — {n_slow} af {len(reps)} reps nåede ikke op på target"
+    if len(reps) >= 2 and abs(drift) >= REP_DRIFT_MIN:
+        retning = 'drop-off' if drift > 0 else 'negative split'
+        line += f" — {retning} {abs(drift)} {unit} (sidste halvdel mod første)"
+    if not n_fast and not n_slow and abs(drift) < REP_DRIFT_MIN:
+        line += " — jævnt udført, alle reps i zone"
+    return line
 
 
 def get_workout_compliance_this_week(events_this_week, activities_this_week):
@@ -484,6 +771,22 @@ def get_workout_compliance_this_week(events_this_week, activities_this_week):
         if intervals_compliance and intervals_compliance > 0:
             note = f'Steps: {intervals_compliance:.0f}% · {note}'
 
+        # ── Rep-for-rep på intervalpas ──────────────────────────────────────
+        # Sessionsgennemsnittet er ubrugeligt her: på 4×5 min med 15 min
+        # opvarmning, 9 min pauser og 10 min cool-down er 30% tid-i-zone det
+        # matematiske maksimum, og floor'en stod på 15%. Et pas hvor rep 1 og 3
+        # blev løbet i Z5 og rep 4 faldt fra, scorede "on target".
+        reps = []
+        if is_interval_zone and disc in ('run', 'bike'):
+            tgt = planned_target_from_event(ev, disc)
+            reps = get_interval_reps(act.get('id'), planned_zone, disc, target=tgt)
+            rep_line = summarize_reps(reps, planned_zone, disc,
+                                      planned_reps=count_planned_reps(ev), target=tgt)
+            if rep_line:
+                note = f'{rep_line} · [sessionssnit: {note}]'
+                # Flag'et skal afspejle rep-udførelsen, ikke tid-i-zone
+                zone_flag = 'ok' if all(r['flag'] == 'ok' for r in reps) else 'under'
+
         results.append({
             'day': day_key, 'date': ev_date, 'label': ev_name,
             'disc': disc, 'planned_zone': planned_zone,
@@ -492,6 +795,7 @@ def get_workout_compliance_this_week(events_this_week, activities_this_week):
             'hr_z2plus_pct': hr_z2plus_pct,
             'zone_flag': zone_flag, 'metric': metric,
             'moving_mins': moving_mins, 'planned_mins': planned_mins,
+            'reps': reps,
             'note': note,
         })
 
@@ -525,6 +829,18 @@ def format_compliance_for_prompt(compliance_list):
             lines.append(f'- {day}: {label}{dur_str} → ✅ {note}')
         else:
             lines.append(f'- {day}: {label}{dur_str} → ⚠️  {note}')
+
+        # Rep-detaljer som egen linje, så de ikke drukner i sessionsnoten
+        reps = c.get('reps') or []
+        if reps:
+            det = []
+            for r in reps:
+                v = (_pace_str(r['pace_sec']) + '/km') if 'pace_sec' in r else f"{r.get('watts')}W"
+                hr = f", {r['hr']} bpm" if r.get('hr') else ''
+                inz = f", {r['in_zone_pct']}% i zone" if r.get('in_zone_pct') is not None else ''
+                det.append(f"    rep {r['n']}: {r['secs'] // 60}:{r['secs'] % 60:02d} · {v}{hr}{inz}"
+                           f" · {REP_FLAG_MARK[r['flag']]}")
+            lines.extend(det)
     return '\n'.join(lines)
 
 

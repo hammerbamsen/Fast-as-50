@@ -1,0 +1,182 @@
+[
+ {
+  "id": 7196167,
+  "type": "WORK",
+  "moving_time": 340,
+  "average_speed": 2.9525588,
+  "average_heartrate": 118,
+  "start_index": 0,
+  "end_index": 341,
+  "average_watts": null
+ },
+ {
+  "id": 4164970,
+  "type": "WORK",
+  "moving_time": 333,
+  "average_speed": 2.9967868,
+  "average_heartrate": 125,
+  "start_index": 341,
+  "end_index": 674,
+  "average_watts": null
+ },
+ {
+  "id": 3360975,
+  "type": "WORK",
+  "moving_time": 227,
+  "average_speed": 3.0528193,
+  "average_heartrate": 135,
+  "start_index": 674,
+  "end_index": 901,
+  "average_watts": null
+ },
+ {
+  "id": 1323639,
+  "type": "WORK",
+  "moving_time": 254,
+  "average_speed": 3.9428346,
+  "average_heartrate": 157,
+  "start_index": 901,
+  "end_index": 1155,
+  "average_watts": null
+ },
+ {
+  "id": 6653950,
+  "type": "WORK",
+  "moving_time": 46,
+  "average_speed": 4.0097814,
+  "average_heartrate": 161,
+  "start_index": 1155,
+  "end_index": 1201,
+  "average_watts": null
+ },
+ {
+  "id": 7353341,
+  "type": "WORK",
+  "moving_time": 181,
+  "average_speed": 3.1429274,
+  "average_heartrate": 146,
+  "start_index": 1201,
+  "end_index": 1382,
+  "average_watts": null
+ },
+ {
+  "id": 5942496,
+  "type": "WORK",
+  "moving_time": 257,
+  "average_speed": 3.8636575,
+  "average_heartrate": 157,
+  "start_index": 1382,
+  "end_index": 1639,
+  "average_watts": null
+ },
+ {
+  "id": 6521682,
+  "type": "WORK",
+  "moving_time": 42,
+  "average_speed": 3.7362003,
+  "average_heartrate": 158,
+  "start_index": 1639,
+  "end_index": 1681,
+  "average_watts": null
+ },
+ {
+  "id": 5194763,
+  "type": "WORK",
+  "moving_time": 181,
+  "average_speed": 3.1163511,
+  "average_heartrate": 146,
+  "start_index": 1681,
+  "end_index": 1862,
+  "average_watts": null
+ },
+ {
+  "id": 2017604,
+  "type": "WORK",
+  "moving_time": 251,
+  "average_speed": 3.9645033,
+  "average_heartrate": 161,
+  "start_index": 1862,
+  "end_index": 2113,
+  "average_watts": null
+ },
+ {
+  "id": 9851009,
+  "type": "WORK",
+  "moving_time": 48,
+  "average_speed": 3.9916687,
+  "average_heartrate": 167,
+  "start_index": 2113,
+  "end_index": 2161,
+  "average_watts": null
+ },
+ {
+  "id": 2252969,
+  "type": "WORK",
+  "moving_time": 181,
+  "average_speed": 3.0745857,
+  "average_heartrate": 149,
+  "start_index": 2161,
+  "end_index": 2342,
+  "average_watts": null
+ },
+ {
+  "id": 8135814,
+  "type": "WORK",
+  "moving_time": 257,
+  "average_speed": 3.8580165,
+  "average_heartrate": 161,
+  "start_index": 2342,
+  "end_index": 2599,
+  "average_watts": null
+ },
+ {
+  "id": 2860840,
+  "type": "WORK",
+  "moving_time": 42,
+  "average_speed": 3.871652,
+  "average_heartrate": 164,
+  "start_index": 2599,
+  "end_index": 2641,
+  "average_watts": null
+ },
+ {
+  "id": 7173645,
+  "type": "WORK",
+  "moving_time": 181,
+  "average_speed": 3.1003323,
+  "average_heartrate": 151,
+  "start_index": 2641,
+  "end_index": 2822,
+  "average_watts": null
+ },
+ {
+  "id": 4487149,
+  "type": "WORK",
+  "moving_time": 327,
+  "average_speed": 3.0375543,
+  "average_heartrate": 143,
+  "start_index": 2822,
+  "end_index": 3149,
+  "average_watts": null
+ },
+ {
+  "id": 3069950,
+  "type": "RECOVERY",
+  "moving_time": 1,
+  "average_speed": 2.6298828,
+  "average_heartrate": 143,
+  "start_index": 3149,
+  "end_index": 3150,
+  "average_watts": null
+ },
+ {
+  "id": 4055443,
+  "type": "WORK",
+  "moving_time": 138,
+  "average_speed": 3.062316,
+  "average_heartrate": 144,
+  "start_index": 3150,
+  "end_index": 3288,
+  "average_watts": null
+ }
+]

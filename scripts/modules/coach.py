@@ -555,7 +555,13 @@ def generate_ai_assessment(week_num, weekday, day_name, ctl, tsb, weight, af_thi
         f"eller en instruktion om at 'skrue op/ned' — detaljer der følger efter 'on target' er kun kontekst, "
         f"aldrig en modsigelse af verdikten. Brug KUN korrigerende/kritisk sprog ('for hårdt', 'for lavt', "
         f"'skru op/ned') når noten selv siger 'under X%-målet'. Nævner noten coasting/frihjul eller NP som mere "
-        f"retvisende mål, brug DEN vurdering — ikke den rå tid-i-zone-procent alene."
+        f"retvisende mål, brug DEN vurdering — ikke den rå tid-i-zone-procent alene. "
+        f"INTERVALPAS: står der en 'reps'-linje med 'rep 1:', 'rep 2:' osv., så er DET grundlaget "
+        f"for din vurdering af passet. Vurder konsistensen rep for rep: blev de første reps kørt "
+        f"for hårdt, faldt de sidste fra, eller var de jævne? Et sessionsgennemsnit eller en "
+        f"'Steps: X%'-score må ALDRIG bruges til at kalde et intervalpas veludført hvis "
+        f"enkelt-reps ligger uden for target — reps hurtigere/hårdere end target er OVERPACING "
+        f"og skal påtales, ikke roses. Nævn konkrete rep-tal når du kommenterer."
         if compliance_summary else ""
     )
     travel_line = (
