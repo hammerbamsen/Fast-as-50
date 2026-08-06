@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-08-06 14:25",
+    "updated": "2026-08-06 15:22",
     "week": 10,
     "totalWeeks": 14,
     "blockType": "BUILD",
@@ -71,18 +71,18 @@
       "color": "#C0392B"
     },
     "afStreak": {
-      "value": "3",
+      "value": "4",
       "unit": "",
       "sub": "Dage i træk · mål 5/uge",
       "color": "#59182A"
     }
   },
   "af": {
-    "weekDone": 3,
+    "weekDone": 4,
     "target": 5,
-    "streak": 3
+    "streak": 4
   },
-  "coachSpeech": "Torsdag — uge 10 af 14. {HL} Fokus: 234 af 410 TSS er i hus — 2 sessioner tilbage, heriblandt OW-svøm 2500m SAMMENHÆNGENDE (Christiansborg-generalprøve), Lang løb Z2 29 km (155 min). Vægt på 72,3 kg — hold protein højt og undgå lette kulhydrater om aftenen. 3 AF-dage i 4 afsluttede dage — 2 mangler i 3 dage tilbage. Hård uge — men det er sådan formen bygges. Hold ved.  \"Du har magt over dit sind — ikke over yderomstændigheder. Indse det, og du finder styrke.\" — Marcus Aurelius",
+  "coachSpeech": "Torsdag — uge 10 af 14. {HL} Godt: 4 AF-dage i 4 gennemførte dage — på rette spor. 1 mere og ugens mål er i hus. Fokus: 234 af 410 TSS er i hus — 2 sessioner tilbage, heriblandt OW-svøm 2500m SAMMENHÆNGENDE (Christiansborg-generalprøve), Lang løb Z2 29 km (155 min). Vægt på 72,3 kg — hold protein højt og undgå lette kulhydrater om aftenen. Keep moving forward.  \"Du har magt over dit sind — ikke over yderomstændigheder. Indse det, og du finder styrke.\" — Marcus Aurelius",
   "coachHighlight": "Søvn på 7,3 timer er solid",
   "weekFocus": "Svømmefokus og første VO2-stimulus sætter fart mod Christiansborg",
   "today": [
@@ -1931,7 +1931,8 @@
     "2026-08-02": 1,
     "2026-08-03": 0,
     "2026-08-04": 0,
-    "2026-08-05": 0
+    "2026-08-05": 0,
+    "2026-08-06": 0
   },
   "all_weeks": {
     "1": {
@@ -2268,7 +2269,7 @@
           "today": false
         }
       ],
-      "blockType": "BUILD",
+      "blockType": "RECOVERY",
       "focus": "Bevar kadencen på rejsen — Wales-terrænet er din aerobe base"
     },
     "7": {
@@ -2337,7 +2338,7 @@
           "today": false
         }
       ],
-      "blockType": "RECOVERY",
+      "blockType": "BUILD",
       "focus": "Stor cykel-uge på Mallorca med første VO2-stimulus i benene"
     },
     "8": {
@@ -2392,7 +2393,7 @@
           "today": false
         }
       ],
-      "blockType": "BUILD",
+      "blockType": "BUILD+",
       "focus": "Byg videre på Mallorca-formen med kontrolleret intensitet mod uge ni"
     },
     "9": {
@@ -2426,7 +2427,7 @@
           "today": false
         }
       ],
-      "blockType": "BUILD",
+      "blockType": "RECOVERY",
       "focus": "Sæt pejlemærker med tests og bevar energien til musikugen"
     },
     "10": {
@@ -2524,7 +2525,7 @@
           "done": false
         }
       ],
-      "blockType": "BUILD+",
+      "blockType": "BUILD",
       "focus": "Svømmefokus og første VO2-stimulus sætter fart mod Christiansborg"
     },
     "11": {
@@ -2627,7 +2628,7 @@
           "today": false
         }
       ],
-      "blockType": "TAPER",
+      "blockType": "BUILD",
       "focus": "Taper-uge 12 — 3 løb · 1 cykel · 1 styrke · én VO2-stimulus. Fokus: konsistens over intensitet."
     },
     "13": {
@@ -2763,7 +2764,7 @@
     },
     {
       "week": 10,
-      "done": 3,
+      "done": 4,
       "total": 4,
       "label": "Uge 10"
     }
@@ -3089,8 +3090,8 @@
       "real": true
     }
   ],
-  "coachAssessmentHtml": "<p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\"><strong>Dag 67 af 98 · Torsdag · Uge 10</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">💪 <strong>Træning & load</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">CTL er 51,1 mod et ugemål på 50 — du er foran planen, og TSB på -4,1 er helt uproblematisk. Dagens VO2-pas var halvt i orden: rep 2 og 4 ramte zonen præcist, men rep 1 (4:13/km) og rep 3 (4:12/km) var begge hurtigere end target på 4:17–4:29/km — det er overpacing, ikke en sejr. Næste VO2-session starter du roligere: hold rep 1 bevidst i den langsomme ende af zonen, så du ikke brænder af før rep 3-4. Fredag og lørdag er de to tunge pas tilbage — OW-svøm 2500m og lang Z2-løbetur — og de skal sidde.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">⚖️ <strong>Krop & kost</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Vægten er 72,3 kg i dag — 2,3 kg fra målet under 70 kg. Fedtprocenten er 21,8 % mod et mål under 20 % — altså 1,8 procentpoint fra. Begge tal peger på at der stadig er et stykke vej, og fedtprocenten er gået 0,2 point op siden 5. august, hvilket er det vigtigste signal her. Vægttab virker kun som ægte fremgang når fedtprocenten følger med ned — hold kaloriekvaliteten skarp de næste uger.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">🎯 <strong>AF-status & fokus for resten af ugen</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Du har 3 AF-dage ud af 4 dage gået i ugen — det er en stærk rate. To dage tilbage til at nå 5 for ugen, og det er fuldt inden for rækkevidde. Fredag er generalprøven til Christiansborg: 2500m sammenhængende OW — hold fokus på rytme og navigation, ikke tempo. Lørdag er 29 km Z2-løb den vigtigste enkelt-session i ugen — hold pacen rolig fra start, så du ikke gentager overpacing-mønsteret fra dagens intervaller.</p>",
-  "coachAssessmentTs": "08:31",
+  "coachAssessmentHtml": "<p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\"><strong>Dag 67 af 98 · Torsdag · Uge 10</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">💪 <strong>Træning & load</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">CTL ligger på 51,1 – du er foran ugemålet på 50, og TSB på -4,1 viser et sundt belastningsniveau. Dagens VO2-pas kom i mål, men rep 1 og rep 3 var begge for hurtige (4:13 og 4:12/km mod target 4:17–4:29) – det er overpacing, ikke en præstation. Rep 2 og 4 sad præcist – brug dem som model til næste VO2-pas og hold dig selv i snor fra start. Nu venter to tunge pas: OW 2500m i morgen og 29 km Z2-løb lørdag – lad kroppen komme hertil frisk.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">⚖️ <strong>Krop & kost</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Vægten er 72,3 kg – 4,3 kg fra målet under 68 kg. Fedtprocenten er 21,8 % og er faktisk steget 0,2 point siden sidst – det er et signal om at vægttabet ikke er rent fedttab, og i et capacity-år er det et advarselstegn. Prioritér protein og undgå at skære for hårdt i kalorieindtaget op til de hårde weekendpas – du har brug for muskelmassen. Fokus er at sænke fedtprocenten, ikke bare vægten.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">🎯 <strong>AF-status & fokus for resten af ugen</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Du har 4 AF-dage ud af 4 dage i ugen – det sidder præcist. Fredag er Christiansborg-generalprøven: 2500m OW sammenhængende – det er det vigtigste pas i ugen, giv det fuld opmærksomhed. Lørdag er det 29 km Z2 – hold tempoet ærligt lavt, det er ikke et testløb. Hold alkoholen væk resten af ugen og du lander på mål.</p>",
+  "coachAssessmentTs": "13:23",
   "commute_pairing_warnings": [],
   "warnings": [],
   "tsb": -4.1,
@@ -3375,10 +3376,10 @@
       "note": "Nøgle virker"
     }
   },
-  "credentialsCheckedTs": "2026-08-06T12:25:47.679544",
-  "coachAssessmentTsFull": "2026-08-06T08:31:53.652710",
+  "credentialsCheckedTs": "2026-08-06T13:23:10.738124",
+  "coachAssessmentTsFull": "2026-08-06T13:23:10.738112",
   "coachAssessmentWeightAtGen": 72.3,
-  "coachAssessmentAfAtGen": 3,
+  "coachAssessmentAfAtGen": 4,
   "event_structure_warnings": [],
   "coachAssessmentFatAtGen": 21.8,
   "zones": {
