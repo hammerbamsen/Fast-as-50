@@ -14,8 +14,6 @@ beregne (Friel-logik bor KUN i Python, jf. PROJECT_KICKOFF.md):
                     deviation = projektion minus ctlTarget (INFO, ikke flag —
                     target er løst styringsmål, jf. Kennets beslutning 7/7)
     kennet.flags    fuld flagliste fra friel.validate (+ plan_coherence)
-    kennet.fueling  carb/væske/natrium-mål for Médoc + Stelvio (standarddefaults,
-                    jf. Kennets beslutning — bygges nu, kalibreres senere m. Martin)
 
 Selve planstrukturen (uger, dage, workouts) læser siderne direkte fra
 plan.json — dette modul dublerer den ikke.
@@ -30,7 +28,6 @@ from typing import Optional
 
 from . import friel
 from . import plan_coherence
-from . import fueling
 
 
 def inputs_hash(plan_raw: str, seed_ctl, seed_atl, seed_date: str,
@@ -57,8 +54,6 @@ def compute(plan: dict, seed_ctl, seed_atl, seed_date: str,
     plan_coherence.coherence_flags (samme {week,rule,level,msg}-format som
     friel-flags) — flettes ind i den samlede flags-liste når givet. Default
     None -> hidtidig adfærd, fuldt bagudkompatibelt.
-    Fase 2: kennet.fueling sættes altid — statiske standarddefaults for
-    Médoc/Stelvio (fueling.all_race_targets()), uafhængig af plan-indhold.
     """
     flags = friel.validate(plan, seed_ctl=seed_ctl, seed_atl=seed_atl,
                            seed_date=seed_date,
@@ -100,7 +95,6 @@ def compute(plan: dict, seed_ctl, seed_atl, seed_date: str,
         "projection": projection,
         "weeks": weeks,
         "flags": flags,
-        "fueling": fueling.all_race_targets(),
     }
     if adaptation is not None:
         kennet["adaptation"] = adaptation

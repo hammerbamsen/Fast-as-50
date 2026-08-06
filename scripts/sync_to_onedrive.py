@@ -23,7 +23,7 @@ def main():
     print("Token OK")
 
     DRIVE = "b!l3-EhhmboESLtqZs3mskwcfYgAb0uTBJtdZFBL1IqyUao41S6zySS6Rj_0KgtpbJ"
-    FOLDER_ID = "01Y5SFS4EESRNSDGISBJCJQ5UURGEHA6FS"
+    FOLDER_ID = "01Y5SFS4EWYCGDJKKSFNHJYRG2UIH2MLN6"
     hdrs = {
         "Authorization": "Bearer " + token,
         "Content-Type": "application/octet-stream",

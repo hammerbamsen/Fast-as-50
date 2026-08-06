@@ -24,7 +24,7 @@ from modules.config   import (API_KEY, ATHLETE_ID, GH_TOKEN, ANTHROPIC_KEY,
                                PLAN_START, TOTAL_WEEKS, RACES,
                                DK_DAYS, DAY_SHORT, DK_MONTHS,
                                CTL_START, CTL_GOAL, AF_GOAL, SLEEP_GOAL_HOURS,
-                               SWIM_GOAL_M, RUN_KM_GOAL, RUN_KM_GOAL_WEEK,
+                               SWIM_GOAL_M, RUN_KM_GOAL, RUN_KM_GOAL_WEEK, GOALS,
                                api_get, ctl_plan_for_week, fix_enc, fmt, color_for)
 from modules.fitness  import get_fitness, get_wellness_7d, get_history, get_ctl_curve
 from modules.af       import (get_af_this_week, get_af_history, get_full_af_log,
@@ -154,8 +154,8 @@ def main():
         print(f"  Zoner kunne ikke laeses fra plan.json (ikke-blokerende): {_e}")
 
     # --- Mål (sættes FØR KPI-blokken bygges, da den læser disse felter) ---
-    data['weightGoal']   = 70
-    data['bodyFatGoal']  = 20
+    data['weightGoal']   = GOALS.get('weightKg', 68)
+    data['bodyFatGoal']  = GOALS.get('bodyFatPct', 16)
 
     # --- KPIs ---
     weight     = wellness.get('weight')   if wellness else None

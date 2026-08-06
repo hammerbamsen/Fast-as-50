@@ -9,8 +9,8 @@
     "description": "14-ugers reset-år: kapacitet, ikke performance. CTL-opbygning, fedttab, AF-disciplin."
   },
   "goals": {
-    "weightKg": 70,
-    "bodyFatPct": 20,
+    "weightKg": 68,
+    "bodyFatPct": 16,
     "afDaysPerWeek": 5,
     "sleepHours": 7,
     "swimMeters": 2000,
@@ -156,6 +156,14 @@
     }
   ],
   "travel": [
+    {
+      "label": "Mallorca-træningslejr",
+      "start": "2026-06-11",
+      "end": "2026-06-18",
+      "travel_home_date": "2026-06-19",
+      "label_home": "dagen efter hjemrejse fra Mallorca-træningslejren",
+      "label_during": "midt i Mallorca-træningslejren"
+    },
     {
       "label": "Wales-tur (løb + vandring)",
       "start": "2026-07-08",
