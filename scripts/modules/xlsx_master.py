@@ -109,18 +109,22 @@ def _sheet_oversigt(wb, plan, dash):
 
     r = len(rows) + 7
     ws.cell(row=r, column=1, value="LØB").font = GOLD_FONT
-    _headers(ws, r + 1, ["Løb", "Dato", "Prioritet", "Distance", "Note"],
-             [26, 12, 12, 14, 62])
+    _headers(ws, r + 1, ["Løb", "Dato", "Prioritet", "Distance", "Tilmeldt", "Note"],
+             [34, 12, 11, 20, 11, 58])
+    # Løbene kommer fra plan.json — 2026 fra races, 2027 fra nextSeason.races.
+    # Hardkod dem aldrig her: tilmeldingsstatus og distancer vedligeholdes i kilden.
     races = list(plan.get("races", []))
-    races += [
-        {"name": "Stelvio Gran Fondo", "date": "2027-06-06", "prio": "B",
-         "dist": "", "note": "Hyggetur med Eva + form-check."},
-        {"name": "Tour des Stations Ultrafondo", "date": "2027-08-28", "prio": "A",
-         "dist": "242 km / 8.848 hm", "note": "Start 02:30. Sæsonens hovedmål."},
-    ]
+    races += list((plan.get("nextSeason") or {}).get("races") or [])
     for i, race in enumerate(races, start=r + 2):
-        _row(ws, i, [race.get("name"), race.get("date"), race.get("prio", ""),
-                     race.get("dist", ""), race.get("note", "")])
+        reg = race.get("registered")
+        if reg is True:
+            reg_txt = "Ja" + (" (%s)" % race["registeredDate"] if race.get("registeredDate") else "")
+        elif reg is False:
+            reg_txt = "Nej"
+        else:
+            reg_txt = ""
+        _row(ws, i, [race.get("name"), race.get("date"), race.get("priority", ""),
+                     race.get("distance", ""), reg_txt, race.get("note", "")])
     return ws
 
 

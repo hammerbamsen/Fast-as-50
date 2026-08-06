@@ -14,6 +14,10 @@ on:
   schedule:
     # Soendag 18:00 UTC = 20:00 CET — efter soendags-check-in
     - cron: '0 18 * * 0'
+    # Dagligt 04:00 UTC: Excel-arkets Tracking- og Ugesum-faner haenger paa
+    # data.json, som regen-docx ikke trigger paa. Uden det her staar de stille
+    # mellem plan-aendringer.
+    - cron: '0 4 * * *'
   workflow_dispatch:
 
 permissions:
