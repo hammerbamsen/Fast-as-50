@@ -200,11 +200,16 @@ def _sheet_ugesummer(wb, plan, dash):
              [6, 12, 12, 10, 12, 10, 12, 12])
     ctl_actual = dash.get("ctlCurve") or []
     all_weeks = dash.get("all_weeks") or {}
+    week_tss = dash.get("weekTssActual") or {}
     for i, w in enumerate(sorted(plan.get("weeks", []), key=lambda x: x["week"]), start=5):
         wk = w["week"]
         actual_ctl = ctl_actual[wk - 1] if wk - 1 < len(ctl_actual) else None
-        sess = (all_weeks.get(str(wk)) or {}).get("sessions") or []
-        actual_tss = sum(s.get("actual_tss") or 0 for s in sess) or None
+        # Historisk backfill fra Intervals er primaer kilde; sessions-summen
+        # daekker kun den aktive uge og bruges derfor kun som fallback.
+        actual_tss = week_tss.get(str(wk))
+        if actual_tss is None:
+            sess = (all_weeks.get(str(wk)) or {}).get("sessions") or []
+            actual_tss = sum(s.get("actual_tss") or 0 for s in sess) or None
         target_tss = w.get("tssTarget")
         dev = (actual_tss - target_tss) if (actual_tss and target_tss) else None
         _row(ws, i, [wk, w.get("start"), w.get("blockType"), w.get("ctlTarget"),

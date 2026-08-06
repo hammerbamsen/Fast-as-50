@@ -33,7 +33,8 @@ from modules.sessions import (get_activities_week, get_workout_compliance_this_w
                                format_compliance_for_prompt, get_planned_mins_this_week,
                                planned_tss_this_week, parse_planned_mins, calc_completion,
                                build_week_sessions, get_planned_weeks, generate_week_focus,
-                               generate_week_focus_ai, get_swim_history)
+                               generate_week_focus_ai, get_swim_history,
+                               get_weekly_tss_actual)
 import modules.coach as _coach_mod
 from modules.coach    import (get_travel_label, weight_delta_vs_recent,
                                build_weight_context_note, build_trajectory_note,
@@ -412,6 +413,17 @@ def main():
     data['bodyFatToGoal']  = round(_latest_f - data['bodyFatGoal'], 1) if _latest_f else None
     if ctl_curve:
         data['ctlCurve'] = ctl_curve
+
+    # --- Historisk faktisk TSS pr. uge (backfill til Excel + ugesummer) ---
+    try:
+        _wk_tss = get_weekly_tss_actual(PLAN_START, TOTAL_WEEKS)
+        if _wk_tss:
+            data['weekTssActual'] = {str(k): v for k, v in sorted(_wk_tss.items())}
+            print(f"  weekTssActual -> {len(_wk_tss)} uger")
+        else:
+            print("  weekTssActual: tomt svar — beholder eksisterende")
+    except Exception as _e:
+        print(f"  weekTssActual fejlede (ikke-blokerende): {_e}")
         print(f"  CTL-kurve: {len(ctl_curve)} ugepunkter, seneste {ctl_curve[-1]}")
     if swim_history:
         data['swimHistory'] = swim_history

@@ -64,6 +64,46 @@ def get_activities_since(days=10):
     return []
 
 
+def get_weekly_tss_actual(plan_start, total_weeks):
+    """Faktisk TSS pr. planuge, hele planperioden — historisk backfill.
+
+    data.json baerer kun sessions-detaljer for den aktive uge, saa de
+    historiske faktiske TSS-tal fandtes ikke noget sted. Den her henter dem
+    i EET kald til /activities og bucketer paa planuge.
+
+    Returnerer {uge_nr(int): tss(int)} for uger med mindst een aktivitet.
+    Tom dict hvis kaldet fejler — kalderen maa ikke overskrive eksisterende
+    data med tomt resultat.
+    """
+    newest = date.today()
+    oldest = plan_start
+    r = api_get(f'{BASE}/activities', auth=AUTH,
+                params={'oldest': str(oldest), 'newest': str(newest)})
+    if r is None or r.status_code != 200:
+        print(f"  Uge-TSS backfill: kald fejlede ({getattr(r, 'status_code', 'ingen svar')})")
+        return {}
+    try:
+        acts = r.json()
+    except Exception as e:
+        print(f"  Uge-TSS backfill: kunne ikke parse svar ({e})")
+        return {}
+
+    out = {}
+    for a in acts:
+        raw = a.get('start_date_local') or a.get('start_date') or ''
+        try:
+            d = date.fromisoformat(raw[:10])
+        except ValueError:
+            continue
+        week = (d - plan_start).days // 7 + 1
+        if not (1 <= week <= total_weeks):
+            continue
+        load = a.get('icu_training_load') or a.get('training_load') or 0
+        out[week] = out.get(week, 0) + round(load)
+    print(f"  Uge-TSS backfill: {len(acts)} aktiviteter -> {len(out)} uger")
+    return out
+
+
 def get_activities_week():
     """TSS, løbe-km og done-sessioner fra mandag denne uge.
     Primær kilde: /activities (importerede Garmin-aktiviteter).
