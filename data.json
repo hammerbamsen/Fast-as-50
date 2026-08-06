@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-08-06 07:07",
+    "updated": "2026-08-06 07:08",
     "week": 10,
     "totalWeeks": 14,
     "blockType": "BUILD",
@@ -3070,8 +3070,8 @@
       "real": true
     }
   ],
-  "coachAssessmentHtml": "<p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\"><strong>Dag 67 af 98 · Torsdag · Uge 10</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">💪 <strong>Træning & load</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">CTL ligger på 51.7 mod et ugemål på 50 — du er foran planen, og TSB på -9.8 er komfortabelt inden for grænsen. Ugen har haft god bredde: struktureret cykelintervaller, teknisk svøm, løb og styrke. Tirsdag løb du for hurtigt til Z1 — næste gang du har en let løbetur, tag pulsen frem for tempoet som styresignal og sænk farten markant. Dagens VO2-session er endnu ikke forsøgt — kør de fire intervaller med fuld Z4-Z5 intensitet og hold recovery-perioder rolige, så du rammer dem alle.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">⚖️ <strong>Krop & kost</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Vægten er 72.3 kg — 2.3 kg fra målet. Fedtprocenten er 21.8 %, altså 1.8 procentpoint fra dit mål på under 20 %. Den er faktisk steget 0.2 point siden sidst, mens vægten formentlig er faldet lidt — det betyder du har tabt lidt muskelmasse, ikke fedt. Det er ikke en sejr i et capacity-år. Fokus bør ligge på at beskytte muskelmassen med nok protein og styrketræning, og lade fedtprocenten falde gennem konsistent træningsvolumen snarere end kalorieunderskud.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">🎯 <strong>AF-status & fokus for resten af ugen</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Du har 3 AF-dage ud af 4 dage gået — det er stærkt. Fredag venter en 2500m sammenhængende OW-svøm som generalprøve for Christiansborg Rundt, og lørdag et langt Z2-løb på 29 km. Hold dig i zone på det lange løb — det er nemt at trykke for meget når benene føles gode, men det er den tur der skal være din bedste Z2-indsats i uge 10.</p>",
-  "coachAssessmentTs": "05:07",
+  "coachAssessmentHtml": "<p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\"><strong>Dag 67 af 98 · Torsdag · Uge 10</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">💪 <strong>Træning & load</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">CTL ligger på 51.7 — over ugemålet på 50, og TSB på -9.8 holder dig godt inden for Friel-grænsen. Ugen har haft god bredde: cykel, løb, svøm og styrke er alle repræsenteret. Dagens VO2-session er ikke forsøgt endnu — det er den vigtigste enkeltsession i ugen, så sørg for at den kommer af sted. På tirsdag lå pace-zonen for høj i Z1-løbeturen; næste gang du laver et let løb, sænk tempoet aktivt fra start, ikke først når du mærker det er galt.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">⚖️ <strong>Krop & kost</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Vægten er 72.3 kg — 2.3 kg fra målet. Fedtprocenten er 21.8 %, op 0.2 point siden 5. august, og det er det tal der fortæller historien: vægten er ikke det primære problem, det er at fedtandelen stiger en smule. Hold øje med proteindækningen — i en uge med både styrketræning og stigende svømmevolumen er det let at underspise kalibreret nok til at kroppen tærer på muskelmasse i stedet for fedt.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">🎯 <strong>AF-status & fokus for resten af ugen</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Du har 3 AF-dage ud af 4 dage gået i ugen — det er stærkt. Fredag byder på OW-svøm 2500m sammenhængende, som er din Christiansborg-generalprøve, og lørdag er der lang Z2-løbetur på 29 km. Prioritér søvn og mad i aften og i morgen tidlig — de to afsluttende pas er de tungeste i ugen, og du skal have energi til begge.</p>",
+  "coachAssessmentTs": "05:08",
   "commute_pairing_warnings": [],
   "warnings": [],
   "tsb": -9.8,
@@ -3356,8 +3356,8 @@
       "note": "Nøgle virker"
     }
   },
-  "credentialsCheckedTs": "2026-08-06T05:07:52.540369",
-  "coachAssessmentTsFull": "2026-08-06T05:07:52.540352",
+  "credentialsCheckedTs": "2026-08-06T05:08:30.287724",
+  "coachAssessmentTsFull": "2026-08-06T05:08:30.287708",
   "coachAssessmentWeightAtGen": 72.3,
   "coachAssessmentAfAtGen": 3,
   "event_structure_warnings": [],
