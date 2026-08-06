@@ -25,6 +25,7 @@ from modules.config   import (API_KEY, ATHLETE_ID, GH_TOKEN, ANTHROPIC_KEY,
                                DK_DAYS, DAY_SHORT, DK_MONTHS,
                                CTL_START, CTL_GOAL, AF_GOAL, SLEEP_GOAL_HOURS,
                                SWIM_GOAL_M, RUN_KM_GOAL, RUN_KM_GOAL_WEEK, GOALS,
+                               NEXT_RACES,
                                api_get, ctl_plan_for_week, fix_enc, fmt, color_for)
 from modules.fitness  import get_fitness, get_wellness_7d, get_history, get_ctl_curve
 from modules.af       import (get_af_this_week, get_af_history, get_full_af_log,
@@ -155,6 +156,22 @@ def main():
         print(f"  Zoner kunne ikke laeses fra plan.json (ikke-blokerende): {_e}")
 
     # --- Mål (sættes FØR KPI-blokken bygges, da den læser disse felter) ---
+    # --- Kommende sæson: løb med nedtælling til dashboardet ---
+    #     Kilden er plan.json -> nextSeason.races. Hardkod dem aldrig i index.html.
+    _today = date.today()
+    data['racesUpcoming'] = [
+        {
+            'name': r.get('name'),
+            'date': r.get('date'),
+            'days': (date.fromisoformat(r['date']) - _today).days,
+            'priority': r.get('priority', ''),
+            'distance': r.get('distance', ''),
+            'registered': r.get('registered'),
+        }
+        for r in NEXT_RACES
+        if r.get('date') and date.fromisoformat(r['date']) >= _today
+    ]
+
     data['weightGoal']   = GOALS.get('weightKg', 68)
     data['bodyFatGoal']  = GOALS.get('bodyFatPct', 16)
 

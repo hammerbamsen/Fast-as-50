@@ -34,6 +34,7 @@ if PLAN:
     TOTAL_WEEKS = PLAN['program']['totalWeeks']
     PLAN_START  = _date.fromisoformat(PLAN['program']['start'])
     RACES       = PLAN.get('races', [])
+    NEXT_RACES  = (PLAN.get('nextSeason') or {}).get('races', [])
     GOALS       = PLAN.get('goals', {})
 else:
     # Fallback (bør aldrig rammes i drift)
@@ -45,6 +46,7 @@ else:
     PLAN_START  = _date(2026, 6, 1)
     RACES       = [{"name": "Christiansborg Rundt", "date": "2026-08-29"},
                    {"name": "Marathon du Médoc", "date": "2026-09-05"}]
+    NEXT_RACES  = []
     GOALS       = {"weightKg": 68, "bodyFatPct": 16}
 
 # Faste programmål -- én kilde, brugt i både dashboard-KPI'er og coach-tekst.

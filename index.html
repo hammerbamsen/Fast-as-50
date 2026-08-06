@@ -447,6 +447,7 @@ let D = {
   zones: null,   // sat fra data.json (kilde: data/plan.json)
   week:1, totalWeeks:14, blockType:"BUILD",
   daysToMedoc:93, daysToChristiansborg:86,
+  racesUpcoming: [],
   dayName:"", date:"",
   afDays:{ weekDone:0, target:5, streak:0 },
   afHistory: [],
@@ -1172,6 +1173,23 @@ function kpiGrid() {
   return html;
 }
 
+function upcomingRacesCard(){
+  // Sæson 2027 — kilde er plan.json -> nextSeason.races via data.json.racesUpcoming
+  const rs = D.racesUpcoming || [];
+  if (!rs.length) return "";
+  const MON = ["jan","feb","mar","apr","maj","jun","jul","aug","sep","okt","nov","dec"];
+  const rows = rs.map(r => {
+    const d = new Date(r.date + "T12:00:00");
+    const when = d.getDate() + ". " + MON[d.getMonth()] + " " + d.getFullYear();
+    const tag = r.priority ? r.priority + "-løb" : "";
+    const reg = r.registered === true ? "tilmeldt"
+              : r.registered === false ? "ikke tilmeldt" : "";
+    const meta = [when, tag, r.distance, reg].filter(Boolean).join(" · ");
+    return `<div class="event-card">${icon("flag",20,"var(--gold)")}<div style="flex:1"><div style="font-family:'Hanken Grotesk',sans-serif;font-size:14px;font-weight:600">${r.name}</div><div style="font-family:'Space Mono',monospace;font-size:11px;color:var(--muted)">${meta}</div></div><div style="text-align:right"><div class="event-days">${r.days}</div><div class="event-days-sub">dage</div></div></div>`;
+  }).join("");
+  return `<div class="card"><div class="label">Sæson 2027 — mål</div>${rows}</div>`;
+}
+
 function renderOverview() {
   return `
   <div class="hero-card">
@@ -1184,6 +1202,7 @@ function renderOverview() {
     <div class="event-card">${icon("flag",20,"var(--gold)")}<div style="flex:1"><div style="font-family:'Hanken Grotesk',sans-serif;font-size:14px;font-weight:600">Christiansborg Rundt</div><div style="font-family:'Space Mono',monospace;font-size:11px;color:var(--muted)">29. aug</div></div><div style="text-align:right"><div class="event-days">${D.daysToChristiansborg}</div><div class="event-days-sub">dage</div></div></div>
     <div class="event-card">${icon("flag",20,"var(--gold)")}<div style="flex:1"><div style="font-family:'Hanken Grotesk',sans-serif;font-size:14px;font-weight:600">Médoc Marathon</div><div style="font-family:'Space Mono',monospace;font-size:11px;color:var(--muted)">5. sep</div></div><div style="text-align:right"><div class="event-days">${D.daysToMedoc}</div><div class="event-days-sub">dage</div></div></div>
   </div>
+  ${upcomingRacesCard()}
   <div class="card"><div class="label">14-ugers periodeplan</div>${periodTimeline()}</div>
   <div class="card">
     <div class="label" style="margin-bottom:12px">Træningsfordeling — uge ${D.week}</div>
@@ -1792,6 +1811,7 @@ function applyRemote(remote) {
       if (m.blockType)                  D.blockType              = m.blockType;
       if (m.daysToMedoc != null)        D.daysToMedoc            = m.daysToMedoc;
       if (m.daysToChristiansborg!=null) D.daysToChristiansborg   = m.daysToChristiansborg;
+      if (Array.isArray(remote.racesUpcoming)) D.racesUpcoming   = remote.racesUpcoming;
       if (m.dayName)                    D.dayName                = m.dayName;
       if (m.date)                       D.date                   = m.date;
       if (remote.af) {
