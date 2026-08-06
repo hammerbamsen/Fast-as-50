@@ -225,7 +225,7 @@ Inden POST til Intervals (kun relevant for ad-hoc events uden for plan.json): GE
 Aldrig POST uden forudgående GET+slet — ellers dobbelt-events.
 
 data.json opdateres via GitHub Contents API direkte — vent ikke på launchd/Mac.
-Intervals.icu blokerer GitHub Actions IPs; direkte Intervals-kald kører fra Claude's sandbox eller lokalt.
+Actions er primær opdater-kilde og kører uden Mac'en. Antagelsen om at Intervals.icu blokerer GitHub Actions' IP'er var forkert og blev modbevist 2/7 og 4/7-2026 — direkte Intervals-kald kører fint fra GitHub Actions. launchd på Mac'en beholdes kun som redundans.
 
 Outlook-push: trigger `create-outlook-events.yml` via workflow_dispatch **med eksplicit `-f week=<uge>`**. Input hedder `week` (IKKE `week_only` som i build-workouts.yml) og har `default: '2'` — mangler input'et, kører den stille og roligt uge 2 uden fejl. Korrekt kald: `gh workflow run create-outlook-events.yml -f week=<uge>`.
 
