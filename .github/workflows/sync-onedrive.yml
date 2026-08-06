@@ -3,7 +3,7 @@ name: Sync filer til OneDrive
 on:
   push:
     paths:
-      - 'data/Fast_as_Fifty_Masterplan_2026.docx'
+      - 'data/Fast_as_Fifty_Masterplan_2026.xlsx'
       - 'data/Eva_Medoc_Traningsplan_2026.docx'
       - 'data/about-me.md'
       - 'docs/fast-as-fifty-fundament-review.md'
@@ -60,10 +60,10 @@ jobs:
               f.write(f"token={token}\n")
           PYEOF
 
-      - name: Upload Fast_as_Fifty_Masterplan_2026.docx
+      - name: Upload Fast_as_Fifty_Masterplan_2026.xlsx
         continue-on-error: true
         run: |
-          HTTP=$(curl -s -o /tmp/r.json -w "%{http_code}" -X PUT "https://graph.microsoft.com/v1.0/drives/b!l3-EhhmboESLtqZs3mskwcfYgAb0uTBJtdZFBL1IqyUao41S6zySS6Rj_0KgtpbJ/items/01Y5SFS4EWYCGDJKKSFNHJYRG2UIH2MLN6:/Fast_as_Fifty_Masterplan_2026.docx:/content" -H "Authorization: Bearer ${{ steps.token.outputs.token }}" -H "Content-Type: application/octet-stream" --data-binary @data/Fast_as_Fifty_Masterplan_2026.docx)
+          HTTP=$(curl -s -o /tmp/r.json -w "%{http_code}" -X PUT "https://graph.microsoft.com/v1.0/drives/b!l3-EhhmboESLtqZs3mskwcfYgAb0uTBJtdZFBL1IqyUao41S6zySS6Rj_0KgtpbJ/items/01Y5SFS4EWYCGDJKKSFNHJYRG2UIH2MLN6:/Fast_as_Fifty_Masterplan_2026.xlsx:/content" -H "Authorization: Bearer ${{ steps.token.outputs.token }}" -H "Content-Type: application/octet-stream" --data-binary @data/Fast_as_Fifty_Masterplan_2026.xlsx)
           cat /tmp/r.json | python3 -c "import json,sys; d=json.load(sys.stdin); print('OK:',d.get('name','?'),d.get('size','?'),'bytes')" 2>/dev/null || (echo "FEJL HTTP $HTTP"; cat /tmp/r.json; exit 1)
           [ "$HTTP" = "200" ] || [ "$HTTP" = "201" ] || (echo "FEJL HTTP $HTTP"; exit 1)
 

@@ -5557,51 +5557,61 @@
     "hoursPerWeekPeak": 15,
     "ctlPeak": 88,
     "ctlAtRace": 82,
-    "ftpStart": 270,
-    "ftpTarget": 292,
+    "ftpStart": 278,
+    "ftpTarget": 320,
     "weightPlan": {
-      "startKg": 71.9,
-      "targetKg": 70,
-      "holdFromMonth": "2026-11",
+      "startKg": 72.2,
+      "targetKg": 68,
+      "targetDate": "2027-01-31",
+      "bodyFatPctTarget": 16,
+      "bodyFatPctStart": 21.8,
+      "cutStartsFrom": "2026-09-07",
+      "holdFromMonth": "2027-02",
       "maxLossPerWeekKg": 0.25,
-      "note": "Vægt nås nov-26, derefter vedligehold i 9 mdr. Der slankes ikke under en build."
+      "note": "72,2 -> 68 kg over 20 uger fra 7/9 = 0,21 kg/uge, inden for loftet. Intet underskud foer Medoc 5/9. Fedt 21,8 -> 16 %: kraever ca. 4,9 kg fedt vaek og 0,7 kg muskel paa — styrke 2x/uge er ikke valgfri. Garmin-fedtprocent er bioimpedans: styr efter 7-dages snittet, ikke dagstallet. Fra februar vedligehold i 7 mdr. Der slankes ikke under en build."
     },
     "phases": [
       {
         "name": "TRANSITION",
         "weekFrom": 1,
         "weekTo": 8,
-        "ftpTarget": 270
+        "ftpTarget": 278,
+        "wkgTarget": 3.97
       },
       {
         "name": "BASE",
         "weekFrom": 9,
         "weekTo": 22,
-        "ftpTarget": 278
+        "ftpTarget": 292,
+        "wkgTarget": 4.29
       },
       {
         "name": "BUILD",
         "weekFrom": 23,
         "weekTo": 35,
-        "ftpTarget": 285
+        "ftpTarget": 305,
+        "wkgTarget": 4.49
       },
       {
         "name": "STELVIO",
         "weekFrom": 36,
         "weekTo": 39,
-        "ftpTarget": 288
+        "ftpTarget": 308,
+        "wkgTarget": 4.53
       },
       {
         "name": "SPECIFIK",
         "weekFrom": 40,
         "weekTo": 49,
-        "ftpTarget": 292
+        "ftpTarget": 320,
+        "wkgTarget": 4.71
       },
       {
         "name": "TAPER",
         "weekFrom": 50,
         "weekTo": 51,
-        "ftpTarget": 292
+        "ftpTarget": 320,
+        "wkgTarget": 4.71
       }
     ],
     "weeks": [
@@ -5611,10 +5621,11 @@
         "phase": "TRANSITION",
         "blockType": "RECOVERY",
         "ctlTarget": 50,
-        "ftpTarget": 270,
+        "ftpTarget": 278,
         "tssTarget": 120,
         "location": "Gentofte",
-        "note": "Post-Médoc. Intet struktureret. Gå, spis, sov."
+        "note": "Post-Médoc. Intet struktureret. Gå, spis, sov.",
+        "wkgTarget": 3.97
       },
       {
         "week": 2,
@@ -5622,10 +5633,11 @@
         "phase": "TRANSITION",
         "blockType": "RECOVERY",
         "ctlTarget": 46,
-        "ftpTarget": 270,
+        "ftpTarget": 278,
         "tssTarget": 180,
         "location": "Gentofte",
-        "note": "Fri leg. Svøm afvikles permanent efter denne uge."
+        "note": "Fri leg. Svøm afvikles permanent efter denne uge.",
+        "wkgTarget": 3.97
       },
       {
         "week": 3,
@@ -5633,10 +5645,11 @@
         "phase": "TRANSITION",
         "blockType": "BASE",
         "ctlTarget": 48,
-        "ftpTarget": 270,
+        "ftpTarget": 278,
         "tssTarget": 380,
         "location": "Gentofte",
-        "note": "Cykel bliver primær. Styrke 2x starter — unilateralt."
+        "note": "Cykel bliver primær. Styrke 2x starter — unilateralt.",
+        "wkgTarget": 3.97
       },
       {
         "week": 4,
@@ -5644,9 +5657,10 @@
         "phase": "TRANSITION",
         "blockType": "BASE",
         "ctlTarget": 51,
-        "ftpTarget": 270,
+        "ftpTarget": 278,
         "tssTarget": 400,
-        "location": "Gentofte"
+        "location": "Gentofte",
+        "wkgTarget": 3.97
       },
       {
         "week": 5,
@@ -5654,10 +5668,11 @@
         "phase": "TRANSITION",
         "blockType": "RECOVERY",
         "ctlTarget": 50,
-        "ftpTarget": 270,
+        "ftpTarget": 278,
         "tssTarget": 250,
         "location": "Gentofte",
-        "note": "FTP-test. Baseline for 2027-sporet."
+        "note": "FTP-test. Baseline for 2027-sporet — forventet ~278 W (4,0 W/kg). Watt beskyttes under cut, ikke jages.",
+        "wkgTarget": 3.97
       },
       {
         "week": 6,
@@ -5665,9 +5680,10 @@
         "phase": "TRANSITION",
         "blockType": "BASE",
         "ctlTarget": 53,
-        "ftpTarget": 270,
+        "ftpTarget": 278,
         "tssTarget": 420,
-        "location": "Gentofte"
+        "location": "Gentofte",
+        "wkgTarget": 3.97
       },
       {
         "week": 7,
@@ -5675,9 +5691,10 @@
         "phase": "TRANSITION",
         "blockType": "BASE",
         "ctlTarget": 56,
-        "ftpTarget": 270,
+        "ftpTarget": 278,
         "tssTarget": 440,
-        "location": "Gentofte"
+        "location": "Gentofte",
+        "wkgTarget": 3.97
       },
       {
         "week": 8,
@@ -5685,10 +5702,11 @@
         "phase": "TRANSITION",
         "blockType": "RECOVERY",
         "ctlTarget": 55,
-        "ftpTarget": 270,
+        "ftpTarget": 278,
         "tssTarget": 260,
         "location": "Gentofte",
-        "note": "Stelvio couples-tilmelding deadline 29/10 (med Eva)."
+        "note": "Stelvio couples-tilmelding deadline 29/10 (med Eva).",
+        "wkgTarget": 3.97
       },
       {
         "week": 9,
@@ -5696,10 +5714,11 @@
         "phase": "BASE",
         "blockType": "BASE",
         "ctlTarget": 57,
-        "ftpTarget": 278,
+        "ftpTarget": 292,
         "tssTarget": 440,
         "location": "Gentofte (indendørs)",
-        "note": "Vinterblok. Sweet spot. Løb 3× holdes."
+        "note": "Vinterblok. Sweet spot. Løb 3× holdes.",
+        "wkgTarget": 4.29
       },
       {
         "week": 10,
@@ -5707,9 +5726,10 @@
         "phase": "BASE",
         "blockType": "BASE",
         "ctlTarget": 59,
-        "ftpTarget": 278,
+        "ftpTarget": 292,
         "tssTarget": 460,
-        "location": "Gentofte"
+        "location": "Gentofte",
+        "wkgTarget": 4.29
       },
       {
         "week": 11,
@@ -5717,9 +5737,10 @@
         "phase": "BASE",
         "blockType": "BASE+",
         "ctlTarget": 62,
-        "ftpTarget": 278,
+        "ftpTarget": 292,
         "tssTarget": 490,
-        "location": "Gentofte"
+        "location": "Gentofte",
+        "wkgTarget": 4.29
       },
       {
         "week": 12,
@@ -5727,9 +5748,10 @@
         "phase": "BASE",
         "blockType": "RECOVERY",
         "ctlTarget": 60,
-        "ftpTarget": 278,
+        "ftpTarget": 292,
         "tssTarget": 270,
-        "location": "Gentofte"
+        "location": "Gentofte",
+        "wkgTarget": 4.29
       },
       {
         "week": 13,
@@ -5737,9 +5759,10 @@
         "phase": "BASE",
         "blockType": "BASE",
         "ctlTarget": 62,
-        "ftpTarget": 278,
+        "ftpTarget": 292,
         "tssTarget": 460,
-        "location": "Gentofte"
+        "location": "Gentofte",
+        "wkgTarget": 4.29
       },
       {
         "week": 14,
@@ -5747,9 +5770,10 @@
         "phase": "BASE",
         "blockType": "BASE",
         "ctlTarget": 64,
-        "ftpTarget": 278,
+        "ftpTarget": 292,
         "tssTarget": 480,
-        "location": "Gentofte"
+        "location": "Gentofte",
+        "wkgTarget": 4.29
       },
       {
         "week": 15,
@@ -5757,9 +5781,10 @@
         "phase": "BASE",
         "blockType": "BASE+",
         "ctlTarget": 66,
-        "ftpTarget": 278,
+        "ftpTarget": 292,
         "tssTarget": 500,
-        "location": "Gentofte"
+        "location": "Gentofte",
+        "wkgTarget": 4.29
       },
       {
         "week": 16,
@@ -5767,10 +5792,11 @@
         "phase": "BASE",
         "blockType": "RECOVERY",
         "ctlTarget": 63,
-        "ftpTarget": 278,
+        "ftpTarget": 292,
         "tssTarget": 260,
         "location": "Gentofte",
-        "note": "Jul. Planlagt lav — ikke en fiasko."
+        "note": "Jul. Planlagt lav — ikke en fiasko.",
+        "wkgTarget": 4.29
       },
       {
         "week": 17,
@@ -5778,10 +5804,11 @@
         "phase": "BASE",
         "blockType": "RECOVERY",
         "ctlTarget": 61,
-        "ftpTarget": 278,
+        "ftpTarget": 292,
         "tssTarget": 240,
         "location": "Gentofte",
-        "note": "Nytår."
+        "note": "Nytår.",
+        "wkgTarget": 4.29
       },
       {
         "week": 18,
@@ -5789,9 +5816,10 @@
         "phase": "BASE",
         "blockType": "BASE",
         "ctlTarget": 63,
-        "ftpTarget": 278,
+        "ftpTarget": 292,
         "tssTarget": 460,
-        "location": "Gentofte"
+        "location": "Gentofte",
+        "wkgTarget": 4.29
       },
       {
         "week": 19,
@@ -5799,9 +5827,10 @@
         "phase": "BASE",
         "blockType": "BASE",
         "ctlTarget": 65,
-        "ftpTarget": 278,
+        "ftpTarget": 292,
         "tssTarget": 480,
-        "location": "Gentofte"
+        "location": "Gentofte",
+        "wkgTarget": 4.29
       },
       {
         "week": 20,
@@ -5809,9 +5838,10 @@
         "phase": "BASE",
         "blockType": "BASE+",
         "ctlTarget": 68,
-        "ftpTarget": 278,
+        "ftpTarget": 292,
         "tssTarget": 510,
-        "location": "Gentofte"
+        "location": "Gentofte",
+        "wkgTarget": 4.29
       },
       {
         "week": 21,
@@ -5819,10 +5849,11 @@
         "phase": "BASE",
         "blockType": "RECOVERY",
         "ctlTarget": 66,
-        "ftpTarget": 278,
+        "ftpTarget": 292,
         "tssTarget": 280,
         "location": "Gentofte",
-        "note": "FTP-test. Forventet ~278."
+        "note": "FTP-test. Forventet ~292 W ved 68 kg = 4,3 W/kg. Vaegtmaal skal vaere naaet her.",
+        "wkgTarget": 4.29
       },
       {
         "week": 22,
@@ -5830,9 +5861,10 @@
         "phase": "BASE",
         "blockType": "BASE",
         "ctlTarget": 68,
-        "ftpTarget": 278,
+        "ftpTarget": 292,
         "tssTarget": 480,
-        "location": "Gentofte"
+        "location": "Gentofte",
+        "wkgTarget": 4.29
       },
       {
         "week": 23,
@@ -5840,10 +5872,11 @@
         "phase": "BUILD",
         "blockType": "BUILD",
         "ctlTarget": 70,
-        "ftpTarget": 285,
+        "ftpTarget": 305,
         "tssTarget": 500,
         "location": "Gentofte",
-        "note": "Tærskelarbejde ind. 2 kvalitetspas/uge."
+        "note": "Tærskelarbejde ind. 2 kvalitetspas/uge.",
+        "wkgTarget": 4.49
       },
       {
         "week": 24,
@@ -5851,9 +5884,10 @@
         "phase": "BUILD",
         "blockType": "BUILD",
         "ctlTarget": 72,
-        "ftpTarget": 285,
+        "ftpTarget": 305,
         "tssTarget": 520,
-        "location": "Gentofte"
+        "location": "Gentofte",
+        "wkgTarget": 4.49
       },
       {
         "week": 25,
@@ -5861,9 +5895,10 @@
         "phase": "BUILD",
         "blockType": "RECOVERY",
         "ctlTarget": 70,
-        "ftpTarget": 285,
+        "ftpTarget": 305,
         "tssTarget": 290,
-        "location": "Gentofte"
+        "location": "Gentofte",
+        "wkgTarget": 4.49
       },
       {
         "week": 26,
@@ -5871,9 +5906,10 @@
         "phase": "BUILD",
         "blockType": "BUILD",
         "ctlTarget": 72,
-        "ftpTarget": 285,
+        "ftpTarget": 305,
         "tssTarget": 510,
-        "location": "Gentofte"
+        "location": "Gentofte",
+        "wkgTarget": 4.49
       },
       {
         "week": 27,
@@ -5881,9 +5917,10 @@
         "phase": "BUILD",
         "blockType": "BUILD",
         "ctlTarget": 74,
-        "ftpTarget": 285,
+        "ftpTarget": 305,
         "tssTarget": 530,
-        "location": "Gentofte"
+        "location": "Gentofte",
+        "wkgTarget": 4.49
       },
       {
         "week": 28,
@@ -5891,9 +5928,10 @@
         "phase": "BUILD",
         "blockType": "BUILD+",
         "ctlTarget": 77,
-        "ftpTarget": 285,
+        "ftpTarget": 305,
         "tssTarget": 560,
-        "location": "Gentofte"
+        "location": "Gentofte",
+        "wkgTarget": 4.49
       },
       {
         "week": 29,
@@ -5901,10 +5939,11 @@
         "phase": "BUILD",
         "blockType": "RECOVERY",
         "ctlTarget": 74,
-        "ftpTarget": 285,
+        "ftpTarget": 305,
         "tssTarget": 300,
         "location": "Gentofte",
-        "note": "Forlejr-aflastning."
+        "note": "Forlejr-aflastning.",
+        "wkgTarget": 4.49
       },
       {
         "week": 30,
@@ -5912,10 +5951,12 @@
         "phase": "BUILD",
         "blockType": "CAMP",
         "ctlTarget": 80,
-        "ftpTarget": 285,
+        "ftpTarget": 305,
         "tssTarget": 750,
         "location": "Mallorca",
-        "note": "LEJR #1. 20-25 t. Her bygges CTL — ikke i Gentofte."
+        "note": "LEJR #1 Mallorca. 20-25 t. Her bygges CTL — ikke i Gentofte. SA CALOBRA PR-FORSOEG: 9,45 km / 627 hm. PR at slaa er 35:18 sat paa 275 W. Koer den tidligt i lejren paa friske ben, ikke til sidst.",
+        "wkgTarget": 4.49,
+        "keySession": "Sa Calobra PR-forsoeg (PR 35:18 @ 275 W)"
       },
       {
         "week": 31,
@@ -5923,10 +5964,11 @@
         "phase": "BUILD",
         "blockType": "RECOVERY",
         "ctlTarget": 77,
-        "ftpTarget": 285,
+        "ftpTarget": 305,
         "tssTarget": 280,
         "location": "Gentofte",
-        "note": "Fuld aflastning efter lejr. TSB-gulv -30."
+        "note": "Fuld aflastning efter lejr. TSB-gulv -30.",
+        "wkgTarget": 4.49
       },
       {
         "week": 32,
@@ -5934,9 +5976,10 @@
         "phase": "BUILD",
         "blockType": "BUILD",
         "ctlTarget": 78,
-        "ftpTarget": 285,
+        "ftpTarget": 305,
         "tssTarget": 530,
-        "location": "Gentofte"
+        "location": "Gentofte",
+        "wkgTarget": 4.49
       },
       {
         "week": 33,
@@ -5944,9 +5987,10 @@
         "phase": "BUILD",
         "blockType": "BUILD",
         "ctlTarget": 80,
-        "ftpTarget": 285,
+        "ftpTarget": 305,
         "tssTarget": 550,
-        "location": "Gentofte"
+        "location": "Gentofte",
+        "wkgTarget": 4.49
       },
       {
         "week": 34,
@@ -5954,9 +5998,10 @@
         "phase": "BUILD",
         "blockType": "RECOVERY",
         "ctlTarget": 77,
-        "ftpTarget": 285,
+        "ftpTarget": 305,
         "tssTarget": 300,
-        "location": "Gentofte"
+        "location": "Gentofte",
+        "wkgTarget": 4.49
       },
       {
         "week": 35,
@@ -5964,9 +6009,10 @@
         "phase": "BUILD",
         "blockType": "BUILD",
         "ctlTarget": 79,
-        "ftpTarget": 285,
+        "ftpTarget": 305,
         "tssTarget": 520,
-        "location": "Gentofte"
+        "location": "Gentofte",
+        "wkgTarget": 4.49
       },
       {
         "week": 36,
@@ -5974,9 +6020,10 @@
         "phase": "STELVIO",
         "blockType": "BUILD",
         "ctlTarget": 81,
-        "ftpTarget": 288,
+        "ftpTarget": 308,
         "tssTarget": 540,
-        "location": "Gentofte"
+        "location": "Gentofte",
+        "wkgTarget": 4.53
       },
       {
         "week": 37,
@@ -5984,10 +6031,11 @@
         "phase": "STELVIO",
         "blockType": "BUILD+",
         "ctlTarget": 83,
-        "ftpTarget": 288,
+        "ftpTarget": 308,
         "tssTarget": 560,
         "location": "Gentofte",
-        "note": "FTP-test. Forventet ~288."
+        "note": "FTP-test. Forventet ~305 W = 4,5 W/kg. Sidste port foer Stelvio.",
+        "wkgTarget": 4.53
       },
       {
         "week": 38,
@@ -5995,10 +6043,11 @@
         "phase": "STELVIO",
         "blockType": "RECOVERY",
         "ctlTarget": 80,
-        "ftpTarget": 288,
+        "ftpTarget": 308,
         "tssTarget": 300,
         "location": "Gentofte",
-        "note": "Taper mod Stelvio."
+        "note": "Taper mod Stelvio.",
+        "wkgTarget": 4.53
       },
       {
         "week": 39,
@@ -6006,10 +6055,11 @@
         "phase": "STELVIO",
         "blockType": "RACE",
         "ctlTarget": 78,
-        "ftpTarget": 288,
+        "ftpTarget": 308,
         "tssTarget": 350,
         "location": "Bormio",
-        "note": "STELVIO GRAN FONDO søn 6/6 — B-løb. Hyggetur med Eva + form-check."
+        "note": "STELVIO GRAN FONDO søn 6/6 — B-løb. Hyggetur med Eva + form-check.",
+        "wkgTarget": 4.53
       },
       {
         "week": 40,
@@ -6017,10 +6067,11 @@
         "phase": "SPECIFIK",
         "blockType": "RECOVERY",
         "ctlTarget": 76,
-        "ftpTarget": 292,
+        "ftpTarget": 320,
         "tssTarget": 280,
         "location": "Gentofte",
-        "note": "Post-Stelvio. Evaluer mod TdS-model."
+        "note": "Post-Stelvio. Evaluer mod TdS-model.",
+        "wkgTarget": 4.71
       },
       {
         "week": 41,
@@ -6028,10 +6079,11 @@
         "phase": "SPECIFIK",
         "blockType": "SPECIFIK",
         "ctlTarget": 78,
-        "ftpTarget": 292,
+        "ftpTarget": 320,
         "tssTarget": 540,
         "location": "Gentofte",
-        "note": "Langtur vokser: 6 t+. Fueling øves hver gang."
+        "note": "Langtur vokser: 6 t+. Fueling øves hver gang.",
+        "wkgTarget": 4.71
       },
       {
         "week": 42,
@@ -6039,9 +6091,10 @@
         "phase": "SPECIFIK",
         "blockType": "SPECIFIK",
         "ctlTarget": 80,
-        "ftpTarget": 292,
+        "ftpTarget": 320,
         "tssTarget": 570,
-        "location": "Gentofte"
+        "location": "Gentofte",
+        "wkgTarget": 4.71
       },
       {
         "week": 43,
@@ -6049,9 +6102,10 @@
         "phase": "SPECIFIK",
         "blockType": "RECOVERY",
         "ctlTarget": 78,
-        "ftpTarget": 292,
+        "ftpTarget": 320,
         "tssTarget": 300,
-        "location": "Gentofte"
+        "location": "Gentofte",
+        "wkgTarget": 4.71
       },
       {
         "week": 44,
@@ -6059,10 +6113,11 @@
         "phase": "SPECIFIK",
         "blockType": "SPECIFIK",
         "ctlTarget": 80,
-        "ftpTarget": 292,
+        "ftpTarget": 320,
         "tssTarget": 560,
         "location": "Gentofte",
-        "note": "Løb ned til 1-2 rolige. Cyklen har forkørselsret."
+        "note": "Løb ned til 1-2 rolige. Cyklen har forkørselsret.",
+        "wkgTarget": 4.71
       },
       {
         "week": 45,
@@ -6070,9 +6125,10 @@
         "phase": "SPECIFIK",
         "blockType": "SPECIFIK+",
         "ctlTarget": 83,
-        "ftpTarget": 292,
+        "ftpTarget": 320,
         "tssTarget": 590,
-        "location": "Gentofte"
+        "location": "Gentofte",
+        "wkgTarget": 4.71
       },
       {
         "week": 46,
@@ -6080,10 +6136,11 @@
         "phase": "SPECIFIK",
         "blockType": "CAMP",
         "ctlTarget": 88,
-        "ftpTarget": 292,
+        "ftpTarget": 320,
         "tssTarget": 780,
         "location": "Alperne",
-        "note": "LEJR #2. Back-to-back bjergdage. CTL-peak. Gearing testes."
+        "note": "LEJR #2 Alperne. Back-to-back bjergdage. CTL-peak. Gearing testes. FTP-test i lejren — porten mod 320 W (4,7 W/kg).",
+        "wkgTarget": 4.71
       },
       {
         "week": 47,
@@ -6091,9 +6148,10 @@
         "phase": "SPECIFIK",
         "blockType": "RECOVERY",
         "ctlTarget": 84,
-        "ftpTarget": 292,
+        "ftpTarget": 320,
         "tssTarget": 300,
-        "location": "Gentofte"
+        "location": "Gentofte",
+        "wkgTarget": 4.71
       },
       {
         "week": 48,
@@ -6101,9 +6159,10 @@
         "phase": "SPECIFIK",
         "blockType": "SPECIFIK",
         "ctlTarget": 86,
-        "ftpTarget": 292,
+        "ftpTarget": 320,
         "tssTarget": 580,
-        "location": "Gentofte"
+        "location": "Gentofte",
+        "wkgTarget": 4.71
       },
       {
         "week": 49,
@@ -6111,10 +6170,11 @@
         "phase": "SPECIFIK",
         "blockType": "SPECIFIK",
         "ctlTarget": 87,
-        "ftpTarget": 292,
+        "ftpTarget": 320,
         "tssTarget": 560,
         "location": "Gentofte",
-        "note": "Sidste større uge."
+        "note": "Sidste større uge.",
+        "wkgTarget": 4.71
       },
       {
         "week": 50,
@@ -6122,10 +6182,11 @@
         "phase": "TAPER",
         "blockType": "TAPER",
         "ctlTarget": 85,
-        "ftpTarget": 292,
+        "ftpTarget": 320,
         "tssTarget": 350,
         "location": "Gentofte",
-        "note": "Intensitet holdes, volumen falder."
+        "note": "Intensitet holdes, volumen falder.",
+        "wkgTarget": 4.71
       },
       {
         "week": 51,
@@ -6133,11 +6194,14 @@
         "phase": "TAPER",
         "blockType": "RACE",
         "ctlTarget": 82,
-        "ftpTarget": 292,
+        "ftpTarget": 320,
         "tssTarget": 180,
         "location": "Le Châble/Verbier",
-        "note": "TOUR DES STATIONS ULTRAFONDO lør 28/8 — A-løb. Start 02:30."
+        "note": "TOUR DES STATIONS ULTRAFONDO lør 28/8 — A-løb. Start 02:30.",
+        "wkgTarget": 4.71
       }
-    ]
+    ],
+    "wkgStart": 3.85,
+    "wkgTarget": 4.71
   }
 }

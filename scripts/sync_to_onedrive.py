@@ -29,9 +29,11 @@ def main():
         "Content-Type": "application/octet-stream",
     }
 
-    # Excel udgaaet 16/7-2026 — plan.json er eneste kilde, Word er snapshot.
+    # Kennet: Excel (tracking + plan). Eva: Word. Besluttet 6/8-2026.
+    # Excel genereres ALTID af xlsx_master.py — den maa aldrig redigeres i haanden.
+    # Det var praecis den fejl der draebte Master_Plan.xlsx 16/7-2026.
     files = [
-        ("data/Fast_as_Fifty_Masterplan_2026.docx", "Fast_as_Fifty_Masterplan_2026.docx"),
+        ("data/Fast_as_Fifty_Masterplan_2026.xlsx", "Fast_as_Fifty_Masterplan_2026.xlsx"),
         ("data/Eva_Medoc_Traningsplan_2026.docx",   "Eva_Medoc_Traningsplan_2026.docx"),
     ]
 
