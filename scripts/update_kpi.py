@@ -37,7 +37,8 @@ from modules.sessions import (get_activities_week, get_workout_compliance_this_w
 import modules.coach as _coach_mod
 from modules.coach    import (get_travel_label, weight_delta_vs_recent,
                                build_weight_context_note, build_trajectory_note,
-                               qa_coach_speech, generate_coach_speech, generate_ai_assessment)
+                               qa_coach_speech, generate_coach_speech, generate_ai_assessment,
+                               last_real_within)
 from modules.github   import gh_get, gh_put
 
 
@@ -183,6 +184,13 @@ def main():
         return False
     fat_is_today = _field_today(_today_rows, 'bodyFat')
 
+    # --- Fallback: seneste REELLE måling inden for 7 dage ---------------------
+    # Nattekørslen rammer et tidspunkt hvor Garmin endnu ikke har synket dagens
+    # vejning. Uden fallback fik coachen weight=None og skrev "ingen aktuel
+    # vejning denne uge" -- selvom der lå målinger fra de foregående dage.
+    # Datoen sendes ALTID med, så en gammel måling aldrig præsenteres som dagens.
+    _last_real_within = last_real_within
+
     # --- Rejse-/vægtudsving-kontekst: undgå at coachen bebrejder disciplin når
     # et udsving skyldes rejse (fx hjemkomst fra Mallorca) fremfor fedt — og,
     # lige så vigtigt, undgå at påstå retention hvis vægten faktisk er FALDET ---
@@ -195,15 +203,19 @@ def main():
     if context_note:
         print(f"  Kontekst-note (vægt): {context_note}")
 
-    def _fat_trend_note(rows, current):
-        """Retning på fedtprocent siden seneste TIDLIGERE reelle måling."""
+    def _fat_trend_note(rows, current, ref_date=None):
+        """Retning på fedtprocent siden seneste måling FØR ref_date.
+
+        ref_date er datoen for 'current'. Når fallbacken leverer en måling fra
+        fx 5/8, skal sammenligningen ske mod 4/8 -- ikke mod 5/8 selv.
+        """
         if current is None:
             return None
-        today_str = str(date.today())
+        today_str = str(ref_date or date.today())[:10]
         prior = None
         for row in reversed(rows or []):
             if isinstance(row, dict) and row.get('v') is not None \
-                    and str(row.get('date'))[:10] != today_str:
+                    and str(row.get('date'))[:10] < today_str:
                 prior = row
                 break
         if not prior:
@@ -215,6 +227,25 @@ def main():
 
     weight_avg = wellness.get('weight_avg') if wellness else None
     fat        = wellness.get('fat')        if wellness else None
+
+    # Værdier der sendes til coachen: dagens måling hvis den findes, ellers
+    # seneste inden for 7 dage. *_coach_date er KUN sat når målingen ikke er
+    # fra i dag -- det er det signal coach.py bruger til at skrive datoen med.
+    _today_iso = str(date.today())
+    if weight_is_today:
+        weight_coach, weight_coach_date = weight, None
+    else:
+        weight_coach, weight_coach_date = _last_real_within((history or {}).get('weightHistory', []))
+        if weight_coach_date == _today_iso:
+            weight_coach_date = None
+    if fat_is_today:
+        fat_coach, fat_coach_date = fat, None
+    else:
+        fat_coach, fat_coach_date = _last_real_within((history or {}).get('fatHistory', []))
+        if fat_coach_date == _today_iso:
+            fat_coach_date = None
+    print(f"  Coach-vægt: {weight_coach} kg (dato: {weight_coach_date or 'i dag'}) · "
+          f"fedt: {fat_coach} % (dato: {fat_coach_date or 'i dag'})")
     protein    = wellness.get('protein')    if wellness else None
     hrv    = wellness.get('hrv_avg') if wellness else None
     sleep  = wellness.get('sleep_avg') if wellness else None
@@ -236,7 +267,7 @@ def main():
     if weekday == 6:
         trajectory_note = build_trajectory_note(
             week_num, ctl,
-            weight if weight_is_today else None,
+            weight_coach,
             (history or {}).get('weightHistory', [])
         )
         if trajectory_note:
@@ -482,10 +513,10 @@ def main():
     # -- send ikke stale liste her
     coach_speech, coach_highlight = generate_coach_speech(
         week_num, weekday, af_streak, af_this_week, today_session, block_type, week_focus,
-        ctl=ctl, tsb=tsb, weight=weight if weight_is_today else None, sleep=sleep, compliance=compliance,
+        ctl=ctl, tsb=tsb, weight=weight_coach, sleep=sleep, compliance=compliance,
         tss_act=tss_act, planned=planned, week_sessions=data['week_sessions'],
         travel_note=context_note, trajectory_note=trajectory_note, days_completed=days_completed,
-        weight_goal=data['weightGoal']
+        weight_goal=data['weightGoal'], weight_date=weight_coach_date
     )
 
     # --- QA: valider coach-tekst mod faktiske data inden push ---
@@ -576,19 +607,21 @@ def main():
         ai_text = generate_ai_assessment(
             week_num, weekday, DK_DAYS[weekday],
             ctl, tsb,
-            weight if weight_is_today else None,
+            weight_coach,
             af_this_week, af_streak,
             data['week_sessions'], week_focus,
             today_session, tss_act, planned,
             travel_note=context_note, trajectory_note=trajectory_note, days_completed=days_completed,
             compliance_summary=compliance_summary,
             weight_goal=data['weightGoal'],
-            fat=fat if fat_is_today else None,
+            fat=fat_coach,
             fat_goal=data['bodyFatGoal'],
             fat_trend_note=_fat_trend_note(
                 (history or {}).get('fatHistory', []),
-                fat if fat_is_today else None
-            )
+                fat_coach, ref_date=fat_coach_date
+            ),
+            weight_date=weight_coach_date,
+            fat_date=fat_coach_date
         )
         ai_text = fix_enc(ai_text)  # AI-svar kan komme tilbage Latin-1-mis-decoded -- ret ved kilden
     if ai_text:

@@ -196,10 +196,44 @@ def qa_coach_speech(speech, week_sessions, ctl, tsb, weight, af_this_week, tss_a
     return errors
 
 
+def last_real_within(rows, days=7, today=None):
+    """(værdi, dato) for seneste REELLE måling højst `days` dage gammel.
+
+    rows er weightHistory/fatHistory: [{date, v, real}] i kronologisk orden.
+    Returnerer (None, None) hvis seneste måling er ældre end vinduet, eller
+    hvis der slet ingen målinger er. Bruges som fallback når nattekørslen
+    rammer før Garmin har synket dagens vejning.
+    """
+    from datetime import date as _date, timedelta as _td
+    today = today or _date.today()
+    cutoff = today - _td(days=days)
+    for row in reversed(rows or []):
+        if not isinstance(row, dict) or row.get('v') is None:
+            continue
+        if row.get('real') is False:
+            continue
+        try:
+            d = _date.fromisoformat(str(row.get('date'))[:10])
+        except Exception:
+            continue
+        return (row['v'], str(row['date'])[:10]) if d >= cutoff else (None, None)
+    return None, None
+
+
+def dk_day(iso):
+    """'2026-08-05' -> '5/8'. Returnerer None ved ugyldigt input."""
+    try:
+        _y, _m, _d = str(iso)[:10].split('-')
+        return f"{int(_d)}/{int(_m)}"
+    except Exception:
+        return None
+
+
 def generate_coach_speech(week_num, weekday, streak, af_this_week, today_session, block_type, week_focus,
                            ctl=None, tsb=None, weight=None, sleep=None, compliance=None,
                            tss_act=None, planned=None, remaining_sessions=None, week_sessions=None,
-                           travel_note=None, trajectory_note=None, days_completed=None, weight_goal=72):
+                           travel_note=None, trajectory_note=None, days_completed=None, weight_goal=72,
+                           weight_date=None):
     """Genererer daglig coach-tekst: dagsintro + session + Friel/Martin-vurdering (godt/fokus).
 
     Coaching-princip: hold Kennet på sporet mod Christiansborg (29/8) og Médoc (5/9).
@@ -320,18 +354,21 @@ def generate_coach_speech(week_num, weekday, streak, af_this_week, today_session
         goods.append(f"Fuld uge foran — i dag: {label}.")
 
     weight_aside = None
+    # Vægten kan være seneste måling inden for 7 dage -- ikke nødvendigvis fra i dag.
+    # Uden datoen ville en 3 dage gammel vejning blive læst som dagens tal.
+    _wsuf = f" (målt {dk_day(weight_date)})" if dk_day(weight_date) else ""
     if weight is not None:
         if weight <= weight_goal:
-            goods.append(f"Vægt på {fmt(weight)} kg er i mål.")
+            goods.append(f"Vægt på {fmt(weight)} kg{_wsuf} er i mål.")
         elif travel_note:
             # Holdes UDENFOR goods[]/focus[] med vilje — begge lister trunkeres til
             # de første par punkter, og denne kontekst skal aldrig kunne drukne.
             # travel_note er her allerede en komplet, retnings-korrekt sætning
             # (bygget af build_weight_context_note) — tilføj ikke mere tekst der
             # kan modsige den faktiske retning.
-            weight_aside = f"Vægt på {fmt(weight)} kg — {travel_note}"
+            weight_aside = f"Vægt på {fmt(weight)} kg{_wsuf} — {travel_note}"
         else:
-            focus.append(f"Vægt på {fmt(weight)} kg — hold protein højt og undgå lette kulhydrater om aftenen.")
+            focus.append(f"Vægt på {fmt(weight)} kg{_wsuf} — hold protein højt og undgå lette kulhydrater om aftenen.")
 
     if sleep is not None:
         if sleep >= SLEEP_GOAL_HOURS:
@@ -439,7 +476,8 @@ def _redact(msg):
 def generate_ai_assessment(week_num, weekday, day_name, ctl, tsb, weight, af_this_week, af_streak,
                              week_sessions, week_focus, today_session, tss_act, planned, travel_note=None,
                              trajectory_note=None, days_completed=None, compliance_summary=None, weight_goal=72,
-                             fat=None, fat_goal=20, fat_trend_note=None):
+                             fat=None, fat_goal=20, fat_trend_note=None,
+                             weight_date=None, fat_date=None):
     """Kalder Anthropic API server-side og returnerer HTML-formateret coach-vurdering."""
     global LAST_AI_ERROR
     LAST_AI_ERROR = None
@@ -450,10 +488,14 @@ def generate_ai_assessment(week_num, weekday, day_name, ctl, tsb, weight, af_thi
 
     ctl_target = ctl_plan_for_week(week_num)
     kpis_str = f"CTL: {ctl} (uge {week_num}-mål ifølge planen: {ctl_target}), TSB: {tsb}"
+    # weight/fat kan være seneste måling inden for 7 dage. weight_date/fat_date er
+    # KUN sat når målingen IKKE er fra i dag -- så datoen skal med hele vejen.
+    _w_dk = dk_day(weight_date)
+    _f_dk = dk_day(fat_date)
     if weight:
-        kpis_str += f", Vægt: {weight} kg"
+        kpis_str += f", Vægt: {weight} kg" + (f" (målt {_w_dk})" if _w_dk else "")
     if fat:
-        kpis_str += f", Fedtprocent: {fat} %"
+        kpis_str += f", Fedtprocent: {fat} %" + (f" (målt {_f_dk})" if _f_dk else "")
     if days_completed is None:
         days_completed = weekday  # fallback hvis ikke angivet -- afsluttede dage FØR i dag
     af_note = (
@@ -486,9 +528,11 @@ def generate_ai_assessment(week_num, weekday, day_name, ctl, tsb, weight, af_thi
     missed = [s for s in week_sessions if not s.get('done') and not s.get('today') and _sess_is_past(s)]
     remaining = ", ".join(f"{s['day']}: {s['label']}" for s in future_remaining) or "ingen planlagte"
     missed_str = ", ".join(f"{s['day']}: {s['label']}" for s in missed)
-    weight_line = f"\n- Vægt: {weight} kg (seneste måling)" if weight else ""
+    _w_ctx = f"målt {_w_dk}, ikke i dag" if _w_dk else "målt i dag"
+    _f_ctx = f"målt {_f_dk}, ikke i dag" if _f_dk else "målt i dag"
+    weight_line = f"\n- Vægt: {weight} kg ({_w_ctx})" if weight else ""
     fat_line = (
-        (f"\n- Fedtprocent: {fat} % (seneste måling, mål <{fat_goal} %)"
+        (f"\n- Fedtprocent: {fat} % ({_f_ctx}, mål <{fat_goal} %)"
          + (f" {fat_trend_note}" if fat_trend_note else ""))
         if fat else ""
     )
@@ -554,7 +598,11 @@ def generate_ai_assessment(week_num, weekday, day_name, ctl, tsb, weight, af_thi
         f"gennemført session. Ethvert forbedringspunkt fra dagens session skal formuleres som læring til NÆSTE "
         f"lignende session (nævn evt. hvilken kommende dag) — aldrig som en handling for 'i dag'.\n"
         f"- Hvis IKKE gennemført: her ER 'i dag'/'dagens'-sprog korrekt — giv konkrete, fremadrettede råd.\n"
-        f"- Nævn KUN vægt og fedtprocent hvis der er en aktuel måling af dem.\n"
+        f"- Nævn KUN vægt og fedtprocent hvis tallene står i data ovenfor. Står de der, er de "
+        f"målt inden for de seneste 7 dage og skal behandles som gyldige. Skriv ALDRIG at der "
+        f"'ingen aktuel måling' er, når et tal er oplyst.\n"
+        f"- Er en måling IKKE fra i dag (markeret 'målt DD/MM, ikke i dag'), så skriv datoen med — "
+        f"fx 'vægten var 72,1 kg ved seneste vejning 5/8' — og præsentér den aldrig som dagens tal.\n"
         f"- KROP & KOST: fedtprocent vægtes MINDST på niveau med vægt. Vægten alene siger lidt — det er "
         f"kropssammensætningen der afgør om et vægttab er reelt fremskridt. Tolk de to SAMMEN: falder vægten "
         f"uden at fedtprocenten følger med, er der tabt muskelmasse, og det er et advarselstegn i et "
