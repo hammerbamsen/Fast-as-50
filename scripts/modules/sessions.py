@@ -2,7 +2,7 @@
 import math as _math
 import re
 from datetime import date, timedelta
-from .config import (PLAN as _PLAN, TOTAL_WEEKS, BASE, AUTH, api_get, fix_enc, fmt, color_for, ctl_plan_for_week,
+from .config import (PLAN as _PLAN, TOTAL_WEEKS, PLAN_START, BASE, AUTH, api_get, fix_enc, fmt, color_for, ctl_plan_for_week,
                       DAY_SHORT, BLOCK_TYPES, RUN_PACE_ZONES_SEC_PER_KM, BIKE_ZONES_WATTS)
 from .af import monday_this_week
 
@@ -1197,13 +1197,13 @@ def get_planned_weeks():
     """Hent planned workouts fra Intervals for forrige, denne og næste uge.
     Returnerer all_weeks dict: {week_num: {sessions: [...], focus: str, blockType: str}}
     """
-    week1     = date(2026, 6, 1)
+    week1     = PLAN_START
     today     = date.today()
     week_num  = min(max((today - week1).days // 7 + 1, 1), TOTAL_WEEKS)
 
-    BLOCK_TYPES = {1:'BUILD',2:'BUILD+',3:'BUILD+',4:'RECOVERY',5:'BUILD',6:'BUILD',
-                   7:'RECOVERY',8:'BUILD',9:'BUILD',10:'BUILD+',11:'BUILD+',12:'TAPER',
-                   13:'TAPER',14:'RACE'}
+    # BLOCK_TYPES og DAY_SHORT kommer fra config.py (afledt af plan.json) —
+    # rettet 6/8-2026. Var lokale hardkodede uge 1-14-kopier her, der stille
+    # ignorerede et evt. længere/kortere aktivt program.
 
     TYPE_MAP = {
         'Run':'run','TrailRun':'run','VirtualRun':'run','IndoorRun':'run',
@@ -1213,13 +1213,13 @@ def get_planned_weeks():
         'WeightTraining':'strength','Workout':'strength','Strength':'strength',
         'Walk':'walk','Hike':'hike',
     }
-    DAY_SHORT = ["Man","Tir","Ons","Tor","Fre","Lør","Søn"]
 
     all_weeks = {}
 
-    # Ét samlet API-kald for hele planperioden (uge 1-14) i stedet for 14 individuelle kald
+    # Ét samlet API-kald for hele planperioden (uge 1-TOTAL_WEEKS) i stedet for
+    # TOTAL_WEEKS individuelle kald
     plan_start = week1
-    plan_end   = week1 + timedelta(weeks=14) - timedelta(days=1)
+    plan_end   = week1 + timedelta(weeks=TOTAL_WEEKS) - timedelta(days=1)
     r = api_get(f'{BASE}/events', auth=AUTH,
                 params={'oldest': str(plan_start), 'newest': str(plan_end)})
     if not r or r.status_code != 200:
@@ -1228,8 +1228,8 @@ def get_planned_weeks():
 
     all_events = r.json()
 
-    # Initialiser alle 14 uger
-    for w in range(1, 15):
+    # Initialiser alle uger i det aktive program
+    for w in range(1, TOTAL_WEEKS + 1):
         all_weeks[w] = {'sessions': [], 'blockType': BLOCK_TYPES.get(w, 'BUILD'), 'focus': ''}
 
     day_order = {d:i for i,d in enumerate(DAY_SHORT)}
@@ -1246,7 +1246,7 @@ def get_planned_weeks():
             continue
         # Beregn hvilken planuge dette event tilhører
         delta_days = (dt - week1).days
-        if delta_days < 0 or delta_days >= 14 * 7:
+        if delta_days < 0 or delta_days >= TOTAL_WEEKS * 7:
             continue
         w = delta_days // 7 + 1
         day_idx = dt.weekday()

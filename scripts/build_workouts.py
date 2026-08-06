@@ -33,7 +33,6 @@ from datetime import date, timedelta
 
 ATHLETE_ID  = "i599466"
 BASE        = f"https://intervals.icu/api/v1/athlete/{ATHLETE_ID}"
-PLAN_START  = date(2026, 6, 1)
 # FTP/THRESHOLD er FJERNET (28/7-2026). De var døde konstanter — intet i
 # scriptet læste dem. Sandheden er data/plan.json -> athletes.kennet.zones.
 # ── Microsoft Graph / Outlook Calendar ─────────────────────────
@@ -126,6 +125,14 @@ def load_plan_json():
     """Sandhedslaget: data/plan.json (v3) — begge atleter, alle dage."""
     with open(PLAN_JSON, encoding="utf-8") as f:
         return json.load(f)
+
+# PLAN_START/TOTAL_WEEKS læses fra plan.json's program-felt (rettet 6/8-2026 —
+# var hardkodet til medoc-2026's 01-06-2026/14 uger og cappede stille et
+# fremtidigt, længere program). Ved programskifte (fx tds-2027, 51 uger) er
+# det nok at opdatere program.start/totalWeeks i plan.json — ingen kode ændres.
+_plan_program = load_plan_json()["program"]
+PLAN_START    = date.fromisoformat(_plan_program["start"])
+TOTAL_WEEKS   = _plan_program["totalWeeks"]
 
 # ── Zone-definitioner ───────────────────────────────────────────
 # INGEN hardkodede pace-strenge (28/7-2026). Teksten UDLEDES af
@@ -790,16 +797,16 @@ def main():
     all_posted = {}  # akkumuleret posted dict på tværs af uger
 
     if week_arg == -1:
-        # Alle 14 uger
-        print("Uploader alle 14 uger...")
+        # Alle uger i det aktive program
+        print(f"Uploader alle {TOTAL_WEEKS} uger...")
         ok, skip, err, posted_week = run_plan(session, week_filter=0)
         total_ok += ok; total_skip += skip; total_err += err
         all_posted.update(posted_week)
     elif week_arg == 0:
-        # Auto: fra aktuel uge til 14
-        current_week = min(max((date.today() - PLAN_START).days // 7 + 1, 1), 14)
-        print(f"Auto-tilstand: uploader uge {current_week}–14")
-        for w in range(current_week, 15):
+        # Auto: fra aktuel uge til programmets sidste uge
+        current_week = min(max((date.today() - PLAN_START).days // 7 + 1, 1), TOTAL_WEEKS)
+        print(f"Auto-tilstand: uploader uge {current_week}–{TOTAL_WEEKS}")
+        for w in range(current_week, TOTAL_WEEKS + 1):
             ok, skip, err, posted_week = run_plan(session, week_filter=w)
             total_ok += ok; total_skip += skip; total_err += err
             all_posted.update(posted_week)
