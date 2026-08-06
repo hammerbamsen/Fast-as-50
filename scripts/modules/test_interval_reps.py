@@ -248,3 +248,113 @@ def test_bike_target_fra_workout_doc():
         ]},
     ]}}
     assert planned_target_from_event(ev, 'bike') == (253, 278)
+
+
+# ── Trigger: struktur, ikke zonenavn ─────────────────────────────────────────
+
+def test_trigger_paa_workout_doc_gruppe():
+    from modules.sessions import has_rep_structure
+    assert has_rep_structure(VO2_EVENT, 'run') is True
+
+
+def test_trigger_fanger_z3_intervalpas():
+    """Regression: 'Hometrainer 3×15 min Z3' fik aldrig rep-analyse."""
+    from modules.sessions import has_rep_structure
+    ev = {'name': 'Hometrainer 3×15 min Z3', 'workout_doc': {'steps': [
+        {'text': 'Varm-op', 'duration': 600},
+        {'reps': 3, 'steps': [
+            {'power': {'start': 76, 'end': 91, 'units': '%ftp'}, 'duration': 900},
+            {'power': {'start': 56, 'end': 70, 'units': '%ftp'}, 'duration': 300},
+        ]},
+    ]}}
+    assert has_rep_structure(ev, 'bike') is True
+
+
+def test_navn_alene_trigger_ikke():
+    """Uden workout_doc kender vi hverken varighed eller target."""
+    from modules.sessions import has_rep_structure
+    assert has_rep_structure({'name': 'Løb VO2 4×5 min Z4'}, 'run') is False
+
+
+def test_kontinuerlige_pas_trigger_ikke():
+    from modules.sessions import has_rep_structure
+    assert has_rep_structure({'name': 'Løb Z2 29 km langt'}, 'run') is False
+    assert has_rep_structure({'name': 'Cykel Z2 3 timer', 'workout_doc':
+                              {'steps': [{'text': 'Z2', 'duration': 10800}]}}, 'bike') is False
+    assert has_rep_structure({}, 'run') is False
+
+
+def test_enkelt_rep_trigger_ikke():
+    from modules.sessions import has_rep_structure
+    ev = {'workout_doc': {'steps': [{'reps': 1, 'steps': [
+        {'pace': {'start': 98, 'end': 103, 'units': '%pace'}, 'duration': 1200}]}]}}
+    assert has_rep_structure(ev, 'run') is False
+
+
+def test_strides_trigger_ikke():
+    """20-sekunders strides kan ikke pace-vurderes — GPS-støj > signal."""
+    from modules.sessions import has_rep_structure
+    ev = {'name': 'Shakeout løb + strides', 'workout_doc': {'steps': [
+        {'text': 'Let løb', 'duration': 600,
+         'pace': {'start': 65, 'end': 78, 'units': '%pace'}},
+        {'reps': 4, 'steps': [
+            {'text': 'Stride 20s', 'duration': 20,
+             'pace': {'start': 103, 'end': 112, 'units': '%pace'}},
+            {'text': 'Jog 40s', 'duration': 40,
+             'pace': {'start': 65, 'end': 78, 'units': '%pace'}}]}]}}
+    assert has_rep_structure(ev, 'run') is False
+
+
+def test_et_minut_reps_trigger_ikke():
+    """6×1 min race-pace: arbejde 5:00-5:38 og jog >5:39 kan ikke skilles."""
+    from modules.sessions import has_rep_structure
+    ev = {'name': 'Løb Z2 40 min + 6×1 min race-pace', 'workout_doc': {'steps': [
+        {'reps': 6, 'steps': [
+            {'text': 'Race-pace 1 min', 'duration': 60,
+             'pace': {'start': 78, 'end': 88, 'units': '%pace'}},
+            {'text': 'Jog', 'duration': 60,
+             'pace': {'start': 65, 'end': 78, 'units': '%pace'}}]}]}}
+    assert has_rep_structure(ev, 'run') is False
+
+
+def test_hometrainer_z3_trigger():
+    """Regression: intervalpas i Z3 blev tidligere aldrig analyseret."""
+    from modules.sessions import interval_spec
+    ev = {'name': 'Hometrainer 3×15 min Z3 90 min', 'workout_doc': {'steps': [
+        {'ramp': True, 'warmup': True, 'duration': 900,
+         'power': {'start': 50, 'end': 76, 'units': '%ftp'}},
+        {'reps': 3, 'steps': [
+            {'text': 'Z3 interval', 'duration': 900,
+             'power': {'start': 76, 'end': 91, 'units': '%ftp'}},
+            {'text': 'Pause', 'duration': 300,
+             'power': {'start': 56, 'end': 76, 'units': '%ftp'}}]}]}}
+    spec = interval_spec(ev, 'bike')
+    assert spec['reps'] == 3 and spec['work_secs'] == 900
+    assert spec['target'] == (211, 253)
+
+
+def test_merged_pauser_kasseres():
+    """Hvis pauserne ryger med i repsene, må analysen ikke bruges."""
+    spec = {'reps': 3, 'work_secs': 300, 'target': (257, 269), 'rest': (275, 300)}
+    # Alt ligger tæt på target -> ét langt blob på 1500s = 5x det planlagte
+    iv = [mk(1500, 265)]
+    assert get_interval_reps('x', 'Z4', 'run', streams={}, intervals=iv,
+                             target=(257, 269), spec=spec) == []
+
+
+def test_skillelinje_bruger_pausens_target():
+    """Pausen skal falde uden for arbejdet, også når båndene ligger tæt."""
+    spec = {'reps': 2, 'work_secs': 300, 'target': (257, 269), 'rest': (290, 340)}
+    iv = [mk(300, 262), mk(180, 300), mk(300, 264)]
+    reps = get_interval_reps('x', 'Z4', 'run', streams={}, intervals=iv,
+                             target=(257, 269), spec=spec)
+    assert len(reps) == 2
+
+
+def test_fragment_taeller_ikke_som_rep():
+    """En afbrudt rep på under halvdelen af planlagt tid er ikke gennemført."""
+    spec = {'reps': 3, 'work_secs': 300, 'target': (257, 269), 'rest': (339, 406)}
+    iv = [mk(300, 262), mk(180, 350), mk(80, 261), mk(180, 350), mk(299, 263)]
+    reps = get_interval_reps('x', 'Z4', 'run', streams={}, intervals=iv,
+                             target=(257, 269), spec=spec)
+    assert len(reps) == 2

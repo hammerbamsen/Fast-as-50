@@ -17,6 +17,15 @@ MIN_REP_PIECE_SECS       = 15    # kortere stykker er støj (GPS-udsving)
 MIN_REP_SECS             = 60    # en merged rep skal have reel varighed
 REP_DRIFT_MIN            = 4     # mindre drift end dette er ikke et signal
 REP_FLAG_MARK            = {'ok': '✅', 'fast': '⚡for hårdt', 'slow': '⚠️for blødt'}
+MIN_PLANNED_WORK_SECS    = 120   # kortere arbejdstrin (strides, 1-min) kan ikke pace-vurderes
+MAX_REP_OVERRUN          = 1.6
+# Hvis en detekteret rep er mere end 1,6x det planlagte arbejdstrin, er
+# pauserne blevet merged ind i repsene og hele analysen er vrøvl -- så
+# dropper vi den og lader sessionsvurderingen stå. Det er en efterkontrol
+# på det faktiske symptom; en teoretisk afstand mellem target-båndene duer
+# ikke som filter, fordi arbejde og pause godt kan grænse op til hinanden
+# på papiret (hometrainer Z3: begge rammer 76% FTP) og alligevel separere
+# rent i praksis (219-222W arbejde vs. 169-171W pause).
 
 
 def _threshold_sec():
@@ -237,49 +246,83 @@ def count_planned_reps(ev):
     return int(m.group(1)) if m else None
 
 
-def planned_target_from_event(ev, disc):
-    """(lo, hi) target for arbejdsintervallerne, læst af eventets workout_doc.
+def _band(step, key, disc):
+    """(lo, hi) i sek/km eller watt for et workout_doc-trin."""
+    t = (step or {}).get(key) or {}
+    lo_p, hi_p = t.get('start'), t.get('end')
+    if lo_p is None or hi_p is None:
+        return None
+    if disc == 'run':
+        thr = _threshold_sec()
+        if not thr:
+            return None
+        # %pace: højere procent = hurtigere
+        return (_math.ceil(thr * 100 / hi_p), _math.ceil(thr * 100 / lo_p) - 1)
+    ftp = _ftp_watts()
+    if not ftp:
+        return None
+    return (int(round(ftp * lo_p / 100)), int(round(ftp * hi_p / 100)))
 
-    Navnet må IKKE være kilden. 'Løb VO2 4×5 min Z4-Z5' hed sådan fordi
-    intervallet dengang var 4:13-4:25/km; da pace-strengene blev rettet til
-    4:17-4:29 (rene Z4) fulgte navnet ikke med. En navne-baseret zone-detektion
-    valgte 'Z5' og dømte derfor korrekt udførte Z4-reps som "for bløde".
 
-    workout_doc bærer den faktiske target-procent (%pace / %ftp) og er samme
-    kilde som Garmin bygger passet ud fra. Returnerer (None, None) hvis den
-    ikke kan udledes -- så falder kalderen tilbage til zone-båndet.
+def interval_spec(ev, disc):
+    """Beskriver et intervalpas ud fra workout_doc, eller None hvis passet
+    ikke egner sig til rep-for-rep-analyse.
+
+    Navnet må ALDRIG være kilden — hverken til target eller til om passet er
+    et intervalpas. 'Løb VO2 4×5 min Z4-Z5' hedder sådan af historiske
+    grunde, og 'Hometrainer 3×15 min Z3' er et intervalpas selvom zonen er Z3.
+
+    Tre krav, som alle findes i rigtige pas i planen:
+      1. Et gruppe-step med reps >= 2.
+      2. Arbejdstrinnet varer mindst MIN_PLANNED_WORK_SECS. 20-sekunders
+         strides kan ikke pace-vurderes meningsfuldt — GPS-støjen er større
+         end signalet.
+      3. Arbejde og pause skal være tydeligt adskilt. 'Løb Z2 40 min +
+         6×1 min race-pace' har arbejde 5:00-5:38 og jog >5:39 — de grænser
+         op til hinanden, så pauserne ville blive merged ind i repsene og
+         gøre analysen til vrøvl. Sådanne pas får sessionsvurdering i stedet.
+
+    Returnerer {'reps', 'work_secs', 'target', 'rest'} eller None.
     """
     doc = (ev or {}).get('workout_doc') or {}
     key = 'pace' if disc == 'run' else 'power'
     best = None
     for step in (doc.get('steps') or []):
-        if not isinstance(step, dict):
+        if not isinstance(step, dict) or not step.get('steps'):
             continue
-        # Arbejdstrin ligger i gruppe-steps (dem med reps)
-        children = step.get('steps') if step.get('steps') else []
-        for child in children:
-            t = (child or {}).get(key) or {}
-            lo_p, hi_p = t.get('start'), t.get('end')
-            if lo_p is None or hi_p is None:
-                continue
-            # Højeste intensitet i gruppen = arbejdstrinnet (pausen er lavere)
-            if best is None or hi_p > best[1]:
-                best = (lo_p, hi_p)
-    if not best:
-        return (None, None)
-    lo_p, hi_p = best
+        reps = int(step.get('reps') or 1)
+        if reps < 2:
+            continue
+        children = [c for c in step['steps'] if isinstance(c, dict)]
+        bands = [(c, _band(c, key, disc)) for c in children]
+        bands = [(c, b) for c, b in bands if b]
+        if not bands:
+            continue
+        # Arbejdstrinnet = den hårdeste intensitet i gruppen
+        work_c, work_b = (min(bands, key=lambda x: x[1][0]) if disc == 'run'
+                          else max(bands, key=lambda x: x[1][1]))
+        rest = [b for c, b in bands if c is not work_c]
+        rest_b = (max(rest, key=lambda b: b[0]) if disc == 'run'
+                  else min(rest, key=lambda b: b[1])) if rest else None
+        cand = {'reps': reps, 'work_secs': int(work_c.get('duration') or 0),
+                'target': work_b, 'rest': rest_b}
+        if best is None or cand['work_secs'] > best['work_secs']:
+            best = cand
+    if not best or best['work_secs'] < MIN_PLANNED_WORK_SECS:
+        return None
 
-    if disc == 'run':
-        thr = _threshold_sec()
-        if not thr:
-            return (None, None)
-        # %pace: højere procent = hurtigere. sek/km = thr*100/pct
-        return (_math.ceil(thr * 100 / hi_p), _math.ceil(thr * 100 / lo_p) - 1)
+    return best
 
-    ftp = _ftp_watts()
-    if not ftp:
-        return (None, None)
-    return (int(round(ftp * lo_p / 100)), int(round(ftp * hi_p / 100)))
+
+def planned_target_from_event(ev, disc):
+    """(lo, hi) target for arbejdsintervallerne. (None, None) hvis ukendt."""
+    spec = interval_spec(ev, disc)
+    return spec['target'] if spec else (None, None)
+
+
+def has_rep_structure(ev, disc):
+    """Er dette et intervalpas der kan vurderes rep-for-rep?"""
+    return interval_spec(ev, disc) is not None
 
 
 def _pace_str(secs_per_km):
@@ -291,7 +334,7 @@ def _pace_str(secs_per_km):
 
 
 def get_interval_reps(act_id, planned_zone, disc, streams=None, intervals=None,
-                      target=None):
+                      target=None, spec=None):
     """Rep-for-rep-analyse af et intervalpas.
 
     Hvorfor ikke bare Intervals' egen opdeling: `type` er 'WORK' på stort set
@@ -314,19 +357,25 @@ def get_interval_reps(act_id, planned_zone, disc, streams=None, intervals=None,
     # target kommer primært fra eventets workout_doc (den faktiske planlagte
     # pace/watt) -- zone-navnet er kun fallback, se planned_target_from_event.
     lo, hi = target if target and target[0] is not None else (None, None)
+    rest = (spec or {}).get('rest')
     if disc == 'run':
         if lo is None:
             band = RUN_PACE_ZONES_SEC_PER_KM.get(planned_zone)
             if not band:
                 return []
             lo, hi = band[0], band[1]      # sek/km: lo = hurtigst, hi = langsomst
-        work_cut = hi + PACE_WORK_TOLERANCE_SEC
+        # Skillelinjen lægges midt mellem arbejdets langsomme kant og pausens
+        # hurtige kant, når pausen er kendt. En fast tolerance på +20 sek/km
+        # kunne ellers sluge pauserne på pas hvor de to ligger tæt.
+        work_cut = ((hi + rest[0]) / 2.0 if rest and rest[0] > hi
+                    else hi + PACE_WORK_TOLERANCE_SEC)
     elif disc == 'bike':
         if lo is None:
             lo, hi = bike_zone_watts(planned_zone)
         if lo is None:
             return []
-        work_cut = lo - (lo * BIKE_WORK_TOLERANCE_PCT / 100.0)
+        work_cut = ((lo + rest[1]) / 2.0 if rest and rest[1] < lo
+                    else lo - (lo * BIKE_WORK_TOLERANCE_PCT / 100.0))
     else:
         return []
 
@@ -364,9 +413,19 @@ def get_interval_reps(act_id, planned_zone, disc, streams=None, intervals=None,
             cur = []
     if cur:
         groups.append(cur)
-    groups = [g for g in groups if sum(x.get('moving_time') or 0 for x in g) >= MIN_REP_SECS]
+    min_rep = MIN_REP_SECS
+    if spec and spec.get('work_secs'):
+        # En rep skal fylde mindst halvdelen af det planlagte arbejdstrin,
+        # ellers er det et fragment -- ikke en gennemført rep.
+        min_rep = max(MIN_REP_SECS, spec['work_secs'] * 0.5)
+    groups = [g for g in groups if sum(x.get('moving_time') or 0 for x in g) >= min_rep]
     if not groups:
         return []
+    planned_work = (spec or {}).get('work_secs') or 0
+    if planned_work:
+        longest = max(sum(x.get('moving_time') or 0 for x in g) for g in groups)
+        if longest > planned_work * MAX_REP_OVERRUN:
+            return []      # pauserne er merged ind -- analysen kan ikke bruges
 
     # Rå stream til in-zone-% pr. rep (samme kilde som Friel-zoneberegningen)
     if streams is None:
@@ -777,11 +836,13 @@ def get_workout_compliance_this_week(events_this_week, activities_this_week):
         # matematiske maksimum, og floor'en stod på 15%. Et pas hvor rep 1 og 3
         # blev løbet i Z5 og rep 4 faldt fra, scorede "on target".
         reps = []
-        if is_interval_zone and disc in ('run', 'bike'):
-            tgt = planned_target_from_event(ev, disc)
-            reps = get_interval_reps(act.get('id'), planned_zone, disc, target=tgt)
+        if disc in ('run', 'bike') and has_rep_structure(ev, disc):
+            spec = interval_spec(ev, disc)
+            tgt = spec['target']
+            reps = get_interval_reps(act.get('id'), planned_zone, disc,
+                                     target=tgt, spec=spec)
             rep_line = summarize_reps(reps, planned_zone, disc,
-                                      planned_reps=count_planned_reps(ev), target=tgt)
+                                      planned_reps=spec['reps'], target=tgt)
             if rep_line:
                 note = f'{rep_line} · [sessionssnit: {note}]'
                 # Flag'et skal afspejle rep-udførelsen, ikke tid-i-zone
