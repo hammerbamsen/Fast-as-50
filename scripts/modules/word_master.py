@@ -2,17 +2,17 @@
 """
 Genererer Word-masterplan-snapshot fra plan.json.
 
-To dokumenter genereres:
-  data/Fast_as_Fifty_Masterplan_2026.docx — Kennets 14 uger
-  data/Eva_Medoc_Traningsplan_2026.docx    — Evas 13 uger
+Ét dokument genereres (rettet 6/8-2026 — Kennets docx er pensioneret til
+fordel for xlsx_master.py):
+  data/Eva_Medoc_Traningsplan_2026.docx — Evas 13 uger
 
 Struktur pr. plan:
   Title-side (program-navn, dato, race-mål)
   Én uge pr. side: uge-metadata (block, ctl-mål, TSS, location) + tabel over 7 dage
   Slut-side: full-plan summary
 
-Kaldes fra apply_edit.py efter plan.json-commit. Onedrive-sync.yml
-fanger commits automatisk.
+Kaldes fra apply_edit.py efter plan.json-commit, og fra regen-docx.yml.
+Onedrive-sync.yml fanger commits automatisk.
 """
 from datetime import date, timedelta
 from pathlib import Path
@@ -242,26 +242,6 @@ def _season_page(doc, season, theme_color):
         _run(p, f"    {wp['note']}", size=9, color=MUTED)
 
 
-def generate_kennet(plan: dict) -> bytes:
-    doc = Document()
-    prog = plan["program"]
-    races = plan["races"]
-    kennet = plan["athletes"]["kennet"]
-    stamp = f"Genereret {date.today().isoformat()} fra plan.json"
-
-    _title_page(doc, prog, races, stamp, WINE, is_eva=False)
-    for wm in plan["weeks"]:
-        _week_page(doc, wm, kennet["days"], "note", WINE)
-    _summary_page(doc, prog, plan["weeks"], "note", WINE)
-    if plan.get("season2027"):
-        _season_page(doc, plan["season2027"], GOLD)
-
-    from io import BytesIO
-    buf = BytesIO()
-    doc.save(buf)
-    return buf.getvalue()
-
-
 def generate_eva(plan: dict) -> bytes:
     doc = Document()
     eva = plan["athletes"]["eva"]
@@ -282,7 +262,9 @@ def generate_eva(plan: dict) -> bytes:
 
 
 def generate_both(plan: dict) -> dict[str, bytes]:
+    """Navnet er historisk (Kennet fik også et .docx indtil 6/8-2026, hvor
+    Excel overtog hans masterplan — se xlsx_master.py). Eva bruger stadig
+    sin Word-plan, så den er tilbage her."""
     return {
-        "data/Fast_as_Fifty_Masterplan_2026.docx": generate_kennet(plan),
         "data/Eva_Medoc_Traningsplan_2026.docx": generate_eva(plan),
     }
