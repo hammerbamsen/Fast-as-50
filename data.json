@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-08-06 11:39",
+    "updated": "2026-08-06 14:02",
     "week": 10,
     "totalWeeks": 14,
     "blockType": "BUILD",
@@ -13,14 +13,14 @@
     "weight": {
       "value": "72,3",
       "unit": "kg",
-      "sub": "Mål <70 kg · snit 72,4 kg",
+      "sub": "Mål <68 kg · snit 72,4 kg",
       "color": "#E67E22"
     },
     "fat": {
       "value": "21,8",
       "unit": "%",
-      "sub": "Mål <20%",
-      "color": "#E67E22"
+      "sub": "Mål <16%",
+      "color": "#C0392B"
     },
     "ctl": {
       "value": "51,1",
@@ -2531,15 +2531,22 @@
       "sessions": [
         {
           "day": "Man",
+          "disc": "run",
+          "label": "Løb Fornalutx – Far des Cap Gros loop 21,3 km",
+          "done": false,
+          "today": false
+        },
+        {
+          "day": "Tir",
           "disc": "bike",
           "label": "Sa Calobra TEST via Puig Major",
           "done": false,
           "today": false
         },
         {
-          "day": "Tir",
-          "disc": "run",
-          "label": "Lang løb Z2 28 km (150 min)",
+          "day": "Ons",
+          "disc": "openwater",
+          "label": "OW-svøm 800-1500m",
           "done": false,
           "today": false
         },
@@ -3152,8 +3159,8 @@
   "coachAssessmentLastActId": "i172960909",
   "weekFocusWeek": 10,
   "coachAssessmentPlanAtGen": "Løb VO2 4×5 min Z4-Z5",
-  "weightGoal": 70,
-  "bodyFatGoal": 20,
+  "weightGoal": 68,
+  "bodyFatGoal": 16,
   "weightMovingAvg7": [
     null,
     null,
@@ -3338,8 +3345,8 @@
     21.47,
     21.43
   ],
-  "weightToGoal": 2.2,
-  "bodyFatToGoal": 1.8,
+  "weightToGoal": 4.2,
+  "bodyFatToGoal": 5.8,
   "ctlPlan": [
     34,
     36,
@@ -3368,7 +3375,7 @@
       "note": "Nøgle virker"
     }
   },
-  "credentialsCheckedTs": "2026-08-06T09:39:45.608753",
+  "credentialsCheckedTs": "2026-08-06T12:02:34.089971",
   "coachAssessmentTsFull": "2026-08-06T08:31:53.652710",
   "coachAssessmentWeightAtGen": 72.3,
   "coachAssessmentAfAtGen": 3,
