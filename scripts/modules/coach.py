@@ -45,6 +45,48 @@ QUOTES_PHILOSOPHY = [
 ]
 
 
+# ── Distance-bevidst completion (rettet 7/8-2026) ────────────────────────
+# Udtrukket som selvstændige funktioner så de kan testes uden at kalde
+# Anthropic-API'et eller bygge en fuld week_sessions-liste.
+
+def build_distance_focus_line(today_session, shortfall_threshold=0.80):
+    """Returnerer en fokus-sætning til den hårdkodede coach-tekst hvis dagens
+    session har et eksplicit distance-mål og landede under shortfall_threshold
+    af det — ellers None (intet mål, ingen data, eller målet er nået)."""
+    if not today_session:
+        return None
+    planned = today_session.get('planned_distance_m')
+    actual = today_session.get('actual_distance_m')
+    if not planned or planned <= 0:
+        return None
+    if actual is None:
+        return None  # ingen data -- undgå falsk flag på datahul
+    pct = actual / planned
+    if pct >= shortfall_threshold:
+        return None  # målet nået -- intet at fokusere på
+    label = today_session.get('label', 'Dagens pas')
+    return (f"{label}: {int(actual)} af {planned}m ({round(pct * 100)}%) — "
+            f"distancen er under målet, selvom passet tæller som gennemført.")
+
+
+def build_distance_prompt_line(today_session):
+    """AI-prompt-variant: samme grundlag, men altid med tal (også når målet ER
+    nået), så AI-vurderingen har korrekt kontekst uanset udfald — plus en
+    eksplicit instruks om at nævne det hvis under 80%."""
+    if not today_session:
+        return ""
+    planned = today_session.get('planned_distance_m')
+    actual = today_session.get('actual_distance_m')
+    if not planned or planned <= 0 or actual is None:
+        return ""
+    pct = round(actual / planned * 100)
+    return (
+        f"\n- DISTANCE i dag: {int(actual)} af {planned} m planlagt ({pct}%). "
+        f"Nævn dette EKSPLICIT i vurderingen hvis under 80%, uanset om passet "
+        f"tæller som gennemført i systemet — registreret/gennemført er IKKE "
+        f"det samme som at distancen er ramt."
+    )
+
 
 def get_travel_label(today_str):
     """Læs data/travel_days.json og returner en KORT rejse-label for i dag (eller
@@ -321,6 +363,14 @@ def generate_coach_speech(week_num, weekday, streak, af_this_week, today_session
     if tsb is not None and tsb < -30:
         focus.append("Formen er under bundgrænsen — prioriter restitution før mere volumen.")
 
+    # Distance-mangel på DAGENS session, selvom den tæller som gennemført/partial
+    # (rettet 7/8-2026 — se calc_completion i sessions.py). Et pas med et eksplicit
+    # meter-mål (typisk svøm) som lander under 80% af distancen skal nævnes, uanset
+    # om TSS/tid alene så pænt ud.
+    _distance_focus = build_distance_focus_line(today_intervals)
+    if _distance_focus:
+        focus.append(_distance_focus)
+
     # TSS-compliance — kun baseret på faktisk done status
     # Mandag morgen med 0 TSS er NORMALT — der er en fuld uge foran
     is_monday_start = (weekday == 0 and (tss_act or 0) == 0)
@@ -536,6 +586,10 @@ def generate_ai_assessment(week_num, weekday, day_name, ctl, tsb, weight, af_thi
          + (f" {fat_trend_note}" if fat_trend_note else ""))
         if fat else ""
     )
+    # Distance-kontekst for dagens session (rettet 7/8-2026, se calc_completion i
+    # sessions.py) — sendes altid med tal når planen har et meter-mål og distance
+    # er rapporteret, uanset udfald, så AI'en har korrekt grundlag begge veje.
+    distance_line = build_distance_prompt_line(today_session)
     compliance_line = (
         f"\n\nZone-compliance denne uge (Friel-analyse):\n{compliance_summary}\n"
         f"VIGTIGT: Vurder BÅDE om workouts er gennemført (tid/TSS) OG om de rigtige zoner er ramt. "
@@ -591,7 +645,7 @@ def generate_ai_assessment(week_num, weekday, day_name, ctl, tsb, weight, af_thi
         f"- I dag: {today_label} [{today_status}]\n"
         f"- GENNEMFØRT denne uge (fuldførte kendsgerninger): {completed_str}\n"
         + (f"- MISSET denne uge (dag passeret, ikke gennemført): {missed_str}\n" if missed_str else "")
-        + f"- Resten af ugen (KUN fremtidige, endnu ikke forfaldne pas): {remaining}{weight_line}{fat_line}{travel_line}{trajectory_line}{compliance_line}\n\n"
+        + f"- Resten af ugen (KUN fremtidige, endnu ikke forfaldne pas): {remaining}{weight_line}{fat_line}{distance_line}{travel_line}{trajectory_line}{compliance_line}\n\n"
         f"VIGTIGT:\n"
         f"- GROUNDING (ufravigelig): Pas i 'GENNEMFØRT denne uge' ER fuldført. Omtal dem ALDRIG som "
         f"manglende, glemt, sprunget over, udestående eller noget der 'skal'/'mangler' at ske. Et pas må "

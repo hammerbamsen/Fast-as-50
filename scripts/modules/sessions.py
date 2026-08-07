@@ -209,16 +209,17 @@ def get_activities_week():
             _pace_zt      = a.get('pace_zone_times')    # løb
             _power_zt     = a.get('icu_zone_times')     # cykel (list of {id, secs})
             _hr_zt        = a.get('icu_hr_zone_times')  # alle
+            _distance_m   = a.get('distance')  # None hvis ikke rapporteret -- IKKE 0-fyldt her
             done_map.setdefault(day_key, []).append((
                 a.get('start_date_local',''), disc, a.get('name') or atype, _tss, _dur_mins,
-                _compliance, _pace_zt, _power_zt, _hr_zt, a.get('id')
+                _compliance, _pace_zt, _power_zt, _hr_zt, a.get('id'), _distance_m
             ))
 
         # Sortér efter tidspunkt og behold disc-navne + aktivitetsnavne
         for k in done_map:
             sorted_acts = sorted(done_map[k], key=lambda x: x[0])
-            done_map[k] = [(disc, name, tss, dur_mins, compliance, pace_zt, power_zt, hr_zt, act_id)
-                           for _, disc, name, tss, dur_mins, compliance, pace_zt, power_zt, hr_zt, act_id in sorted_acts]
+            done_map[k] = [(disc, name, tss, dur_mins, compliance, pace_zt, power_zt, hr_zt, act_id, distance_m)
+                           for _, disc, name, tss, dur_mins, compliance, pace_zt, power_zt, hr_zt, act_id, distance_m in sorted_acts]
 
         swim_m = sum(
             (a.get('distance') or 0)
@@ -1063,24 +1064,48 @@ def parse_planned_mins(label):
     m = re.search(r'(\d+)\s*min', label or '', re.IGNORECASE)
     return int(m.group(1)) if m else None
 
-def calc_completion(actual_tss, planned_tss, actual_mins, planned_mins, threshold=0.80):
+def parse_planned_distance_m(label):
+    """Parser planlagt distance i meter fra label. Fx 'Svøm 2500m SAMMENHÆNGENDE' -> 2500.
+    Range-labels som 'OW-svøm 800-1500m' bruger den ØVRE grænse som mål.
+    Kun 3-5-cifrede tal for at undgå falske match (årstal, sekunder, 'min')."""
+    m = re.search(r'(\d{3,5})(?:[-–](\d{3,5}))?\s*m\b', label or '')
+    if not m:
+        return None
+    return int(m.group(2) or m.group(1))
+
+def calc_completion(actual_tss, planned_tss, actual_mins, planned_mins,
+                     actual_distance_m=None, planned_distance_m=None, threshold=0.80):
     """
     Returnerer (status, pct):
-      'done'    ≥80% af planlagt TSS (primær) eller tid (fallback)
-      'partial' 20-79%
+      'done'    ≥80% på det SVAGESTE af de tilgængelige mål
+      'partial' 20-79% på det svageste mål
       'minimal' <20% — nærmest ikke gennemført
+
+    Rettet 7/8-2026: hvis planen har et eksplicit distance-mål (typisk svøm),
+    indgår distance-pct i vurderingen sammen med TSS/tid-pct — status afgøres
+    af MIN() af de tilgængelige kandidater. En session der rammer sin planlagte
+    varighed men lander markant under sin planlagte distance skal ikke kunne
+    fremstå 'done' uden at det er synligt. Mangler actual_distance_m (Garmin/
+    Intervals har ikke rapporteret distance), ignoreres distance-kandidaten —
+    det undgår falske 'minimal'-flag på rene datahuller.
     """
+    pct_candidates = []
+
     if planned_tss and planned_tss > 0 and actual_tss and actual_tss > 0:
-        pct = actual_tss / planned_tss
-        if pct >= threshold:      return 'done',    round(pct * 100)
-        elif pct >= 0.20:         return 'partial', round(pct * 100)
-        else:                     return 'minimal', round(pct * 100)
-    if planned_mins and planned_mins > 0 and actual_mins and actual_mins > 0:
-        pct = actual_mins / planned_mins
-        if pct >= threshold:      return 'done',    round(pct * 100)
-        elif pct >= 0.20:         return 'partial', round(pct * 100)
-        else:                     return 'minimal', round(pct * 100)
-    return 'done', None  # matchet men ingen data — antag done
+        pct_candidates.append(actual_tss / planned_tss)
+    elif planned_mins and planned_mins > 0 and actual_mins and actual_mins > 0:
+        pct_candidates.append(actual_mins / planned_mins)
+
+    if planned_distance_m and planned_distance_m > 0 and actual_distance_m is not None:
+        pct_candidates.append(actual_distance_m / planned_distance_m)
+
+    if not pct_candidates:
+        return 'done', None  # matchet men ingen data overhovedet — antag done
+
+    pct = min(pct_candidates)
+    if pct >= threshold:      return 'done',    round(pct * 100)
+    elif pct >= 0.20:         return 'partial', round(pct * 100)
+    else:                     return 'minimal', round(pct * 100)
 
 def build_week_sessions(done_map, planned_sessions):
     """Opdater done-status på ugessessioner baseret på Intervals-aktiviteter.
@@ -1144,18 +1169,29 @@ def build_week_sessions(done_map, planned_sessions):
                 act_pace_zt    = act_entry[5] if len(act_entry) > 5 else None
                 act_power_zt   = act_entry[6] if len(act_entry) > 6 else None
                 act_hr_zt      = act_entry[7] if len(act_entry) > 7 else None
-                planned_mins_val = parse_planned_mins(s.get('label', ''))
+                act_distance_m = act_entry[9] if len(act_entry) > 9 else None
+                # planned_mins/planned_tss kommer nu primært fra selve Intervals-eventet
+                # (sat i get_planned_weeks() ud fra moving_time/icu_training_load) --
+                # rettet 7/8-2026, det blev tidligere aldrig lagt på session-objektet,
+                # så calc_completion faldt næsten altid tilbage til "ingen data, antag done".
+                # parse_planned_mins() beholdes som fallback for ældre/uændrede session-objekter.
+                planned_mins_val = s.get('planned_mins') or parse_planned_mins(s.get('label', ''))
                 planned_tss_val  = s.get('planned_tss') or None
+                planned_distance_val = s.get('planned_distance_m') or None
 
                 status, pct = calc_completion(
                     act_tss, planned_tss_val,
-                    act_dur_mins, planned_mins_val
+                    act_dur_mins, planned_mins_val,
+                    actual_distance_m=act_distance_m,
+                    planned_distance_m=planned_distance_val,
                 )
-                new_s['completion']     = status
-                new_s['completion_pct'] = pct
-                new_s['actual_tss']     = act_tss
-                new_s['actual_mins']    = act_dur_mins
-                new_s['planned_mins']   = planned_mins_val
+                new_s['completion']         = status
+                new_s['completion_pct']     = pct
+                new_s['actual_tss']         = act_tss
+                new_s['actual_mins']        = act_dur_mins
+                new_s['planned_mins']       = planned_mins_val
+                new_s['actual_distance_m']  = act_distance_m
+                new_s['planned_distance_m'] = planned_distance_val
                 new_s['done'] = (status in ('done', 'partial'))
                 # Zone-compliance data (til dashboard og AI-coaching)
                 if act_compliance and act_compliance > 0:
@@ -1252,12 +1288,22 @@ def get_planned_weeks():
         day_idx = dt.weekday()
         disc = TYPE_MAP.get(wo.get('type',''), 'free')
         name = fix_enc(wo.get('name', 'Træning'))
+        # Rettet 7/8-2026: planned_tss/planned_mins blev FØR aldrig lagt på
+        # session-objektet, selvom eventet allerede bærer dem (icu_training_load
+        # sat af build_workouts.py, moving_time sat direkte fra plan.json).
+        # Uden dem faldt calc_completion næsten altid tilbage til "ingen data,
+        # antag done". planned_distance_m er nyt: udledt af labelteksten, da
+        # Intervals ikke har et separat distance-felt på planlagte events.
+        _planned_secs = wo.get('moving_time') or wo.get('elapsed_time') or 0
         all_weeks[w]['sessions'].append({
             'day':   DAY_SHORT[day_idx],
             'disc':  disc,
             'label': name,
             'done':  False,
             'today': (dt == today),
+            'planned_tss':        wo.get('icu_training_load') or None,
+            'planned_mins':       round(_planned_secs / 60) if _planned_secs else None,
+            'planned_distance_m': parse_planned_distance_m(name),
         })
 
     # Sorter sessions i alle uger
