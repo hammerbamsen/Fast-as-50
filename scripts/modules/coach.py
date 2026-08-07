@@ -527,7 +527,8 @@ def generate_ai_assessment(week_num, weekday, day_name, ctl, tsb, weight, af_thi
                              week_sessions, week_focus, today_session, tss_act, planned, travel_note=None,
                              trajectory_note=None, days_completed=None, compliance_summary=None, weight_goal=72,
                              fat=None, fat_goal=20, fat_trend_note=None,
-                             weight_date=None, fat_date=None):
+                             weight_date=None, fat_date=None,
+                             weight_avg7=None, fat_avg7=None):
     """Kalder Anthropic API server-side og returnerer HTML-formateret coach-vurdering."""
     global LAST_AI_ERROR
     LAST_AI_ERROR = None
@@ -580,12 +581,28 @@ def generate_ai_assessment(week_num, weekday, day_name, ctl, tsb, weight, af_thi
     missed_str = ", ".join(f"{s['day']}: {s['label']}" for s in missed)
     _w_ctx = f"målt {_w_dk}, ikke i dag" if _w_dk else "målt i dag"
     _f_ctx = f"målt {_f_dk}, ikke i dag" if _f_dk else "målt i dag"
-    weight_line = f"\n- Vægt: {weight} kg ({_w_ctx})" if weight else ""
+    _w_avg = f" · 7-dages snit: {fmt(weight_avg7)} kg" if weight_avg7 else ""
+    _f_avg = f" · 7-dages snit: {fmt(fat_avg7)} %" if fat_avg7 else ""
+    weight_line = f"\n- Vægt: {weight} kg ({_w_ctx}){_w_avg}" if weight else ""
     fat_line = (
-        (f"\n- Fedtprocent: {fat} % ({_f_ctx}, mål <{fat_goal} %)"
+        (f"\n- Fedtprocent: {fat} % ({_f_ctx}, mål <{fat_goal} %){_f_avg}"
          + (f" {fat_trend_note}" if fat_trend_note else ""))
         if fat else ""
     )
+    # SNIT-PRIORITET: dagstallet fra en bioimpedansvægt svinger flere hundrede gram
+    # og flere tiendedele procentpoint fra dag til dag. Uden denne instruktion
+    # konkluderer modellen på støj ("fedtprocenten er steget 0,2 point siden i går").
+    avg_line = (
+        "\n- SNIT-PRIORITET (ufravigelig): 7-dages snittet er det AUTORITATIVE tal for RETNING "
+        "og udvikling på vægt og fedtprocent. Dagstallet er kun et øjebliksbillede. "
+        "Konkludér ALDRIG om en tendens ('er steget', 'er faldet', 'går den forkerte vej', "
+        "'ikke en god kombination') ud fra ét døgns ændring i dagstallet — den ændring er "
+        "væskebalance og målestøj, ikke fedt. Vurder retning KUN ud fra 7-dages snittet, og "
+        "nævn snittet eksplicit når du kommenterer udviklingen. Dagstallet må nævnes som "
+        "dagens status og som afstand til målet, aldrig som bevis på en tendens."
+        if (weight_avg7 or fat_avg7) else ""
+    )
+
     # Distance-kontekst for dagens session (rettet 7/8-2026, se calc_completion i
     # sessions.py) — sendes altid med tal når planen har et meter-mål og distance
     # er rapporteret, uanset udfald, så AI'en har korrekt grundlag begge veje.
@@ -645,7 +662,7 @@ def generate_ai_assessment(week_num, weekday, day_name, ctl, tsb, weight, af_thi
         f"- I dag: {today_label} [{today_status}]\n"
         f"- GENNEMFØRT denne uge (fuldførte kendsgerninger): {completed_str}\n"
         + (f"- MISSET denne uge (dag passeret, ikke gennemført): {missed_str}\n" if missed_str else "")
-        + f"- Resten af ugen (KUN fremtidige, endnu ikke forfaldne pas): {remaining}{weight_line}{fat_line}{distance_line}{travel_line}{trajectory_line}{compliance_line}\n\n"
+        + f"- Resten af ugen (KUN fremtidige, endnu ikke forfaldne pas): {remaining}{weight_line}{fat_line}{avg_line}{distance_line}{travel_line}{trajectory_line}{compliance_line}\n\n"
         f"VIGTIGT:\n"
         f"- GROUNDING (ufravigelig): Pas i 'GENNEMFØRT denne uge' ER fuldført. Omtal dem ALDRIG som "
         f"manglende, glemt, sprunget over, udestående eller noget der 'skal'/'mangler' at ske. Et pas må "

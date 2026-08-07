@@ -437,14 +437,17 @@ const STATIC = {
     {n:"09",title:"Mental skarphed",body:"Læs, reflektér, skriv. Hjernen er også en muskel."},
     {n:"10",title:"Kapacitet over performance",body:"Mål: kapacitet ved 50+. Ikke podium — holdbarhed."},
   ],
-  weight:{ start:74.5, goal:70 },
-  bodyFat:{ start:23, goal:20 },
+  // start = programmets baseline (juni-26). goal er KUN fallback — det rigtige mål
+  // kommer fra data.json (weightGoal/bodyFatGoal, kilde: plan.json goals).
+  weight:{ start:74.5, goal:68 },
+  bodyFat:{ start:23, goal:16 },
   ctlGoal:68, ctlStart:34,
 };
 
 // ── Dynamic data (fra data.json) ──────────────────────────────
 let D = {
   zones: null,   // sat fra data.json (kilde: data/plan.json)
+  weightGoal: null, bodyFatGoal: null,   // fra data.json — aldrig hardkodet her
   week:1, totalWeeks:14, blockType:"BUILD",
   daysToMedoc:93, daysToChristiansborg:86,
   racesUpcoming: [],
@@ -465,11 +468,11 @@ let D = {
   event_structure_warnings: [],
   credentialsCheckedTs: null,
   kpis:[
-    {label:"VÆGT", value:"72,3", unit:"kg", sub:"Mål <68 kg · snit 72,4 kg", color:"#E67E22"},
-    {label:"FEDT%", value:"21,8", unit:"%", sub:"Mål <16%", color:"#C0392B"},
-    {label:"CTL", value:"51,1", unit:"", sub:"Uge 10-mål 50 · Slutmål 43 (uge 14)", color:"#27AE60"},
-    {label:"TSS COMP.", value:"57", unit:"%", sub:"Planlagt 410 TSS", color:"#C0392B"},
-    {label:"HRV", value:"50,1", unit:"ms", sub:"Snit 7d", color:"#7A6A58"},
+    {label:"VÆGT", value:"71,4", unit:"kg", sub:"Mål <68 kg · snit 72,2 kg", color:"#E67E22"},
+    {label:"FEDT%", value:"21,5", unit:"%", sub:"Mål <16%", color:"#C0392B"},
+    {label:"CTL", value:"50,7", unit:"", sub:"Uge 10-mål 50 · Slutmål 43 (uge 14)", color:"#27AE60"},
+    {label:"TSS COMP.", value:"65", unit:"%", sub:"Planlagt 410 TSS", color:"#C0392B"},
+    {label:"HRV", value:"47,5", unit:"ms", sub:"Snit 7d", color:"#7A6A58"},
     {label:"LØB KM", value:"15,9", unit:"km", sub:"Mål 40+ km uge 10", color:"#C0392B"},
   ],
   // today: (sættes fra data.json)
@@ -1319,8 +1322,8 @@ function renderBody() {
   <div class="hero-card"><div class="hero-eyebrow">BASELINE → MÅL</div><div class="hero-title">Krop</div></div>
   <div class="card">
     <div class="label">Kropskomposition</div>
-    ${progressMetric("Vægt", STATIC.weight.start, wNow, STATIC.weight.goal, " kg", "var(--gold)")}
-    ${progressMetric("Fedt %", STATIC.bodyFat.start, fNow, STATIC.bodyFat.goal, "%", "var(--run)")}
+    ${progressMetric("Vægt", STATIC.weight.start, wNow, D.weightGoal ?? STATIC.weight.goal, " kg", "var(--gold)")}
+    ${progressMetric("Fedt %", STATIC.bodyFat.start, fNow, D.bodyFatGoal ?? STATIC.bodyFat.goal, "%", "var(--run)")}
   </div>
   <div class="card">
     <div class="label" style="margin-bottom:12px">Tendenser — seneste ${(D.weightHistory||D.fatHistory||D.hrvHistory||D.sleepHistory||[]).length} dage</div>
@@ -1336,9 +1339,9 @@ function renderBody() {
            </div>`
     }
     <div style="height:14px"></div>
-    ${sparkline(D.hrvHistory, 'var(--swim)', 'HRV', 'ms', null, null)}
+    ${sparkline(D.hrvHistory, 'var(--swim)', 'HRV', 'ms', null, null, true)}
     <div style="height:14px"></div>
-    ${sparkline(D.sleepHistory, 'var(--bike)', 'SØVN', 't', null, null)}
+    ${sparkline(D.sleepHistory, 'var(--bike)', 'SØVN', 't', null, null, true)}
   </div>
 
   <div class="card">
@@ -1371,34 +1374,100 @@ function renderRules() {
 // skalere ujævnt (preserveAspectRatio="none") — det var det, der gjorde tal/tekst forvrænget.
 // Før den rigtige bredde er målt i DOM'en bruges et fallback-tal (280px), som redrawSparklines()
 // straks erstatter med det korrekte mål via et requestAnimationFrame-kald.
+// 7-dages trailing snit. Samme tærskel som _moving_avg_7 i update_kpi.py:
+// mindst 3 punkter i vinduet, ellers null. Bruges til at tegne signalet i stedet
+// for savtakken -- HRV svinger typisk 8 ms fra dag til dag mod et reelt spænd på ~33.
+function movingAvg7(vals){
+  const out=[];
+  for(let i=0;i<vals.length;i++){
+    const w=vals.slice(Math.max(0,i-6),i+1).filter(v=>v!==null&&v!==undefined&&!isNaN(v));
+    out.push(w.length>=3 ? w.reduce((a,b)=>a+b,0)/w.length : null);
+  }
+  return out;
+}
+
+// Lineært interpoleret percentil på en SORTERET serie.
+function percentileOf(sorted,p){
+  if(!sorted.length) return null;
+  const i=(sorted.length-1)*p, lo=Math.floor(i), hi=Math.ceil(i);
+  return sorted[lo]+(sorted[hi]-sorted[lo])*(i-lo);
+}
+
+// Retning ud fra 7-dages snittet mod snittet en uge tilbage (ikke sidste-mod-næstsidste,
+// som var ren støj). Falder tilbage til rå sidste-mod-næstsidste for korte serier.
+function trendFromAvg(vals){
+  const sm=movingAvg7(vals);
+  const idx=sm.map((v,i)=>v===null?-1:i).filter(i=>i>=0);
+  if(idx.length>=2){
+    const i=idx[idx.length-1];
+    const j=[...idx].reverse().find(k=>k<=i-7);
+    if(j!==undefined) return {now:sm[i], then:sm[j], smoothed:true};
+  }
+  const n=vals.length;
+  return n>=2 ? {now:vals[n-1], then:vals[n-2], smoothed:false} : null;
+}
+
 function buildSparklineSVG(chartId, W) {
   const cfg = SPARKLINE_DATA[chartId];
   if (!cfg) return '';
-  const { data, color, minV, maxV } = cfg;
-  const H=92, pad={l:8,r:8,t:22,b:20};
-  const iW=W-pad.l-pad.r, iH=H-pad.t-pad.b;
+  const { data, color, minV, maxV, smooth } = cfg;
   const safeData = (data||[]).filter(d => d !== null && d !== undefined);
   const vals  = safeData.map(d=>typeof d==='object'?d.v:d).filter(v=>v!==null&&v!==undefined&&!isNaN(v));
   const reals = safeData.map(d=>typeof d==='object' && 'real' in d ? !!d.real : true);
   const dates = safeData.map(d=>typeof d==='object' && d.date ? d.date : null);
   const n = vals.length;
+  // D: lange serier (90 dage) får mere lodret plads -- 90 punkter i 50px var ulæseligt.
+  // b=26: min-labelen tegnes 10px under bundlinjen og x-datoerne 4px fra bunden.
+  // Med b=20 lå de kun 6px fra hinanden -- det var "70.8" og "7/8" der klumpede.
+  const H = n>=20 ? 122 : 98, pad={l:8,r:8,t:22,b:26};
+  const iW=W-pad.l-pad.r, iH=H-pad.t-pad.b;
   const dataMin = Math.min(...vals), dataMax = Math.max(...vals);
-  const mn = minV ?? dataMin - (dataMax-dataMin||1)*0.15;
-  const mx = maxV ?? dataMax + (dataMax-dataMin||1)*0.15;
+  // C: aksen sættes af p5/p95, ikke af yderpunkterne. Én HRV-nat på 23 ms trak
+  // tidligere hele aksen ned til 13,8 og efterlod halvdelen af højden tom.
+  // Outliers klippes til kanten i stedet for at diktere skalaen.
+  const sortedVals = [...vals].sort((a,b)=>a-b);
+  const p05 = percentileOf(sortedVals,0.05), p95 = percentileOf(sortedVals,0.95);
+  const robust = (p95-p05) || (dataMax-dataMin) || 1;
+  const mn = minV ?? (p05 - robust*0.12);
+  const mx = maxV ?? (p95 + robust*0.12);
+  const clamp = v => Math.max(mn, Math.min(mx, v));
   const x = i => pad.l + (n===1?0:(i/(n-1))*iW);
-  const y = v => pad.t + iH - ((v-mn)/(mx-mn||1))*iH;
+  const y = v => pad.t + iH - ((clamp(v)-mn)/(mx-mn||1))*iH;
 
   // Område til fyld (bruger samme punkter, lige linjer)
   const baseline = (mn < 0 && mx > 0) ? y(0) : (H-pad.b);
-  let areaPath = `M${x(0)},${y(vals[0])}`;
-  for (let i=1;i<n;i++) areaPath += ` L${x(i)},${y(vals[i])}`;
-  areaPath += ` L${x(n-1)},${baseline} L${x(0)},${baseline} Z`;
+  const _areaSrc = cfg.smooth ? movingAvg7(vals) : null;
+  const _aIdx = _areaSrc ? _areaSrc.map((v,i)=>v===null?-1:i).filter(i=>i>=0) : null;
+  let areaPath;
+  if (_aIdx && _aIdx.length>1) {
+    areaPath = `M${x(_aIdx[0])},${y(_areaSrc[_aIdx[0]])}`;
+    for (const i of _aIdx.slice(1)) areaPath += ` L${x(i)},${y(_areaSrc[i])}`;
+    areaPath += ` L${x(_aIdx[_aIdx.length-1])},${baseline} L${x(_aIdx[0])},${baseline} Z`;
+  } else {
+    areaPath = `M${x(0)},${y(vals[0])}`;
+    for (let i=1;i<n;i++) areaPath += ` L${x(i)},${y(vals[i])}`;
+    areaPath += ` L${x(n-1)},${baseline} L${x(0)},${baseline} Z`;
+  }
 
   // Linjestykker: solid hvis begge punkter er reelle, stiplet/fladt hvis fremført
   let lineSegments = '';
   for (let i=0;i<n-1;i++){
     const isDashed = !reals[i+1];
-    lineSegments += `<line x1="${x(i)}" y1="${y(vals[i])}" x2="${x(i+1)}" y2="${y(vals[i+1])}" stroke="${color}" stroke-width="2" stroke-linecap="round" ${isDashed ? 'stroke-dasharray="3,3" opacity="0.55"' : ''}/>`;
+    lineSegments += `<line x1="${x(i)}" y1="${y(vals[i])}" x2="${x(i+1)}" y2="${y(vals[i+1])}" stroke="${color}" stroke-width="${smooth?1:2}" stroke-linecap="round" ${smooth ? 'opacity="0.28"' : (isDashed ? 'stroke-dasharray="3,3" opacity="0.55"' : '')}/>`;
+  }
+
+  // B: på støjende serier (HRV, søvn) er 7-dages snittet hovedlinjen og rådata
+  // baggrund. Søvnens reelle signal spænder 1,4 t -- dag-til-dag-udsvinget er 1,3 t.
+  let smoothLine = '', smoothDot = '';
+  const smVals = smooth ? movingAvg7(vals) : null;
+  if (smooth && smVals) {
+    let last = null;
+    for (let i=0;i<n;i++){
+      if (smVals[i]===null) continue;
+      if (last!==null) smoothLine += `<line x1="${x(last)}" y1="${y(smVals[last])}" x2="${x(i)}" y2="${y(smVals[i])}" stroke="${color}" stroke-width="2.2" stroke-linecap="round"/>`;
+      last = i;
+    }
+    if (last!==null) smoothDot = `<circle cx="${x(last)}" cy="${y(smVals[last])}" r="3.5" fill="${color}" stroke="var(--white)" stroke-width="1.5"/>`;
   }
 
   // x-labels: ugedags-bogstav baseret på faktisk dato hvis tilgængelig
@@ -1437,28 +1506,42 @@ function buildSparklineSVG(chartId, W) {
       <text x="${W-pad.r}" y="${y(0)-3}" text-anchor="end" fill="var(--ink)" font-size="8" font-weight="700" font-family="'Space Mono',monospace">0</text>` : ''}
       <path d="${areaPath}" fill="url(#${gid})"/>
       ${lineSegments}
-      ${(()=>{const i=n-1; return reals[i]
+      ${smoothLine}
+      ${smoothDot}
+      ${smooth ? '' : (()=>{const i=n-1; return reals[i]
         ? `<circle cx="${x(i)}" cy="${y(vals[i])}" r="3.5" fill="${color}" stroke="var(--white)" stroke-width="1.5"/>`
         : `<circle cx="${x(i)}" cy="${y(vals[i])}" r="3.5" fill="var(--cream)" stroke="${color}" stroke-width="1.5" stroke-dasharray="2,2"/>`})()}
       ${xLabels.map((l,i)=>`<text x="${x(i)}" y="${H-4}" text-anchor="middle" fill="${i===n-1?color:'var(--muted)'}" font-weight="${i===n-1?700:400}" font-size="8" font-family="'Space Mono',monospace">${l}</text>`).join("")}
     </svg>`;
 }
 
-function sparkline(data, color, label, unit, minV, maxV) {
+function sparkline(data, color, label, unit, minV, maxV, smooth) {
   // Filtrer nulls/undefined ud — vis fallback hvis ingen reelle data
   const cleaned=(data||[]).filter(d=>d!==null&&d!==undefined).filter(d=>{const v=typeof d==='object'?d.v:d;return v!==null&&v!==undefined&&!isNaN(v);});
   if (!cleaned || cleaned.length < 2) return '<div style="height:60px;display:flex;align-items:center;justify-content:center;font-family:Space Mono,monospace;font-size:10px;color:var(--muted)">Ingen data endnu</div>';
   const chartId = `spk${++sparklineSeq}`;
-  SPARKLINE_DATA[chartId] = { data: cleaned, color, label, unit, minV, maxV };
+  SPARKLINE_DATA[chartId] = { data: cleaned, color, label, unit, minV, maxV, smooth: !!smooth };
   const vals = cleaned.map(d=>typeof d==='object'?d.v:d);
   const last = vals[vals.length-1];
-  const prev = vals[vals.length-2];
-  const trend = last > prev ? '↑' : last < prev ? '↓' : '→';
-  const tcolor = last > prev ? 'var(--swim)' : last < prev ? 'var(--run)' : 'var(--muted)';
+  // E: retningen kommer fra 7-dages snittet mod en uge tilbage. Tidligere blev
+  // sidste punkt sammenlignet med det næstsidste -- "8,7 t ↑" betød kun at i går
+  // var lavere. Dødzone på 1 % så et fladt snit ikke vises som en bevægelse.
+  const tr = trendFromAvg(vals);
+  let trend = '→';
+  if (tr) {
+    const d = tr.now - tr.then;
+    trend = Math.abs(d) < Math.abs(tr.then||1)*0.01 ? '→' : (d > 0 ? '↑' : '↓');
+  }
+  // Neutral farve: ↑ er godt for HRV og søvn, men skidt for vægt og fedt%.
+  // Pilen viser retning, ikke dom.
+  const tcolor = 'var(--muted)';
+  const avgTxt = (tr && tr.smoothed)
+    ? `<span style="font-family:'Space Mono',monospace;font-size:9px;color:var(--muted);margin-left:6px">7d ${tr.now.toFixed(1)}</span>`
+    : '';
   return `<div style="position:relative">
     <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:6px">
       <span style="font-family:'Space Mono',monospace;font-size:9px;color:var(--muted);letter-spacing:.08em">${label}</span>
-      <span style="font-family:'Space Mono',monospace;font-size:13px;color:${color};font-weight:700">${last.toFixed(1)} <span style="font-size:9px">${unit}</span> <span style="color:${tcolor};font-size:11px">${trend}</span></span>
+      <span style="font-family:'Space Mono',monospace;font-size:13px;color:${color};font-weight:700">${last.toFixed(1)} <span style="font-size:9px">${unit}</span> <span style="color:${tcolor};font-size:11px">${trend}</span>${avgTxt}</span>
     </div>
     ${buildSparklineSVG(chartId, 280)}
   </div>`;
@@ -1830,14 +1913,16 @@ function applyRemote(remote) {
           {cat:"Træning", label:"CYKEL KM",   value:km.bikeKm?.value ||"—", unit:"km",  sub:km.bikeKm?.sub ||"Cykel denne uge",    color:"var(--bike)"},
           {cat:"Træning", label:"TSS UGE",    value:km.tssComp?.value||"0", unit:km.tssComp?.unit||"TSS", sub:km.tssComp?.sub||"Mål denne uge", color:km.tssComp?.color||"#7A6A58"},
           // Krop
-          {cat:"Krop",    label:"VÆGT",       value:km.weight?.value ||"—", unit:"kg",  sub:km.weight?.sub ||"Mål <70 kg",         color:"#27AE60"},
-          {cat:"Krop",    label:"FEDT%",      value:km.fat?.value    ||"—", unit:"%",   sub:km.fat?.sub    ||"Mål <20%",           color:"#F39C12"},
+          {cat:"Krop",    label:"VÆGT",       value:km.weight?.value ||"—", unit:"kg",  sub:km.weight?.sub ||"Mål <68 kg",         color:"#27AE60"},
+          {cat:"Krop",    label:"FEDT%",      value:km.fat?.value    ||"—", unit:"%",   sub:km.fat?.sub    ||"Mål <16%",           color:"#F39C12"},
           {cat:"Krop",    label:"AF STREAK",  value:km.afStreak?.value||"—", unit:"",   sub:km.afStreak?.sub||"Dage i træk",        color:"#59182A"},
           {cat:"Krop",    label:"SØVN",       value:km.sleep?.value  ||"—", unit:"t",   sub:km.sleep?.sub  ||"Mål 7t",             color:"#2874A6"},
           {cat:"Krop",    label:"HRV",        value:km.hrv?.value    ||"—", unit:"ms",  sub:km.hrv?.sub    ||"Stabil",             color:"#7A6A58"},
           {cat:"Svøm",    label:"SVØM UGE",   value:km.swimM?.value  ||"0",  unit:"m",   sub:km.swimM?.sub  ||"Mål 2000m (Christiansborg)", color:"var(--swim)"},
         ];
       }
+      if (remote.weightGoal  !== undefined) D.weightGoal  = remote.weightGoal;
+      if (remote.bodyFatGoal !== undefined) D.bodyFatGoal = remote.bodyFatGoal;
       if (remote.ctlCurve)       D.ctlCurve       = remote.ctlCurve;
       if (remote.weightHistory)  D.weightHistory  = remote.weightHistory;
       if (remote.hrvHistory)     D.hrvHistory     = remote.hrvHistory;
