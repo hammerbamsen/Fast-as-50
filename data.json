@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-08-07 06:21",
+    "updated": "2026-08-07 06:22",
     "week": 10,
     "totalWeeks": 14,
     "blockType": "BUILD",
@@ -3090,8 +3090,8 @@
       "real": true
     }
   ],
-  "coachAssessmentHtml": "<p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\"><strong>Dag 68 af 98 · Fredag · Uge 10</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">💪 <strong>Træning & load</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">CTL er 51,0 — en point over ugemålet på 50, og TSB på -2,8 viser at du bærer ugen godt uden at være overbelastet. Intervalpas torsdag havde et problem: rep 1 og rep 3 blev løbet for hurtigt (4:13 og 4:12/km mod target 4:17–4:29), mens rep 2 og rep 4 ramte rigtigt — næste VO2-pas starter du roligere i rep 1 og holder hånden på kogepladen hele vejen igennem. Nu venter dagens OW-svøm 2500m sammenhængende — din Christiansborg-generalprøve — og den er det vigtigste pas i ugen: hold et jævnt, kontrolleret tempo fra start, ikke et imponerende startdrag.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">⚖️ <strong>Krop & kost</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Vægten er 71,4 kg i dag — 3,4 kg fra målet under 68 kg. Fedtprocenten er 21,5 %, ned 0,3 point siden 6. august, og målet er under 16 % — altså 5,5 procentpoint endnu. Det er fedtprocenten der er den reelle markør her: den bevæger sig i rigtig retning, men langsomt. Sørg for at vægttabet drives af fedt, ikke muskelmasse — protein og søvn er dine vigtigste redskaber ved siden af træningen.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">🎯 <strong>AF-status & fokus for resten af ugen</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Du har 4 AF-dage ud af 5 dage gået i ugen — det er stærkt. Lørdag venter et langt løb på 29 km/155 min i Z2 — hold tempoet LAVT fra start, Z2 er ikke en præstationszone men en byggesten. Læringen fra tirsdagens løb sidder stadig frisk: tempoet var for højt og HR nåede ikke at følge med — det mønster må ikke gentage sig lørdag på dobbelt distance.</p>",
-  "coachAssessmentTs": "04:21",
+  "coachAssessmentHtml": "<p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\"><strong>Dag 68 af 98 · Fredag · Uge 10</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">💪 <strong>Træning & load</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">CTL er 51,0 mod et ugemål på 50 — du er foran planen, og TSB på -2,8 viser at du bærer ugen godt. Ugens store advarsel er VO2-passet torsdag: rep 1 og rep 3 var begge for hurtige — 4:13 og 4:12/km mod et target på 4:17–4:29 — og det er overpacing, ikke et tegn på form. Lær dig at lægge ud konservativt næste VO2-pas; den slags fejl akkumulerer og giver unødvendig træthed. Nu venter dagens OW-svøm på 2500m sammenhængende — hold et jævnt, kontrolleret tempo hele vejen, det er generalprøven for Christiansborg.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">⚖️ <strong>Krop & kost</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Vægten er 71,4 kg i dag — 3,4 kg fra målet under 68 kg. Fedtprocenten er 21,5 %, ned 0,3 point siden 6. august, og målet er under 16 % — der er altså 5,5 procentpoint tilbage at hente. Fremgangen i fedtprocent er reel men langsom; det er den retning der tæller i et capacity-år, ikke vægten alene. Hold kalorieunderskuddet konsistent og beskyt muskelmasen — tab der ikke følges af faldende fedtprocent er ikke fremskridt.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">🎯 <strong>AF-status & fokus for resten af ugen</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Du har 4 AF-dage ud af 5 dage gået i ugen — det er stærkt. Lørdag venter et langt løb på 29 km/155 min i Z2; kør det roligt og disciplineret i zone, og lad det runde ugen af uden at presse TSB yderligere ned. Gå ikke ud for hurtigt — det er præcis den fejl der kostede dig torsdag.</p>",
+  "coachAssessmentTs": "04:22",
   "commute_pairing_warnings": [],
   "warnings": [],
   "tsb": -2.8,
@@ -3376,8 +3376,8 @@
       "note": "Nøgle virker"
     }
   },
-  "credentialsCheckedTs": "2026-08-07T04:21:24.193352",
-  "coachAssessmentTsFull": "2026-08-07T04:21:02.901970",
+  "credentialsCheckedTs": "2026-08-07T04:22:48.297031",
+  "coachAssessmentTsFull": "2026-08-07T04:22:48.297016",
   "coachAssessmentWeightAtGen": 71.4,
   "coachAssessmentAfAtGen": 4,
   "event_structure_warnings": [],
