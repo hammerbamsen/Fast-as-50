@@ -221,27 +221,28 @@ def main():
     if context_note:
         print(f"  Kontekst-note (vægt): {context_note}")
 
-    def _fat_trend_note(rows, current, ref_date=None):
-        """Retning på fedtprocent siden seneste måling FØR ref_date.
+    def _avg7_trend_note(avg_series, unit="point", window=7):
+        """Retning ud fra 7-dages SNITTET: seneste snit vs. snittet `window` dage før.
 
-        ref_date er datoen for 'current'. Når fallbacken leverer en måling fra
-        fx 5/8, skal sammenligningen ske mod 4/8 -- ikke mod 5/8 selv.
+        Erstatter den tidligere dag-til-dag-sammenligning. Et enkelt døgns udsving
+        på en bioimpedansvægt er væske og målestøj -- ikke en tendens -- og fik
+        coachen til at konkludere på ren støj. Snit-mod-snit filtrerer det væk.
+        Returnerer None hvis der ikke er snit nok til en reel sammenligning.
         """
-        if current is None:
+        idx = [i for i, v in enumerate(avg_series or []) if v is not None]
+        if len(idx) < 2:
             return None
-        today_str = str(ref_date or date.today())[:10]
-        prior = None
-        for row in reversed(rows or []):
-            if isinstance(row, dict) and row.get('v') is not None \
-                    and str(row.get('date'))[:10] < today_str:
-                prior = row
-                break
-        if not prior:
+        i = idx[-1]
+        j = next((k for k in reversed(idx) if k <= i - window), None)
+        if j is None:
             return None
-        delta = round(current - prior['v'], 1)
-        if abs(delta) < 0.1:
-            return f"(uændret siden {prior['date']})"
-        return f"({'op' if delta > 0 else 'ned'} {abs(delta)} point siden {prior['date']})"
+        raw = avg_series[i] - avg_series[j]
+        days = i - j
+        if abs(raw) < 0.1:  # tjek FØR afrunding -- ellers bliver 0,05 til "ned 0,1"
+            return f"(7-dages snit uændret over de seneste {days} dage)"
+        retning = 'op' if raw > 0 else 'ned'
+        return (f"(7-dages snit {retning} {fmt(abs(raw))} {unit} over de seneste "
+                f"{days} dage -- DETTE er den reelle retning)")
 
     weight_avg = wellness.get('weight_avg') if wellness else None
     fat        = wellness.get('fat')        if wellness else None
@@ -422,6 +423,10 @@ def main():
     _fh = data.get('fatHistory', [])
     data['weightMovingAvg7'] = _moving_avg_7(_wh)
     data['fatMovingAvg7']    = _moving_avg_7(_fh)
+
+    def _latest_avg(series):
+        """Seneste ikke-None værdi i en 7-dages snit-serie (None hvis serien er tom)."""
+        return next((v for v in reversed(series or []) if v is not None), None)
 
     # --- Afstand til mål ---
     _latest_w = next((v['v'] if isinstance(v, dict) else v for v in reversed(_wh) if v is not None and (v.get('v') if isinstance(v, dict) else v) is not None), None)
@@ -645,12 +650,11 @@ def main():
             weight_goal=data['weightGoal'],
             fat=fat_coach,
             fat_goal=data['bodyFatGoal'],
-            fat_trend_note=_fat_trend_note(
-                (history or {}).get('fatHistory', []),
-                fat_coach, ref_date=fat_coach_date
-            ),
+            fat_trend_note=_avg7_trend_note(data.get('fatMovingAvg7'), unit="point"),
             weight_date=weight_coach_date,
-            fat_date=fat_coach_date
+            fat_date=fat_coach_date,
+            weight_avg7=_latest_avg(data.get('weightMovingAvg7')),
+            fat_avg7=_latest_avg(data.get('fatMovingAvg7'))
         )
         ai_text = fix_enc(ai_text)  # AI-svar kan komme tilbage Latin-1-mis-decoded -- ret ved kilden
     if ai_text:
