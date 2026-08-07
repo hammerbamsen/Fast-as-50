@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-08-07 10:14",
+    "updated": "2026-08-07 11:31",
     "week": 10,
     "totalWeeks": 14,
     "blockType": "BUILD",
@@ -82,7 +82,7 @@
     "target": 5,
     "streak": 5
   },
-  "coachSpeech": "Fredag — tre dage tilbage af uge 10. {HL} Godt: 5/7 AF-dage — ugens mål er ramt. Fokus: 267 af 410 TSS er i hus — Lang løb Z2 29 km (155 min) står tilbage. Vægt på 71,4 kg — hold protein højt og undgå lette kulhydrater om aftenen. Keep moving forward.  \"Hvil er ikke det modsatte af fremskridt — det er en del af det.\"",
+  "coachSpeech": "Fredag — tre dage tilbage af uge 10. {HL} Godt: 5/7 AF-dage — ugens mål er ramt. Fokus: OW-svøm 2500m SAMMENHÆNGENDE (Christiansborg-generalprøve): 1390 af 2500m (56%) — distancen er under målet, selvom passet tæller som gennemført. 267 af 410 TSS er i hus — Lang løb Z2 29 km (155 min) står tilbage. Vægt på 71,4 kg — hold protein højt og undgå lette kulhydrater om aftenen. Hård uge — men det er sådan formen bygges. Hold ved.  \"Hvil er ikke det modsatte af fremskridt — det er en del af det.\"",
   "coachHighlight": "Søvn på 7,5 timer er solid",
   "weekFocus": "Svømmefokus og første VO2-stimulus sætter fart mod Christiansborg",
   "today": [
@@ -101,11 +101,14 @@
       "disc": "bike",
       "label": "Hometrainer 3×15 min Z3 90 min",
       "done": true,
+      "planned_tss": 68,
+      "planned_mins": 90,
+      "planned_distance_m": null,
       "completion": "done",
-      "completion_pct": 607,
+      "completion_pct": 115,
       "actual_tss": 78,
       "actual_mins": 91,
-      "planned_mins": 15,
+      "actual_distance_m": 43250.19,
       "intervals_compliance": 114.7
     },
     {
@@ -120,11 +123,14 @@
       "disc": "run",
       "label": "Løb Z1 30 min let",
       "done": true,
+      "planned_tss": 28,
+      "planned_mins": 30,
+      "planned_distance_m": null,
       "completion": "done",
-      "completion_pct": 90,
+      "completion_pct": 100,
       "actual_tss": 28,
       "actual_mins": 27,
-      "planned_mins": 30,
+      "actual_distance_m": 4834.35,
       "intervals_compliance": 100.0
     },
     {
@@ -139,22 +145,28 @@
       "disc": "swim",
       "label": "Svøm 1500m teknisk",
       "done": true,
-      "completion": "done",
-      "completion_pct": null,
+      "planned_tss": 33,
+      "planned_mins": 40,
+      "planned_distance_m": 1500,
+      "completion": "partial",
+      "completion_pct": 45,
       "actual_tss": 15,
       "actual_mins": 34,
-      "planned_mins": null
+      "actual_distance_m": 1390.83
     },
     {
       "day": "Ons",
       "disc": "strength",
       "label": "Styrke A Functional Strength 2 sæt",
       "done": true,
-      "completion": "done",
-      "completion_pct": null,
+      "planned_tss": 30,
+      "planned_mins": 45,
+      "planned_distance_m": null,
+      "completion": "partial",
+      "completion_pct": 23,
       "actual_tss": 7,
       "actual_mins": 26,
-      "planned_mins": null
+      "actual_distance_m": null
     },
     {
       "day": "Ons",
@@ -168,11 +180,14 @@
       "disc": "run",
       "label": "Løb VO2 4×5 min Z4-Z5",
       "done": true,
+      "planned_tss": 64,
+      "planned_mins": 70,
+      "planned_distance_m": null,
       "completion": "done",
-      "completion_pct": 1100,
+      "completion_pct": 111,
       "actual_tss": 71,
       "actual_mins": 55,
-      "planned_mins": 5,
+      "actual_distance_m": 11040.51,
       "intervals_compliance": 110.9
     },
     {
@@ -180,19 +195,25 @@
       "disc": "openwater",
       "label": "OW-svøm 2500m SAMMENHÆNGENDE (Christiansborg-generalprøve)",
       "done": true,
+      "planned_tss": 45,
+      "planned_mins": 50,
+      "planned_distance_m": 2500,
       "today": true,
-      "completion": "done",
-      "completion_pct": null,
+      "completion": "partial",
+      "completion_pct": 56,
       "actual_tss": 33,
       "actual_mins": 33,
-      "planned_mins": null,
+      "actual_distance_m": 1390.4,
       "intervals_compliance": 73.3
     },
     {
       "day": "Lør",
       "disc": "run",
       "label": "Lang løb Z2 29 km (155 min)",
-      "done": false
+      "done": false,
+      "planned_tss": 142,
+      "planned_mins": 155,
+      "planned_distance_m": null
     }
   ],
   "ctlCurve": [
@@ -1949,49 +1970,70 @@
           "disc": "strength",
           "label": "Styrke A Functional Strength 3 sæt",
           "done": false,
-          "today": false
+          "today": false,
+          "planned_tss": null,
+          "planned_mins": 60,
+          "planned_distance_m": null
         },
         {
           "day": "Tir",
           "disc": "run",
           "label": "Løb Z2 55 min",
           "done": false,
-          "today": false
+          "today": false,
+          "planned_tss": null,
+          "planned_mins": 55,
+          "planned_distance_m": null
         },
         {
           "day": "Ons",
           "disc": "run",
           "label": "Løb Z2 65 min",
           "done": false,
-          "today": false
+          "today": false,
+          "planned_tss": null,
+          "planned_mins": 65,
+          "planned_distance_m": null
         },
         {
           "day": "Tor",
           "disc": "strength",
           "label": "Styrke A Functional Strength 2 sæt",
           "done": false,
-          "today": false
+          "today": false,
+          "planned_tss": null,
+          "planned_mins": 60,
+          "planned_distance_m": null
         },
         {
           "day": "Fre",
           "disc": "bike",
           "label": "Cykel 5×3 min Z4",
           "done": false,
-          "today": false
+          "today": false,
+          "planned_tss": null,
+          "planned_mins": 65,
+          "planned_distance_m": null
         },
         {
           "day": "Lør",
           "disc": "run",
           "label": "Lang løb Z2 100 min",
           "done": false,
-          "today": false
+          "today": false,
+          "planned_tss": null,
+          "planned_mins": 100,
+          "planned_distance_m": null
         },
         {
           "day": "Søn",
           "disc": "swim",
           "label": "Svøm 2000m teknisk",
           "done": false,
-          "today": false
+          "today": false,
+          "planned_tss": null,
+          "planned_mins": 60,
+          "planned_distance_m": 2000
         }
       ],
       "blockType": "BUILD",
@@ -2004,49 +2046,70 @@
           "disc": "strength",
           "label": "Styrke A Functional Strength 3 sæt",
           "done": false,
-          "today": false
+          "today": false,
+          "planned_tss": null,
+          "planned_mins": 60,
+          "planned_distance_m": null
         },
         {
           "day": "Tir",
           "disc": "run",
           "label": "Løb Z2 45 min",
           "done": false,
-          "today": false
+          "today": false,
+          "planned_tss": null,
+          "planned_mins": 45,
+          "planned_distance_m": null
         },
         {
           "day": "Ons",
           "disc": "run",
           "label": "Løb Z2 45 min",
           "done": false,
-          "today": false
+          "today": false,
+          "planned_tss": null,
+          "planned_mins": 45,
+          "planned_distance_m": null
         },
         {
           "day": "Tor",
           "disc": "bike",
           "label": "Cykel Z2 60 min Mallorca",
           "done": false,
-          "today": false
+          "today": false,
+          "planned_tss": null,
+          "planned_mins": 60,
+          "planned_distance_m": null
         },
         {
           "day": "Fre",
           "disc": "bike",
           "label": "Cykel bjerg-intervaller Z4 Mallorca",
           "done": false,
-          "today": false
+          "today": false,
+          "planned_tss": null,
+          "planned_mins": 120,
+          "planned_distance_m": null
         },
         {
           "day": "Lør",
           "disc": "bike",
           "label": "Cykel Z2 150 min Mallorca",
           "done": false,
-          "today": false
+          "today": false,
+          "planned_tss": null,
+          "planned_mins": 150,
+          "planned_distance_m": null
         },
         {
           "day": "Søn",
           "disc": "swim",
           "label": "Svøm 1500m let teknisk",
           "done": false,
-          "today": false
+          "today": false,
+          "planned_tss": null,
+          "planned_mins": 45,
+          "planned_distance_m": 1500
         }
       ],
       "blockType": "BUILD+",
@@ -2059,49 +2122,70 @@
           "disc": "run",
           "label": "Lang løb Z2 90 min",
           "done": false,
-          "today": false
+          "today": false,
+          "planned_tss": null,
+          "planned_mins": 90,
+          "planned_distance_m": null
         },
         {
           "day": "Tir",
           "disc": "bike",
           "label": "Cykel Formentor 149km",
           "done": false,
-          "today": false
+          "today": false,
+          "planned_tss": null,
+          "planned_mins": 360,
+          "planned_distance_m": null
         },
         {
           "day": "Ons",
           "disc": "swim",
           "label": "Svøm 1500m let teknisk",
           "done": false,
-          "today": false
+          "today": false,
+          "planned_tss": null,
+          "planned_mins": 45,
+          "planned_distance_m": 1500
         },
         {
           "day": "Tor",
           "disc": "bike",
           "label": "Cykel Z2 60 min Mallorca",
           "done": false,
-          "today": false
+          "today": false,
+          "planned_tss": null,
+          "planned_mins": 60,
+          "planned_distance_m": null
         },
         {
           "day": "Fre",
           "disc": "strength",
           "label": "Styrke A Functional Strength 3 sæt",
           "done": false,
-          "today": false
+          "today": false,
+          "planned_tss": null,
+          "planned_mins": 60,
+          "planned_distance_m": null
         },
         {
           "day": "Lør",
           "disc": "run",
           "label": "Lang løb Z2 60 min",
           "done": false,
-          "today": false
+          "today": false,
+          "planned_tss": null,
+          "planned_mins": 60,
+          "planned_distance_m": null
         },
         {
           "day": "Søn",
           "disc": "bike",
           "label": "Cykeltur til Helsingør",
           "done": false,
-          "today": false
+          "today": false,
+          "planned_tss": null,
+          "planned_mins": 180,
+          "planned_distance_m": null
         }
       ],
       "blockType": "BUILD+",
@@ -2114,42 +2198,60 @@
           "disc": "swim",
           "label": "Svøm let 30 min recovery",
           "done": false,
-          "today": false
+          "today": false,
+          "planned_tss": null,
+          "planned_mins": 30,
+          "planned_distance_m": null
         },
         {
           "day": "Tir",
           "disc": "run",
           "label": "Løb Z2 45 min",
           "done": false,
-          "today": false
+          "today": false,
+          "planned_tss": null,
+          "planned_mins": 45,
+          "planned_distance_m": null
         },
         {
           "day": "Ons",
           "disc": "bike",
           "label": "Cykel Z2 30 min",
           "done": false,
-          "today": false
+          "today": false,
+          "planned_tss": null,
+          "planned_mins": 30,
+          "planned_distance_m": null
         },
         {
           "day": "Tor",
           "disc": "bike",
           "label": "Cykel Z2 45 min",
           "done": false,
-          "today": false
+          "today": false,
+          "planned_tss": null,
+          "planned_mins": 45,
+          "planned_distance_m": null
         },
         {
           "day": "Lør",
           "disc": "run",
           "label": "Lang løb Z2 90 min",
           "done": false,
-          "today": false
+          "today": false,
+          "planned_tss": null,
+          "planned_mins": 90,
+          "planned_distance_m": null
         },
         {
           "day": "Søn",
           "disc": "strength",
           "label": "Styrke A Functional Strength 3 sæt",
           "done": false,
-          "today": false
+          "today": false,
+          "planned_tss": null,
+          "planned_mins": 60,
+          "planned_distance_m": null
         }
       ],
       "blockType": "RECOVERY",
@@ -2162,63 +2264,90 @@
           "disc": "swim",
           "label": "Svøm 1500m let teknisk",
           "done": false,
-          "today": false
+          "today": false,
+          "planned_tss": null,
+          "planned_mins": 45,
+          "planned_distance_m": 1500
         },
         {
           "day": "Tir",
           "disc": "strength",
           "label": "Styrke let 2 sæt recovery",
           "done": false,
-          "today": false
+          "today": false,
+          "planned_tss": null,
+          "planned_mins": 40,
+          "planned_distance_m": null
         },
         {
           "day": "Tir",
           "disc": "run",
           "label": "Løb Z2 65 min",
           "done": false,
-          "today": false
+          "today": false,
+          "planned_tss": null,
+          "planned_mins": 65,
+          "planned_distance_m": null
         },
         {
           "day": "Ons",
           "disc": "bike",
           "label": "Cykel Z2 75 min",
           "done": false,
-          "today": false
+          "today": false,
+          "planned_tss": null,
+          "planned_mins": 75,
+          "planned_distance_m": null
         },
         {
           "day": "Tor",
           "disc": "strength",
           "label": "Styrke A Functional Strength 3 sæt",
           "done": false,
-          "today": false
+          "today": false,
+          "planned_tss": null,
+          "planned_mins": 60,
+          "planned_distance_m": null
         },
         {
           "day": "Tor",
           "disc": "run",
           "label": "Løb VO2 5×3 min Z4",
           "done": false,
-          "today": false
+          "today": false,
+          "planned_tss": null,
+          "planned_mins": 65,
+          "planned_distance_m": null
         },
         {
           "day": "Fre",
           "disc": "swim",
           "label": "Svøm 2000m teknisk",
           "done": false,
-          "today": false
+          "today": false,
+          "planned_tss": null,
+          "planned_mins": 60,
+          "planned_distance_m": 2000
         },
         {
           "day": "Lør",
           "disc": "run",
           "label": "Lang løb Z2 115 min",
           "done": false,
-          "today": false
+          "today": false,
+          "planned_tss": null,
+          "planned_mins": 115,
+          "planned_distance_m": null
         },
         {
           "day": "Søn",
           "disc": "bike",
           "label": "Cykel Z2 til Hundested",
           "done": false,
-          "today": false
+          "today": false,
+          "planned_tss": null,
+          "planned_mins": 150,
+          "planned_distance_m": null
         }
       ],
       "blockType": "BUILD",
@@ -2231,49 +2360,70 @@
           "disc": "openwater",
           "label": "OW-svøm Christiansborg-prep 40 min",
           "done": false,
-          "today": false
+          "today": false,
+          "planned_tss": null,
+          "planned_mins": 40,
+          "planned_distance_m": null
         },
         {
           "day": "Man",
           "disc": "strength",
           "label": "Styrke let 2 sæt recovery",
           "done": false,
-          "today": false
+          "today": false,
+          "planned_tss": null,
+          "planned_mins": 40,
+          "planned_distance_m": null
         },
         {
           "day": "Tir",
           "disc": "bike",
           "label": "Cykel Z2 70 min",
           "done": false,
-          "today": false
+          "today": false,
+          "planned_tss": null,
+          "planned_mins": 70,
+          "planned_distance_m": null
         },
         {
           "day": "Tor",
           "disc": "hike",
           "label": "Hike let 120 min",
           "done": false,
-          "today": false
+          "today": false,
+          "planned_tss": null,
+          "planned_mins": 120,
+          "planned_distance_m": null
         },
         {
           "day": "Fre",
           "disc": "run",
           "label": "Trail langtur Z2 Wales 75 min",
           "done": false,
-          "today": false
+          "today": false,
+          "planned_tss": null,
+          "planned_mins": 75,
+          "planned_distance_m": null
         },
         {
           "day": "Lør",
           "disc": "hike",
           "label": "Hike let 80 min",
           "done": false,
-          "today": false
+          "today": false,
+          "planned_tss": null,
+          "planned_mins": 80,
+          "planned_distance_m": null
         },
         {
           "day": "Søn",
           "disc": "hike",
           "label": "Hike - 3 timer",
           "done": false,
-          "today": false
+          "today": false,
+          "planned_tss": null,
+          "planned_mins": 180,
+          "planned_distance_m": null
         }
       ],
       "blockType": "RECOVERY",
@@ -2286,63 +2436,90 @@
           "disc": "swim",
           "label": "Svøm 2000m teknisk",
           "done": false,
-          "today": false
+          "today": false,
+          "planned_tss": 50,
+          "planned_mins": 60,
+          "planned_distance_m": 2000
         },
         {
           "day": "Tir",
           "disc": "run",
           "label": "Løb VO2 5×3 min Z4",
           "done": false,
-          "today": false
+          "today": false,
+          "planned_tss": 60,
+          "planned_mins": 65,
+          "planned_distance_m": null
         },
         {
           "day": "Tir",
           "disc": "strength",
           "label": "Styrke A Functional Strength 3 sæt",
           "done": false,
-          "today": false
+          "today": false,
+          "planned_tss": 35,
+          "planned_mins": 60,
+          "planned_distance_m": null
         },
         {
           "day": "Ons",
           "disc": "bike",
           "label": "Hometrainer Z2-Z3 80 min",
           "done": false,
-          "today": false
+          "today": false,
+          "planned_tss": 70,
+          "planned_mins": 80,
+          "planned_distance_m": null
         },
         {
           "day": "Tor",
           "disc": "bike",
           "label": "Cykel Z2 60 min Mallorca",
           "done": false,
-          "today": false
+          "today": false,
+          "planned_tss": 45,
+          "planned_mins": 60,
+          "planned_distance_m": null
         },
         {
           "day": "Fre",
           "disc": "bike",
           "label": "Cykel Z2 180 min Mallorca",
           "done": false,
-          "today": false
+          "today": false,
+          "planned_tss": 130,
+          "planned_mins": 180,
+          "planned_distance_m": null
         },
         {
           "day": "Lør",
           "disc": "bike",
           "label": "Cykel Z2 210 min Mallorca",
           "done": false,
-          "today": false
+          "today": false,
+          "planned_tss": 145,
+          "planned_mins": 210,
+          "planned_distance_m": null
         },
         {
           "day": "Søn",
           "disc": "run",
           "label": "Løb Z1-Z2 30 min let",
           "done": false,
-          "today": false
+          "today": false,
+          "planned_tss": 30,
+          "planned_mins": 30,
+          "planned_distance_m": null
         },
         {
           "day": "Søn",
           "disc": "swim",
           "label": "Svøm 2000m åbent vand kontinuerligt",
           "done": false,
-          "today": false
+          "today": false,
+          "planned_tss": 40,
+          "planned_mins": 40,
+          "planned_distance_m": 2000
         }
       ],
       "blockType": "BUILD",
@@ -2355,49 +2532,70 @@
           "disc": "bike",
           "label": "Cykel Sa Calobra via Puig Major",
           "done": false,
-          "today": false
+          "today": false,
+          "planned_tss": 170,
+          "planned_mins": 240,
+          "planned_distance_m": null
         },
         {
           "day": "Tir",
           "disc": "swim",
           "label": "Svøm 2000m åbent vand (Christiansborg-tempo)",
           "done": false,
-          "today": false
+          "today": false,
+          "planned_tss": 42,
+          "planned_mins": 40,
+          "planned_distance_m": 2000
         },
         {
           "day": "Ons",
           "disc": "run",
           "label": "Løb 16 km Z1–Z2 til fyret",
           "done": false,
-          "today": false
+          "today": false,
+          "planned_tss": 95,
+          "planned_mins": 85,
+          "planned_distance_m": null
         },
         {
           "day": "Tor",
           "disc": "strength",
           "label": "Styrke A Functional Strength 2 sæt",
           "done": false,
-          "today": false
+          "today": false,
+          "planned_tss": 25,
+          "planned_mins": 60,
+          "planned_distance_m": null
         },
         {
           "day": "Tor",
           "disc": "bike",
           "label": "Cykel Z2 45 min",
           "done": false,
-          "today": false
+          "today": false,
+          "planned_tss": 35,
+          "planned_mins": 45,
+          "planned_distance_m": null
         },
         {
           "day": "Lør",
           "disc": "run",
           "label": "Langløb 21 km Z2",
           "done": false,
-          "today": false
+          "today": false,
+          "planned_tss": 131,
+          "planned_mins": 118,
+          "planned_distance_m": null
         },
         {
           "day": "Søn",
           "disc": "bike",
           "label": "Cykel Z2 60 min",
           "done": false,
-          "today": false
+          "today": false,
+          "planned_tss": 41,
+          "planned_mins": 60,
+          "planned_distance_m": null
         }
       ],
       "blockType": "BUILD+",
@@ -2410,28 +2608,40 @@
           "disc": "run",
           "label": "Løb Z1 30 min let",
           "done": false,
-          "today": false
+          "today": false,
+          "planned_tss": 28,
+          "planned_mins": 30,
+          "planned_distance_m": null
         },
         {
           "day": "Tir",
           "disc": "bike",
           "label": "FTP-TEST 20 min (opdatér zoner efter)",
           "done": false,
-          "today": false
+          "today": false,
+          "planned_tss": 49,
+          "planned_mins": 65,
+          "planned_distance_m": null
         },
         {
           "day": "Tor",
           "disc": "run",
           "label": "THRESHOLD-TEST løb 20 min + forlængelse (langt løb)",
           "done": false,
-          "today": false
+          "today": false,
+          "planned_tss": 48,
+          "planned_mins": 78,
+          "planned_distance_m": null
         },
         {
           "day": "Fre",
           "disc": "swim",
           "label": "Svøm 1500m let teknisk",
           "done": false,
-          "today": false
+          "today": false,
+          "planned_tss": 25,
+          "planned_mins": 45,
+          "planned_distance_m": 1500
         }
       ],
       "blockType": "RECOVERY",
@@ -2444,11 +2654,14 @@
           "disc": "bike",
           "label": "Hometrainer 3×15 min Z3 90 min",
           "done": true,
+          "planned_tss": 68,
+          "planned_mins": 90,
+          "planned_distance_m": null,
           "completion": "done",
-          "completion_pct": 607,
+          "completion_pct": 115,
           "actual_tss": 78,
           "actual_mins": 91,
-          "planned_mins": 15,
+          "actual_distance_m": 43250.19,
           "intervals_compliance": 114.7
         },
         {
@@ -2463,11 +2676,14 @@
           "disc": "run",
           "label": "Løb Z1 30 min let",
           "done": true,
+          "planned_tss": 28,
+          "planned_mins": 30,
+          "planned_distance_m": null,
           "completion": "done",
-          "completion_pct": 90,
+          "completion_pct": 100,
           "actual_tss": 28,
           "actual_mins": 27,
-          "planned_mins": 30,
+          "actual_distance_m": 4834.35,
           "intervals_compliance": 100.0
         },
         {
@@ -2482,22 +2698,28 @@
           "disc": "swim",
           "label": "Svøm 1500m teknisk",
           "done": true,
-          "completion": "done",
-          "completion_pct": null,
+          "planned_tss": 33,
+          "planned_mins": 40,
+          "planned_distance_m": 1500,
+          "completion": "partial",
+          "completion_pct": 45,
           "actual_tss": 15,
           "actual_mins": 34,
-          "planned_mins": null
+          "actual_distance_m": 1390.83
         },
         {
           "day": "Ons",
           "disc": "strength",
           "label": "Styrke A Functional Strength 2 sæt",
           "done": true,
-          "completion": "done",
-          "completion_pct": null,
+          "planned_tss": 30,
+          "planned_mins": 45,
+          "planned_distance_m": null,
+          "completion": "partial",
+          "completion_pct": 23,
           "actual_tss": 7,
           "actual_mins": 26,
-          "planned_mins": null
+          "actual_distance_m": null
         },
         {
           "day": "Ons",
@@ -2511,11 +2733,14 @@
           "disc": "run",
           "label": "Løb VO2 4×5 min Z4-Z5",
           "done": true,
+          "planned_tss": 64,
+          "planned_mins": 70,
+          "planned_distance_m": null,
           "completion": "done",
-          "completion_pct": 1100,
+          "completion_pct": 111,
           "actual_tss": 71,
           "actual_mins": 55,
-          "planned_mins": 5,
+          "actual_distance_m": 11040.51,
           "intervals_compliance": 110.9
         },
         {
@@ -2523,19 +2748,25 @@
           "disc": "openwater",
           "label": "OW-svøm 2500m SAMMENHÆNGENDE (Christiansborg-generalprøve)",
           "done": true,
+          "planned_tss": 45,
+          "planned_mins": 50,
+          "planned_distance_m": 2500,
           "today": true,
-          "completion": "done",
-          "completion_pct": null,
+          "completion": "partial",
+          "completion_pct": 56,
           "actual_tss": 33,
           "actual_mins": 33,
-          "planned_mins": null,
+          "actual_distance_m": 1390.4,
           "intervals_compliance": 73.3
         },
         {
           "day": "Lør",
           "disc": "run",
           "label": "Lang løb Z2 29 km (155 min)",
-          "done": false
+          "done": false,
+          "planned_tss": 142,
+          "planned_mins": 155,
+          "planned_distance_m": null
         }
       ],
       "blockType": "BUILD",
@@ -2548,49 +2779,70 @@
           "disc": "run",
           "label": "Løb Fornalutx – Far des Cap Gros loop 21,3 km",
           "done": false,
-          "today": false
+          "today": false,
+          "planned_tss": 117,
+          "planned_mins": 128,
+          "planned_distance_m": null
         },
         {
           "day": "Tir",
           "disc": "bike",
           "label": "Sa Calobra TEST via Puig Major",
           "done": false,
-          "today": false
+          "today": false,
+          "planned_tss": 230,
+          "planned_mins": 265,
+          "planned_distance_m": null
         },
         {
           "day": "Ons",
           "disc": "openwater",
           "label": "OW-svøm 800-1500m",
           "done": false,
-          "today": false
+          "today": false,
+          "planned_tss": 25,
+          "planned_mins": 30,
+          "planned_distance_m": 1500
         },
         {
           "day": "Ons",
           "disc": "hike",
           "label": "Hike 3 timer Z1-Z2",
           "done": false,
-          "today": false
+          "today": false,
+          "planned_tss": 114,
+          "planned_mins": 180,
+          "planned_distance_m": null
         },
         {
           "day": "Tor",
           "disc": "bike",
           "label": "Cykel Z2 75 min let",
           "done": false,
-          "today": false
+          "today": false,
+          "planned_tss": 56,
+          "planned_mins": 75,
+          "planned_distance_m": null
         },
         {
           "day": "Fre",
           "disc": "run",
           "label": "Løb Z2 40 min let",
           "done": false,
-          "today": false
+          "today": false,
+          "planned_tss": 37,
+          "planned_mins": 40,
+          "planned_distance_m": null
         },
         {
           "day": "Lør",
           "disc": "bike",
           "label": "Cykel Z2 90 min Mallorca",
           "done": false,
-          "today": false
+          "today": false,
+          "planned_tss": 68,
+          "planned_mins": 90,
+          "planned_distance_m": null
         }
       ],
       "blockType": "BUILD+",
@@ -2603,42 +2855,60 @@
           "disc": "openwater",
           "label": "OW-svøm Open water 45 min",
           "done": false,
-          "today": false
+          "today": false,
+          "planned_tss": 38,
+          "planned_mins": 45,
+          "planned_distance_m": null
         },
         {
           "day": "Tir",
           "disc": "run",
           "label": "Lang løb Z2 32 km (170 min)",
           "done": false,
-          "today": false
+          "today": false,
+          "planned_tss": 156,
+          "planned_mins": 170,
+          "planned_distance_m": null
         },
         {
           "day": "Ons",
           "disc": "bike",
           "label": "Cykel Z2 50 min",
           "done": false,
-          "today": false
+          "today": false,
+          "planned_tss": 38,
+          "planned_mins": 50,
+          "planned_distance_m": null
         },
         {
           "day": "Tor",
           "disc": "openwater",
           "label": "OW-svøm Open water 40 min",
           "done": false,
-          "today": false
+          "today": false,
+          "planned_tss": 33,
+          "planned_mins": 40,
+          "planned_distance_m": null
         },
         {
           "day": "Fre",
           "disc": "run",
           "label": "Shakeout løb + strides",
           "done": false,
-          "today": false
+          "today": false,
+          "planned_tss": 17,
+          "planned_mins": 19,
+          "planned_distance_m": null
         },
         {
           "day": "Søn",
           "disc": "run",
           "label": "Løb Z2 50 min",
           "done": false,
-          "today": false
+          "today": false,
+          "planned_tss": 46,
+          "planned_mins": 50,
+          "planned_distance_m": null
         }
       ],
       "blockType": "BUILD",
@@ -2651,35 +2921,50 @@
           "disc": "openwater",
           "label": "OW-svøm Kort tilvænning 30 min",
           "done": false,
-          "today": false
+          "today": false,
+          "planned_tss": 25,
+          "planned_mins": 30,
+          "planned_distance_m": null
         },
         {
           "day": "Tir",
           "disc": "run",
           "label": "Løb Z2 50 min",
           "done": false,
-          "today": false
+          "today": false,
+          "planned_tss": 46,
+          "planned_mins": 50,
+          "planned_distance_m": null
         },
         {
           "day": "Ons",
           "disc": "run",
           "label": "Mellemlang løb Z2 19 km (100 min)",
           "done": false,
-          "today": false
+          "today": false,
+          "planned_tss": 92,
+          "planned_mins": 100,
+          "planned_distance_m": null
         },
         {
           "day": "Fre",
           "disc": "swim",
           "label": "Svøm let 20 min recovery",
           "done": false,
-          "today": false
+          "today": false,
+          "planned_tss": 17,
+          "planned_mins": 20,
+          "planned_distance_m": null
         },
         {
           "day": "Søn",
           "disc": "run",
           "label": "Løb Z1 40 min let",
           "done": false,
-          "today": false
+          "today": false,
+          "planned_tss": 37,
+          "planned_mins": 40,
+          "planned_distance_m": null
         }
       ],
       "blockType": "TAPER",
@@ -2692,28 +2977,40 @@
           "disc": "run",
           "label": "Løb Z2 50 min",
           "done": false,
-          "today": false
+          "today": false,
+          "planned_tss": 46,
+          "planned_mins": 50,
+          "planned_distance_m": null
         },
         {
           "day": "Tir",
           "disc": "run",
           "label": "Løb Z2 40 min + 6×1 min race-pace",
           "done": false,
-          "today": false
+          "today": false,
+          "planned_tss": 37,
+          "planned_mins": 40,
+          "planned_distance_m": null
         },
         {
           "day": "Tor",
           "disc": "run",
           "label": "Shakeout løb + strides",
           "done": false,
-          "today": false
+          "today": false,
+          "planned_tss": 17,
+          "planned_mins": 19,
+          "planned_distance_m": null
         },
         {
           "day": "Fre",
           "disc": "run",
           "label": "Løb Z1 15 min let",
           "done": false,
-          "today": false
+          "today": false,
+          "planned_tss": 14,
+          "planned_mins": 15,
+          "planned_distance_m": null
         }
       ],
       "blockType": "RACE",
@@ -3389,7 +3686,7 @@
       "note": "Nøgle virker"
     }
   },
-  "credentialsCheckedTs": "2026-08-07T08:14:13.394896",
+  "credentialsCheckedTs": "2026-08-07T09:31:54.516742",
   "coachAssessmentTsFull": "2026-08-07T06:06:27.838521",
   "coachAssessmentWeightAtGen": 71.4,
   "coachAssessmentAfAtGen": 5,
