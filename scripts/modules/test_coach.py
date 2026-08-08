@@ -108,3 +108,35 @@ def test_generate_coach_speech_silent_when_no_distance_target():
     speech, _highlight = coach.generate_coach_speech(
         **_base_speech_kwargs(today_session, [today_session]))
     assert "under målet" not in speech
+
+
+# ── Enhed pr. disciplin (8/8-2026) ──────────────────────────────────────
+# Da km-mål blev indført for løb/cykel, nåede distance-funktionerne pludselig
+# discipliner de var skrevet til svøm for. Uden disse vagter beskrives et løb
+# som "21000 af 29000m".
+
+def test_distance_focus_line_uses_km_for_run():
+    line = coach.build_distance_focus_line({
+        'label': 'Lang løb Z2 29 km', 'disc': 'run',
+        'planned_distance_m': 29000, 'actual_distance_m': 21000.0,
+    })
+    assert '21,0 af 29,0 km' in line
+    assert '29000' not in line
+
+
+def test_distance_focus_line_keeps_meters_for_swim():
+    """Svøm-formuleringen fra 7/8-2026 var korrekt og må ikke ændre sig."""
+    line = coach.build_distance_focus_line({
+        'label': 'OW-svøm 2500m', 'disc': 'openwater',
+        'planned_distance_m': 2500, 'actual_distance_m': 1390.0,
+    })
+    assert '1390 af 2500m' in line
+
+
+def test_distance_prompt_line_uses_km_for_run():
+    line = coach.build_distance_prompt_line({
+        'label': 'Lang løb Z2 29 km', 'disc': 'run',
+        'planned_distance_m': 29000, 'actual_distance_m': 28227.0,
+    })
+    assert '28,2 af 29,0 km' in line
+    assert '28227' not in line
