@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-08-08 09:52",
+    "updated": "2026-08-08 10:08",
     "week": 10,
     "totalWeeks": 14,
     "blockType": "BUILD",
@@ -116,7 +116,10 @@
       "disc": "walk",
       "label": "Gentofte Gang",
       "done": true,
-      "extra": true
+      "extra": true,
+      "actual_tss": 9,
+      "actual_mins": 52,
+      "actual_distance_m": 4836.78
     },
     {
       "day": "Tir",
@@ -138,7 +141,10 @@
       "disc": "strength",
       "label": "Styrketræning",
       "done": true,
-      "extra": true
+      "extra": true,
+      "actual_tss": 14,
+      "actual_mins": 31,
+      "actual_distance_m": null
     },
     {
       "day": "Ons",
@@ -173,7 +179,10 @@
       "disc": "walk",
       "label": "Gentofte Gang",
       "done": true,
-      "extra": true
+      "extra": true,
+      "actual_tss": 12,
+      "actual_mins": 54,
+      "actual_distance_m": 4818.38
     },
     {
       "day": "Tor",
@@ -212,10 +221,10 @@
       "done": true,
       "planned_tss": 142,
       "planned_mins": 155,
-      "planned_distance_m": null,
+      "planned_distance_m": 29000,
       "today": true,
       "completion": "done",
-      "completion_pct": 124,
+      "completion_pct": 97,
       "actual_tss": 176,
       "actual_mins": 147,
       "actual_distance_m": 28227.0,
@@ -2142,7 +2151,7 @@
           "today": false,
           "planned_tss": null,
           "planned_mins": 360,
-          "planned_distance_m": null
+          "planned_distance_m": 149000
         },
         {
           "day": "Ons",
@@ -2562,7 +2571,7 @@
           "today": false,
           "planned_tss": 95,
           "planned_mins": 85,
-          "planned_distance_m": null
+          "planned_distance_m": 16000
         },
         {
           "day": "Tor",
@@ -2592,7 +2601,7 @@
           "today": false,
           "planned_tss": 131,
           "planned_mins": 118,
-          "planned_distance_m": null
+          "planned_distance_m": 21000
         },
         {
           "day": "Søn",
@@ -2676,7 +2685,10 @@
           "disc": "walk",
           "label": "Gentofte Gang",
           "done": true,
-          "extra": true
+          "extra": true,
+          "actual_tss": 9,
+          "actual_mins": 52,
+          "actual_distance_m": 4836.78
         },
         {
           "day": "Tir",
@@ -2698,7 +2710,10 @@
           "disc": "strength",
           "label": "Styrketræning",
           "done": true,
-          "extra": true
+          "extra": true,
+          "actual_tss": 14,
+          "actual_mins": 31,
+          "actual_distance_m": null
         },
         {
           "day": "Ons",
@@ -2733,7 +2748,10 @@
           "disc": "walk",
           "label": "Gentofte Gang",
           "done": true,
-          "extra": true
+          "extra": true,
+          "actual_tss": 12,
+          "actual_mins": 54,
+          "actual_distance_m": 4818.38
         },
         {
           "day": "Tor",
@@ -2772,10 +2790,10 @@
           "done": true,
           "planned_tss": 142,
           "planned_mins": 155,
-          "planned_distance_m": null,
+          "planned_distance_m": 29000,
           "today": true,
           "completion": "done",
-          "completion_pct": 124,
+          "completion_pct": 97,
           "actual_tss": 176,
           "actual_mins": 147,
           "actual_distance_m": 28227.0,
@@ -2795,7 +2813,7 @@
           "today": false,
           "planned_tss": 117,
           "planned_mins": 128,
-          "planned_distance_m": null
+          "planned_distance_m": 21300
         },
         {
           "day": "Tir",
@@ -2881,7 +2899,7 @@
           "today": false,
           "planned_tss": 156,
           "planned_mins": 170,
-          "planned_distance_m": null
+          "planned_distance_m": 32000
         },
         {
           "day": "Ons",
@@ -2957,7 +2975,7 @@
           "today": false,
           "planned_tss": 92,
           "planned_mins": 100,
-          "planned_distance_m": null
+          "planned_distance_m": 19000
         },
         {
           "day": "Fre",
@@ -3705,7 +3723,7 @@
       "note": "Nøgle virker"
     }
   },
-  "credentialsCheckedTs": "2026-08-08T07:52:30.671314",
+  "credentialsCheckedTs": "2026-08-08T08:08:35.368397",
   "coachAssessmentTsFull": "2026-08-08T07:52:30.671299",
   "coachAssessmentWeightAtGen": 73.0,
   "coachAssessmentAfAtGen": 5,
