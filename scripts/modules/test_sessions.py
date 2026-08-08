@@ -37,9 +37,42 @@ def test_parse_distance_ignores_minutes():
     assert sessions.parse_planned_distance_m("Svøm let 30 min recovery") is None
 
 
-def test_parse_distance_ignores_km_and_hm():
+def test_parse_distance_reads_km_but_ignores_hm():
+    """Ændret 8/8-2026. Tidligere blev km bevidst ignoreret, fordi funktionen
+    kun skulle dække svøm i meter. Konsekvensen var at løb og cykel ALDRIG fik
+    et distance-mål, og coach-prompten citerede derfor plantallet fra label'en
+    som udført distance — 28,2 km løbet blev refereret som '29 km'.
+    Højdemeter (hm) skal fortsat IKKE opfattes som distance."""
     assert sessions.parse_planned_distance_m(
-        "Løb Fornalutx – Far des Cap Gros loop, 21,28 km / 502 hm") is None
+        "Løb Fornalutx – Far des Cap Gros loop, 21,28 km / 502 hm") == 21280
+    assert sessions.parse_planned_distance_m("Cykel bjergpas 1200 hm") is None
+    assert sessions.parse_planned_distance_m("Cykel bjergpas 1200hm") is None
+
+
+def test_parse_distance_km_variants():
+    assert sessions.parse_planned_distance_m("Lang løb Z2 29 km (155 min)") == 29000
+    assert sessions.parse_planned_distance_m("Cykel Formentor 149km") == 149000
+    assert sessions.parse_planned_distance_m("Løb 28-30 km marathon-ladder") == 30000
+
+
+def test_parse_distance_km_takes_priority_over_minutes():
+    """'155 min' må aldrig blive til et distance-mål, og km-grenen må ikke
+    lade meter-grenen snuppe et tilfældigt 3-cifret tal i samme label."""
+    assert sessions.parse_planned_distance_m("Lang løb Z2 32 km (170 min)") == 32000
+    assert sessions.parse_planned_distance_m("Løb Z1 30 min let") is None
+
+
+def test_compliance_prompt_line_shows_actual_distance():
+    """Regressionsvagt for selve fejlen: prompt-linjen skal vise den FAKTISKE
+    distance, ikke kun planens label."""
+    line = sessions.format_compliance_for_prompt([{
+        'day': 'Lør', 'label': 'Lang løb Z2 29 km', 'zone_flag': 'ok',
+        'note': '66% i Z2 (pace) — on target',
+        'moving_mins': 147, 'planned_mins': 155,
+        'distance_m': 28227.0, 'planned_distance_m': 29000,
+    }])
+    assert '28,2/29,0 km' in line
+    assert '147/155 min' in line
 
 
 def test_parse_distance_no_match_returns_none():
