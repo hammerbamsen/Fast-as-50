@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-08-08 08:53",
+    "updated": "2026-08-08 09:37",
     "week": 10,
     "totalWeeks": 14,
     "blockType": "BUILD",
@@ -23,13 +23,13 @@
       "color": "#C0392B"
     },
     "ctl": {
-      "value": "52,8",
+      "value": "53,6",
       "unit": "",
       "sub": "Uge 10-mål 50 · Slutmål 43 (uge 14)",
       "color": "#27AE60"
     },
     "tsb": {
-      "value": "-11,4",
+      "value": "-15,1",
       "unit": "",
       "sub": "Hård blok · CTL−ATL, frisk >0",
       "color": "#E67E22"
@@ -41,10 +41,10 @@
       "color": "#2874A6"
     },
     "runKm": {
-      "value": "15,9",
+      "value": "44,1",
       "unit": "km",
       "sub": "Mål 40+ km uge 10",
-      "color": "#C0392B"
+      "color": "#27AE60"
     },
     "hrv": {
       "value": "46,1",
@@ -53,10 +53,10 @@
       "color": "#7A6A58"
     },
     "tssComp": {
-      "value": "267",
+      "value": "443",
       "unit": "TSS",
-      "sub": "267 af 410 planlagt TSS",
-      "color": "#C0392B"
+      "sub": "443 af 410 planlagt TSS",
+      "color": "#27AE60"
     },
     "bikeKm": {
       "value": "43,3",
@@ -82,8 +82,8 @@
     "target": 5,
     "streak": 0
   },
-  "coachSpeech": "Lørdag — uge 10 af 14. {HL} Vægt på 73,0 kg — Vægten er 1.6 kg højere end seneste måling (2026-08-07) — sandsynligvis væske/natrium snarere end fedt, ikke et disciplinproblem. Giv den et par dage før du dømmer tallet. Fokus: 267 af 410 TSS er i hus — Lang løb Z2 29 km (155 min) står tilbage. 4 AF-dage i 6 afsluttede dage — 1 mangler i 1 dage tilbage. Keep moving forward.  \"Kroppen tror, hvad sindet siger.\"",
-  "coachHighlight": "Søvn på 7,2 timer er solid",
+  "coachSpeech": "Lørdag — uge 10 af 14. {HL} Godt: Søvn på 7,2 timer er solid. Vægt på 73,0 kg — Vægten er 1.6 kg højere end seneste måling (2026-08-07) — sandsynligvis væske/natrium snarere end fedt, ikke et disciplinproblem. Giv den et par dage før du dømmer tallet. Fokus: 4 AF-dage i 6 afsluttede dage — 1 mangler i 1 dage tilbage. Alle sessioner i hus. Juster de små ting, og resten følger.  \"Kroppen tror, hvad sindet siger.\"",
+  "coachHighlight": "108 procent af ugens TSS er i hus",
   "weekFocus": "Svømmefokus og første VO2-stimulus sætter fart mod Christiansborg",
   "today": [
     {
@@ -92,7 +92,7 @@
       "duration": "",
       "zone": "–",
       "desc": "",
-      "completed": false
+      "completed": true
     }
   ],
   "week_sessions": [
@@ -209,11 +209,17 @@
       "day": "Lør",
       "disc": "run",
       "label": "Lang løb Z2 29 km (155 min)",
-      "done": false,
+      "done": true,
       "planned_tss": 142,
       "planned_mins": 155,
       "planned_distance_m": null,
-      "today": true
+      "today": true,
+      "completion": "done",
+      "completion_pct": 124,
+      "actual_tss": 176,
+      "actual_mins": 147,
+      "actual_distance_m": 28227.0,
+      "intervals_compliance": 123.9
     }
   ],
   "ctlCurve": [
@@ -226,7 +232,7 @@
     49.7,
     51.0,
     50.9,
-    52.8
+    53.6
   ],
   "weightHistory": [
     {
@@ -1888,7 +1894,7 @@
     },
     {
       "date": "2026-08-08",
-      "v": -11.4,
+      "v": -15.1,
       "real": true
     }
   ],
@@ -2762,11 +2768,17 @@
           "day": "Lør",
           "disc": "run",
           "label": "Lang løb Z2 29 km (155 min)",
-          "done": false,
+          "done": true,
           "planned_tss": 142,
           "planned_mins": 155,
           "planned_distance_m": null,
-          "today": true
+          "today": true,
+          "completion": "done",
+          "completion_pct": 124,
+          "actual_tss": 176,
+          "actual_mins": 147,
+          "actual_distance_m": 28227.0,
+          "intervals_compliance": 123.9
         }
       ],
       "blockType": "BUILD",
@@ -3080,13 +3092,13 @@
     }
   ],
   "train_mins": {
+    "run": 229.0,
     "openwater": 67.0,
-    "run": 82.0,
     "walk": 106.0,
     "strength": 57.0,
     "bike": 91.0,
     "planned": 480.0,
-    "actual_total": 403.0
+    "actual_total": 550.0
   },
   "fatHistory": [
     {
@@ -3400,8 +3412,8 @@
       "real": true
     }
   ],
-  "coachAssessmentHtml": "<p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\"><strong>Dag 69 af 98 · Lørdag · Uge 10</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">💪 <strong>Træning & load</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">CTL ligger på 52,8 — godt over ugemålet på 50, og TSB på -11,4 er fuldt acceptabelt. Ugen har budt på en imponerende Christiansborg-generalprøve fredag med 2.500m sammenhængende OW-svøm, men VO2-løbet torsdag havde overpacing på rep 1 og 3 (4:13 og 4:12/km mod target 4:17–4:29) — næste gang holder du igen på de første reps og lader kroppen finde zonen frem for at åbne for hurtigt. Det lange løb på 29 km venter stadig i dag: kør det som ægte Z2-pace og lad hjertefrekvensen sætte grænsen, ikke ambitionerne.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">⚖️ <strong>Krop & kost</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Dagens vejning viser 73,0 kg — 5,0 kg fra målet — men stigningen siden seneste måling 7. august skyldes sandsynligvis væske og natrium, ikke fedt. Lad det stå et par dage, og vurder ud fra 7-dages snittet på 72,3 kg, der er det autoritative billede af retningen. Fedtprocenten er 21,5 % i dag mod et 7-dages snit på 21,6 % — du er 5,5 procentpoint fra målet på under 16 %. Snittet er uændret de seneste 7 dage, så fokus bør ligge på at skabe et lille, stabilt kalorieunderskud uden at kompromittere restitution og præstation.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">🎯 <strong>AF-status & fokus for resten af ugen</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Du har 4 AF-dage ud af 6 dage gået denne uge — det er solidt. I dag er stadig åben, og der er ingen planlagte pas søndag, så en AF-dag her eller i morgen kan tage dig til fem for ugen hvis du ønsker det. Ugen har leveret det den skulle: svømmefokus er sat, VO2-stimulansen er givet, og generalprøven er i kassen — det lange løb er det eneste der mangler at lande.</p>",
-  "coachAssessmentTs": "05:42",
+  "coachAssessmentHtml": "<p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\"><strong>Dag 69 af 98 · Lørdag · Uge 10</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">💪 <strong>Træning & load</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">CTL er på 53,6 — godt over ugemålet på 50 og klart over den overordnede plan. Du afsluttede ugen med 29 km i Z2, og pace-zone-compliance landede på 66 % — det er solidt og on target. VO2-passet torsdag viste dog overpacing i rep 1 og 3 (4:13 og 4:12/km mod target 4:17–4:29), så næste gang du kører den type pas, hold igen i de første reps — det er ikke en sejr at gå for hårdt tidligt. TSB på -15,1 er under kontrol, men du har arbejdet godt denne uge — sørg for at søndag bliver ægte restitution.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">⚖️ <strong>Krop & kost</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Dagens vægt er 73,0 kg, men 7-dages snittet er 72,3 kg — det er snittet der fortæller sandheden om retningen, ikke dagens tal. De 1,6 kg over seneste måling er sandsynligvis væske og natrium efter en lang løbetur og ikke et disciplinproblem — giv det et par dage, så falder det igen. Fedtprocenten er 21,5 % (7-dages snit 21,6 % — uændret de seneste 7 dage), og afstanden til målet på under 16 % er stadig markant. Vægten skal ned til under 68 kg og fedtprocenten under 16 % — begge tal kræver vedvarende kalorieunderskud og at fedtprocenten begynder at falde, ellers er det ikke ægte fremskridt.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">🎯 <strong>AF-status & fokus for resten af ugen</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Du er på 4 AF-dage ud af 6 dage i ugen — det er et stærkt resultat relativt til, hvor langt du er i ugen. Søndag er din eneste tilbageværende dag, og den er allerede planlagt uden træning — hold alkoholen ude, så slutter ugen på 5/7, og det er præcis det du sigter mod. Hold det enkelt: drik vand, sov godt, og lad kroppen absorbere en hård og flot svømme- og løbeuge.</p>",
+  "coachAssessmentTs": "07:38",
   "commute_pairing_warnings": [],
   "warnings": [
     {
@@ -3410,7 +3422,7 @@
       "message": "HRV 36,0 ms — 22% under 7d-snit (46,1 ms). Kroppen er presset."
     }
   ],
-  "tsb": -11.4,
+  "tsb": -15.1,
   "swimHistory": [
     {
       "week": 1,
@@ -3473,7 +3485,7 @@
       "cumulative": 22317.0
     }
   ],
-  "coachAssessmentLastActId": "i173277655",
+  "coachAssessmentLastActId": "i173621146",
   "weekFocusWeek": 10,
   "coachAssessmentPlanAtGen": "Lang løb Z2 29 km (155 min)",
   "weightGoal": 68,
@@ -3692,8 +3704,8 @@
       "note": "Nøgle virker"
     }
   },
-  "credentialsCheckedTs": "2026-08-08T06:53:36.860660",
-  "coachAssessmentTsFull": "2026-08-08T05:42:36.608553",
+  "credentialsCheckedTs": "2026-08-08T07:38:01.204347",
+  "coachAssessmentTsFull": "2026-08-08T07:38:01.204331",
   "coachAssessmentWeightAtGen": 73.0,
   "coachAssessmentAfAtGen": 4,
   "event_structure_warnings": [],
@@ -3789,7 +3801,7 @@
     "7": 455,
     "8": 417,
     "9": 363,
-    "10": 267
+    "10": 443
   },
   "racesUpcoming": [
     {
