@@ -704,12 +704,17 @@ def get_workout_compliance_this_week(events_this_week, activities_this_week):
                 'hr_z1_pct': None, 'hr_z2plus_pct': None,
                 'zone_flag': 'no_data', 'metric': None,
                 'moving_mins': None, 'planned_mins': planned_mins,
+                'distance_m': None,
+                'planned_distance_m': parse_planned_distance_m(ev_name),
                 'note': 'Ingen matchet aktivitet fundet',
             })
             continue
 
         moving_time = act.get('moving_time') or act.get('elapsed_time') or 0
         moving_mins = round(moving_time / 60, 0) if moving_time else 0
+        # Faktisk distance (tilføjet 8/8-2026): uden den så coach-prompten kun
+        # planens label og citerede plantallet som gennemført distance.
+        distance_m = act.get('distance')
         intervals_compliance = act.get('compliance')
         if intervals_compliance == 0.0:
             intervals_compliance = None  # 0.0 = ikke paired, None = ukendt
@@ -897,6 +902,8 @@ def get_workout_compliance_this_week(events_this_week, activities_this_week):
             'hr_z2plus_pct': hr_z2plus_pct,
             'zone_flag': zone_flag, 'metric': metric,
             'moving_mins': moving_mins, 'planned_mins': planned_mins,
+            'distance_m': distance_m,
+            'planned_distance_m': parse_planned_distance_m(ev_name),
             'reps': reps,
             'note': note,
         })
@@ -919,11 +926,28 @@ def format_compliance_for_prompt(compliance_list):
         moving = c.get('moving_mins')
         planned = c.get('planned_mins')
 
-        dur_str = ''
+        # FAKTISKE TAL (8/8-2026): label'en er PLANEN. Uden faktisk distance her
+        # citerede modellen plantallet fra label'en som gennemført distance —
+        # 28,2 km løbet blev refereret som "29 km" fordi 29 stod i planens navn.
+        # Distance vises derfor altid når den findes, med plantallet efter skråstreg.
+        dist_m = c.get('distance_m')
+        planned_dist_m = c.get('planned_distance_m')
+        parts = []
+        if dist_m:
+            # Svøm i meter, løb/cykel i km — '1,4 km' skjuler den præcision der
+            # afgør om en 2500 m generalprøve blev gennemført.
+            if c.get('disc') in ('swim', 'openwater'):
+                parts.append(f'{int(round(dist_m))}' +
+                             (f'/{int(round(planned_dist_m))}' if planned_dist_m else '') + ' m')
+            else:
+                _km = lambda v: f'{v / 1000:.1f}'.replace('.', ',')
+                parts.append(_km(dist_m) +
+                             (f'/{_km(planned_dist_m)}' if planned_dist_m else '') + ' km')
         if moving and planned:
-            dur_str = f' ({int(moving)}/{int(planned)} min)'
+            parts.append(f'{int(moving)}/{int(planned)} min')
         elif moving:
-            dur_str = f' ({int(moving)} min)'
+            parts.append(f'{int(moving)} min')
+        dur_str = f' ({" · ".join(parts)})' if parts else ''
 
         if flag == 'no_data':
             lines.append(f'- {day}: {label}{dur_str} → ikke gennemført')
@@ -1065,10 +1089,23 @@ def parse_planned_mins(label):
     return int(m.group(1)) if m else None
 
 def parse_planned_distance_m(label):
-    """Parser planlagt distance i meter fra label. Fx 'Svøm 2500m SAMMENHÆNGENDE' -> 2500.
-    Range-labels som 'OW-svøm 800-1500m' bruger den ØVRE grænse som mål.
-    Kun 3-5-cifrede tal for at undgå falske match (årstal, sekunder, 'min')."""
-    m = re.search(r'(\d{3,5})(?:[-–](\d{3,5}))?\s*m\b', label or '')
+    """Parser planlagt distance i meter fra label.
+
+    Meter: 'Svøm 2500m SAMMENHÆNGENDE' -> 2500. Kun 3-5-cifrede tal, så
+    årstal/sekunder/'min' ikke giver falske match.
+    Km (tilføjet 8/8-2026): 'Lang løb Z2 29 km' -> 29000, 'Løb 28-30 km' -> 30000,
+    'Løb ... 21,3 km' -> 21300. Uden km-grenen havde løbe- og cykelpas ALDRIG et
+    distance-mål, og coach-prompten citerede derfor planens km-tal som om det var
+    den faktisk løbne distance (28,2 km blev til "29 km").
+    Range-labels bruger den ØVRE grænse som mål — både for meter og km.
+    """
+    text = label or ''
+    km = re.search(r'(\d{1,3}(?:[.,]\d+)?)(?:\s*[-–]\s*(\d{1,3}(?:[.,]\d+)?))?\s*km\b',
+                   text, re.IGNORECASE)
+    if km:
+        val = (km.group(2) or km.group(1)).replace(',', '.')
+        return int(round(float(val) * 1000))
+    m = re.search(r'(\d{3,5})(?:[-–](\d{3,5}))?\s*m\b', text)
     if not m:
         return None
     return int(m.group(2) or m.group(1))
@@ -1220,6 +1257,11 @@ def build_week_sessions(done_map, planned_sessions):
                 'label': label,
                 'done': True,
                 'extra': True,
+                # Faktiske tal skal også følge med ekstra-pas (8/8-2026), ellers
+                # kan coachen kun omtale dem ved navn og gætter på omfanget.
+                'actual_tss': tss,
+                'actual_mins': dur_mins,
+                'actual_distance_m': act_entry[9] if len(act_entry) > 9 else None,
             }
             if day_idx == today_idx:
                 extra['today'] = True
