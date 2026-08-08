@@ -49,6 +49,18 @@ QUOTES_PHILOSOPHY = [
 # Udtrukket som selvstændige funktioner så de kan testes uden at kalde
 # Anthropic-API'et eller bygge en fuld week_sessions-liste.
 
+def _dist_pair(actual, planned, disc):
+    """Formaterer 'faktisk af planlagt' i den enhed disciplinen måles i.
+    Svøm beholder den nøjagtige meter-formulering fra 7/8-2026 — den var korrekt
+    og er ikke rørt. Løb og cykel er nye her (8/8-2026): da km-mål blev indført,
+    nåede de her funktioner discipliner de aldrig var skrevet til, og et løb ville
+    være blevet beskrevet som '21000 af 29000m'."""
+    if disc in ('swim', 'openwater') or disc is None:
+        return f"{int(actual)} af {int(planned)}m"
+    _km = lambda v: f"{v / 1000:.1f}".replace('.', ',')
+    return f"{_km(actual)} af {_km(planned)} km"
+
+
 def build_distance_focus_line(today_session, shortfall_threshold=0.80):
     """Returnerer en fokus-sætning til den hårdkodede coach-tekst hvis dagens
     session har et eksplicit distance-mål og landede under shortfall_threshold
@@ -65,7 +77,8 @@ def build_distance_focus_line(today_session, shortfall_threshold=0.80):
     if pct >= shortfall_threshold:
         return None  # målet nået -- intet at fokusere på
     label = today_session.get('label', 'Dagens pas')
-    return (f"{label}: {int(actual)} af {planned}m ({round(pct * 100)}%) — "
+    pair = _dist_pair(actual, planned, today_session.get('disc'))
+    return (f"{label}: {pair} ({round(pct * 100)}%) — "
             f"distancen er under målet, selvom passet tæller som gennemført.")
 
 
@@ -80,8 +93,10 @@ def build_distance_prompt_line(today_session):
     if not planned or planned <= 0 or actual is None:
         return ""
     pct = round(actual / planned * 100)
+    pair = _dist_pair(actual, planned, today_session.get('disc'))
     return (
-        f"\n- DISTANCE i dag: {int(actual)} af {planned} m planlagt ({pct}%). "
+        f"\n- DISTANCE i dag: {pair} planlagt ({pct}%). "
+        f"Gengiv disse tal PRÆCIS som de står — rund ikke af. "
         f"Nævn dette EKSPLICIT i vurderingen hvis under 80%, uanset om passet "
         f"tæller som gennemført i systemet — registreret/gennemført er IKKE "
         f"det samme som at distancen er ramt."
