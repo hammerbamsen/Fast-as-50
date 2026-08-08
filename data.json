@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-08-08 06:35",
+    "updated": "2026-08-08 07:42",
     "week": 10,
     "totalWeeks": 14,
     "blockType": "BUILD",
@@ -13,11 +13,11 @@
     "weight": {
       "value": "73,0",
       "unit": "kg",
-      "sub": "Mål <68 kg · snit 72,4 kg",
+      "sub": "Mål <68 kg · snit 72,3 kg",
       "color": "#E67E22"
     },
     "fat": {
-      "value": "21,2",
+      "value": "21,5",
       "unit": "%",
       "sub": "Mål <16%",
       "color": "#C0392B"
@@ -3396,12 +3396,12 @@
     },
     {
       "date": "2026-08-08",
-      "v": 21.2,
+      "v": 21.5,
       "real": true
     }
   ],
-  "coachAssessmentHtml": "<p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\"><strong>Dag 69 af 98 · Lørdag · Uge 10</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">💪 <strong>Træning & load</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">CTL ligger på 52,8 — det er over ugemålet på 50, og ugen har været substantiel: VO2-pas torsdag, Christiansborg-generalprøve fredag med 2500m sammenhængende OW-svøm, og nu et langt Z2-løb på 29 km tilbage. TSB er -11,4, som er kontrolleret og langt fra grænsen. Et par tekniske noter: I VO2-passet torsdag kørte rep 1 (4:13/km) og rep 3 (4:12/km) begge hurtigere end target-korridoren på 4:17–4:29/km — det er overpacing, ikke et plus. Husk det til næste VO2-pas: start lidt konservativt, så du kan holde formen rep for rep. Det lange løb i dag skal køres i ægte Z2-tempo — roligt og disciplineret hele vejen.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">⚖️ <strong>Krop & kost</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Dagens måling er 73,0 kg — 5,0 kg fra målet. Den markante stigning siden seneste vejning skyldes sandsynligvis væske og natrium snarere end fedt, og der er ingen grund til at drage konklusioner endnu. Giv det et par dage. 7-dages snittet på 72,3 kg er det autoritative tal her. Fedtprocenten er målt til 21,2 % i dag, med et 7-dages snit på 21,5 % — snittet er uændret over de seneste 7 dage, så der er endnu ikke bevægelse mod målet på under 16 %. Det er fedtprocenten — ikke bare vægten — der viser om fremgangen er reel, så hold øje med om snittet begynder at reagere.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">🎯 <strong>AF-status & fokus for resten af ugen</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Du er på 4 AF-dage ud af 6 dage i ugen — det er en fornuftig kurs, men der er plads til én dag mere. Søndags-status afhænger af dit valg i morgen. Det lange løb på 29 km er endnu ikke forsøgt — det er dagens store opgave, og det fortjener fuld opmærksomhed: ægte Z2-pace, ikke den fristelse til at trykke til som dukkede op i tirsdagens løbetur.</p>",
-  "coachAssessmentTs": "04:35",
+  "coachAssessmentHtml": "<p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\"><strong>Dag 69 af 98 · Lørdag · Uge 10</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">💪 <strong>Træning & load</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">CTL ligger på 52,8 — godt over ugemålet på 50, og TSB på -11,4 er fuldt acceptabelt. Ugen har budt på en imponerende Christiansborg-generalprøve fredag med 2.500m sammenhængende OW-svøm, men VO2-løbet torsdag havde overpacing på rep 1 og 3 (4:13 og 4:12/km mod target 4:17–4:29) — næste gang holder du igen på de første reps og lader kroppen finde zonen frem for at åbne for hurtigt. Det lange løb på 29 km venter stadig i dag: kør det som ægte Z2-pace og lad hjertefrekvensen sætte grænsen, ikke ambitionerne.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">⚖️ <strong>Krop & kost</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Dagens vejning viser 73,0 kg — 5,0 kg fra målet — men stigningen siden seneste måling 7. august skyldes sandsynligvis væske og natrium, ikke fedt. Lad det stå et par dage, og vurder ud fra 7-dages snittet på 72,3 kg, der er det autoritative billede af retningen. Fedtprocenten er 21,5 % i dag mod et 7-dages snit på 21,6 % — du er 5,5 procentpoint fra målet på under 16 %. Snittet er uændret de seneste 7 dage, så fokus bør ligge på at skabe et lille, stabilt kalorieunderskud uden at kompromittere restitution og præstation.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">🎯 <strong>AF-status & fokus for resten af ugen</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Du har 4 AF-dage ud af 6 dage gået denne uge — det er solidt. I dag er stadig åben, og der er ingen planlagte pas søndag, så en AF-dag her eller i morgen kan tage dig til fem for ugen hvis du ønsker det. Ugen har leveret det den skulle: svømmefokus er sat, VO2-stimulansen er givet, og generalprøven er i kassen — det lange løb er det eneste der mangler at lande.</p>",
+  "coachAssessmentTs": "05:42",
   "commute_pairing_warnings": [],
   "warnings": [
     {
@@ -3660,10 +3660,10 @@
     21.47,
     21.43,
     21.4,
-    21.5
+    21.55
   ],
   "weightToGoal": 5.0,
-  "bodyFatToGoal": 5.2,
+  "bodyFatToGoal": 5.5,
   "ctlPlan": [
     34,
     36,
@@ -3692,12 +3692,12 @@
       "note": "Nøgle virker"
     }
   },
-  "credentialsCheckedTs": "2026-08-08T04:35:40.711598",
-  "coachAssessmentTsFull": "2026-08-08T04:35:40.711584",
+  "credentialsCheckedTs": "2026-08-08T05:42:36.608568",
+  "coachAssessmentTsFull": "2026-08-08T05:42:36.608553",
   "coachAssessmentWeightAtGen": 73.0,
   "coachAssessmentAfAtGen": 4,
   "event_structure_warnings": [],
-  "coachAssessmentFatAtGen": 21.2,
+  "coachAssessmentFatAtGen": 21.5,
   "zones": {
     "runThreshold": "4:24/km",
     "bikeFtpW": 278,
