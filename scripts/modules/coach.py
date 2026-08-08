@@ -574,7 +574,40 @@ def generate_ai_assessment(week_num, weekday, day_name, ctl, tsb, weight, af_thi
             return DAY_SHORT.index(d) < weekday
         return False
     completed = [s for s in week_sessions if s.get('done') and not s.get('today')]
-    completed_str = ", ".join(f"{s['day']}: {s['label']}" for s in completed) or "ingen endnu"
+
+    def _fact(s):
+        """Label er PLANEN — den må aldrig stå alene på et gennemført pas.
+        Rettet 8/8-2026: uden faktiske tal her citerede modellen plantallet i
+        label'en som om det var udført (28,2 km løbet blev til "29 km", fordi
+        label'en hed 'Lang løb Z2 29 km'). Faktisk distance og tid skrives derfor
+        eksplicit ud, med planens tal til sammenligning."""
+        bits = []
+        dist = s.get('actual_distance_m')
+        if dist:
+            # Svøm måles i meter — '1,4 km' skjuler netop den præcision der
+            # afgør om en 2500 m generalprøve blev gennemført.
+            if s.get('disc') in ('swim', 'openwater'):
+                bits.append(f"{int(round(dist))} m")
+            else:
+                bits.append(f"{fmt(dist / 1000)} km")
+        mins = s.get('actual_mins')
+        if mins:
+            bits.append(f"{int(mins)} min")
+        tss = s.get('actual_tss')
+        if tss:
+            bits.append(f"{int(tss)} TSS")
+        day = s.get('day', '?')
+        label = s.get('label', 'pas')
+        if not bits:
+            return f"{day}: {label}"
+        return f"{day}: {label} [planlagt] → FAKTISK: {' · '.join(bits)}"
+
+    completed_str = ", ".join(_fact(s) for s in completed) or "ingen endnu"
+    # Dagens pas går IKKE gennem completed-listen (det filtreres på 'today'), så
+    # uden denne linje beholdt netop dagens session sit rene plan-label — og det
+    # var præcis dét pas coachen citerede med plantal.
+    today_line = (_fact(today_session).split(': ', 1)[-1]
+                  if (today_session and today_done) else today_label)
     future_remaining = [s for s in week_sessions if not s.get('done') and not s.get('today') and not _sess_is_past(s)]
     missed = [s for s in week_sessions if not s.get('done') and not s.get('today') and _sess_is_past(s)]
     remaining = ", ".join(f"{s['day']}: {s['label']}" for s in future_remaining) or "ingen planlagte"
@@ -659,11 +692,20 @@ def generate_ai_assessment(week_num, weekday, day_name, ctl, tsb, weight, af_thi
         f"Friel-regler:\n- TSB ikke under -30\n- CTL-stigning max 5-8/uge\n"
         f"- Recovery-uge efter hård blok\n- Max 3 løbeture/uge\n\n"
         f"Aktuelle data:\n- {kpis_str}\n- {af_note}\n- Ugefokus: {week_focus[:200]}\n"
-        f"- I dag: {today_label} [{today_status}]\n"
+        f"- I dag: {today_line} [{today_status}]\n"
         f"- GENNEMFØRT denne uge (fuldførte kendsgerninger): {completed_str}\n"
         + (f"- MISSET denne uge (dag passeret, ikke gennemført): {missed_str}\n" if missed_str else "")
         + f"- Resten af ugen (KUN fremtidige, endnu ikke forfaldne pas): {remaining}{weight_line}{fat_line}{avg_line}{distance_line}{travel_line}{trajectory_line}{compliance_line}\n\n"
         f"VIGTIGT:\n"
+        f"- TALPRÆCISION (ufravigelig): Gengiv ALLE tal PRÆCIS som de står i data ovenfor. "
+        f"Rund aldrig af, glat aldrig ud, og skriv aldrig et 'pænere' nabotal — det gælder "
+        f"distance, tid, TSS, vægt, fedtprocent, CTL, TSB, pace og watt. 28,2 km er 28,2 km, "
+        f"aldrig 28 og aldrig 29. Har du ikke tallet, så undlad det frem for at gætte.\n"
+        f"- PLAN ≠ FAKTISK (ufravigelig): Et pas' navn/label ER PLANEN, ikke hvad der blev udført. "
+        f"Tal markeret '[planlagt]' må ALDRIG omtales som noget der er gennemført. Står der "
+        f"'FAKTISK:' efter et pas, er DET de eneste tal du må bruge om udførelsen. Ligger faktisk "
+        f"og planlagt tæt, så nævn blot det faktiske tal; afviger de mærkbart, så nævn begge "
+        f"eksplicit (fx '28,2 km mod planlagte 29'). Udled ALDRIG et udført tal fra label'en.\n"
         f"- GROUNDING (ufravigelig): Pas i 'GENNEMFØRT denne uge' ER fuldført. Omtal dem ALDRIG som "
         f"manglende, glemt, sprunget over, udestående eller noget der 'skal'/'mangler' at ske. Et pas må "
         f"KUN kaldes manglende/misset hvis det står eksplicit i 'MISSET denne uge'. Hvis CTL ligger under "
