@@ -724,6 +724,32 @@ async function checkSystemHealth() {
   }
 }
 
+// Advarselsbannere: ÉN generisk renderer for alle warning-typer fra data.json.
+// Tidligere blev kun type==='hrv' vist, mens 'tsb' (warn-niveau) og alle nye
+// typer faldt lydløst på gulvet — de lå i data.json uden nogensinde at nå
+// skærmen. Farve styres af level, ikke af type, så nye typer virker automatisk.
+const WARN_ICONS = { tsb: '⚠️', hrv: '💜', alcohol_cluster: '🎯' };
+
+function warnBanner(w) {
+  if (!w || !w.message) return '';
+  const color = w.level === 'critical' ? '#C0392B' : w.level === 'warn' ? '#E67E22' : '#7A6A58';
+  const icon  = WARN_ICONS[w.type] || '⚠️';
+  return `<div style="background:${color}15;border:1px solid ${color}40;border-radius:8px;padding:8px 12px;margin-bottom:10px;display:flex;align-items:center;gap:8px"><span style="font-size:16px">${icon}</span><span style="font-family:'Space Mono',monospace;font-size:10px;color:${color};line-height:1.4">${w.message}</span></div>`;
+}
+
+function renderWarnings(list, tsbVal) {
+  const out = (list || []).filter(w => w && w.message).slice();
+  // Sikkerhedsnet: hvis data.json er stale og mangler tsb-advarslen, men TSB
+  // reelt er under -30, vises den alligevel. Aldrig som dublet.
+  if (tsbVal < -30 && !out.some(w => w.type === 'tsb')) {
+    out.unshift({ type: 'tsb', level: 'critical',
+                  message: `TSB ${tsbVal.toFixed(0)} — høj træthed. Overvej let dag eller hvile.` });
+  }
+  const rank = { critical: 0, warn: 1 };
+  out.sort((a, b) => (rank[a.level] ?? 2) - (rank[b.level] ?? 2));
+  return out.map(warnBanner).join('');
+}
+
 function renderToday() {
   // Reset completed-flags hvis det er en ny dag
   const todayStr = new Date().toISOString().split("T")[0];
@@ -799,12 +825,7 @@ function renderToday() {
     const tsbVal = parseFloat(D.tsb) || 0;
     const ctlGoal = (() => { const w = (D.meta && D.meta.week) ? D.meta.week : 0; return w > 0 && w <= CTL_PLAN.length ? CTL_PLAN[w-1] : 60; })();
     const ctlColor = ctlVal >= ctlGoal*0.95 ? '#27AE60' : ctlVal >= ctlGoal*0.8 ? '#E67E22' : '#C0392B';
-    const warnings = D.warnings || [];
-    const hrvWarn = warnings.find(w=>w.type==='hrv') ? `<div style="background:#E67E2215;border:1px solid #E67E2240;border-radius:8px;padding:8px 12px;margin-bottom:10px;display:flex;align-items:center;gap:8px"><span style="font-size:16px">💜</span><span style="font-family:'Space Mono',monospace;font-size:10px;color:#E67E22;line-height:1.4">${warnings.find(w=>w.type==='hrv').message}</span></div>` : '';
-    const tsbWarn = tsbVal < -30 ? `<div style="background:#C0392B15;border:1px solid #C0392B40;border-radius:8px;padding:8px 12px;margin-bottom:10px;display:flex;align-items:center;gap:8px"><span style="font-size:16px">⚠️</span><span style="font-family:'Space Mono',monospace;font-size:10px;color:#C0392B;line-height:1.4">TSB ${tsbVal.toFixed(0)} — høj træthed. Overvej let dag eller hvile.</span></div>` : '';
-    // Dedup 9/7-2026: stat-kortene (MÉDOC/CTL/UGE/AF-ring) fjernet — sticky-baren viser samme tal.
-    // Advarselsbannere (TSB/HRV) beholdes — de er tilstandsbetingede, ikke dubletter.
-    return tsbWarn + hrvWarn;
+    return renderWarnings(D.warnings, tsbVal);
   })()}
 
   <div class="card card-wine" style="padding:20px 18px">
