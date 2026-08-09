@@ -123,6 +123,44 @@ def get_full_af_log():
         current += timedelta(days=1)
     return full_log
 
+def detect_alcohol_cluster(full_af_log, window_days=7, min_run=2, today=None):
+    """Finder længste sammenhængende række drikkedage inden for de seneste
+    window_days.
+
+    full_af_log: {dato-iso: 0/1} som fra get_full_af_log() — 0 = AF-dag,
+    1 = drikkedag. Uregistrerede dage bryder rækken (de tælles ikke med).
+
+    Returnerer dict {'days': n, 'start': iso, 'end': iso} for den længste
+    række på mindst min_run dage, ellers None.
+    """
+    if not full_af_log:
+        return None
+    if today is None:
+        today = date.today()
+
+    best = None
+    run_len = 0
+    run_end = None
+
+    for offset in range(window_days):
+        day = today - timedelta(days=offset)
+        if full_af_log.get(str(day)) == 1:
+            if run_len == 0:
+                run_end = day
+            run_len += 1
+            if run_len >= min_run and (best is None or run_len > best['days']):
+                best = {
+                    'days':  run_len,
+                    'start': str(day),
+                    'end':   str(run_end),
+                }
+        else:
+            run_len = 0
+            run_end = None
+
+    return best
+
+
 def get_af_streak():
     """Beregn sammenhængende AF-streak bagud fra i dag.
     Henter 90 dages wellness og tæller AF-dage (Alkohol=0) i træk,
