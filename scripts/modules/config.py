@@ -47,13 +47,13 @@ else:
     RACES       = [{"name": "Christiansborg Rundt", "date": "2026-08-29"},
                    {"name": "Marathon du Médoc", "date": "2026-09-05"}]
     NEXT_RACES  = []
-    GOALS       = {"weightKg": 68, "bodyFatPct": 16}
+    GOALS       = {"weightKg": 68, "bodyFatPct": 16, "afDaysPerWeek": 5}
 
 # Faste programmål -- én kilde, brugt i både dashboard-KPI'er og coach-tekst.
 # CTL-start/slutmål udledes ALTID af CTL_PLAN, så de aldrig kan komme ud af sync med planen.
 CTL_START = CTL_PLAN[0]
 CTL_GOAL = CTL_PLAN[-1]
-AF_GOAL = 5
+AF_GOAL = GOALS.get("afDaysPerWeek", 5)
 SLEEP_GOAL_HOURS = 7
 SWIM_GOAL_M = 2000
 RUN_KM_GOAL = 40
