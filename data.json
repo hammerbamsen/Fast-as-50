@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-08-09 07:12",
+    "updated": "2026-08-09 07:55",
     "week": 10,
     "totalWeeks": 14,
     "blockType": "BUILD",
@@ -73,13 +73,13 @@
     "afStreak": {
       "value": "2",
       "unit": "",
-      "sub": "Dage i træk · mål 5/uge",
+      "sub": "Dage i træk · mål 6/uge",
       "color": "#59182A"
     }
   },
   "af": {
     "weekDone": 6,
-    "target": 5,
+    "target": 6,
     "streak": 2
   },
   "coachSpeech": "Søndag — afslut uge 10 stærkt. {HL} Godt: Søvn på 7,0 timer er solid. 6/7 AF-dage — ugens mål er ramt. Fokus: Vægt på 72,8 kg — hold protein højt og undgå lette kulhydrater om aftenen. Alle sessioner i hus. Juster de små ting, og resten følger. 📊 Store billede: CTL 52,4 er 2.4 point FORAN ugeplanen (planmål uge 10: 50). Vægten har tabt 2.1 kg over de seneste 89 dage (74,9 → 72,8 kg).  \"Det er ikke at have for lidt, der gør et menneske fattigt, men at ville have mere.\" — Seneca",
@@ -108,8 +108,7 @@
       "completion_pct": 115,
       "actual_tss": 78,
       "actual_mins": 91,
-      "actual_distance_m": 43250.19,
-      "intervals_compliance": 114.7
+      "actual_distance_m": 43250.19
     },
     {
       "day": "Man",
@@ -133,8 +132,7 @@
       "completion_pct": 100,
       "actual_tss": 28,
       "actual_mins": 27,
-      "actual_distance_m": 4834.35,
-      "intervals_compliance": 100.0
+      "actual_distance_m": 4834.35
     },
     {
       "day": "Tir",
@@ -196,8 +194,7 @@
       "completion_pct": 111,
       "actual_tss": 71,
       "actual_mins": 55,
-      "actual_distance_m": 11040.51,
-      "intervals_compliance": 110.9
+      "actual_distance_m": 11040.51
     },
     {
       "day": "Fre",
@@ -211,8 +208,7 @@
       "completion_pct": 56,
       "actual_tss": 33,
       "actual_mins": 33,
-      "actual_distance_m": 1390.4,
-      "intervals_compliance": 73.3
+      "actual_distance_m": 1390.4
     },
     {
       "day": "Lør",
@@ -226,8 +222,7 @@
       "completion_pct": 97,
       "actual_tss": 176,
       "actual_mins": 147,
-      "actual_distance_m": 28227.0,
-      "intervals_compliance": 123.9
+      "actual_distance_m": 28227.0
     }
   ],
   "ctlCurve": [
@@ -2677,8 +2672,7 @@
           "completion_pct": 115,
           "actual_tss": 78,
           "actual_mins": 91,
-          "actual_distance_m": 43250.19,
-          "intervals_compliance": 114.7
+          "actual_distance_m": 43250.19
         },
         {
           "day": "Man",
@@ -2702,8 +2696,7 @@
           "completion_pct": 100,
           "actual_tss": 28,
           "actual_mins": 27,
-          "actual_distance_m": 4834.35,
-          "intervals_compliance": 100.0
+          "actual_distance_m": 4834.35
         },
         {
           "day": "Tir",
@@ -2765,8 +2758,7 @@
           "completion_pct": 111,
           "actual_tss": 71,
           "actual_mins": 55,
-          "actual_distance_m": 11040.51,
-          "intervals_compliance": 110.9
+          "actual_distance_m": 11040.51
         },
         {
           "day": "Fre",
@@ -2780,8 +2772,7 @@
           "completion_pct": 56,
           "actual_tss": 33,
           "actual_mins": 33,
-          "actual_distance_m": 1390.4,
-          "intervals_compliance": 73.3
+          "actual_distance_m": 1390.4
         },
         {
           "day": "Lør",
@@ -2795,8 +2786,7 @@
           "completion_pct": 97,
           "actual_tss": 176,
           "actual_mins": 147,
-          "actual_distance_m": 28227.0,
-          "intervals_compliance": 123.9
+          "actual_distance_m": 28227.0
         }
       ],
       "blockType": "BUILD",
@@ -3430,8 +3420,8 @@
       "real": true
     }
   ],
-  "coachAssessmentHtml": "<p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\"><strong>Dag 70 af 98 · Søndag · Uge 10</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">💪 <strong>Træning & load</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">CTL er 52,4 med TSB på -7,2 — kroppen er træt men ikke presset. Ugen har haft tyngde: VO2-løbet torsdag, generalprøven fredag og 28,2 km lørdag er en hård treenighed. Teknisk var VO2-passet ujævnt — rep 1 (4:13/km) og rep 3 (4:12/km) lå begge over target-zonen, det er overpacing, ikke sejre. Næste VO2-pas: start roligere og lad kroppen bygge sig ind i zonen, frem for at gå for hårdt fra start.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">⚖️ <strong>Krop & kost</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Vægten er 72,8 kg i dag — 4,8 kg fra målet. Fedtprocenten er 22,5 % i dag — 6,5 procentpoint fra målet. Det vigtige tal er 7-dages snittet: fedtprocenten er gået 0,1 point op over de seneste 7 dage, og det er den retning der tæller. Vægten er 72,4 kg i snit, og trenden er neutral til let stigende på fedt — det kræver opmærksomhed på kostsammensætningen, ikke panik, men heller ikke at se bort fra det.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">🎯 <strong>AF-status & fokus for resten af ugen</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Du har 6 AF-dage ud af 7 dage i ugen — det er stærkt og godt over ugemålet på 5. I dag er hviledag og stadig i gang — hold alkoholen fra bordet i dag, og ugen lukker smukt. Fokus de næste dage handler om at komme ind i uge 11 med friske ben — tonight er restitution.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">📊 <strong>Store billede</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">CTL er 52,4 mod ugeplanen på 50 — du er 2,4 point foran planen. Over de seneste 89 dage er vægten gået fra 74,9 til 72,8 kg, altså 2,1 kg ned. Det er den rigtige retning på vægt, men fedtprocenten skal følge med — det er der den virkelige test ligger. Du er godt i rute mod Christiansborg og Médoc.</p>",
-  "coachAssessmentTs": "03:02",
+  "coachAssessmentHtml": "<p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\"><strong>Dag 70 af 98 · Søndag · Uge 10</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">💪 <strong>Træning & load</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">CTL er 52,4 med TSB på -7,2 — kroppen er belastet men ikke i farezonen. Ugen har haft tyngde: VO2-passet torsdag og det lange løb lørdag (28,2 km · 176 TSS) udgør kernen, og det er præcis den stimulus der driver CTL fremad. To ting skal du tage med videre: på VO2-passet var rep 1 (4:13/km) og rep 3 (4:12/km) begge hurtigere end target-zonen (4:17–4:29/km) — det er overpacing, ikke et tegn på form, og næste gang skal du holde igen i de første reps. OW-svømmet fredag stoppede ved 1.390 m mod planlagte 2.500 m — Christiansborg-generalprøven mangler stadig en fuld sammenhængende distance, og det skal prioriteres i uge 11.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">⚖️ <strong>Krop & kost</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Dagens vægt er 72,8 kg og fedtprocent 22,5 % — henholdsvis 4,8 kg og 6,5 procentpoint fra målene. 7-dages snittet for fedtprocent er steget 0,1 point til 21,7 % — det er den retning der tæller, og den går den forkerte vej lige nu. Vægtsnittet på 72,4 kg er ikke alarmerende, men når fedtprocenten kryber op mens vægten er nogenlunde stabil, mister du muskelmasse relativt set — og det er ikke det du vil i et capacity-år. Tjek kaloriekvaliteten, ikke kun mængden.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">🎯 <strong>AF-status & fokus for resten af ugen</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Du har 6 AF-dage ud af 7 dage gået i ugen — målet er 6, så du er i mål med det allerede. I dag er hviledagen, og den skal bruges som hviledag — TSB skal have lov at bevæge sig opad inden uge 11.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">📊 <strong>Store billede</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">CTL på 52,4 er 2,4 point foran ugeplanen (mål uge 10: 50) — du bygger hurtigere end planlagt, og det er et godt problem at have, men husk at Friel-loftet er 5–8 CTL-point pr. uge. Over de seneste 89 dage er vægten gået fra 74,9 til 72,8 kg — et fald på 2,1 kg, og det er den rigtige retning, men tempoet skal holdes i krop, ikke bare på skalaen.</p>",
+  "coachAssessmentTs": "05:55",
   "commute_pairing_warnings": [],
   "warnings": [],
   "tsb": -7.2,
@@ -3716,8 +3706,8 @@
       "note": "Nøgle virker"
     }
   },
-  "credentialsCheckedTs": "2026-08-09T05:12:35.772038",
-  "coachAssessmentTsFull": "2026-08-09T03:02:41.498785",
+  "credentialsCheckedTs": "2026-08-09T05:55:39.334965",
+  "coachAssessmentTsFull": "2026-08-09T05:55:39.334948",
   "coachAssessmentWeightAtGen": 72.8,
   "coachAssessmentAfAtGen": 6,
   "event_structure_warnings": [],
