@@ -3812,12 +3812,35 @@
                 "name": "Løb Puerto de Sóller – Far des Cap Gros t/r 16 km",
                 "type": "Run",
                 "moving_time": 5700,
-                "description": "- Rute: Puerto de Sóller – Far des Cap Gros tur/retur, ca. 16 km\n- Indsats effort-baseret Z1-Z2 — IKKE pace-styret: stigningen giver naturligt højere puls opad, det er forventet\n- Måltid ca. 1:35, afgang 06:00, hjemme ca. 07:35\n- Kør på tid, ikke rute: vend når uret siger 45 min\n- Hold roligt tempo i nedkørsler, pas på fødder/ankler på sti",
+                "description": "- Varm-op 10m >5:39/km Pace\n- Base Z1-Z2 80m 5:00-5:38/km Pace\n- Cool-down 5m >5:39/km Pace\n\nRute: Puerto de Sóller – Far des Cap Gros tur/retur, ca. 16 km. Pace-tallene er vejledende for fladt underlag — på stigningen styres der efter effort, ikke efter uret. Højere puls opad er forventet. Vend når uret siger 45 min. Afgang 06:00, hjemme ca. 07:35. Roligt i nedkørsler, pas på ankler på sti.",
                 "workout_doc": {
                   "steps": [
                     {
-                      "text": "PdS – Far des Cap Gros t/r, effort-baseret Z1-Z2, pace følger terræn",
-                      "duration": 5700
+                      "text": "Varm-op >5:39/km",
+                      "pace": {
+                        "start": 65,
+                        "end": 78,
+                        "units": "%pace"
+                      },
+                      "duration": 600
+                    },
+                    {
+                      "text": "Base Z1-Z2 5:00-5:38/km — effort-styret på stigning",
+                      "pace": {
+                        "start": 78,
+                        "end": 88,
+                        "units": "%pace"
+                      },
+                      "duration": 4800
+                    },
+                    {
+                      "text": "Cool-down >5:39/km",
+                      "pace": {
+                        "start": 65,
+                        "end": 78,
+                        "units": "%pace"
+                      },
+                      "duration": 300
                     }
                   ]
                 }
