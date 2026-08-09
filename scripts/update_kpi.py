@@ -29,7 +29,8 @@ from modules.config   import (API_KEY, ATHLETE_ID, GH_TOKEN, ANTHROPIC_KEY,
                                api_get, ctl_plan_for_week, fix_enc, fmt, color_for)
 from modules.fitness  import get_fitness, get_wellness_7d, get_history, get_ctl_curve
 from modules.af       import (get_af_this_week, get_af_history, get_full_af_log,
-                               get_af_streak, monday_this_week)
+                               get_af_streak, monday_this_week,
+                               detect_alcohol_cluster)
 from modules.sessions import (get_activities_week, get_workout_compliance_this_week,
                                format_compliance_for_prompt, get_planned_mins_this_week,
                                planned_tss_this_week, parse_planned_mins, calc_completion,
@@ -372,7 +373,7 @@ def main():
     # --- AF-dage (man–søn denne uge) ---
     data['af'] = {
         'weekDone': af_days if af_days is not None else data.get('af', {}).get('weekDone', 0),
-        'target': 5,
+        'target': AF_GOAL,
         'streak': af_streak
     }
 
@@ -381,6 +382,23 @@ def main():
     if full_af_log:
         data["af_log"] = full_af_log
         print(f"  AF log (alle dage): {len(full_af_log)} dage")
+
+        # Klynge-advarsel: to eller flere drikkedage i træk rammer HRV
+        # hårdere end samme antal dage spredt ud (verificeret 31/7-2/8-2026,
+        # hvor tre dage i træk gav sæsonens to laveste HRV-tal).
+        cluster = detect_alcohol_cluster(full_af_log)
+        if cluster:
+            _c_start = _dk_short(cluster['start'])
+            _c_end   = _dk_short(cluster['end'])
+            _span    = f"{_c_start}–{_c_end}" if _c_start and _c_end else ""
+            warnings.append({
+                'type':    'alcohol_cluster',
+                'level':   'critical' if cluster['days'] >= 3 else 'warn',
+                'message': (f"{cluster['days']} drikkedage i træk {_span} — "
+                            f"klynger rammer HRV hårdere end spredte dage."),
+            })
+            data['warnings'] = warnings
+            print(f"  ⚠️  Alkohol-klynge: {cluster}")
 
     # --- AF historik: uge-for-uge siden projektstart ---
     af_history = get_af_history()
