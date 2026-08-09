@@ -3809,20 +3809,20 @@
           "entries": [
             {
               "workout": {
-                "name": "Løb Fornalutx – Far des Cap Gros loop 21,3 km",
+                "name": "Løb Puerto de Sóller – Far des Cap Gros t/r 16 km",
                 "type": "Run",
-                "moving_time": 7662,
-                "description": "- Rute: Fornalutx – Far des Cap Gros loop, 21,28 km / 502 hm stigning / 493 hm fald\n- Indsats effort-baseret Z1-Z2 — IKKE pace-styret: 502 hm på 21 km giver naturligt højere puls opad end fladt Z2, det er forventet\n- Vejledende snit-tempo iflg. rute 6:00/km, måltid ca. 2:07:42\n- Hold roligt tempo i nedkørsler, pas på fødder/ankler på sti",
+                "moving_time": 5700,
+                "description": "- Rute: Puerto de Sóller – Far des Cap Gros tur/retur, ca. 16 km\n- Indsats effort-baseret Z1-Z2 — IKKE pace-styret: stigningen giver naturligt højere puls opad, det er forventet\n- Måltid ca. 1:35, afgang 06:00, hjemme ca. 07:35\n- Kør på tid, ikke rute: vend når uret siger 45 min\n- Hold roligt tempo i nedkørsler, pas på fødder/ankler på sti",
                 "workout_doc": {
                   "steps": [
                     {
-                      "text": "Fornalutx – Far des Cap Gros loop, effort-baseret Z1-Z2, pace følger terræn",
-                      "duration": 7662
+                      "text": "PdS – Far des Cap Gros t/r, effort-baseret Z1-Z2, pace følger terræn",
+                      "duration": 5700
                     }
                   ]
                 }
               },
-              "note": "Erstatter Sa Calobra-testen (flyttet til tirsdag) — afgang 06:00, hjemme ca. 08:08, god margin før håndværkermøde kl 09:00",
+              "note": "Reduceret fra 21,3 km loop — Sa Calobra-testen ligger tirsdag, excentrisk belastning fra 500 hm nedløb skal ikke koste watt på testen. Afgang 06:00, hjemme ca. 07:35 før håndværkermøde kl 09:00",
               "id": "0b13ed2d"
             }
           ]
