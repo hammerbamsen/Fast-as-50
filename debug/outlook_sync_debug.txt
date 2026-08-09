@@ -1,8 +1,8 @@
 Token OK
 Uge 11: 2026-08-10 til 2026-08-16
-6 workouts fra Intervals
+7 workouts fra Intervals
 timeOverrides: 9 dato(er) fra data/plan.json
-  Slettet: 🏃 Løb Fornalutx – Far des Cap Gros loop 21,3 km
+  Slettet: 🏃 Løb Puerto de Sóller – Far des Cap Gros t/r 16 km
   Slettet: 🚴 Sa Calobra TEST via Puig Major
   Slettet: 🏊 OW-svøm 800-1500m
   Slettet: 🥾 Hike 3 timer Z1-Z2
@@ -14,7 +14,8 @@ Slettet: 7
   Oprettet: 2026-08-11 🚴 Sa Calobra TEST via Puig Major
   Oprettet: 2026-08-12 🏊 OW-svøm 800-1500m
   Oprettet: 2026-08-12 🥾 Hike 3 timer Z1-Z2
+  Oprettet: 2026-08-13 🚴 Cykel Z2 75 min let
   Oprettet: 2026-08-14 🏃 Løb Z2 40 min let
   Oprettet: 2026-08-15 🚴 Cykel Z2 90 min Mallorca
-Oprettet: 6 | Fejl: 0
+Oprettet: 7 | Fejl: 0
 DONE
