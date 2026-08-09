@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-08-09 04:09",
+    "updated": "2026-08-09 05:02",
     "week": 10,
     "totalWeeks": 14,
     "blockType": "BUILD",
@@ -71,18 +71,18 @@
       "color": "#27AE60"
     },
     "afStreak": {
-      "value": "1",
+      "value": "2",
       "unit": "",
       "sub": "Dage i træk · mål 5/uge",
       "color": "#59182A"
     }
   },
   "af": {
-    "weekDone": 5,
+    "weekDone": 6,
     "target": 5,
-    "streak": 1
+    "streak": 2
   },
-  "coachSpeech": "Søndag — afslut uge 10 stærkt. {HL} Godt: Søvn på 7,0 timer er solid. 5/7 AF-dage — ugens mål er ramt. Fokus: Vægt på 72,8 kg — hold protein højt og undgå lette kulhydrater om aftenen. Alle sessioner i hus. Juster de små ting, og resten følger. 📊 Store billede: CTL 52,4 er 2.4 point FORAN ugeplanen (planmål uge 10: 50). Vægten har tabt 2.1 kg over de seneste 89 dage (74,9 → 72,8 kg).  \"Det er ikke at have for lidt, der gør et menneske fattigt, men at ville have mere.\" — Seneca",
+  "coachSpeech": "Søndag — afslut uge 10 stærkt. {HL} Godt: Søvn på 7,0 timer er solid. 6/7 AF-dage — ugens mål er ramt. Fokus: Vægt på 72,8 kg — hold protein højt og undgå lette kulhydrater om aftenen. Alle sessioner i hus. Juster de små ting, og resten følger. 📊 Store billede: CTL 52,4 er 2.4 point FORAN ugeplanen (planmål uge 10: 50). Vægten har tabt 2.1 kg over de seneste 89 dage (74,9 → 72,8 kg).  \"Det er ikke at have for lidt, der gør et menneske fattigt, men at ville have mere.\" — Seneca",
   "coachHighlight": "108 procent af ugens TSS er i hus",
   "weekFocus": "Svømmefokus og første VO2-stimulus sætter fart mod Christiansborg",
   "today": [
@@ -1975,7 +1975,8 @@
     "2026-08-05": 0,
     "2026-08-06": 0,
     "2026-08-07": 1,
-    "2026-08-08": 0
+    "2026-08-08": 0,
+    "2026-08-09": 0
   },
   "all_weeks": {
     "1": {
@@ -3103,7 +3104,7 @@
     },
     {
       "week": 10,
-      "done": 5,
+      "done": 6,
       "total": 7,
       "label": "Uge 10"
     }
@@ -3429,8 +3430,8 @@
       "real": true
     }
   ],
-  "coachAssessmentHtml": "<p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\"><strong>Dag 70 af 98 · Søndag · Uge 10</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">💪 <strong>Træning & load</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">CTL er 52,4 med TSB på -7,2 — det er en velladet uge der slutter kontrolleret. Lang løb i går var on target med 28,2 km og 66,2% i Z2-pace. VO2-passet torsdag var halvt overpacet: rep 1 (4:13/km) og rep 3 (4:12/km) lå begge over target — næste gang holder du dig i 4:17–4:29/km fra første interval, ikke kun fra det andet. OW-svømmen fredag stoppede ved 1390 m mod planlagte 2500 m — det er den eneste åbne tråd fra ugen, og den tager du med som en specifik opgave i de kommende uger før Christiansborg.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">⚖️ <strong>Krop & kost</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Vægten er 72,8 kg i dag, og 7-dages snittet ligger på 72,4 kg. Fedtprocenten er 22,5% i dag, men 7-dages snittet er steget 0,1 procentpoint over de seneste 7 dage og er dermed det reelle signal. Det betyder at vægttabet endnu ikke kommer fra fedt — det er den kombination der skal vendes. Afstand til målet er stadig 4,8 kg på vægten og 6,5 procentpoint på fedtprocenten, så kost og søvn har mindst lige så meget at sige som træningen de næste uger.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">🎯 <strong>AF-status & fokus for resten af ugen</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">5 AF-dage ud af 7 dage gået i ugen — målet er nået. I dag er hviledag, så ugen afsluttes som planlagt. Ingen yderligere krav.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">📊 <strong>Store billede</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">CTL på 52,4 er 2,4 point foran ugeplanen (planmål uge 10: 50) — det er en lille buffer du kan bruge til at holde igen i uge 11 hvis kroppen beder om det. Vægten er faldet 2,1 kg over de seneste 89 dage (74,9 → 72,8 kg) — det er et roligt og holdbart tempo, men fedtprocent-snittet skal begynde at følge med for at tabet er reelt.</p>",
-  "coachAssessmentTs": "02:10",
+  "coachAssessmentHtml": "<p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\"><strong>Dag 70 af 98 · Søndag · Uge 10</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">💪 <strong>Træning & load</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">CTL er 52,4 med TSB på -7,2 — kroppen er træt men ikke presset. Ugen har haft tyngde: VO2-løbet torsdag, generalprøven fredag og 28,2 km lørdag er en hård treenighed. Teknisk var VO2-passet ujævnt — rep 1 (4:13/km) og rep 3 (4:12/km) lå begge over target-zonen, det er overpacing, ikke sejre. Næste VO2-pas: start roligere og lad kroppen bygge sig ind i zonen, frem for at gå for hårdt fra start.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">⚖️ <strong>Krop & kost</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Vægten er 72,8 kg i dag — 4,8 kg fra målet. Fedtprocenten er 22,5 % i dag — 6,5 procentpoint fra målet. Det vigtige tal er 7-dages snittet: fedtprocenten er gået 0,1 point op over de seneste 7 dage, og det er den retning der tæller. Vægten er 72,4 kg i snit, og trenden er neutral til let stigende på fedt — det kræver opmærksomhed på kostsammensætningen, ikke panik, men heller ikke at se bort fra det.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">🎯 <strong>AF-status & fokus for resten af ugen</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Du har 6 AF-dage ud af 7 dage i ugen — det er stærkt og godt over ugemålet på 5. I dag er hviledag og stadig i gang — hold alkoholen fra bordet i dag, og ugen lukker smukt. Fokus de næste dage handler om at komme ind i uge 11 med friske ben — tonight er restitution.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">📊 <strong>Store billede</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">CTL er 52,4 mod ugeplanen på 50 — du er 2,4 point foran planen. Over de seneste 89 dage er vægten gået fra 74,9 til 72,8 kg, altså 2,1 kg ned. Det er den rigtige retning på vægt, men fedtprocenten skal følge med — det er der den virkelige test ligger. Du er godt i rute mod Christiansborg og Médoc.</p>",
+  "coachAssessmentTs": "03:02",
   "commute_pairing_warnings": [],
   "warnings": [],
   "tsb": -7.2,
@@ -3715,10 +3716,10 @@
       "note": "Nøgle virker"
     }
   },
-  "credentialsCheckedTs": "2026-08-09T02:10:09.169417",
-  "coachAssessmentTsFull": "2026-08-09T02:10:09.169380",
+  "credentialsCheckedTs": "2026-08-09T03:02:41.498821",
+  "coachAssessmentTsFull": "2026-08-09T03:02:41.498785",
   "coachAssessmentWeightAtGen": 72.8,
-  "coachAssessmentAfAtGen": 5,
+  "coachAssessmentAfAtGen": 6,
   "event_structure_warnings": [],
   "coachAssessmentFatAtGen": 22.5,
   "zones": {
