@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-08-09 16:06",
+    "updated": "2026-08-09 16:14",
     "week": 10,
     "totalWeeks": 14,
     "blockType": "BUILD",
@@ -23,16 +23,16 @@
       "color": "#C0392B"
     },
     "ctl": {
-      "value": "52,4",
+      "value": "53,0",
       "unit": "",
       "sub": "Uge 10-mål 50 · Slutmål 43 (uge 14)",
       "color": "#27AE60"
     },
     "tsb": {
-      "value": "-7,2",
+      "value": "-10,3",
       "unit": "",
-      "sub": "Form · CTL−ATL, frisk >0",
-      "color": "#27AE60"
+      "sub": "Hård blok · CTL−ATL, frisk >0",
+      "color": "#E67E22"
     },
     "sleep": {
       "value": "7,0",
@@ -53,9 +53,9 @@
       "color": "#7A6A58"
     },
     "tssComp": {
-      "value": "443",
+      "value": "471",
       "unit": "TSS",
-      "sub": "443 af 410 planlagt TSS",
+      "sub": "471 af 410 planlagt TSS",
       "color": "#27AE60"
     },
     "bikeKm": {
@@ -82,17 +82,17 @@
     "target": 6,
     "streak": 2
   },
-  "coachSpeech": "Søndag — afslut uge 10 stærkt. {HL} Godt: Søvn på 7,0 timer er solid. 6/7 AF-dage — ugens mål er ramt. Fokus: Vægt på 72,8 kg — hold protein højt og undgå lette kulhydrater om aftenen. Alle sessioner i hus. Juster de små ting, og resten følger. 📊 Store billede: CTL 52,4 er 2.4 point FORAN ugeplanen (planmål uge 10: 50). Vægten har tabt 2.1 kg over de seneste 89 dage (74,9 → 72,8 kg).  \"Det er ikke at have for lidt, der gør et menneske fattigt, men at ville have mere.\" — Seneca",
-  "coachHighlight": "108 procent af ugens TSS er i hus",
+  "coachSpeech": "Søndag — afslut uge 10 stærkt. {HL} Godt: Søvn på 7,0 timer er solid. 6/7 AF-dage — ugens mål er ramt. Fokus: Vægt på 72,8 kg — hold protein højt og undgå lette kulhydrater om aftenen. Alle sessioner i hus. Juster de små ting, og resten følger. 📊 Store billede: CTL 53,0 er 3.0 point FORAN ugeplanen (planmål uge 10: 50). Vægten har tabt 2.1 kg over de seneste 89 dage (74,9 → 72,8 kg).  \"Det er ikke at have for lidt, der gør et menneske fattigt, men at ville have mere.\" — Seneca",
+  "coachHighlight": "115 procent af ugens TSS er i hus",
   "weekFocus": "Svømmefokus og første VO2-stimulus sætter fart mod Christiansborg",
   "today": [
     {
-      "discipline": "rest",
-      "title": "Hviledag",
+      "discipline": "hike",
+      "title": "Fornalutx Vandring",
       "duration": "",
       "zone": "–",
-      "desc": "Ingen planlagt træning i dag.",
-      "completed": false
+      "desc": "",
+      "completed": true
     }
   ],
   "week_sessions": [
@@ -223,6 +223,17 @@
       "actual_tss": 176,
       "actual_mins": 147,
       "actual_distance_m": 28227.0
+    },
+    {
+      "day": "Søn",
+      "disc": "hike",
+      "label": "Fornalutx Vandring",
+      "done": true,
+      "extra": true,
+      "actual_tss": 28,
+      "actual_mins": 137,
+      "actual_distance_m": 9932.45,
+      "today": true
     }
   ],
   "ctlCurve": [
@@ -235,7 +246,7 @@
     49.7,
     51.0,
     50.9,
-    52.4
+    53.0
   ],
   "weightHistory": [
     {
@@ -1897,7 +1908,7 @@
     },
     {
       "date": "2026-08-09",
-      "v": -7.2,
+      "v": -10.3,
       "real": true
     }
   ],
@@ -2787,6 +2798,17 @@
           "actual_tss": 176,
           "actual_mins": 147,
           "actual_distance_m": 28227.0
+        },
+        {
+          "day": "Søn",
+          "disc": "hike",
+          "label": "Fornalutx Vandring",
+          "done": true,
+          "extra": true,
+          "actual_tss": 28,
+          "actual_mins": 137,
+          "actual_distance_m": 9932.45,
+          "today": true
         }
       ],
       "blockType": "BUILD",
@@ -3100,13 +3122,14 @@
     }
   ],
   "train_mins": {
+    "hike": 137.0,
     "run": 229.0,
     "openwater": 67.0,
     "walk": 106.0,
     "strength": 57.0,
     "bike": 91.0,
     "planned": 480.0,
-    "actual_total": 550.0
+    "actual_total": 687.0
   },
   "fatHistory": [
     {
@@ -3420,11 +3443,11 @@
       "real": true
     }
   ],
-  "coachAssessmentHtml": "<p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\"><strong>Dag 70 af 98 · Søndag · Uge 10</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">💪 <strong>Træning & load</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">CTL på 52,4 er solid og ligger 2,4 point foran ugeplanen — men vær opmærksom på VO2-passet torsdag: rep 1 (4:13/km) og rep 3 (4:12/km) var begge hurtigere end target-vinduet på 4:17–4:29/km. Det er overpacing, ikke sejre. OW-svømmen fredag stoppede ved 1390 m mod planlagte 2500 m — det var den vigtigste generalprøve inden Christiansborg Rundt, og den mangler stadig en reel test. TSB på -7,2 er fin og godt inden for grænsen.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">⚖️ <strong>Krop & kost</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Vægten er 72,8 kg i dag — 4,8 kg fra målet. Fedtprocenten er 22,5 % i dag mod et mål på under 16 %. Det vigtigste tal er dog 7-dages snittet: fedtprocenten er steget 0,1 point over de seneste 7 dage, og det er den reelle retning — ikke et godt tegn. Vægtsnittet (72,4 kg) viser fremgang over tid, men hvis fedtprocenten ikke følger med nedad, taber du ikke fedt — og det er det eneste der tæller i et capacity-år.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">🎯 <strong>AF-status & fokus for resten af ugen</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Du har 6 AF-dage ud af 7 dage gået i ugen — målet er nået. I dag er hviledag, og der er ingen planlagte pas tilbage. Brug søndagen på restitution og sørg for at sove nok inden næste uge starter.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">📊 <strong>Store billede</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">CTL er 52,4 — 2,4 point foran ugeplanen (planmål uge 10: 50). Vægten er faldet 2,1 kg over de seneste 89 dage (fra 74,9 til 72,8 kg), og det er en stabil og fornuftig retning. Den uløste opgave er OW-svømmen: 2500 m sammenhængende åbent vand skal testes inden 29. august — planlæg det som prioritet i uge 11.</p>",
-  "coachAssessmentTs": "11:58",
+  "coachAssessmentHtml": "<p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\"><strong>Dag 70 af 98 · Søndag · Uge 10</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">💪 <strong>Træning & load</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">CTL er 53,0 med TSB på -10,3 — kroppen har arbejdet hårdt denne uge, og det mærkes. VO2-passet torsdag viste vejen frem: rep 2 (4:20/km) og rep 4 (4:19/km) var præcis i zone, men rep 1 (4:13/km) og rep 3 (4:12/km) var for hurtige — næste gang du kører 4×5 min, hold dig selv tilbage i de første 30 sekunder af rep 1 og 3, for overpacing der koster dig i de sene reps. OW-svømmen fredag stoppede ved 1390 m mod planlagte 2500 m — det er det vigtigste uafsluttede punkt at tage med ind i næste svømmesession, hvor sammenhængende distance er prioriteten.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">⚖️ <strong>Krop & kost</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Dagens vægt er 72,8 kg (mål: under 68 kg), og fedtprocenten er 22,5 % (mål: under 16 %) — begge tal har stadig lang vej. Det autoritative billede er 7-dages snittet: vægt 72,4 kg og fedtprocent 21,7 %, og fedtprocent-snittet er gået 0,1 point op over de seneste 7 dage — retningen er den forkerte på fedtprocenten lige nu. Vægten alene fortæller ikke historien; det er fedtprocenten der afgør om tabet er reelt — og snittet siger, at den er gået den forkerte vej denne uge. En uge med høj træningsbelastning øger appetitten og kan fordreje billedet, men det er et signal om at holde øje med kosten i de kommende dage.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">🎯 <strong>AF-status & fokus for resten af ugen</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Du er på 6 AF-dage ud af 7 dage gået i ugen — det er præcis på mål. Ugen er ikke slut, og dagens vandring i Fornalutx (9,9 km · 137 min · 28 TSS) er i hus. Ingen yderligere træning er planlagt i dag, så fokus for resten af søndagen er simpelt: restitution, væske og mad der støtter restitution — ikke mere.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">📊 <strong>Store billede</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">CTL på 53,0 er 3,0 point foran ugeplanen (planmål uge 10: 50) — du er foran skema, ikke bagud. Over de seneste 89 dage er vægten gået fra 74,9 kg til 72,8 kg, altså 2,1 kg ned — fremgangen er reel, men tempoet skal holdes for at nå under 68 kg til september.</p>",
+  "coachAssessmentTs": "14:15",
   "commute_pairing_warnings": [],
   "warnings": [],
-  "tsb": -7.2,
+  "tsb": -10.3,
   "swimHistory": [
     {
       "week": 1,
@@ -3487,9 +3510,9 @@
       "cumulative": 22317.0
     }
   ],
-  "coachAssessmentLastActId": "i173621146",
+  "coachAssessmentLastActId": "i174065545",
   "weekFocusWeek": 10,
-  "coachAssessmentPlanAtGen": "",
+  "coachAssessmentPlanAtGen": "Fornalutx Vandring",
   "weightGoal": 68,
   "bodyFatGoal": 16,
   "weightMovingAvg7": [
@@ -3706,8 +3729,8 @@
       "note": "Nøgle virker"
     }
   },
-  "credentialsCheckedTs": "2026-08-09T14:06:37.162274",
-  "coachAssessmentTsFull": "2026-08-09T11:58:08.324147",
+  "credentialsCheckedTs": "2026-08-09T14:15:05.758422",
+  "coachAssessmentTsFull": "2026-08-09T14:15:05.758407",
   "coachAssessmentWeightAtGen": 72.8,
   "coachAssessmentAfAtGen": 6,
   "event_structure_warnings": [],
@@ -3803,7 +3826,7 @@
     "7": 455,
     "8": 417,
     "9": 363,
-    "10": 443
+    "10": 471
   },
   "racesUpcoming": [
     {
