@@ -1,41 +1,41 @@
 {
   "meta": {
-    "updated": "2026-08-09 01:57",
+    "updated": "2026-08-09 04:09",
     "week": 10,
     "totalWeeks": 14,
     "blockType": "BUILD",
-    "daysToMedoc": 28,
-    "daysToChristiansborg": 21,
-    "dayName": "Lørdag",
-    "date": "8. aug"
+    "daysToMedoc": 27,
+    "daysToChristiansborg": 20,
+    "dayName": "Søndag",
+    "date": "9. aug"
   },
   "kpis": {
     "weight": {
-      "value": "73,0",
+      "value": "72,8",
       "unit": "kg",
-      "sub": "Mål <68 kg · snit 72,3 kg",
+      "sub": "Mål <68 kg · snit 72,4 kg",
       "color": "#E67E22"
     },
     "fat": {
-      "value": "21,5",
+      "value": "22,5",
       "unit": "%",
       "sub": "Mål <16%",
       "color": "#C0392B"
     },
     "ctl": {
-      "value": "53,6",
+      "value": "52,4",
       "unit": "",
       "sub": "Uge 10-mål 50 · Slutmål 43 (uge 14)",
       "color": "#27AE60"
     },
     "tsb": {
-      "value": "-15,1",
+      "value": "-7,2",
       "unit": "",
-      "sub": "Hård blok · CTL−ATL, frisk >0",
-      "color": "#E67E22"
+      "sub": "Form · CTL−ATL, frisk >0",
+      "color": "#27AE60"
     },
     "sleep": {
-      "value": "7,2",
+      "value": "7,0",
       "unit": "t",
       "sub": "Snit 7,5t · mål 7t",
       "color": "#2874A6"
@@ -47,7 +47,7 @@
       "color": "#27AE60"
     },
     "hrv": {
-      "value": "46,1",
+      "value": "48,9",
       "unit": "ms",
       "sub": "Snit 7d",
       "color": "#7A6A58"
@@ -82,17 +82,17 @@
     "target": 5,
     "streak": 1
   },
-  "coachSpeech": "Lørdag — uge 10 af 14. {HL} Godt: Søvn på 7,2 timer er solid. 5/7 AF-dage — ugens mål er ramt. Vægt på 73,0 kg — Vægten er 1.6 kg højere end seneste måling (2026-08-07) — sandsynligvis væske/natrium snarere end fedt, ikke et disciplinproblem. Giv den et par dage før du dømmer tallet. Stærk uge. 3 uger til Christiansborg — hold sporet.  \"Kroppen tror, hvad sindet siger.\"",
+  "coachSpeech": "Søndag — afslut uge 10 stærkt. {HL} Godt: Søvn på 7,0 timer er solid. 5/7 AF-dage — ugens mål er ramt. Fokus: Vægt på 72,8 kg — hold protein højt og undgå lette kulhydrater om aftenen. Alle sessioner i hus. Juster de små ting, og resten følger. 📊 Store billede: CTL 52,4 er 2.4 point FORAN ugeplanen (planmål uge 10: 50). Vægten har tabt 2.1 kg over de seneste 89 dage (74,9 → 72,8 kg).  \"Det er ikke at have for lidt, der gør et menneske fattigt, men at ville have mere.\" — Seneca",
   "coachHighlight": "108 procent af ugens TSS er i hus",
   "weekFocus": "Svømmefokus og første VO2-stimulus sætter fart mod Christiansborg",
   "today": [
     {
-      "discipline": "run",
-      "title": "Lang løb Z2 29 km (155 min)",
+      "discipline": "rest",
+      "title": "Hviledag",
       "duration": "",
       "zone": "–",
-      "desc": "",
-      "completed": true
+      "desc": "Ingen planlagt træning i dag.",
+      "completed": false
     }
   ],
   "week_sessions": [
@@ -222,7 +222,6 @@
       "planned_tss": 142,
       "planned_mins": 155,
       "planned_distance_m": 29000,
-      "today": true,
       "completion": "done",
       "completion_pct": 97,
       "actual_tss": 176,
@@ -241,14 +240,9 @@
     49.7,
     51.0,
     50.9,
-    53.6
+    52.4
   ],
   "weightHistory": [
-    {
-      "date": "2026-05-11",
-      "v": 74.9,
-      "real": true
-    },
     {
       "date": "2026-05-12",
       "v": 74.9,
@@ -553,14 +547,14 @@
       "date": "2026-08-08",
       "v": 73.0,
       "real": true
+    },
+    {
+      "date": "2026-08-09",
+      "v": 72.8,
+      "real": true
     }
   ],
   "hrvHistory": [
-    {
-      "date": "2026-05-11",
-      "v": 52.0,
-      "real": true
-    },
     {
       "date": "2026-05-12",
       "v": 62.0,
@@ -1005,14 +999,14 @@
       "date": "2026-08-08",
       "v": 36.0,
       "real": true
+    },
+    {
+      "date": "2026-08-09",
+      "v": 45.0,
+      "real": true
     }
   ],
   "sleepHistory": [
-    {
-      "date": "2026-05-11",
-      "v": 8.1,
-      "real": true
-    },
     {
       "date": "2026-05-12",
       "v": 8.0,
@@ -1453,14 +1447,14 @@
       "date": "2026-08-08",
       "v": 5.3,
       "real": true
+    },
+    {
+      "date": "2026-08-09",
+      "v": 5.7,
+      "real": true
     }
   ],
   "tsbHistory": [
-    {
-      "date": "2026-05-11",
-      "v": -2.2,
-      "real": true
-    },
     {
       "date": "2026-05-12",
       "v": 0.2,
@@ -1904,6 +1898,11 @@
     {
       "date": "2026-08-08",
       "v": -15.1,
+      "real": true
+    },
+    {
+      "date": "2026-08-09",
+      "v": -7.2,
       "real": true
     }
   ],
@@ -2791,7 +2790,6 @@
           "planned_tss": 142,
           "planned_mins": 155,
           "planned_distance_m": 29000,
-          "today": true,
           "completion": "done",
           "completion_pct": 97,
           "actual_tss": 176,
@@ -3106,7 +3104,7 @@
     {
       "week": 10,
       "done": 5,
-      "total": 6,
+      "total": 7,
       "label": "Uge 10"
     }
   ],
@@ -3120,11 +3118,6 @@
     "actual_total": 550.0
   },
   "fatHistory": [
-    {
-      "date": "2026-05-11",
-      "v": 23.5,
-      "real": true
-    },
     {
       "date": "2026-05-12",
       "v": 23.7,
@@ -3429,19 +3422,18 @@
       "date": "2026-08-08",
       "v": 21.5,
       "real": true
-    }
-  ],
-  "coachAssessmentHtml": "<p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\"><strong>Dag 69 af 98 · Lørdag · Uge 10</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">💪 <strong>Træning & load</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">CTL er 53,6 – altså 3,6 over ugemålet på 50, og TSB ligger på -15,1, som er inden for det acceptable. Det lange løb landede på 28,2 km på 147 min med 176 TSS – 97% af planlagt distance og solidt udført med 66,2% af tiden i Z2-pace. VO2-passet torsdag viser et mønster du skal tage med dig: rep 1 og rep 3 lå på 4:13 og 4:12/km – begge hurtigere end target på 4:17–4:29/km – mens rep 2 og rep 4 sad præcist. Næste gang du laver 4×5 min: hold igen i rep 1 og 3, og lad løbet bygge inde i zonen fremfor over den. OW-svømmen fredag stoppede ved 1390 m mod planlagte 2500 m – det er et hul der skal adresseres i opløbet mod Christiansborg Rundt.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">⚖️ <strong>Krop & kost</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Dagens vægt er 73,0 kg, og fedtprocenten er 21,5%. Vægten er 1,6 kg højere end senest målte – det er sandsynligvis væske og natrium efter en lang løbetur, ikke et disciplinproblem; giv den et par dage før du dømmer tallet. 7-dages snittet er 72,3 kg i vægt og 21,6% i fedtprocent – og det er det tal der afgør retningen, ikke dagens øjebliksbillede. Afstanden til målene er stadig mærkbar: 4,3 kg fra 68 kg og 5,5 procentpoint fra <16% – det kræver konsekvent kaloriestyre kombineret med at beskytte muskelmassen i disse høj-TSS-uger.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">🎯 <strong>AF-status & fokus for resten af ugen</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Du har 5 AF-dage ud af 6 dage der er gået i ugen – det er stærkt og møder ugens mål. I morgen er ugens syvende dag og eneste tilbageværende mulighed; hold fast i det du allerede har bygget op. Prioriteten fremadrettet er at lukke huller i svømningstræningen – 2500 m sammenhængende åbent vand er et konkret krav op mod Christiansborg Rundt den 29. august, og generalprøven kom ikke i mål fredag.</p>",
-  "coachAssessmentTs": "20:35",
-  "commute_pairing_warnings": [],
-  "warnings": [
+    },
     {
-      "type": "hrv",
-      "level": "warn",
-      "message": "HRV 36,0 ms — 22% under 7d-snit (46,1 ms). Kroppen er presset."
+      "date": "2026-08-09",
+      "v": 22.5,
+      "real": true
     }
   ],
-  "tsb": -15.1,
+  "coachAssessmentHtml": "<p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\"><strong>Dag 70 af 98 · Søndag · Uge 10</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">💪 <strong>Træning & load</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">CTL er 52,4 med TSB på -7,2 — det er en velladet uge der slutter kontrolleret. Lang løb i går var on target med 28,2 km og 66,2% i Z2-pace. VO2-passet torsdag var halvt overpacet: rep 1 (4:13/km) og rep 3 (4:12/km) lå begge over target — næste gang holder du dig i 4:17–4:29/km fra første interval, ikke kun fra det andet. OW-svømmen fredag stoppede ved 1390 m mod planlagte 2500 m — det er den eneste åbne tråd fra ugen, og den tager du med som en specifik opgave i de kommende uger før Christiansborg.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">⚖️ <strong>Krop & kost</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Vægten er 72,8 kg i dag, og 7-dages snittet ligger på 72,4 kg. Fedtprocenten er 22,5% i dag, men 7-dages snittet er steget 0,1 procentpoint over de seneste 7 dage og er dermed det reelle signal. Det betyder at vægttabet endnu ikke kommer fra fedt — det er den kombination der skal vendes. Afstand til målet er stadig 4,8 kg på vægten og 6,5 procentpoint på fedtprocenten, så kost og søvn har mindst lige så meget at sige som træningen de næste uger.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">🎯 <strong>AF-status & fokus for resten af ugen</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">5 AF-dage ud af 7 dage gået i ugen — målet er nået. I dag er hviledag, så ugen afsluttes som planlagt. Ingen yderligere krav.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">📊 <strong>Store billede</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">CTL på 52,4 er 2,4 point foran ugeplanen (planmål uge 10: 50) — det er en lille buffer du kan bruge til at holde igen i uge 11 hvis kroppen beder om det. Vægten er faldet 2,1 kg over de seneste 89 dage (74,9 → 72,8 kg) — det er et roligt og holdbart tempo, men fedtprocent-snittet skal begynde at følge med for at tabet er reelt.</p>",
+  "coachAssessmentTs": "02:10",
+  "commute_pairing_warnings": [],
+  "warnings": [],
+  "tsb": -7.2,
   "swimHistory": [
     {
       "week": 1,
@@ -3506,17 +3498,16 @@
   ],
   "coachAssessmentLastActId": "i173621146",
   "weekFocusWeek": 10,
-  "coachAssessmentPlanAtGen": "Lang løb Z2 29 km (155 min)",
+  "coachAssessmentPlanAtGen": "",
   "weightGoal": 68,
   "bodyFatGoal": 16,
   "weightMovingAvg7": [
     null,
     null,
-    74.93,
     74.9,
     74.9,
     74.9,
-    75.06,
+    75.1,
     75.1,
     75.17,
     null,
@@ -3599,16 +3590,16 @@
     72.4,
     72.32,
     72.23,
-    72.3
+    72.3,
+    72.37
   ],
   "fatMovingAvg7": [
     null,
     null,
-    23.5,
-    23.32,
-    23.32,
-    23.32,
-    23.12,
+    23.27,
+    23.27,
+    23.27,
+    23.02,
     23.02,
     22.8,
     null,
@@ -3691,10 +3682,11 @@
     21.47,
     21.43,
     21.4,
-    21.55
+    21.55,
+    21.69
   ],
-  "weightToGoal": 5.0,
-  "bodyFatToGoal": 5.5,
+  "weightToGoal": 4.8,
+  "bodyFatToGoal": 6.5,
   "ctlPlan": [
     34,
     36,
@@ -3723,12 +3715,12 @@
       "note": "Nøgle virker"
     }
   },
-  "credentialsCheckedTs": "2026-08-08T23:57:20.520249",
-  "coachAssessmentTsFull": "2026-08-08T20:35:43.712482",
-  "coachAssessmentWeightAtGen": 73.0,
+  "credentialsCheckedTs": "2026-08-09T02:10:09.169417",
+  "coachAssessmentTsFull": "2026-08-09T02:10:09.169380",
+  "coachAssessmentWeightAtGen": 72.8,
   "coachAssessmentAfAtGen": 5,
   "event_structure_warnings": [],
-  "coachAssessmentFatAtGen": 21.5,
+  "coachAssessmentFatAtGen": 22.5,
   "zones": {
     "runThreshold": "4:24/km",
     "bikeFtpW": 278,
@@ -3826,7 +3818,7 @@
     {
       "name": "Santini Stelvio Gran Fondo (lang rute)",
       "date": "2027-06-06",
-      "days": 302,
+      "days": 301,
       "priority": "B",
       "distance": "130km / 4500hm",
       "registered": true
@@ -3834,7 +3826,7 @@
     {
       "name": "Tour des Stations Ultrafondo",
       "date": "2027-08-28",
-      "days": 385,
+      "days": 384,
       "priority": "A",
       "distance": "242km / 8848hm",
       "registered": false
