@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-08-10 14:08",
+    "updated": "2026-08-10 14:23",
     "week": 11,
     "totalWeeks": 14,
     "blockType": "BUILD",
@@ -71,18 +71,18 @@
       "color": "#7A6A58"
     },
     "afStreak": {
-      "value": "2",
+      "value": "3",
       "unit": "",
       "sub": "Dage i træk · mål 6/uge",
       "color": "#59182A"
     }
   },
   "af": {
-    "weekDone": 0,
+    "weekDone": 1,
     "target": 6,
-    "streak": 2
+    "streak": 3
   },
-  "coachSpeech": "Ny uge starter — uge 11 af 14. Build-uge. {HL} Godt: Ny uge med 2 dages streak i ryggen. Hold den. Fokus: 107 af 617 TSS er i hus — 6 sessioner tilbage, heriblandt Sa Calobra TEST via Puig Major, OW-svøm 800-1500m. Vægt på 72,8 kg (målt 9/8) — hold protein højt og undgå lette kulhydrater om aftenen. Keep moving forward.  \"Den bedste træning er den, du faktisk gennemfører.\"",
+  "coachSpeech": "Ny uge starter — uge 11 af 14. Build-uge. {HL} Godt: 1 AF-dage i 1 gennemførte dage — på rette spor. 5 mere og ugens mål er i hus. Fokus: 107 af 617 TSS er i hus — 6 sessioner tilbage, heriblandt Sa Calobra TEST via Puig Major, OW-svøm 800-1500m. Vægt på 72,8 kg (målt 9/8) — hold protein højt og undgå lette kulhydrater om aftenen. Keep moving forward.  \"Den bedste træning er den, du faktisk gennemfører.\"",
   "coachHighlight": "Søvn på 7,6 timer er solid",
   "weekFocus": "Peak-uge: tøm tanken på Sa Calobra og hold resten kontrolleret",
   "today": [
@@ -1910,7 +1910,8 @@
     "2026-08-06": 0,
     "2026-08-07": 1,
     "2026-08-08": 0,
-    "2026-08-09": 0
+    "2026-08-09": 0,
+    "2026-08-10": 0
   },
   "all_weeks": {
     "1": {
@@ -2981,7 +2982,7 @@
     },
     {
       "week": 11,
-      "done": 0,
+      "done": 1,
       "total": 1,
       "label": "Uge 11"
     }
@@ -3299,8 +3300,8 @@
     },
     null
   ],
-  "coachAssessmentHtml": "<p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\"><strong>Dag 71 af 98 · Mandag · Uge 11</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">💪 <strong>Træning & load</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Du løb 16,9 km på 96 min med 107 TSS — lidt over de planlagte 16,0 km, og det er fint i en peak-uge. CTL ligger på 54,3, som er over ugemålet på 53, og TSB er -14,8, så du er i kontrolleret underskud uden at være i rødt. Zonerne viste 62,7% i Z2-pace og 31,5% i en langsommere zone, så til næste tilsvarende løb kan du med fordel holde et lidt friskere tempo og undgå at glide ned i for lav pace-zone. I morgen er det Sa Calobra-testen via Puig Major — det er ugens nøgleindsats, og det er der du skal tømme tanken.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">⚖️ <strong>Krop & kost</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Seneste vejning 9/8 viste 72,8 kg og 22,5% fedt — 7-dages snittet er 72,3 kg og 21,7% fedt. Det er snittet der tæller for retning, og det er der du skal holde øje. Du er 4,3 kg fra vægtmålet og 5,7 procentpoint fra fedtprocent-målet på under 16% — begge dele er markante afstande, og det er fedtprocenten der er den reelle markør for fremskridt. Sørg for at kalorierne sidder rigtigt i en peak-uge: nok til at præstere, ikke mere.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">🎯 <strong>AF-status & fokus for resten af ugen</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">0 AF-dage ud af 1 dag gået i ugen — mandag er stadig i gang, så der er fuld mulighed for at lukke dagen uden alkohol og komme på tavlen. Ugens store opgave er Sa Calobra i morgen — hold resten af ugen kontrolleret som planlagt, så du ikke ankommer dertil med for mange tunge ben.</p>",
-  "coachAssessmentTs": "06:38",
+  "coachAssessmentHtml": "<p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\"><strong>Dag 71 af 98 · Mandag · Uge 11</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">💪 <strong>Træning & load</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Du løb 16,9 km på 96 min med 107 TSS i Puerto de Sóller – Far des Cap Gros i dag — lidt over de planlagte 16,0 km, og det er fint. CTL ligger på 54,3 mod ugemålet på 53, så du er allerede foran planen. Zone-compliant overordnet set, men 31,5 % af løbet lå i en langsommere pace-zone end target — næste gang du er ude i tilsvarende terræn, så forsøg at holde farten lidt oppe i de flade eller nedadgående passager i stedet for at slippe tempoet. TSB på -14,8 er håndterbart — hold resten af ugen kontrolleret, så du ankommer til Sa Calobra fresk.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">⚖️ <strong>Krop & kost</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Seneste vejning 9/8 viste 72,8 kg og 22,5 % fedt — 7-dages snittet er 72,3 kg og 21,7 % fedt, og det er snittet der tæller for retningen. Du er stadig 4,3 kg fra 68 kg-målet og 5,7 procentpoint fra 16 %-målet på fedtprocenten. Snittet på fedtprocenten har ikke bevæget sig de seneste 7 dage — det er det vigtigste signal lige nu, for vægttab uden fald i fedtprocent er muskeltab, ikke fremgang. Tjek at proteinen er høj nok og at du ikke underernærer dig på de hårde dage.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">🎯 <strong>AF-status & fokus for resten af ugen</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Du er 1/1 på AF-dage i ugen indtil videre — en god start på ugen og streaken er oppe på 3 dage. Hold det kørende de næste dage, og prioritér søvn og mad frem mod Sa Calobra-testen tirsdag — det er den der skal tømme tanken denne uge, og alt andet holdes kontrolleret rundt om det.</p>",
+  "coachAssessmentTs": "12:23",
   "commute_pairing_warnings": [],
   "warnings": [],
   "tsb": -14.8,
@@ -3591,10 +3592,10 @@
       "note": "Nøgle virker"
     }
   },
-  "credentialsCheckedTs": "2026-08-10T12:08:15.470607",
-  "coachAssessmentTsFull": "2026-08-10T06:38:04.439108",
+  "credentialsCheckedTs": "2026-08-10T12:23:59.115762",
+  "coachAssessmentTsFull": "2026-08-10T12:23:59.115744",
   "coachAssessmentWeightAtGen": 72.8,
-  "coachAssessmentAfAtGen": 0,
+  "coachAssessmentAfAtGen": 1,
   "event_structure_warnings": [],
   "coachAssessmentFatAtGen": 22.5,
   "zones": {
