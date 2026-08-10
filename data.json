@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-08-10 07:28",
+    "updated": "2026-08-10 08:37",
     "week": 11,
     "totalWeeks": 14,
     "blockType": "BUILD",
@@ -23,13 +23,13 @@
       "color": "#C0392B"
     },
     "ctl": {
-      "value": "53,8",
+      "value": "54,3",
       "unit": "",
       "sub": "Uge 11-mål 53 · Slutmål 43 (uge 14)",
       "color": "#27AE60"
     },
     "tsb": {
-      "value": "-12,7",
+      "value": "-14,8",
       "unit": "",
       "sub": "Hård blok · CTL−ATL, frisk >0",
       "color": "#E67E22"
@@ -41,10 +41,10 @@
       "color": "#2874A6"
     },
     "runKm": {
-      "value": "0,0",
+      "value": "16,9",
       "unit": "km",
       "sub": "Mål 40+ km uge 10",
-      "color": "#7A6A58"
+      "color": "#E67E22"
     },
     "hrv": {
       "value": "51,1",
@@ -53,10 +53,10 @@
       "color": "#7A6A58"
     },
     "tssComp": {
-      "value": "0",
+      "value": "107",
       "unit": "TSS",
-      "sub": "0 af 617 planlagt TSS",
-      "color": "#7A6A58"
+      "sub": "107 af 617 planlagt TSS",
+      "color": "#C0392B"
     },
     "bikeKm": {
       "value": "0,0",
@@ -82,8 +82,8 @@
     "target": 6,
     "streak": 2
   },
-  "coachSpeech": "Ny uge starter — uge 11 af 14. Build-uge. {HL} Godt: Søvn på 7,6 timer er solid. Ny uge med 2 dages streak i ryggen. Hold den. Fokus: Vægt på 72,8 kg (målt 9/8) — hold protein højt og undgå lette kulhydrater om aftenen. Keep moving forward.  \"Den bedste træning er den, du faktisk gennemfører.\"",
-  "coachHighlight": "Fuld uge foran — i dag: Løb Puerto de Sóller – Far des Cap Gros t/r 16 km",
+  "coachSpeech": "Ny uge starter — uge 11 af 14. Build-uge. {HL} Godt: Ny uge med 2 dages streak i ryggen. Hold den. Fokus: 107 af 617 TSS er i hus — 6 sessioner tilbage, heriblandt Sa Calobra TEST via Puig Major, OW-svøm 800-1500m. Vægt på 72,8 kg (målt 9/8) — hold protein højt og undgå lette kulhydrater om aftenen. Keep moving forward.  \"Den bedste træning er den, du faktisk gennemfører.\"",
+  "coachHighlight": "Søvn på 7,6 timer er solid",
   "weekFocus": "Peak-uge: tøm tanken på Sa Calobra og hold resten kontrolleret",
   "today": [
     {
@@ -92,7 +92,7 @@
       "duration": "",
       "zone": "–",
       "desc": "",
-      "completed": false
+      "completed": true
     }
   ],
   "week_sessions": [
@@ -100,11 +100,17 @@
       "day": "Man",
       "disc": "run",
       "label": "Løb Puerto de Sóller – Far des Cap Gros t/r 16 km",
-      "done": false,
+      "done": true,
       "planned_tss": 87,
       "planned_mins": 95,
       "planned_distance_m": 16000,
-      "today": true
+      "today": true,
+      "completion": "done",
+      "completion_pct": 106,
+      "actual_tss": 107,
+      "actual_mins": 96,
+      "actual_distance_m": 16900.97,
+      "intervals_compliance": 123.0
     },
     {
       "day": "Tir",
@@ -172,7 +178,7 @@
     51.0,
     50.9,
     53.0,
-    53.8
+    54.3
   ],
   "weightHistory": [
     {
@@ -1830,7 +1836,7 @@
     },
     {
       "date": "2026-08-10",
-      "v": -12.6,
+      "v": -14.8,
       "real": true
     }
   ],
@@ -2673,11 +2679,17 @@
           "day": "Man",
           "disc": "run",
           "label": "Løb Puerto de Sóller – Far des Cap Gros t/r 16 km",
-          "done": false,
+          "done": true,
           "planned_tss": 87,
           "planned_mins": 95,
           "planned_distance_m": 16000,
-          "today": true
+          "today": true,
+          "completion": "done",
+          "completion_pct": 106,
+          "actual_tss": 107,
+          "actual_mins": 96,
+          "actual_distance_m": 16900.97,
+          "intervals_compliance": 123.0
         },
         {
           "day": "Tir",
@@ -2975,8 +2987,9 @@
     }
   ],
   "train_mins": {
+    "run": 96.0,
     "planned": 775.0,
-    "actual_total": 0
+    "actual_total": 96.0
   },
   "fatHistory": [
     {
@@ -3286,11 +3299,11 @@
     },
     null
   ],
-  "coachAssessmentHtml": "<p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\"><strong>Dag 71 af 98 · Mandag · Uge 11</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">💪 <strong>Træning & load</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">CTL er 53,8 mod ugemålet på 53 — du er foran planen, og TSB på -12,7 viser en kontrolleret belastning der stadig har plads til at arbejde. I dag venter løbet Puerto de Sóller – Far des Cap Gros, 16 km — kend terrænet, hold dig i den zone du har sat, og spar ikke på benene til i morgen. Sa Calobra-testen tirsdag er ugens egentlige nøglepas, og det er dér du tømmer tanken — ikke i dag.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">⚖️ <strong>Krop & kost</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Vægten var 72,8 kg ved seneste vejning 9/8, og 7-dages snittet ligger på 72,3 kg — retningen vurderes ud fra snittet, og der er stadig 4,3 kg til målet under 68 kg. Fedtprocenten var 22,5 % målt 9/8, med et 7-dages snit på 21,7 % — målet er under 16 %, så der er markant arbejde tilbage på kropssammensætningen. 7-dages snittet på fedtprocent har ikke rørt sig de seneste 7 dage — det er et signal om at kosten skal kigges igennem, ikke bare træningen. Protein op, tomme kalorier ned: det er der hullerne typisk sidder.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">🎯 <strong>AF-status & fokus for resten af ugen</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Du er 0/1 AF-dage ind i ugen med et mål på 6 — mandag er i gang, og alkohol-status for dagen er endnu ikke afgjort. Streaken er 2 dage, og Mallorca-konteksten kan sagtens udfordre den — hold fast, det betaler sig direkte på restitution og vægt. Fokus denne uge: løbet i dag roligt, Sa Calobra fuldt ud tirsdag, og resten holdes i Z2 uden drama.</p>",
-  "coachAssessmentTs": "01:49",
+  "coachAssessmentHtml": "<p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\"><strong>Dag 71 af 98 · Mandag · Uge 11</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">💪 <strong>Træning & load</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Du løb 16,9 km på 96 min med 107 TSS — lidt over de planlagte 16,0 km, og det er fint i en peak-uge. CTL ligger på 54,3, som er over ugemålet på 53, og TSB er -14,8, så du er i kontrolleret underskud uden at være i rødt. Zonerne viste 62,7% i Z2-pace og 31,5% i en langsommere zone, så til næste tilsvarende løb kan du med fordel holde et lidt friskere tempo og undgå at glide ned i for lav pace-zone. I morgen er det Sa Calobra-testen via Puig Major — det er ugens nøgleindsats, og det er der du skal tømme tanken.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">⚖️ <strong>Krop & kost</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Seneste vejning 9/8 viste 72,8 kg og 22,5% fedt — 7-dages snittet er 72,3 kg og 21,7% fedt. Det er snittet der tæller for retning, og det er der du skal holde øje. Du er 4,3 kg fra vægtmålet og 5,7 procentpoint fra fedtprocent-målet på under 16% — begge dele er markante afstande, og det er fedtprocenten der er den reelle markør for fremskridt. Sørg for at kalorierne sidder rigtigt i en peak-uge: nok til at præstere, ikke mere.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">🎯 <strong>AF-status & fokus for resten af ugen</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">0 AF-dage ud af 1 dag gået i ugen — mandag er stadig i gang, så der er fuld mulighed for at lukke dagen uden alkohol og komme på tavlen. Ugens store opgave er Sa Calobra i morgen — hold resten af ugen kontrolleret som planlagt, så du ikke ankommer dertil med for mange tunge ben.</p>",
+  "coachAssessmentTs": "06:38",
   "commute_pairing_warnings": [],
   "warnings": [],
-  "tsb": -12.7,
+  "tsb": -14.8,
   "swimHistory": [
     {
       "week": 1,
@@ -3359,7 +3372,7 @@
       "cumulative": 22317.0
     }
   ],
-  "coachAssessmentLastActId": null,
+  "coachAssessmentLastActId": "i174279790",
   "weekFocusWeek": 11,
   "coachAssessmentPlanAtGen": "Løb Puerto de Sóller – Far des Cap Gros t/r 16 km",
   "weightGoal": 68,
@@ -3578,8 +3591,8 @@
       "note": "Nøgle virker"
     }
   },
-  "credentialsCheckedTs": "2026-08-10T05:28:02.449309",
-  "coachAssessmentTsFull": "2026-08-10T01:49:38.801498",
+  "credentialsCheckedTs": "2026-08-10T06:38:04.439126",
+  "coachAssessmentTsFull": "2026-08-10T06:38:04.439108",
   "coachAssessmentWeightAtGen": 72.8,
   "coachAssessmentAfAtGen": 0,
   "event_structure_warnings": [],
@@ -3675,7 +3688,8 @@
     "7": 455,
     "8": 417,
     "9": 363,
-    "10": 471
+    "10": 471,
+    "11": 107
   },
   "racesUpcoming": [
     {
