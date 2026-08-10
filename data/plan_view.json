@@ -1,51 +1,46 @@
 {
- "generated": "2026-08-09T17:17:58Z",
+ "generated": "2026-08-10T01:49:40Z",
  "kennet": {
   "seed": {
-   "date": "2026-08-09",
-   "ctl": 53.0,
-   "atl": 63.3
+   "date": "2026-08-10",
+   "ctl": 53.8,
+   "atl": 66.5
   },
   "projection": [
    {
-    "d": "2026-08-10",
-    "ctl": 53.7,
-    "tsb": -12.4
-   },
-   {
     "d": "2026-08-11",
-    "ctl": 54.4,
-    "tsb": -14.2
+    "ctl": 54.5,
+    "tsb": -14.4
    },
    {
     "d": "2026-08-12",
-    "ctl": 55.1,
-    "tsb": -15.6
+    "ctl": 55.2,
+    "tsb": -15.8
    },
    {
     "d": "2026-08-13",
-    "ctl": 55.8,
-    "tsb": -16.7
+    "ctl": 55.9,
+    "tsb": -16.9
    },
    {
     "d": "2026-08-14",
-    "ctl": 56.4,
-    "tsb": -17.6
+    "ctl": 56.5,
+    "tsb": -17.7
    },
    {
     "d": "2026-08-15",
-    "ctl": 57.1,
-    "tsb": -18.3
+    "ctl": 57.2,
+    "tsb": -18.4
    },
    {
     "d": "2026-08-16",
-    "ctl": 55.7,
-    "tsb": -8.9
+    "ctl": 55.8,
+    "tsb": -9.0
    },
    {
     "d": "2026-08-17",
-    "ctl": 55.6,
-    "tsb": -6.9
+    "ctl": 55.7,
+    "tsb": -7.0
    },
    {
     "d": "2026-08-18",
@@ -54,12 +49,12 @@
    },
    {
     "d": "2026-08-19",
-    "ctl": 55.3,
+    "ctl": 55.4,
     "tsb": -3.9
    },
    {
     "d": "2026-08-20",
-    "ctl": 55.2,
+    "ctl": 55.3,
     "tsb": -2.7
    },
    {
@@ -79,22 +74,22 @@
    },
    {
     "d": "2026-08-24",
-    "ctl": 52.4,
+    "ctl": 52.5,
     "tsb": 10.5
    },
    {
     "d": "2026-08-25",
-    "ctl": 52.2,
+    "ctl": 52.3,
     "tsb": 9.9
    },
    {
     "d": "2026-08-26",
-    "ctl": 52.0,
-    "tsb": 9.3
+    "ctl": 52.1,
+    "tsb": 9.4
    },
    {
     "d": "2026-08-27",
-    "ctl": 50.8,
+    "ctl": 50.9,
     "tsb": 14.2
    },
    {
@@ -119,13 +114,13 @@
    },
    {
     "d": "2026-09-01",
-    "ctl": 48.4,
+    "ctl": 48.5,
     "tsb": 15.4
    },
    {
     "d": "2026-09-02",
     "ctl": 47.3,
-    "tsb": 18.9
+    "tsb": 19.0
    },
    {
     "d": "2026-09-03",
@@ -145,7 +140,7 @@
    {
     "d": "2026-09-06",
     "ctl": 44.3,
-    "tsb": 23.1
+    "tsb": 23.2
    }
   ],
   "weeks": [
@@ -235,9 +230,17 @@
    },
    {
     "week": 11,
-    "projEndCtl": 55.7,
-    "deviation": 2.7,
-    "flags": []
+    "projEndCtl": 55.8,
+    "deviation": 2.8,
+    "flags": [
+     {
+      "week": 11,
+      "rule": "low_readiness",
+      "level": "WARN",
+      "msg": "Lav readiness i dag (HRV/søvn) — overvej at reducere dagens/ugens belastning",
+      "historic": false
+     }
+    ]
    },
    {
     "week": 12,
@@ -289,6 +292,13 @@
     "historic": true
    },
    {
+    "week": 11,
+    "rule": "low_readiness",
+    "level": "WARN",
+    "msg": "Lav readiness i dag (HRV/søvn) — overvej at reducere dagens/ugens belastning",
+    "historic": false
+   },
+   {
     "week": 12,
     "rule": "vo2_missing",
     "level": "WARN",
@@ -304,7 +314,7 @@
    "suggestion": null,
    "phase_guard": null
   },
-  "readiness": "NORMAL"
+  "readiness": "LOW"
  },
- "inputsHash": "89e33780f90859d2"
+ "inputsHash": "e5923cdfe49c9a59"
 }
