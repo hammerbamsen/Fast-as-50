@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-08-10 03:49",
+    "updated": "2026-08-10 05:55",
     "week": 11,
     "totalWeeks": 14,
     "blockType": "BUILD",
@@ -35,7 +35,7 @@
       "color": "#E67E22"
     },
     "sleep": {
-      "value": "7,4",
+      "value": "7,6",
       "unit": "t",
       "sub": "Snit 7,5t · mål 7t",
       "color": "#2874A6"
@@ -47,7 +47,7 @@
       "color": "#7A6A58"
     },
     "hrv": {
-      "value": "51,3",
+      "value": "51,1",
       "unit": "ms",
       "sub": "Snit 7d",
       "color": "#7A6A58"
@@ -82,7 +82,7 @@
     "target": 6,
     "streak": 2
   },
-  "coachSpeech": "Ny uge starter — uge 11 af 14. Build-uge. {HL} Godt: Søvn på 7,4 timer er solid. Ny uge med 2 dages streak i ryggen. Hold den. Fokus: Vægt på 72,8 kg (målt 9/8) — hold protein højt og undgå lette kulhydrater om aftenen. Keep moving forward.  \"Den bedste træning er den, du faktisk gennemfører.\"",
+  "coachSpeech": "Ny uge starter — uge 11 af 14. Build-uge. {HL} Godt: Søvn på 7,6 timer er solid. Ny uge med 2 dages streak i ryggen. Hold den. Fokus: Vægt på 72,8 kg (målt 9/8) — hold protein højt og undgå lette kulhydrater om aftenen. Keep moving forward.  \"Den bedste træning er den, du faktisk gennemfører.\"",
   "coachHighlight": "Fuld uge foran — i dag: Løb Puerto de Sóller – Far des Cap Gros t/r 16 km",
   "weekFocus": "Peak-uge: tøm tanken på Sa Calobra og hold resten kontrolleret",
   "today": [
@@ -928,7 +928,11 @@
       "v": 45.0,
       "real": true
     },
-    null
+    {
+      "date": "2026-08-10",
+      "v": 50.0,
+      "real": true
+    }
   ],
   "sleepHistory": [
     {
@@ -1372,7 +1376,11 @@
       "v": 5.7,
       "real": true
     },
-    null
+    {
+      "date": "2026-08-10",
+      "v": 9.1,
+      "real": true
+    }
   ],
   "tsbHistory": [
     {
@@ -3281,13 +3289,7 @@
   "coachAssessmentHtml": "<p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\"><strong>Dag 71 af 98 · Mandag · Uge 11</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">💪 <strong>Træning & load</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">CTL er 53,8 mod ugemålet på 53 — du er foran planen, og TSB på -12,7 viser en kontrolleret belastning der stadig har plads til at arbejde. I dag venter løbet Puerto de Sóller – Far des Cap Gros, 16 km — kend terrænet, hold dig i den zone du har sat, og spar ikke på benene til i morgen. Sa Calobra-testen tirsdag er ugens egentlige nøglepas, og det er dér du tømmer tanken — ikke i dag.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">⚖️ <strong>Krop & kost</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Vægten var 72,8 kg ved seneste vejning 9/8, og 7-dages snittet ligger på 72,3 kg — retningen vurderes ud fra snittet, og der er stadig 4,3 kg til målet under 68 kg. Fedtprocenten var 22,5 % målt 9/8, med et 7-dages snit på 21,7 % — målet er under 16 %, så der er markant arbejde tilbage på kropssammensætningen. 7-dages snittet på fedtprocent har ikke rørt sig de seneste 7 dage — det er et signal om at kosten skal kigges igennem, ikke bare træningen. Protein op, tomme kalorier ned: det er der hullerne typisk sidder.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">🎯 <strong>AF-status & fokus for resten af ugen</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Du er 0/1 AF-dage ind i ugen med et mål på 6 — mandag er i gang, og alkohol-status for dagen er endnu ikke afgjort. Streaken er 2 dage, og Mallorca-konteksten kan sagtens udfordre den — hold fast, det betaler sig direkte på restitution og vægt. Fokus denne uge: løbet i dag roligt, Sa Calobra fuldt ud tirsdag, og resten holdes i Z2 uden drama.</p>",
   "coachAssessmentTs": "01:49",
   "commute_pairing_warnings": [],
-  "warnings": [
-    {
-      "type": "hrv",
-      "level": "warn",
-      "message": "HRV 45,0 ms — 12% under 7d-snit (51,3 ms). Kroppen er presset."
-    }
-  ],
+  "warnings": [],
   "tsb": -12.7,
   "swimHistory": [
     {
@@ -3576,7 +3578,7 @@
       "note": "Nøgle virker"
     }
   },
-  "credentialsCheckedTs": "2026-08-10T01:49:38.801516",
+  "credentialsCheckedTs": "2026-08-10T03:55:46.504215",
   "coachAssessmentTsFull": "2026-08-10T01:49:38.801498",
   "coachAssessmentWeightAtGen": 72.8,
   "coachAssessmentAfAtGen": 0,
