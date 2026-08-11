@@ -1,5 +1,5 @@
 {
- "generated": "2026-08-11T01:46:00Z",
+ "generated": "2026-08-11T03:44:28Z",
  "kennet": {
   "seed": {
    "date": "2026-08-11",
@@ -294,7 +294,7 @@
    "suggestion": null,
    "phase_guard": null
   },
-  "readiness": "NORMAL"
+  "readiness": "HIGH"
  },
- "inputsHash": "9d83f9aa6b36f82d"
+ "inputsHash": "678ce5a5e8b9c97b"
 }
