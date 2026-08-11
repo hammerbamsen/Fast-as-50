@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-08-11 03:45",
+    "updated": "2026-08-11 05:44",
     "week": 11,
     "totalWeeks": 14,
     "blockType": "BUILD",
@@ -47,7 +47,7 @@
       "color": "#E67E22"
     },
     "hrv": {
-      "value": "50,7",
+      "value": "51,9",
       "unit": "ms",
       "sub": "Snit 7d",
       "color": "#7A6A58"
@@ -930,7 +930,11 @@
       "v": 50.0,
       "real": true
     },
-    null
+    {
+      "date": "2026-08-11",
+      "v": 60.0,
+      "real": true
+    }
   ],
   "sleepHistory": [
     {
@@ -1374,7 +1378,11 @@
       "v": 9.1,
       "real": true
     },
-    null
+    {
+      "date": "2026-08-11",
+      "v": 7.5,
+      "real": true
+    }
   ],
   "tsbHistory": [
     {
@@ -3582,7 +3590,7 @@
       "note": "Nøgle virker"
     }
   },
-  "credentialsCheckedTs": "2026-08-11T01:45:58.771380",
+  "credentialsCheckedTs": "2026-08-11T03:44:25.678766",
   "coachAssessmentTsFull": "2026-08-11T01:45:58.771363",
   "coachAssessmentWeightAtGen": 72.8,
   "coachAssessmentAfAtGen": 1,
