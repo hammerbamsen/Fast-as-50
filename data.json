@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-08-11 08:27",
+    "updated": "2026-08-11 09:46",
     "week": 11,
     "totalWeeks": 14,
     "blockType": "BUILD",
@@ -3292,8 +3292,8 @@
     null,
     null
   ],
-  "coachAssessmentHtml": "<p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\"><strong>Dag 72 af 98 · Tirsdag · Uge 11</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">💪 <strong>Træning & load</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">CTL er 58,4 — markant over ugemålet på 53, og TSB er -32,1, altså lige under Friel's hårde grænse på -30. Det er peak-uge, og kroppen er presset. Sa Calobra-testen er endnu ikke gennemført i dag — det er dagens store stykke arbejde. Kør den, men hold intensiteten til det der er planlagt: det er en test, ikke en krig.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">⚖️ <strong>Krop & kost</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Vægten var 72,8 kg ved seneste vejning 9/8, og fedtprocenten 22,5 % samme dag — afstand til målene er altså 4,8 kg og 6,5 procentpoint. 7-dages snittet på fedtprocent er 21,8 % og er steget 0,2 point den seneste uge — det er den reelle retning, og den går den forkerte vej. 7-dages vægtsnittet er 72,3 kg. Fedt op og vægt ned på korte sigt tyder på muskelmasse der holdes, men fedttabet går i stå — kig på kostsammensætningen, særligt protein og samlede kalorier på restitutionsdage.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">🎯 <strong>AF-status & fokus for resten af ugen</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Du er 1 ud af 2 dage på alkoholfri — det er 1/2 og i fin trit med ugens mål om 6 AF-dage. Streaken er 3 dage — bevar den. Resten af ugen er kontrolleret: OW-svøm, hike, let cykel og et let løb — dem bruger du til at lade op efter dagens test, ikke til at bevise noget.</p>",
-  "coachAssessmentTs": "01:45",
+  "coachAssessmentHtml": "<p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\"><strong>Dag 72 af 98 · Tirsdag · Uge 11</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">💪 <strong>Træning & load</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">CTL er på 58.4 og TSB på -32.1 — du er over ugemålet på 53 og presser grænsen nedad på TSB. Sa Calobra venter stadig i dag, og det er det vigtigste pas i ugen — giv den fuld gas op ad Puig Major, det er det du er her for. Mandag-løbet på 16,9 km og 107 TSS sad solidt, men 31,5 % af løbet lå i en langsommere pace-zone end planlagt — næste gang du løber Z2 i lignende terræn, så hold tempoet lidt strammere fra start. Resten af ugen skal holdes kontrolleret: onsdag, torsdag og fredag er støtteture, ikke nye belastninger.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">⚖️ <strong>Krop & kost</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Vægten var 72,8 kg ved seneste vejning 9/8 — 4,8 kg fra målet. Fedtprocenten var 22,5 % samme dag — 6,5 procentpoint fra målet. 7-dages snittet på fedtprocent er steget 0,2 point de seneste 7 dage, og det er den retning der tæller — ikke enkeltmålingen. Det betyder at vægttabet, hvis det sker, ikke pt. trækker fedtprocenten med ned. Hold kalorieunderskuddet på plads, men beskyt proteinet — i en peak-uge med høj belastning er muskelmasse det du ikke har råd til at miste.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">🎯 <strong>AF-status & fokus for resten af ugen</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Du er på 1 AF-dag ud af 2 dage gået i ugen — det er fint relativt set. Ugens vigtigste opgave er Sa Calobra i dag: tøm tanken der, og lad resten af ugen være det den skal — kontrolleret støtte. Hold hovedet koldt på alkoholfronten de næste dage, så er du i god form til at lande 6 AF-dage for ugen.</p>",
+  "coachAssessmentTs": "07:47",
   "commute_pairing_warnings": [],
   "warnings": [
     {
@@ -3590,8 +3590,8 @@
       "note": "Nøgle virker"
     }
   },
-  "credentialsCheckedTs": "2026-08-11T06:27:37.874224",
-  "coachAssessmentTsFull": "2026-08-11T01:45:58.771363",
+  "credentialsCheckedTs": "2026-08-11T07:47:13.395111",
+  "coachAssessmentTsFull": "2026-08-11T07:47:13.395093",
   "coachAssessmentWeightAtGen": 72.8,
   "coachAssessmentAfAtGen": 1,
   "event_structure_warnings": [],
