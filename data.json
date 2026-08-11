@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-08-11 12:02",
+    "updated": "2026-08-11 13:13",
     "week": 11,
     "totalWeeks": 14,
     "blockType": "BUILD",
@@ -71,18 +71,18 @@
       "color": "#7A6A58"
     },
     "afStreak": {
-      "value": "3",
+      "value": "4",
       "unit": "",
       "sub": "Dage i træk · mål 6/uge",
       "color": "#59182A"
     }
   },
   "af": {
-    "weekDone": 1,
+    "weekDone": 2,
     "target": 6,
-    "streak": 3
+    "streak": 4
   },
-  "coachSpeech": "Tirsdag — uge 11 af 14. {HL} Fokus: Formen er under bundgrænsen — prioriter restitution før mere volumen. 187 af 617 TSS er i hus — 5 sessioner tilbage, heriblandt OW-svøm 800-1500m, Hike 3 timer Z1-Z2. Vægt på 72,8 kg (målt 9/8) — hold protein højt og undgå lette kulhydrater om aftenen. Hård uge — men det er sådan formen bygges. Hold ved.  \"AF-dage er ikke et offer — de er en investering i morgendagens energi.\"",
+  "coachSpeech": "Tirsdag — uge 11 af 14. {HL} Godt: 2 AF-dage i 2 gennemførte dage — på rette spor. 4 mere og ugens mål er i hus. Fokus: Formen er under bundgrænsen — prioriter restitution før mere volumen. 187 af 617 TSS er i hus — 5 sessioner tilbage, heriblandt OW-svøm 800-1500m, Hike 3 timer Z1-Z2. Vægt på 72,8 kg (målt 9/8) — hold protein højt og undgå lette kulhydrater om aftenen. Hård uge — men det er sådan formen bygges. Hold ved.  \"AF-dage er ikke et offer — de er en investering i morgendagens energi.\"",
   "coachHighlight": "Søvn på 7,6 timer er solid",
   "weekFocus": "Peak-uge: tøm tanken på Sa Calobra og hold resten kontrolleret",
   "today": [
@@ -1912,7 +1912,8 @@
     "2026-08-07": 1,
     "2026-08-08": 0,
     "2026-08-09": 0,
-    "2026-08-10": 0
+    "2026-08-10": 0,
+    "2026-08-11": 0
   },
   "all_weeks": {
     "1": {
@@ -2988,7 +2989,7 @@
     },
     {
       "week": 11,
-      "done": 1,
+      "done": 2,
       "total": 2,
       "label": "Uge 11"
     }
@@ -3303,8 +3304,8 @@
     null,
     null
   ],
-  "coachAssessmentHtml": "<p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\"><strong>Dag 72 af 98 · Tirsdag · Uge 11</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">💪 <strong>Træning & load</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">CTL er 60.3 og TSB er -40.9 — du er markant over ugemålet på 53 og klart i underskud på restitution. Sa Calobra blev gennemført på 65,3 km og 215 min med 80 TSS — terrænet forklarer de 25,4% coasting, og NP=131W er det mest retvisende billede af den faktiske indsats. Mandagens løb ramte pace-zone godt med 62,7% i Z2, selvom 31,5% lå i en langsommere pace-zone — næste gang du kører en lignende rute i varme, kan du tillade dig at skrue lidt op for tempoet. Resten af ugen skal køres kontrolleret: onsdag og torsdag er Z1-Z2, og der er ingen grund til at grave dybere i TSB.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">⚖️ <strong>Krop & kost</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Vægten var 72,8 kg ved seneste vejning 9/8, og 7-dages snittet er 72,3 kg — der er 4,3 kg til målet under 68 kg. Fedtprocenten var 22,5% målt 9/8, og 7-dages snittet er 21,8% — målet er under 16%, og snittet er steget 0,2 procentpoint over de seneste 7 dage, så fedtprocenten går i den forkerte retning lige nu. Det er kombinationen der afgør fremgangen: vægten skal falde *og* fedtprocenten skal med ned — ellers er det muskelmasse der forsvinder, ikke fedt. Hold kalorierne i balance med det høje load og prioriter protein, så du ikke taber arbejdskapacitet.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">🎯 <strong>AF-status & fokus for resten af ugen</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Du har 1 AF-dag ud af 2 dage gået i ugen — det er præcis på sporet til målet på 6 ud af 7. Stregen er på 3 dage, og det er godt momentum at beskytte. Resten af ugen er kontrolleret belastning — onsdag, torsdag og fredag giver dig naturlige muligheder for at holde den streak i live. Hold det enkelt: ingen alkohol, ingen unødvendig ekstra load.</p>",
-  "coachAssessmentTs": "08:48",
+  "coachAssessmentHtml": "<p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\"><strong>Dag 72 af 98 · Tirsdag · Uge 11</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">💪 <strong>Træning & load</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">CTL er 60.3 med en TSB på -40.9 — du er markant over ugemålet på 53, og kroppen betaler prisen med en fatigueværdi der er klart under den anbefalede grænse på -30. Sa Calobra-testen i dag gav 80 TSS på 215 minutter og 65.3 km — med 25.4% coasting er NP=131W det mest retvisende effektmål for turen, og det kuperede terræn forklarer den lave tid-i-zone-procent. Til næste gang du kører en lignende bjergtest, er det værd at holde wattene mere konsistent oppe på de rideable segmenter, så Z2+Z3 kommer over 40%-målet. Resten af ugen er kontrolleret: OW-svøm og hike onsdag, let cykel torsdag, let løb fredag og Z2-cykel lørdag — hold dem let, og lad TSB kravle op.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">⚖️ <strong>Krop & kost</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Vægten var 72.8 kg ved seneste vejning 9/8, og 7-dages snittet er 72.3 kg — afstand til målet under 68 kg er altså knap 5 kg på snittet. Fedtprocenten var 22.5% ved målingen 9/8, og 7-dages snittet er steget 0.2 procentpoint til 21.8% — det er den reelle retning, og den går den forkerte vej lige nu, selv om vægtsnittet er nogenlunde stabilt. Det betyder at kropssammensætningen ikke bevæger sig mod målet om under 16%: vægttab uden faldende fedtprocent er tabt muskelmasse, ikke fremgang — og det er et advarselstegn i et capacity-år. Hold proteinindtaget højt under det resterende ophold på Mallorca, og undgå at spare på maden på de hårde træningsdage.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">🎯 <strong>AF-status & fokus for resten af ugen</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Du har 2 AF-dage ud af 2 dage gået i ugen — det er stærkt, og streaken er nu 4 dage. Fokus for de resterende dage er enkelt: hold intensiteten nede som planlagt, lad TSB stige, og bevar AF-sporet rent. Ugen er bygget rigtigt op — herfra handler det om disciplin i at holde igen, ikke om at præstere mere.</p>",
+  "coachAssessmentTs": "11:13",
   "commute_pairing_warnings": [],
   "warnings": [
     {
@@ -3601,10 +3602,10 @@
       "note": "Nøgle virker"
     }
   },
-  "credentialsCheckedTs": "2026-08-11T10:02:59.768571",
-  "coachAssessmentTsFull": "2026-08-11T08:48:05.027640",
+  "credentialsCheckedTs": "2026-08-11T11:13:47.133542",
+  "coachAssessmentTsFull": "2026-08-11T11:13:47.133527",
   "coachAssessmentWeightAtGen": 72.8,
-  "coachAssessmentAfAtGen": 1,
+  "coachAssessmentAfAtGen": 2,
   "event_structure_warnings": [],
   "coachAssessmentFatAtGen": 22.5,
   "zones": {
