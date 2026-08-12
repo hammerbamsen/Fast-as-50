@@ -3993,45 +3993,20 @@
           "entries": [
             {
               "workout": {
-                "name": "Cykel Z2 75 min let",
-                "type": "Ride",
-                "moving_time": 4500,
-                "description": "- Varm-op 10m ramp 45-68% FTP\n- Aerob base 60m 56-76% FTP\n- Cool-down 5m ramp 68-45% FTP",
+                "name": "Hike 2 timer Z1-Z2",
+                "type": "Hike",
+                "moving_time": 7200,
+                "description": "- Hike Z1-Z2 120m freeride",
                 "workout_doc": {
                   "steps": [
                     {
-                      "ramp": true,
-                      "power": {
-                        "start": 45,
-                        "end": 68,
-                        "units": "%ftp"
-                      },
-                      "duration": 600,
-                      "warmup": true
-                    },
-                    {
-                      "text": "Aerob base 56-76% FTP",
-                      "power": {
-                        "start": 56,
-                        "end": 76,
-                        "units": "%ftp"
-                      },
-                      "duration": 3600
-                    },
-                    {
-                      "ramp": true,
-                      "power": {
-                        "start": 68,
-                        "end": 45,
-                        "units": "%ftp"
-                      },
-                      "duration": 300,
-                      "cooldown": true
+                      "text": "Hike Z1-Z2",
+                      "duration": 7200
                     }
                   ]
                 }
               },
-              "note": "Let cykel 75 min tidligt — svøm udgår (gæster fra onsdag)",
+              "note": "Hike 2 timer roligt — erstatter cykel 75 min. Hold Z1, 3 t hike dagen før.",
               "id": "2bb43fd8"
             }
           ]
