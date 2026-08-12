@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-08-12 21:41",
+    "updated": "2026-08-12 22:17",
     "week": 11,
     "totalWeeks": 14,
     "blockType": "BUILD",
@@ -23,13 +23,13 @@
       "color": "#C0392B"
     },
     "ctl": {
-      "value": "57,2",
+      "value": "55,9",
       "unit": "",
       "sub": "Uge 11-mål 53 · Slutmål 43 (uge 14)",
       "color": "#27AE60"
     },
     "tsb": {
-      "value": "-24,1",
+      "value": "-18,2",
       "unit": "",
       "sub": "Hård blok · CTL−ATL, frisk >0",
       "color": "#E67E22"
@@ -53,9 +53,9 @@
       "color": "#7A6A58"
     },
     "tssComp": {
-      "value": "199",
+      "value": "259",
       "unit": "TSS",
-      "sub": "199 af 617 planlagt TSS",
+      "sub": "259 af 617 planlagt TSS",
       "color": "#C0392B"
     },
     "bikeKm": {
@@ -82,7 +82,7 @@
     "target": 6,
     "streak": 4
   },
-  "coachSpeech": "Onsdag — uge 11 af 14. {HL} Fokus: 199 af 617 TSS er i hus — 4 sessioner tilbage, heriblandt Hike 3 timer Z1-Z2, Cykel Z2 75 min let. Vægt på 72,8 kg (målt 9/8) — hold protein højt og undgå lette kulhydrater om aftenen. 2 AF-dage i 3 afsluttede dage — 4 mangler i 4 dage tilbage. Hård uge — men det er sådan formen bygges. Hold ved.  \"Du bliver til det, du gør ofte.\"",
+  "coachSpeech": "Onsdag — uge 11 af 14. {HL} Fokus: 259 af 617 TSS er i hus — 3 sessioner tilbage, heriblandt Cykel Z2 75 min let, Løb Z2 40 min let. Vægt på 72,8 kg (målt 9/8) — hold protein højt og undgå lette kulhydrater om aftenen. 2 AF-dage i 3 afsluttede dage — 4 mangler i 4 dage tilbage. Hård uge — men det er sådan formen bygges. Hold ved.  \"Du bliver til det, du gør ofte.\"",
   "coachHighlight": "Søvn på 7,7 timer er solid",
   "weekFocus": "Peak-uge: tøm tanken på Sa Calobra og hold resten kontrolleret",
   "today": [
@@ -100,7 +100,7 @@
       "duration": "",
       "zone": "–",
       "desc": "",
-      "completed": false
+      "completed": true
     }
   ],
   "week_sessions": [
@@ -152,11 +152,17 @@
       "day": "Ons",
       "disc": "hike",
       "label": "Hike 3 timer Z1-Z2",
-      "done": false,
+      "done": true,
       "planned_tss": 114,
       "planned_mins": 180,
       "planned_distance_m": null,
-      "today": true
+      "today": true,
+      "completion": "partial",
+      "completion_pct": 53,
+      "actual_tss": 60,
+      "actual_mins": 174,
+      "actual_distance_m": 8914.54,
+      "intervals_compliance": 52.6
     },
     {
       "day": "Tor",
@@ -197,7 +203,7 @@
     51.0,
     50.9,
     53.0,
-    57.2
+    55.9
   ],
   "weightHistory": [
     null,
@@ -1847,7 +1853,7 @@
     },
     {
       "date": "2026-08-12",
-      "v": -24.1,
+      "v": -18.2,
       "real": true
     }
   ],
@@ -2736,11 +2742,17 @@
           "day": "Ons",
           "disc": "hike",
           "label": "Hike 3 timer Z1-Z2",
-          "done": false,
+          "done": true,
           "planned_tss": 114,
           "planned_mins": 180,
           "planned_distance_m": null,
-          "today": true
+          "today": true,
+          "completion": "partial",
+          "completion_pct": 53,
+          "actual_tss": 60,
+          "actual_mins": 174,
+          "actual_distance_m": 8914.54,
+          "intervals_compliance": 52.6
         },
         {
           "day": "Tor",
@@ -3011,11 +3023,12 @@
     }
   ],
   "train_mins": {
+    "hike": 174.0,
     "openwater": 37.0,
     "bike": 215.0,
     "run": 96.0,
     "planned": 775.0,
-    "actual_total": 348.0
+    "actual_total": 522.0
   },
   "fatHistory": [
     null,
@@ -3317,17 +3330,11 @@
     null,
     null
   ],
-  "coachAssessmentHtml": "<p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\"><strong>Dag 73 af 98 · Onsdag · Uge 11</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">💪 <strong>Træning & load</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">CTL ligger på 57,2 — det er 4,2 over ugens mål på 53, og TSB er -24,1, stadig inden for grænsen på -30. Dagen i dag leverede du 1.656 m på 37 min og 12 TSS — 110% af de planlagte 1.500 m, godt udført. Zone-compliance på svømmet var 0,0% i Z2 (HR) mod målet på 30% — til næste OW-session af samme type skal du holde intensiteten højere oppe i zonen fra start, så HR får tid til at sætte sig i Z2. Torsdag og fredag er kontrollerede pas — hold dem lette og beskyt TSB'en.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">⚖️ <strong>Krop & kost</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Vægten var 72,8 kg ved seneste vejning 9/8 — det er 4,8 kg fra målet under 68 kg. Fedtprocenten var 22,5% samme dag, og 7-dages snittet på fedtprocent er 21,8% — men retningen er bekymrende: snittet er steget 0,4 procentpoint de seneste 7 dage, og det er den autoritative retning her. Det betyder vægten ikke nødvendigvis afspejler fedttab — tjek at du ikke er i kalorieunderskud der spiser muskelmasse. Afstanden til fedtprocent-målet på under 16% er stadig 5,8 procentpoint — det kræver skarp kostdisciplin resten af blokken.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">🎯 <strong>AF-status & fokus for resten af ugen</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Du har 2 AF-dage ud af 3 dage i ugen — det er en stærk start relativt til hvor langt ugen er. Ugens store indsats (Sa Calobra og løbet til Far des Cap Gros) er i hus — resten af ugen handler om at lade kroppen absorbere arbejdet med kontrollerede Z2-pas torsdag og fredag. Hold fokus på alkoholfri aftener de næste fire dage, så du rammer 6-dages-målet uden besvær.</p>",
-  "coachAssessmentTs": "13:57",
+  "coachAssessmentHtml": "<p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\"><strong>Dag 73 af 98 · Onsdag · Uge 11</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">💪 <strong>Træning & load</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">CTL er 55,9 — det er 2,9 over ugemålet på 53, og TSB er -18,2, som er inden for Friel-grænsen men indikerer at ugen allerede har kostet noget. Dagens OW-svøm blev 1.656 m på 37 min med 12 TSS — 10% over planlagt distance, godt klaret. Zone-compliance på svømningen var 0,0% i Z2 (HR) mod et mål på 30%+; til næste OW-session skal du arbejde aktivt med at holde en jævn, aerobt styret intensitet frem for at lade HR drive under målet. Mandag og tirsdag er i kassen — Se Sa Calobra-resultatet: NP=131W er det retvisende mål, og med 25,4% coasting er det svært terræn der forklarer de rå zone-tal.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">⚖️ <strong>Krop & kost</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Vægten var 72,8 kg ved seneste vejning 9/8 — det er 4,8 kg fra målet under 68 kg. Fedtprocenten var 22,5% den 9/8 — det er 6,5 procentpoint fra målet på under 16%. 7-dages snittet på fedtprocent er 21,8%, og det er steget 0,4 procentpoint over de seneste 7 dage — det er den retning der tæller, og den peger den forkerte vej. 7-dages vægtsnittet er 72,3 kg — hold øje med om fedtprocent-snittet begynder at falde i takt med at ugens samlede load stabiliserer sig.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">🎯 <strong>AF-status & fokus for resten af ugen</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Du er på 2 AF-dage ud af 3 dage gået i ugen — det er en stærk ratio. Torsdag er Z2-cykel på 75 min let, fredag er Z2-løb på 40 min let — hold dem virkelig lette, TSB skal have lov til at kravle op inden lørdagens afslutning. Seks AF-dage på en uge med Sa Calobra, en bjergløb og en OW-svøm kræver disciplin — det er dem der giver restitutionen plads.</p>",
+  "coachAssessmentTs": "20:17",
   "commute_pairing_warnings": [],
-  "warnings": [
-    {
-      "type": "tsb",
-      "level": "warn",
-      "message": "TSB -24,1 — hård belastning. Hold øje med trætheden."
-    }
-  ],
-  "tsb": -24.1,
+  "warnings": [],
+  "tsb": -18.2,
   "swimHistory": [
     {
       "week": 1,
@@ -3396,7 +3403,7 @@
       "cumulative": 23973.0
     }
   ],
-  "coachAssessmentLastActId": "i175005424",
+  "coachAssessmentLastActId": "i175275407",
   "weekFocusWeek": 11,
   "coachAssessmentPlanAtGen": "OW-svøm 800-1500m",
   "weightGoal": 68,
@@ -3615,8 +3622,8 @@
       "note": "Nøgle virker"
     }
   },
-  "credentialsCheckedTs": "2026-08-12T19:41:19.459617",
-  "coachAssessmentTsFull": "2026-08-12T13:57:29.415154",
+  "credentialsCheckedTs": "2026-08-12T20:17:30.181619",
+  "coachAssessmentTsFull": "2026-08-12T20:17:30.181601",
   "coachAssessmentWeightAtGen": 72.8,
   "coachAssessmentAfAtGen": 2,
   "event_structure_warnings": [],
@@ -3713,7 +3720,7 @@
     "8": 417,
     "9": 363,
     "10": 471,
-    "11": 199
+    "11": 259
   },
   "racesUpcoming": [
     {
