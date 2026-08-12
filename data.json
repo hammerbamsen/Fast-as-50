@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-08-12 23:44",
+    "updated": "2026-08-13 00:40",
     "week": 11,
     "totalWeeks": 14,
     "blockType": "BUILD",
@@ -23,13 +23,13 @@
       "color": "#C0392B"
     },
     "ctl": {
-      "value": "55,9",
+      "value": "55,3",
       "unit": "",
       "sub": "Uge 11-mål 53 · Slutmål 43 (uge 14)",
       "color": "#27AE60"
     },
     "tsb": {
-      "value": "-18,2",
+      "value": "-15,5",
       "unit": "",
       "sub": "Hård blok · CTL−ATL, frisk >0",
       "color": "#E67E22"
@@ -55,7 +55,7 @@
     "tssComp": {
       "value": "259",
       "unit": "TSS",
-      "sub": "259 af 617 planlagt TSS",
+      "sub": "259 af 637 planlagt TSS",
       "color": "#C0392B"
     },
     "bikeKm": {
@@ -82,7 +82,7 @@
     "target": 6,
     "streak": 5
   },
-  "coachSpeech": "Onsdag — uge 11 af 14. {HL} Godt: 3 AF-dage i 3 gennemførte dage — på rette spor. 3 mere og ugens mål er i hus. Fokus: 259 af 617 TSS er i hus — 3 sessioner tilbage, heriblandt Cykel Z2 75 min let, Løb Z2 40 min let. Vægt på 72,8 kg (målt 9/8) — hold protein højt og undgå lette kulhydrater om aftenen. Keep moving forward.  \"Du bliver til det, du gør ofte.\"",
+  "coachSpeech": "Onsdag — uge 11 af 14. {HL} Godt: 3 AF-dage i 3 gennemførte dage — på rette spor. 3 mere og ugens mål er i hus. Fokus: 259 af 637 TSS er i hus — 3 sessioner tilbage, heriblandt Hike 2 timer Z1-Z2, Løb Z2 40 min let. Vægt på 72,8 kg (målt 9/8) — hold protein højt og undgå lette kulhydrater om aftenen. Keep moving forward.  \"Du bliver til det, du gør ofte.\"",
   "coachHighlight": "Søvn på 7,7 timer er solid",
   "weekFocus": "Peak-uge: tøm tanken på Sa Calobra og hold resten kontrolleret",
   "today": [
@@ -116,8 +116,7 @@
       "completion_pct": 106,
       "actual_tss": 107,
       "actual_mins": 96,
-      "actual_distance_m": 16900.97,
-      "intervals_compliance": 123.0
+      "actual_distance_m": 16900.97
     },
     {
       "day": "Tir",
@@ -161,16 +160,15 @@
       "completion_pct": 53,
       "actual_tss": 60,
       "actual_mins": 174,
-      "actual_distance_m": 8914.54,
-      "intervals_compliance": 52.6
+      "actual_distance_m": 8914.54
     },
     {
       "day": "Tor",
-      "disc": "bike",
-      "label": "Cykel Z2 75 min let",
+      "disc": "hike",
+      "label": "Hike 2 timer Z1-Z2",
       "done": false,
-      "planned_tss": 56,
-      "planned_mins": 75,
+      "planned_tss": 76,
+      "planned_mins": 120,
       "planned_distance_m": null
     },
     {
@@ -203,7 +201,7 @@
     51.0,
     50.9,
     53.0,
-    55.9
+    55.3
   ],
   "weightHistory": [
     null,
@@ -1853,7 +1851,7 @@
     },
     {
       "date": "2026-08-12",
-      "v": -18.2,
+      "v": -15.4,
       "real": true
     }
   ],
@@ -2707,8 +2705,7 @@
           "completion_pct": 106,
           "actual_tss": 107,
           "actual_mins": 96,
-          "actual_distance_m": 16900.97,
-          "intervals_compliance": 123.0
+          "actual_distance_m": 16900.97
         },
         {
           "day": "Tir",
@@ -2752,16 +2749,15 @@
           "completion_pct": 53,
           "actual_tss": 60,
           "actual_mins": 174,
-          "actual_distance_m": 8914.54,
-          "intervals_compliance": 52.6
+          "actual_distance_m": 8914.54
         },
         {
           "day": "Tor",
-          "disc": "bike",
-          "label": "Cykel Z2 75 min let",
+          "disc": "hike",
+          "label": "Hike 2 timer Z1-Z2",
           "done": false,
-          "planned_tss": 56,
-          "planned_mins": 75,
+          "planned_tss": 76,
+          "planned_mins": 120,
           "planned_distance_m": null
         },
         {
@@ -3028,7 +3024,7 @@
     "openwater": 37.0,
     "bike": 215.0,
     "run": 96.0,
-    "planned": 775.0,
+    "planned": 820.0,
     "actual_total": 522.0
   },
   "fatHistory": [
@@ -3335,7 +3331,7 @@
   "coachAssessmentTs": "21:05",
   "commute_pairing_warnings": [],
   "warnings": [],
-  "tsb": -18.2,
+  "tsb": -15.5,
   "swimHistory": [
     {
       "week": 1,
@@ -3623,7 +3619,7 @@
       "note": "Nøgle virker"
     }
   },
-  "credentialsCheckedTs": "2026-08-12T21:44:47.294290",
+  "credentialsCheckedTs": "2026-08-12T22:40:43.717130",
   "coachAssessmentTsFull": "2026-08-12T21:05:23.491093",
   "coachAssessmentWeightAtGen": 72.8,
   "coachAssessmentAfAtGen": 3,
