@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-08-13 15:56",
+    "updated": "2026-08-13 16:03",
     "week": 11,
     "totalWeeks": 14,
     "blockType": "BUILD",
@@ -82,7 +82,7 @@
     "target": 6,
     "streak": 5
   },
-  "coachSpeech": "Torsdag — uge 11 af 14. {HL} Fokus: 273 af 637 TSS er i hus — 3 sessioner tilbage, heriblandt Hike 2 timer Z1-Z2, Løb Z2 40 min let. Vægt på 72,8 kg (målt 9/8) — hold protein højt og undgå lette kulhydrater om aftenen. 3 AF-dage i 4 afsluttede dage — 3 mangler i 3 dage tilbage. Hård uge — men det er sådan formen bygges. Hold ved.  \"Det er ikke om at have tid. Det er om at tage den.\"",
+  "coachSpeech": "Torsdag — uge 11 af 14. {HL} Fokus: 273 af 637 TSS er i hus — 2 sessioner tilbage, heriblandt Løb Z2 40 min let, Cykel Z2 90 min Mallorca. Vægt på 72,8 kg (målt 9/8) — hold protein højt og undgå lette kulhydrater om aftenen. 3 AF-dage i 4 afsluttede dage — 3 mangler i 3 dage tilbage. Hård uge — men det er sådan formen bygges. Hold ved.  \"Det er ikke om at have tid. Det er om at tage den.\"",
   "coachHighlight": "Søvn på 7,3 timer er solid",
   "weekFocus": "Peak-uge: tøm tanken på Sa Calobra og hold resten kontrolleret",
   "today": [
@@ -92,7 +92,7 @@
       "duration": "",
       "zone": "–",
       "desc": "",
-      "completed": false
+      "completed": true
     }
   ],
   "week_sessions": [
@@ -146,8 +146,8 @@
       "planned_tss": 114,
       "planned_mins": 180,
       "planned_distance_m": null,
-      "completion": "partial",
-      "completion_pct": 53,
+      "completion": "done",
+      "completion_pct": 97,
       "actual_tss": 60,
       "actual_mins": 174,
       "actual_distance_m": 8914.54
@@ -156,13 +156,13 @@
       "day": "Tor",
       "disc": "hike",
       "label": "Hike 2 timer Z1-Z2",
-      "done": false,
+      "done": true,
       "planned_tss": 76,
       "planned_mins": 120,
       "planned_distance_m": null,
       "today": true,
-      "completion": "minimal",
-      "completion_pct": 18,
+      "completion": "partial",
+      "completion_pct": 75,
       "actual_tss": 14,
       "actual_mins": 90,
       "actual_distance_m": 5559.76
@@ -2739,8 +2739,8 @@
           "planned_tss": 114,
           "planned_mins": 180,
           "planned_distance_m": null,
-          "completion": "partial",
-          "completion_pct": 53,
+          "completion": "done",
+          "completion_pct": 97,
           "actual_tss": 60,
           "actual_mins": 174,
           "actual_distance_m": 8914.54
@@ -2749,13 +2749,13 @@
           "day": "Tor",
           "disc": "hike",
           "label": "Hike 2 timer Z1-Z2",
-          "done": false,
+          "done": true,
           "planned_tss": 76,
           "planned_mins": 120,
           "planned_distance_m": null,
           "today": true,
-          "completion": "minimal",
-          "completion_pct": 18,
+          "completion": "partial",
+          "completion_pct": 75,
           "actual_tss": 14,
           "actual_mins": 90,
           "actual_distance_m": 5559.76
@@ -3619,7 +3619,7 @@
       "note": "Nøgle virker"
     }
   },
-  "credentialsCheckedTs": "2026-08-13T13:56:49.481262",
+  "credentialsCheckedTs": "2026-08-13T14:03:42.258860",
   "coachAssessmentTsFull": "2026-08-13T13:56:49.481245",
   "coachAssessmentWeightAtGen": 72.8,
   "coachAssessmentAfAtGen": 3,
