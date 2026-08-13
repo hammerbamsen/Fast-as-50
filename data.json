@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-08-13 21:35",
+    "updated": "2026-08-13 21:37",
     "week": 11,
     "totalWeeks": 14,
     "blockType": "BUILD",
@@ -71,7 +71,7 @@
       "color": "#E67E22"
     },
     "afStreak": {
-      "value": "5",
+      "value": "0",
       "unit": "",
       "sub": "Dage i træk · mål 6/uge",
       "color": "#59182A"
@@ -80,7 +80,7 @@
   "af": {
     "weekDone": 3,
     "target": 6,
-    "streak": 5
+    "streak": 0
   },
   "coachSpeech": "Torsdag — uge 11 af 14. {HL} Fokus: 273 af 637 TSS er i hus — 2 sessioner tilbage, heriblandt Løb Z2 40 min let, Cykel Z2 90 min Mallorca. Vægt på 72,8 kg (målt 9/8) — hold protein højt og undgå lette kulhydrater om aftenen. 3 AF-dage i 4 afsluttede dage — 3 mangler i 3 dage tilbage. Hård uge — men det er sådan formen bygges. Hold ved.  \"Det er ikke om at have tid. Det er om at tage den.\"",
   "coachHighlight": "Søvn på 7,3 timer er solid",
@@ -1924,7 +1924,8 @@
     "2026-08-09": 0,
     "2026-08-10": 0,
     "2026-08-11": 0,
-    "2026-08-12": 0
+    "2026-08-12": 0,
+    "2026-08-13": 1
   },
   "all_weeks": {
     "1": {
@@ -3619,7 +3620,7 @@
       "note": "Nøgle virker"
     }
   },
-  "credentialsCheckedTs": "2026-08-13T19:35:30.726616",
+  "credentialsCheckedTs": "2026-08-13T19:37:25.077026",
   "coachAssessmentTsFull": "2026-08-13T14:06:17.834381",
   "coachAssessmentWeightAtGen": 72.8,
   "coachAssessmentAfAtGen": 3,
