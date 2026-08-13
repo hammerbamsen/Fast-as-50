@@ -163,3 +163,64 @@ def test_build_week_sessions_no_distance_target_unaffected():
     assert today["completion"] == "done"
     assert today.get("actual_distance_m") is None
     assert today.get("planned_distance_m") is None
+
+
+# ── calc_completion — hike/walk måles på tid, ikke TSS (13/8-2026) ──────
+
+def test_hike_uses_duration_not_tss():
+    """Torsdag 13/8-2026: 90 af 120 planlagte min = 75%, men kun 14 af 76 TSS
+    = 18% -> blev stemplet 'minimal' og dermed ikke markeret gennemført."""
+    status, pct = sessions.calc_completion(
+        actual_tss=14, planned_tss=76, actual_mins=90, planned_mins=120,
+        disc="hike",
+    )
+    assert status == "partial"
+    assert pct == 75
+
+
+def test_hike_full_duration_is_done():
+    status, pct = sessions.calc_completion(
+        actual_tss=60, planned_tss=114, actual_mins=174, planned_mins=180,
+        disc="hike",
+    )
+    assert status == "done"
+    assert pct == 97
+
+
+def test_hike_genuinely_short_still_minimal():
+    """Varighed-først må ikke gøre alle hikes grønne: 20 af 120 min = 17%."""
+    status, pct = sessions.calc_completion(
+        actual_tss=4, planned_tss=76, actual_mins=20, planned_mins=120,
+        disc="hike",
+    )
+    assert status == "minimal"
+
+
+def test_hike_without_duration_data_falls_back_to_tss():
+    status, pct = sessions.calc_completion(
+        actual_tss=70, planned_tss=76, actual_mins=None, planned_mins=None,
+        disc="hike",
+    )
+    assert status == "done"
+
+
+def test_run_still_uses_tss_not_duration():
+    """Regression: løb/cykel må IKKE skifte til varighed-først. Et løb der
+    rammer tiden men ikke intensiteten skal stadig flages."""
+    status, pct = sessions.calc_completion(
+        actual_tss=20, planned_tss=87, actual_mins=95, planned_mins=95,
+        disc="run",
+    )
+    assert status == "partial"
+    assert pct == 23
+
+
+def test_hike_distance_target_still_counts():
+    """Varighed-først erstatter kun TSS-kandidaten — et eksplicit distance-mål
+    indgår stadig som svageste led."""
+    status, pct = sessions.calc_completion(
+        actual_tss=14, planned_tss=76, actual_mins=110, planned_mins=120,
+        actual_distance_m=4000, planned_distance_m=10000, disc="hike",
+    )
+    assert status == "partial"
+    assert pct == 40

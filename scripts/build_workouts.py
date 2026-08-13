@@ -627,8 +627,12 @@ def delete_existing(session, dt):
         print(f"    ⚠️  delete fejl {dt}: {e}")
 
 # ── A: fallback-estimat (kun når plan.json ikke angiver load) ──
+# Hike 0,38 og Walk 0,30 var groft overestimeret: 38 TSS/time for en Z1-gåtur.
+# Faktisk målt på Mallorca uge 11: 20,7 TSS/t (3 t bjerghike 12/8) og 9,3 TSS/t
+# (rolig hike 13/8). Sat til 0,18/0,12 den 13/8-2026. Rammer kun events der
+# bygges herefter — allerede uploadede events beholder deres gamle load.
 _LOAD_IF2 = {"Ride":0.45,"VirtualRide":0.45,"Run":0.55,"Swim":0.50,
-             "OpenWaterSwim":0.50,"WeightTraining":0.40,"Hike":0.38,"Walk":0.30}
+             "OpenWaterSwim":0.50,"WeightTraining":0.40,"Hike":0.18,"Walk":0.12}
 
 def estimate_load(wo):
     hours = wo.get("moving_time", 3600) / 3600.0

@@ -1110,8 +1110,17 @@ def parse_planned_distance_m(label):
         return None
     return int(m.group(2) or m.group(1))
 
+# Discipliner hvor TSS er et daarligt maal for gennemfoerelse. Hike/walk koeres
+# bevidst i Z1 og genererer puls-baseret TSS paa ~9-20 TSS/time, mens planens
+# estimat ligger langt hoejere. Resultatet var at et pas kunne ligge paa 75% af
+# sin planlagte varighed og alligevel blive stemplet 'minimal' (<20% paa TSS) og
+# dermed ikke markeret gennemfoert. For disse discipliner er tid det aegte maal.
+# Tilfoejet 13/8-2026 efter torsdagens hike: 90 af 120 min = 18% paa TSS.
+DURATION_FIRST_DISCS = ('hike', 'walk')
+
 def calc_completion(actual_tss, planned_tss, actual_mins, planned_mins,
-                     actual_distance_m=None, planned_distance_m=None, threshold=0.80):
+                     actual_distance_m=None, planned_distance_m=None, threshold=0.80,
+                     disc=None):
     """
     Returnerer (status, pct):
       'done'    ≥80% på det SVAGESTE af de tilgængelige mål
@@ -1128,9 +1137,15 @@ def calc_completion(actual_tss, planned_tss, actual_mins, planned_mins,
     """
     pct_candidates = []
 
-    if planned_tss and planned_tss > 0 and actual_tss and actual_tss > 0:
+    have_tss  = bool(planned_tss  and planned_tss  > 0 and actual_tss  and actual_tss  > 0)
+    have_mins = bool(planned_mins and planned_mins > 0 and actual_mins and actual_mins > 0)
+    duration_first = (disc or '').lower() in DURATION_FIRST_DISCS
+
+    if duration_first and have_mins:
+        pct_candidates.append(actual_mins / planned_mins)
+    elif have_tss:
         pct_candidates.append(actual_tss / planned_tss)
-    elif planned_mins and planned_mins > 0 and actual_mins and actual_mins > 0:
+    elif have_mins:
         pct_candidates.append(actual_mins / planned_mins)
 
     if planned_distance_m and planned_distance_m > 0 and actual_distance_m is not None:
@@ -1221,6 +1236,7 @@ def build_week_sessions(done_map, planned_sessions):
                     act_dur_mins, planned_mins_val,
                     actual_distance_m=act_distance_m,
                     planned_distance_m=planned_distance_val,
+                    disc=planned_disc,
                 )
                 new_s['completion']         = status
                 new_s['completion_pct']     = pct
