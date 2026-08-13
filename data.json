@@ -1,19 +1,19 @@
 {
   "meta": {
-    "updated": "2026-08-13 01:41",
+    "updated": "2026-08-13 04:00",
     "week": 11,
     "totalWeeks": 14,
     "blockType": "BUILD",
-    "daysToMedoc": 24,
-    "daysToChristiansborg": 17,
-    "dayName": "Onsdag",
-    "date": "12. aug"
+    "daysToMedoc": 23,
+    "daysToChristiansborg": 16,
+    "dayName": "Torsdag",
+    "date": "13. aug"
   },
   "kpis": {
     "weight": {
       "value": "72,8",
       "unit": "kg",
-      "sub": "Sidst målt 9/8 · Mål <68 kg · snit 72,3 kg",
+      "sub": "Sidst målt 9/8 · Mål <68 kg · snit 72,4 kg",
       "color": "#E67E22"
     },
     "fat": {
@@ -23,19 +23,19 @@
       "color": "#C0392B"
     },
     "ctl": {
-      "value": "55,3",
+      "value": "55,8",
       "unit": "",
       "sub": "Uge 11-mål 53 · Slutmål 43 (uge 14)",
       "color": "#27AE60"
     },
     "tsb": {
-      "value": "-15,5",
+      "value": "-15,7",
       "unit": "",
       "sub": "Hård blok · CTL−ATL, frisk >0",
       "color": "#E67E22"
     },
     "sleep": {
-      "value": "7,7",
+      "value": "7,4",
       "unit": "t",
       "sub": "Snit 7,5t · mål 7t",
       "color": "#2874A6"
@@ -47,7 +47,7 @@
       "color": "#E67E22"
     },
     "hrv": {
-      "value": "51,1",
+      "value": "50,6",
       "unit": "ms",
       "sub": "Snit 7d",
       "color": "#7A6A58"
@@ -82,25 +82,17 @@
     "target": 6,
     "streak": 5
   },
-  "coachSpeech": "Onsdag — uge 11 af 14. {HL} Godt: 3 AF-dage i 3 gennemførte dage — på rette spor. 3 mere og ugens mål er i hus. Fokus: 259 af 637 TSS er i hus — 3 sessioner tilbage, heriblandt Hike 2 timer Z1-Z2, Løb Z2 40 min let. Vægt på 72,8 kg (målt 9/8) — hold protein højt og undgå lette kulhydrater om aftenen. Keep moving forward.  \"Du bliver til det, du gør ofte.\"",
-  "coachHighlight": "Søvn på 7,7 timer er solid",
+  "coachSpeech": "Torsdag — uge 11 af 14. {HL} Fokus: 259 af 637 TSS er i hus — 3 sessioner tilbage, heriblandt Hike 2 timer Z1-Z2, Løb Z2 40 min let. Vægt på 72,8 kg (målt 9/8) — hold protein højt og undgå lette kulhydrater om aftenen. 3 AF-dage i 4 afsluttede dage — 3 mangler i 3 dage tilbage. Hård uge — men det er sådan formen bygges. Hold ved.  \"Det er ikke om at have tid. Det er om at tage den.\"",
+  "coachHighlight": "Søvn på 7,4 timer er solid",
   "weekFocus": "Peak-uge: tøm tanken på Sa Calobra og hold resten kontrolleret",
   "today": [
     {
-      "discipline": "openwater",
-      "title": "OW-svøm 800-1500m",
-      "duration": "",
-      "zone": "–",
-      "desc": "",
-      "completed": true
-    },
-    {
       "discipline": "hike",
-      "title": "Hike 3 timer Z1-Z2",
+      "title": "Hike 2 timer Z1-Z2",
       "duration": "",
       "zone": "–",
       "desc": "",
-      "completed": true
+      "completed": false
     }
   ],
   "week_sessions": [
@@ -140,7 +132,6 @@
       "planned_tss": 25,
       "planned_mins": 30,
       "planned_distance_m": 1500,
-      "today": true,
       "completion": "partial",
       "completion_pct": 48,
       "actual_tss": 12,
@@ -155,7 +146,6 @@
       "planned_tss": 114,
       "planned_mins": 180,
       "planned_distance_m": null,
-      "today": true,
       "completion": "partial",
       "completion_pct": 53,
       "actual_tss": 60,
@@ -169,7 +159,8 @@
       "done": false,
       "planned_tss": 76,
       "planned_mins": 120,
-      "planned_distance_m": null
+      "planned_distance_m": null,
+      "today": true
     },
     {
       "day": "Fre",
@@ -201,10 +192,9 @@
     51.0,
     50.9,
     53.0,
-    55.3
+    55.8
   ],
   "weightHistory": [
-    null,
     null,
     {
       "date": "2026-05-17",
@@ -501,14 +491,10 @@
     },
     null,
     null,
+    null,
     null
   ],
   "hrvHistory": [
-    {
-      "date": "2026-05-15",
-      "v": 39.0,
-      "real": true
-    },
     {
       "date": "2026-05-16",
       "v": 32.0,
@@ -953,14 +939,10 @@
       "date": "2026-08-12",
       "v": 60.0,
       "real": true
-    }
+    },
+    null
   ],
   "sleepHistory": [
-    {
-      "date": "2026-05-15",
-      "v": 4.8,
-      "real": true
-    },
     {
       "date": "2026-05-16",
       "v": 7.2,
@@ -1401,14 +1383,10 @@
       "date": "2026-08-12",
       "v": 7.8,
       "real": true
-    }
+    },
+    null
   ],
   "tsbHistory": [
-    {
-      "date": "2026-05-15",
-      "v": 6.4,
-      "real": true
-    },
     {
       "date": "2026-05-16",
       "v": 8.3,
@@ -1852,6 +1830,11 @@
     {
       "date": "2026-08-12",
       "v": -15.4,
+      "real": true
+    },
+    {
+      "date": "2026-08-13",
+      "v": -15.7,
       "real": true
     }
   ],
@@ -2729,7 +2712,6 @@
           "planned_tss": 25,
           "planned_mins": 30,
           "planned_distance_m": 1500,
-          "today": true,
           "completion": "partial",
           "completion_pct": 48,
           "actual_tss": 12,
@@ -2744,7 +2726,6 @@
           "planned_tss": 114,
           "planned_mins": 180,
           "planned_distance_m": null,
-          "today": true,
           "completion": "partial",
           "completion_pct": 53,
           "actual_tss": 60,
@@ -2758,7 +2739,8 @@
           "done": false,
           "planned_tss": 76,
           "planned_mins": 120,
-          "planned_distance_m": null
+          "planned_distance_m": null,
+          "today": true
         },
         {
           "day": "Fre",
@@ -3015,7 +2997,7 @@
     {
       "week": 11,
       "done": 3,
-      "total": 3,
+      "total": 4,
       "label": "Uge 11"
     }
   ],
@@ -3028,7 +3010,6 @@
     "actual_total": 522.0
   },
   "fatHistory": [
-    null,
     null,
     {
       "date": "2026-05-17",
@@ -3325,13 +3306,14 @@
     },
     null,
     null,
+    null,
     null
   ],
-  "coachAssessmentHtml": "<p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\"><strong>Dag 73 af 98 · Onsdag · Uge 11</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">💪 <strong>Træning & load</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">CTL er 55,9 — godt over ugemålet på 53 — og TSB er -18,2, hvilket er kontrolleret inden for grænsen. Mandagens løb var on target med 16,9 km og 107 TSS, og tirsdagens Sa Calobra leverede 65,3 km og 80 TSS — NP på 131W er det reelle effektbillede her, da kuperet terræn gav 25,4% frihjul og trak tid-i-zone ned. Svømmen i dag var 1.656 m på 37 min og 12 TSS — 110% af de planlagte 1.500 m. Zone-compliance i svømmen viste 0,0% i HR Z2, hvilket er under 30%-målet — til næste OW-session er det værd at holde intensiteten lidt mere oppe fra start, så HR når at sætte sig i Z2 frem for at ligge under hele vejen.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">⚖️ <strong>Krop & kost</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Seneste vejning 9/8 viste 72,8 kg og 22,5% fedt — afstand til målet er 4,8 kg og 6,5 procentpoint. 7-dages snittet på fedtprocent er gået op 0,4 point over de seneste 7 dage og ligger nu på 21,8% — det er den reelle retning, og den går den forkerte vej lige nu. Vægtsnittet på 72,3 kg er brugbart, men fedtprocentens stigning er det vigtigste signal: du taber ikke fedt i denne periode, og det er det der tæller i et capacity-år. Hold proteinniveauet oppe og hold øje med om kaloriebalancen er tættere på nul end planlagt under denne Mallorca-uge.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">🎯 <strong>AF-status & fokus for resten af ugen</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">3 AF-dage ud af 3 dage gået i ugen — det er en solid start, og streaken er oppe på 5 dage. Resten af ugen er torsdag let cykel Z2 på 75 min, fredag let løb Z2 på 40 min og lørdag cykel Z2 på 90 min — alle tre pas er kontrollerede, og det er præcis det de skal være efter en tung blok. Hold TSB i ro og undgå fristelsen til at presse lørdag — tanken er allerede tømt på Sa Calobra.</p>",
-  "coachAssessmentTs": "21:05",
+  "coachAssessmentHtml": "<p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\"><strong>Dag 74 af 98 · Torsdag · Uge 11</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">💪 <strong>Træning & load</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">CTL er 55.8 mod et ugemål på 53 — du er foran planen, og TSB på -15.7 er stadig inden for det acceptable. Ugen har leveret solide blokke: 107 TSS på løbet mandag, 80 TSS på Sa Calobra og 60 TSS på onsdagsvandringen. Dagens hike på 2 timer Z1-Z2 er endnu ikke gennemført — hold det roligt og kontrolleret, det er ikke dagen til at presse. Fredag og lørdag er lette pas, så lad kroppen komme ned i TSB inden du rejser hjem.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">⚖️ <strong>Krop & kost</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Vægten var 72.8 kg ved seneste vejning 9/8, og 7-dages snittet ligger på 72.4 kg — der er stadig 4.4 kg til målet under 68 kg. Fedtprocenten var 22.5 % ved målingen 9/8, men 7-dages snittet på 21.8 % er det reelle billede — og det snit er gået op 0.4 procentpoint over de seneste 7 dage, så retningen på fedtprocenten er den forkerte lige nu. Vægten alene siger ikke meget; det er det stigende fedtprocent-snit der skal vendes, og det kræver opmærksomhed på kost og søvn i den kommende uge. Du er stadig langt fra målet på under 16 % — det er her indsatsen skal sættes ind.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">🎯 <strong>AF-status & fokus for resten af ugen</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Du har 3 AF-dage ud af 4 dage gået i ugen, så tempoet er fint. Med 3 dage tilbage er der god plads til at nå 6 for ugen. Ugefokuset er peak-uge med Sa Calobra som omdrejningspunkt — det er klaret. Resten er kontrol: dagens hike, et let løb fredag og en rolig cykeltur lørdag.</p>",
+  "coachAssessmentTs": "02:00",
   "commute_pairing_warnings": [],
   "warnings": [],
-  "tsb": -15.5,
+  "tsb": -15.7,
   "swimHistory": [
     {
       "week": 1,
@@ -3402,11 +3384,10 @@
   ],
   "coachAssessmentLastActId": "i175275407",
   "weekFocusWeek": 11,
-  "coachAssessmentPlanAtGen": "OW-svøm 800-1500m",
+  "coachAssessmentPlanAtGen": "Hike 2 timer Z1-Z2",
   "weightGoal": 68,
   "bodyFatGoal": 16,
   "weightMovingAvg7": [
-    null,
     null,
     null,
     null,
@@ -3495,10 +3476,10 @@
     72.37,
     72.28,
     72.3,
-    72.35
+    72.35,
+    72.4
   ],
   "fatMovingAvg7": [
-    null,
     null,
     null,
     null,
@@ -3587,7 +3568,8 @@
     21.69,
     21.67,
     21.78,
-    21.82
+    21.82,
+    21.83
   ],
   "weightToGoal": 4.8,
   "bodyFatToGoal": 6.5,
@@ -3619,8 +3601,8 @@
       "note": "Nøgle virker"
     }
   },
-  "credentialsCheckedTs": "2026-08-12T23:41:02.508253",
-  "coachAssessmentTsFull": "2026-08-12T21:05:23.491093",
+  "credentialsCheckedTs": "2026-08-13T02:00:43.854983",
+  "coachAssessmentTsFull": "2026-08-13T02:00:43.854966",
   "coachAssessmentWeightAtGen": 72.8,
   "coachAssessmentAfAtGen": 3,
   "event_structure_warnings": [],
@@ -3723,7 +3705,7 @@
     {
       "name": "Santini Stelvio Gran Fondo (lang rute)",
       "date": "2027-06-06",
-      "days": 298,
+      "days": 297,
       "priority": "B",
       "distance": "130km / 4500hm",
       "registered": true
@@ -3731,7 +3713,7 @@
     {
       "name": "Tour des Stations Ultrafondo",
       "date": "2027-08-28",
-      "days": 381,
+      "days": 380,
       "priority": "A",
       "distance": "242km / 8848hm",
       "registered": false
