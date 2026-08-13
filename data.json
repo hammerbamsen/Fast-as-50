@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-08-13 06:25",
+    "updated": "2026-08-13 07:57",
     "week": 11,
     "totalWeeks": 14,
     "blockType": "BUILD",
@@ -35,7 +35,7 @@
       "color": "#E67E22"
     },
     "sleep": {
-      "value": "7,4",
+      "value": "7,3",
       "unit": "t",
       "sub": "Snit 7,5t · mål 7t",
       "color": "#2874A6"
@@ -47,7 +47,7 @@
       "color": "#E67E22"
     },
     "hrv": {
-      "value": "50,6",
+      "value": "50,8",
       "unit": "ms",
       "sub": "Snit 7d",
       "color": "#7A6A58"
@@ -83,7 +83,7 @@
     "streak": 5
   },
   "coachSpeech": "Torsdag — uge 11 af 14. {HL} Fokus: 259 af 637 TSS er i hus — 3 sessioner tilbage, heriblandt Hike 2 timer Z1-Z2, Løb Z2 40 min let. Vægt på 72,8 kg (målt 9/8) — hold protein højt og undgå lette kulhydrater om aftenen. 3 AF-dage i 4 afsluttede dage — 3 mangler i 3 dage tilbage. Hård uge — men det er sådan formen bygges. Hold ved.  \"Det er ikke om at have tid. Det er om at tage den.\"",
-  "coachHighlight": "Søvn på 7,4 timer er solid",
+  "coachHighlight": "Søvn på 7,3 timer er solid",
   "weekFocus": "Peak-uge: tøm tanken på Sa Calobra og hold resten kontrolleret",
   "today": [
     {
@@ -940,7 +940,11 @@
       "v": 60.0,
       "real": true
     },
-    null
+    {
+      "date": "2026-08-13",
+      "v": 52.0,
+      "real": true
+    }
   ],
   "sleepHistory": [
     {
@@ -1384,7 +1388,11 @@
       "v": 7.8,
       "real": true
     },
-    null
+    {
+      "date": "2026-08-13",
+      "v": 6.2,
+      "real": true
+    }
   ],
   "tsbHistory": [
     {
@@ -3601,7 +3609,7 @@
       "note": "Nøgle virker"
     }
   },
-  "credentialsCheckedTs": "2026-08-13T04:25:16.159534",
+  "credentialsCheckedTs": "2026-08-13T05:57:47.058725",
   "coachAssessmentTsFull": "2026-08-13T02:00:43.854966",
   "coachAssessmentWeightAtGen": 72.8,
   "coachAssessmentAfAtGen": 3,
