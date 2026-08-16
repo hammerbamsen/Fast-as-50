@@ -142,7 +142,7 @@
       "blockType": "TAPER",
       "ctlTarget": 47,
       "tssTarget": 180,
-      "location": "Norge → hjem man. RACE lør",
+      "location": "Gentofte (hjem fra Norge søn 23.). RACE lør",
       "note": "Christiansborg Rundt lør 29. aug — svømmes UTAPERET (2000 m, bevidst valg). Marathon-vedligehold: 19 km ons."
     },
     {
@@ -191,8 +191,8 @@
     {
       "label": "Norge-tur",
       "start": "2026-08-22",
-      "end": "2026-08-24",
-      "travel_home_date": "2026-08-24",
+      "end": "2026-08-23",
+      "travel_home_date": "2026-08-23",
       "label_home": "dagen efter hjemrejse fra Norge",
       "label_during": "på Norge-turen midt i taper"
     },
@@ -4123,7 +4123,7 @@
                 "name": "OW-svøm Open water 45 min",
                 "type": "OpenWaterSwim",
                 "moving_time": 2700,
-                "description": "- Tilvænning + let svøm langs kant 10m freeride\n- Open water: kontinuerlig svøm, sigtning hver 8.-10. tag 25m freeride\n- Let ud-svøm + exit-rutine 10m freeride",
+                "description": "- Tilvænning + let svøm langs kant 10m freeride\n- Open water: 1500-2000 m kontinuerligt, sigtning hver 8.-10. tag 25m freeride\n- Let ud-svøm + exit-rutine 10m freeride",
                 "workout_doc": {
                   "steps": [
                     {
@@ -4131,7 +4131,7 @@
                       "duration": 600
                     },
                     {
-                      "text": "Open water: kontinuerlig svøm, sigtning hver 8.-10. tag",
+                      "text": "Open water: 1500-2000 m kontinuerligt, sigtning hver 8.-10. tag",
                       "duration": 1500
                     },
                     {
@@ -4141,7 +4141,7 @@
                   ]
                 }
               },
-              "note": "OW-svøm 45 min — Christiansborg-prep",
+              "note": "OW-svøm 45 min — 1500-2000 m kontinuerligt, Christiansborg-prep",
               "id": "a03ba610"
             }
           ]
@@ -4151,10 +4151,10 @@
           "entries": [
             {
               "workout": {
-                "name": "Lang løb Z2 32 km (170 min)",
+                "name": "Lang løb Z2 26 km (140 min)",
                 "type": "Run",
-                "moving_time": 10200,
-                "description": "- Varm-op 15m >5:39/km Pace\n- Lang base 32 km 145m 5:00-5:38/km Pace\n- Cool-down 10m >5:39/km Pace",
+                "moving_time": 8400,
+                "description": "- Varm-op 15m >5:39/km Pace\n- Lang base 26 km 115m 5:00-5:38/km Pace\n- Cool-down 10m >5:39/km Pace",
                 "workout_doc": {
                   "steps": [
                     {
@@ -4167,13 +4167,13 @@
                       "duration": 900
                     },
                     {
-                      "text": "Lang base 32 km 5:00-5:38/km",
+                      "text": "Lang base 26 km 5:00-5:38/km",
                       "pace": {
                         "start": 78,
                         "end": 88,
                         "units": "%pace"
                       },
-                      "duration": 8700
+                      "duration": 6900
                     },
                     {
                       "text": "Cool-down >5:39/km",
@@ -4187,7 +4187,7 @@
                   ]
                 }
               },
-              "note": "Lang løb 32 km — SIDSTE langtur før Médoc",
+              "note": "Lang løb 26 km — SIDSTE langtur før Médoc (reduceret fra 32 km, skadesbegrænsning)",
               "id": "224598a9"
             }
           ]
@@ -4245,10 +4245,10 @@
           "entries": [
             {
               "workout": {
-                "name": "OW-svøm Open water 40 min",
+                "name": "OW-svøm Race-simulation 2000 m",
                 "type": "OpenWaterSwim",
-                "moving_time": 2400,
-                "description": "- Tilvænning + let svøm langs kant 10m freeride\n- Open water: kontinuerlig svøm, sigtning hver 8.-10. tag 20m freeride\n- Let ud-svøm + exit-rutine 10m freeride",
+                "moving_time": 3900,
+                "description": "- Tilvænning + let svøm langs kant 10m freeride\n- Race-simulation: 2000 m kontinuerligt på tid, sigtning hver 8.-10. tag 45m freeride\n- Let ud-svøm + exit-rutine 10m freeride",
                 "workout_doc": {
                   "steps": [
                     {
@@ -4256,8 +4256,8 @@
                       "duration": 600
                     },
                     {
-                      "text": "Open water: kontinuerlig svøm, sigtning hver 8.-10. tag",
-                      "duration": 1200
+                      "text": "Race-simulation: 2000 m kontinuerligt på tid, sigtning hver 8.-10. tag",
+                      "duration": 2700
                     },
                     {
                       "text": "Let ud-svøm + exit-rutine",
@@ -4266,7 +4266,7 @@
                   ]
                 }
               },
-              "note": "OW-svøm 40 min — sigtning + startrutine",
+              "note": "OW-svøm 2000 m race-simulation på tid — generalprøve Christiansborg",
               "id": "6b33d5e7"
             }
           ]
@@ -4336,8 +4336,46 @@
           "date": "2026-08-22",
           "entries": [
             {
-              "workout": null,
-              "note": "Norge start (lør 22. aug)",
+              "workout": {
+                "name": "Cykel Z2 45 min (kælder)",
+                "type": "Ride",
+                "moving_time": 2700,
+                "description": "- Varm-op 10m ramp 45-68% FTP\n- Aerob base 30m 56-76% FTP\n- Cool-down 5m ramp 68-45% FTP",
+                "workout_doc": {
+                  "steps": [
+                    {
+                      "ramp": true,
+                      "power": {
+                        "start": 45,
+                        "end": 68,
+                        "units": "%ftp"
+                      },
+                      "duration": 600,
+                      "warmup": true
+                    },
+                    {
+                      "text": "Aerob base 56-76% FTP",
+                      "power": {
+                        "start": 56,
+                        "end": 76,
+                        "units": "%ftp"
+                      },
+                      "duration": 1800
+                    },
+                    {
+                      "ramp": true,
+                      "power": {
+                        "start": 68,
+                        "end": 45,
+                        "units": "%ftp"
+                      },
+                      "duration": 300,
+                      "cooldown": true
+                    }
+                  ]
+                }
+              },
+              "note": "Hometrainer Z2 45 min i kælderen før afgang til Norge (lør 22. aug)",
               "id": "857f6470"
             }
           ]
@@ -4383,7 +4421,7 @@
                   ]
                 }
               },
-              "note": "Løb Z2 50 min Norge (søn 23. aug)",
+              "note": "Løb Z2 50 min Norge — hjemrejse søn 23. aug",
               "id": "8610221d"
             }
           ]
@@ -4393,7 +4431,7 @@
           "entries": [
             {
               "workout": null,
-              "note": "Hjem fra Norge (man 24. aug)",
+              "note": "Hjemme igen (man 24. aug)",
               "id": "c052a992"
             }
           ]
