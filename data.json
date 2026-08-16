@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-08-16 06:36",
+    "updated": "2026-08-16 07:14",
     "week": 11,
     "totalWeeks": 14,
     "blockType": "BUILD",
@@ -23,13 +23,13 @@
       "color": "#C0392B"
     },
     "ctl": {
-      "value": "54,2",
+      "value": "52,6",
       "unit": "",
       "sub": "Uge 11-mål 53 · Slutmål 43 (uge 14)",
       "color": "#27AE60"
     },
     "tsb": {
-      "value": "-4,5",
+      "value": "1,7",
       "unit": "",
       "sub": "Form · CTL−ATL, frisk >0",
       "color": "#27AE60"
@@ -82,7 +82,7 @@
     "target": 6,
     "streak": 1
   },
-  "coachSpeech": "Søndag — afslut uge 11 stærkt. {HL} Godt: Søvn på 7,1 timer er solid. Fokus: Vægt på 72,8 kg (målt 9/8) — hold protein højt og undgå lette kulhydrater om aftenen. 4 AF-dage i 7 afsluttede dage — 2 mangler i 0 dage tilbage. Alle sessioner i hus. Juster de små ting, og resten følger. 📊 Store billede: CTL 54,2 er 1.2 point FORAN ugeplanen (planmål uge 11: 53). Vægten har tabt 1.7 kg over de seneste 79 dage (74,5 → 72,8 kg).  \"Hvil er ikke det modsatte af fremskridt — det er en del af det.\"",
+  "coachSpeech": "Søndag — afslut uge 11 stærkt. {HL} Godt: Søvn på 7,1 timer er solid. Fokus: Vægt på 72,8 kg (målt 9/8) — hold protein højt og undgå lette kulhydrater om aftenen. 4 AF-dage i 7 afsluttede dage — 2 mangler i 0 dage tilbage. Alle sessioner i hus. Juster de små ting, og resten følger. 📊 Store billede: CTL 52,6 er 0.4 point BAG ugeplanen (planmål uge 11: 53). Vægten har tabt 1.7 kg over de seneste 79 dage (74,5 → 72,8 kg).  \"Hvil er ikke det modsatte af fremskridt — det er en del af det.\"",
   "coachHighlight": "57 procent af ugens TSS er i hus",
   "weekFocus": "Peak-uge: tøm tanken på Sa Calobra og hold resten kontrolleret",
   "today": [
@@ -217,7 +217,7 @@
     51.0,
     50.9,
     53.0,
-    54.2
+    52.6
   ],
   "weightHistory": [
     null,
@@ -1858,12 +1858,12 @@
     },
     {
       "date": "2026-08-15",
-      "v": -12.2,
+      "v": -4.8,
       "real": true
     },
     {
       "date": "2026-08-16",
-      "v": -4.5,
+      "v": 1.8,
       "real": true
     }
   ],
@@ -2837,12 +2837,12 @@
         {
           "day": "Tir",
           "disc": "run",
-          "label": "Lang løb Z2 32 km (170 min)",
+          "label": "Lang løb Z2 26 km (140 min)",
           "done": false,
           "today": false,
-          "planned_tss": 156,
-          "planned_mins": 170,
-          "planned_distance_m": 32000
+          "planned_tss": 128,
+          "planned_mins": 140,
+          "planned_distance_m": 26000
         },
         {
           "day": "Ons",
@@ -2857,12 +2857,12 @@
         {
           "day": "Tor",
           "disc": "openwater",
-          "label": "OW-svøm Open water 40 min",
+          "label": "OW-svøm Race-simulation 2000 m",
           "done": false,
           "today": false,
-          "planned_tss": 33,
-          "planned_mins": 40,
-          "planned_distance_m": null
+          "planned_tss": 54,
+          "planned_mins": 65,
+          "planned_distance_m": 2000
         },
         {
           "day": "Fre",
@@ -2872,6 +2872,16 @@
           "today": false,
           "planned_tss": 17,
           "planned_mins": 19,
+          "planned_distance_m": null
+        },
+        {
+          "day": "Lør",
+          "disc": "bike",
+          "label": "Cykel Z2 45 min (kælder)",
+          "done": false,
+          "today": false,
+          "planned_tss": 34,
+          "planned_mins": 45,
           "planned_distance_m": null
         },
         {
@@ -3363,8 +3373,8 @@
     null,
     null
   ],
-  "coachAssessmentHtml": "<p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\"><strong>Dag 77 af 98 · Søndag · Uge 11</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">💪 <strong>Træning & load</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">En tung uge er i mål: Sa Calobra, to vandringer, to løb og en svøm giver et fornuftigt billede af en peak-uge, der rent faktisk var en peak-uge. CTL er 54,2 og TSB er -4,5 — kroppen er belastet, men langt fra i farezonen. Næste uge er restitutionsuge, og den er fortjent.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">⚖️ <strong>Krop & kost</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Vægten var 72,8 kg ved seneste vejning 9/8 — 4,8 kg fra målet. 7-dages snittet ligger på 72,4 kg, og det er det tal der viser retningen. Fedtprocenten var 22,5 % målt 9/8, og her er billedet knap så opløftende: 7-dages snittet for fedtprocent er steget 0,4 point over de seneste 7 dage — det er den reelle retning, og den går den forkerte vej. Vægten bevæger sig langsomt nedad, men hvis fedtprocenten stiger samtidig, taber du muskelmasse, ikke fedt — og det er ikke det, du er ude efter i et capacity-år.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">🎯 <strong>AF-status & fokus for resten af ugen</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Du har 4 AF-dage ud af 7 dage gået i ugen — 4/7 er acceptabelt i en travel peak-uge, men der er ingen ekstra dage at tage af nu. I dag er hviledag, og der er intet planlagt — hold det enkelt og lad kroppen begynde at absorbere ugens arbejde.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">📊 <strong>Store billede</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">CTL på 54,2 er 1,2 point foran ugemålet på 53 — planen holder og du er foran skema. Over de seneste 79 dage er vægten gået fra 74,5 til 72,8 kg, altså 1,7 kg ned — fremgangen er reel, men tempoet skal fastholdes, og fedtprocenten skal med ned hvis det skal betyde noget til september.</p>",
-  "coachAssessmentTs": "04:32",
+  "coachAssessmentHtml": "<p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\"><strong>Dag 77 af 98 · Søndag · Uge 11</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">💪 <strong>Træning & load</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">CTL er 52,6 — 0,4 point bag ugeplanen på 53, men det er marginalt og fuldt forklaret af ugens karakter: en peak-uge på Mallorca med Sa Calobra som omdrejningspunkt, suppleret af vandringer og gåture, der giver lav TSS pr. time. TSB er 1,7 — du er i balance og klar til næste blok. Zone-mæssigt var de to cykelture begge under 40%-målet for Z2+Z3-effekt, men NP på 131W (Sa Calobra) og 124W (lørdag) er det mest retvisende billede i det kuperede terræn — til næste strukturerede Z2-cykeltur på fladt underlag skal du holde wattene konsekvent oppe. De to løbeture ramte begge Z2 på pace og er godkendt, men en stor del af tiden lå i en langsommere zone — til næste Z2-løb er der plads til at skrue tempoet lidt op fra start.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">⚖️ <strong>Krop & kost</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Vægten var 72,8 kg ved seneste vejning 9/8 — det er 4,8 kg fra målet under 68 kg. Fedtprocenten var 22,5 % samme dag, mod et mål på under 16 % — der er altså 6,5 procentpoint at arbejde med. Det vigtigste tal er 7-dages snittet på fedtprocent: det er gået *op* 0,4 point over de seneste 7 dage, og det er den reelle retning. Vægtsnittet på 72,4 kg og fedtprocentsnittet der stiger er ikke en god kombination — kig på kostens proteinindhold og sørg for at kaloriereduktionen ikke æder muskelmasse.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">🎯 <strong>AF-status & fokus for resten af ugen</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Du har 4 AF-dage ud af 7 dage i ugen — dvs. 4/7 på nuværende tidspunkt. Dagen i dag er stadig i gang, så der er mulighed for at slutte ugen stærkt på AF-fronten. Fokus nu er simpelt: hvil, spis fornuftigt, og lad kroppen absorbere ugens arbejde inden blok 12 starter.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">📊 <strong>Store billede</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">CTL er 52,6 mod ugeplanen på 53 — du er 0,4 point bagud, men inden for normal variation. Over de seneste 79 dage er vægten gået fra 74,5 til 72,8 kg — et reelt tab på 1,7 kg, og det er den rigtige retning. Udfordringen er at sikre, at vægttabet fremover kommer fra fedt og ikke muskelmasse — 7-dages fedtprocent-snittet der bevæger sig opad er det signal der skal tages alvorligt i de kommende uger.</p>",
+  "coachAssessmentTs": "05:14",
   "commute_pairing_warnings": [],
   "warnings": [
     {
@@ -3373,7 +3383,7 @@
       "message": "3 drikkedage i træk 13/8–15/8 — klynger rammer HRV hårdere end spredte dage."
     }
   ],
-  "tsb": -4.5,
+  "tsb": 1.7,
   "swimHistory": [
     {
       "week": 1,
@@ -3661,8 +3671,8 @@
       "note": "Nøgle virker"
     }
   },
-  "credentialsCheckedTs": "2026-08-16T04:36:05.353307",
-  "coachAssessmentTsFull": "2026-08-16T04:32:39.883555",
+  "credentialsCheckedTs": "2026-08-16T05:14:37.372293",
+  "coachAssessmentTsFull": "2026-08-16T05:14:37.372277",
   "coachAssessmentWeightAtGen": 72.8,
   "coachAssessmentAfAtGen": 4,
   "event_structure_warnings": [],
