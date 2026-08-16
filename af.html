@@ -113,6 +113,13 @@ function setSecret(s){ localStorage.setItem(SECRET_KEY, s); }
 function getLog()     { try { return JSON.parse(localStorage.getItem(STORAGE_KEY)||'{}'); } catch { return {}; } }
 function saveLog(log) { localStorage.setItem(STORAGE_KEY, JSON.stringify(log)); }
 
+// ── Fortryd-flag ──────────────────────────────────────────────
+// Mens en dag er "fortrudt" og afventer nyt svar, må syncFromIntervals()
+// ikke fylde den lokale log op igen med serverens (endnu forældede) værdi.
+const UNDO_KEY = "af_undo_pending";
+function getUndoPending() { return localStorage.getItem(UNDO_KEY) || ''; }
+function setUndoPending(k) { if (k) localStorage.setItem(UNDO_KEY, k); else localStorage.removeItem(UNDO_KEY); }
+
 // ── Streak beregning (fra localStorage — optimistisk visning) ──
 // data.json's autoritative af_log/streak opdateres nu server-side af
 // af-registrering.yml (se worker.js's /af-registrering + workflowets
@@ -299,11 +306,27 @@ function showDone() {
     <div class="footer" style="margin-top:8px">
       <a class="dash-link" href="https://hammerbamsen.github.io/fast-as-50">Åbn dashboard</a>
       <br>
+      ${isCurrentWeek && log[todayKey()]!==undefined?`<button class="refresh-btn" onclick="undoToday()">↺ FORTRYD I DAG</button>`:''}
       <button class="refresh-btn" onclick="triggerRefresh()">↻ OPDATÉR DATA</button>
       <div class="last-updated" id="last-updated-af" style="text-align:center"></div>
     </div>
   `;
   updateLastUpdated();
+}
+
+// ── Fortryd dagens svar ─────────────────────────────────────────
+function undoToday() {
+  const key = todayKey();
+  const log = getLog();
+  if (log[key] === undefined) return; // intet at fortryde
+  if (!confirm(`Fortryd dagens registrering (${formatDate(key)}) og svar igen?`)) return;
+  delete log[key];
+  saveLog(log);
+  setUndoPending(key);
+  globalStreak = 0; // undgå at vise en forældet streak indtil nyt svar er sendt
+  queue = buildQueue();
+  qIdx = 0;
+  queue.length===0 ? showDone() : showQuestion(queue[0]);
 }
 
 // ── Refresh ────────────────────────────────────────────────────
@@ -401,6 +424,7 @@ async function answer(isAF) {
 
     // Lykkedes — gem lokalt NU
     saveLog(log);
+    if (getUndoPending() === key) setUndoPending('');
     const streak = calcStreak(log);
 
     const statusEl = document.getElementById('status');
@@ -435,7 +459,9 @@ async function syncFromIntervals() {
     if(data.af_log && typeof data.af_log === 'object') {
       const log = getLog();
       let changed = false;
+      const pending = getUndoPending();
       Object.entries(data.af_log).forEach(([date, val]) => {
+        if(date === pending) return; // fortrydelse i gang for denne dato — lad ikke serverens (endnu forældede) værdi overskrive
         if(log[date] === undefined) {
           log[date] = (val === 0);
           changed = true;
