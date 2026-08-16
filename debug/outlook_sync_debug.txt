@@ -3,12 +3,13 @@ Uge 12: 2026-08-17 til 2026-08-23
 7 workouts fra Intervals
 timeOverrides: 9 dato(er) fra data/plan.json
   Slettet: 🏊 OW-svøm Open water 45 min
-  Slettet: 🏃 Lang løb Z2 32 km (170 min)
+  Slettet: 🏃 Lang løb Z2 26 km (140 min)
   Slettet: 🚴 Cykel Z2 50 min
-  Slettet: 🏊 OW-svøm Open water 40 min
+  Slettet: 🏊 OW-svøm Race-simulation 2000 m
   Slettet: 🏃 Shakeout løb + strides
+  Slettet: 🚴 Cykel Z2 45 min (kælder)
   Slettet: 🏃 Løb Z2 50 min
-Slettet: 6
+Slettet: 7
   Oprettet: 2026-08-17 🏊 OW-svøm Open water 45 min
   Oprettet: 2026-08-18 🏃 Lang løb Z2 26 km (140 min)
   Oprettet: 2026-08-19 🚴 Cykel Z2 50 min
