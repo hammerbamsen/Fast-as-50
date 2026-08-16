@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-08-16 07:14",
+    "updated": "2026-08-16 07:28",
     "week": 11,
     "totalWeeks": 14,
     "blockType": "BUILD",
@@ -55,8 +55,8 @@
     "tssComp": {
       "value": "363",
       "unit": "TSS",
-      "sub": "363 af 637 planlagt TSS",
-      "color": "#C0392B"
+      "sub": "363 af 537 planlagt TSS",
+      "color": "#E67E22"
     },
     "bikeKm": {
       "value": "89,0",
@@ -83,7 +83,7 @@
     "streak": 1
   },
   "coachSpeech": "Søndag — afslut uge 11 stærkt. {HL} Godt: Søvn på 7,1 timer er solid. Fokus: Vægt på 72,8 kg (målt 9/8) — hold protein højt og undgå lette kulhydrater om aftenen. 4 AF-dage i 7 afsluttede dage — 2 mangler i 0 dage tilbage. Alle sessioner i hus. Juster de små ting, og resten følger. 📊 Store billede: CTL 52,6 er 0.4 point BAG ugeplanen (planmål uge 11: 53). Vægten har tabt 1.7 kg over de seneste 79 dage (74,5 → 72,8 kg).  \"Hvil er ikke det modsatte af fremskridt — det er en del af det.\"",
-  "coachHighlight": "57 procent af ugens TSS er i hus",
+  "coachHighlight": "68 procent af ugens TSS er i hus",
   "weekFocus": "Peak-uge: tøm tanken på Sa Calobra og hold resten kontrolleret",
   "today": [
     {
@@ -143,7 +143,7 @@
       "disc": "hike",
       "label": "Hike 3 timer Z1-Z2",
       "done": true,
-      "planned_tss": 114,
+      "planned_tss": 54,
       "planned_mins": 180,
       "planned_distance_m": null,
       "completion": "done",
@@ -157,7 +157,7 @@
       "disc": "hike",
       "label": "Hike 2 timer Z1-Z2",
       "done": true,
-      "planned_tss": 76,
+      "planned_tss": 36,
       "planned_mins": 120,
       "planned_distance_m": null,
       "completion": "partial",
@@ -178,8 +178,7 @@
       "completion_pct": 122,
       "actual_tss": 45,
       "actual_mins": 43,
-      "actual_distance_m": 7321.21,
-      "intervals_compliance": 121.6
+      "actual_distance_m": 7321.21
     },
     {
       "day": "Lør",
@@ -2756,7 +2755,7 @@
           "disc": "hike",
           "label": "Hike 3 timer Z1-Z2",
           "done": true,
-          "planned_tss": 114,
+          "planned_tss": 54,
           "planned_mins": 180,
           "planned_distance_m": null,
           "completion": "done",
@@ -2770,7 +2769,7 @@
           "disc": "hike",
           "label": "Hike 2 timer Z1-Z2",
           "done": true,
-          "planned_tss": 76,
+          "planned_tss": 36,
           "planned_mins": 120,
           "planned_distance_m": null,
           "completion": "partial",
@@ -2791,8 +2790,7 @@
           "completion_pct": 122,
           "actual_tss": 45,
           "actual_mins": 43,
-          "actual_distance_m": 7321.21,
-          "intervals_compliance": 121.6
+          "actual_distance_m": 7321.21
         },
         {
           "day": "Lør",
@@ -3671,7 +3669,7 @@
       "note": "Nøgle virker"
     }
   },
-  "credentialsCheckedTs": "2026-08-16T05:14:37.372293",
+  "credentialsCheckedTs": "2026-08-16T05:28:13.252262",
   "coachAssessmentTsFull": "2026-08-16T05:14:37.372277",
   "coachAssessmentWeightAtGen": 72.8,
   "coachAssessmentAfAtGen": 4,
