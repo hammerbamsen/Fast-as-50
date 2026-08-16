@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-08-16 03:18",
+    "updated": "2026-08-16 04:42",
     "week": 11,
     "totalWeeks": 14,
     "blockType": "BUILD",
@@ -35,7 +35,7 @@
       "color": "#27AE60"
     },
     "sleep": {
-      "value": "7,2",
+      "value": "7,1",
       "unit": "t",
       "sub": "Snit 7,5t · mål 7t",
       "color": "#2874A6"
@@ -47,7 +47,7 @@
       "color": "#27AE60"
     },
     "hrv": {
-      "value": "51,6",
+      "value": "52,1",
       "unit": "ms",
       "sub": "Snit 7d",
       "color": "#7A6A58"
@@ -82,7 +82,7 @@
     "target": 6,
     "streak": 0
   },
-  "coachSpeech": "Søndag — afslut uge 11 stærkt. {HL} Godt: Søvn på 7,2 timer er solid. Fokus: Vægt på 72,8 kg (målt 9/8) — hold protein højt og undgå lette kulhydrater om aftenen. 3 AF-dage i 7 afsluttede dage — 3 mangler i 0 dage tilbage. Alle sessioner i hus. Juster de små ting, og resten følger. 📊 Store billede: CTL 54,2 er 1.2 point FORAN ugeplanen (planmål uge 11: 53). Vægten har tabt 1.7 kg over de seneste 79 dage (74,5 → 72,8 kg).  \"Hvil er ikke det modsatte af fremskridt — det er en del af det.\"",
+  "coachSpeech": "Søndag — afslut uge 11 stærkt. {HL} Godt: Søvn på 7,1 timer er solid. Fokus: Vægt på 72,8 kg (målt 9/8) — hold protein højt og undgå lette kulhydrater om aftenen. 3 AF-dage i 7 afsluttede dage — 3 mangler i 0 dage tilbage. Alle sessioner i hus. Juster de små ting, og resten følger. 📊 Store billede: CTL 54,2 er 1.2 point FORAN ugeplanen (planmål uge 11: 53). Vægten har tabt 1.7 kg over de seneste 79 dage (74,5 → 72,8 kg).  \"Hvil er ikke det modsatte af fremskridt — det er en del af det.\"",
   "coachHighlight": "57 procent af ugens TSS er i hus",
   "weekFocus": "Peak-uge: tøm tanken på Sa Calobra og hold resten kontrolleret",
   "today": [
@@ -961,7 +961,11 @@
       "v": 47.0,
       "real": true
     },
-    null
+    {
+      "date": "2026-08-16",
+      "v": 56.0,
+      "real": true
+    }
   ],
   "sleepHistory": [
     {
@@ -1405,7 +1409,11 @@
       "v": 7.2,
       "real": true
     },
-    null
+    {
+      "date": "2026-08-16",
+      "v": 6.3,
+      "real": true
+    }
   ],
   "tsbHistory": [
     {
@@ -3652,7 +3660,7 @@
       "note": "Nøgle virker"
     }
   },
-  "credentialsCheckedTs": "2026-08-16T01:19:04.346953",
+  "credentialsCheckedTs": "2026-08-16T02:42:21.829807",
   "coachAssessmentTsFull": "2026-08-16T01:19:04.346938",
   "coachAssessmentWeightAtGen": 72.8,
   "coachAssessmentAfAtGen": 3,
