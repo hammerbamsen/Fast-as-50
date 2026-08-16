@@ -1,19 +1,19 @@
 {
   "meta": {
-    "updated": "2026-08-16 01:45",
+    "updated": "2026-08-16 03:18",
     "week": 11,
     "totalWeeks": 14,
     "blockType": "BUILD",
-    "daysToMedoc": 21,
-    "daysToChristiansborg": 14,
-    "dayName": "Lørdag",
-    "date": "15. aug"
+    "daysToMedoc": 20,
+    "daysToChristiansborg": 13,
+    "dayName": "Søndag",
+    "date": "16. aug"
   },
   "kpis": {
     "weight": {
       "value": "72,8",
       "unit": "kg",
-      "sub": "Sidst målt 9/8 · Mål <68 kg · snit 72,9 kg",
+      "sub": "Sidst målt 9/8 · Mål <68 kg · snit 72,8 kg",
       "color": "#E67E22"
     },
     "fat": {
@@ -23,19 +23,19 @@
       "color": "#C0392B"
     },
     "ctl": {
-      "value": "55,5",
+      "value": "54,2",
       "unit": "",
       "sub": "Uge 11-mål 53 · Slutmål 43 (uge 14)",
       "color": "#27AE60"
     },
     "tsb": {
-      "value": "-12,2",
+      "value": "-4,5",
       "unit": "",
-      "sub": "Hård blok · CTL−ATL, frisk >0",
-      "color": "#E67E22"
+      "sub": "Form · CTL−ATL, frisk >0",
+      "color": "#27AE60"
     },
     "sleep": {
-      "value": "6,9",
+      "value": "7,2",
       "unit": "t",
       "sub": "Snit 7,5t · mål 7t",
       "color": "#2874A6"
@@ -47,7 +47,7 @@
       "color": "#27AE60"
     },
     "hrv": {
-      "value": "49,6",
+      "value": "51,6",
       "unit": "ms",
       "sub": "Snit 7d",
       "color": "#7A6A58"
@@ -82,25 +82,17 @@
     "target": 6,
     "streak": 0
   },
-  "coachSpeech": "Lørdag — uge 11 af 14. {HL} Fokus: Vægt på 72,8 kg (målt 9/8) — hold protein højt og undgå lette kulhydrater om aftenen. Søvn på 6,9 timer er under 7-timers målet — prioriter den. 3 AF-dage i 6 afsluttede dage — 3 mangler i 1 dage tilbage. Alle sessioner i hus. Juster de små ting, og resten følger.  \"Keep moving forward.\"",
+  "coachSpeech": "Søndag — afslut uge 11 stærkt. {HL} Godt: Søvn på 7,2 timer er solid. Fokus: Vægt på 72,8 kg (målt 9/8) — hold protein højt og undgå lette kulhydrater om aftenen. 3 AF-dage i 7 afsluttede dage — 3 mangler i 0 dage tilbage. Alle sessioner i hus. Juster de små ting, og resten følger. 📊 Store billede: CTL 54,2 er 1.2 point FORAN ugeplanen (planmål uge 11: 53). Vægten har tabt 1.7 kg over de seneste 79 dage (74,5 → 72,8 kg).  \"Hvil er ikke det modsatte af fremskridt — det er en del af det.\"",
   "coachHighlight": "57 procent af ugens TSS er i hus",
   "weekFocus": "Peak-uge: tøm tanken på Sa Calobra og hold resten kontrolleret",
   "today": [
     {
-      "discipline": "bike",
-      "title": "Cykel Z2 90 min Mallorca",
+      "discipline": "rest",
+      "title": "Hviledag",
       "duration": "",
       "zone": "–",
-      "desc": "",
-      "completed": true
-    },
-    {
-      "discipline": "hike",
-      "title": "Fornalutx Vandring",
-      "duration": "",
-      "zone": "–",
-      "desc": "",
-      "completed": true
+      "desc": "Ingen planlagt træning i dag.",
+      "completed": false
     }
   ],
   "week_sessions": [
@@ -197,7 +189,6 @@
       "planned_tss": 68,
       "planned_mins": 90,
       "planned_distance_m": null,
-      "today": true,
       "completion": "partial",
       "completion_pct": 41,
       "actual_tss": 28,
@@ -212,8 +203,7 @@
       "extra": true,
       "actual_tss": 17,
       "actual_mins": 144,
-      "actual_distance_m": 10650.8,
-      "today": true
+      "actual_distance_m": 10650.8
     }
   ],
   "ctlCurve": [
@@ -227,10 +217,9 @@
     51.0,
     50.9,
     53.0,
-    55.5
+    54.2
   ],
   "weightHistory": [
-    null,
     null,
     null,
     null,
@@ -523,14 +512,10 @@
     null,
     null,
     null,
+    null,
     null
   ],
   "hrvHistory": [
-    {
-      "date": "2026-05-18",
-      "v": 47.0,
-      "real": true
-    },
     {
       "date": "2026-05-19",
       "v": 54.0,
@@ -975,14 +960,10 @@
       "date": "2026-08-15",
       "v": 47.0,
       "real": true
-    }
+    },
+    null
   ],
   "sleepHistory": [
-    {
-      "date": "2026-05-18",
-      "v": 6.9,
-      "real": true
-    },
     {
       "date": "2026-05-19",
       "v": 9.2,
@@ -1423,14 +1404,10 @@
       "date": "2026-08-15",
       "v": 7.2,
       "real": true
-    }
+    },
+    null
   ],
   "tsbHistory": [
-    {
-      "date": "2026-05-18",
-      "v": 6.5,
-      "real": true
-    },
     {
       "date": "2026-05-19",
       "v": -1.4,
@@ -1874,6 +1851,11 @@
     {
       "date": "2026-08-15",
       "v": -12.2,
+      "real": true
+    },
+    {
+      "date": "2026-08-16",
+      "v": -4.5,
       "real": true
     }
   ],
@@ -2811,7 +2793,6 @@
           "planned_tss": 68,
           "planned_mins": 90,
           "planned_distance_m": null,
-          "today": true,
           "completion": "partial",
           "completion_pct": 41,
           "actual_tss": 28,
@@ -2826,8 +2807,7 @@
           "extra": true,
           "actual_tss": 17,
           "actual_mins": 144,
-          "actual_distance_m": 10650.8,
-          "today": true
+          "actual_distance_m": 10650.8
         }
       ],
       "blockType": "BUILD+",
@@ -3066,7 +3046,7 @@
     {
       "week": 11,
       "done": 3,
-      "total": 6,
+      "total": 7,
       "label": "Uge 11"
     }
   ],
@@ -3079,7 +3059,6 @@
     "actual_total": 882.0
   },
   "fatHistory": [
-    null,
     null,
     null,
     null,
@@ -3372,10 +3351,11 @@
     null,
     null,
     null,
+    null,
     null
   ],
-  "coachAssessmentHtml": "<p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\"><strong>Dag 76 af 98 · Lørdag · Uge 11</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">💪 <strong>Træning & load</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">CTL er 55,5 mod ugemålet på 53 — du er foran planen, og TSB på -12,2 viser at du bærer en reel, men fornuftig træthed. Ugens Sa Calobra-test tirsdag og løbet i Puerto de Sóller mandag var ugens tunge løftere — resten har været kontrolleret. Lørdagens cykeltur gav 28 TSS over 83 min; zone-compliance viste 37,1% i Z2+Z3-watt og 24,6% coasting, og NP på 124W er det mest retvisende effektbillede fra den kuperede tur — til næste gang på lignende terræn kan du med fordel holde wattene lidt mere oppe i de rideable sektioner for at komme nærmere 40%-målet.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">⚖️ <strong>Krop & kost</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Vægten var 72,8 kg ved seneste vejning 9/8 — 4,8 kg fra målet under 68 kg. Fedtprocenten var 22,5% samme dag, og 7-dages snittet på fedtprocent er gået op 0,4 procentpoint over de seneste 7 dage til 21,8% — det er den retning der tæller, og den går den forkerte vej. Vægten 7-dages snit på 72,4 kg og en stigende fedtprocent i snit er en kombination der kræver opmærksomhed: det er ikke væskebalance, det er en reel signal om at kosten ikke understøtter fedttab — kig på protein og kalorieoverskud i restitutionsdage.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">🎯 <strong>AF-status & fokus for resten af ugen</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Du har 3 AF-dage ud af 6 dage gået i ugen — det er præcis halvvejs på alkoholfronten. Der er én dag tilbage af ugen, og du er allerede bag på ugemålet på 6 AF-dage. Brug søndagen til aktiv restitution og hold den alkoholfri — det er den eneste dag du kan hente point på. Ugen har leveret det den skulle træningsmæssigt; nu handler det om at lukke den ordentligt af og møde uge 12 med positiv TSB.</p>",
-  "coachAssessmentTs": "20:22",
+  "coachAssessmentHtml": "<p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\"><strong>Dag 77 af 98 · Søndag · Uge 11</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">💪 <strong>Træning & load</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">CTL er 54,2 med TSB på -4,5 — kroppen er belastet men ikke overbelastet, og du er præcis hvor du skal være efter en peak-uge. Sa Calobra tog det den skulle, og de tre løbeture, svømmeturen og vandringerne har tilsammen lagt et solidt fundament. På cyklen ligger NP på 124–131W som det reelle effektbillede, men zone-compliance viser at du leverede under 40% i Z2+Z3 på begge cykelture — næste gang du kører Z2 på Mallorca-terræn, hold fokus på at holde wattene oppe i de rideable sektioner frem for at lade coasting spise tid-i-zone.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">⚖️ <strong>Krop & kost</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Vægten var 72,8 kg ved seneste vejning 9/8 — det er 4,8 kg fra målet under 68 kg. 7-dages snittet ligger på 72,4 kg, men fedtprocentens 7-dages snit er steget 0,4 procentpoint og er nu 21,8 % mod målet på under 16 % — det er den retning der tæller, og den går den forkerte vej. Vægten falder stille og roligt, men hvis fedtprocenten fortsætter opad mens vægten falder, er det muskelmasse du mister, ikke fedt — det er et advarselstegn i et capacity-år. Hold særligt øje med proteinindtaget i restitutionsugen nu.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">🎯 <strong>AF-status & fokus for resten af ugen</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Du har 3 AF-dage ud af 7 dage i ugen — det er præcis halvvejs, og der er stadig i dag at gøre noget ved. Ugen er en peak-uge og hviledag i dag, så der er ingen træningsmæssig barriere for at afslutte stærkt på AF-fronten. Luk ugen af med en ren dag.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">📊 <strong>Store billede</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">CTL er 54,2 mod ugeplanen på 53 — du er 1,2 point foran skema, og det er godt kontrolleret. Over de seneste 79 dage er vægten faldet fra 74,5 kg til 72,8 kg, altså 1,7 kg — fremgangen er reel, men langsom, og fedtprocenten skal begynde at følge med for at det tæller som ægte kropssammensætningsfremgang.</p>",
+  "coachAssessmentTs": "01:19",
   "commute_pairing_warnings": [],
   "warnings": [
     {
@@ -3384,7 +3364,7 @@
       "message": "3 drikkedage i træk 13/8–15/8 — klynger rammer HRV hårdere end spredte dage."
     }
   ],
-  "tsb": -12.2,
+  "tsb": -4.5,
   "swimHistory": [
     {
       "week": 1,
@@ -3455,11 +3435,10 @@
   ],
   "coachAssessmentLastActId": "i176111391",
   "weekFocusWeek": 11,
-  "coachAssessmentPlanAtGen": "Cykel Z2 90 min Mallorca",
+  "coachAssessmentPlanAtGen": "",
   "weightGoal": 68,
   "bodyFatGoal": 16,
   "weightMovingAvg7": [
-    null,
     null,
     null,
     null,
@@ -3548,10 +3527,10 @@
     72.35,
     72.4,
     null,
+    null,
     null
   ],
   "fatMovingAvg7": [
-    null,
     null,
     null,
     null,
@@ -3640,6 +3619,7 @@
     21.82,
     21.83,
     null,
+    null,
     null
   ],
   "weightToGoal": 4.8,
@@ -3672,8 +3652,8 @@
       "note": "Nøgle virker"
     }
   },
-  "credentialsCheckedTs": "2026-08-15T23:45:16.748360",
-  "coachAssessmentTsFull": "2026-08-15T20:22:07.775123",
+  "credentialsCheckedTs": "2026-08-16T01:19:04.346953",
+  "coachAssessmentTsFull": "2026-08-16T01:19:04.346938",
   "coachAssessmentWeightAtGen": 72.8,
   "coachAssessmentAfAtGen": 3,
   "event_structure_warnings": [],
@@ -3776,7 +3756,7 @@
     {
       "name": "Santini Stelvio Gran Fondo (lang rute)",
       "date": "2027-06-06",
-      "days": 295,
+      "days": 294,
       "priority": "B",
       "distance": "130km / 4500hm",
       "registered": true
@@ -3784,7 +3764,7 @@
     {
       "name": "Tour des Stations Ultrafondo",
       "date": "2027-08-28",
-      "days": 378,
+      "days": 377,
       "priority": "A",
       "distance": "242km / 8848hm",
       "registered": false
