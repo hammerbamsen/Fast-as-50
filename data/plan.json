@@ -4120,26 +4120,10 @@
           "entries": [
             {
               "workout": {
-                "name": "OW-svøm Open water 45 min",
-                "type": "OpenWaterSwim",
-                "moving_time": 2700,
-                "description": "- Tilvænning + let svøm langs kant 10m freeride\n- Open water: 1500-2000 m kontinuerligt, sigtning hver 8.-10. tag 25m freeride\n- Let ud-svøm + exit-rutine 10m freeride",
-                "workout_doc": {
-                  "steps": [
-                    {
-                      "text": "Tilvænning + let svøm langs kant",
-                      "duration": 600
-                    },
-                    {
-                      "text": "Open water: 1500-2000 m kontinuerligt, sigtning hver 8.-10. tag",
-                      "duration": 1500
-                    },
-                    {
-                      "text": "Let ud-svøm + exit-rutine",
-                      "duration": 600
-                    }
-                  ]
-                }
+                "name": "Styrke A Functional Strength 2 sæt",
+                "type": "WeightTraining",
+                "moving_time": 2400,
+                "description": "2x\n- Thruster 12.5kg ×10 1m freeride\n- Renegade Row ×8 1m freeride\n- Push-up ×10 1m freeride\n- KB Swing 16kg ×15 1m freeride\n- RDL ×10 1m freeride\n- Bulgarian Split Squat ×8/ben 1m freeride\n- Pause 90 sek 2m freeride"
               },
               "note": "OW-svøm 45 min — 1500-2000 m kontinuerligt, Christiansborg-prep",
               "id": "a03ba610"
