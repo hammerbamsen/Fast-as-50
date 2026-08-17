@@ -1,74 +1,74 @@
 {
   "meta": {
-    "updated": "2026-08-17 01:44",
-    "week": 11,
+    "updated": "2026-08-17 03:16",
+    "week": 12,
     "totalWeeks": 14,
     "blockType": "BUILD",
-    "daysToMedoc": 20,
-    "daysToChristiansborg": 13,
-    "dayName": "Søndag",
-    "date": "16. aug"
+    "daysToMedoc": 19,
+    "daysToChristiansborg": 12,
+    "dayName": "Mandag",
+    "date": "17. aug"
   },
   "kpis": {
     "weight": {
-      "value": "72,8",
+      "value": "—",
       "unit": "kg",
-      "sub": "Sidst målt 9/8 · Mål <68 kg · snit 72,8 kg",
-      "color": "#E67E22"
+      "sub": "Sidst målt 9/8 · Mål <68 kg",
+      "color": "#7A6A58"
     },
     "fat": {
-      "value": "22,5",
+      "value": "—",
       "unit": "%",
       "sub": "Mål <16%",
-      "color": "#C0392B"
+      "color": "#7A6A58"
     },
     "ctl": {
-      "value": "52,9",
+      "value": "52,5",
       "unit": "",
-      "sub": "Uge 11-mål 53 · Slutmål 43 (uge 14)",
+      "sub": "Uge 12-mål 51 · Slutmål 43 (uge 14)",
       "color": "#27AE60"
     },
     "tsb": {
-      "value": "0,6",
+      "value": "2,1",
       "unit": "",
       "sub": "Form · CTL−ATL, frisk >0",
       "color": "#27AE60"
     },
     "sleep": {
-      "value": "7,1",
+      "value": "7,3",
       "unit": "t",
       "sub": "Snit 7,5t · mål 7t",
       "color": "#2874A6"
     },
     "runKm": {
-      "value": "24,2",
+      "value": "0,0",
       "unit": "km",
       "sub": "Mål 40+ km uge 10",
-      "color": "#27AE60"
+      "color": "#7A6A58"
     },
     "hrv": {
-      "value": "52,1",
+      "value": "53,1",
       "unit": "ms",
       "sub": "Snit 7d",
       "color": "#7A6A58"
     },
     "tssComp": {
-      "value": "374",
+      "value": "0",
       "unit": "TSS",
-      "sub": "374 af 537 planlagt TSS",
-      "color": "#E67E22"
+      "sub": "0 af 355 planlagt TSS",
+      "color": "#7A6A58"
     },
     "bikeKm": {
-      "value": "89,0",
+      "value": "0,0",
       "unit": "km",
       "sub": "Cykel denne uge",
-      "color": "#27AE60"
+      "color": "#7A6A58"
     },
     "swimM": {
-      "value": "1656",
+      "value": "0",
       "unit": "m",
       "sub": "Svøm denne uge · mål 2000m (Christiansborg)",
-      "color": "#E67E22"
+      "color": "#7A6A58"
     },
     "afStreak": {
       "value": "0",
@@ -78,142 +78,87 @@
     }
   },
   "af": {
-    "weekDone": 3,
+    "weekDone": 0,
     "target": 6,
     "streak": 0
   },
-  "coachSpeech": "Søndag — afslut uge 11 stærkt. {HL} Godt: Søvn på 7,1 timer er solid. Fokus: Vægt på 72,8 kg (målt 9/8) — hold protein højt og undgå lette kulhydrater om aftenen. 3 AF-dage i 7 afsluttede dage — 3 mangler i 0 dage tilbage. Alle sessioner i hus. Juster de små ting, og resten følger. 📊 Store billede: CTL 52,9 er 0.1 point BAG ugeplanen (planmål uge 11: 53). Vægten har tabt 1.7 kg over de seneste 79 dage (74,5 → 72,8 kg).  \"Hvil er ikke det modsatte af fremskridt — det er en del af det.\"",
-  "coachHighlight": "70 procent af ugens TSS er i hus",
-  "weekFocus": "Peak-uge: tøm tanken på Sa Calobra og hold resten kontrolleret",
+  "coachSpeech": "Ny uge starter — uge 12 af 14. Build-uge. {HL} Godt: Søvn på 7,3 timer er solid. Ny uge med 0 dages streak i ryggen. Hold den. Alt peger den rigtige vej. Hold ilden ved — ikke sluk den.  \"AF-dage er ikke et offer — de er en investering i morgendagens energi.\"",
+  "coachHighlight": "Fuld uge foran — i dag: OW-svøm Open water 45 min",
+  "weekFocus": "Svøm skarpt, bevar benet frisk — nedtrapningen begynder nu",
   "today": [
     {
-      "discipline": "walk",
-      "title": "Gentofte Gang",
+      "discipline": "openwater",
+      "title": "OW-svøm Open water 45 min",
       "duration": "",
       "zone": "–",
       "desc": "",
-      "completed": true
+      "completed": false
     }
   ],
   "week_sessions": [
     {
       "day": "Man",
-      "disc": "run",
-      "label": "Løb Puerto de Sóller – Far des Cap Gros t/r 16 km",
-      "done": true,
-      "planned_tss": 87,
-      "planned_mins": 95,
-      "planned_distance_m": 16000,
-      "completion": "done",
-      "completion_pct": 106,
-      "actual_tss": 107,
-      "actual_mins": 96,
-      "actual_distance_m": 16900.97
+      "disc": "openwater",
+      "label": "OW-svøm Open water 45 min",
+      "done": false,
+      "planned_tss": 38,
+      "planned_mins": 45,
+      "planned_distance_m": null,
+      "today": true
     },
     {
       "day": "Tir",
+      "disc": "run",
+      "label": "Lang løb Z2 26 km (140 min)",
+      "done": false,
+      "planned_tss": 128,
+      "planned_mins": 140,
+      "planned_distance_m": 26000
+    },
+    {
+      "day": "Ons",
       "disc": "bike",
-      "label": "Sa Calobra TEST via Puig Major",
-      "done": true,
-      "planned_tss": 230,
-      "planned_mins": 265,
-      "planned_distance_m": null,
-      "completion": "partial",
-      "completion_pct": 35,
-      "actual_tss": 80,
-      "actual_mins": 215,
-      "actual_distance_m": 65273.96
-    },
-    {
-      "day": "Ons",
-      "disc": "openwater",
-      "label": "OW-svøm 800-1500m",
-      "done": true,
-      "planned_tss": 25,
-      "planned_mins": 30,
-      "planned_distance_m": 1500,
-      "completion": "partial",
-      "completion_pct": 48,
-      "actual_tss": 12,
-      "actual_mins": 37,
-      "actual_distance_m": 1655.68
-    },
-    {
-      "day": "Ons",
-      "disc": "hike",
-      "label": "Hike 3 timer Z1-Z2",
-      "done": true,
-      "planned_tss": 54,
-      "planned_mins": 180,
-      "planned_distance_m": null,
-      "completion": "done",
-      "completion_pct": 97,
-      "actual_tss": 60,
-      "actual_mins": 174,
-      "actual_distance_m": 8914.54
+      "label": "Cykel Z2 50 min",
+      "done": false,
+      "planned_tss": 38,
+      "planned_mins": 50,
+      "planned_distance_m": null
     },
     {
       "day": "Tor",
-      "disc": "hike",
-      "label": "Hike 2 timer Z1-Z2",
-      "done": true,
-      "planned_tss": 36,
-      "planned_mins": 120,
-      "planned_distance_m": null,
-      "completion": "partial",
-      "completion_pct": 75,
-      "actual_tss": 14,
-      "actual_mins": 90,
-      "actual_distance_m": 5559.76
+      "disc": "openwater",
+      "label": "OW-svøm Race-simulation 2000 m",
+      "done": false,
+      "planned_tss": 54,
+      "planned_mins": 65,
+      "planned_distance_m": 2000
     },
     {
       "day": "Fre",
       "disc": "run",
-      "label": "Løb Z2 40 min let",
-      "done": true,
-      "planned_tss": 37,
-      "planned_mins": 40,
-      "planned_distance_m": null,
-      "completion": "done",
-      "completion_pct": 122,
-      "actual_tss": 45,
-      "actual_mins": 43,
-      "actual_distance_m": 7321.21
+      "label": "Shakeout løb + strides",
+      "done": false,
+      "planned_tss": 17,
+      "planned_mins": 19,
+      "planned_distance_m": null
     },
     {
       "day": "Lør",
       "disc": "bike",
-      "label": "Cykel Z2 90 min Mallorca",
-      "done": true,
-      "planned_tss": 68,
-      "planned_mins": 90,
-      "planned_distance_m": null,
-      "completion": "partial",
-      "completion_pct": 41,
-      "actual_tss": 28,
-      "actual_mins": 83,
-      "actual_distance_m": 23775.58
-    },
-    {
-      "day": "Lør",
-      "disc": "hike",
-      "label": "Fornalutx Vandring",
-      "done": true,
-      "extra": true,
-      "actual_tss": 17,
-      "actual_mins": 144,
-      "actual_distance_m": 10650.8
+      "label": "Cykel Z2 45 min (kælder)",
+      "done": false,
+      "planned_tss": 34,
+      "planned_mins": 45,
+      "planned_distance_m": null
     },
     {
       "day": "Søn",
-      "disc": "walk",
-      "label": "Gentofte Gang",
-      "done": true,
-      "extra": true,
-      "actual_tss": 11,
-      "actual_mins": 115,
-      "actual_distance_m": 9937.93,
-      "today": true
+      "disc": "run",
+      "label": "Løb Z2 50 min",
+      "done": false,
+      "planned_tss": 46,
+      "planned_mins": 50,
+      "planned_distance_m": null
     }
   ],
   "ctlCurve": [
@@ -227,10 +172,10 @@
     51.0,
     50.9,
     53.0,
-    52.9
+    52.9,
+    52.5
   ],
   "weightHistory": [
-    null,
     null,
     null,
     null,
@@ -523,14 +468,10 @@
     null,
     null,
     null,
+    null,
     null
   ],
   "hrvHistory": [
-    {
-      "date": "2026-05-19",
-      "v": 54.0,
-      "real": true
-    },
     {
       "date": "2026-05-20",
       "v": 36.0,
@@ -975,14 +916,10 @@
       "date": "2026-08-16",
       "v": 56.0,
       "real": true
-    }
+    },
+    null
   ],
   "sleepHistory": [
-    {
-      "date": "2026-05-19",
-      "v": 9.2,
-      "real": true
-    },
     {
       "date": "2026-05-20",
       "v": 8.0,
@@ -1423,14 +1360,10 @@
       "date": "2026-08-16",
       "v": 6.3,
       "real": true
-    }
+    },
+    null
   ],
   "tsbHistory": [
-    {
-      "date": "2026-05-19",
-      "v": -1.4,
-      "real": true
-    },
     {
       "date": "2026-05-20",
       "v": -1.3,
@@ -1874,6 +1807,11 @@
     {
       "date": "2026-08-16",
       "v": 0.6,
+      "real": true
+    },
+    {
+      "date": "2026-08-17",
+      "v": 2.1,
       "real": true
     }
   ],
@@ -2723,120 +2661,71 @@
           "day": "Man",
           "disc": "run",
           "label": "Løb Puerto de Sóller – Far des Cap Gros t/r 16 km",
-          "done": true,
+          "done": false,
+          "today": false,
           "planned_tss": 87,
           "planned_mins": 95,
-          "planned_distance_m": 16000,
-          "completion": "done",
-          "completion_pct": 106,
-          "actual_tss": 107,
-          "actual_mins": 96,
-          "actual_distance_m": 16900.97
+          "planned_distance_m": 16000
         },
         {
           "day": "Tir",
           "disc": "bike",
           "label": "Sa Calobra TEST via Puig Major",
-          "done": true,
+          "done": false,
+          "today": false,
           "planned_tss": 230,
           "planned_mins": 265,
-          "planned_distance_m": null,
-          "completion": "partial",
-          "completion_pct": 35,
-          "actual_tss": 80,
-          "actual_mins": 215,
-          "actual_distance_m": 65273.96
+          "planned_distance_m": null
         },
         {
           "day": "Ons",
           "disc": "openwater",
           "label": "OW-svøm 800-1500m",
-          "done": true,
+          "done": false,
+          "today": false,
           "planned_tss": 25,
           "planned_mins": 30,
-          "planned_distance_m": 1500,
-          "completion": "partial",
-          "completion_pct": 48,
-          "actual_tss": 12,
-          "actual_mins": 37,
-          "actual_distance_m": 1655.68
+          "planned_distance_m": 1500
         },
         {
           "day": "Ons",
           "disc": "hike",
           "label": "Hike 3 timer Z1-Z2",
-          "done": true,
+          "done": false,
+          "today": false,
           "planned_tss": 54,
           "planned_mins": 180,
-          "planned_distance_m": null,
-          "completion": "done",
-          "completion_pct": 97,
-          "actual_tss": 60,
-          "actual_mins": 174,
-          "actual_distance_m": 8914.54
+          "planned_distance_m": null
         },
         {
           "day": "Tor",
           "disc": "hike",
           "label": "Hike 2 timer Z1-Z2",
-          "done": true,
+          "done": false,
+          "today": false,
           "planned_tss": 36,
           "planned_mins": 120,
-          "planned_distance_m": null,
-          "completion": "partial",
-          "completion_pct": 75,
-          "actual_tss": 14,
-          "actual_mins": 90,
-          "actual_distance_m": 5559.76
+          "planned_distance_m": null
         },
         {
           "day": "Fre",
           "disc": "run",
           "label": "Løb Z2 40 min let",
-          "done": true,
+          "done": false,
+          "today": false,
           "planned_tss": 37,
           "planned_mins": 40,
-          "planned_distance_m": null,
-          "completion": "done",
-          "completion_pct": 122,
-          "actual_tss": 45,
-          "actual_mins": 43,
-          "actual_distance_m": 7321.21
+          "planned_distance_m": null
         },
         {
           "day": "Lør",
           "disc": "bike",
           "label": "Cykel Z2 90 min Mallorca",
-          "done": true,
+          "done": false,
+          "today": false,
           "planned_tss": 68,
           "planned_mins": 90,
-          "planned_distance_m": null,
-          "completion": "partial",
-          "completion_pct": 41,
-          "actual_tss": 28,
-          "actual_mins": 83,
-          "actual_distance_m": 23775.58
-        },
-        {
-          "day": "Lør",
-          "disc": "hike",
-          "label": "Fornalutx Vandring",
-          "done": true,
-          "extra": true,
-          "actual_tss": 17,
-          "actual_mins": 144,
-          "actual_distance_m": 10650.8
-        },
-        {
-          "day": "Søn",
-          "disc": "walk",
-          "label": "Gentofte Gang",
-          "done": true,
-          "extra": true,
-          "actual_tss": 11,
-          "actual_mins": 115,
-          "actual_distance_m": 9937.93,
-          "today": true
+          "planned_distance_m": null
         }
       ],
       "blockType": "BUILD+",
@@ -2849,17 +2738,16 @@
           "disc": "openwater",
           "label": "OW-svøm Open water 45 min",
           "done": false,
-          "today": false,
           "planned_tss": 38,
           "planned_mins": 45,
-          "planned_distance_m": null
+          "planned_distance_m": null,
+          "today": true
         },
         {
           "day": "Tir",
           "disc": "run",
           "label": "Lang løb Z2 26 km (140 min)",
           "done": false,
-          "today": false,
           "planned_tss": 128,
           "planned_mins": 140,
           "planned_distance_m": 26000
@@ -2869,7 +2757,6 @@
           "disc": "bike",
           "label": "Cykel Z2 50 min",
           "done": false,
-          "today": false,
           "planned_tss": 38,
           "planned_mins": 50,
           "planned_distance_m": null
@@ -2879,7 +2766,6 @@
           "disc": "openwater",
           "label": "OW-svøm Race-simulation 2000 m",
           "done": false,
-          "today": false,
           "planned_tss": 54,
           "planned_mins": 65,
           "planned_distance_m": 2000
@@ -2889,7 +2775,6 @@
           "disc": "run",
           "label": "Shakeout løb + strides",
           "done": false,
-          "today": false,
           "planned_tss": 17,
           "planned_mins": 19,
           "planned_distance_m": null
@@ -2899,7 +2784,6 @@
           "disc": "bike",
           "label": "Cykel Z2 45 min (kælder)",
           "done": false,
-          "today": false,
           "planned_tss": 34,
           "planned_mins": 45,
           "planned_distance_m": null
@@ -2909,14 +2793,13 @@
           "disc": "run",
           "label": "Løb Z2 50 min",
           "done": false,
-          "today": false,
           "planned_tss": 46,
           "planned_mins": 50,
           "planned_distance_m": null
         }
       ],
       "blockType": "BUILD",
-      "focus": "Taper-uge 12 — 3 løb · 1 cykel · 1 styrke · én VO2-stimulus. Fokus: konsistens over intensitet."
+      "focus": "Svøm skarpt, bevar benet frisk — nedtrapningen begynder nu"
     },
     "13": {
       "sessions": [
@@ -3087,19 +2970,19 @@
       "done": 3,
       "total": 7,
       "label": "Uge 11"
+    },
+    {
+      "week": 12,
+      "done": 0,
+      "total": 1,
+      "label": "Uge 12"
     }
   ],
   "train_mins": {
-    "walk": 115.0,
-    "hike": 408.0,
-    "bike": 298.0,
-    "run": 139.0,
-    "openwater": 37.0,
-    "planned": 820.0,
-    "actual_total": 997.0
+    "planned": 414.0,
+    "actual_total": 0
   },
   "fatHistory": [
-    null,
     null,
     null,
     null,
@@ -3392,10 +3275,11 @@
     null,
     null,
     null,
+    null,
     null
   ],
-  "coachAssessmentHtml": "<p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\"><strong>Dag 77 af 98 · Søndag · Uge 11</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">💪 <strong>Træning & load</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">En fuld uge på Mallorca med stor variation: løb, cykel, svøm, hike og en afsluttende gåtur i dag. CTL er 52,9 — praktisk talt spot-on planen på 53. TSB på 0,6 er neutral og afspejler at belastningen har været spredt og kontrolleret. Zone-compliances på cyklen var begge under 40%-målet for Z2+Z3 — men med 24-25% coasting i kuperet terræn er NP på hhv. 131W og 124W det reelle signal, og der er mere at hente næste gang du er i lignende terræn, ved at holde wattene oppe i de ridable sektioner i stedet for at lade kadencen falde. Svømmeturen manglede Z2-tid (0% mod 30%-målet) — en god påmindelse om at holde tempoet lidt mere struktureret næste gang du er i åbent vand.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">⚖️ <strong>Krop & kost</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Vægten var 72,8 kg ved seneste vejning 9/8, og fedtprocenten var 22,5% samme dag — det er 4,8 kg og 6,5 procentpoint fra henholdsvis 68 kg- og 16%-målene. 7-dages snittet på fedtprocenten er steget 0,4 point de seneste 7 dage og ligger nu på 21,8% — det er den reelle retning, og den går den forkerte vej lige nu. 7-dages vægtsnittet på 72,4 kg er positivt, men hvis fedtprocenten ikke følger med nedad, er det ikke fedt der tabt. Hold ekstra øje med kostens proteinindhold i recovery-uger — det er der muskelmassen bevares.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">🎯 <strong>AF-status & fokus for resten af ugen</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Du er på 3 AF-dage ud af 7 dage gået i ugen — 3/7 er præcist hvad du er nået til, og der er ingen planlagte aktiviteter tilbage i dag. Ugen er ikke afsluttet endnu, men der er reelt ikke mere at flytte på træningssiden. Alkoholfri-målet på 6 dage er ikke nået denne uge — tag det med ind i uge 12 med frisk fokus.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">📊 <strong>Store billede</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">CTL på 52,9 er 0,1 point bag ugeplanen på 53 — negligibelt, og du er i praksis i rute. Vægten har bevæget sig fra 74,5 kg til 72,8 kg over de seneste 79 dage — 1,7 kg ned, i et tempo der er bæredygtigt i et capacity-år. Uge 12 er næste mulighed for at holde kadencen, og med Marathon Médoc tre uger væk er det nu det mentale og strukturelle fundament der skal beskyttes — ikke pressen.</p>",
-  "coachAssessmentTs": "22:21",
+  "coachAssessmentHtml": "<p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\"><strong>Dag 78 af 98 · Mandag · Uge 12</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">💪 <strong>Træning & load</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">CTL ligger på 52.5 — det er allerede over ugens mål på 51, og med TSB på 2.1 er du velrestitueret og klar til at arbejde. Det passer perfekt med ugefokusset: svøm skarpt, bevar benet frisk. Nedtrapningen begynder nu, så det handler ikke om at bygge mere — det handler om at ramme de rigtige sessioner rent og ankomme frisk til Christiansborg Rundt og Marathon Médoc. Dagens OW-svøm på 45 min er udgangspunktet — hold tempoet kontrolleret og brug det som kvalitetspas, ikke som konditionspas.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">⚖️ <strong>Krop & kost</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Der er ingen vægt- eller fedtprocentmåling i dagens data, så der er ikke noget at vurdere på her. Sørg for at veje dig og tjekke fedtprocenten, så vi har noget konkret at arbejde med — specielt med under 68 kg som mål tæt på.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">🎯 <strong>AF-status & fokus for resten af ugen</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Du er 0 ud af 1 dag inde i ugen uden en AF-dag registreret — hold den skarpt herfra. Målet er 6 AF-dage denne uge, og det er opnåeligt. Ugens absolutte nøglepas er torsdag: OW race-simulation 2000 m — det er din generalprøve inden Christiansborg Rundt, og alt andet støtter op om det.</p>",
+  "coachAssessmentTs": "01:16",
   "commute_pairing_warnings": [],
   "warnings": [
     {
@@ -3404,7 +3288,7 @@
       "message": "4 drikkedage i træk 13/8–16/8 — klynger rammer HRV hårdere end spredte dage."
     }
   ],
-  "tsb": 0.6,
+  "tsb": 2.1,
   "swimHistory": [
     {
       "week": 1,
@@ -3471,15 +3355,20 @@
       "date": "2026-08-10",
       "meters": 1656.0,
       "cumulative": 23973.0
+    },
+    {
+      "week": 12,
+      "date": "2026-08-17",
+      "meters": 0,
+      "cumulative": 23973.0
     }
   ],
-  "coachAssessmentLastActId": "i176406079",
-  "weekFocusWeek": 11,
-  "coachAssessmentPlanAtGen": "Gentofte Gang",
+  "coachAssessmentLastActId": null,
+  "weekFocusWeek": 12,
+  "coachAssessmentPlanAtGen": "OW-svøm Open water 45 min",
   "weightGoal": 68,
   "bodyFatGoal": 16,
   "weightMovingAvg7": [
-    null,
     null,
     null,
     null,
@@ -3568,10 +3457,10 @@
     72.4,
     null,
     null,
+    null,
     null
   ],
   "fatMovingAvg7": [
-    null,
     null,
     null,
     null,
@@ -3660,6 +3549,7 @@
     21.83,
     null,
     null,
+    null,
     null
   ],
   "weightToGoal": 4.8,
@@ -3692,10 +3582,10 @@
       "note": "Nøgle virker"
     }
   },
-  "credentialsCheckedTs": "2026-08-16T23:44:43.901216",
-  "coachAssessmentTsFull": "2026-08-16T22:21:00.935872",
+  "credentialsCheckedTs": "2026-08-17T01:16:24.588229",
+  "coachAssessmentTsFull": "2026-08-17T01:16:24.588214",
   "coachAssessmentWeightAtGen": 72.8,
-  "coachAssessmentAfAtGen": 3,
+  "coachAssessmentAfAtGen": 0,
   "event_structure_warnings": [],
   "coachAssessmentFatAtGen": 22.5,
   "zones": {
@@ -3796,7 +3686,7 @@
     {
       "name": "Santini Stelvio Gran Fondo (lang rute)",
       "date": "2027-06-06",
-      "days": 294,
+      "days": 293,
       "priority": "B",
       "distance": "130km / 4500hm",
       "registered": true
@@ -3804,7 +3694,7 @@
     {
       "name": "Tour des Stations Ultrafondo",
       "date": "2027-08-28",
-      "days": 377,
+      "days": 376,
       "priority": "A",
       "distance": "242km / 8848hm",
       "registered": false
