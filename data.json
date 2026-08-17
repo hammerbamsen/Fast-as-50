@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-08-17 22:27",
+    "updated": "2026-08-17 22:55",
     "week": 12,
     "totalWeeks": 14,
     "blockType": "BUILD",
@@ -3336,8 +3336,8 @@
       "real": true
     }
   ],
-  "coachAssessmentHtml": "<p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\"><strong>Dag 78 af 98 · Mandag · Uge 12</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">💪 <strong>Træning & load</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">CTL er 51,9 mod ugemålet 51 — du er foran planen. TSB på 3,5 viser, at du er frisk og klar. Styrketræningen i dag leverede 11 TSS på 31 minutter — præcis det der skal til i en nedtrapningsuge. Nu handler det om at holde kvaliteten oppe i svømning og løb uden at presse CTL unødigt op.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">⚖️ <strong>Krop & kost</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Dagens vægt er 73,2 kg — 5,2 kg fra målet. 7-dages snittet på 72,4 kg er det tal der tæller for retningen. Fedtprocentens 7-dages snit er steget 0,4 point over de seneste 7 dage — det er den reelle tendens, og den går den forkerte vej. Dagens måling på 21,9 % er 5,9 procentpoint fra målet på under 16 %. Hvis vægten holder sig stabil mens fedtprocenten stiger, tyder det på et skift i kropssammensætning du skal tage alvorligt — se på proteinindtag og søvn nu.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">🎯 <strong>AF-status & fokus for resten af ugen</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Du er 0/1 på AF-dage i ugen indtil videre. Ugens store prioritet er fredag: OW-svøm race-simulation 2000 m — det er din direkte generalprøve til Christiansborg Rundt. Hold benene friske til tirsdag og torsdag, og lad cykelpassene onsdag og lørdag være præcis det de skal: aktiv restitution, ikke et forsøg på at bygge mere load.</p>",
-  "coachAssessmentTs": "14:50",
+  "coachAssessmentHtml": "<p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\"><strong>Dag 78 af 98 · Mandag · Uge 12</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">💪 <strong>Træning & load</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">CTL er 51,9 — et punkt over ugemålet på 51, og TSB på 3,5 viser du er frisk og klar. Styrketræningen i dag leverede 11 TSS på 31 minutter — solidt arbejde i restitutionsfasen. Nedtrapningen begynder nu, så ugens fokus er at holde kvaliteten i svømningen skarp og holde benene friske til de to løbeture. Det lange Z2-løb tirsdag på 26 km / 140 min er det tungeste pas i ugen — ryd plads til det i morgen.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">⚖️ <strong>Krop & kost</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Dagens vægt er 73,2 kg — 5,2 kg fra målet. Fedtprocenten er i dag 21,9 %, mod et mål på under 16 %. 7-dages snittet på fedtprocent er 21,8 %, og det er steget 0,4 point de seneste 7 dage — det er den retning der tæller, og den går den forkerte vej. 7-dages vægtsnittet på 72,4 kg giver ikke mening at juble over, hvis fedtprocenten ikke følger med ned. Hold særligt øje med proteinindtaget i nedtrapningsuger — det er let at spise sig til muskeltab når træningsvolumen falder.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">🎯 <strong>AF-status & fokus for resten af ugen</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Du er 0/1 på AF-dage i ugen hidtil — ugen er ikke afgjort, og der er stadig god plads til at nå 6. Resten af ugen har du svøm-race-simulation fredag som dit vigtigste enkeltpas — det er der du får svar på formen til Christiansborg Rundt. Hold Z2-disiplinen på cykel og løb, så du møder fredag frisk.</p>",
+  "coachAssessmentTs": "20:55",
   "commute_pairing_warnings": [],
   "warnings": [
     {
@@ -3640,8 +3640,8 @@
       "note": "Nøgle virker"
     }
   },
-  "credentialsCheckedTs": "2026-08-17T20:27:04.468272",
-  "coachAssessmentTsFull": "2026-08-17T14:50:17.801974",
+  "credentialsCheckedTs": "2026-08-17T20:55:47.168058",
+  "coachAssessmentTsFull": "2026-08-17T20:55:47.168040",
   "coachAssessmentWeightAtGen": 73.2,
   "coachAssessmentAfAtGen": 0,
   "event_structure_warnings": [],
