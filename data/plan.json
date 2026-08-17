@@ -4229,37 +4229,6 @@
           "entries": [
             {
               "workout": {
-                "name": "OW-svøm Race-simulation 2000 m",
-                "type": "OpenWaterSwim",
-                "moving_time": 3900,
-                "description": "- Tilvænning + let svøm langs kant 10m freeride\n- Race-simulation: 2000 m kontinuerligt på tid, sigtning hver 8.-10. tag 45m freeride\n- Let ud-svøm + exit-rutine 10m freeride",
-                "workout_doc": {
-                  "steps": [
-                    {
-                      "text": "Tilvænning + let svøm langs kant",
-                      "duration": 600
-                    },
-                    {
-                      "text": "Race-simulation: 2000 m kontinuerligt på tid, sigtning hver 8.-10. tag",
-                      "duration": 2700
-                    },
-                    {
-                      "text": "Let ud-svøm + exit-rutine",
-                      "duration": 600
-                    }
-                  ]
-                }
-              },
-              "note": "OW-svøm 2000 m race-simulation på tid — generalprøve Christiansborg",
-              "id": "6b33d5e7"
-            }
-          ]
-        },
-        {
-          "date": "2026-08-21",
-          "entries": [
-            {
-              "workout": {
                 "name": "Shakeout løb + strides",
                 "type": "Run",
                 "moving_time": 1140,
@@ -4313,6 +4282,37 @@
               },
               "note": "Shakeout løb + strides",
               "id": "33bd15e7"
+            }
+          ]
+        },
+        {
+          "date": "2026-08-21",
+          "entries": [
+            {
+              "workout": {
+                "name": "OW-svøm Race-simulation 2000 m",
+                "type": "OpenWaterSwim",
+                "moving_time": 3900,
+                "description": "- Tilvænning + let svøm langs kant 10m freeride\n- Race-simulation: 2000 m kontinuerligt på tid, sigtning hver 8.-10. tag 45m freeride\n- Let ud-svøm + exit-rutine 10m freeride",
+                "workout_doc": {
+                  "steps": [
+                    {
+                      "text": "Tilvænning + let svøm langs kant",
+                      "duration": 600
+                    },
+                    {
+                      "text": "Race-simulation: 2000 m kontinuerligt på tid, sigtning hver 8.-10. tag",
+                      "duration": 2700
+                    },
+                    {
+                      "text": "Let ud-svøm + exit-rutine",
+                      "duration": 600
+                    }
+                  ]
+                }
+              },
+              "note": "OW-svøm 2000 m race-simulation på tid — generalprøve Christiansborg",
+              "id": "6b33d5e7"
             }
           ]
         },
