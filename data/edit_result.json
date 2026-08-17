@@ -1,20 +1,4 @@
 {
- "rmrfx0oeyg1wj": {
-  "status": "ok",
-  "gate": {
-   "status": "ok",
-   "flags": [],
-   "msg": "Godkendt"
-  },
-  "dates_changed": [
-   "2026-07-12"
-  ],
-  "plan_commit": "4b00ce33cdd98e4d7a11280404625f94fb83ce81",
-  "sync_errors": [],
-  "athlete": "kennet",
-  "request_ts": "2026-07-11T05:19:59+00:00",
-  "request_id": "rmrfx0oeyg1wj"
- },
  "rmrfx48yqmos2": {
   "status": "ok",
   "gate": {
@@ -250,5 +234,22 @@
   "athlete": "kennet",
   "request_ts": "2026-08-17T04:38:06+00:00",
   "request_id": "rmswqtek7wk7u"
+ },
+ "rmswr2a8fpscy": {
+  "status": "ok",
+  "gate": {
+   "status": "ok",
+   "flags": [],
+   "msg": "Godkendt"
+  },
+  "dates_changed": [
+   "2026-08-20",
+   "2026-08-21"
+  ],
+  "plan_commit": "47c0b1a102a87a11ade9743a276a39c63897973c",
+  "sync_errors": [],
+  "athlete": "kennet",
+  "request_ts": "2026-08-17T04:45:00+00:00",
+  "request_id": "rmswr2a8fpscy"
  }
 }
