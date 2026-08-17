@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-08-17 16:27",
+    "updated": "2026-08-17 16:50",
     "week": 12,
     "totalWeeks": 14,
     "blockType": "BUILD",
@@ -23,13 +23,13 @@
       "color": "#C0392B"
     },
     "ctl": {
-      "value": "51,7",
+      "value": "51,9",
       "unit": "",
       "sub": "Uge 12-mål 51 · Slutmål 43 (uge 14)",
       "color": "#27AE60"
     },
     "tsb": {
-      "value": "4,9",
+      "value": "3,5",
       "unit": "",
       "sub": "Form · CTL−ATL, frisk >0",
       "color": "#27AE60"
@@ -53,9 +53,9 @@
       "color": "#7A6A58"
     },
     "tssComp": {
-      "value": "11",
+      "value": "23",
       "unit": "TSS",
-      "sub": "11 af 336 planlagt TSS",
+      "sub": "23 af 336 planlagt TSS",
       "color": "#C0392B"
     },
     "bikeKm": {
@@ -65,10 +65,10 @@
       "color": "#7A6A58"
     },
     "swimM": {
-      "value": "0",
+      "value": "1401",
       "unit": "m",
       "sub": "Svøm denne uge · mål 2000m (Christiansborg)",
-      "color": "#7A6A58"
+      "color": "#C0392B"
     },
     "afStreak": {
       "value": "0",
@@ -82,13 +82,21 @@
     "target": 6,
     "streak": 0
   },
-  "coachSpeech": "Ny uge starter — uge 12 af 14. Build-uge. {HL} Godt: Ny uge med 0 dages streak i ryggen. Hold den. Fokus: 11 af 336 TSS er i hus — 6 sessioner tilbage, heriblandt Lang løb Z2 26 km (140 min), Cykel Z2 50 min. Vægt på 73,2 kg — hold protein højt og undgå lette kulhydrater om aftenen. Keep moving forward.  \"AF-dage er ikke et offer — de er en investering i morgendagens energi.\"",
+  "coachSpeech": "Ny uge starter — uge 12 af 14. Build-uge. {HL} Godt: Ny uge med 0 dages streak i ryggen. Hold den. Fokus: 23 af 336 TSS er i hus — 6 sessioner tilbage, heriblandt Lang løb Z2 26 km (140 min), Cykel Z2 50 min. Vægt på 73,2 kg — hold protein højt og undgå lette kulhydrater om aftenen. Keep moving forward.  \"AF-dage er ikke et offer — de er en investering i morgendagens energi.\"",
   "coachHighlight": "Søvn på 7,4 timer er solid",
   "weekFocus": "Svøm skarpt, bevar benet frisk — nedtrapningen begynder nu",
   "today": [
     {
       "discipline": "strength",
       "title": "Styrke A Functional Strength 2 sæt",
+      "duration": "",
+      "zone": "–",
+      "desc": "",
+      "completed": true
+    },
+    {
+      "discipline": "openwater",
+      "title": "Gentofte Svømning i åbent vand",
       "duration": "",
       "zone": "–",
       "desc": "",
@@ -110,6 +118,17 @@
       "actual_tss": 11,
       "actual_mins": 31,
       "actual_distance_m": null
+    },
+    {
+      "day": "Man",
+      "disc": "openwater",
+      "label": "Gentofte Svømning i åbent vand",
+      "done": true,
+      "extra": true,
+      "actual_tss": 12,
+      "actual_mins": 32,
+      "actual_distance_m": 1401.46,
+      "today": true
     },
     {
       "day": "Tir",
@@ -178,7 +197,7 @@
     50.9,
     53.0,
     52.9,
-    51.7
+    51.9
   ],
   "weightHistory": [
     null,
@@ -1828,7 +1847,7 @@
     },
     {
       "date": "2026-08-17",
-      "v": 4.8,
+      "v": 3.5,
       "real": true
     }
   ],
@@ -2766,6 +2785,17 @@
           "actual_distance_m": null
         },
         {
+          "day": "Man",
+          "disc": "openwater",
+          "label": "Gentofte Svømning i åbent vand",
+          "done": true,
+          "extra": true,
+          "actual_tss": 12,
+          "actual_mins": 32,
+          "actual_distance_m": 1401.46,
+          "today": true
+        },
+        {
           "day": "Tir",
           "disc": "run",
           "label": "Lang løb Z2 26 km (140 min)",
@@ -3001,9 +3031,10 @@
     }
   ],
   "train_mins": {
+    "openwater": 32.0,
     "strength": 31.0,
     "planned": 385.0,
-    "actual_total": 31.0
+    "actual_total": 63.0
   },
   "fatHistory": [
     null,
@@ -3305,8 +3336,8 @@
       "real": true
     }
   ],
-  "coachAssessmentHtml": "<p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\"><strong>Dag 78 af 98 · Mandag · Uge 12</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">💪 <strong>Træning & load</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">CTL ligger på 51,7 og er allerede over ugemålet på 51 — det er godt. TSB på 4,9 betyder du er frisk og klar. Styrketræningen i dag leverede 11 TSS på 31 minutter — solidt arbejde. Nedtrapningen starter nu, så det handler om at holde kvaliteten oppe, ikke at bygge mere volumen.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">⚖️ <strong>Krop & kost</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Dagens vægt er 73,2 kg — 5,2 kg fra målet. Fedtprocenten er 21,9 % i dag, men 7-dages snittet er det autoritative tal, og det viser en opadgående retning på 0,4 procentpoint de seneste 7 dage — det er den retning du skal vende. Snittet på 21,8 % er stadig 5,8 procentpoint fra målet på under 16 %, og det er den ægte opgave. Hold styr på kosten i nedtrapningsugen — det er let at spise ligesom i en høj-volumen-uge, selvom træningen falder.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">🎯 <strong>AF-status & fokus for resten af ugen</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Du er 0 AF-dage ind i ugen — mandagen er stadig i gang, så der er ingen alarm. Resten af ugen har fokus på svøm-race-simulationen fredag med 2000 m OW — det er dit primære kvalitetspas inden Christiansborg Rundt. Hold benene friske frem mod lørdagens og søndagens lette cykel- og løbepas, og prioritér søvn og kost som det vigtigste restitutionsværktøj nu.</p>",
-  "coachAssessmentTs": "11:51",
+  "coachAssessmentHtml": "<p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\"><strong>Dag 78 af 98 · Mandag · Uge 12</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">💪 <strong>Træning & load</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">CTL er 51,9 mod ugemålet 51 — du er foran planen. TSB på 3,5 viser, at du er frisk og klar. Styrketræningen i dag leverede 11 TSS på 31 minutter — præcis det der skal til i en nedtrapningsuge. Nu handler det om at holde kvaliteten oppe i svømning og løb uden at presse CTL unødigt op.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">⚖️ <strong>Krop & kost</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Dagens vægt er 73,2 kg — 5,2 kg fra målet. 7-dages snittet på 72,4 kg er det tal der tæller for retningen. Fedtprocentens 7-dages snit er steget 0,4 point over de seneste 7 dage — det er den reelle tendens, og den går den forkerte vej. Dagens måling på 21,9 % er 5,9 procentpoint fra målet på under 16 %. Hvis vægten holder sig stabil mens fedtprocenten stiger, tyder det på et skift i kropssammensætning du skal tage alvorligt — se på proteinindtag og søvn nu.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">🎯 <strong>AF-status & fokus for resten af ugen</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Du er 0/1 på AF-dage i ugen indtil videre. Ugens store prioritet er fredag: OW-svøm race-simulation 2000 m — det er din direkte generalprøve til Christiansborg Rundt. Hold benene friske til tirsdag og torsdag, og lad cykelpassene onsdag og lørdag være præcis det de skal: aktiv restitution, ikke et forsøg på at bygge mere load.</p>",
+  "coachAssessmentTs": "14:50",
   "commute_pairing_warnings": [],
   "warnings": [
     {
@@ -3315,7 +3346,7 @@
       "message": "4 drikkedage i træk 13/8–16/8 — klynger rammer HRV hårdere end spredte dage."
     }
   ],
-  "tsb": 4.9,
+  "tsb": 3.5,
   "swimHistory": [
     {
       "week": 1,
@@ -3386,11 +3417,11 @@
     {
       "week": 12,
       "date": "2026-08-17",
-      "meters": 0,
-      "cumulative": 23973.0
+      "meters": 1401.0,
+      "cumulative": 25374.0
     }
   ],
-  "coachAssessmentLastActId": "i176632036",
+  "coachAssessmentLastActId": "i176802789",
   "weekFocusWeek": 12,
   "coachAssessmentPlanAtGen": "Styrke A Functional Strength 2 sæt",
   "weightGoal": 68,
@@ -3609,8 +3640,8 @@
       "note": "Nøgle virker"
     }
   },
-  "credentialsCheckedTs": "2026-08-17T14:27:29.375845",
-  "coachAssessmentTsFull": "2026-08-17T11:51:11.911584",
+  "credentialsCheckedTs": "2026-08-17T14:50:17.801991",
+  "coachAssessmentTsFull": "2026-08-17T14:50:17.801974",
   "coachAssessmentWeightAtGen": 73.2,
   "coachAssessmentAfAtGen": 0,
   "event_structure_warnings": [],
@@ -3708,7 +3739,7 @@
     "9": 363,
     "10": 471,
     "11": 374,
-    "12": 11
+    "12": 23
   },
   "racesUpcoming": [
     {
