@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-08-18 06:35",
+    "updated": "2026-08-18 07:29",
     "week": 12,
     "totalWeeks": 14,
     "blockType": "BUILD",
@@ -17,7 +17,7 @@
       "color": "#E67E22"
     },
     "fat": {
-      "value": "22,2",
+      "value": "21,9",
       "unit": "%",
       "sub": "Mål <16%",
       "color": "#C0392B"
@@ -3331,12 +3331,12 @@
     },
     {
       "date": "2026-08-18",
-      "v": 22.2,
+      "v": 21.9,
       "real": true
     }
   ],
-  "coachAssessmentHtml": "<p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\"><strong>Dag 79 af 98 · Tirsdag · Uge 12</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">💪 <strong>Træning & load</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">CTL er 53,7 — godt over ugemålet på 51, og TSB på -5,3 er komfortabelt langt fra grænsen på -30. Mandag leverede du 11 TSS på styrke og 12 TSS på 1.401 m åbent vand — solide kendsgerninger. Nu venter dagens 26 km Z2-løb på 140 min: hold pace i Z2 fra start, lad HR stige naturligt undervejs og tving den ikke ned ved at gå — det er her du henter ugens tungeste TSS-blok.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">⚖️ <strong>Krop & kost</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Dagens vægt er 72,8 kg — 4,8 kg fra målet — og dagens fedtprocent er 22,2 %. Det afgørende tal er dit 7-dages snit på fedtprocent: det er steget 0,4 procentpoint over de seneste 7 dage, og det er den retning du skal tage alvorligt. 7-dages vægtsnittet på 72,4 kg fortæller ikke en tydelig downtrend endnu. Når fedtprocenten kryber op mens vægten stort set står stille, er det et signal om at kosten — ikke træningsvolumet — er den variabel der skal justeres nu.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">🎯 <strong>AF-status & fokus for resten af ugen</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Du er 1 AF-dag ud af 2 dage gået i ugen — det er en fin start. Fokus resten af ugen er enkelt: svøm skarpt fredag på de 2.000 m race-simulation, og bevar benet friskt til Médoc. Nedtrapningen begynder nu — det er ikke ugen for at presse ekstra load ind.</p>",
-  "coachAssessmentTs": "04:18",
+  "coachAssessmentHtml": "<p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\"><strong>Dag 79 af 98 · Tirsdag · Uge 12</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">💪 <strong>Træning & load</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">CTL ligger på 53,7 — det er over ugemålet på 51, og TSB på -5,3 er komfortabel. Kroppen er klar til dagens lange løb på 26 km i Z2. Hold pацen rolig og disciplineret — 140 minutter i Z2 er nedtrapningens fundament, ikke en præstationstest. Mandag leverede du styrke (31 min, 11 TSS) og 1.401 m åbent vand (32 min, 12 TSS) — et solidt udgangspunkt for ugen.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">⚖️ <strong>Krop & kost</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Vægten er 72,8 kg i dag — 4,8 kg fra målet under 68 kg. Fedtprocenten er 21,9 % i dag mod et mål på under 16 %. Det vigtigste tal er 7-dages snittet: fedtprocenten er gået *op* 0,4 point over de seneste 7 dage — det er den reelle retning, og den går den forkerte vej. Vægten i sig selv siger ikke meget her — det er fedtprocentsnittet der er bekymrende, og det kræver at du ser på kostens protein- og kaloriekvalitet, ikke bare totalen.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">🎯 <strong>AF-status & fokus for resten af ugen</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Du er 1 AF-dag ud af 2 dage gået i ugen — det er præcis, hvad der skal til. Nedtrapningen begynder nu, og det betyder at de kommende dage handler om at ankomme til Christiansborg Rundt og Marathon Médoc frisk, ikke om at bygge mere. Hold fokus: svøm-simulationen fredag er ugens vigtigste pas — den skal sidde.</p>",
+  "coachAssessmentTs": "05:29",
   "commute_pairing_warnings": [],
   "warnings": [
     {
@@ -3610,7 +3610,7 @@
     null
   ],
   "weightToGoal": 4.8,
-  "bodyFatToGoal": 6.2,
+  "bodyFatToGoal": 5.9,
   "ctlPlan": [
     34,
     36,
@@ -3639,12 +3639,12 @@
       "note": "Nøgle virker"
     }
   },
-  "credentialsCheckedTs": "2026-08-18T04:35:17.735597",
-  "coachAssessmentTsFull": "2026-08-18T04:18:21.767141",
+  "credentialsCheckedTs": "2026-08-18T05:29:37.082078",
+  "coachAssessmentTsFull": "2026-08-18T05:29:37.082062",
   "coachAssessmentWeightAtGen": 72.8,
   "coachAssessmentAfAtGen": 1,
   "event_structure_warnings": [],
-  "coachAssessmentFatAtGen": 22.2,
+  "coachAssessmentFatAtGen": 21.9,
   "zones": {
     "runThreshold": "4:24/km",
     "bikeFtpW": 278,
