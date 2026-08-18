@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-08-18 08:54",
+    "updated": "2026-08-18 09:23",
     "week": 12,
     "totalWeeks": 14,
     "blockType": "BUILD",
@@ -23,13 +23,13 @@
       "color": "#C0392B"
     },
     "ctl": {
-      "value": "53,7",
+      "value": "54,6",
       "unit": "",
       "sub": "Uge 12-mål 51 · Slutmål 43 (uge 14)",
       "color": "#27AE60"
     },
     "tsb": {
-      "value": "-5,3",
+      "value": "-9,3",
       "unit": "",
       "sub": "Form · CTL−ATL, frisk >0",
       "color": "#27AE60"
@@ -41,10 +41,10 @@
       "color": "#2874A6"
     },
     "runKm": {
-      "value": "0,0",
+      "value": "25,8",
       "unit": "km",
       "sub": "Mål 40+ km uge 10",
-      "color": "#7A6A58"
+      "color": "#27AE60"
     },
     "hrv": {
       "value": "58,6",
@@ -53,9 +53,9 @@
       "color": "#7A6A58"
     },
     "tssComp": {
-      "value": "23",
+      "value": "188",
       "unit": "TSS",
-      "sub": "23 af 336 planlagt TSS",
+      "sub": "188 af 336 planlagt TSS",
       "color": "#C0392B"
     },
     "bikeKm": {
@@ -82,7 +82,7 @@
     "target": 6,
     "streak": 1
   },
-  "coachSpeech": "Tirsdag — uge 12 af 14. {HL} Fokus: 23 af 336 TSS er i hus — 6 sessioner tilbage, heriblandt Lang løb Z2 26 km (140 min), Cykel Z2 50 min. Vægt på 72,8 kg — hold protein højt og undgå lette kulhydrater om aftenen. 1 AF-dage i 2 afsluttede dage — 5 mangler i 5 dage tilbage. Hård uge — men det er sådan formen bygges. Hold ved.  \"Sæt målet højt, men sæt i dag realistisk.\"",
+  "coachSpeech": "Tirsdag — uge 12 af 14. {HL} Fokus: 188 af 336 TSS er i hus — 5 sessioner tilbage, heriblandt Cykel Z2 50 min, Shakeout løb + strides. Vægt på 72,8 kg — hold protein højt og undgå lette kulhydrater om aftenen. 1 AF-dage i 2 afsluttede dage — 5 mangler i 5 dage tilbage. Hård uge — men det er sådan formen bygges. Hold ved.  \"Sæt målet højt, men sæt i dag realistisk.\"",
   "coachHighlight": "Søvn på 7,3 timer er solid",
   "weekFocus": "Svøm skarpt, bevar benet frisk — nedtrapningen begynder nu",
   "today": [
@@ -92,7 +92,7 @@
       "duration": "",
       "zone": "–",
       "desc": "",
-      "completed": false
+      "completed": true
     }
   ],
   "week_sessions": [
@@ -124,11 +124,17 @@
       "day": "Tir",
       "disc": "run",
       "label": "Lang løb Z2 26 km (140 min)",
-      "done": false,
+      "done": true,
       "planned_tss": 128,
       "planned_mins": 140,
       "planned_distance_m": 26000,
-      "today": true
+      "today": true,
+      "completion": "done",
+      "completion_pct": 99,
+      "actual_tss": 165,
+      "actual_mins": 131,
+      "actual_distance_m": 25757.16,
+      "intervals_compliance": 128.9
     },
     {
       "day": "Ons",
@@ -188,7 +194,7 @@
     50.9,
     53.0,
     52.9,
-    53.7
+    54.6
   ],
   "weightHistory": [
     null,
@@ -1842,7 +1848,7 @@
     },
     {
       "date": "2026-08-18",
-      "v": -5.3,
+      "v": -9.4,
       "real": true
     }
   ],
@@ -2793,11 +2799,17 @@
           "day": "Tir",
           "disc": "run",
           "label": "Lang løb Z2 26 km (140 min)",
-          "done": false,
+          "done": true,
           "planned_tss": 128,
           "planned_mins": 140,
           "planned_distance_m": 26000,
-          "today": true
+          "today": true,
+          "completion": "done",
+          "completion_pct": 99,
+          "actual_tss": 165,
+          "actual_mins": 131,
+          "actual_distance_m": 25757.16,
+          "intervals_compliance": 128.9
         },
         {
           "day": "Ons",
@@ -3026,10 +3038,11 @@
     }
   ],
   "train_mins": {
+    "run": 131.0,
     "openwater": 32.0,
     "strength": 31.0,
     "planned": 385.0,
-    "actual_total": 63.0
+    "actual_total": 194.0
   },
   "fatHistory": [
     null,
@@ -3335,8 +3348,8 @@
       "real": true
     }
   ],
-  "coachAssessmentHtml": "<p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\"><strong>Dag 79 af 98 · Tirsdag · Uge 12</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">💪 <strong>Træning & load</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">CTL ligger på 53,7 — det er over ugemålet på 51, og TSB på -5,3 er komfortabel. Kroppen er klar til dagens lange løb på 26 km i Z2. Hold pацen rolig og disciplineret — 140 minutter i Z2 er nedtrapningens fundament, ikke en præstationstest. Mandag leverede du styrke (31 min, 11 TSS) og 1.401 m åbent vand (32 min, 12 TSS) — et solidt udgangspunkt for ugen.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">⚖️ <strong>Krop & kost</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Vægten er 72,8 kg i dag — 4,8 kg fra målet under 68 kg. Fedtprocenten er 21,9 % i dag mod et mål på under 16 %. Det vigtigste tal er 7-dages snittet: fedtprocenten er gået *op* 0,4 point over de seneste 7 dage — det er den reelle retning, og den går den forkerte vej. Vægten i sig selv siger ikke meget her — det er fedtprocentsnittet der er bekymrende, og det kræver at du ser på kostens protein- og kaloriekvalitet, ikke bare totalen.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">🎯 <strong>AF-status & fokus for resten af ugen</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Du er 1 AF-dag ud af 2 dage gået i ugen — det er præcis, hvad der skal til. Nedtrapningen begynder nu, og det betyder at de kommende dage handler om at ankomme til Christiansborg Rundt og Marathon Médoc frisk, ikke om at bygge mere. Hold fokus: svøm-simulationen fredag er ugens vigtigste pas — den skal sidde.</p>",
-  "coachAssessmentTs": "05:29",
+  "coachAssessmentHtml": "<p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\"><strong>Dag 79 af 98 · Tirsdag · Uge 12</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">💪 <strong>Træning & load</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">CTL ligger på 54.6 — det er over ugemålet på 51, og med TSB på -9.3 er du i god balance. Dagens lange løb blev gennemført: 25,8 km på 131 min med 165 TSS — 25,8 af 26,0 km planlagt (99%), så distancen er næsten præcis i mål. Zone-compliancen viser dog at tempoet var for højt: kun 49.4% af tiden lå i pace-Z2 mod målet på 55%, og 42.0% af tiden lå i en hurtigere pace-zone end target — HR nåede ikke at følge med, hvilket er typisk når pace løber fra HR. Til næste lange Z2-tur, fx søndag, skal du sætte tempoet lavere fra start og lade HR styre — ikke pace.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">⚖️ <strong>Krop & kost</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Dagens vægt er 72.8 kg — 4.8 kg fra målet under 68 kg. Fedtprocenten er 21.9% i dag, og 7-dages snittet på fedtprocent er steget 0.4 procentpoint over de seneste 7 dage — det er den reelle retning, og den går den forkerte vej. 7-dages snittet på vægten er 72.4 kg. Med nedtrapning i gang og to løbsbegivenheder om under tre uger er der ikke megen tid til at ændre kroppen — men fedtprocentens opadgående snit er et signal om at kosten fortjener opmærksomhed nu.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">🎯 <strong>AF-status & fokus for resten af ugen</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Du er 1 AF-dag ud af 2 dage gået i ugen — det er en fin start på alkoholfronten, hold det kørende. Ugefokus er klart: svøm skarpt og bevar benet frisk, for nedtrapningen begynder nu. Race-simulationen fredag over 2000 m er ugens vigtigste pas — prioritér den. Kør onsdag og lørdag roligt på cyklen og hold Z2-disciplinen der.</p>",
+  "coachAssessmentTs": "07:24",
   "commute_pairing_warnings": [],
   "warnings": [
     {
@@ -3345,7 +3358,7 @@
       "message": "4 drikkedage i træk 13/8–16/8 — klynger rammer HRV hårdere end spredte dage."
     }
   ],
-  "tsb": -5.3,
+  "tsb": -9.3,
   "swimHistory": [
     {
       "week": 1,
@@ -3420,7 +3433,7 @@
       "cumulative": 25374.0
     }
   ],
-  "coachAssessmentLastActId": "i176802789",
+  "coachAssessmentLastActId": "i177040193",
   "weekFocusWeek": 12,
   "coachAssessmentPlanAtGen": "Lang løb Z2 26 km (140 min)",
   "weightGoal": 68,
@@ -3639,8 +3652,8 @@
       "note": "Nøgle virker"
     }
   },
-  "credentialsCheckedTs": "2026-08-18T06:54:17.872045",
-  "coachAssessmentTsFull": "2026-08-18T05:29:37.082062",
+  "credentialsCheckedTs": "2026-08-18T07:24:02.706001",
+  "coachAssessmentTsFull": "2026-08-18T07:24:02.705986",
   "coachAssessmentWeightAtGen": 72.8,
   "coachAssessmentAfAtGen": 1,
   "event_structure_warnings": [],
@@ -3738,7 +3751,7 @@
     "9": 363,
     "10": 471,
     "11": 374,
-    "12": 23
+    "12": 188
   },
   "racesUpcoming": [
     {
