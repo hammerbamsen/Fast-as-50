@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-08-18 21:27",
+    "updated": "2026-08-18 21:50",
     "week": 12,
     "totalWeeks": 14,
     "blockType": "BUILD",
@@ -3348,8 +3348,8 @@
       "real": true
     }
   ],
-  "coachAssessmentHtml": "<p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\"><strong>Dag 79 af 98 · Tirsdag · Uge 12</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">💪 <strong>Træning & load</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">CTL er 54,6 – det er markant over ugemålet på 51, og TSB på -9,3 viser at kroppen bærer en reel belastning. Det lange løb i dag blev gennemført: 25,8 km på 131 min med 165 TSS – distance og tid var tæt på plan (99% af km, 94% af tid). Zone-compliacen fortæller dog en klar historie: kun 49,4% af tiden lå i Z2-pace-zonen, og 42,0% af tiden kørte du hurtigere end target – tempoet var for højt, og HR nåede simpelthen ikke at følge med. Næste gang du har et langt Z2-løb, start roligere end du tror du behøver – det er pace-zonen der styrer, ikke fornemmelsen.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">⚖️ <strong>Krop & kost</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Dagens vægt er 72,8 kg – 4,8 kg fra målet under 68 kg. Fedtprocenten er 21,9% i dag, men 7-dages snittet er det autoritative tal: snittet for fedtprocent er steget 0,4 procentpoint over de seneste 7 dage og ligger nu på 21,8% – det er den reelle retning, og den peger den forkerte vej. Vægtsnittet er 72,4 kg. Det samlede billede er ikke alarmerende, men fedtprocentens retning kræver opmærksomhed – tjek især om restitutionskaloriene matcher belastningen, eller om de overstiger den.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">🎯 <strong>AF-status & fokus for resten af ugen</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Du er 1/2 AF-dage inde i ugen – det er solidt relativt til hvor langt ugen er. Resten af ugen handler om én ting: bevar benet frisk til Christiansborg Rundt og Marathon Médoc. Ons og lør er rolige cykelture, torsdag er shakeout, og fredag er race-simulation i åbent vand – prioritér fredag som et skarpt, fokuseret pas. Lad ikke impuls eller energioverskud friste dig til at presse de lette dage – nedtrapningen begynder nu, og det er disciplin i de lette dage der afgør formen om to uger.</p>",
-  "coachAssessmentTs": "13:42",
+  "coachAssessmentHtml": "<p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\"><strong>Dag 79 af 98 · Tirsdag · Uge 12</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">💪 <strong>Træning & load</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">CTL ligger på 54.6 — det er over ugemålet på 51, og TSB på -9.3 er fuldt acceptabelt. Dagens lange løb blev gennemført: 25,8 km af planlagte 26,0 km på 131 min og 165 TSS — altså 99% af distancen. Zone-compliance viste 49,4% i pace-Z2, under 55%-målet, og 42,0% af tiden lå i en hurtigere zone — tempoet var for højt. Til næste lange Z2-løb: gå bevidst ned i tempo fra start, så pace-Z2 rammer over 55%.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">⚖️ <strong>Krop & kost</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Vægten er 72,8 kg i dag — 4,8 kg fra målet under 68 kg. Fedtprocenten er 21,9% i dag, og 7-dages snittet for fedtprocent er steget 0,4 procentpoint over de seneste 7 dage — det er den reelle retning, og den peger forkert. 7-dages vægtsnittet er 72,4 kg. Kropssammensætningen skal følges tæt: stigende fedtprocent i et capacity-år med stort træningsvolumen er et signal om at kosten ikke understøtter restitutionen tilstrækkeligt — tjek proteinindtaget og undgå kalorieunderskud der er for aggressive i tunge træningsuger.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">🎯 <strong>AF-status & fokus for resten af ugen</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Du har 1 AF-dag ud af 2 dage gået i ugen — det er solidt relativt til hvor langt ugen er. Nedtrapningen begynder nu: prioritér svøm skarpt og hold benene friske til Christiansborg Rundt og Marathon Médoc. De kommende dage er kortere og lettere — brug det til at lade op, ikke til at lægge ekstra arbejde i.</p>",
+  "coachAssessmentTs": "19:50",
   "commute_pairing_warnings": [],
   "warnings": [
     {
@@ -3652,8 +3652,8 @@
       "note": "Nøgle virker"
     }
   },
-  "credentialsCheckedTs": "2026-08-18T19:27:34.821631",
-  "coachAssessmentTsFull": "2026-08-18T13:42:25.970927",
+  "credentialsCheckedTs": "2026-08-18T19:50:30.157904",
+  "coachAssessmentTsFull": "2026-08-18T19:50:30.157889",
   "coachAssessmentWeightAtGen": 72.8,
   "coachAssessmentAfAtGen": 1,
   "event_structure_warnings": [],
