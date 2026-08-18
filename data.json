@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-08-18 07:29",
+    "updated": "2026-08-18 07:57",
     "week": 12,
     "totalWeeks": 14,
     "blockType": "BUILD",
@@ -3639,7 +3639,7 @@
       "note": "Nøgle virker"
     }
   },
-  "credentialsCheckedTs": "2026-08-18T05:29:37.082078",
+  "credentialsCheckedTs": "2026-08-18T05:57:27.570034",
   "coachAssessmentTsFull": "2026-08-18T05:29:37.082062",
   "coachAssessmentWeightAtGen": 72.8,
   "coachAssessmentAfAtGen": 1,
