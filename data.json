@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-08-19 06:36",
+    "updated": "2026-08-19 07:30",
     "week": 12,
     "totalWeeks": 14,
     "blockType": "BUILD",
@@ -13,11 +13,11 @@
     "weight": {
       "value": "72,9",
       "unit": "kg",
-      "sub": "Mål <68 kg · snit 73,0 kg",
+      "sub": "Mål <68 kg · snit 72,9 kg",
       "color": "#E67E22"
     },
     "fat": {
-      "value": "21,6",
+      "value": "21,3",
       "unit": "%",
       "sub": "Mål <16%",
       "color": "#C0392B"
@@ -3354,12 +3354,12 @@
     },
     {
       "date": "2026-08-19",
-      "v": 21.6,
+      "v": 21.3,
       "real": true
     }
   ],
-  "coachAssessmentHtml": "<p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\"><strong>Dag 80 af 98 · Onsdag · Uge 12</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">💪 <strong>Træning & load</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">CTL er 54,2 — godt over ugemålet på 51, og TSB på -6,3 er helt kontrolleret. Tirsdagens lange løb var 25,8 km på 131 min og leverede 165 TSS, men pace-compliance viser at du løb for hurtigt: kun 49,4% i Z2-pace-zonen, og 42,0% af tiden lå i en hurtigere zone end target. HR nåede ikke at følge med, men det ændrer ikke på at tempoet var for højt — gem det til løbet. Cykelpasset på 50 min er endnu ikke forsøgt i dag — kør det roligt og hold effekten i Z2.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">⚖️ <strong>Krop & kost</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Vægten er 72,9 kg i dag — 4,9 kg fra målet — og 7-dages snittet er 73,0 kg. Fedtprocenten er 21,6% i dag og 7-dages snittet er 21,8%, uændret over de seneste 7 dage — det er her fokus skal ligge. Vægten og fedtprocenten bevæger sig ikke i takt med hinanden endnu, og med 5,6 procentpoint til målet på <16% er der lang vej. Hold protein oppe og undgå kalorieunderskud der tærer på muskelmasse — i et capacity-år er det tab af fedt der tæller, ikke bare kilo.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">🎯 <strong>AF-status & fokus for resten af ugen</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">3 AF-dage ud af 3 dage i ugen — perfekt styr på det. Nedtrapningen begynder nu, og det betyder at kvaliteten på de resterende pas tæller mere end mængden. Prioritér OW-simuleringen fredag — 2000 m race-pace svøm er det vigtigste pas i ugen med Christiansborg Rundt for øje. Hold løbene torsdag og søndag korte og friske, og lad benene komme til afløsning inden starten den 29. august.</p>",
-  "coachAssessmentTs": "04:25",
+  "coachAssessmentHtml": "<p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\"><strong>Dag 80 af 98 · Onsdag · Uge 12</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">💪 <strong>Træning & load</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">CTL er 54.2 mod ugemålet på 51 — du er foran planen, og TSB på -6.3 er helt fint, kroppen håndterer belastningen godt. Tirsdagens løb på 25,8 km/131 min fik du gennemført, men tempoet var for højt: kun 49,4 % i pace-Z2 og hele 42,0 % i en hurtigere zone — sænk tempoet næste gang, så HR kan følge med og du reelt lander i Z2. Onsdagens cykel Z2 på 50 min er endnu ikke forsøgt — kør den med fokus på at holde wattene i Z2 hele vejen igennem. Nedtrapningen begynder nu, så det er vigtigt at holde intensiteten disciplineret fremover.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">⚖️ <strong>Krop & kost</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Vægten er 72,9 kg i dag — 4,9 kg fra målet under 68 kg. Fedtprocenten er 21,3 % i dag, og 7-dages snittet er gået ned 0,1 point til 21,7 % — det er den rigtige retning, om end langsom. Afstanden til målet på under 16 % er stadig betydelig, så det er kropssammensætningen — ikke blot vægten — der skal bevæge sig. Hold proteinindtaget højt i nedtrapningsugen, så du ikke mister muskelmasse mens kalorieunderskuddet arbejder.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">🎯 <strong>AF-status & fokus for resten af ugen</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Du er 3/3 på AF-dage i de dage der er gået — det er stærkt og holder din streak intakt. Resten af ugen byder på shakeout-løb torsdag, race-simulation svøm fredag, rolig cykel lørdag og Z2-løb søndag — alle pas skal køres roligt og kontrolleret, da nedtrapningen nu er i gang. Hold benene friske frem mod Christiansborg Rundt og Médoc — det er nu du sparer kræfter, ikke vinder dem.</p>",
+  "coachAssessmentTs": "05:30",
   "commute_pairing_warnings": [],
   "warnings": [
     {
@@ -3630,10 +3630,10 @@
     null,
     null,
     null,
-    21.8
+    21.7
   ],
   "weightToGoal": 4.9,
-  "bodyFatToGoal": 5.6,
+  "bodyFatToGoal": 5.3,
   "ctlPlan": [
     34,
     36,
@@ -3662,12 +3662,12 @@
       "note": "Nøgle virker"
     }
   },
-  "credentialsCheckedTs": "2026-08-19T04:36:41.747401",
-  "coachAssessmentTsFull": "2026-08-19T04:25:18.340433",
+  "credentialsCheckedTs": "2026-08-19T05:30:50.491135",
+  "coachAssessmentTsFull": "2026-08-19T05:30:50.491118",
   "coachAssessmentWeightAtGen": 72.9,
   "coachAssessmentAfAtGen": 3,
   "event_structure_warnings": [],
-  "coachAssessmentFatAtGen": 21.6,
+  "coachAssessmentFatAtGen": 21.3,
   "zones": {
     "runThreshold": "4:24/km",
     "bikeFtpW": 278,
