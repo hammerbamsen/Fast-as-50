@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-08-20 19:29",
+    "updated": "2026-08-20 19:58",
     "week": 12,
     "totalWeeks": 14,
     "blockType": "BUILD",
@@ -3412,8 +3412,8 @@
       "real": true
     }
   ],
-  "coachAssessmentHtml": "<p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\"><strong>Dag 81 af 98 · Torsdag · Uge 12</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">💪 <strong>Træning & load</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">CTL er 53,6 — det er 2,6 over ugens mål på 51, og TSB er -3,3, så du er i fin balance. Shakeout-løbet i dag var 4,6 km på 24 min med 29 TSS — gennemført og on target. Én ting til næste shakeout-løb: 18,3% af tiden lå i en hurtigere pace-zone end target, og HR nåede ikke at følge med — sænk tempoet en anelse, så HR og pace matcher hinanden bedre. Tirsdagens lange løb viste det samme mønster: for høj pace med HR der halter bagefter — næste gang du sætter dig i Z2 tempo, gå ud langsommere end du tror, du skal.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">⚖️ <strong>Krop & kost</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Vægten i dag er 72,6 kg — 4,6 kg fra målet — og fedtprocenten er 20,9%, målt i dag. 7-dages snittet på fedtprocent er gået ned 0,3 point til 21,5% over de seneste 7 dage, og det er den retning du skal holde fast i — det er ægte fremgang. Vægtsnittet på 72,9 kg og fedtprocentsnittet på 21,5% er de tal der tæller; dagstallet er kun et øjebliksbillede. Du er stadig 4,9 procentpoint fra fedtprocentmålet under 16%, så der er et stykke vej — fokus på at beskytte muskelmassen under nedtrapningen og holde koststrategien skarp.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">🎯 <strong>AF-status & fokus for resten af ugen</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Du har 4 AF-dage ud af 4 dage i ugen — det er præcis der, du skal være. Fredag er det OW-svøm med race-simulation på 2000 m — det er dit vigtigste pas i ugen, og det skal sidde. Lørdag og søndag er lette pas; hold intensiteten nede og lad kroppen lande inden Christiansborg Rundt.</p>",
-  "coachAssessmentTs": "11:53",
+  "coachAssessmentHtml": "<p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\"><strong>Dag 81 af 98 · Torsdag · Uge 12</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">💪 <strong>Træning & load</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">CTL er 53,6 — det er 2,6 over ugemålet på 51, og TSB på -3,3 er solidt komfortabelt. Shakeout-løbet i dag gik fint: 4,6 km på 24 min med 29 TSS, og 75,7 % i pace-Z2 — on target. Én ting at tage med til næste lignende løbetur: HR fulgte ikke med tempoet (56 % i HR-Z1), ligesom tirsdagens lange tur — sænk tempoet en tand, så pace og HR begynder at matche hinanden. Fredag venter race-simulationen på 2000 m — den er dit vigtigste pas denne uge, og kroppen er klar til den.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">⚖️ <strong>Krop & kost</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Vægten er 72,6 kg i dag — 4,6 kg fra målet under 68 kg. Fedtprocenten er 20,9 % i dag mod et mål under 16 %, så der er stadig et godt stykke vej. Det vigtige er retningen: 7-dages snittet på fedtprocent er gået ned 0,3 procentpoint de seneste 7 dage, og 7-dages vægtsnittet ligger på 72,9 kg — begge kurver peger den rigtige vej. Det er den reelle bevægelse, ikke dagstallet alene.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">🎯 <strong>AF-status & fokus for resten af ugen</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Du har 4 AF-dage ud af 4 dage gået i ugen — det er en perfekt ratio. Fredag er race-simulationen i åbent vand det absolutte omdrejningspunkt: 2000 m præcis som Christiansborg Rundt, kør den som om det betyder noget. Lørdag og søndag holder du benet frisk med rolig cykel og Z2-løb — nedtrapningen begynder nu, og det er disciplin, ikke dovenskab, at holde intensiteten nede.</p>",
+  "coachAssessmentTs": "17:59",
   "commute_pairing_warnings": [],
   "warnings": [
     {
@@ -3716,8 +3716,8 @@
       "note": "Nøgle virker"
     }
   },
-  "credentialsCheckedTs": "2026-08-20T17:29:03.177710",
-  "coachAssessmentTsFull": "2026-08-20T11:53:45.494803",
+  "credentialsCheckedTs": "2026-08-20T17:59:12.942173",
+  "coachAssessmentTsFull": "2026-08-20T17:59:12.942156",
   "coachAssessmentWeightAtGen": 72.6,
   "coachAssessmentAfAtGen": 4,
   "event_structure_warnings": [],
