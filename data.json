@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-08-20 05:46",
+    "updated": "2026-08-20 06:24",
     "week": 12,
     "totalWeeks": 14,
     "blockType": "BUILD",
@@ -11,13 +11,13 @@
   },
   "kpis": {
     "weight": {
-      "value": "72,9",
+      "value": "72,6",
       "unit": "kg",
-      "sub": "Sidst målt 19/8 · Mål <68 kg · snit 72,9 kg",
+      "sub": "Mål <68 kg · snit 72,8 kg",
       "color": "#E67E22"
     },
     "fat": {
-      "value": "21,3",
+      "value": "20,9",
       "unit": "%",
       "sub": "Mål <16%",
       "color": "#C0392B"
@@ -82,7 +82,7 @@
     "target": 6,
     "streak": 3
   },
-  "coachSpeech": "Torsdag — uge 12 af 14. {HL} Fokus: 231 af 336 TSS er i hus — 4 sessioner tilbage, heriblandt Shakeout løb + strides, OW-svøm Race-simulation 2000 m. Vægt på 72,9 kg (målt 19/8) — hold protein højt og undgå lette kulhydrater om aftenen. 3 AF-dage i 4 afsluttede dage — 3 mangler i 3 dage tilbage. Hård uge — men det er sådan formen bygges. Hold ved.  \"Kroppen tror, hvad sindet siger.\"",
+  "coachSpeech": "Torsdag — uge 12 af 14. {HL} Fokus: 231 af 336 TSS er i hus — 4 sessioner tilbage, heriblandt Shakeout løb + strides, OW-svøm Race-simulation 2000 m. Vægt på 72,6 kg — hold protein højt og undgå lette kulhydrater om aftenen. 3 AF-dage i 4 afsluttede dage — 3 mangler i 3 dage tilbage. Hård uge — men det er sådan formen bygges. Hold ved.  \"Kroppen tror, hvad sindet siger.\"",
   "coachHighlight": "Søvn på 7,6 timer er solid",
   "weekFocus": "Svøm skarpt, bevar benet frisk — nedtrapningen begynder nu",
   "today": [
@@ -518,7 +518,11 @@
       "v": 72.9,
       "real": true
     },
-    null
+    {
+      "date": "2026-08-20",
+      "v": 72.6,
+      "real": true
+    }
   ],
   "hrvHistory": [
     {
@@ -3389,10 +3393,14 @@
       "v": 21.3,
       "real": true
     },
-    null
+    {
+      "date": "2026-08-20",
+      "v": 20.9,
+      "real": true
+    }
   ],
-  "coachAssessmentHtml": "<p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\"><strong>Dag 81 af 98 · Torsdag · Uge 12</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">💪 <strong>Træning & load</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">CTL er 53,4 — godt over ugemålet på 51, og TSB på -2,3 er komfortabelt. Tirsdays lange løb viste et problem: du løb for hurtigt — kun 49,4% i Z2 (pace), og 42,0% af tiden lå du i en hurtigere zone end target. Næste gang du løber langt, sæt tempoet ned fra start og hold det der, selv om det føles for roligt. Dagens shakeout + strides er ikke forsøgt endnu — hold det kort, let og kontrolleret, og lad benene feel friske til fredag.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">⚖️ <strong>Krop & kost</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Vægten var 72,9 kg ved seneste vejning 19/8 — 4,9 kg fra målet. Fedtprocenten var 21,3% samme dag, målet er under 16%. 7-dages snittet på fedtprocent er faldet 0,1 procentpoint over de seneste 7 dage — det er den rigtige retning, men tempoet er langsomt. Du er i den tungeste uge af ræsperioden, så fokus nu er at holde kvaliteten i maden, ikke at skabe underskud mens kroppen er presset.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">🎯 <strong>AF-status & fokus for resten af ugen</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Du har 3 AF-dage ud af 4 dage gået i ugen — det er stærkt. Fredag bringer race-simulationen på 2000m OW, som er det vigtigste pas denne uge — svøm det skarpt og med fokus. Lørdag og søndag er lette pas, så kroppen er klar til startlinjen.</p>",
-  "coachAssessmentTs": "01:14",
+  "coachAssessmentHtml": "<p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\"><strong>Dag 81 af 98 · Torsdag · Uge 12</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">💪 <strong>Træning & load</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">CTL ligger på 53.4 og er allerede over ugemålet på 51 — ugen er solidt ladet. TSB på -2.3 er neutral og giver god plads til dagens shakeout. Tirsdag viste en vigtig lektion: pacezonerne siger at du løb for hurtigt til Z2 — 42% af tiden lå i en hurtigere zone end target, og HR nåede ikke at følge med. Til næste lange Z2-løb (søndag): sænk tempoet aktivt, selvom det føles for roligt.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">⚖️ <strong>Krop & kost</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Dagens vægt er 72.6 kg — 4.6 kg fra målet. Fedtprocenten er 20.9% i dag, og det vigtige tal er 7-dages snittet, der er faldet 0.3 point de seneste syv dage til 21.5% — det er den reelle retning, og den peger rigtigt. 7-dages vægtsnittet er 72.9 kg. Fedtprocenten bevæger sig i den rigtige retning, så fortsæt det du gør — særligt i en uge med høj belastning som denne.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">🎯 <strong>AF-status & fokus for resten af ugen</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Du har 3 AF-dage ud af 4 dage gået i ugen — det er stærkt. Fredag er race-simulation i åbent vand: 2000 m med fuld fokus, det er den vigtigste session i resten af ugen. Lørdag og søndag er lette dage — beskyt benene og hold Z2 ærlig på søndag.</p>",
+  "coachAssessmentTs": "04:24",
   "commute_pairing_warnings": [],
   "warnings": [
     {
@@ -3571,7 +3579,7 @@
     null,
     null,
     72.97,
-    72.97
+    72.88
   ],
   "fatMovingAvg7": [
     null,
@@ -3663,10 +3671,10 @@
     null,
     null,
     21.7,
-    21.7
+    21.5
   ],
-  "weightToGoal": 4.9,
-  "bodyFatToGoal": 5.3,
+  "weightToGoal": 4.6,
+  "bodyFatToGoal": 4.9,
   "ctlPlan": [
     34,
     36,
@@ -3695,12 +3703,12 @@
       "note": "Nøgle virker"
     }
   },
-  "credentialsCheckedTs": "2026-08-20T03:46:24.434897",
-  "coachAssessmentTsFull": "2026-08-20T01:14:39.764672",
-  "coachAssessmentWeightAtGen": 72.9,
+  "credentialsCheckedTs": "2026-08-20T04:24:43.480881",
+  "coachAssessmentTsFull": "2026-08-20T04:24:43.480864",
+  "coachAssessmentWeightAtGen": 72.6,
   "coachAssessmentAfAtGen": 3,
   "event_structure_warnings": [],
-  "coachAssessmentFatAtGen": 21.3,
+  "coachAssessmentFatAtGen": 20.9,
   "zones": {
     "runThreshold": "4:24/km",
     "bikeFtpW": 278,
