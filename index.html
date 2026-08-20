@@ -1684,8 +1684,6 @@ function afHistoryViz(history) {
   const past = history.filter(function(w){ return w.week !== D.week; });
   if (!past.length) return '<div style="font-family:Space Mono,monospace;font-size:10px;color:var(--muted);text-align:center;padding:8px">Ingen afsluttede uger endnu</div>';
 
-  const recent = past.slice(-3);
-
   // ── Nøgletal over hele historikken ──
   const n     = past.length;
   const sum   = past.reduce(function(a, w){ return a + w.done; }, 0);
@@ -1725,15 +1723,7 @@ function afHistoryViz(history) {
     '<div id="af-bar-detail" data-week="" style="margin-top:10px"></div>' +
     '<div style="font-family:Space Mono,monospace;font-size:8px;color:var(--muted);text-align:center;margin-top:6px">TAP EN SØJLE FOR AT SE UGEN</div>';
 
-  const rows = recent.map(function(w){ return _afWeekRow(w, target, true); }).join('');
-
-  const sub = function(txt){
-    return '<div style="font-family:Space Mono,monospace;font-size:9px;color:var(--muted);letter-spacing:.08em;margin-bottom:8px">' + txt + '</div>';
-  };
-
-  return sub('SENESTE ' + recent.length + (recent.length === 1 ? ' UGE' : ' UGER')) + rows +
-    '<div style="border-top:1px solid var(--cream-d);margin-top:4px;padding-top:12px">' +
-    sub('ALLE ' + n + ' AFSLUTTEDE UGER') + stats + chart + '</div>';
+  return stats + chart;
 }
 function afStreakViz(done, target, streak) {
   const days = ['M','T','O','T','F','L','S'];
