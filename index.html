@@ -1624,39 +1624,116 @@ function _afDotHtml(val, label, labelGap) {
     '</div>';
 }
 
+// Fyldes af afHistoryViz(): ugenr -> prik-række-HTML, så tap på en søjle kan folde
+// den enkelte uge ud uden at gentegne hele siden (bevarer scroll-position).
+const AF_BAR_DETAIL = {};
+
+function afToggleBar(week) {
+  const box = document.getElementById('af-bar-detail');
+  if (!box) return;
+  const cur = box.getAttribute('data-week');
+  document.querySelectorAll('.af-bar-col').forEach(function(el){ el.style.boxShadow = 'none'; });
+  if (cur === String(week)) { box.innerHTML = ''; box.setAttribute('data-week', ''); return; }
+  box.innerHTML = AF_BAR_DETAIL[week] || '';
+  box.setAttribute('data-week', String(week));
+  const sel = document.querySelector('.af-bar-col[data-week="' + week + '"]');
+  if (sel) sel.style.boxShadow = 'inset 0 0 0 1.5px var(--gold)';
+}
+
+// Farve efter det faktiske AF-mål (D.afDays.target), ikke hardkodet 5/3.
+function _afColorFor(done, target) {
+  if (done >= target)     return 'var(--wine)';
+  if (done >= target - 2) return 'var(--gold)';
+  return 'var(--run)';
+}
+
+// Én uge som 7 prikker + tæller. Bruges både til de seneste 3 uger og til
+// den udfoldede detalje under søjlediagrammet.
+function _afWeekRow(w, target, showLabel) {
+  const DAY_LABELS = ['M','T','O','T','F','L','S'];
+  const dots = Array.from({length: 7}, function(_, i) {
+    const label = DAY_LABELS[i];
+    if (i >= w.total) {
+      return '<div style="display:flex;flex-direction:column;align-items:center;gap:2px">' +
+        '<div style="width:28px;height:28px;border-radius:50%;background:var(--cream-d);opacity:0.2"></div>' +
+        '<span style="font-family:Space Mono,monospace;font-size:8px;color:var(--cream-d)">' + label + '</span>' +
+        '</div>';
+    }
+    // Per-dag opslag i af_log; fallback til gammel tælle-logik hvis log mangler
+    let val = _afValFor(w.week, i);
+    if (val === undefined && !D.af_log) val = (i < w.done) ? 0 : undefined;
+    return _afDotHtml(val, label, 2);
+  }).join('');
+
+  const color = _afColorFor(w.done, target);
+
+  return '<div style="margin-bottom:12px">' +
+    (showLabel ? '<div style="font-family:Space Mono,monospace;font-size:9px;color:var(--muted);margin-bottom:6px">' + w.label.toUpperCase() + '</div>' : '') +
+    '<div style="display:flex;gap:4px;align-items:flex-start">' + dots +
+    '<div style="margin-left:6px;font-family:Space Mono,monospace;font-size:11px;color:' + color + ';font-weight:700;padding-top:6px">' + w.done + '/7</div>' +
+    '</div>' +
+    '</div>';
+}
+
 function afHistoryViz(history) {
   if (!history || history.length === 0) return '<div style="font-family:Space Mono,monospace;font-size:10px;color:var(--muted);text-align:center;padding:8px">Ingen historik endnu</div>';
-  
-  const DAY_LABELS = ['M','T','O','T','F','L','S'];
-  const DAY_FULL   = ['Man','Tir','Ons','Tor','Fre','Lør','Søn'];
 
-  const rows = history.map(w => {
-    const dots = Array.from({length: 7}, (_, i) => {
-      const label = DAY_LABELS[i];
-      if (i >= w.total) {
-        // Fremtidig dag
-        return '<div style="display:flex;flex-direction:column;align-items:center;gap:2px">' +
-          '<div style="width:28px;height:28px;border-radius:50%;background:var(--cream-d);opacity:0.2"></div>' +
-          '<span style="font-family:Space Mono,monospace;font-size:8px;color:var(--cream-d)">' + label + '</span>' +
-          '</div>';
-      }
-      // Per-dag opslag i af_log; fallback til gammel tælle-logik hvis log mangler
-      let val = _afValFor(w.week, i);
-      if (val === undefined && !D.af_log) val = (i < w.done) ? 0 : undefined;
-      return _afDotHtml(val, label, 2);
-    }).join('');
+  const target = (D.afDays && parseInt(D.afDays.target)) || 6;
 
-    const color = w.done >= 5 ? 'var(--swim)' : w.done >= 3 ? 'var(--gold)' : 'var(--run)';
+  // Indeværende uge vises allerede øverst i kortet — den udelades her (var en dublet).
+  const past = history.filter(function(w){ return w.week !== D.week; });
+  if (!past.length) return '<div style="font-family:Space Mono,monospace;font-size:10px;color:var(--muted);text-align:center;padding:8px">Ingen afsluttede uger endnu</div>';
 
-    return '<div style="margin-bottom:12px">' +
-      '<div style="font-family:Space Mono,monospace;font-size:9px;color:var(--muted);margin-bottom:6px">' + w.label.toUpperCase() + '</div>' +
-      '<div style="display:flex;gap:4px;align-items:flex-start">' + dots +
-      '<div style="margin-left:6px;font-family:Space Mono,monospace;font-size:11px;color:' + color + ';font-weight:700;padding-top:6px">' + w.done + '/7</div>' +
-      '</div>' +
+  const recent = past.slice(-3);
+
+  // ── Nøgletal over hele historikken ──
+  const n     = past.length;
+  const sum   = past.reduce(function(a, w){ return a + w.done; }, 0);
+  const last4 = past.slice(-4);
+  const avg   = (sum / n).toFixed(1).replace('.', ',');
+  const avg4  = (last4.reduce(function(a, w){ return a + w.done; }, 0) / last4.length).toFixed(1).replace('.', ',');
+  const onTgt = past.filter(function(w){ return w.done >= target; }).length;
+
+  const stats = '<div style="display:flex;justify-content:space-between;gap:6px;margin-bottom:10px">' +
+    [['SNIT', avg + '/7'], ['SENESTE 4', avg4 + '/7'], ['PÅ MÅL', onTgt + '/' + n]].map(function(s){
+      return '<div style="text-align:center;flex:1">' +
+        '<div style="font-family:Space Mono,monospace;font-size:12px;font-weight:700;color:var(--wine)">' + s[1] + '</div>' +
+        '<div style="font-family:Space Mono,monospace;font-size:8px;color:var(--muted);letter-spacing:.06em;margin-top:2px">' + s[0] + '</div>' +
+        '</div>';
+    }).join('') + '</div>';
+
+  // ── Søjlediagram: én søjle pr. afsluttet uge, tap folder ugen ud ──
+  const H    = 46;                                   // px, fuld højde = 7 dage
+  const step = n <= 8 ? 1 : n <= 16 ? 2 : 5;         // hvor ofte ugenr. vises
+  const bars = past.map(function(w, i) {
+    AF_BAR_DETAIL[w.week] = _afWeekRow(w, target, true);
+    const h        = Math.max(3, Math.round((w.done / 7) * H));
+    const showLbl  = (i % step === 0) || i === n - 1;
+    return '<div onclick="afToggleBar(' + w.week + ')" style="flex:1;min-width:0;display:flex;flex-direction:column;align-items:center;gap:3px;cursor:pointer">' +
+      '<div class="af-bar-col" data-week="' + w.week + '" style="width:100%;height:' + h + 'px;background:' + _afColorFor(w.done, target) + ';border-radius:2px 2px 0 0"></div>' +
+      '<span style="font-family:Space Mono,monospace;font-size:7px;color:var(--muted);height:8px">' + (showLbl ? w.week : '') + '</span>' +
       '</div>';
   }).join('');
 
-  return rows;
+  const tgtLine = '<div style="position:absolute;left:0;right:0;bottom:' + (Math.round((target / 7) * H) + 11) + 'px;border-top:1px dashed var(--muted);opacity:.5"></div>' +
+    '<div style="position:absolute;right:0;bottom:' + (Math.round((target / 7) * H) + 13) + 'px;font-family:Space Mono,monospace;font-size:7px;color:var(--muted)">MÅL ' + target + '</div>';
+
+  const chart = '<div style="position:relative;padding-top:8px">' +
+    '<div style="display:flex;align-items:flex-end;gap:3px;height:' + (H + 11) + 'px">' + bars + '</div>' +
+    tgtLine +
+    '</div>' +
+    '<div id="af-bar-detail" data-week="" style="margin-top:10px"></div>' +
+    '<div style="font-family:Space Mono,monospace;font-size:8px;color:var(--muted);text-align:center;margin-top:6px">TAP EN SØJLE FOR AT SE UGEN</div>';
+
+  const rows = recent.map(function(w){ return _afWeekRow(w, target, true); }).join('');
+
+  const sub = function(txt){
+    return '<div style="font-family:Space Mono,monospace;font-size:9px;color:var(--muted);letter-spacing:.08em;margin-bottom:8px">' + txt + '</div>';
+  };
+
+  return sub('SENESTE ' + recent.length + (recent.length === 1 ? ' UGE' : ' UGER')) + rows +
+    '<div style="border-top:1px solid var(--cream-d);margin-top:4px;padding-top:12px">' +
+    sub('ALLE ' + n + ' AFSLUTTEDE UGER') + stats + chart + '</div>';
 }
 function afStreakViz(done, target, streak) {
   const days = ['M','T','O','T','F','L','S'];
