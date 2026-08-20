@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-08-20 04:37",
+    "updated": "2026-08-20 05:46",
     "week": 12,
     "totalWeeks": 14,
     "blockType": "BUILD",
@@ -35,7 +35,7 @@
       "color": "#27AE60"
     },
     "sleep": {
-      "value": "7,5",
+      "value": "7,6",
       "unit": "t",
       "sub": "Snit 7,5t · mål 7t",
       "color": "#2874A6"
@@ -47,7 +47,7 @@
       "color": "#27AE60"
     },
     "hrv": {
-      "value": "58,3",
+      "value": "57,8",
       "unit": "ms",
       "sub": "Snit 7d",
       "color": "#7A6A58"
@@ -83,7 +83,7 @@
     "streak": 3
   },
   "coachSpeech": "Torsdag — uge 12 af 14. {HL} Fokus: 231 af 336 TSS er i hus — 4 sessioner tilbage, heriblandt Shakeout løb + strides, OW-svøm Race-simulation 2000 m. Vægt på 72,9 kg (målt 19/8) — hold protein højt og undgå lette kulhydrater om aftenen. 3 AF-dage i 4 afsluttede dage — 3 mangler i 3 dage tilbage. Hård uge — men det er sådan formen bygges. Hold ved.  \"Kroppen tror, hvad sindet siger.\"",
-  "coachHighlight": "Søvn på 7,5 timer er solid",
+  "coachHighlight": "Søvn på 7,6 timer er solid",
   "weekFocus": "Svøm skarpt, bevar benet frisk — nedtrapningen begynder nu",
   "today": [
     {
@@ -966,7 +966,11 @@
       "v": 59.0,
       "real": true
     },
-    null
+    {
+      "date": "2026-08-20",
+      "v": 54.0,
+      "real": true
+    }
   ],
   "sleepHistory": [
     {
@@ -1410,7 +1414,11 @@
       "v": 9.6,
       "real": true
     },
-    null
+    {
+      "date": "2026-08-20",
+      "v": 8.2,
+      "real": true
+    }
   ],
   "tsbHistory": [
     {
@@ -3687,7 +3695,7 @@
       "note": "Nøgle virker"
     }
   },
-  "credentialsCheckedTs": "2026-08-20T02:37:14.562111",
+  "credentialsCheckedTs": "2026-08-20T03:46:24.434897",
   "coachAssessmentTsFull": "2026-08-20T01:14:39.764672",
   "coachAssessmentWeightAtGen": 72.9,
   "coachAssessmentAfAtGen": 3,
