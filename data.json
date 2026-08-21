@@ -1,19 +1,19 @@
 {
   "meta": {
-    "updated": "2026-08-21 01:53",
+    "updated": "2026-08-21 03:18",
     "week": 12,
     "totalWeeks": 14,
     "blockType": "BUILD",
-    "daysToMedoc": 16,
-    "daysToChristiansborg": 9,
-    "dayName": "Torsdag",
-    "date": "20. aug"
+    "daysToMedoc": 15,
+    "daysToChristiansborg": 8,
+    "dayName": "Fredag",
+    "date": "21. aug"
   },
   "kpis": {
     "weight": {
       "value": "72,6",
       "unit": "kg",
-      "sub": "Mål <68 kg · snit 72,8 kg",
+      "sub": "Sidst målt 20/8 · Mål <68 kg · snit 72,8 kg",
       "color": "#E67E22"
     },
     "fat": {
@@ -23,19 +23,19 @@
       "color": "#C0392B"
     },
     "ctl": {
-      "value": "53,6",
+      "value": "52,4",
       "unit": "",
       "sub": "Uge 12-mål 51 · Slutmål 43 (uge 14)",
       "color": "#27AE60"
     },
     "tsb": {
-      "value": "-3,3",
+      "value": "3,1",
       "unit": "",
       "sub": "Form · CTL−ATL, frisk >0",
       "color": "#27AE60"
     },
     "sleep": {
-      "value": "7,6",
+      "value": "7,8",
       "unit": "t",
       "sub": "Snit 7,5t · mål 7t",
       "color": "#2874A6"
@@ -47,7 +47,7 @@
       "color": "#27AE60"
     },
     "hrv": {
-      "value": "57,8",
+      "value": "58,6",
       "unit": "ms",
       "sub": "Snit 7d",
       "color": "#7A6A58"
@@ -82,17 +82,17 @@
     "target": 6,
     "streak": 4
   },
-  "coachSpeech": "Torsdag — uge 12 af 14. {HL} Godt: 4 AF-dage i 4 gennemførte dage — på rette spor. 2 mere og ugens mål er i hus. Fokus: 260 af 336 TSS er i hus — 3 sessioner tilbage, heriblandt OW-svøm Race-simulation 2000 m, Cykel Z2 45 min (kælder). Vægt på 72,6 kg — hold protein højt og undgå lette kulhydrater om aftenen. Keep moving forward.  \"Kroppen tror, hvad sindet siger.\"",
-  "coachHighlight": "Søvn på 7,6 timer er solid",
+  "coachSpeech": "Fredag — tre dage tilbage af uge 12. {HL} Fokus: 260 af 336 TSS er i hus — 3 sessioner tilbage, heriblandt OW-svøm Race-simulation 2000 m, Cykel Z2 45 min (kælder). Vægt på 72,6 kg (målt 20/8) — hold protein højt og undgå lette kulhydrater om aftenen. 4 AF-dage i 5 afsluttede dage — 2 mangler i 2 dage tilbage. Hård uge — men det er sådan formen bygges. Hold ved.  \"Du har magt over dit sind — ikke over yderomstændigheder. Indse det, og du finder styrke.\" — Marcus Aurelius",
+  "coachHighlight": "Søvn på 7,8 timer er solid",
   "weekFocus": "Svøm skarpt, bevar benet frisk — nedtrapningen begynder nu",
   "today": [
     {
-      "discipline": "run",
-      "title": "Shakeout løb + strides",
+      "discipline": "openwater",
+      "title": "OW-svøm Race-simulation 2000 m",
       "duration": "",
       "zone": "–",
       "desc": "",
-      "completed": true
+      "completed": false
     }
   ],
   "week_sessions": [
@@ -168,7 +168,6 @@
       "planned_tss": 20,
       "planned_mins": 19,
       "planned_distance_m": null,
-      "today": true,
       "completion": "done",
       "completion_pct": 145,
       "actual_tss": 29,
@@ -183,7 +182,8 @@
       "done": false,
       "planned_tss": null,
       "planned_mins": 65,
-      "planned_distance_m": 2000
+      "planned_distance_m": 2000,
+      "today": true
     },
     {
       "day": "Lør",
@@ -216,10 +216,9 @@
     50.9,
     53.0,
     52.9,
-    53.6
+    52.4
   ],
   "weightHistory": [
-    null,
     null,
     null,
     null,
@@ -528,14 +527,10 @@
       "date": "2026-08-20",
       "v": 72.6,
       "real": true
-    }
+    },
+    null
   ],
   "hrvHistory": [
-    {
-      "date": "2026-05-23",
-      "v": 34.0,
-      "real": true
-    },
     {
       "date": "2026-05-24",
       "v": 31.0,
@@ -980,14 +975,10 @@
       "date": "2026-08-20",
       "v": 54.0,
       "real": true
-    }
+    },
+    null
   ],
   "sleepHistory": [
-    {
-      "date": "2026-05-23",
-      "v": 7.8,
-      "real": true
-    },
     {
       "date": "2026-05-24",
       "v": 8.4,
@@ -1428,14 +1419,10 @@
       "date": "2026-08-20",
       "v": 8.2,
       "real": true
-    }
+    },
+    null
   ],
   "tsbHistory": [
-    {
-      "date": "2026-05-23",
-      "v": -16.4,
-      "real": true
-    },
     {
       "date": "2026-05-24",
       "v": -16.4,
@@ -1879,6 +1866,11 @@
     {
       "date": "2026-08-20",
       "v": -3.2,
+      "real": true
+    },
+    {
+      "date": "2026-08-21",
+      "v": 3.1,
       "real": true
     }
   ],
@@ -2876,7 +2868,6 @@
           "planned_tss": 20,
           "planned_mins": 19,
           "planned_distance_m": null,
-          "today": true,
           "completion": "done",
           "completion_pct": 145,
           "actual_tss": 29,
@@ -2891,7 +2882,8 @@
           "done": false,
           "planned_tss": null,
           "planned_mins": 65,
-          "planned_distance_m": 2000
+          "planned_distance_m": 2000,
+          "today": true
         },
         {
           "day": "Lør",
@@ -3088,7 +3080,7 @@
     {
       "week": 12,
       "done": 4,
-      "total": 4,
+      "total": 5,
       "label": "Uge 12"
     }
   ],
@@ -3101,7 +3093,6 @@
     "actual_total": 290.0
   },
   "fatHistory": [
-    null,
     null,
     null,
     null,
@@ -3410,19 +3401,20 @@
       "date": "2026-08-20",
       "v": 20.9,
       "real": true
-    }
+    },
+    null
   ],
-  "coachAssessmentHtml": "<p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\"><strong>Dag 81 af 98 · Torsdag · Uge 12</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">💪 <strong>Træning & load</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">CTL er 53,6 — det er 2,6 over ugemålet på 51, og TSB på -3,3 er solidt komfortabelt. Shakeout-løbet i dag gik fint: 4,6 km på 24 min med 29 TSS, og 75,7 % i pace-Z2 — on target. Én ting at tage med til næste lignende løbetur: HR fulgte ikke med tempoet (56 % i HR-Z1), ligesom tirsdagens lange tur — sænk tempoet en tand, så pace og HR begynder at matche hinanden. Fredag venter race-simulationen på 2000 m — den er dit vigtigste pas denne uge, og kroppen er klar til den.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">⚖️ <strong>Krop & kost</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Vægten er 72,6 kg i dag — 4,6 kg fra målet under 68 kg. Fedtprocenten er 20,9 % i dag mod et mål under 16 %, så der er stadig et godt stykke vej. Det vigtige er retningen: 7-dages snittet på fedtprocent er gået ned 0,3 procentpoint de seneste 7 dage, og 7-dages vægtsnittet ligger på 72,9 kg — begge kurver peger den rigtige vej. Det er den reelle bevægelse, ikke dagstallet alene.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">🎯 <strong>AF-status & fokus for resten af ugen</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Du har 4 AF-dage ud af 4 dage gået i ugen — det er en perfekt ratio. Fredag er race-simulationen i åbent vand det absolutte omdrejningspunkt: 2000 m præcis som Christiansborg Rundt, kør den som om det betyder noget. Lørdag og søndag holder du benet frisk med rolig cykel og Z2-løb — nedtrapningen begynder nu, og det er disciplin, ikke dovenskab, at holde intensiteten nede.</p>",
-  "coachAssessmentTs": "17:59",
+  "coachAssessmentHtml": "<p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\"><strong>Dag 82 af 98 · Fredag · Uge 12</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">💪 <strong>Træning & load</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">CTL ligger på 52,4 — over ugemålet på 51 — og TSB er 3,1, så du er i god balance. Tirsdag løb ligger stadig som en mild zone-advarsel: 49,4 % i pace-Z2 er under 55 %-målet, og 42,0 % af tiden lå faktisk i en hurtigere zone end target. Til næste lange løb skal tempoet ned et tak fra start, ikke undervejs. Dagens OW-svøm på 2000 m er endnu ikke gennemført — det er dit vigtigste pas i dag, og race-simuleringen bør prioriteres inden aftenen.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">⚖️ <strong>Krop & kost</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Seneste vejning 20/8 viste 72,6 kg og 20,9 % fedt. 7-dages snittet på fedtprocenten er gået ned 0,3 point over de seneste 8 dage — det er den reelle retning, og den peger rigtigt. Afstanden til målene er stadig betydelig: 4,6 kg til under 68 kg og 4,9 procentpoint til under 16 % — begge kræver vedvarende arbejde langt ud over dette reset-år. Fortsæt det der virker, og lad 7-dages snittet guide dig, ikke daglige udsving.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">🎯 <strong>AF-status & fokus for resten af ugen</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Du har 4 AF-dage ud af 5 dage i ugen — det er stærkt. For at nå ugens mål på 6 AF-dage skal du holde det rent fredag, lørdag og søndag — alle tre. Fokus er simpelt: få svømmet 2000 m i dag, hold benene friske til lørdag og søndag, og drik ikke. Nedtrapningen begynder nu — det er ikke tid til at presse ekstra belastning ind.</p>",
+  "coachAssessmentTs": "01:18",
   "commute_pairing_warnings": [],
   "warnings": [
     {
       "type": "alcohol_cluster",
-      "level": "critical",
-      "message": "3 drikkedage i træk 14/8–16/8 — klynger rammer HRV hårdere end spredte dage."
+      "level": "warn",
+      "message": "2 drikkedage i træk 15/8–16/8 — klynger rammer HRV hårdere end spredte dage."
     }
   ],
-  "tsb": -3.3,
+  "tsb": 3.1,
   "swimHistory": [
     {
       "week": 1,
@@ -3499,11 +3491,10 @@
   ],
   "coachAssessmentLastActId": "i177798057",
   "weekFocusWeek": 12,
-  "coachAssessmentPlanAtGen": "Shakeout løb + strides",
+  "coachAssessmentPlanAtGen": "OW-svøm Race-simulation 2000 m",
   "weightGoal": 68,
   "bodyFatGoal": 16,
   "weightMovingAvg7": [
-    null,
     null,
     null,
     null,
@@ -3592,10 +3583,10 @@
     null,
     null,
     72.97,
+    72.88,
     72.88
   ],
   "fatMovingAvg7": [
-    null,
     null,
     null,
     null,
@@ -3684,6 +3675,7 @@
     null,
     null,
     21.7,
+    21.5,
     21.5
   ],
   "weightToGoal": 4.6,
@@ -3716,8 +3708,8 @@
       "note": "Nøgle virker"
     }
   },
-  "credentialsCheckedTs": "2026-08-20T23:53:19.252577",
-  "coachAssessmentTsFull": "2026-08-20T17:59:12.942156",
+  "credentialsCheckedTs": "2026-08-21T01:18:32.060880",
+  "coachAssessmentTsFull": "2026-08-21T01:18:32.060863",
   "coachAssessmentWeightAtGen": 72.6,
   "coachAssessmentAfAtGen": 4,
   "event_structure_warnings": [],
@@ -3821,7 +3813,7 @@
     {
       "name": "Santini Stelvio Gran Fondo (lang rute)",
       "date": "2027-06-06",
-      "days": 290,
+      "days": 289,
       "priority": "B",
       "distance": "130km / 4500hm",
       "registered": true
@@ -3829,7 +3821,7 @@
     {
       "name": "Tour des Stations Ultrafondo",
       "date": "2027-08-28",
-      "days": 373,
+      "days": 372,
       "priority": "A",
       "distance": "242km / 8848hm",
       "registered": false
