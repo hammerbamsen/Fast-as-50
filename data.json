@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-08-21 06:10",
+    "updated": "2026-08-21 06:38",
     "week": 12,
     "totalWeeks": 14,
     "blockType": "BUILD",
@@ -23,13 +23,13 @@
       "color": "#C0392B"
     },
     "ctl": {
-      "value": "52,4",
+      "value": "53,1",
       "unit": "",
       "sub": "Uge 12-mål 51 · Slutmål 43 (uge 14)",
       "color": "#27AE60"
     },
     "tsb": {
-      "value": "3,1",
+      "value": "-0,2",
       "unit": "",
       "sub": "Form · CTL−ATL, frisk >0",
       "color": "#27AE60"
@@ -55,8 +55,8 @@
     "tssComp": {
       "value": "260",
       "unit": "TSS",
-      "sub": "260 af 336 planlagt TSS",
-      "color": "#E67E22"
+      "sub": "260 af 307 planlagt TSS",
+      "color": "#27AE60"
     },
     "bikeKm": {
       "value": "29,1",
@@ -82,13 +82,13 @@
     "target": 6,
     "streak": 5
   },
-  "coachSpeech": "Fredag — tre dage tilbage af uge 12. {HL} Godt: 5 AF-dage i 5 gennemførte dage — på rette spor. 1 mere og ugens mål er i hus. Vægt på 73,9 kg — Vægten er 1.3 kg højere end seneste måling (2026-08-20) — sandsynligvis væske/natrium snarere end fedt, ikke et disciplinproblem. Giv den et par dage før du dømmer tallet. Fokus: 260 af 336 TSS er i hus — 3 sessioner tilbage, heriblandt OW-svøm Race-simulation 2000 m, Cykel Z2 45 min (kælder). Keep moving forward.  \"Du har magt over dit sind — ikke over yderomstændigheder. Indse det, og du finder styrke.\" — Marcus Aurelius",
+  "coachSpeech": "Fredag — tre dage tilbage af uge 12. {HL} Godt: 5 AF-dage i 5 gennemførte dage — på rette spor. 1 mere og ugens mål er i hus. Vægt på 73,9 kg — Vægten er 1.3 kg højere end seneste måling (2026-08-20) — sandsynligvis væske/natrium snarere end fedt, ikke et disciplinproblem. Giv den et par dage før du dømmer tallet. Fokus: 260 af 307 TSS er i hus — 3 sessioner tilbage, heriblandt Pool-svøm Race-simulation 1500 m, Cykel Z2 45 min (kælder). Keep moving forward.  \"Du har magt over dit sind — ikke over yderomstændigheder. Indse det, og du finder styrke.\" — Marcus Aurelius",
   "coachHighlight": "Søvn på 7,7 timer er solid",
   "weekFocus": "Svøm skarpt, bevar benet frisk — nedtrapningen begynder nu",
   "today": [
     {
-      "discipline": "openwater",
-      "title": "OW-svøm Race-simulation 2000 m",
+      "discipline": "swim",
+      "title": "Pool-svøm Race-simulation 1500 m",
       "duration": "",
       "zone": "–",
       "desc": "",
@@ -177,12 +177,12 @@
     },
     {
       "day": "Fre",
-      "disc": "openwater",
-      "label": "OW-svøm Race-simulation 2000 m",
+      "disc": "swim",
+      "label": "Pool-svøm Race-simulation 1500 m",
       "done": false,
-      "planned_tss": null,
-      "planned_mins": 65,
-      "planned_distance_m": 2000,
+      "planned_tss": 30,
+      "planned_mins": 40,
+      "planned_distance_m": 1500,
       "today": true
     },
     {
@@ -216,7 +216,7 @@
     50.9,
     53.0,
     52.9,
-    52.4
+    53.1
   ],
   "weightHistory": [
     null,
@@ -1882,7 +1882,7 @@
     },
     {
       "date": "2026-08-21",
-      "v": 3.1,
+      "v": -0.2,
       "real": true
     }
   ],
@@ -2890,12 +2890,12 @@
         },
         {
           "day": "Fre",
-          "disc": "openwater",
-          "label": "OW-svøm Race-simulation 2000 m",
+          "disc": "swim",
+          "label": "Pool-svøm Race-simulation 1500 m",
           "done": false,
-          "planned_tss": null,
-          "planned_mins": 65,
-          "planned_distance_m": 2000,
+          "planned_tss": 30,
+          "planned_mins": 40,
+          "planned_distance_m": 1500,
           "today": true
         },
         {
@@ -3102,7 +3102,7 @@
     "strength": 51.0,
     "bike": 52.0,
     "openwater": 32.0,
-    "planned": 385.0,
+    "planned": 360.0,
     "actual_total": 290.0
   },
   "fatHistory": [
@@ -3421,8 +3421,8 @@
       "real": true
     }
   ],
-  "coachAssessmentHtml": "<p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\"><strong>Dag 82 af 98 · Fredag · Uge 12</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">💪 <strong>Træning & load</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">CTL er 52,4 — en point over ugemålet på 51, og TSB er 3,1, så du er frisk og i balance. Ugens løbeture viser et mønster: pace-zonen er ikke ramt præcist — på tirsdagens lange tur lå kun 49,4 % af tiden i Z2-pace, og 42 % af tiden lå du faktisk hurtigere end target-zonen. Tag den med til næste lange løb: gå langsommere ud end det føles rigtigt. I dag venter race-simulationen på 2000 m OW — det er ugens vigtigste pas og tæller som det direkte generalprøve til Christiansborg Rundt.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">⚖️ <strong>Krop & kost</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Dagens vejning viser 73,9 kg — 5,9 kg fra målet — men det er 1,3 kg højere end seneste måling den 20. august, og det skyldes sandsynligvis væske og natrium, ikke fedt. Giv det et par dage. Det autoritative tal er 7-dages snittet: 73,1 kg, og fedtprocentens 7-dages snit er faldet 0,4 point over de seneste 8 dage til 21,4 % — det er den reelle retning, og den peger rigtigt. Dagens fedtprocent er 20,9 % mod målet på under 16 % — der er arbejde tilbage, men snittet bevæger sig.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">🎯 <strong>AF-status & fokus for resten af ugen</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Du har 5 AF-dage ud af 5 dage gået denne uge — det er rent og præcist på sporet. Lørdag og søndag giver dig to dage til at lukke ugen med endnu en AF-dag og dermed lande på 6 for ugen. Fokus nu: gennemfør OW-svømmen i dag med hoved nede og rytme fra start, og lad lørdagens og søndagens pas være det de er — lette vedligeholdelsesture mens kroppen forbereder sig på de to events.</p>",
-  "coachAssessmentTs": "04:11",
+  "coachAssessmentHtml": "<p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\"><strong>Dag 82 af 98 · Fredag · Uge 12</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">💪 <strong>Træning & load</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">CTL er 53,1 — det er 2,1 over ugemålet på 51, og TSB på -0,2 viser at du er tæt på balance. Du har lagt solide pas ind denne uge: tirsdagens lange løb på 25,8 km/131 min og onsdagens cykel var begge gennemført, men pace-zone-compliance på løb er lav begge dage — du kører for hurtigt, og HR når ikke at følge med. Sænk tempoet på næste lange løb, så du reelt rammer Z2 i pace frem for at styre efter at HR er lav. Nu er Pool-svøm 1500 m race-simulation til gode — hold det skarpt og race-specifikt.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">⚖️ <strong>Krop & kost</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Dagens vejning er 73,9 kg — 1,3 kg over seneste måling 20/8, og det er med stor sandsynlighed væske og natrium, ikke fedt. Giv det et par dage. Det autoritative billede er 7-dages snittet: fedtprocenten er faldet 0,4 point over de seneste 8 dage, og det er den reelle retning — kroppen bevæger sig rigtigt. Afstanden til målene er stadig til at arbejde med: 5,9 kg til under 68 kg på vægt, og 4,9 procentpoint til under 16 % fedtprocent.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">🎯 <strong>AF-status & fokus for resten af ugen</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Du har 5 AF-dage ud af 5 dage gået i ugen — det er perfekt tempo mod ugemålet på 6. Lørdag og søndag er lette pas (cykel Z2 45 min og løb Z2 50 min) — nedtrapningen er i gang, og benet skal holdes frisk. Hold igen på tempoet i løbet søndag, så det faktisk er Z2 i pace og ikke bare Z2 i HR.</p>",
+  "coachAssessmentTs": "04:38",
   "commute_pairing_warnings": [],
   "warnings": [
     {
@@ -3436,7 +3436,7 @@
       "message": "2 drikkedage i træk 15/8–16/8 — klynger rammer HRV hårdere end spredte dage."
     }
   ],
-  "tsb": 3.1,
+  "tsb": -0.2,
   "swimHistory": [
     {
       "week": 1,
@@ -3513,7 +3513,7 @@
   ],
   "coachAssessmentLastActId": "i177798057",
   "weekFocusWeek": 12,
-  "coachAssessmentPlanAtGen": "OW-svøm Race-simulation 2000 m",
+  "coachAssessmentPlanAtGen": "Pool-svøm Race-simulation 1500 m",
   "weightGoal": 68,
   "bodyFatGoal": 16,
   "weightMovingAvg7": [
@@ -3730,11 +3730,30 @@
       "note": "Nøgle virker"
     }
   },
-  "credentialsCheckedTs": "2026-08-21T04:11:14.871065",
-  "coachAssessmentTsFull": "2026-08-21T04:11:14.871047",
+  "credentialsCheckedTs": "2026-08-21T04:38:18.546830",
+  "coachAssessmentTsFull": "2026-08-21T04:38:18.546811",
   "coachAssessmentWeightAtGen": 73.9,
   "coachAssessmentAfAtGen": 5,
-  "event_structure_warnings": [],
+  "event_structure_warnings": [
+    {
+      "date": "2026-08-21",
+      "name": "Pool-svøm Race-simulation 1500 m",
+      "type": "Swim",
+      "event_id": 130582711,
+      "level": "error",
+      "code": "PROSA_BESKRIVELSE",
+      "text": "Beskrivelsen har ingen workout-syntaks (linjer med \"- \"). Intervals kan ikke bygge trin — uret får en tom traening."
+    },
+    {
+      "date": "2026-08-21",
+      "name": "Pool-svøm Race-simulation 1500 m",
+      "type": "Swim",
+      "event_id": 130582711,
+      "level": "error",
+      "code": "INGEN_TRIN",
+      "text": "workout_doc har ingen trin."
+    }
+  ],
   "coachAssessmentFatAtGen": 20.9,
   "zones": {
     "runThreshold": "4:24/km",
