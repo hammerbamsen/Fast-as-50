@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-08-23 01:20",
+    "updated": "2026-08-23 01:46",
     "week": 12,
     "totalWeeks": 14,
     "blockType": "BUILD",
@@ -3445,8 +3445,8 @@
       "real": true
     }
   ],
-  "coachAssessmentHtml": "<p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\"><strong>Dag 83 af 98 · Lørdag · Uge 12</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">💪 <strong>Træning & load</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">CTL er 52,4 — det er over ugemålet på 51, og TSB på 2,7 viser at du er i god balance. Ugens løbedisciplin stikker ud negativt: tirsdag lå kun 49,4 % af løbetiden i pace-Z2, og for meget tid gik i en hurtigere zone end planlagt — sænk tempoet næste gang du er ude på en tilsvarende lang Z2-tur. Cyklen i dag holdt 91,1 % i Z2 på watt, og onsdagscyklen lå på 92,0 % — de to pas sad præcist. Svømningen fredag var kun 1,4 % i Z2 på HR, klart under 30 %-målet — hold race-simulation-intensiteten mere kontrolleret til næste gang du kører det format.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">⚖️ <strong>Krop & kost</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Dagens vægt er 72,6 kg og fedtprocent er 21,8 % — afstanden til målene er hhv. 4,6 kg og 5,8 procentpoint, så der er stadig et stykke vej. Det autoritative billede er 7-dages snittet: vægtsnittet ligger på 73,0 kg og fedtprocentsnittet er gået ned 0,4 procentpoint over de seneste 9 dage — den retning er reel og positiv. Det er fedtprocentsnittet der tæller mest: falder det, taber du faktisk fedt, og det gør det nu.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">🎯 <strong>AF-status & fokus for resten af ugen</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Du har 6 AF-dage ud af 6 dage gået i ugen — det holder målet. Søndagens løb Z2 på 50 min er det eneste der mangler i ugen — kør det roligt og hold pace i Z2, så du lander ugen med friske ben inden nedtrapningen sætter ind for alvor.</p>",
-  "coachAssessmentTs": "17:20",
+  "coachAssessmentHtml": "<p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\"><strong>Dag 83 af 98 · Lørdag · Uge 12</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">💪 <strong>Træning & load</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">CTL er 52,4 — over ugemålet på 51 — og TSB er 2,7, så du er velrestitueret og i god balance. Ugen har indeholdt solid volumen: tirsdag 25,8 km i 131 min, fredag 2000 m svøm og cykel i dag med 91,1% i Z2. Det eneste der fortsat kræver opmærksomhed: til næste lange løb skal pacetempoet ned — tirsdag lå kun 49,4% af tiden i pace-Z2, og 42% lå hurtigere end target. HR fulgte ikke med, men det ændrer ikke på at tempoet var for højt til Z2-arbejde.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">⚖️ <strong>Krop & kost</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Vægten er 72,6 kg i dag — 4,6 kg fra målet — og 7-dages snittet ligger på 73,0 kg. Fedtprocenten er 21,8% i dag, og 7-dages snittet er faldet 0,4 procentpoint over de seneste 9 dage — det er den reelle retning, og den peger rigtigt. Du er stadig 5,8 procentpoint fra fedtprocent-målet på under 16%, men faldet i snittet viser at det faktisk er fedt der forsvinder, ikke muskelmasse. Det er den kombination der tæller i et capacity-år.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">🎯 <strong>AF-status & fokus for resten af ugen</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Du er 6/6 AF-dage i ugen — lige præcis på sporet. Søndagens løb Z2 i 50 min er det eneste der venter, og det er her nedtrapningen for alvor begynder. Hold tempoet ægte roligt — lad HR og ben bestemme, ikke stoltheden.</p>",
+  "coachAssessmentTs": "23:46",
   "commute_pairing_warnings": [],
   "warnings": [],
   "tsb": 2.7,
@@ -3743,8 +3743,8 @@
       "note": "Nøgle virker"
     }
   },
-  "credentialsCheckedTs": "2026-08-22T23:20:40.313743",
-  "coachAssessmentTsFull": "2026-08-22T17:20:42.747826",
+  "credentialsCheckedTs": "2026-08-22T23:46:17.440402",
+  "coachAssessmentTsFull": "2026-08-22T23:46:17.440387",
   "coachAssessmentWeightAtGen": 72.6,
   "coachAssessmentAfAtGen": 6,
   "event_structure_warnings": [],
