@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-08-22 04:34",
+    "updated": "2026-08-22 05:41",
     "week": 12,
     "totalWeeks": 14,
     "blockType": "BUILD",
@@ -47,7 +47,7 @@
       "color": "#27AE60"
     },
     "hrv": {
-      "value": "59,1",
+      "value": "58,4",
       "unit": "ms",
       "sub": "Snit 7d",
       "color": "#7A6A58"
@@ -986,7 +986,11 @@
       "v": 51.0,
       "real": true
     },
-    null
+    {
+      "date": "2026-08-22",
+      "v": 53.0,
+      "real": true
+    }
   ],
   "sleepHistory": [
     {
@@ -1430,7 +1434,11 @@
       "v": 6.8,
       "real": true
     },
-    null
+    {
+      "date": "2026-08-22",
+      "v": 7.5,
+      "real": true
+    }
   ],
   "tsbHistory": [
     {
@@ -3429,13 +3437,7 @@
   "coachAssessmentHtml": "<p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\"><strong>Dag 83 af 98 · Lørdag · Uge 12</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">💪 <strong>Træning & load</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">CTL er 52,4 — over ugemålet på 51 — og TSB på 2,8 viser at du er balanceret og frisk. Ugens store post var tirsdagens lange løb på 25,8 km/131 min, men pace-zone-analysen afslører at du løb for hurtigt: kun 49,4 % i Z2-pace og 42,0 % i en hurtigere zone, mens HR lå lavt i Z1 — det er klassisk tegn på overpacing, ikke restitution. Næste gang du har et langt Z2-løb, sænk tempoet fra start, selv om det føles urimeligt let. Kældercyklen på 45 min er endnu ikke forsøgt — hold effekten i Z2 og lad TSB holde sig positivt ind mod nedtrapningen.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">⚖️ <strong>Krop & kost</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Seneste vejning 21/8 viste 73,9 kg og 20,9 % fedt — afstand til målet er altså 5,9 kg og knap 5 procentpoint fedt. Det vigtigste signal er 7-dages snittet: vægtsnittet er 73,1 kg og fedtprocentsnittet er faldet 0,4 point over de seneste 9 dage — det er den rigtige retning, og det er det tal der tæller. Fortsæt med at prioritere protein og søvn — i nedtrapningsuger falder trænings-TSS, og det er let at kompensere ved at spise mere end nødvendigt.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">🎯 <strong>AF-status & fokus for resten af ugen</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Du er på 5 AF-dage ud af 6 dage gået — det er stærkt. Søndagens løb Z2 på 50 min er det eneste der resterer — kør det roligt og lad benet ankomme frisk til nedtrapningsugen. Ugefokus er præcis som planlagt: svøm skarpt, bevar benet frisk — den fase begynder nu for alvor.</p>",
   "coachAssessmentTs": "01:14",
   "commute_pairing_warnings": [],
-  "warnings": [
-    {
-      "type": "hrv",
-      "level": "warn",
-      "message": "HRV 51,0 ms — 14% under 7d-snit (59,1 ms). Kroppen er presset."
-    }
-  ],
+  "warnings": [],
   "tsb": 2.8,
   "swimHistory": [
     {
@@ -3730,7 +3732,7 @@
       "note": "Nøgle virker"
     }
   },
-  "credentialsCheckedTs": "2026-08-22T02:34:45.497807",
+  "credentialsCheckedTs": "2026-08-22T03:41:42.410682",
   "coachAssessmentTsFull": "2026-08-22T01:14:03.243424",
   "coachAssessmentWeightAtGen": 73.9,
   "coachAssessmentAfAtGen": 5,
