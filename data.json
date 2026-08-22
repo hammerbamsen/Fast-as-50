@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-08-22 06:33",
+    "updated": "2026-08-22 07:27",
     "week": 12,
     "totalWeeks": 14,
     "blockType": "BUILD",
@@ -11,13 +11,13 @@
   },
   "kpis": {
     "weight": {
-      "value": "73,9",
+      "value": "72,6",
       "unit": "kg",
-      "sub": "Sidst målt 21/8 · Mål <68 kg · snit 73,1 kg",
+      "sub": "Mål <68 kg · snit 73,0 kg",
       "color": "#E67E22"
     },
     "fat": {
-      "value": "20,9",
+      "value": "21,8",
       "unit": "%",
       "sub": "Mål <16%",
       "color": "#C0392B"
@@ -82,7 +82,7 @@
     "target": 6,
     "streak": 5
   },
-  "coachSpeech": "Lørdag — uge 12 af 14. {HL} Godt: Søvn på 7,8 timer er solid. Fokus: Vægt på 73,9 kg (målt 21/8) — hold protein højt og undgå lette kulhydrater om aftenen. 5 AF-dage i 6 afsluttede dage — 1 mangler i 1 dage tilbage. Keep moving forward.  \"Det er ikke om at have tid. Det er om at tage den.\"",
+  "coachSpeech": "Lørdag — uge 12 af 14. {HL} Godt: Søvn på 7,8 timer er solid. Fokus: Vægt på 72,6 kg — hold protein højt og undgå lette kulhydrater om aftenen. 5 AF-dage i 6 afsluttede dage — 1 mangler i 1 dage tilbage. Keep moving forward.  \"Det er ikke om at have tid. Det er om at tage den.\"",
   "coachHighlight": "91 procent af ugens TSS er i hus",
   "weekFocus": "Svøm skarpt, bevar benet frisk — nedtrapningen begynder nu",
   "today": [
@@ -538,7 +538,11 @@
       "v": 73.9,
       "real": true
     },
-    null
+    {
+      "date": "2026-08-22",
+      "v": 72.6,
+      "real": true
+    }
   ],
   "hrvHistory": [
     {
@@ -3432,10 +3436,14 @@
       "v": 20.9,
       "real": true
     },
-    null
+    {
+      "date": "2026-08-22",
+      "v": 21.8,
+      "real": true
+    }
   ],
-  "coachAssessmentHtml": "<p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\"><strong>Dag 83 af 98 · Lørdag · Uge 12</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">💪 <strong>Træning & load</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">CTL er 52,4 — over ugemålet på 51 — og TSB på 2,8 viser at du er balanceret og frisk. Ugens store post var tirsdagens lange løb på 25,8 km/131 min, men pace-zone-analysen afslører at du løb for hurtigt: kun 49,4 % i Z2-pace og 42,0 % i en hurtigere zone, mens HR lå lavt i Z1 — det er klassisk tegn på overpacing, ikke restitution. Næste gang du har et langt Z2-løb, sænk tempoet fra start, selv om det føles urimeligt let. Kældercyklen på 45 min er endnu ikke forsøgt — hold effekten i Z2 og lad TSB holde sig positivt ind mod nedtrapningen.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">⚖️ <strong>Krop & kost</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Seneste vejning 21/8 viste 73,9 kg og 20,9 % fedt — afstand til målet er altså 5,9 kg og knap 5 procentpoint fedt. Det vigtigste signal er 7-dages snittet: vægtsnittet er 73,1 kg og fedtprocentsnittet er faldet 0,4 point over de seneste 9 dage — det er den rigtige retning, og det er det tal der tæller. Fortsæt med at prioritere protein og søvn — i nedtrapningsuger falder trænings-TSS, og det er let at kompensere ved at spise mere end nødvendigt.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">🎯 <strong>AF-status & fokus for resten af ugen</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Du er på 5 AF-dage ud af 6 dage gået — det er stærkt. Søndagens løb Z2 på 50 min er det eneste der resterer — kør det roligt og lad benet ankomme frisk til nedtrapningsugen. Ugefokus er præcis som planlagt: svøm skarpt, bevar benet frisk — den fase begynder nu for alvor.</p>",
-  "coachAssessmentTs": "01:14",
+  "coachAssessmentHtml": "<p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\"><strong>Dag 83 af 98 · Lørdag · Uge 12</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">💪 <strong>Træning & load</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">CTL ligger på 52,4 — over uge 12-målet på 51 — og TSB er 2,8, så du er i god balance ind i de sidste dage af ugen. Ugens pas er gennemført med høj compliance på cykel og shakeout, men tirsagens lange løb viste for høj pace: kun 49,4 % i Z2 (pace-zone), og 42,0 % af tiden lå du hurtigere end target — sænk tempoet på næste lange tur. Fredagens svøm nåede 2000 m mod planlagte 1500 m, men HR-strukturen manglede — 1,4 % i Z2 er langt under 30 %-målet. Dagens cykeltur på 45 min Z2 i kælderen er stadig ikke forsøgt — kør den rolig og struktureret, hold wattene i Z2 hele vejen igennem.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">⚖️ <strong>Krop & kost</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Vægten er 72,6 kg i dag — 4,6 kg fra målet under 68 kg. 7-dages snittet på 73,0 kg er det autoritative billede, og det peger nedad. Fedtprocenten er 21,8 % i dag, og 7-dages snittet er gået ned 0,4 procentpoint over de seneste 9 dage — det er den reelle retning, og det er ægte fremgang. Du er stadig 5,8 procentpoint fra målet på under 16 %, men begge kurver peger den rigtige vej.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">🎯 <strong>AF-status & fokus for resten af ugen</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Du har 5 AF-dage ud af 6 dage gået i ugen — det er stærkt. Søndagens løb Z2 på 50 min er det eneste, der venter — kør det roligt og bevar benet frisk ind i nedtrapningen. Ugefokus er klar: svøm skarpt, bevar benet frisk — og du er godt på vej.</p>",
+  "coachAssessmentTs": "05:27",
   "commute_pairing_warnings": [],
   "warnings": [],
   "tsb": 2.8,
@@ -3608,7 +3616,7 @@
     72.97,
     72.88,
     73.08,
-    73.08
+    73.0
   ],
   "fatMovingAvg7": [
     null,
@@ -3700,10 +3708,10 @@
     21.7,
     21.5,
     21.38,
-    21.38
+    21.45
   ],
-  "weightToGoal": 5.9,
-  "bodyFatToGoal": 4.9,
+  "weightToGoal": 4.6,
+  "bodyFatToGoal": 5.8,
   "ctlPlan": [
     34,
     36,
@@ -3732,12 +3740,12 @@
       "note": "Nøgle virker"
     }
   },
-  "credentialsCheckedTs": "2026-08-22T04:33:03.425532",
-  "coachAssessmentTsFull": "2026-08-22T01:14:03.243424",
-  "coachAssessmentWeightAtGen": 73.9,
+  "credentialsCheckedTs": "2026-08-22T05:27:21.080355",
+  "coachAssessmentTsFull": "2026-08-22T05:27:21.080341",
+  "coachAssessmentWeightAtGen": 72.6,
   "coachAssessmentAfAtGen": 5,
   "event_structure_warnings": [],
-  "coachAssessmentFatAtGen": 20.9,
+  "coachAssessmentFatAtGen": 21.8,
   "zones": {
     "runThreshold": "4:24/km",
     "bikeFtpW": 278,
