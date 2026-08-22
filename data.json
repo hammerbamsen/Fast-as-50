@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-08-22 13:06",
+    "updated": "2026-08-22 13:20",
     "week": 12,
     "totalWeeks": 14,
     "blockType": "BUILD",
@@ -2953,38 +2953,28 @@
       "sessions": [
         {
           "day": "Tir",
-          "disc": "openwater",
-          "label": "OW-svøm Kort tilvænning 30 min",
-          "done": false,
-          "today": false,
-          "planned_tss": 25,
-          "planned_mins": 30,
-          "planned_distance_m": null
-        },
-        {
-          "day": "Tir",
           "disc": "run",
-          "label": "Løb Z2 50 min",
+          "label": "Médoc-simulation 19 km (run/walk 10/2)",
           "done": false,
           "today": false,
-          "planned_tss": 46,
-          "planned_mins": 50,
-          "planned_distance_m": null
-        },
-        {
-          "day": "Ons",
-          "disc": "run",
-          "label": "Mellemlang løb Z2 19 km (100 min)",
-          "done": false,
-          "today": false,
-          "planned_tss": 92,
-          "planned_mins": 100,
+          "planned_tss": 121,
+          "planned_mins": 132,
           "planned_distance_m": 19000
         },
         {
-          "day": "Fre",
+          "day": "Ons",
           "disc": "swim",
-          "label": "Svøm let 20 min recovery",
+          "label": "Svøm 2.000 m i træk",
+          "done": false,
+          "today": false,
+          "planned_tss": 40,
+          "planned_mins": 48,
+          "planned_distance_m": 0
+        },
+        {
+          "day": "Fre",
+          "disc": "openwater",
+          "label": "OW-svøm let 20 min (Gentofte)",
           "done": false,
           "today": false,
           "planned_tss": 17,
@@ -3753,7 +3743,7 @@
       "note": "Nøgle virker"
     }
   },
-  "credentialsCheckedTs": "2026-08-22T11:06:59.853071",
+  "credentialsCheckedTs": "2026-08-22T11:20:21.897911",
   "coachAssessmentTsFull": "2026-08-22T11:06:59.853055",
   "coachAssessmentWeightAtGen": 72.6,
   "coachAssessmentAfAtGen": 6,
