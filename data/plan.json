@@ -143,7 +143,7 @@
       "ctlTarget": 47,
       "tssTarget": 180,
       "location": "Gentofte (hjem fra Norge søn 23.). RACE lør",
-      "note": "Christiansborg Rundt lør 29. aug — svømmes UTAPERET (2000 m, bevidst valg). Marathon-vedligehold: 19 km ons."
+      "note": "Christiansborg Rundt lør 29. aug — svømmes UTAPERET (2000 m, bevidst valg). Médoc-simulation 19 km tir. Svøm 2.000 m i træk ons. Médoc løbes med Eva."
     },
     {
       "week": 14,
@@ -4425,70 +4425,215 @@
           "entries": [
             {
               "workout": {
-                "name": "OW-svøm Kort tilvænning 30 min",
-                "type": "OpenWaterSwim",
-                "moving_time": 1800,
-                "description": "- Tilvænning + let svøm langs kant 10m freeride\n- Kort tilvænning: kontinuerlig svøm, sigtning hver 8.-10. tag 10m freeride\n- Let ud-svøm + exit-rutine 10m freeride",
-                "workout_doc": {
-                  "steps": [
-                    {
-                      "text": "Tilvænning + let svøm langs kant",
-                      "duration": 600
-                    },
-                    {
-                      "text": "Kort tilvænning: kontinuerlig svøm, sigtning hver 8.-10. tag",
-                      "duration": 600
-                    },
-                    {
-                      "text": "Let ud-svøm + exit-rutine",
-                      "duration": 600
-                    }
-                  ]
-                }
-              },
-              "note": "OW-svøm 30 min — race-tilvænning",
-              "id": "3f31e288"
-            },
-            {
-              "workout": {
-                "name": "Løb Z2 50 min",
+                "name": "Médoc-simulation 19 km (run/walk 10/2)",
                 "type": "Run",
-                "moving_time": 3000,
-                "description": "- Varm-op 10m >5:39/km Pace\n- Base 35m 5:00-5:38/km Pace\n- Cool-down 5m >5:39/km Pace",
+                "moving_time": 7920,
+                "description": "- Racetempo 6:30-6:45/km hele vejen — IKKE Z2\n- 11x: 10 min løb + 2 min gang, gangpause fra første cyklus\n- Øv genstart efter gangpausen — det er passets pointe\n- Ca. 19 km / 132 min",
                 "workout_doc": {
                   "steps": [
                     {
-                      "text": "Varm-op >5:39/km",
+                      "text": "Start direkte i racetempo 6:30-6:45/km",
                       "pace": {
                         "start": 65,
-                        "end": 78,
+                        "end": 68,
                         "units": "%pace"
                       },
                       "duration": 600
                     },
                     {
-                      "text": "Base 5:00-5:38/km",
+                      "text": "Gang 2 min — drik som ved et depot",
                       "pace": {
-                        "start": 78,
-                        "end": 88,
+                        "start": 44,
+                        "end": 52,
                         "units": "%pace"
                       },
-                      "duration": 2100
+                      "duration": 120
                     },
                     {
-                      "text": "Cool-down >5:39/km",
+                      "text": "Løb 10 min 6:30-6:45/km",
                       "pace": {
                         "start": 65,
-                        "end": 78,
+                        "end": 68,
                         "units": "%pace"
                       },
-                      "duration": 300
+                      "duration": 600
+                    },
+                    {
+                      "text": "Gang 2 min — drik som ved et depot",
+                      "pace": {
+                        "start": 44,
+                        "end": 52,
+                        "units": "%pace"
+                      },
+                      "duration": 120
+                    },
+                    {
+                      "text": "Løb 10 min 6:30-6:45/km",
+                      "pace": {
+                        "start": 65,
+                        "end": 68,
+                        "units": "%pace"
+                      },
+                      "duration": 600
+                    },
+                    {
+                      "text": "Gang 2 min — drik som ved et depot",
+                      "pace": {
+                        "start": 44,
+                        "end": 52,
+                        "units": "%pace"
+                      },
+                      "duration": 120
+                    },
+                    {
+                      "text": "Løb 10 min 6:30-6:45/km",
+                      "pace": {
+                        "start": 65,
+                        "end": 68,
+                        "units": "%pace"
+                      },
+                      "duration": 600
+                    },
+                    {
+                      "text": "Gang 2 min — drik som ved et depot",
+                      "pace": {
+                        "start": 44,
+                        "end": 52,
+                        "units": "%pace"
+                      },
+                      "duration": 120
+                    },
+                    {
+                      "text": "Løb 10 min 6:30-6:45/km",
+                      "pace": {
+                        "start": 65,
+                        "end": 68,
+                        "units": "%pace"
+                      },
+                      "duration": 600
+                    },
+                    {
+                      "text": "Gang 2 min — drik som ved et depot",
+                      "pace": {
+                        "start": 44,
+                        "end": 52,
+                        "units": "%pace"
+                      },
+                      "duration": 120
+                    },
+                    {
+                      "text": "Løb 10 min 6:30-6:45/km",
+                      "pace": {
+                        "start": 65,
+                        "end": 68,
+                        "units": "%pace"
+                      },
+                      "duration": 600
+                    },
+                    {
+                      "text": "Gang 2 min — drik som ved et depot",
+                      "pace": {
+                        "start": 44,
+                        "end": 52,
+                        "units": "%pace"
+                      },
+                      "duration": 120
+                    },
+                    {
+                      "text": "Løb 10 min 6:30-6:45/km",
+                      "pace": {
+                        "start": 65,
+                        "end": 68,
+                        "units": "%pace"
+                      },
+                      "duration": 600
+                    },
+                    {
+                      "text": "Gang 2 min — drik som ved et depot",
+                      "pace": {
+                        "start": 44,
+                        "end": 52,
+                        "units": "%pace"
+                      },
+                      "duration": 120
+                    },
+                    {
+                      "text": "Løb 10 min 6:30-6:45/km",
+                      "pace": {
+                        "start": 65,
+                        "end": 68,
+                        "units": "%pace"
+                      },
+                      "duration": 600
+                    },
+                    {
+                      "text": "Gang 2 min — drik som ved et depot",
+                      "pace": {
+                        "start": 44,
+                        "end": 52,
+                        "units": "%pace"
+                      },
+                      "duration": 120
+                    },
+                    {
+                      "text": "Løb 10 min 6:30-6:45/km",
+                      "pace": {
+                        "start": 65,
+                        "end": 68,
+                        "units": "%pace"
+                      },
+                      "duration": 600
+                    },
+                    {
+                      "text": "Gang 2 min — drik som ved et depot",
+                      "pace": {
+                        "start": 44,
+                        "end": 52,
+                        "units": "%pace"
+                      },
+                      "duration": 120
+                    },
+                    {
+                      "text": "Løb 10 min 6:30-6:45/km",
+                      "pace": {
+                        "start": 65,
+                        "end": 68,
+                        "units": "%pace"
+                      },
+                      "duration": 600
+                    },
+                    {
+                      "text": "Gang 2 min — drik som ved et depot",
+                      "pace": {
+                        "start": 44,
+                        "end": 52,
+                        "units": "%pace"
+                      },
+                      "duration": 120
+                    },
+                    {
+                      "text": "Løb 10 min 6:30-6:45/km",
+                      "pace": {
+                        "start": 65,
+                        "end": 68,
+                        "units": "%pace"
+                      },
+                      "duration": 600
+                    },
+                    {
+                      "text": "Gang 2 min — afslut",
+                      "pace": {
+                        "start": 44,
+                        "end": 52,
+                        "units": "%pace"
+                      },
+                      "duration": 120
                     }
                   ]
                 }
               },
-              "note": "Løb Z2 50 min efter OW-tilvænning",
-              "id": "8dc150fb"
+              "note": "Médoc-simulation 19 km — Evas tempo, run/walk 10/2. Ikke Z2.",
+              "id": "3f31e288"
             }
           ]
         },
@@ -4497,43 +4642,28 @@
           "entries": [
             {
               "workout": {
-                "name": "Mellemlang løb Z2 19 km (100 min)",
-                "type": "Run",
-                "moving_time": 6000,
-                "description": "- Varm-op 10m >5:39/km Pace\n- Base 19 km 85m 5:00-5:38/km Pace\n- Cool-down 5m >5:39/km Pace",
+                "name": "Svøm 2.000 m i træk",
+                "type": "Swim",
+                "moving_time": 2880,
+                "description": "- 200m varm-op Z1 5m freeride\n- 2000m kontinuerligt, jævnt tempo Z2 38m freeride\n- 200m let cool Z1 5m freeride",
                 "workout_doc": {
                   "steps": [
                     {
-                      "text": "Varm-op >5:39/km",
-                      "pace": {
-                        "start": 65,
-                        "end": 78,
-                        "units": "%pace"
-                      },
-                      "duration": 600
+                      "text": "200m varm-op Z1",
+                      "duration": 300
                     },
                     {
-                      "text": "Base 19 km 5:00-5:38/km",
-                      "pace": {
-                        "start": 78,
-                        "end": 88,
-                        "units": "%pace"
-                      },
-                      "duration": 5100
+                      "text": "2000m kontinuerligt — jævnt tempo, ingen pauser",
+                      "duration": 2280
                     },
                     {
-                      "text": "Cool-down >5:39/km",
-                      "pace": {
-                        "start": 65,
-                        "end": 78,
-                        "units": "%pace"
-                      },
+                      "text": "200m let cool Z1",
                       "duration": 300
                     }
                   ]
                 }
               },
-              "note": "Mellemlang 19 km — marathon-vedligehold, 10 dage til Médoc",
+              "note": "Kildeskovshallen — 2.000 m i træk, roligt. Distancen er pointen, ikke tempoet.",
               "id": "47199eb5"
             }
           ]
@@ -4553,34 +4683,28 @@
           "entries": [
             {
               "workout": {
-                "name": "Svøm let 20 min recovery",
-                "type": "Swim",
+                "name": "OW-svøm let 20 min (Gentofte)",
+                "type": "OpenWaterSwim",
                 "moving_time": 1200,
-                "description": "- 300m varm-op Z1 8m freeride\n\n4x\n- 100m teknik Z1-Z2 2m freeride\n\n- 300m cool 6m freeride",
+                "description": "- Våddragt på, tilvænning til vandet 5m freeride\n- Roligt med sigtning hver 8.-10. tag 10m freeride\n- Let ud-svøm + exit-rutine 5m freeride",
                 "workout_doc": {
                   "steps": [
                     {
-                      "text": "300m varm-op Z1",
-                      "duration": 480
+                      "text": "Våddragt på, tilvænning til vandet",
+                      "duration": 300
                     },
                     {
-                      "reps": 4,
-                      "text": "4x",
-                      "steps": [
-                        {
-                          "text": "100m teknik Z1-Z2",
-                          "duration": 120
-                        }
-                      ]
+                      "text": "Roligt med sigtning hver 8.-10. tag",
+                      "duration": 600
                     },
                     {
-                      "text": "300m cool",
-                      "duration": 360
+                      "text": "Let ud-svøm + exit-rutine",
+                      "duration": 300
                     }
                   ]
                 }
               },
-              "note": "Svøm 20 min aktivering — dagen før race",
+              "note": "Gentofte, ikke hallen — våddragt og sigtning dagen før Christiansborg.",
               "id": "ed67d0c9"
             }
           ]
@@ -4674,10 +4798,10 @@
           "entries": [
             {
               "workout": {
-                "name": "Løb Z2 40 min + 6×1 min race-pace",
+                "name": "Løb Z2 40 min let",
                 "type": "Run",
                 "moving_time": 2400,
-                "description": "- Varm-op 10m >5:39/km Pace\n- Base 13m 5:00-5:38/km Pace\n\n6x\n- Race-pace 1 min 1m 5:00-5:38/km Pace\n- Jog 1m >5:39/km Pace\n\n- Cool-down 5m >5:39/km Pace",
+                "description": "- Varm-op 10m >5:39/km Pace\n- Base 25m 5:00-5:38/km Pace\n- Cool-down 5m >5:39/km Pace",
                 "workout_doc": {
                   "steps": [
                     {
@@ -4696,31 +4820,7 @@
                         "end": 88,
                         "units": "%pace"
                       },
-                      "duration": 780
-                    },
-                    {
-                      "reps": 6,
-                      "text": "6x",
-                      "steps": [
-                        {
-                          "text": "Race-pace 1 min 5:00-5:38/km",
-                          "pace": {
-                            "start": 78,
-                            "end": 88,
-                            "units": "%pace"
-                          },
-                          "duration": 60
-                        },
-                        {
-                          "text": "Jog >5:39/km",
-                          "duration": 60,
-                          "pace": {
-                            "start": 65,
-                            "end": 78,
-                            "units": "%pace"
-                          }
-                        }
-                      ]
+                      "duration": 1500
                     },
                     {
                       "text": "Cool-down >5:39/km",
@@ -4734,7 +4834,7 @@
                   ]
                 }
               },
-              "note": "Let løb + 6×1 min race-pace — vækker benene",
+              "note": "Let løb. Race-pace-reps udgår — Médoc løbes i Evas tempo.",
               "id": "4817641d"
             }
           ]
