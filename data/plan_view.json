@@ -1,85 +1,80 @@
 {
- "generated": "2026-08-22T11:20:25Z",
+ "generated": "2026-08-23T01:20:55Z",
  "kennet": {
   "seed": {
-   "date": "2026-08-22",
-   "ctl": 52.4,
-   "atl": 49.7
+   "date": "2026-08-23",
+   "ctl": 52.3,
+   "atl": 49.2
   },
   "projection": [
    {
-    "d": "2026-08-23",
-    "ctl": 52.2,
-    "tsb": 3.5
-   },
-   {
     "d": "2026-08-24",
-    "ctl": 50.9,
-    "tsb": 9.2
+    "ctl": 51.1,
+    "tsb": 8.9
    },
    {
     "d": "2026-08-25",
-    "ctl": 50.8,
-    "tsb": 8.6
+    "ctl": 50.9,
+    "tsb": 8.3
    },
    {
     "d": "2026-08-26",
-    "ctl": 50.7,
-    "tsb": 8.0
+    "ctl": 50.8,
+    "tsb": 7.8
    },
    {
     "d": "2026-08-27",
-    "ctl": 49.4,
-    "tsb": 12.9
+    "ctl": 49.6,
+    "tsb": 12.8
    },
    {
     "d": "2026-08-28",
-    "ctl": 49.3,
-    "tsb": 11.6
+    "ctl": 49.5,
+    "tsb": 11.5
    },
    {
     "d": "2026-08-29",
-    "ctl": 48.2,
-    "tsb": 15.8
+    "ctl": 48.3,
+    "tsb": 15.7
    },
    {
     "d": "2026-08-30",
-    "ctl": 48.1,
+    "ctl": 48.2,
     "tsb": 13.9
    },
    {
     "d": "2026-08-31",
-    "ctl": 47.7,
+    "ctl": 47.8,
     "tsb": 14.1
    },
    {
     "d": "2026-09-01",
-    "ctl": 47.2,
+    "ctl": 47.3,
     "tsb": 14.2
    },
    {
     "d": "2026-09-02",
-    "ctl": 46.1,
+    "ctl": 46.2,
     "tsb": 17.8
    },
    {
     "d": "2026-09-03",
-    "ctl": 45.7,
+    "ctl": 45.8,
     "tsb": 17.2
    },
    {
     "d": "2026-09-04",
-    "ctl": 45.4,
+    "ctl": 45.5,
     "tsb": 16.6
    },
    {
     "d": "2026-09-05",
-    "ctl": 44.3,
+    "ctl": 44.4,
     "tsb": 19.6
    },
    {
     "d": "2026-09-06",
-    "ctl": 43.2,
+    "ctl": 43.3,
     "tsb": 22.1
    }
   ],
@@ -176,9 +171,16 @@
    },
    {
     "week": 12,
-    "projEndCtl": 52.2,
-    "deviation": 1.2,
+    "projEndCtl": null,
+    "deviation": null,
     "flags": [
+     {
+      "week": 12,
+      "rule": "low_readiness",
+      "level": "WARN",
+      "msg": "Lav readiness i dag (HRV/søvn) — overvej at reducere dagens/ugens belastning",
+      "historic": false
+     },
      {
       "week": 12,
       "rule": "vo2_missing",
@@ -190,14 +192,14 @@
    },
    {
     "week": 13,
-    "projEndCtl": 48.1,
-    "deviation": 1.1,
+    "projEndCtl": 48.2,
+    "deviation": 1.2,
     "flags": []
    },
    {
     "week": 14,
-    "projEndCtl": 43.2,
-    "deviation": 0.2,
+    "projEndCtl": 43.3,
+    "deviation": 0.3,
     "flags": []
    }
   ],
@@ -225,6 +227,13 @@
    },
    {
     "week": 12,
+    "rule": "low_readiness",
+    "level": "WARN",
+    "msg": "Lav readiness i dag (HRV/søvn) — overvej at reducere dagens/ugens belastning",
+    "historic": false
+   },
+   {
+    "week": 12,
     "rule": "vo2_missing",
     "level": "WARN",
     "msg": "Ingen VO2-stimulus i build-uge 12",
@@ -239,7 +248,7 @@
    "suggestion": null,
    "phase_guard": null
   },
-  "readiness": "NORMAL"
+  "readiness": "LOW"
  },
- "inputsHash": "654f9b315f182e8f"
+ "inputsHash": "e639bebc4c94bc68"
 }
