@@ -1,105 +1,27 @@
-LOEB-daekning gap                       35/35
-LOEB-daekning pace                      35/35
-LOEB-daekning average_speed             35/35
-LOEB-daekning average_heartrate         35/35
-LOEB-daekning total_elevation_gain      35/35
-LOEB-daekning threshold_pace            26/35
-LOEB-daekning icu_intensity             35/35
-LOEB-daekning trainer                    1/35
-LOEB-daekning race                      35/35
-LOEB-daekning commute                   35/35
+  EF: løb 15 pkt (trend 1.352), cykel 5 pkt (trend 1.504)
 
-=== ALLE LOEB (35) — dato|min|km|hm|hm/km|avgspd|gap|HR|IF|navn
-  2026-04-26     98  21.27    146    6.9   3.617 3.6255186   167   99 | Lyngby Tårbæk Løb
-  2026-05-03     31   5.18     29    5.6   2.796 2.7987814   133   64 | Gentofte Løb
-  2026-05-10     47   8.22     35    4.3   2.882 2.8748221   120   50 | Gentofte Løb
-  2026-05-20     27   4.72    119   25.2    2.91 3.1358662   136   68 | Fornalutx Løb
-  2026-05-24     60   9.82    287   29.2   2.725 3.02915   141   73 | Fornalutx Løb terræn
-  2026-05-27     37   6.12    145   23.7   2.745 2.976302   146   77 | Fornalutx Løb
-  2026-05-30    112  21.70    171    7.9   3.218 3.2395995   155   85 | Gentofte Løb
-  2026-06-02     37   6.96     46    6.6    3.08 3.116739   145   77 | Malmo Løb
-  2026-06-03     36   6.83     50    7.3   3.167 3.1852138   135   69 | Malmo Løb
-  2026-06-06    109  21.70    163    7.5   3.308 3.3265603   148   86 | Gentofte Løb
-  2026-06-09     45   8.68     86    9.9    3.18 3.263669   143   84 | Morning Virtuelt løb
-  2026-06-10     45   8.42     22    2.7   3.138 3.1237283   139   81 | Gentofte - Løb Z2 45 min
-  2026-06-15     89  13.52    318   23.5   2.527 2.7408135   138   70 | Sóller - Lang løb Z2 90 min
-  2026-06-20     63  11.72     41    3.5   3.076 3.0661864   135   80 | Gentofte - Lang løb Z2 60 min
-  2026-06-23     47   8.22     37    4.5   2.904 2.8992984   125   74 | Gentofte - Løb Z2 45 min
-  2026-06-27     85  16.62    131    7.9   3.262 3.2855165   150   85 | Gentofte - Lang løb Z2 90 min
-  2026-06-30     62  12.36     30    2.4   3.307 3.2914083   156   86 | Gentofte - Løb Z2 65 min
-  2026-07-02     49   9.90     34    3.4   3.357 3.3495686   145   87 | Gentofte - Løb VO2 5×3 min Z4
-  2026-07-04    121  23.36    191    8.2   3.228 3.2571158   148   85 | Gentofte - Lang løb Z2 115 min
-  2026-07-10     75  14.98     75    5.0   3.314 3.310949   150   85 | Swansea - Trail langtur Z2 Wales 75 mi
-  2026-07-14     51  10.09     27    2.7   3.306 3.2860796   132   85 | Gentofte - Løb VO2 5×3 min Z4
-  2026-07-19     30   4.72    120   25.4    2.62 2.8214297   130   73 | Fornalutx - Løb Z1-Z2 30 min let
-  2026-07-22     98  16.68    320   19.2   2.821 2.977272   141   77 | Fornalutx - Løb 16 km Z1–Z2 til fyret
-  2026-07-25    109  21.40    161    7.5    3.28 3.2962456   146   85 | Gentofte - Langløb 21 km Z2
-  2026-07-27     42   7.73     29    3.8   3.041 3.0343251   135   79 | Gentofte - Løb Z1 30 min let
-  2026-07-30     82  16.59    119    7.2   3.382 3.3920527   146   88 | Gentofte - THRESHOLD-TEST løb 20 min +
-  2026-08-02     39   8.11     22    2.7   3.436 3.4208791   153   90 | Gentofte Løb
-  2026-08-04     27   4.83     26    5.4   2.968 2.967409   131   79 | Gentofte - Løb Z1 30 min let
-  2026-08-06     55  11.04     25    2.3   3.359 3.3392246   146   88 | Gentofte - Løb VO2 4×5 min Z4-Z5
-  2026-08-08    147  28.23    229    8.1   3.187 3.209637   146   84 | Gentofte - Lang løb Z2 29 km (155 min)
-  2026-08-10     96  16.90    322   19.0   2.945 3.1006172   144   81 | Fornalutx - Løb Puerto de Sóller – Far
-  2026-08-14     43   7.32    142   19.3   2.859 3.0010202   136   79 | Fornalutx - Løb Z2 40 min let
-  2026-08-18    131  25.76    211    8.2   3.269 3.286961   145   87 | Gentofte - Lang løb Z2 26 km (140 min)
-  2026-08-20     24   4.60     25    5.5   3.244 3.2377553   140   85 | Gentofte - Shakeout løb + strides
-  2026-08-23     48   6.96    366   52.7   2.372 3.0393076   134   79 | Bergen Løb
+=== RUN — 15 punkter
+  2026-03-01  EF=1.348   114 min  HR=137  Halsnæs Løb
+  2026-03-12  EF=1.475    50 min  HR=135  Gentofte Løb
+  2026-03-17  EF=1.402    41 min  HR=142  Gentofte Løb
+  2026-05-10  EF=1.437    47 min  HR=120  Gentofte Løb
+  2026-06-02  EF=1.290    37 min  HR=145  Malmo Løb
+  2026-06-03  EF=1.416    36 min  HR=135  Malmo Løb
+  2026-06-09  EF=1.369    45 min  HR=143  Morning Virtuelt løb
+  2026-06-10  EF=1.348    45 min  HR=139  Gentofte - Løb Z2 45 min
+  2026-06-23  EF=1.392    47 min  HR=125  Gentofte - Løb Z2 45 min
+  2026-07-04  EF=1.320   121 min  HR=148  Gentofte - Lang løb Z2 115 min
+  2026-07-10  EF=1.324    75 min  HR=150  Swansea - Trail langtur Z2 Wales 75 min
+  2026-07-25  EF=1.355   109 min  HR=146  Gentofte - Langløb 21 km Z2
+  2026-07-27  EF=1.349    42 min  HR=135  Gentofte - Løb Z1 30 min let
+  2026-08-08  EF=1.319   147 min  HR=146  Gentofte - Lang løb Z2 29 km (155 min)
+  2026-08-18  EF=1.360   131 min  HR=145  Gentofte - Lang løb Z2 26 km (140 min)
+  TREND: {"current": 1.352, "previous": 1.348, "pct": 0.3, "n": 4, "n_prev": 7, "window": 42, "thin": false}
 
-=== ALLE CYKELPAS (56) — dato|min|IF|EF|dec|trainer|NP|HR|navn
-  2026-04-26     16   57       None    None  None  None   120 | Gentofte Cykling
-  2026-04-26     15   49       None    None  None  None   113 | Lyngby Tårbæk Cykling
-  2026-04-27     85   41  0.9133858    -3.5  None   116   127 | Fornalutx Cykling på vej
-  2026-04-28    289   42  0.9015151     2.9  None   119   132 | Fornalutx Cykling på vej
-  2026-04-30    231   52       1.16    -1.0  None   145   125 | Fornalutx Cykling på vej
-  2026-05-02    110   65  1.5166667   -10.5  None   182   120 | Gentofte Cykling på grusveje
-  2026-05-05     54   45       None    None  None  None   109 | Gentofte Cykling
-  2026-05-06     71   44       None    None  None  None   110 | Gentofte Cykling
-  2026-05-08     26   26       None    None  None  None    87 | Gentofte Cykling
-  2026-05-09    110   55  1.3963964     3.0  None   155   111 | Gentofte Cykling på grusveje
-  2026-05-12     22   51       None    None  None  None   117 | Gentofte Cykling
-  2026-05-18     73   54  1.0780141    -0.5  None   152   141 | Fornalutx Cykling på vej
-  2026-05-19    272   45 0.97692305    13.6  None   127   130 | Fornalutx Cykling på vej
-  2026-05-21    237   48  1.0229008     0.8  None   134   131 | Fornalutx Cykling på vej
-  2026-05-23    353   44 0.96850395    15.7  None   123   127 | Fornalutx Cykling på vej
-  2026-05-29     16   38       None    None  None  None   101 | Gentofte Cykling
-  2026-05-31     63   72  1.4962963     0.8  True   202   135 | Lunch Virtuel cykling
-  2026-06-05     54   45       None    None  None  None   100 | Gentofte Cykling
-  2026-06-07     30   69  1.5238096    -7.3  True   192   126 | Morning Virtuel cykling
-  2026-06-08     50   44       None    None  None  None    98 | Gentofte Cykling
-  2026-06-09     50   54       None    None  None  None   111 | Gentofte Cykling
-  2026-06-10     46   54       None    None  None  None   114 | Gentofte Cykling
-  2026-06-11     69   59  1.2222222    15.4  None   165   135 | Fornalutx - Cykel Z2 60 min Mallor
-  2026-06-12    225   50  1.1570247     8.0  None   140   121 | Fornalutx - Cykel bjerg-intervalle
-  2026-06-13    352   42 0.97540987    23.1  None   119   122 | Fornalutx Cykling på vej
-  2026-06-16    448   41   0.991453     8.4  None   116   117 | Fornalutx Cykling på vej
-  2026-06-18     95   40  1.0873786   -33.5  None   112   103 | Fornalutx Cykling på vej
-  2026-06-20     42   35       None    None  None  None    87 | Gentofte Cykling
-  2026-06-21    173   46   1.122807    12.8  None   128   114 | Gentofte Cykling på vej
-  2026-06-23     23   43       None    None  None  None    97 | Gentofte Cykling
-  2026-06-24     54   47       None    None  None  None   101 | Ballerup Cykling
-  2026-06-25     49   56       None    None  None  None   115 | Gentofte Cykling
-  2026-06-25     86   58      1.304    20.8  None   163   125 | Gentofte - Cykel Z2 45 min
-  2026-06-26     82   58  1.3471074   -26.6  None   163   121 | Gentofte Cykling på vej
-  2026-07-01    107   66  1.5081967     6.8  None   184   122 | Gentofte - Cykel Z2 75 min
-  2026-07-02     52   25       None    None  None  None    74 | Gentofte Cykling
-  2026-07-03     19   40       None    None  None  None    92 | Gentofte Cykling
-  2026-07-05    251   52  1.2372881    11.6  None   146   118 | Gentofte Cykling på vej
-  2026-07-07     70   65       None    None  None  None  None | Zwift Z2 70 min (manuel)
-  2026-07-14     24   41       None    None  None  None    96 | Gentofte Cykling
-  2026-07-15     12   38       None    None  None  None    86 | Gentofte Cykling
-  2026-07-15    102   54  1.2991453    -1.3  None   152   117 | Gentofte Cykling på vej
-  2026-07-16     74   51   1.028777     4.2  None   143   139 | Fornalutx Cykling på vej
-  2026-07-17    194   46  1.0573771     9.8  None   129   122 | Fornalutx Cykling på vej
-  2026-07-18    217   50  1.1102362    28.6  None   141   127 | Fornalutx Cykling på vej
-  2026-07-20    224   47        1.1   -16.7  None   132   120 | Fornalutx Cykling på vej
-  2026-07-23     12   42       None    None  None  None    91 | Gentofte Cykling
-  2026-07-24     44   46       None    None  None  None   103 | Gentofte Cykling
-  2026-07-26     63   66  1.5081967     0.7  True   184   122 | 45m Z2 
-  2026-07-28     73   82  1.7615385    12.1  True   229   130 | FTP test 20 min 
-  2026-07-30     12   38       None    None  None  None    94 | Gentofte Cykling
-  2026-08-03     91   72        1.6     1.7  True   200   125 | 3×15 min Z3 
-  2026-08-11    215   47  1.0737705    -7.4  None   131   122 | Fornalutx Cykling på vej
-  2026-08-15     83   45  1.0508474    -1.0  None   124   118 | Fornalutx Cykling på vej
-  2026-08-19     52   67        1.5    -1.5  True   186   124 | 35m Z2 
-  2026-08-22     47   67       1.48    -0.1  True   185   125 | 30m Z2 
+=== BIKE — 5 punkter
+  2026-05-31  EF=1.496    63 min  HR=135  Lunch Virtuel cykling
+  2026-07-26  EF=1.508    63 min  HR=122  45m Z2 
+  2026-08-03  EF=1.600    91 min  HR=125  3×15 min Z3 
+  2026-08-19  EF=1.500    52 min  HR=124  35m Z2 
+  2026-08-22  EF=1.480    47 min  HR=125  30m Z2 
+  TREND: {"current": 1.504, "previous": null, "pct": null, "n": 4, "n_prev": 0, "window": 42, "thin": false}
