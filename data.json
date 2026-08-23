@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-08-23 07:31",
+    "updated": "2026-08-23 07:50",
     "week": 12,
     "totalWeeks": 14,
     "blockType": "BUILD",
@@ -71,18 +71,18 @@
       "color": "#27AE60"
     },
     "afStreak": {
-      "value": "6",
+      "value": "7",
       "unit": "",
       "sub": "Dage i træk · mål 6/uge",
       "color": "#59182A"
     }
   },
   "af": {
-    "weekDone": 6,
+    "weekDone": 7,
     "target": 6,
-    "streak": 6
+    "streak": 7
   },
-  "coachSpeech": "Søndag — afslut uge 12 stærkt. {HL} Godt: Søvn på 7,8 timer er solid. 6/7 AF-dage — ugens mål er ramt. Fokus: Vægt på 72,6 kg (målt 22/8) — hold protein højt og undgå lette kulhydrater om aftenen. Alle sessioner i hus. Juster de små ting, og resten følger. 📊 Store billede: CTL 52,4 er 1.4 point FORAN ugeplanen (planmål uge 12: 51). Vægten har tabt 1.9 kg over de seneste 86 dage (74,5 → 72,6 kg).  \"AF-dage er ikke et offer — de er en investering i morgendagens energi.\"",
+  "coachSpeech": "Søndag — afslut uge 12 stærkt. {HL} Godt: Søvn på 7,8 timer er solid. 7/7 AF-dage — ugens mål er ramt. Fokus: Vægt på 72,6 kg (målt 22/8) — hold protein højt og undgå lette kulhydrater om aftenen. Alle sessioner i hus. Juster de små ting, og resten følger. 📊 Store billede: CTL 52,4 er 1.4 point FORAN ugeplanen (planmål uge 12: 51). Vægten har tabt 1.9 kg over de seneste 86 dage (74,5 → 72,6 kg).  \"AF-dage er ikke et offer — de er en investering i morgendagens energi.\"",
   "coachHighlight": "107 procent af ugens TSS er i hus",
   "weekFocus": "Svøm skarpt, bevar benet frisk — nedtrapningen begynder nu",
   "today": [
@@ -1986,7 +1986,8 @@
     "2026-08-19": 0,
     "2026-08-20": 0,
     "2026-08-21": 0,
-    "2026-08-22": 0
+    "2026-08-22": 0,
+    "2026-08-23": 0
   },
   "all_weeks": {
     "1": {
@@ -3113,7 +3114,7 @@
     },
     {
       "week": 12,
-      "done": 6,
+      "done": 7,
       "total": 7,
       "label": "Uge 12"
     }
@@ -3447,8 +3448,8 @@
     },
     null
   ],
-  "coachAssessmentHtml": "<p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\"><strong>Dag 84 af 98 · Søndag · Uge 12</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">💪 <strong>Træning & load</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Stærk uge. CTL er 52,4 med TSB på 2,4 — du er fresh og har load nok i kroppen. Løbet i dag på 7,0 km · 48 min · 52 TSS landede kun 21% af tiden i pace-Z2, og 76,9% lå under — næste gang du kører Z2-løb, skal tempoet skrues op, ikke ned. Tirsagens lange løb viste det modsatte mønster: 42% af tiden lå i en hurtigere zone end target, og HR-Z1 på 30,9% afslører at tempoet var for højt — til næste lange løb skal du holde farten nede, selvom det føles for roligt.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">⚖️ <strong>Krop & kost</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Vægten var 72,6 kg ved seneste vejning 22/8 — 4,6 kg fra målet. Fedtprocenten var 21,8% samme dag, 5,8 procentpoint fra målet på under 16%. 7-dages snittet på fedtprocent er gået ned 0,4 point over de seneste 10 dage — det er den reelle retning, og den peger rigtigt. Vægt og fedt falder sammen, så der er ikke noget advarselstegn på muskeltab.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">🎯 <strong>AF-status & fokus for resten af ugen</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Du har 6 AF-dage ud af 7 dage gået i ugen — målet er nået. Fokus nu er at komme til start ved Christiansborg Rundt og Marathon Médoc med friske ben og et tonet nervesystem — nedtrapningen begynder, og det er vigtigt at du lader kroppen komme ned.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">📊 <strong>Store billede</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">CTL på 52,4 er 1,4 point foran ugeplanen (planmål uge 12: 51) — du er foran skema uden at have overbelastet dig. Vægten er faldet 1,9 kg over de seneste 86 dage fra 74,5 til 72,6 kg — en stabil og realistisk retning i et capacity-år.</p>",
-  "coachAssessmentTs": "05:31",
+  "coachAssessmentHtml": "<p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\"><strong>Dag 84 af 98 · Søndag · Uge 12</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">💪 <strong>Træning & load</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">En stærk uge afsluttet. CTL er 52,4 med TSB på 2,4 — du er lettet og frisk ind i nedtrapningsperioden, præcis som planen kræver. Zone-compliancen på løbene giver et par noter: tirsdagens lange løb og søndagens Z2-løb lå begge under 55%-målet i pace-zone — tirsdag fordi tempoet var for højt (HR nåede ikke at følge med), søndag fordi tempoet var for lavt. Næste gang du løber en Z2-tur, sigt bevidst mod den midterste del af zonen — hverken for ambitiøst eller for konservativt. Cyklerne og fredagens race-simulation i åbent vand lå solidt på target.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">⚖️ <strong>Krop & kost</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Ved seneste vejning 22/8 var vægten 72,6 kg og fedtprocenten 21,8 % — 7-dages snittet er henholdsvis 73,0 kg og 21,4 %. Det er snittet der tæller som retningsindikator, og fedtprocent-snittet er faldet 0,4 procentpoint over de seneste 10 dage — det er den rigtige bevægelse. Afstanden til målet er stadig betydelig: 4,6 kg ned til under 68 kg og 5,8 procentpoint ned til under 16 % fedtprocent. Hold proteinet højt og kalorieoverskuddet ude — det er kombinationen af faldende fedtprocent og faldende vægt der er sejren, ikke vægttabet alene.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">🎯 <strong>AF-status & fokus for resten af ugen</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Du er 7/7 AF-dage ind i ugen — målet er 6 pr. uge, og du leverer. Der er ingen planlagte pas tilbage i dag, så ugens træningsmæssige arbejde er gjort. Fokus nu er simpelt: sov godt, spis ordentligt, og kom frisk ind i uge 13 hvor nedtrapningen for alvor begynder med Christiansborg Rundt og Marathon Médoc for øje.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">📊 <strong>Store billede</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">CTL på 52,4 er 1,4 point foran ugeplanen (planmål uge 12: 51) — det er en lille buffer, men pas på ikke at friste skæbnen i de to resterende uger; nedtrapning er nu vigtigere end at bygge yderligere. Vægten er gået fra 74,5 kg til 72,6 kg over de seneste 86 dage — 1,9 kg i den rigtige retning. Retningen er korrekt på begge parametre; det er tempoet i vægttabet der skal holdes realistisk frem mod de to løb.</p>",
+  "coachAssessmentTs": "05:51",
   "commute_pairing_warnings": [],
   "warnings": [],
   "tsb": 2.4,
@@ -3745,10 +3746,10 @@
       "note": "Nøgle virker"
     }
   },
-  "credentialsCheckedTs": "2026-08-23T05:31:28.774599",
-  "coachAssessmentTsFull": "2026-08-23T05:31:07.337203",
+  "credentialsCheckedTs": "2026-08-23T05:51:19.035752",
+  "coachAssessmentTsFull": "2026-08-23T05:51:19.035732",
   "coachAssessmentWeightAtGen": 72.6,
-  "coachAssessmentAfAtGen": 6,
+  "coachAssessmentAfAtGen": 7,
   "event_structure_warnings": [],
   "coachAssessmentFatAtGen": 21.8,
   "zones": {
