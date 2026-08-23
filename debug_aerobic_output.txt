@@ -1,0 +1,91 @@
+=== 183 aktiviteter i vinduet 2026-04-25 -> 2026-08-23
+=== Typer: {'Run': 33, 'VirtualRide': 8, 'Swim': 8, 'WeightTraining': 24, 'OpenWaterSwim': 12, 'Walk': 31, 'Hike': 17, 'Ride': 46, 'VirtualRun': 1, 'TrailRun': 1, 'GravelRide': 2}
+
+=== CYKEL eksempel: id=i178482781 dato=2026-08-22 type=VirtualRide
+--- ALLE KEYS (183):
+['analysis_issues', 'analyzed', 'athlete_max_hr', 'attachments', 'average_altitude', 'average_cadence', 'average_clouds', 'average_feels_like', 'average_heartrate', 'average_impact_loading_rate', 'average_leg_spring_stiffness', 'average_speed', 'average_stance_time', 'average_stance_time_balance', 'average_stance_time_percent', 'average_step_length', 'average_stride', 'average_temp', 'average_vertical_oscillation', 'average_vertical_ratio', 'average_vertical_speed', 'average_weather_temp', 'average_wind_gust', 'average_wind_speed', 'avg_lr_balance', 'calories', 'carbs_ingested', 'carbs_used', 'coach_tick', 'coasting_time', 'commute', 'compliance', 'crank_length', 'created', 'custom_zones', 'decoupling', 'description', 'device_name', 'device_watts', 'distance', 'elapsed_time', 'external_id', 'feel', 'file_sport_index', 'file_type', 'gap', 'gap_model', 'gap_zone_times', 'gear', 'group', 'has_heartrate', 'has_segments', 'has_weather', 'headwind_percent', 'hr_load', 'hr_load_type', 'icu_achievements', 'icu_athlete_id', 'icu_atl', 'icu_average_watts', 'icu_cadence_z2', 'icu_chat_id', 'icu_color', 'icu_cooldown_time', 'icu_ctl', 'icu_distance', 'icu_efficiency_factor', 'icu_ftp', 'icu_hr_zone_times', 'icu_hr_zones', 'icu_hrr', 'icu_ignore_hr', 'icu_ignore_power', 'icu_ignore_time', 'icu_intensity', 'icu_intervals_edited', 'icu_joules', 'icu_joules_above_ftp', 'icu_lap_count', 'icu_max_wbal_depletion', 'icu_median_time_delta', 'icu_pm_cp', 'icu_pm_ftp', 'icu_pm_ftp_secs', 'icu_pm_ftp_watts', 'icu_pm_p_max', 'icu_pm_w_prime', 'icu_power_hr', 'icu_power_hr_z2', 'icu_power_hr_z2_mins', 'icu_power_spike_threshold', 'icu_power_zones', 'icu_recording_time', 'icu_resting_hr', 'icu_rolling_cp', 'icu_rolling_ftp', 'icu_rolling_ftp_delta', 'icu_rolling_p_max', 'icu_rolling_w_prime', 'icu_rpe', 'icu_sweet_spot_max', 'icu_sweet_spot_min', 'icu_sync_date', 'icu_sync_error', 'icu_training_load', 'icu_training_load_data', 'icu_variability_index', 'icu_w_prime', 'icu_warmup_time', 'icu_weight', 'icu_weighted_avg_watts', 'icu_zone_times', 'id', 'ignore_pace', 'ignore_parts', 'ignore_velocity', 'interval_summary', 'kg_lifted', 'lengths', 'lock_intervals', 'lthr', 'max_altitude', 'max_feels_like', 'max_heartrate', 'max_rain', 'max_snow', 'max_speed', 'max_temp', 'max_weather_temp', 'min_altitude', 'min_feels_like', 'min_temp', 'min_weather_temp', 'moving_time', 'name', 'oauth_client_id', 'oauth_client_name', 'p30s_exponent', 'p_max', 'pace', 'pace_load', 'pace_load_type', 'pace_zone_times', 'pace_zones', 'paired_event_id', 'perceived_exertion', 'polarization_index', 'pool_length', 'power_field', 'power_field_names', 'power_load', 'power_meter', 'power_meter_battery', 'power_meter_serial', 'prevailing_wind_deg', 'race', 'recording_stops', 'route_id', 'session_rpe', 'skyline_chart_bytes', 'source', 'ss_cp', 'ss_p_max', 'ss_w_prime', 'start_date', 'start_date_local', 'strain_score', 'strava_id', 'stream_types', 'sub_type', 'tags', 'tailwind_percent', 'threshold_pace', 'timezone', 'tiz_order', 'total_elevation_gain', 'total_elevation_loss', 'trainer', 'trimp', 'type', 'use_elevation_correction', 'use_gap_zone_times', 'workout_shift_secs']
+--- KANDIDATVAERDIER:
+    icu_efficiency_factor        = 1.48
+    efficiency_factor            = <FELT FINDES IKKE>
+    ef                           = <FELT FINDES IKKE>
+    decoupling                   = -0.13036297
+    icu_decoupling               = <FELT FINDES IKKE>
+    icu_power_hr                 = 1.448
+    power_hr                     = <FELT FINDES IKKE>
+    icu_weighted_avg_watts       = 185
+    icu_average_watts            = 181
+    average_watts                = <FELT FINDES IKKE>
+    average_heartrate            = 125
+    icu_average_hr               = <FELT FINDES IKKE>
+    average_speed                = 8.629
+    icu_intensity                = 66.54676
+    icu_ftp                      = 278
+    moving_time                  = 2835
+    distance                     = 24474.12
+    total_elevation_gain         = 205.0
+    trainer                      = True
+    icu_hr_zone_times            = [2836, 0, 0, 0, 0, 0, 0]
+
+=== LOEB eksempel: id=i178766827 dato=2026-08-23 type=Run
+--- ALLE KEYS (183):
+['analysis_issues', 'analyzed', 'athlete_max_hr', 'attachments', 'average_altitude', 'average_cadence', 'average_clouds', 'average_feels_like', 'average_heartrate', 'average_impact_loading_rate', 'average_leg_spring_stiffness', 'average_speed', 'average_stance_time', 'average_stance_time_balance', 'average_stance_time_percent', 'average_step_length', 'average_stride', 'average_temp', 'average_vertical_oscillation', 'average_vertical_ratio', 'average_vertical_speed', 'average_weather_temp', 'average_wind_gust', 'average_wind_speed', 'avg_lr_balance', 'calories', 'carbs_ingested', 'carbs_used', 'coach_tick', 'coasting_time', 'commute', 'compliance', 'crank_length', 'created', 'custom_zones', 'decoupling', 'description', 'device_name', 'device_watts', 'distance', 'elapsed_time', 'external_id', 'feel', 'file_sport_index', 'file_type', 'gap', 'gap_model', 'gap_zone_times', 'gear', 'group', 'has_heartrate', 'has_segments', 'has_weather', 'headwind_percent', 'hr_load', 'hr_load_type', 'icu_achievements', 'icu_athlete_id', 'icu_atl', 'icu_average_watts', 'icu_cadence_z2', 'icu_chat_id', 'icu_color', 'icu_cooldown_time', 'icu_ctl', 'icu_distance', 'icu_efficiency_factor', 'icu_ftp', 'icu_hr_zone_times', 'icu_hr_zones', 'icu_hrr', 'icu_ignore_hr', 'icu_ignore_power', 'icu_ignore_time', 'icu_intensity', 'icu_intervals_edited', 'icu_joules', 'icu_joules_above_ftp', 'icu_lap_count', 'icu_max_wbal_depletion', 'icu_median_time_delta', 'icu_pm_cp', 'icu_pm_ftp', 'icu_pm_ftp_secs', 'icu_pm_ftp_watts', 'icu_pm_p_max', 'icu_pm_w_prime', 'icu_power_hr', 'icu_power_hr_z2', 'icu_power_hr_z2_mins', 'icu_power_spike_threshold', 'icu_power_zones', 'icu_recording_time', 'icu_resting_hr', 'icu_rolling_cp', 'icu_rolling_ftp', 'icu_rolling_ftp_delta', 'icu_rolling_p_max', 'icu_rolling_w_prime', 'icu_rpe', 'icu_sweet_spot_max', 'icu_sweet_spot_min', 'icu_sync_date', 'icu_sync_error', 'icu_training_load', 'icu_training_load_data', 'icu_variability_index', 'icu_w_prime', 'icu_warmup_time', 'icu_weight', 'icu_weighted_avg_watts', 'icu_zone_times', 'id', 'ignore_pace', 'ignore_parts', 'ignore_velocity', 'interval_summary', 'kg_lifted', 'lengths', 'lock_intervals', 'lthr', 'max_altitude', 'max_feels_like', 'max_heartrate', 'max_rain', 'max_snow', 'max_speed', 'max_temp', 'max_weather_temp', 'min_altitude', 'min_feels_like', 'min_temp', 'min_weather_temp', 'moving_time', 'name', 'oauth_client_id', 'oauth_client_name', 'p30s_exponent', 'p_max', 'pace', 'pace_load', 'pace_load_type', 'pace_zone_times', 'pace_zones', 'paired_event_id', 'perceived_exertion', 'polarization_index', 'pool_length', 'power_field', 'power_field_names', 'power_load', 'power_meter', 'power_meter_battery', 'power_meter_serial', 'prevailing_wind_deg', 'race', 'recording_stops', 'route_id', 'session_rpe', 'skyline_chart_bytes', 'source', 'ss_cp', 'ss_p_max', 'ss_w_prime', 'start_date', 'start_date_local', 'strain_score', 'strava_id', 'stream_types', 'sub_type', 'tags', 'tailwind_percent', 'threshold_pace', 'timezone', 'tiz_order', 'total_elevation_gain', 'total_elevation_loss', 'trainer', 'trimp', 'type', 'use_elevation_correction', 'use_gap_zone_times', 'workout_shift_secs']
+--- KANDIDATVAERDIER:
+    icu_efficiency_factor        = None
+    efficiency_factor            = <FELT FINDES IKKE>
+    ef                           = <FELT FINDES IKKE>
+    decoupling                   = None
+    icu_decoupling               = <FELT FINDES IKKE>
+    icu_power_hr                 = None
+    power_hr                     = <FELT FINDES IKKE>
+    icu_weighted_avg_watts       = None
+    icu_average_watts            = None
+    average_watts                = <FELT FINDES IKKE>
+    average_heartrate            = 134
+    icu_average_hr               = <FELT FINDES IKKE>
+    average_speed                = 2.372
+    icu_intensity                = 79.48535
+    icu_ftp                      = None
+    moving_time                  = 2903
+    distance                     = 6957.21
+    total_elevation_gain         = 366.34964
+    trainer                      = None
+    icu_hr_zone_times            = [1769, 451, 647, 27, 0, 0, 0]
+
+=== DAEKNINGSGRAD (ikke-null ud af 183 pas):
+    icu_efficiency_factor          33/183
+    efficiency_factor               0/183
+    ef                              0/183
+    decoupling                     33/183
+    icu_decoupling                  0/183
+    icu_power_hr                   33/183
+    power_hr                        0/183
+    icu_weighted_avg_watts         33/183
+    icu_average_watts              33/183
+    average_watts                   0/183
+    average_heartrate             180/183
+    icu_average_hr                  0/183
+    average_speed                 158/183
+    icu_intensity                 182/183
+    icu_ftp                        56/183
+    moving_time                   183/183
+    distance                      158/183
+    total_elevation_gain          138/183
+    trainer                         8/183
+    icu_hr_zone_times             180/183
+
+=== Pas >=45 min med IF<0,80: 45
+    2026-08-23 Run          48 min  IF=79.48535  EF=None  dec=None
+    2026-08-22 VirtualRide  47 min  IF=66.54676  EF=1.48  dec=-0.13036297
+    2026-08-19 VirtualRide  52 min  IF=66.90647  EF=1.5  dec=-1.5323075
+    2026-08-15 Ride         83 min  IF=44.604317  EF=1.0508474  dec=-0.9706559
+    2026-08-11 Ride         215 min  IF=47.122303  EF=1.0737705  dec=-7.3823013
+    2026-08-03 VirtualRide  91 min  IF=71.942444  EF=1.6  dec=1.72132
+    2026-07-26 VirtualRide  63 min  IF=65.71429  EF=1.5081967  dec=0.65508884
+    2026-07-22 Run          98 min  IF=77.106415  EF=None  dec=None
+    2026-07-20 Ride         224 min  IF=47.142857  EF=1.1  dec=-16.703978
+    2026-07-18 Ride         217 min  IF=50.357143  EF=1.1102362  dec=28.638779
+    2026-07-17 Ride         194 min  IF=46.07143  EF=1.0573771  dec=9.818978
+    2026-07-16 Ride         74 min  IF=51.07143  EF=1.028777  dec=4.2418065
+    2026-07-15 Ride         102 min  IF=54.285713  EF=1.2991453  dec=-1.295945
+    2026-07-07 VirtualRide  70 min  IF=64.8074  EF=None  dec=None
+    2026-07-05 Ride         251 min  IF=52.142857  EF=1.2372881  dec=11.608684
