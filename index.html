@@ -493,6 +493,8 @@ let D = {
   tsbHistory: [],
   tsb: null,  // sættes fra data.json — null = ukendt (viser ingen advarsel)
   swimHistory: [],  // [{week, date, meters, cumulative}]
+  efHistory: { run: [], bike: [] },  // aerob effektivitet pr. kvalificeret pas
+  efTrend:   { run: null, bike: null },
   today:{ discipline:"swim", title:"Svøm 2000m + cykel", duration:"90 min", zone:"Z1-Z2", desc:"Aktiv restitution. Luk uge 1 af.", completed:false },
 };
 
@@ -1365,6 +1367,8 @@ function renderBody() {
     ${sparkline(D.sleepHistory, 'var(--bike)', 'SØVN', 't', null, null, true)}
   </div>
 
+  ${efCard()}
+
   <div class="card">
     <div class="label" style="margin-bottom:12px">AF-dage — uge ${D.week}</div>
     ${afStreakViz(D.afDays.weekDone, D.afDays.target, D.afDays.streak)}
@@ -1432,6 +1436,9 @@ function buildSparklineSVG(chartId, W) {
   const cfg = SPARKLINE_DATA[chartId];
   if (!cfg) return '';
   const { data, color, minV, maxV, smooth } = cfg;
+  // EF ligger i 1,29-1,48. Med fast 1 decimal ville aksen vise "1,3" og "1,5"
+  // og hele signalet forsvinde i afrundingen. Default 1 => uændret for alle andre.
+  const dec = cfg.decimals ?? 1;
   const safeData = (data||[]).filter(d => d !== null && d !== undefined);
   const vals  = safeData.map(d=>typeof d==='object'?d.v:d).filter(v=>v!==null&&v!==undefined&&!isNaN(v));
   const reals = safeData.map(d=>typeof d==='object' && 'real' in d ? !!d.real : true);
@@ -1521,8 +1528,8 @@ function buildSparklineSVG(chartId, W) {
       </linearGradient></defs>
       <line x1="${pad.l}" x2="${W-pad.r}" y1="${y(mx)}" y2="${y(mx)}" stroke="var(--cream-d)" stroke-width="1" stroke-dasharray="2,3"/>
       <line x1="${pad.l}" x2="${W-pad.r}" y1="${y(mn)}" y2="${y(mn)}" stroke="var(--cream-d)" stroke-width="1" stroke-dasharray="2,3"/>
-      ${Math.abs(y(mx)-y(0)) > 8 || !(mn<0 && mx>0) ? `<text x="${W-pad.r}" y="${y(mx)-3}" text-anchor="end" fill="var(--muted)" font-size="8" font-family="'Space Mono',monospace">${mx.toFixed(1)}</text>` : ''}
-      ${Math.abs(y(mn)-y(0)) > 8 || !(mn<0 && mx>0) ? `<text x="${W-pad.r}" y="${y(mn)+10}" text-anchor="end" fill="var(--muted)" font-size="8" font-family="'Space Mono',monospace">${mn.toFixed(1)}</text>` : ''}
+      ${Math.abs(y(mx)-y(0)) > 8 || !(mn<0 && mx>0) ? `<text x="${W-pad.r}" y="${y(mx)-3}" text-anchor="end" fill="var(--muted)" font-size="8" font-family="'Space Mono',monospace">${mx.toFixed(dec)}</text>` : ''}
+      ${Math.abs(y(mn)-y(0)) > 8 || !(mn<0 && mx>0) ? `<text x="${W-pad.r}" y="${y(mn)+10}" text-anchor="end" fill="var(--muted)" font-size="8" font-family="'Space Mono',monospace">${mn.toFixed(dec)}</text>` : ''}
       ${(mn < 0 && mx > 0) ? `<line x1="${pad.l}" x2="${W-pad.r}" y1="${y(0)}" y2="${y(0)}" stroke="var(--ink)" stroke-width="1" stroke-dasharray="1,2" opacity="0.5"/>
       <text x="${W-pad.r}" y="${y(0)-3}" text-anchor="end" fill="var(--ink)" font-size="8" font-weight="700" font-family="'Space Mono',monospace">0</text>` : ''}
       <path d="${areaPath}" fill="url(#${gid})"/>
@@ -1534,6 +1541,69 @@ function buildSparklineSVG(chartId, W) {
         : `<circle cx="${x(i)}" cy="${y(vals[i])}" r="3.5" fill="var(--cream)" stroke="${color}" stroke-width="1.5" stroke-dasharray="2,2"/>`})()}
       ${xLabels.map((l,i)=>`<text x="${x(i)}" y="${H-4}" text-anchor="middle" fill="${i===n-1?color:'var(--muted)'}" font-weight="${i===n-1?700:400}" font-size="8" font-family="'Space Mono',monospace">${l}</text>`).join("")}
     </svg>`;
+}
+
+// --- Aerob effektivitet (EF) -----------------------------------------------
+// Svarer på "bliver jeg hurtigere ved samme puls" — det CTL og VO2max ikke gør.
+// CTL måler kun mængden af arbejde; Garmins VO2max er ml/kg/min og stiger
+// mekanisk under et vægttab uden at der er sket noget aerobt.
+// Løb: gap*60/puls (stigningskorrigeret). Cykel: Intervals' NP/puls, kun
+// hometrainer — udendørs bjergture gav EF 1,07 mod 1,48 indendørs, og det er
+// coasting, ikke form.
+function efSeries(disc, label, color) {
+  const pts = ((D.efHistory||{})[disc]) || [];
+  const t   = (D.efTrend||{})[disc] || null;
+
+  if (pts.length < 2) {
+    return `<div style="display:flex;align-items:center;justify-content:space-between;padding:6px 4px 2px">
+      <span style="font-family:Space Mono,monospace;font-size:9px;letter-spacing:.08em;color:var(--muted)">${label}</span>
+      <span style="font-family:Space Mono,monospace;font-size:11px;color:var(--muted)">${pts.length ? 'Kun 1 kvalificeret pas' : 'Ingen kvalificerede pas endnu'}</span>
+    </div>`;
+  }
+
+  const chartId = `spk${++sparklineSeq}`;
+  SPARKLINE_DATA[chartId] = { data: pts, color, label, unit: '', minV: null, maxV: null, smooth: false, decimals: 2 };
+
+  const last = pts[pts.length-1].v;
+  let head;
+  if (t && t.current != null) {
+    const pct = t.pct;
+    const arrow = pct == null ? '' : (Math.abs(pct) < 1 ? ' →' : (pct > 0 ? ' ↑' : ' ↓'));
+    const pctTxt = pct == null
+      ? `<span style="font-size:9px;color:var(--muted)">intet sammenligningsvindue</span>`
+      : `<span style="font-size:10px;color:var(--muted)">${pct > 0 ? '+' : ''}${pct.toFixed(1)} % vs. forrige 42 d${arrow}</span>`;
+    head = `<span style="font-family:'Space Mono',monospace;font-size:13px;color:${color};font-weight:700">${t.current.toFixed(2)}</span> ${pctTxt}`;
+  } else {
+    head = `<span style="font-family:'Space Mono',monospace;font-size:12px;color:var(--muted)">${last.toFixed(2)} · for få pas til en trend</span>`;
+  }
+  const n = t ? t.n : 0;
+
+  return `<div style="position:relative">
+    <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:2px">
+      <span style="font-family:'Space Mono',monospace;font-size:9px;color:var(--muted);letter-spacing:.08em">${label}</span>
+      <span>${head}</span>
+    </div>
+    <div style="font-family:'Space Mono',monospace;font-size:9px;color:var(--muted);margin-bottom:4px">42-dages median · n=${n} pas</div>
+    ${buildSparklineSVG(chartId, 280)}
+  </div>`;
+}
+
+function efCard() {
+  const runPts  = ((D.efHistory||{}).run)  || [];
+  const bikePts = ((D.efHistory||{}).bike) || [];
+  return `<div class="card">
+    <div class="label" style="margin-bottom:4px">Aerob effektivitet</div>
+    <div style="font-size:11px;color:var(--muted);margin-bottom:12px;line-height:1.45">
+      Fart pr. hjerteslag på rolige pas. Stiger den, er formen bedre — uafhængigt af vægt.
+    </div>
+    ${efSeries('run', 'LØB — m/min pr. slag', 'var(--run)')}
+    <div style="height:16px"></div>
+    ${efSeries('bike', 'CYKEL — watt pr. slag (kun hometrainer)', 'var(--bike)')}
+    <div style="border-top:1px solid var(--cream-d);margin-top:14px;padding-top:10px;font-size:10px;color:var(--muted);line-height:1.5">
+      Kun pas over 35 min i Z1–Z2 tæller med; intervaller, løb og stejlt terræn er sorteret fra.
+      Lange pas ligger naturligt lavere end korte på grund af cardiac drift — se varigheden på hvert punkt før du læser et fald som formtab.
+    </div>
+  </div>`;
 }
 
 function sparkline(data, color, label, unit, minV, maxV, smooth) {
@@ -2033,6 +2103,8 @@ function applyRemote(remote) {
       if (remote.tsb !== undefined) D.tsb = remote.tsb;
       if (remote.warnings)       D.warnings = remote.warnings || [];
       if (remote.swimHistory)    D.swimHistory = remote.swimHistory || [];
+      if (remote.efHistory)      D.efHistory   = remote.efHistory;
+      if (remote.efTrend)        D.efTrend     = remote.efTrend;
       if (remote.train_mins)     D.train_mins     = remote.train_mins;
       if (remote.today) {
         // Håndter array (nyt format, flere sessioner pr. dag), flat, og nested format

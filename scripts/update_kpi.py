@@ -28,6 +28,7 @@ from modules.config   import (API_KEY, ATHLETE_ID, GH_TOKEN, ANTHROPIC_KEY,
                                NEXT_RACES,
                                api_get, ctl_plan_for_week, fix_enc, fmt, color_for)
 from modules.fitness  import get_fitness, get_wellness_7d, get_history, get_ctl_curve
+from modules.aerobic  import get_ef_history
 from modules.af       import (get_af_this_week, get_af_history, get_full_af_log,
                                get_af_streak, monday_this_week,
                                detect_alcohol_cluster)
@@ -467,6 +468,17 @@ def main():
         print(f"  CTL-kurve: {len(ctl_curve)} ugepunkter, seneste {ctl_curve[-1]}")
     if swim_history:
         data['swimHistory'] = swim_history
+
+    # --- Aerob effektivitet (EF): formsignal mellem tærskeltests ---
+    # Ikke-blokerende: fejler kaldet, beholdes den eksisterende serie frem for
+    # at nulstille grafen. Samme mønster som weekTssActual ovenfor.
+    try:
+        _ef = get_ef_history(days=180)
+        if _ef:
+            data['efHistory'] = _ef['history']
+            data['efTrend']   = _ef['trend']
+    except Exception as _e:
+        print(f"  EF fejlede (ikke-blokerende): {_e}")
 
     # --- all_weeks: forrige/denne/næste uge fra Intervals ---
     if planned_weeks:
