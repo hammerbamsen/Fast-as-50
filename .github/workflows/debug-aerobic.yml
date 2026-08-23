@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: read
+  contents: write
 
 jobs:
   debug:
@@ -19,4 +19,11 @@ jobs:
         env:
           INTERVALS_API_KEY: ${{ secrets.INTERVALS_API_KEY }}
           INTERVALS_ATHLETE_ID: i599466
-        run: python3 scripts/debug_aerobic_fields.py
+        run: python3 scripts/debug_aerobic_fields.py > debug_aerobic_output.txt 2>&1 || true
+      - name: Commit output
+        run: |
+          git config user.name "debug-bot"
+          git config user.email "debug@local"
+          git add -f debug_aerobic_output.txt
+          git commit -m "Debug output: aerobe felter" || echo "ingen ændring"
+          git push
