@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-08-23 18:25",
+    "updated": "2026-08-23 18:42",
     "week": 12,
     "totalWeeks": 14,
     "blockType": "BUILD",
@@ -3746,7 +3746,7 @@
       "note": "Nøgle virker"
     }
   },
-  "credentialsCheckedTs": "2026-08-23T16:25:36.316907",
+  "credentialsCheckedTs": "2026-08-23T16:42:33.203049",
   "coachAssessmentTsFull": "2026-08-23T12:39:36.889089",
   "coachAssessmentWeightAtGen": 72.6,
   "coachAssessmentAfAtGen": 7,
@@ -3864,5 +3864,211 @@
       "distance": "242km / 8848hm",
       "registered": false
     }
-  ]
+  ],
+  "efHistory": {
+    "run": [
+      {
+        "date": "2026-03-01",
+        "v": 1.348,
+        "real": true,
+        "mins": 114,
+        "hr": 137,
+        "name": "Halsnæs Løb",
+        "id": "i152936718"
+      },
+      {
+        "date": "2026-03-12",
+        "v": 1.475,
+        "real": true,
+        "mins": 50,
+        "hr": 135,
+        "name": "Gentofte Løb",
+        "id": "i152936679"
+      },
+      {
+        "date": "2026-03-17",
+        "v": 1.402,
+        "real": true,
+        "mins": 41,
+        "hr": 142,
+        "name": "Gentofte Løb",
+        "id": "i152937167"
+      },
+      {
+        "date": "2026-05-10",
+        "v": 1.437,
+        "real": true,
+        "mins": 47,
+        "hr": 120,
+        "name": "Gentofte Løb",
+        "id": "i152937600"
+      },
+      {
+        "date": "2026-06-02",
+        "v": 1.29,
+        "real": true,
+        "mins": 37,
+        "hr": 145,
+        "name": "Malmo Løb",
+        "id": "i153328501"
+      },
+      {
+        "date": "2026-06-03",
+        "v": 1.416,
+        "real": true,
+        "mins": 36,
+        "hr": 135,
+        "name": "Malmo Løb",
+        "id": "i153809084"
+      },
+      {
+        "date": "2026-06-09",
+        "v": 1.369,
+        "real": true,
+        "mins": 45,
+        "hr": 143,
+        "name": "Morning Virtuelt løb",
+        "id": "i156065731"
+      },
+      {
+        "date": "2026-06-10",
+        "v": 1.348,
+        "real": true,
+        "mins": 45,
+        "hr": 139,
+        "name": "Gentofte - Løb Z2 45 min",
+        "id": "i155955731"
+      },
+      {
+        "date": "2026-06-23",
+        "v": 1.392,
+        "real": true,
+        "mins": 47,
+        "hr": 125,
+        "name": "Gentofte - Løb Z2 45 min",
+        "id": "i159571031"
+      },
+      {
+        "date": "2026-07-04",
+        "v": 1.32,
+        "real": true,
+        "mins": 121,
+        "hr": 148,
+        "name": "Gentofte - Lang løb Z2 115 min",
+        "id": "i162557667"
+      },
+      {
+        "date": "2026-07-10",
+        "v": 1.324,
+        "real": true,
+        "mins": 75,
+        "hr": 150,
+        "name": "Swansea - Trail langtur Z2 Wales 75 min",
+        "id": "i164380891"
+      },
+      {
+        "date": "2026-07-25",
+        "v": 1.355,
+        "real": true,
+        "mins": 109,
+        "hr": 146,
+        "name": "Gentofte - Langløb 21 km Z2",
+        "id": "i169027265"
+      },
+      {
+        "date": "2026-07-27",
+        "v": 1.349,
+        "real": true,
+        "mins": 42,
+        "hr": 135,
+        "name": "Gentofte - Løb Z1 30 min let",
+        "id": "i169640378"
+      },
+      {
+        "date": "2026-08-08",
+        "v": 1.319,
+        "real": true,
+        "mins": 147,
+        "hr": 146,
+        "name": "Gentofte - Lang løb Z2 29 km (155 min)",
+        "id": "i173621146"
+      },
+      {
+        "date": "2026-08-18",
+        "v": 1.36,
+        "real": true,
+        "mins": 131,
+        "hr": 145,
+        "name": "Gentofte - Lang løb Z2 26 km (140 min)",
+        "id": "i177040193"
+      }
+    ],
+    "bike": [
+      {
+        "date": "2026-05-31",
+        "v": 1.496,
+        "real": true,
+        "mins": 63,
+        "hr": 135,
+        "name": "Lunch Virtuel cykling",
+        "id": "i153264353"
+      },
+      {
+        "date": "2026-07-26",
+        "v": 1.508,
+        "real": true,
+        "mins": 63,
+        "hr": 122,
+        "name": "45m Z2 ",
+        "id": "i169260209"
+      },
+      {
+        "date": "2026-08-03",
+        "v": 1.6,
+        "real": true,
+        "mins": 91,
+        "hr": 125,
+        "name": "3×15 min Z3 ",
+        "id": "i171926188"
+      },
+      {
+        "date": "2026-08-19",
+        "v": 1.5,
+        "real": true,
+        "mins": 52,
+        "hr": 124,
+        "name": "35m Z2 ",
+        "id": "i177416030"
+      },
+      {
+        "date": "2026-08-22",
+        "v": 1.48,
+        "real": true,
+        "mins": 47,
+        "hr": 125,
+        "name": "30m Z2 ",
+        "id": "i178482781"
+      }
+    ]
+  },
+  "efTrend": {
+    "run": {
+      "current": 1.352,
+      "previous": 1.348,
+      "pct": 0.3,
+      "n": 4,
+      "n_prev": 7,
+      "window": 42,
+      "thin": false
+    },
+    "bike": {
+      "current": 1.504,
+      "previous": null,
+      "pct": null,
+      "n": 4,
+      "n_prev": 0,
+      "window": 42,
+      "thin": false
+    }
+  }
 }
