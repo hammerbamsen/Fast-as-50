@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-08-23 06:36",
+    "updated": "2026-08-23 07:29",
     "week": 12,
     "totalWeeks": 14,
     "blockType": "BUILD",
@@ -55,7 +55,7 @@
     "tssComp": {
       "value": "315",
       "unit": "TSS",
-      "sub": "315 af 307 planlagt TSS",
+      "sub": "315 af 344 planlagt TSS",
       "color": "#27AE60"
     },
     "bikeKm": {
@@ -83,7 +83,7 @@
     "streak": 6
   },
   "coachSpeech": "Søndag — afslut uge 12 stærkt. {HL} Godt: Søvn på 7,8 timer er solid. 6/7 AF-dage — ugens mål er ramt. Fokus: Vægt på 72,6 kg (målt 22/8) — hold protein højt og undgå lette kulhydrater om aftenen. Keep moving forward. 📊 Store billede: CTL 52,3 er 1.3 point FORAN ugeplanen (planmål uge 12: 51). Vægten har tabt 1.9 kg over de seneste 86 dage (74,5 → 72,6 kg).  \"AF-dage er ikke et offer — de er en investering i morgendagens energi.\"",
-  "coachHighlight": "103 procent af ugens TSS er i hus",
+  "coachHighlight": "92 procent af ugens TSS er i hus",
   "weekFocus": "Svøm skarpt, bevar benet frisk — nedtrapningen begynder nu",
   "today": [
     {
@@ -101,11 +101,11 @@
       "disc": "strength",
       "label": "Styrke A Functional Strength 2 sæt",
       "done": true,
-      "planned_tss": null,
-      "planned_mins": 16,
+      "planned_tss": 27,
+      "planned_mins": 40,
       "planned_distance_m": null,
-      "completion": "done",
-      "completion_pct": 194,
+      "completion": "partial",
+      "completion_pct": 41,
       "actual_tss": 11,
       "actual_mins": 31,
       "actual_distance_m": null
@@ -132,8 +132,7 @@
       "completion_pct": 99,
       "actual_tss": 165,
       "actual_mins": 131,
-      "actual_distance_m": 25757.16,
-      "intervals_compliance": 128.9
+      "actual_distance_m": 25757.16
     },
     {
       "day": "Ons",
@@ -147,8 +146,7 @@
       "completion_pct": 103,
       "actual_tss": 39,
       "actual_mins": 52,
-      "actual_distance_m": 29106.92,
-      "intervals_compliance": 102.6
+      "actual_distance_m": 29106.92
     },
     {
       "day": "Ons",
@@ -165,30 +163,28 @@
       "disc": "run",
       "label": "Shakeout løb + strides",
       "done": true,
-      "planned_tss": 20,
+      "planned_tss": 17,
       "planned_mins": 19,
       "planned_distance_m": null,
       "completion": "done",
-      "completion_pct": 145,
+      "completion_pct": 171,
       "actual_tss": 29,
       "actual_mins": 24,
-      "actual_distance_m": 4603.84,
-      "intervals_compliance": 145.0
+      "actual_distance_m": 4603.84
     },
     {
       "day": "Fre",
-      "disc": "swim",
-      "label": "Pool-svøm Race-simulation 1500 m",
+      "disc": "openwater",
+      "label": "OW-svøm Race-simulation 2000 m",
       "done": true,
-      "planned_tss": 30,
-      "planned_mins": 40,
-      "planned_distance_m": 1500,
+      "planned_tss": 54,
+      "planned_mins": 65,
+      "planned_distance_m": 2000,
       "completion": "partial",
-      "completion_pct": 67,
+      "completion_pct": 37,
       "actual_tss": 20,
       "actual_mins": 40,
-      "actual_distance_m": 2000.0,
-      "intervals_compliance": 66.7
+      "actual_distance_m": 2000.0
     },
     {
       "day": "Lør",
@@ -202,8 +198,7 @@
       "completion_pct": 103,
       "actual_tss": 35,
       "actual_mins": 47,
-      "actual_distance_m": 24474.12,
-      "intervals_compliance": 102.9
+      "actual_distance_m": 24474.12
     },
     {
       "day": "Søn",
@@ -2831,11 +2826,11 @@
           "disc": "strength",
           "label": "Styrke A Functional Strength 2 sæt",
           "done": true,
-          "planned_tss": null,
-          "planned_mins": 16,
+          "planned_tss": 27,
+          "planned_mins": 40,
           "planned_distance_m": null,
-          "completion": "done",
-          "completion_pct": 194,
+          "completion": "partial",
+          "completion_pct": 41,
           "actual_tss": 11,
           "actual_mins": 31,
           "actual_distance_m": null
@@ -2862,8 +2857,7 @@
           "completion_pct": 99,
           "actual_tss": 165,
           "actual_mins": 131,
-          "actual_distance_m": 25757.16,
-          "intervals_compliance": 128.9
+          "actual_distance_m": 25757.16
         },
         {
           "day": "Ons",
@@ -2877,8 +2871,7 @@
           "completion_pct": 103,
           "actual_tss": 39,
           "actual_mins": 52,
-          "actual_distance_m": 29106.92,
-          "intervals_compliance": 102.6
+          "actual_distance_m": 29106.92
         },
         {
           "day": "Ons",
@@ -2895,30 +2888,28 @@
           "disc": "run",
           "label": "Shakeout løb + strides",
           "done": true,
-          "planned_tss": 20,
+          "planned_tss": 17,
           "planned_mins": 19,
           "planned_distance_m": null,
           "completion": "done",
-          "completion_pct": 145,
+          "completion_pct": 171,
           "actual_tss": 29,
           "actual_mins": 24,
-          "actual_distance_m": 4603.84,
-          "intervals_compliance": 145.0
+          "actual_distance_m": 4603.84
         },
         {
           "day": "Fre",
-          "disc": "swim",
-          "label": "Pool-svøm Race-simulation 1500 m",
+          "disc": "openwater",
+          "label": "OW-svøm Race-simulation 2000 m",
           "done": true,
-          "planned_tss": 30,
-          "planned_mins": 40,
-          "planned_distance_m": 1500,
+          "planned_tss": 54,
+          "planned_mins": 65,
+          "planned_distance_m": 2000,
           "completion": "partial",
-          "completion_pct": 67,
+          "completion_pct": 37,
           "actual_tss": 20,
           "actual_mins": 40,
-          "actual_distance_m": 2000.0,
-          "intervals_compliance": 66.7
+          "actual_distance_m": 2000.0
         },
         {
           "day": "Lør",
@@ -2932,8 +2923,7 @@
           "completion_pct": 103,
           "actual_tss": 35,
           "actual_mins": 47,
-          "actual_distance_m": 24474.12,
-          "intervals_compliance": 102.9
+          "actual_distance_m": 24474.12
         },
         {
           "day": "Søn",
@@ -3010,7 +3000,7 @@
         {
           "day": "Tir",
           "disc": "run",
-          "label": "Løb Z2 40 min + 6×1 min race-pace",
+          "label": "Løb Z2 40 min let",
           "done": false,
           "today": false,
           "planned_tss": 37,
@@ -3122,7 +3112,7 @@
     "run": 155.0,
     "strength": 51.0,
     "openwater": 32.0,
-    "planned": 360.0,
+    "planned": 409.0,
     "actual_total": 377.0
   },
   "fatHistory": [
@@ -3743,7 +3733,7 @@
       "note": "Nøgle virker"
     }
   },
-  "credentialsCheckedTs": "2026-08-23T04:36:50.939297",
+  "credentialsCheckedTs": "2026-08-23T05:29:27.863729",
   "coachAssessmentTsFull": "2026-08-23T01:20:51.731721",
   "coachAssessmentWeightAtGen": 72.6,
   "coachAssessmentAfAtGen": 6,
