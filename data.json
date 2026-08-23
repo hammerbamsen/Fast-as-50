@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-08-23 20:29",
+    "updated": "2026-08-23 20:59",
     "week": 12,
     "totalWeeks": 14,
     "blockType": "BUILD",
@@ -3734,7 +3734,7 @@
     47,
     43
   ],
-  "coachAssessmentError": null,
+  "coachAssessmentError": "trunkeret (stop_reason=max_tokens)",
   "coachAssessmentStale": false,
   "credentials": {
     "intervals": {
@@ -3742,11 +3742,11 @@
       "note": "Nøgle virker"
     },
     "anthropic": {
-      "ok": true,
-      "note": "Nøgle virker"
+      "ok": false,
+      "note": "Seneste AI-kald fejlede: trunkeret (stop_reason=max_tokens)"
     }
   },
-  "credentialsCheckedTs": "2026-08-23T18:29:31.491362",
+  "credentialsCheckedTs": "2026-08-23T18:59:55.322802",
   "coachAssessmentTsFull": "2026-08-23T12:39:36.889089",
   "coachAssessmentWeightAtGen": 72.6,
   "coachAssessmentAfAtGen": 7,
