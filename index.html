@@ -1503,7 +1503,7 @@ function buildSparklineSVG(chartId, W) {
   // x-labels: ugedags-bogstav baseret på faktisk dato hvis tilgængelig
   const today=new Date();
   let xLabels;
-  if (n<=10) {
+  if (n<=10 && !cfg.dateLabels) {
     const dayNames=['S','M','T','O','T','F','L'];
     xLabels = vals.map((_,i)=>{
       let d;
@@ -1564,7 +1564,7 @@ function efSeries(disc, label, color) {
   }
 
   const chartId = `spk${++sparklineSeq}`;
-  SPARKLINE_DATA[chartId] = { data: pts, color, label, unit: '', minV: null, maxV: null, smooth: false, decimals: 2 };
+  SPARKLINE_DATA[chartId] = { data: pts, color, label, unit: '', minV: null, maxV: null, smooth: false, decimals: 2, dateLabels: true };
 
   const last = pts[pts.length-1].v;
   let head;
@@ -1629,25 +1629,74 @@ function efExplainer() {
       <p style="${p}">Der er ingen kvalificerede pas i de foregående 42 dage at måle imod. Tallet er sandt — ændringen findes bare ikke endnu.</p>
       <div style="${h}">UNDER CUTTET</div>
       <p style="${p}">Aerob effektivitet er fart pr. hjerteslag, ikke pr. kilo — vægttab løfter den ikke af sig selv. Falder den mens vægten falder, er underskuddet for stort.</p>
+      <div style="${h}">ALLE KVALIFICEREDE PAS ${efSpan().toUpperCase()}</div>
+      <p style="${p};margin-bottom:8px">Kurven dækker hele historikken, ikke de 42 dage lyset bygger på. Punkterne ligger uregelmæssigt — der er uger uden et eneste kvalificeret pas.</p>
+      ${efSeries('run', 'LØB — m/min pr. slag', 'var(--run)')}
+      <div style="height:14px"></div>
+      ${efSeries('bike', 'CYKEL — watt pr. slag', 'var(--bike)')}
+      <p style="${p};margin-top:10px">Kun pas over 35 min i Z1–Z2 tæller med; intervaller, løb og stejlt terræn er sorteret fra. Lange pas ligger naturligt lavere end korte på grund af cardiac drift.</p>
     </div>
   </details>`;
 }
 
+// Trafiklys. Grænserne er sat efter den MÅLTE støj mellem enkeltpas (spredning
+// 4,4 %-point), ikke efter hvad der ser pænt ud. Med n=4 i hvert vindue er
+// usikkerheden på forskellen ~2,8 %, så alt under 3 % er ikke til at skelne fra
+// tilfældighed og skal vise gult. Grå når der er under 3 pas i et af vinduerne.
+const EF_BAND = 3.0;
+function efStatus(disc) {
+  const t = (D.efTrend||{})[disc] || null;
+  if (!t || t.current == null) {
+    return {dot:'⚪️', color:'var(--muted)', word:'Ingen data', detail:'ingen kvalificerede pas endnu'};
+  }
+  const val = t.current.toFixed(2).replace('.', ',');
+  const n   = t.n || 0, nPrev = t.n_prev || 0;
+  if (t.pct == null || n < 3 || nPrev < 3) {
+    const why = t.pct == null ? 'ingen pas at måle mod endnu'
+              : `for få pas til en sikker aflæsning (${n} nu, ${nPrev} før)`;
+    return {dot:'⚪️', color:'var(--muted)', word:'Afventer data', detail:`${val} · ${why}`};
+  }
+  const pct  = t.pct;
+  const txt  = `${val} · ${pct > 0 ? '+' : ''}${pct.toFixed(1).replace('.', ',')} % vs. forrige 42 dage · ${n} pas`;
+  if (pct >=  EF_BAND) return {dot:'🟢', color:'#2E8B57',    word:'Bedre',    detail:txt};
+  if (pct <= -EF_BAND) return {dot:'🔴', color:'var(--run)', word:'Dårligere', detail:txt};
+  return {dot:'🟡', color:'var(--gold)', word:'Uændret', detail:txt};
+}
+
+function efLight(disc, label) {
+  const st = efStatus(disc);
+  return `<div style="display:flex;align-items:flex-start;gap:10px;padding:9px 0">
+    <span style="font-size:15px;line-height:1.2">${st.dot}</span>
+    <div style="flex:1;min-width:0">
+      <div style="display:flex;align-items:baseline;gap:8px;flex-wrap:wrap">
+        <span style="font-family:'Space Mono',monospace;font-size:10px;letter-spacing:.08em;color:var(--muted)">${label}</span>
+        <span style="font-family:'Hanken Grotesk',sans-serif;font-size:14px;font-weight:700;color:${st.color}">${st.word}</span>
+      </div>
+      <div style="font-family:'Space Mono',monospace;font-size:10px;color:var(--muted);margin-top:2px">${st.detail}</div>
+    </div>
+  </div>`;
+}
+
+// Grafen dækker ALLE kvalificerede pas, ikke 42 dage. Tidligere stod
+// "42-dages median" som overskrift direkte over en kurve der gik tilbage til
+// marts -- tal og graf viste to forskellige vinduer.
+function efSpan() {
+  const all = [...(((D.efHistory||{}).run)||[]), ...(((D.efHistory||{}).bike)||[])]
+              .map(p => p && p.date).filter(Boolean).sort();
+  if (!all.length) return '';
+  const m = ['januar','februar','marts','april','maj','juni','juli','august','september','oktober','november','december'];
+  return `siden ${m[+all[0].slice(5,7)-1]}`;
+}
+
 function efCard() {
-  const runPts  = ((D.efHistory||{}).run)  || [];
-  const bikePts = ((D.efHistory||{}).bike) || [];
   return `<div class="card">
     <div class="label" style="margin-bottom:4px">Aerob effektivitet</div>
-    <div style="font-size:11px;color:var(--muted);margin-bottom:12px;line-height:1.45">
+    <div style="font-size:11px;color:var(--muted);margin-bottom:6px;line-height:1.45">
       Fart pr. hjerteslag på rolige pas. Stiger den, er formen bedre — uafhængigt af vægt.
     </div>
-    ${efSeries('run', 'LØB — m/min pr. slag', 'var(--run)')}
-    <div style="height:16px"></div>
-    ${efSeries('bike', 'CYKEL — watt pr. slag (kun hometrainer)', 'var(--bike)')}
-    <div style="border-top:1px solid var(--cream-d);margin-top:14px;padding-top:10px;font-size:10px;color:var(--muted);line-height:1.5">
-      Kun pas over 35 min i Z1–Z2 tæller med; intervaller, løb og stejlt terræn er sorteret fra.
-      Lange pas ligger naturligt lavere end korte på grund af cardiac drift — se varigheden på hvert punkt før du læser et fald som formtab.
-    </div>
+    ${efLight('run',  'LØB')}
+    <div style="border-top:1px solid var(--cream-d)"></div>
+    ${efLight('bike', 'CYKEL — kun hometrainer')}
     ${efExplainer()}
   </div>`;
 }
