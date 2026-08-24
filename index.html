@@ -1241,6 +1241,7 @@ function renderOverview() {
     </div>
     ${ctlGraph()}
   </div>
+  ${efCard()}
   <div class="card">
     <div class="label" style="margin-bottom:12px">Svøm — Christiansborg Rundt 29. aug</div>
     ${(() => {
@@ -1366,8 +1367,6 @@ function renderBody() {
     <div style="height:14px"></div>
     ${sparkline(D.sleepHistory, 'var(--bike)', 'SØVN', 't', null, null, true)}
   </div>
-
-  ${efCard()}
 
   <div class="card">
     <div class="label" style="margin-bottom:12px">AF-dage — uge ${D.week}</div>
@@ -1588,6 +1587,49 @@ function efSeries(disc, label, color) {
   </div>`;
 }
 
+// Konkret regne-eksempel ved en typisk Z2-puls, så tallet bliver til noget
+// Kennet kan genkende ude på vejen i stedet for et abstrakt indeks.
+const EF_REF_HR = 130;
+function _efRunExample() {
+  const ef = ((D.efTrend||{}).run||{}).current;
+  if (ef == null) return null;
+  const mpm = ef * EF_REF_HR;                    // meter pr. minut
+  const secPerKm = Math.round(60000 / mpm);      // sek pr. km
+  const pace = Math.floor(secPerKm/60) + ':' + String(secPerKm%60).padStart(2,'0');
+  return `<b>${ef.toFixed(2)}</b> = meter du flytter dig pr. minut, pr. hjerteslag. `
+       + `Ved puls ${EF_REF_HR}: ${ef.toFixed(2)} × ${EF_REF_HR} = ${Math.round(mpm)} m/min ≈ ${pace}/km.`;
+}
+function _efBikeExample() {
+  const ef = ((D.efTrend||{}).bike||{}).current;
+  if (ef == null) return null;
+  return `<b>${ef.toFixed(2)}</b> = watt pr. hjerteslag. `
+       + `Ved puls ${EF_REF_HR}: ${ef.toFixed(2)} × ${EF_REF_HR} ≈ ${Math.round(ef*EF_REF_HR)} W.`;
+}
+function efExplainer() {
+  const run  = _efRunExample();
+  const bike = _efBikeExample();
+  const h  = 'font-family:\'Space Mono\',monospace;font-size:9px;letter-spacing:.08em;color:var(--muted);margin:12px 0 4px';
+  const p  = 'font-size:11px;color:var(--muted);line-height:1.55;margin:0';
+  return `<details style="margin-top:10px">
+    <summary style="cursor:pointer;font-family:'Space Mono',monospace;font-size:10px;letter-spacing:.06em;color:var(--gold);list-style:none;padding:4px 0">
+      SÅDAN LÆSER DU TALLENE ▾
+    </summary>
+    <div style="border-top:1px solid var(--cream-d);margin-top:8px;padding-top:4px">
+      <div style="${h}">HVAD TALLET ER</div>
+      ${run  ? `<p style="${p}">LØB — ${run}</p>` : ''}
+      ${bike ? `<p style="${p};margin-top:6px">CYKEL — ${bike}</p>` : ''}
+      <div style="${h}">HVORFOR IKKE BARE VO2MAX</div>
+      <p style="${p}">CTL siger hvor <i>meget</i> du har trænet. Garmins VO2max er ml/kg/min — den stiger mekanisk når du taber dig, uden at motoren er blevet bedre. Aerob effektivitet måler motoren.</p>
+      <div style="${h}">HVAD DER ER SIGNAL</div>
+      <p style="${p}">Under ±1 % er støj — derfor pilen →. 2–3 % over seks uger er en reel bevægelse. Med få kvalificerede pas flytter ét skidt pas medianen, så vent på flere før du konkluderer.</p>
+      <div style="${h}">"INTET SAMMENLIGNINGSVINDUE"</div>
+      <p style="${p}">Der er ingen kvalificerede pas i de foregående 42 dage at måle imod. Tallet er sandt — ændringen findes bare ikke endnu.</p>
+      <div style="${h}">UNDER CUTTET</div>
+      <p style="${p}">Aerob effektivitet er fart pr. hjerteslag, ikke pr. kilo — vægttab løfter den ikke af sig selv. Falder den mens vægten falder, er underskuddet for stort.</p>
+    </div>
+  </details>`;
+}
+
 function efCard() {
   const runPts  = ((D.efHistory||{}).run)  || [];
   const bikePts = ((D.efHistory||{}).bike) || [];
@@ -1603,6 +1645,7 @@ function efCard() {
       Kun pas over 35 min i Z1–Z2 tæller med; intervaller, løb og stejlt terræn er sorteret fra.
       Lange pas ligger naturligt lavere end korte på grund af cardiac drift — se varigheden på hvert punkt før du læser et fald som formtab.
     </div>
+    ${efExplainer()}
   </div>`;
 }
 
