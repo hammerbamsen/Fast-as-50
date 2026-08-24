@@ -1,15 +1,15 @@
 Token OK
-Uge 14: 2026-08-31 til 2026-09-06
+Uge 13: 2026-08-24 til 2026-08-30
 4 workouts fra Intervals
 timeOverrides: 9 dato(er) fra data/plan.json
-  Slettet: 🏃 Løb Z2 50 min
-  Slettet: 🏃 Løb Z2 40 min + 6×1 min race-pace
-  Slettet: 🏃 Shakeout løb + strides
-  Slettet: 🏃 Løb Z1 15 min let
+  Slettet: 🏃 Médoc-simulation 19 km (run/walk 10/2)
+  Slettet: 🏊 Svøm 2.000 m i træk
+  Slettet: 🏊 OW-svøm let 20 min (Gentofte)
+  Slettet: 🏃 Løb Z1 40 min let
 Slettet: 4
-  Oprettet: 2026-08-31 🏃 Løb Z2 50 min
-  Oprettet: 2026-09-01 🏃 Løb Z2 40 min let
-  Oprettet: 2026-09-03 🏃 Shakeout løb + strides
-  Oprettet: 2026-09-04 🏃 Løb Z1 15 min let
+  Oprettet: 2026-08-25 🏃 Løb Z2 18 km
+  Oprettet: 2026-08-26 🏊 Svøm 2.000 m i træk
+  Oprettet: 2026-08-28 🏊 OW-svøm let 20 min (Gentofte)
+  Oprettet: 2026-08-30 🚴 Cykel indendørs 90 min varieret
 Oprettet: 4 | Fejl: 0
 DONE
