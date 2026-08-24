@@ -143,7 +143,7 @@
       "ctlTarget": 47,
       "tssTarget": 180,
       "location": "Gentofte (hjem fra Norge søn 23.). RACE lør",
-      "note": "Christiansborg Rundt lør 29. aug — svømmes UTAPERET (2000 m, bevidst valg). Médoc-simulation 19 km tir. Svøm 2.000 m i træk ons. Médoc løbes med Eva."
+      "note": "Christiansborg Rundt lør 29. aug — svømmes UTAPERET (2000 m, bevidst valg). Løb Z2 18 km tir (simulation udgået efter aftale). Svøm 2.000 m i træk ons. Søn: cykel indendørs i stedet for løb (ingen løb to dage i streg). Médoc løbes med Eva."
     },
     {
       "week": 14,
@@ -4425,214 +4425,43 @@
           "entries": [
             {
               "workout": {
-                "name": "Médoc-simulation 19 km (run/walk 10/2)",
+                "name": "Løb Z2 18 km",
                 "type": "Run",
-                "moving_time": 7920,
-                "description": "- Racetempo 6:30-6:45/km hele vejen — IKKE Z2\n- 11x: 10 min løb + 2 min gang, gangpause fra første cyklus\n- Øv genstart efter gangpausen — det er passets pointe\n- Ca. 19 km / 132 min",
+                "moving_time": 5700,
+                "description": "- Varm-op 10m >5:39/km Pace\n- Base 80m 5:00-5:38/km Pace\n- Cool-down 5m >5:39/km Pace\n- Ca. 18 km / 95 min — kontinuerligt, ingen gangpauser",
                 "workout_doc": {
                   "steps": [
                     {
-                      "text": "Start direkte i racetempo 6:30-6:45/km",
+                      "text": "Varm-op >5:39/km",
                       "pace": {
                         "start": 65,
-                        "end": 68,
+                        "end": 78,
                         "units": "%pace"
                       },
                       "duration": 600
                     },
                     {
-                      "text": "Gang 2 min — drik som ved et depot",
+                      "text": "Base 5:00-5:38/km",
                       "pace": {
-                        "start": 44,
-                        "end": 52,
+                        "start": 78,
+                        "end": 88,
                         "units": "%pace"
                       },
-                      "duration": 120
+                      "duration": 4800
                     },
                     {
-                      "text": "Løb 10 min 6:30-6:45/km",
+                      "text": "Cool-down >5:39/km",
                       "pace": {
                         "start": 65,
-                        "end": 68,
+                        "end": 78,
                         "units": "%pace"
                       },
-                      "duration": 600
-                    },
-                    {
-                      "text": "Gang 2 min — drik som ved et depot",
-                      "pace": {
-                        "start": 44,
-                        "end": 52,
-                        "units": "%pace"
-                      },
-                      "duration": 120
-                    },
-                    {
-                      "text": "Løb 10 min 6:30-6:45/km",
-                      "pace": {
-                        "start": 65,
-                        "end": 68,
-                        "units": "%pace"
-                      },
-                      "duration": 600
-                    },
-                    {
-                      "text": "Gang 2 min — drik som ved et depot",
-                      "pace": {
-                        "start": 44,
-                        "end": 52,
-                        "units": "%pace"
-                      },
-                      "duration": 120
-                    },
-                    {
-                      "text": "Løb 10 min 6:30-6:45/km",
-                      "pace": {
-                        "start": 65,
-                        "end": 68,
-                        "units": "%pace"
-                      },
-                      "duration": 600
-                    },
-                    {
-                      "text": "Gang 2 min — drik som ved et depot",
-                      "pace": {
-                        "start": 44,
-                        "end": 52,
-                        "units": "%pace"
-                      },
-                      "duration": 120
-                    },
-                    {
-                      "text": "Løb 10 min 6:30-6:45/km",
-                      "pace": {
-                        "start": 65,
-                        "end": 68,
-                        "units": "%pace"
-                      },
-                      "duration": 600
-                    },
-                    {
-                      "text": "Gang 2 min — drik som ved et depot",
-                      "pace": {
-                        "start": 44,
-                        "end": 52,
-                        "units": "%pace"
-                      },
-                      "duration": 120
-                    },
-                    {
-                      "text": "Løb 10 min 6:30-6:45/km",
-                      "pace": {
-                        "start": 65,
-                        "end": 68,
-                        "units": "%pace"
-                      },
-                      "duration": 600
-                    },
-                    {
-                      "text": "Gang 2 min — drik som ved et depot",
-                      "pace": {
-                        "start": 44,
-                        "end": 52,
-                        "units": "%pace"
-                      },
-                      "duration": 120
-                    },
-                    {
-                      "text": "Løb 10 min 6:30-6:45/km",
-                      "pace": {
-                        "start": 65,
-                        "end": 68,
-                        "units": "%pace"
-                      },
-                      "duration": 600
-                    },
-                    {
-                      "text": "Gang 2 min — drik som ved et depot",
-                      "pace": {
-                        "start": 44,
-                        "end": 52,
-                        "units": "%pace"
-                      },
-                      "duration": 120
-                    },
-                    {
-                      "text": "Løb 10 min 6:30-6:45/km",
-                      "pace": {
-                        "start": 65,
-                        "end": 68,
-                        "units": "%pace"
-                      },
-                      "duration": 600
-                    },
-                    {
-                      "text": "Gang 2 min — drik som ved et depot",
-                      "pace": {
-                        "start": 44,
-                        "end": 52,
-                        "units": "%pace"
-                      },
-                      "duration": 120
-                    },
-                    {
-                      "text": "Løb 10 min 6:30-6:45/km",
-                      "pace": {
-                        "start": 65,
-                        "end": 68,
-                        "units": "%pace"
-                      },
-                      "duration": 600
-                    },
-                    {
-                      "text": "Gang 2 min — drik som ved et depot",
-                      "pace": {
-                        "start": 44,
-                        "end": 52,
-                        "units": "%pace"
-                      },
-                      "duration": 120
-                    },
-                    {
-                      "text": "Løb 10 min 6:30-6:45/km",
-                      "pace": {
-                        "start": 65,
-                        "end": 68,
-                        "units": "%pace"
-                      },
-                      "duration": 600
-                    },
-                    {
-                      "text": "Gang 2 min — drik som ved et depot",
-                      "pace": {
-                        "start": 44,
-                        "end": 52,
-                        "units": "%pace"
-                      },
-                      "duration": 120
-                    },
-                    {
-                      "text": "Løb 10 min 6:30-6:45/km",
-                      "pace": {
-                        "start": 65,
-                        "end": 68,
-                        "units": "%pace"
-                      },
-                      "duration": 600
-                    },
-                    {
-                      "text": "Gang 2 min — afslut",
-                      "pace": {
-                        "start": 44,
-                        "end": 52,
-                        "units": "%pace"
-                      },
-                      "duration": 120
+                      "duration": 300
                     }
                   ]
                 }
               },
-              "note": "Médoc-simulation 19 km — Evas tempo, run/walk 10/2. Ikke Z2.",
+              "note": "Løb Z2 18 km — kontinuerligt",
               "id": "3f31e288"
             }
           ]
@@ -4724,25 +4553,93 @@
           "entries": [
             {
               "workout": {
-                "name": "Løb Z1 40 min let",
-                "type": "Run",
-                "moving_time": 2400,
-                "description": "- Let løb 40m >5:39/km Pace",
+                "name": "Cykel indendørs 90 min varieret",
+                "type": "Ride",
+                "moving_time": 5400,
+                "description": "- Varm-op 15m ramp 50-65% FTP\n\n3x\n- Z3 6m 75-85% FTP\n- Pause 4m 58-62% FTP\n\n4x\n- Kadence 100+ rpm 3m 60-65% FTP\n- Normal kadence 2m 58-62% FTP\n\n- Z2 rul 15m 60-68% FTP\n- Cool-down 10m ramp 60-45% FTP",
                 "workout_doc": {
                   "steps": [
                     {
-                      "text": "Let løb >5:39/km",
-                      "pace": {
-                        "start": 65,
-                        "end": 78,
-                        "units": "%pace"
+                      "ramp": true,
+                      "power": {
+                        "start": 50,
+                        "end": 65,
+                        "units": "%ftp"
                       },
-                      "duration": 2400
+                      "duration": 900,
+                      "warmup": true
+                    },
+                    {
+                      "reps": 3,
+                      "text": "3x",
+                      "steps": [
+                        {
+                          "text": "Z3 75-85% FTP",
+                          "power": {
+                            "start": 75,
+                            "end": 85,
+                            "units": "%ftp"
+                          },
+                          "duration": 360
+                        },
+                        {
+                          "text": "Pause 58-62% FTP",
+                          "power": {
+                            "start": 58,
+                            "end": 62,
+                            "units": "%ftp"
+                          },
+                          "duration": 240
+                        }
+                      ]
+                    },
+                    {
+                      "reps": 4,
+                      "text": "4x",
+                      "steps": [
+                        {
+                          "text": "Kadence 100+ rpm 60-65% FTP",
+                          "power": {
+                            "start": 60,
+                            "end": 65,
+                            "units": "%ftp"
+                          },
+                          "duration": 180
+                        },
+                        {
+                          "text": "Normal kadence 58-62% FTP",
+                          "power": {
+                            "start": 58,
+                            "end": 62,
+                            "units": "%ftp"
+                          },
+                          "duration": 120
+                        }
+                      ]
+                    },
+                    {
+                      "text": "Z2 rul 60-68% FTP",
+                      "power": {
+                        "start": 60,
+                        "end": 68,
+                        "units": "%ftp"
+                      },
+                      "duration": 900
+                    },
+                    {
+                      "ramp": true,
+                      "power": {
+                        "start": 60,
+                        "end": 45,
+                        "units": "%ftp"
+                      },
+                      "duration": 600,
+                      "cooldown": true
                     }
                   ]
                 }
               },
-              "note": "Let løb 40 min + recovery walk — dagen efter Christiansborg",
+              "note": "Cykel indendørs 90 min varieret — dagen efter Christiansborg (erstatter løb)",
               "id": "15ca7041"
             }
           ]
