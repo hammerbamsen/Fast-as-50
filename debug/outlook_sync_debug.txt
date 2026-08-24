@@ -3,10 +3,11 @@ Uge 14: 2026-08-31 til 2026-09-06
 5 workouts fra Intervals
 timeOverrides: 9 dato(er) fra data/plan.json
   Slettet: 🏃 Løb Z2 50 min
-  Slettet: 🏃 Løb Z2 40 min let
+  Slettet: 🚴 Cykel indendørs 45 min Z2
+  Slettet: 💪 Styrke 25 min overkrop + core (race-uge)
   Slettet: 🏃 Shakeout løb + strides
   Slettet: 🏃 Løb Z1 15 min let
-Slettet: 4
+Slettet: 5
   Oprettet: 2026-08-31 🏃 Løb Z2 50 min
   Oprettet: 2026-09-01 🚴 Cykel indendørs 45 min Z2
   Oprettet: 2026-09-02 💪 Styrke 25 min overkrop + core (race-uge)
