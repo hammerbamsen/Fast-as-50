@@ -4751,7 +4751,7 @@
                 "name": "Styrke 25 min overkrop + core (race-uge)",
                 "type": "WeightTraining",
                 "moving_time": 1500,
-                "description": "- Aktivering 5m freeride: Glute bridge ×15, Bird dog ×10/side, World's greatest stretch ×5/side\n\n2x\n- Skulderpres 10kg ×10 1m freeride\n- Roning 12.5kg ×12 1m freeride\n- Lat pullover 10kg ×12 1m freeride\n- Pause 60 sek 1m freeride\n\n2x\n- Planke 45 sek 1m freeride\n- Sideplanke 30 sek/side 1m freeride\n- Dead bug ×10/side 1m freeride\n\n- Udstrækning 3m freeride\n\nINGEN squat, dødløft eller udfald — 3 dage før Médoc.",
+                "description": "- Aktivering 5m freeride: Glute bridge ×15, Bird dog ×10/side, World's greatest stretch ×5/side\n\n2x\n- Skulderpres 10kg ×10 1m freeride\n- Roning 12.5kg ×12 1m freeride\n- Lat pullover 10kg ×12 1m freeride\n- Pause 90 sek 1.5m freeride\n\n2x\n- Planke 45 sek 1m freeride\n- Sideplanke 30 sek/side 1m freeride\n- Dead bug ×10/side 1m freeride\n- Pause 30 sek 0.5m freeride\n\n- Udstrækning 4m freeride\n\nINGEN squat, dødløft eller udfald — 3 dage før Médoc.",
                 "workout_doc": {
                   "steps": [
                     {
