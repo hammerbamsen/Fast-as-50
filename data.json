@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-08-24 05:53",
+    "updated": "2026-08-24 06:44",
     "week": 13,
     "totalWeeks": 14,
     "blockType": "BUILD",
@@ -35,7 +35,7 @@
       "color": "#27AE60"
     },
     "sleep": {
-      "value": "8,1",
+      "value": "7,9",
       "unit": "t",
       "sub": "Snit 7,5t · mål 7t",
       "color": "#2874A6"
@@ -47,7 +47,7 @@
       "color": "#7A6A58"
     },
     "hrv": {
-      "value": "60,7",
+      "value": "60,5",
       "unit": "ms",
       "sub": "Snit 7d",
       "color": "#7A6A58"
@@ -83,7 +83,7 @@
     "streak": 7
   },
   "coachSpeech": "Ny uge starter — uge 13 af 14. Build-uge. {HL} Godt: Ny uge med 7 dages streak i ryggen. Hold den. Fokus: Vægt på 72,6 kg (målt 22/8) — hold protein højt og undgå lette kulhydrater om aftenen. Keep moving forward.  \"Det er ikke at have for lidt, der gør et menneske fattigt, men at ville have mere.\" — Seneca",
-  "coachHighlight": "Søvn på 8,1 timer er solid",
+  "coachHighlight": "Søvn på 7,9 timer er solid",
   "weekFocus": "Bevar skarphed og ro — Médoc-rytmen sidder i benene",
   "today": [
     {
@@ -914,7 +914,11 @@
       "v": 61.0,
       "real": true
     },
-    null
+    {
+      "date": "2026-08-24",
+      "v": 59.0,
+      "real": true
+    }
   ],
   "sleepHistory": [
     {
@@ -1358,7 +1362,11 @@
       "v": 7.7,
       "real": true
     },
-    null
+    {
+      "date": "2026-08-24",
+      "v": 6.7,
+      "real": true
+    }
   ],
   "tsbHistory": [
     {
@@ -3608,7 +3616,7 @@
       "note": "Nøgle virker"
     }
   },
-  "credentialsCheckedTs": "2026-08-24T03:53:58.841658",
+  "credentialsCheckedTs": "2026-08-24T04:44:25.011344",
   "coachAssessmentTsFull": "2026-08-24T01:17:56.950792",
   "coachAssessmentWeightAtGen": 72.6,
   "coachAssessmentAfAtGen": 0,
