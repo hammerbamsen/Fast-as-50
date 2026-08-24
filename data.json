@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-08-24 07:00",
+    "updated": "2026-08-24 07:01",
     "week": 13,
     "totalWeeks": 14,
     "blockType": "BUILD",
@@ -3320,8 +3320,8 @@
       "real": true
     }
   ],
-  "coachAssessmentHtml": "<p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\"><strong>Dag 85 af 98 · Mandag · Uge 13</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">💪 <strong>Træning & load</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">CTL på 51.2 er allerede over ugemålet på 47, og TSB på 7.8 betyder at du er frisk og klar. Ugen her handler om at holde formen skarp uden at lægge unødigt load oven på en CTL der allerede er i god form. Hviledag i dag er den rigtige beslutning — lad systemet absorbere.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">⚖️ <strong>Krop & kost</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Dagens vægt er 72.3 kg — 4.3 kg fra målet. Fedtprocenten er 21.3 % — 5.3 procentpoint fra målet på under 16 %. Det vigtige her er 7-dages snittet: fedtprocenten er gået ned 0.5 point over de seneste 11 dage, og det er den reelle retning — det er ægte fremgang, ikke støj. Vægten følger med i snittallet på 72.8 kg, og kombinationen af faldende fedt og bevaret muskelmasse er præcis hvad du vil se i et capacity-år.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">🎯 <strong>AF-status & fokus for resten af ugen</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Du er 0/1 på AF-dage i ugen — mandag er ikke slut endnu, så dagen er stadig din. Ugen er bygget enkelt og præcist op: Médoc-simulationen tirsdag er ankerpunktet, svømmen onsdag holder søbenene ved lige, og OW-svømmen fredag i Gentofte er en god reminder om åbent vand inden Christiansborg Rundt. Hold hovedet koldt, rytmen rolig — Médoc-formen sidder allerede der.</p>",
-  "coachAssessmentTs": "05:00",
+  "coachAssessmentHtml": "<p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\"><strong>Dag 85 af 98 · Mandag · Uge 13</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">💪 <strong>Træning & load</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">CTL er 51,2 — godt over ugemålet på 47 — og TSB ligger på 7,8, så du er frisk og klar. Det er præcis den tilstand du vil have ind i Médoc-simuleringen i morgen. Hold det sådan: hviledag i dag er ikke spildt tid, det er forberedelse.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">⚖️ <strong>Krop & kost</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Vægten er 72,3 kg i dag — 4,3 kg fra målet — men det relevante tal er 7-dages snittet på 72,8 kg, der viser retningen. Fedtprocenten er 21,3 % mod et mål på under 16 %, og 7-dages snittet på fedtprocenten er faldet 0,5 point over de seneste 11 dage — det er den reelle fremgang. Vægten og fedtprocenten falder sammen, så du taber fedt, ikke muskelmasse. Det er den rigtige kombination — hold kursen med protein og kaloriekontrol.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">🎯 <strong>AF-status & fokus for resten af ugen</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Det er mandag, og alkoholfri-regnskabet er 0 af 1 dag gået — der er stadig seks dage tilbage at gøre rent bord. Ugen er bygget enkelt op: Médoc-simulation i morgen, svøm onsdag, OW fredag og en let løbetur søndag. Kvaliteten sidder i at møde hver session frisk — ikke i at presse mere ind. Vind tirsdagen.</p>",
+  "coachAssessmentTs": "05:01",
   "commute_pairing_warnings": [],
   "warnings": [],
   "tsb": 7.8,
@@ -3624,8 +3624,8 @@
       "note": "Nøgle virker"
     }
   },
-  "credentialsCheckedTs": "2026-08-24T05:00:40.807032",
-  "coachAssessmentTsFull": "2026-08-24T05:00:40.807016",
+  "credentialsCheckedTs": "2026-08-24T05:01:43.839188",
+  "coachAssessmentTsFull": "2026-08-24T05:01:43.839175",
   "coachAssessmentWeightAtGen": 72.3,
   "coachAssessmentAfAtGen": 0,
   "event_structure_warnings": [],
