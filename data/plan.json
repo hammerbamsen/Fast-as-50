@@ -152,7 +152,7 @@
       "ctlTarget": 43,
       "tssTarget": 120,
       "location": "Gentofte → Bordeaux tor",
-      "note": "Marathon du Médoc lør 5. sep. Ren taper + race-ernæringsplan."
+      "note": "Marathon du Médoc lør 5. sep. Ren taper + race-ernæringsplan. Tir: cykel i stedet for løb (ingen løb to dage i streg). Ons: 25 min styrke overkrop/core, ingen benbelastning."
     }
   ],
   "travel": [
@@ -4695,43 +4695,45 @@
           "entries": [
             {
               "workout": {
-                "name": "Løb Z2 40 min let",
-                "type": "Run",
-                "moving_time": 2400,
-                "description": "- Varm-op 10m >5:39/km Pace\n- Base 25m 5:00-5:38/km Pace\n- Cool-down 5m >5:39/km Pace",
+                "name": "Cykel indendørs 45 min Z2",
+                "type": "Ride",
+                "moving_time": 2700,
+                "description": "- Varm-op 8m ramp 50-60% FTP\n- Z2 rul 30m 60-68% FTP\n- Cool-down 7m ramp 58-45% FTP",
                 "workout_doc": {
                   "steps": [
                     {
-                      "text": "Varm-op >5:39/km",
-                      "pace": {
-                        "start": 65,
-                        "end": 78,
-                        "units": "%pace"
+                      "ramp": true,
+                      "power": {
+                        "start": 50,
+                        "end": 60,
+                        "units": "%ftp"
                       },
-                      "duration": 600
+                      "duration": 480,
+                      "warmup": true
                     },
                     {
-                      "text": "Base 5:00-5:38/km",
-                      "pace": {
-                        "start": 78,
-                        "end": 88,
-                        "units": "%pace"
+                      "text": "Z2 rul 60-68% FTP",
+                      "power": {
+                        "start": 60,
+                        "end": 68,
+                        "units": "%ftp"
                       },
-                      "duration": 1500
+                      "duration": 1800
                     },
                     {
-                      "text": "Cool-down >5:39/km",
-                      "pace": {
-                        "start": 65,
-                        "end": 78,
-                        "units": "%pace"
+                      "ramp": true,
+                      "power": {
+                        "start": 58,
+                        "end": 45,
+                        "units": "%ftp"
                       },
-                      "duration": 300
+                      "duration": 420,
+                      "cooldown": true
                     }
                   ]
                 }
               },
-              "note": "Let løb. Race-pace-reps udgår — Médoc løbes i Evas tempo.",
+              "note": "Cykel indendørs 45 min Z2 — erstatter løb (ingen løb to dage i streg)",
               "id": "4817641d"
             }
           ]
@@ -4741,8 +4743,76 @@
           "entries": [
             {
               "workout": null,
-              "note": "Hvile total",
+              "note": "Let dag — kun styrke overkrop/core, ingen benbelastning",
               "id": "54548324"
+            },
+            {
+              "workout": {
+                "name": "Styrke 25 min overkrop + core (race-uge)",
+                "type": "WeightTraining",
+                "moving_time": 1500,
+                "description": "- Aktivering 5m freeride: Glute bridge ×15, Bird dog ×10/side, World's greatest stretch ×5/side\n\n2x\n- Skulderpres 10kg ×10 1m freeride\n- Roning 12.5kg ×12 1m freeride\n- Lat pullover 10kg ×12 1m freeride\n- Pause 60 sek 1m freeride\n\n2x\n- Planke 45 sek 1m freeride\n- Sideplanke 30 sek/side 1m freeride\n- Dead bug ×10/side 1m freeride\n\n- Udstrækning 3m freeride\n\nINGEN squat, dødløft eller udfald — 3 dage før Médoc.",
+                "workout_doc": {
+                  "steps": [
+                    {
+                      "text": "Aktivering: Glute bridge ×15, Bird dog ×10/side, World's greatest stretch ×5/side",
+                      "duration": 300,
+                      "warmup": true
+                    },
+                    {
+                      "reps": 2,
+                      "text": "2x",
+                      "steps": [
+                        {
+                          "text": "Skulderpres 10kg ×10",
+                          "duration": 60
+                        },
+                        {
+                          "text": "Roning 12.5kg ×12",
+                          "duration": 60
+                        },
+                        {
+                          "text": "Lat pullover 10kg ×12",
+                          "duration": 60
+                        },
+                        {
+                          "text": "Pause 90 sek",
+                          "duration": 90
+                        }
+                      ]
+                    },
+                    {
+                      "reps": 2,
+                      "text": "2x",
+                      "steps": [
+                        {
+                          "text": "Planke 45 sek",
+                          "duration": 60
+                        },
+                        {
+                          "text": "Sideplanke 30 sek/side",
+                          "duration": 60
+                        },
+                        {
+                          "text": "Dead bug ×10/side",
+                          "duration": 60
+                        },
+                        {
+                          "text": "Pause 30 sek",
+                          "duration": 30
+                        }
+                      ]
+                    },
+                    {
+                      "text": "Udstrækning",
+                      "duration": 240,
+                      "cooldown": true
+                    }
+                  ]
+                }
+              },
+              "note": "Styrke 25 min — overkrop + core, ingen ben",
+              "id": "a7c31d94"
             }
           ]
         },
