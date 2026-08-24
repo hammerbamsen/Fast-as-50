@@ -5022,21 +5022,30 @@
           "entries": [
             {
               "workout": {
-                "name": "Cykel Z2 70 min",
+                "name": "AEROB PROBE + Cykel Z2 70 min",
                 "type": "Ride",
                 "moving_time": 4200,
-                "description": "- Varm-op 10m ramp 45-68% FTP\n- Aerob base 55m 56-76% FTP\n- Cool-down 5m ramp 68-45% FTP",
+                "description": "- Varm-op 10m ramp 45-60% FTP\n- PROBE 25 min @ 190 W FAST — samme watt hver gang 25m 68% FTP\n- Aerob base 30m 56-76% FTP\n- Cool-down 5m ramp 60-40% FTP\n\nPROBEN ER MÅLINGEN. Samme hometrainer, samme 190 W, samme tid på dagen, ventilator på. Notér gennemsnitspuls for de SIDSTE 15 min af proben.\nLavere puls end sidste måned = bedre form. Højere = træthed eller for stort underskud.\nKør ikke proben på trætte ben — flyt den en dag hvis TSB er under −20.",
                 "workout_doc": {
                   "steps": [
                     {
                       "ramp": true,
                       "power": {
                         "start": 45,
-                        "end": 68,
+                        "end": 60,
                         "units": "%ftp"
                       },
                       "duration": 600,
                       "warmup": true
+                    },
+                    {
+                      "text": "PROBE 25 min @ 190 W FAST — notér snit-puls sidste 15 min",
+                      "power": {
+                        "start": 68,
+                        "end": 68,
+                        "units": "%ftp"
+                      },
+                      "duration": 1500
                     },
                     {
                       "text": "Aerob base 56-76% FTP",
@@ -5045,13 +5054,13 @@
                         "end": 76,
                         "units": "%ftp"
                       },
-                      "duration": 3300
+                      "duration": 1800
                     },
                     {
                       "ramp": true,
                       "power": {
-                        "start": 68,
-                        "end": 45,
+                        "start": 60,
+                        "end": 40,
                         "units": "%ftp"
                       },
                       "duration": 300,
@@ -5060,7 +5069,7 @@
                   ]
                 }
               },
-              "note": "Cykel Z2 — cykel er primær fra uge 3",
+              "note": "AEROB PROBE — baseline for cuttet",
               "id": "1ad7f007"
             }
           ]
@@ -5070,10 +5079,10 @@
           "entries": [
             {
               "workout": {
-                "name": "Løb Z2 45 min",
+                "name": "AEROB PROBE + Løb Z2 45 min",
                 "type": "Run",
                 "moving_time": 2700,
-                "description": "- Varm-op 10m >5:39/km Pace\n- Base 30m 5:00-5:38/km Pace\n- Cool-down 5m >5:39/km Pace",
+                "description": "- Varm-op 10m >5:39/km Pace\n- PROBE 5 km @ 5:15/km FAST — samme rute hver gang 26m 5:15/km Pace\n- Base 4m 5:00-5:38/km Pace\n- Cool-down 5m >5:39/km Pace\n\nPROBEN ER MÅLINGEN. Samme flade rute, samme 5:15/km, samme tid på dagen. Notér gennemsnitspuls for de 5 km.\nLavere puls end sidste måned = bedre form. Højere = træthed eller for stort underskud.\nBlæst og over 22 grader ugyldiggør målingen — flyt den.",
                 "workout_doc": {
                   "steps": [
                     {
@@ -5086,13 +5095,22 @@
                       "duration": 600
                     },
                     {
+                      "text": "PROBE 5 km @ 5:15/km FAST — notér snit-puls",
+                      "pace": {
+                        "start": 84,
+                        "end": 84,
+                        "units": "%pace"
+                      },
+                      "duration": 1560
+                    },
+                    {
                       "text": "Base 5:00-5:38/km",
                       "pace": {
                         "start": 78,
                         "end": 88,
                         "units": "%pace"
                       },
-                      "duration": 1800
+                      "duration": 240
                     },
                     {
                       "text": "Cool-down >5:39/km",
@@ -5106,7 +5124,7 @@
                   ]
                 }
               },
-              "note": "Løb Z2",
+              "note": "AEROB PROBE — baseline for cuttet",
               "id": "8eb6ad9c"
             }
           ]
@@ -6354,21 +6372,30 @@
           "entries": [
             {
               "workout": {
-                "name": "Cykel Z2 85 min",
+                "name": "AEROB PROBE + Cykel Z2 85 min",
                 "type": "Ride",
                 "moving_time": 5100,
-                "description": "- Varm-op 10m ramp 45-68% FTP\n- Aerob base 70m 56-76% FTP\n- Cool-down 5m ramp 68-45% FTP",
+                "description": "- Varm-op 10m ramp 45-60% FTP\n- PROBE 25 min @ 190 W FAST — samme watt hver gang 25m 68% FTP\n- Aerob base 45m 56-76% FTP\n- Cool-down 5m ramp 60-40% FTP\n\nPROBEN ER MÅLINGEN. Samme hometrainer, samme 190 W, samme tid på dagen, ventilator på. Notér gennemsnitspuls for de SIDSTE 15 min af proben.\nLavere puls end sidste måned = bedre form. Højere = træthed eller for stort underskud.\nKør ikke proben på trætte ben — flyt den en dag hvis TSB er under −20.",
                 "workout_doc": {
                   "steps": [
                     {
                       "ramp": true,
                       "power": {
                         "start": 45,
-                        "end": 68,
+                        "end": 60,
                         "units": "%ftp"
                       },
                       "duration": 600,
                       "warmup": true
+                    },
+                    {
+                      "text": "PROBE 25 min @ 190 W FAST — notér snit-puls sidste 15 min",
+                      "power": {
+                        "start": 68,
+                        "end": 68,
+                        "units": "%ftp"
+                      },
+                      "duration": 1500
                     },
                     {
                       "text": "Aerob base 56-76% FTP",
@@ -6377,13 +6404,13 @@
                         "end": 76,
                         "units": "%ftp"
                       },
-                      "duration": 4200
+                      "duration": 2700
                     },
                     {
                       "ramp": true,
                       "power": {
-                        "start": 68,
-                        "end": 45,
+                        "start": 60,
+                        "end": 40,
                         "units": "%ftp"
                       },
                       "duration": 300,
@@ -6392,7 +6419,7 @@
                   ]
                 }
               },
-              "note": "Cykel Z2 — cykel er primær fra uge 3",
+              "note": "AEROB PROBE — måned 2",
               "id": "4af601af"
             }
           ]
@@ -6402,10 +6429,10 @@
           "entries": [
             {
               "workout": {
-                "name": "Løb Z2 50 min",
+                "name": "AEROB PROBE + Løb Z2 50 min",
                 "type": "Run",
                 "moving_time": 3000,
-                "description": "- Varm-op 10m >5:39/km Pace\n- Base 35m 5:00-5:38/km Pace\n- Cool-down 5m >5:39/km Pace",
+                "description": "- Varm-op 10m >5:39/km Pace\n- PROBE 5 km @ 5:15/km FAST — samme rute hver gang 26m 5:15/km Pace\n- Base 9m 5:00-5:38/km Pace\n- Cool-down 5m >5:39/km Pace\n\nPROBEN ER MÅLINGEN. Samme flade rute, samme 5:15/km, samme tid på dagen. Notér gennemsnitspuls for de 5 km.\nLavere puls end sidste måned = bedre form. Højere = træthed eller for stort underskud.\nBlæst og over 22 grader ugyldiggør målingen — flyt den.",
                 "workout_doc": {
                   "steps": [
                     {
@@ -6418,13 +6445,22 @@
                       "duration": 600
                     },
                     {
+                      "text": "PROBE 5 km @ 5:15/km FAST — notér snit-puls",
+                      "pace": {
+                        "start": 84,
+                        "end": 84,
+                        "units": "%pace"
+                      },
+                      "duration": 1560
+                    },
+                    {
                       "text": "Base 5:00-5:38/km",
                       "pace": {
                         "start": 78,
                         "end": 88,
                         "units": "%pace"
                       },
-                      "duration": 2100
+                      "duration": 540
                     },
                     {
                       "text": "Cool-down >5:39/km",
@@ -6438,7 +6474,7 @@
                   ]
                 }
               },
-              "note": "Løb Z2",
+              "note": "AEROB PROBE — måned 2",
               "id": "0bd207fa"
             }
           ]
@@ -7631,7 +7667,29 @@
         "raceDay": "2027-08-28",
         "phase": "planning"
       }
-    ]
+    ],
+    "probes": {
+      "cadence": "monthly",
+      "bike": {
+        "watts": 190,
+        "pctFtp": 68,
+        "minutes": 25,
+        "measure": "snit-puls sidste 15 min"
+      },
+      "run": {
+        "pace": "5:15/km",
+        "pctPace": 84,
+        "km": 5,
+        "measure": "snit-puls over 5 km"
+      },
+      "scheduled": [
+        "2026-09-22",
+        "2026-09-23",
+        "2026-10-20",
+        "2026-10-21"
+      ],
+      "note": "Kontrolleret sub-max måling. Erstatter ikke FTP-test 9/10. Bygges rullende efter 1/11."
+    }
   },
   "season2027": {
     "year": 2027,
