@@ -142,6 +142,11 @@ def main():
     data['meta']['daysToChristiansborg'] = ((_race_dates.get('Christiansborg Rundt') or date(2026, 8, 29)) - today).days
     data['meta']['week']                 = week_num
     data['meta']['totalWeeks']           = TOTAL_WEEKS
+    try:
+        from modules.fitness import RHR_FIELD_SEEN
+        data['meta']['rhrField'] = RHR_FIELD_SEEN.get('field')
+    except Exception:
+        data['meta']['rhrField'] = None
     data['ctlPlan']                      = CTL_PLAN
 
     # --- Zoner: plan.json er master, dashboardet laeser dem herfra (28/7-2026) ---
@@ -269,6 +274,8 @@ def main():
           f"fedt: {fat_coach} % (dato: {fat_coach_date or 'i dag'})")
     protein    = wellness.get('protein')    if wellness else None
     hrv    = wellness.get('hrv_avg') if wellness else None
+    rhr     = wellness.get('rhr')     if wellness else None
+    rhr_avg = wellness.get('rhr_avg') if wellness else None
     sleep  = wellness.get('sleep_avg') if wellness else None
     ctl    = fitness.get('ctl')      if fitness else None
     atl    = fitness.get('atl')      if fitness else None
@@ -329,6 +336,7 @@ def main():
         'sleep':      {'value': fmt(sleep, 1),         'unit': 't',  'sub': f'Snit 7,5t · mål {SLEEP_GOAL_HOURS}t',            'color': '#2874A6'},
         'runKm':      {'value': fmt(km_week, 1),       'unit': 'km', 'sub': f'Mål {RUN_KM_GOAL}+ km uge {RUN_KM_GOAL_WEEK}',             'color': color_for(km_week, 20, lower=False) if km_week   else '#7A6A58'},
         'hrv':        {'value': fmt(hrv, 1),           'unit': 'ms', 'sub': 'Snit 7d',                       'color': '#7A6A58'},
+        'rhr':        {'value': fmt(rhr_avg, 0) if rhr_avg else '—', 'unit': 'slag', 'sub': 'Hvilepuls · snit 7d', 'color': '#7A6A58'},
         'tssComp':    {'value': fmt(tss_act, 0) if tss_act else '0', 'unit': 'TSS',
                        'sub': f'{int(tss_act or 0)} af {int(planned)} planlagt TSS',
                        'color': tss_color},
@@ -365,6 +373,39 @@ def main():
                     'level':   'warn',
                     'message': f'HRV {fmt(hrv_today,1)} ms — {round(hrv_drop_pct)}% under 7d-snit ({fmt(hrv_avg7,1)} ms). Kroppen er presset.',
                 })
+
+    # --- Cut-alarm: æder underskuddet motoren? --------------------------------
+    # Under et kalorieunderskud reagerer aerob effektivitet for langsomt (under
+    # ét kvalificeret Z2-pas om ugen). Hvilepuls og HRV måles dagligt og vender
+    # 2-3 uger før EF gør. Alarmen kræver at BEGGE peger samme vej samtidig med
+    # at vægten falder -- enkeltsignaler er for støjende til at handle på.
+    def _avg(series, lo, hi):
+        vals = [p['v'] for p in (series or [])[lo:hi] if p and p.get('v') is not None]
+        return sum(vals) / len(vals) if len(vals) >= 4 else None
+
+    _h = history or {}
+    rhr_now,  rhr_prev  = _avg(_h.get('rhrHistory'), -14, None),    _avg(_h.get('rhrHistory'), -28, -14)
+    hrv_now,  hrv_prev  = _avg(_h.get('hrvHistory'), -14, None),    _avg(_h.get('hrvHistory'), -28, -14)
+    wgt_now,  wgt_prev  = _avg(_h.get('weightHistory'), -14, None), _avg(_h.get('weightHistory'), -28, -14)
+
+    if all(v is not None for v in (rhr_now, rhr_prev, hrv_now, hrv_prev, wgt_now, wgt_prev)):
+        rhr_up   = rhr_now - rhr_prev
+        hrv_down = (hrv_prev - hrv_now) / hrv_prev * 100 if hrv_prev else 0
+        losing   = wgt_now < wgt_prev
+        if losing and rhr_up >= 2 and hrv_down >= 5:
+            warnings.append({
+                'type':    'cut',
+                'level':   'critical',
+                'message': (f'Hvilepuls +{rhr_up:.0f} slag og HRV −{hrv_down:.0f}% over 14 dage, '
+                            f'mens vægten falder. Underskuddet er for stort — skru op for maden.'),
+            })
+        elif losing and (rhr_up >= 2 or hrv_down >= 5):
+            warnings.append({
+                'type':    'cut',
+                'level':   'warn',
+                'message': (f'Ét af to restitutionssignaler peger nedad under vægttab '
+                            f'(hvilepuls {rhr_up:+.0f} slag, HRV {-hrv_down:+.0f}%). Hold øje.'),
+            })
 
     data['warnings'] = warnings
     if warnings:
@@ -424,6 +465,7 @@ def main():
         if history.get('weightHistory'): data['weightHistory'] = history['weightHistory']
         if history.get('fatHistory'):    data['fatHistory']    = history['fatHistory']
         if history.get('hrvHistory'):    data['hrvHistory']    = history['hrvHistory']
+        if history.get('rhrHistory'):    data['rhrHistory']    = history['rhrHistory']
         if history.get('sleepHistory'):  data['sleepHistory']  = history['sleepHistory']
         if history.get('tsbHistory'):    data['tsbHistory']    = history['tsbHistory']
         print(f"  Historik: vægt={len(history.get('weightHistory',[]))} hrv={len(history.get('hrvHistory',[]))} søvn={len(history.get('sleepHistory',[]))} tsb={len(history.get('tsbHistory',[]))} punkter")
