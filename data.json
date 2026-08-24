@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-08-24 19:30",
+    "updated": "2026-08-24 20:39",
     "week": 13,
     "totalWeeks": 14,
     "blockType": "BUILD",
@@ -3391,8 +3391,8 @@
       "real": true
     }
   ],
-  "coachAssessmentHtml": "<p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\"><strong>Dag 85 af 98 · Mandag · Uge 13</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">💪 <strong>Træning & load</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">CTL er 51,6 — altså over ugemålet på 47, og TSB er 4,0, så du er i god balance. Styrketræningen i dag leverede 14 TSS på 28 minutter — det holder load'et i ro og holder benene friske til Médoc-simulationen på tirsdag. Ugen er bygget rigtigt: den hårde simulation tidligt, åbent vand fredag, og et let løb søndag som afslutning. Det er præcis den rytme du vil ramme ind til Médoc.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">⚖️ <strong>Krop & kost</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Dagens vægt er 71,9 kg — 3,9 kg fra målet. 7-dages snittet er 72,8 kg, og fedtprocentens 7-dages snit er gået ned 0,6 point over de seneste 11 dage og ligger nu på 21,2 %. Det er den reelle retning, og den er rigtig: du taber fedt, ikke muskelmasse. Fedtprocenten er i dag 20,7 % mod målet på under 16 % — der er stadig 4,7 procentpoint at arbejde med, men trenden er den du vil have.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">🎯 <strong>AF-status & fokus for resten af ugen</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Du er 0/1 på AF-dage i ugen indtil nu — dagen er stadig i gang. Médoc-rytmen sidder i benene; opgaven er at beskytte den. Hold søvn og kost skarp de næste dage, så simulationen tirsdag og OW-svømmen fredag rammer med fuld koncentration.</p>",
-  "coachAssessmentTs": "12:08",
+  "coachAssessmentHtml": "<p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\"><strong>Dag 85 af 98 · Mandag · Uge 13</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">💪 <strong>Træning & load</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">CTL er 51,6 — det er 4,6 over ugemålet på 47, og TSB på 4,0 siger at du er frisk og i god balance. Styrketræningen i dag gav 14 TSS på 28 minutter — et fint, kontrolleret bidrag uden at vippe lasset. Med Médoc om seks dage er det præcis det rigtige signal: skarp, ikke udmattet.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">⚖️ <strong>Krop & kost</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Dagens vægt er 71,9 kg — 3,9 kg fra målet under 68 kg. 7-dages snittet på 72,8 kg er det tal der tæller for retningen, og det bevæger sig i den rigtige retning. Fedtprocenten er 20,7 % i dag, og 7-dages snittet er faldet 0,6 procentpoint over de seneste 11 dage — det er ægte fremgang i kropssammensætningen, ikke blot vægtsvingninger. Du er stadig 4,7 procentpoint fra målet på under 16 %, men kurven peger den rigtige vej.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">🎯 <strong>AF-status & fokus for resten af ugen</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Du er 0 AF-dage inde i ugen — det er dag 1, så der er fuld mulighed for at ramme målet på 6. Streaken på 7 dage er en solid platform at bygge videre på. Resten af ugen er let og præcis det din krop har brug for: en rolig 18 km i Z2, to svømpas og en kort indendørs cykel. Hold hovedet koldt — Médoc-benet sidder der allerede.</p>",
+  "coachAssessmentTs": "18:40",
   "commute_pairing_warnings": [],
   "warnings": [],
   "tsb": 4.0,
@@ -3695,8 +3695,8 @@
       "note": "Nøgle virker"
     }
   },
-  "credentialsCheckedTs": "2026-08-24T17:30:45.043113",
-  "coachAssessmentTsFull": "2026-08-24T12:08:36.783502",
+  "credentialsCheckedTs": "2026-08-24T18:40:00.355174",
+  "coachAssessmentTsFull": "2026-08-24T18:40:00.355161",
   "coachAssessmentWeightAtGen": 71.9,
   "coachAssessmentAfAtGen": 0,
   "event_structure_warnings": [],
