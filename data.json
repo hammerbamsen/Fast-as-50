@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-08-24 13:54",
+    "updated": "2026-08-24 14:08",
     "week": 13,
     "totalWeeks": 14,
     "blockType": "BUILD",
@@ -24,13 +24,13 @@
       "color": "#C0392B"
     },
     "ctl": {
-      "value": "51,2",
+      "value": "51,6",
       "unit": "",
       "sub": "Uge 13-mål 47 · Slutmål 43 (uge 14)",
       "color": "#27AE60"
     },
     "tsb": {
-      "value": "6,0",
+      "value": "4,0",
       "unit": "",
       "sub": "Form · CTL−ATL, frisk >0",
       "color": "#27AE60"
@@ -60,9 +60,9 @@
       "color": "#7A6A58"
     },
     "tssComp": {
-      "value": "14",
+      "value": "32",
       "unit": "TSS",
-      "sub": "14 af 215 planlagt TSS",
+      "sub": "32 af 215 planlagt TSS",
       "color": "#C0392B"
     },
     "bikeKm": {
@@ -89,13 +89,21 @@
     "target": 6,
     "streak": 7
   },
-  "coachSpeech": "Ny uge starter — uge 13 af 14. Build-uge. {HL} Godt: Ny uge med 7 dages streak i ryggen. Hold den. Fokus: 14 af 215 TSS er i hus — 4 sessioner tilbage, heriblandt Médoc-simulation 19 km (run/walk 10/2), Svøm 2.000 m i træk. Vægt på 71,9 kg — hold protein højt og undgå lette kulhydrater om aftenen. Keep moving forward.  \"Det er ikke at have for lidt, der gør et menneske fattigt, men at ville have mere.\" — Seneca",
+  "coachSpeech": "Ny uge starter — uge 13 af 14. Build-uge. {HL} Godt: Ny uge med 7 dages streak i ryggen. Hold den. Fokus: 32 af 215 TSS er i hus — 4 sessioner tilbage, heriblandt Médoc-simulation 19 km (run/walk 10/2), Svøm 2.000 m i træk. Vægt på 71,9 kg — hold protein højt og undgå lette kulhydrater om aftenen. Keep moving forward.  \"Det er ikke at have for lidt, der gør et menneske fattigt, men at ville have mere.\" — Seneca",
   "coachHighlight": "Søvn på 7,9 timer er solid",
   "weekFocus": "Bevar skarphed og ro — Médoc-rytmen sidder i benene",
   "today": [
     {
       "discipline": "strength",
       "title": "Styrketræning",
+      "duration": "",
+      "zone": "–",
+      "desc": "",
+      "completed": true
+    },
+    {
+      "discipline": "walk",
+      "title": "Gentofte Gang",
       "duration": "",
       "zone": "–",
       "desc": "",
@@ -112,6 +120,17 @@
       "actual_tss": 14,
       "actual_mins": 28,
       "actual_distance_m": null,
+      "today": true
+    },
+    {
+      "day": "Man",
+      "disc": "walk",
+      "label": "Gentofte Gang",
+      "done": true,
+      "extra": true,
+      "actual_tss": 18,
+      "actual_mins": 97,
+      "actual_distance_m": 8594.08,
       "today": true
     },
     {
@@ -164,7 +183,7 @@
     53.0,
     52.9,
     52.4,
-    51.2
+    51.6
   ],
   "weightHistory": [
     null,
@@ -1838,7 +1857,7 @@
     },
     {
       "date": "2026-08-24",
-      "v": 6.0,
+      "v": 4.0,
       "real": true
     }
   ],
@@ -2855,6 +2874,17 @@
           "today": true
         },
         {
+          "day": "Man",
+          "disc": "walk",
+          "label": "Gentofte Gang",
+          "done": true,
+          "extra": true,
+          "actual_tss": 18,
+          "actual_mins": 97,
+          "actual_distance_m": 8594.08,
+          "today": true
+        },
+        {
           "day": "Tir",
           "disc": "run",
           "label": "Médoc-simulation 19 km (run/walk 10/2)",
@@ -3022,9 +3052,10 @@
     }
   ],
   "train_mins": {
+    "walk": 97.0,
     "strength": 28.0,
     "planned": 240.0,
-    "actual_total": 28.0
+    "actual_total": 125.0
   },
   "fatHistory": [
     null,
@@ -3350,11 +3381,11 @@
       "real": true
     }
   ],
-  "coachAssessmentHtml": "<p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\"><strong>Dag 85 af 98 · Mandag · Uge 13</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">💪 <strong>Træning & load</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">CTL ligger på 51,2 – markant over ugemålet på 47 – og TSB er +6,0, så du er frisk og velrestitueret. Styrketræningen i dag leverede 14 TSS på 28 minutter og holder TSB-balancen fin. Ugen er bygget rigtigt op: Médoc-simulationen tirsdag er det tunge anker, og resten holder dig skarp uden at grave et hul. Ingen grund til at tilføje mere – formen er der.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">⚖️ <strong>Krop & kost</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Dagsvægten er 71,9 kg, og fedtprocenten er 20,7 % – begge lavere end 7-dages snittene på henholdsvis 72,8 kg og 21,2 %. Det er øjebliksbilleder, men snittet er det der tæller: fedtprocent-snittet er faldet 0,6 procentpoint over de seneste 11 dage, og det er den rigtige retning. Du er 3,9 kg fra vægtmålet på under 68 kg og 4,7 procentpoint fra fedtmålet på under 16 % – begge har stadig et stykke vej, men retningen er ægte og sund fordi det er fedt der forsvinder, ikke muskelmasse.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">🎯 <strong>AF-status & fokus for resten af ugen</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">0 ud af 1 dag gået i ugen er AF – mandag er stadig i gang, så der er fuld mulighed for at lande den. Ugefokus er præcis rigtigt: Médoc-rytmen sidder i benene, og din opgave er at bevare den skarphed frem til start den 5. september. Hold energien i ro, sov godt, og spis tæt på planen – Médoc er en fest, men en fest du løber.</p>",
-  "coachAssessmentTs": "06:58",
+  "coachAssessmentHtml": "<p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\"><strong>Dag 85 af 98 · Mandag · Uge 13</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">💪 <strong>Træning & load</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">CTL er 51,6 — altså over ugemålet på 47, og TSB er 4,0, så du er i god balance. Styrketræningen i dag leverede 14 TSS på 28 minutter — det holder load'et i ro og holder benene friske til Médoc-simulationen på tirsdag. Ugen er bygget rigtigt: den hårde simulation tidligt, åbent vand fredag, og et let løb søndag som afslutning. Det er præcis den rytme du vil ramme ind til Médoc.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">⚖️ <strong>Krop & kost</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Dagens vægt er 71,9 kg — 3,9 kg fra målet. 7-dages snittet er 72,8 kg, og fedtprocentens 7-dages snit er gået ned 0,6 point over de seneste 11 dage og ligger nu på 21,2 %. Det er den reelle retning, og den er rigtig: du taber fedt, ikke muskelmasse. Fedtprocenten er i dag 20,7 % mod målet på under 16 % — der er stadig 4,7 procentpoint at arbejde med, men trenden er den du vil have.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">🎯 <strong>AF-status & fokus for resten af ugen</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Du er 0/1 på AF-dage i ugen indtil nu — dagen er stadig i gang. Médoc-rytmen sidder i benene; opgaven er at beskytte den. Hold søvn og kost skarp de næste dage, så simulationen tirsdag og OW-svømmen fredag rammer med fuld koncentration.</p>",
+  "coachAssessmentTs": "12:08",
   "commute_pairing_warnings": [],
   "warnings": [],
-  "tsb": 6.0,
+  "tsb": 4.0,
   "swimHistory": [
     {
       "week": 1,
@@ -3435,7 +3466,7 @@
       "cumulative": 27374.0
     }
   ],
-  "coachAssessmentLastActId": "i179100512",
+  "coachAssessmentLastActId": "i179221955",
   "weekFocusWeek": 13,
   "coachAssessmentPlanAtGen": "Styrketræning",
   "weightGoal": 68,
@@ -3654,8 +3685,8 @@
       "note": "Nøgle virker"
     }
   },
-  "credentialsCheckedTs": "2026-08-24T11:54:18.148803",
-  "coachAssessmentTsFull": "2026-08-24T06:58:39.399463",
+  "credentialsCheckedTs": "2026-08-24T12:08:36.783518",
+  "coachAssessmentTsFull": "2026-08-24T12:08:36.783502",
   "coachAssessmentWeightAtGen": 71.9,
   "coachAssessmentAfAtGen": 0,
   "event_structure_warnings": [],
@@ -3754,7 +3785,7 @@
     "10": 471,
     "11": 374,
     "12": 367,
-    "13": 14
+    "13": 32
   },
   "racesUpcoming": [
     {
