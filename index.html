@@ -1365,6 +1365,9 @@ function renderBody() {
     <div style="height:14px"></div>
     ${sparkline(D.hrvHistory, 'var(--swim)', 'HRV', 'ms', null, null, true)}
     <div style="height:14px"></div>
+    ${(D.rhrHistory||[]).filter(p=>p&&p.v!=null).length >= 2
+        ? sparkline(D.rhrHistory, 'var(--wine)', 'HVILEPULS', 'slag', null, null, true) + '<div style="height:14px"></div>'
+        : ''}
     ${sparkline(D.sleepHistory, 'var(--bike)', 'SØVN', 't', null, null, true)}
   </div>
 
