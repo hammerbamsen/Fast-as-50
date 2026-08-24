@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-08-24 20:39",
+    "updated": "2026-08-24 21:26",
     "week": 13,
     "totalWeeks": 14,
     "blockType": "BUILD",
@@ -78,18 +78,18 @@
       "color": "#7A6A58"
     },
     "afStreak": {
-      "value": "7",
+      "value": "8",
       "unit": "",
       "sub": "Dage i træk · mål 6/uge",
       "color": "#59182A"
     }
   },
   "af": {
-    "weekDone": 0,
+    "weekDone": 1,
     "target": 6,
-    "streak": 7
+    "streak": 8
   },
-  "coachSpeech": "Ny uge starter — uge 13 af 14. Build-uge. {HL} Godt: Ny uge med 7 dages streak i ryggen. Hold den. Fokus: 32 af 212 TSS er i hus — 4 sessioner tilbage, heriblandt Løb Z2 18 km, Svøm 2.000 m i træk. Vægt på 71,9 kg — hold protein højt og undgå lette kulhydrater om aftenen. Keep moving forward.  \"Det er ikke at have for lidt, der gør et menneske fattigt, men at ville have mere.\" — Seneca",
+  "coachSpeech": "Ny uge starter — uge 13 af 14. Build-uge. {HL} Godt: 1 AF-dage i 1 gennemførte dage — på rette spor. 5 mere og ugens mål er i hus. Fokus: 32 af 212 TSS er i hus — 4 sessioner tilbage, heriblandt Løb Z2 18 km, Svøm 2.000 m i træk. Vægt på 71,9 kg — hold protein højt og undgå lette kulhydrater om aftenen. Keep moving forward.  \"Det er ikke at have for lidt, der gør et menneske fattigt, men at ville have mere.\" — Seneca",
   "coachHighlight": "Søvn på 7,9 timer er solid",
   "weekFocus": "Bevar skarphed og ro — Médoc-rytmen sidder i benene",
   "today": [
@@ -1945,7 +1945,8 @@
     "2026-08-20": 0,
     "2026-08-21": 0,
     "2026-08-22": 0,
-    "2026-08-23": 0
+    "2026-08-23": 0,
+    "2026-08-24": 0
   },
   "all_weeks": {
     "1": {
@@ -3056,7 +3057,7 @@
     },
     {
       "week": 13,
-      "done": 0,
+      "done": 1,
       "total": 1,
       "label": "Uge 13"
     }
@@ -3391,8 +3392,8 @@
       "real": true
     }
   ],
-  "coachAssessmentHtml": "<p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\"><strong>Dag 85 af 98 · Mandag · Uge 13</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">💪 <strong>Træning & load</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">CTL er 51,6 — det er 4,6 over ugemålet på 47, og TSB på 4,0 siger at du er frisk og i god balance. Styrketræningen i dag gav 14 TSS på 28 minutter — et fint, kontrolleret bidrag uden at vippe lasset. Med Médoc om seks dage er det præcis det rigtige signal: skarp, ikke udmattet.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">⚖️ <strong>Krop & kost</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Dagens vægt er 71,9 kg — 3,9 kg fra målet under 68 kg. 7-dages snittet på 72,8 kg er det tal der tæller for retningen, og det bevæger sig i den rigtige retning. Fedtprocenten er 20,7 % i dag, og 7-dages snittet er faldet 0,6 procentpoint over de seneste 11 dage — det er ægte fremgang i kropssammensætningen, ikke blot vægtsvingninger. Du er stadig 4,7 procentpoint fra målet på under 16 %, men kurven peger den rigtige vej.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">🎯 <strong>AF-status & fokus for resten af ugen</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Du er 0 AF-dage inde i ugen — det er dag 1, så der er fuld mulighed for at ramme målet på 6. Streaken på 7 dage er en solid platform at bygge videre på. Resten af ugen er let og præcis det din krop har brug for: en rolig 18 km i Z2, to svømpas og en kort indendørs cykel. Hold hovedet koldt — Médoc-benet sidder der allerede.</p>",
-  "coachAssessmentTs": "18:40",
+  "coachAssessmentHtml": "<p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\"><strong>Dag 85 af 98 · Mandag · Uge 13</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">💪 <strong>Træning & load</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">CTL er 51,6 – godt over ugemålet på 47 – og TSB ligger på 4,0, så du er frisk og klar. Styrketræningen i dag leverede 14 TSS på 28 minutter, præcis hvad der skal til i en uge med fokus på at bevare skarphed frem mod Médoc. Resten af ugen er let doseret med løb, svøm og en cykeltur – hold den rækkefølgen og undlad at tilføje ekstra. Kroppen er godt positioneret til start den 5. september.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">⚖️ <strong>Krop & kost</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Vægten er 71,9 kg i dag – 3,9 kg fra målet – og 7-dages snittet er 72,8 kg, som er det tal der tæller for retningen. Fedtprocenten er 20,7 % i dag, og 7-dages snittet er faldet 0,6 point over de seneste 11 dage – det er det reelle signal, og det peger den rigtige vej. Du er stadig 4,7 procentpoint fra målet på under 16 %, men retningen på snittet viser ægte fremgang i kropssammensætningen. Fortsæt det du gør: proteintæt, kaloriemæssigt moderat – og lad træningsbelastningen gøre resten.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">🎯 <strong>AF-status & fokus for resten af ugen</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Du er 1 AF-dag ud af 1 dag i ugen – perfekt udgangspunkt og streaken er oppe på 8 dage, bevar den. Médoc er om få dage, så ugens opgave er enkel: gennemfør de planlagte pas uden at overperformere, hold vægten nede og hold alkoholen væk. Kom til start frisk, letbenet og med ro i kroppen – det er nu du beskytter det arbejde du allerede har lagt.</p>",
+  "coachAssessmentTs": "19:26",
   "commute_pairing_warnings": [],
   "warnings": [],
   "tsb": 4.0,
@@ -3695,10 +3696,10 @@
       "note": "Nøgle virker"
     }
   },
-  "credentialsCheckedTs": "2026-08-24T18:40:00.355174",
-  "coachAssessmentTsFull": "2026-08-24T18:40:00.355161",
+  "credentialsCheckedTs": "2026-08-24T19:26:19.819151",
+  "coachAssessmentTsFull": "2026-08-24T19:26:19.819135",
   "coachAssessmentWeightAtGen": 71.9,
-  "coachAssessmentAfAtGen": 0,
+  "coachAssessmentAfAtGen": 1,
   "event_structure_warnings": [],
   "coachAssessmentFatAtGen": 20.7,
   "zones": {
