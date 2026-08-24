@@ -16,6 +16,24 @@ def get_fitness():
     return None
 
 
+# Intervals' feltnavn for hvilepuls er IKKE verificeret mod live-API fra denne
+# session (workflow-loggen kunne ikke hentes). Derfor prøves kandidater i
+# rækkefølge, og den ramte nøgle registreres i RHR_FIELD_SEEN, som skrives til
+# data.json['meta'] -- så er navnet verificeret efter første kørsel i stedet for
+# at fejle tavst. Samme fejltype som bodyFat vs. Kropsfedt.
+RHR_CANDIDATES = ('restingHR', 'restingHr', 'resting_hr', 'rhr')
+RHR_FIELD_SEEN = {'field': None}
+
+
+def _rhr(row):
+    for k in RHR_CANDIDATES:
+        v = row.get(k)
+        if v is not None:
+            RHR_FIELD_SEEN['field'] = k
+            return v
+    return None
+
+
 def get_wellness_7d():
     oldest = str(date.today() - timedelta(days=7))
     newest = str(date.today())
@@ -31,6 +49,7 @@ def get_wellness_7d():
         weights = [d.get('weight')    for d in data if d.get('weight')]
         fats    = [d.get('bodyFat')   for d in data if d.get('bodyFat')]
         proteins= [d.get('protein')   for d in data if d.get('protein')]  # lille p — API-navn, ikke UI-navn
+        rhrs    = [_rhr(d)            for d in data if _rhr(d)]
         def _round1(v):
             import decimal
             return float(decimal.Decimal(str(v)).quantize(decimal.Decimal('0.1'), rounding=decimal.ROUND_HALF_UP))
@@ -43,6 +62,8 @@ def get_wellness_7d():
             'weight_avg': weight_avg,
             'fat':        round(fats[-1], 1)                     if fats   else None,
             'protein':    round(proteins[-1], 0)                 if proteins else None,
+            'rhr':        round(rhrs[-1], 0)                     if rhrs   else None,
+            'rhr_avg':    round(sum(rhrs)/len(rhrs), 1)           if rhrs   else None,
         }
     return None
 
@@ -100,6 +121,7 @@ def get_history(existing=None):
             'weight': round(row['weight'], 1)  if row.get('weight')  is not None else None,
             'fat':    round(row['bodyFat'], 1) if row.get('bodyFat') is not None else None,
             'hrv':    round(row['hrv'], 1)     if row.get('hrv')     is not None else None,
+            'rhr':    round(_rhr(row), 0)      if _rhr(row)          is not None else None,
             'sleep':  round(s / 3600, 1)       if s                             else None,
             'tsb':    tsb_val,
         }
@@ -117,6 +139,7 @@ def get_history(existing=None):
         'weightHistory': build('weight'),
         'fatHistory':    build('fat'),
         'hrvHistory':    build('hrv'),
+        'rhrHistory':    build('rhr'),
         'sleepHistory':  build('sleep'),
         'tsbHistory':    build('tsb'),
     }
