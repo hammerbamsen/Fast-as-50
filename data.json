@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-08-24 16:41",
+    "updated": "2026-08-24 17:38",
     "week": 13,
     "totalWeeks": 14,
     "blockType": "BUILD",
@@ -62,7 +62,7 @@
     "tssComp": {
       "value": "32",
       "unit": "TSS",
-      "sub": "32 af 215 planlagt TSS",
+      "sub": "32 af 212 planlagt TSS",
       "color": "#C0392B"
     },
     "bikeKm": {
@@ -89,7 +89,7 @@
     "target": 6,
     "streak": 7
   },
-  "coachSpeech": "Ny uge starter — uge 13 af 14. Build-uge. {HL} Godt: Ny uge med 7 dages streak i ryggen. Hold den. Fokus: 32 af 215 TSS er i hus — 4 sessioner tilbage, heriblandt Médoc-simulation 19 km (run/walk 10/2), Svøm 2.000 m i træk. Vægt på 71,9 kg — hold protein højt og undgå lette kulhydrater om aftenen. Keep moving forward.  \"Det er ikke at have for lidt, der gør et menneske fattigt, men at ville have mere.\" — Seneca",
+  "coachSpeech": "Ny uge starter — uge 13 af 14. Build-uge. {HL} Godt: Ny uge med 7 dages streak i ryggen. Hold den. Fokus: 32 af 212 TSS er i hus — 4 sessioner tilbage, heriblandt Løb Z2 18 km, Svøm 2.000 m i træk. Vægt på 71,9 kg — hold protein højt og undgå lette kulhydrater om aftenen. Keep moving forward.  \"Det er ikke at have for lidt, der gør et menneske fattigt, men at ville have mere.\" — Seneca",
   "coachHighlight": "Søvn på 7,9 timer er solid",
   "weekFocus": "Bevar skarphed og ro — Médoc-rytmen sidder i benene",
   "today": [
@@ -136,11 +136,11 @@
     {
       "day": "Tir",
       "disc": "run",
-      "label": "Médoc-simulation 19 km (run/walk 10/2)",
+      "label": "Løb Z2 18 km",
       "done": false,
-      "planned_tss": 121,
-      "planned_mins": 132,
-      "planned_distance_m": 19000
+      "planned_tss": 87,
+      "planned_mins": 95,
+      "planned_distance_m": 18000
     },
     {
       "day": "Ons",
@@ -162,11 +162,11 @@
     },
     {
       "day": "Søn",
-      "disc": "run",
-      "label": "Løb Z1 40 min let",
+      "disc": "bike",
+      "label": "Cykel indendørs 90 min varieret",
       "done": false,
-      "planned_tss": 37,
-      "planned_mins": 40,
+      "planned_tss": 68,
+      "planned_mins": 90,
       "planned_distance_m": null
     }
   ],
@@ -2887,11 +2887,11 @@
         {
           "day": "Tir",
           "disc": "run",
-          "label": "Médoc-simulation 19 km (run/walk 10/2)",
+          "label": "Løb Z2 18 km",
           "done": false,
-          "planned_tss": 121,
-          "planned_mins": 132,
-          "planned_distance_m": 19000
+          "planned_tss": 87,
+          "planned_mins": 95,
+          "planned_distance_m": 18000
         },
         {
           "day": "Ons",
@@ -2913,11 +2913,11 @@
         },
         {
           "day": "Søn",
-          "disc": "run",
-          "label": "Løb Z1 40 min let",
+          "disc": "bike",
+          "label": "Cykel indendørs 90 min varieret",
           "done": false,
-          "planned_tss": 37,
-          "planned_mins": 40,
+          "planned_tss": 68,
+          "planned_mins": 90,
           "planned_distance_m": null
         }
       ],
@@ -2938,12 +2938,22 @@
         },
         {
           "day": "Tir",
-          "disc": "run",
-          "label": "Løb Z2 40 min let",
+          "disc": "bike",
+          "label": "Cykel indendørs 45 min Z2",
           "done": false,
           "today": false,
-          "planned_tss": 37,
-          "planned_mins": 40,
+          "planned_tss": 34,
+          "planned_mins": 45,
+          "planned_distance_m": null
+        },
+        {
+          "day": "Ons",
+          "disc": "strength",
+          "label": "Styrke 25 min overkrop + core (race-uge)",
+          "done": false,
+          "today": false,
+          "planned_tss": 17,
+          "planned_mins": 25,
           "planned_distance_m": null
         },
         {
@@ -3054,7 +3064,7 @@
   "train_mins": {
     "walk": 97.0,
     "strength": 28.0,
-    "planned": 240.0,
+    "planned": 253.0,
     "actual_total": 125.0
   },
   "fatHistory": [
@@ -3685,7 +3695,7 @@
       "note": "Nøgle virker"
     }
   },
-  "credentialsCheckedTs": "2026-08-24T14:41:42.703731",
+  "credentialsCheckedTs": "2026-08-24T15:38:46.867265",
   "coachAssessmentTsFull": "2026-08-24T12:08:36.783502",
   "coachAssessmentWeightAtGen": 71.9,
   "coachAssessmentAfAtGen": 0,
@@ -4459,7 +4469,7 @@
     },
     {
       "date": "2026-08-24",
-      "v": 43,
+      "v": 41,
       "real": true
     }
   ]
