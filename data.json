@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-08-25 07:31",
+    "updated": "2026-08-25 07:53",
     "week": 13,
     "totalWeeks": 14,
     "blockType": "BUILD",
@@ -30,7 +30,7 @@
       "color": "#27AE60"
     },
     "tsb": {
-      "value": "-0,5",
+      "value": "-1,1",
       "unit": "",
       "sub": "Form · CTL−ATL, frisk >0",
       "color": "#27AE60"
@@ -60,9 +60,9 @@
       "color": "#7A6A58"
     },
     "tssComp": {
-      "value": "32",
+      "value": "37",
       "unit": "TSS",
-      "sub": "32 af 212 planlagt TSS",
+      "sub": "37 af 212 planlagt TSS",
       "color": "#C0392B"
     },
     "bikeKm": {
@@ -89,7 +89,7 @@
     "target": 6,
     "streak": 9
   },
-  "coachSpeech": "Tirsdag — uge 13 af 14. {HL} Godt: 2 AF-dage i 2 gennemførte dage — på rette spor. 4 mere og ugens mål er i hus. Fokus: 32 af 212 TSS er i hus — 4 sessioner tilbage, heriblandt Løb Z2 18 km, Svøm 2.000 m i træk. Vægt på 71,5 kg — hold protein højt og undgå lette kulhydrater om aftenen. Keep moving forward.  \"Hvil er ikke det modsatte af fremskridt — det er en del af det.\"",
+  "coachSpeech": "Tirsdag — uge 13 af 14. {HL} Godt: 2 AF-dage i 2 gennemførte dage — på rette spor. 4 mere og ugens mål er i hus. Fokus: 37 af 212 TSS er i hus — 4 sessioner tilbage, heriblandt Løb Z2 18 km, Svøm 2.000 m i træk. Vægt på 71,5 kg — hold protein højt og undgå lette kulhydrater om aftenen. Keep moving forward.  \"Hvil er ikke det modsatte af fremskridt — det er en del af det.\"",
   "coachHighlight": "Søvn på 7,9 timer er solid",
   "weekFocus": "Bevar skarphed og ro — Médoc-rytmen sidder i benene",
   "today": [
@@ -100,6 +100,14 @@
       "zone": "–",
       "desc": "",
       "completed": false
+    },
+    {
+      "discipline": "strength",
+      "title": "Styrketræning",
+      "duration": "",
+      "zone": "–",
+      "desc": "",
+      "completed": true
     }
   ],
   "week_sessions": [
@@ -131,6 +139,17 @@
       "planned_tss": 87,
       "planned_mins": 95,
       "planned_distance_m": 18000,
+      "today": true
+    },
+    {
+      "day": "Tir",
+      "disc": "strength",
+      "label": "Styrketræning",
+      "done": true,
+      "extra": true,
+      "actual_tss": 5,
+      "actual_mins": 20,
+      "actual_distance_m": null,
       "today": true
     },
     {
@@ -1852,7 +1871,7 @@
     },
     {
       "date": "2026-08-25",
-      "v": -0.4,
+      "v": -1.1,
       "real": true
     }
   ],
@@ -2890,6 +2909,17 @@
           "today": true
         },
         {
+          "day": "Tir",
+          "disc": "strength",
+          "label": "Styrketræning",
+          "done": true,
+          "extra": true,
+          "actual_tss": 5,
+          "actual_mins": 20,
+          "actual_distance_m": null,
+          "today": true
+        },
+        {
           "day": "Ons",
           "disc": "swim",
           "label": "Svøm 2.000 m i træk",
@@ -3058,10 +3088,10 @@
     }
   ],
   "train_mins": {
+    "strength": 48.0,
     "walk": 97.0,
-    "strength": 28.0,
     "planned": 253.0,
-    "actual_total": 125.0
+    "actual_total": 145.0
   },
   "fatHistory": [
     null,
@@ -3391,11 +3421,11 @@
       "real": true
     }
   ],
-  "coachAssessmentHtml": "<p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\"><strong>Dag 86 af 98 · Tirsdag · Uge 13</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">💪 <strong>Træning & load</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">CTL er 52,4 — markant over ugens mål på 47 — og TSB er -0,5, så du er i fin balance. Mandagen leverede 14 TSS på styrke og 18 TSS på 8,6 km gang i Gentofte, og dagens 18 km Z2-løb er endnu ikke forsøgt. Kør det roligt og i tro mod Z2-pace — det er ikke et prestation-pas, det er et rytme-pas. CTL har masser af luft, og du behøver ikke jagte mere load nu.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">⚖️ <strong>Krop & kost</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Vægten er 71,5 kg i dag — 3,5 kg fra målet under 68 kg. Fedtprocenten er 21,6 % i dag mod et mål på under 16 %. Det afgørende er 7-dages snittet: fedtprocenten er gået ned 0,6 point over de seneste 12 dage, og det er den reelle retning. Vægtsnittet er 72,6 kg — dagstallet på 71,5 er et øjebliksbillede, ikke en tendens. Krop og kost peger rigtigt — fortsæt det der virker.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">🎯 <strong>AF-status & fokus for resten af ugen</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Du har 2 AF-dage ud af 2 dage gået i ugen — perfekt. Streaken er oppe på 9 dage, og der er stadig fem dage tilbage til at lande de resterende 4 AF-dage. Ugefokus er klar: skarphed og ro — Médoc-rytmen sidder i benene. Hold den linje, og lad onsdag-, fredag- og søndagspas gøre deres arbejde uden at overkomplicere det.</p>",
-  "coachAssessmentTs": "05:16",
+  "coachAssessmentHtml": "<p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\"><strong>Dag 86 af 98 · Tirsdag · Uge 13</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">💪 <strong>Træning & load</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">CTL er 52.4 med TSB på -1.1 — kroppen er frisk og klar. Mandag leverede du 14 TSS på styrke og 18 TSS på Gentofte-gåturen — solidt fundament for ugen. Nu venter dagens 18 km i Z2: hold pacen rolig og disciplineret hele vejen, det er benene der skal huske Médoc-rytmen, ikke lungerne der skal bevises noget.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">⚖️ <strong>Krop & kost</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Dagens vejning viser 71.5 kg og 21.6 % fedt — henholdsvis 3.5 kg og 5.6 procentpoint fra målene. Det vigtige er retningen: 7-dages snittet på fedtprocent er faldet 0.6 point over de seneste 12 dage, og det er det reelle signal — kroppen arbejder rigtigt. 7-dages vægtsnittet er 72.6 kg, så dagens 71.5 er et øjebliksbillede, ikke en ny tendens — følg snittet, ikke dagsudsving.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">🎯 <strong>AF-status & fokus</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">2 ud af 2 dage denne uge er alkoholfrie — streaken er oppe på 9 dage, og det sidder. Resten af ugen har du svøm onsdag, OW fredag og cykel søndag — alle rolige pas der passer perfekt til capacity-mode. Hold fokus på Z2-disciplinen i dag, så er rammen sat for en stærk afslutning på uge 13.</p>",
+  "coachAssessmentTs": "05:53",
   "commute_pairing_warnings": [],
   "warnings": [],
-  "tsb": -0.5,
+  "tsb": -1.1,
   "swimHistory": [
     {
       "week": 1,
@@ -3476,7 +3506,7 @@
       "cumulative": 27374.0
     }
   ],
-  "coachAssessmentLastActId": "i179221955",
+  "coachAssessmentLastActId": "i179476723",
   "weekFocusWeek": 13,
   "coachAssessmentPlanAtGen": "Løb Z2 18 km",
   "weightGoal": 68,
@@ -3695,8 +3725,8 @@
       "note": "Nøgle virker"
     }
   },
-  "credentialsCheckedTs": "2026-08-25T05:31:30.626144",
-  "coachAssessmentTsFull": "2026-08-25T05:16:47.315511",
+  "credentialsCheckedTs": "2026-08-25T05:53:41.727658",
+  "coachAssessmentTsFull": "2026-08-25T05:53:41.727643",
   "coachAssessmentWeightAtGen": 71.5,
   "coachAssessmentAfAtGen": 2,
   "event_structure_warnings": [],
@@ -3795,7 +3825,7 @@
     "10": 471,
     "11": 374,
     "12": 367,
-    "13": 32
+    "13": 37
   },
   "racesUpcoming": [
     {
