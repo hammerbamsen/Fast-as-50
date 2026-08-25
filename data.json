@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-08-25 22:28",
+    "updated": "2026-08-25 22:57",
     "week": 13,
     "totalWeeks": 14,
     "blockType": "BUILD",
@@ -3434,8 +3434,8 @@
       "real": true
     }
   ],
-  "coachAssessmentHtml": "<p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\"><strong>Dag 86 af 98 · Tirsdag · Uge 13</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">💪 <strong>Træning & load</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Løbeturen i dag leverede 17,8 km på 94 min med 110 TSS — 99% af de planlagte 18,0 km, så det er i mål. Zone-compliance var solid: 84,9% af turen i pace-Z2, og Steps-scoren på 126% viser god struktur igennem workoutet. CTL ligger på 53,0 med TSB på -3,6 — kroppen er frisk og klar. Til næste tilsvarende Z2-løb: se om du kan trykke de sidste 0,2 km hjem, men det er en marginal.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">⚖️ <strong>Krop & kost</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Dagsvægten er 71,5 kg — 3,5 kg fra målet under 68 kg. Fedtprocenten er 21,6% i dag mod et mål på under 16%. Det er 7-dages snittet der tæller som retningsindikator: snit-vægten er 72,6 kg, og fedtprocent-snittet er 21,2% — og det snit er faldet 0,6 procentpoint over de seneste 12 dage. Det er den reelle bevægelse, og den går den rigtige vej: du taber fedt, ikke muskelmasse.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">🎯 <strong>AF-status & fokus for resten af ugen</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Du er 2 AF-dage ud af 2 kalenderdage i ugen — streaken er oppe på 9 dage, og det holder. Resten af ugen har du svøm onsdag, OW-svøm fredag og en indendørs cykeltur søndag — det er en rolig afslutning på uge 13 der passer til filosofien: bevar skarphed, ikke byg load. Médoc-rytmen sidder i benene — lad den sidde.</p>",
-  "coachAssessmentTs": "14:35",
+  "coachAssessmentHtml": "<p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\"><strong>Dag 86 af 98 · Tirsdag · Uge 13</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">💪 <strong>Træning & load</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">CTL er 53,0 — markant over ugemålet på 47 — og TSB er -3,6, så kroppen er godt ladet op uden at ligge i underskud. Dagens løb gik 17,8 km på 94 min med 110 TSS, og 84,9% af pacen lå i Z2 — det er on target. Til næste Z2-løb: de manglende 0,2 km mod de planlagte 18,0 er ingen alarm, men hold øje med at afslutte den fulde distance når benene stadig er friske. Onsdag venter 2.000 m i træk — rolig indsats, ingen ekstra tryk.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">⚖️ <strong>Krop & kost</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Vægten er 71,5 kg i dag — 3,5 kg fra målet under 68 kg. Fedtprocenten er 21,6% i dag mod et mål på under 16%. Det afgørende er 7-dages snittet: fedtprocenten er gået ned 0,6 procentpoint over de seneste 12 dage, og det er den reelle retning — kroppen bevæger sig den rigtige vej. Vægtsnittet på 72,6 kg viser stadig afstand til målet, men kombineret med faldende fedtprocent-snit er det ægte fremgang i kropssammensætning, ikke bare vandtab.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">🎯 <strong>AF-status & fokus for resten af ugen</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Du er 2 AF-dage ud af 2 dage gået i ugen — streaken er oppe på 9 dage, og det holder sig stærkt. Resten af ugen er relativt let: OW-svøm fredag og cykel søndag giver plads til at holde AF-sporet uden pres. Médoc-rytmen sidder i benene — bevar roen, og lad onsdag svøm blive et teknisk og mentalt reset frem mod løbet.</p>",
+  "coachAssessmentTs": "20:57",
   "commute_pairing_warnings": [],
   "warnings": [],
   "tsb": -3.6,
@@ -3738,8 +3738,8 @@
       "note": "Nøgle virker"
     }
   },
-  "credentialsCheckedTs": "2026-08-25T20:28:56.148775",
-  "coachAssessmentTsFull": "2026-08-25T14:35:12.923731",
+  "credentialsCheckedTs": "2026-08-25T20:57:51.506565",
+  "coachAssessmentTsFull": "2026-08-25T20:57:51.506548",
   "coachAssessmentWeightAtGen": 71.5,
   "coachAssessmentAfAtGen": 2,
   "event_structure_warnings": [],
