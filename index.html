@@ -495,6 +495,7 @@ let D = {
   swimHistory: [],  // [{week, date, meters, cumulative}]
   efHistory: { run: [], bike: [] },  // aerob effektivitet pr. kvalificeret pas
   efTrend:   { run: null, bike: null },
+  aerobicFlag: null,                       // seneste pas vurderet mod egen EF-median
   today:{ discipline:"swim", title:"Svøm 2000m + cykel", duration:"90 min", zone:"Z1-Z2", desc:"Aktiv restitution. Luk uge 1 af.", completed:false },
 };
 
@@ -1688,12 +1689,46 @@ function efSpan() {
   return `siden ${m[+all[0].slice(5,7)-1]}`;
 }
 
+// Flag på ÉT pas, i modsætning til trenden ovenfor som er en 42-dages median.
+// Vises kun når passet faktisk afveg — et permanent grønt felt ville lære øjet
+// at springe kortet over. Forbeholdene (varme, tidspunkt) står med, fordi
+// tallet IKKE er korrigeret for dem.
+function aerobicFlagBanner() {
+  const f = D.aerobicFlag;
+  if (!f || !f.flagged) return '';
+  const strong = f.level === 'strong';
+  const col    = strong ? '#C0392B' : '#B9770E';
+  const bg     = strong ? 'rgba(192,57,43,.08)' : 'rgba(185,119,14,.08)';
+  const num    = n => (n == null ? '' : String(n).replace('.', ','));
+  const d      = (f.date || '').slice(8).replace(/^0/, '') + '/' + (f.date || '').slice(5, 7).replace(/^0/, '');
+  const disc   = f.discipline === 'run' ? 'Løb' : 'Cykel';
+
+  const caveats = [];
+  if (f.warm)      caveats.push(`${num(f.temp_c)} °C`);
+  if (f.afternoon) caveats.push(`start kl. ${String(f.start_hour).padStart(2, '0')}`);
+  if (f.time_of_day_comparable === false) caveats.push('baseline lå på et andet tidspunkt');
+
+  return `<div style="margin:6px 0 8px;padding:8px 10px;border-left:3px solid ${col};background:${bg};border-radius:2px">
+    <div style="font-family:Space Mono,monospace;font-size:9px;letter-spacing:.08em;color:${col};margin-bottom:3px">
+      ${disc} ${d} — ${num(f.pct)} %${f.avg_hr ? ' · snitpuls ' + f.avg_hr : ''}
+    </div>
+    <div style="font-size:11px;line-height:1.45;color:var(--ink)">
+      Kostede mere puls pr. meter end medianen af de seneste ${f.n_baseline} sammenlignelige pas
+      (EF ${num(f.ef)} mod ${num(f.baseline)}).
+    </div>
+    ${caveats.length ? `<div style="font-size:10px;color:var(--muted);margin-top:4px;line-height:1.4">
+      Ikke trukket fra tallet: ${caveats.join(', ')}.
+    </div>` : ''}
+  </div>`;
+}
+
 function efCard() {
   return `<div class="card">
     <div class="label" style="margin-bottom:4px">Aerob effektivitet</div>
     <div style="font-size:11px;color:var(--muted);margin-bottom:6px;line-height:1.45">
       Fart pr. hjerteslag på rolige pas. Stiger den, er formen bedre — uafhængigt af vægt.
     </div>
+    ${aerobicFlagBanner()}
     ${efLight('run',  'LØB')}
     <div style="border-top:1px solid var(--cream-d)"></div>
     ${efLight('bike', 'CYKEL — kun hometrainer')}
@@ -2200,6 +2235,9 @@ function applyRemote(remote) {
       if (remote.swimHistory)    D.swimHistory = remote.swimHistory || [];
       if (remote.efHistory)      D.efHistory   = remote.efHistory;
       if (remote.efTrend)        D.efTrend     = remote.efTrend;
+      // Sættes bevidst også når feltet mangler: uden else forsvinder et gammelt
+      // flag aldrig fra skærmen, og en uge gammel advarsel ligner en ny.
+      D.aerobicFlag = remote.aerobicFlag || null;
       if (remote.train_mins)     D.train_mins     = remote.train_mins;
       if (remote.today) {
         // Håndter array (nyt format, flere sessioner pr. dag), flat, og nested format

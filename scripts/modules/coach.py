@@ -290,6 +290,7 @@ def generate_coach_speech(week_num, weekday, streak, af_this_week, today_session
                            ctl=None, tsb=None, weight=None, sleep=None, compliance=None,
                            tss_act=None, planned=None, remaining_sessions=None, week_sessions=None,
                            travel_note=None, trajectory_note=None, days_completed=None, weight_goal=72,
+                           decoupling_note=None,
                            weight_date=None):
     """Genererer daglig coach-tekst: dagsintro + session + Friel/Martin-vurdering (godt/fokus).
 
@@ -500,6 +501,11 @@ def generate_coach_speech(week_num, weekday, streak, af_this_week, today_session
         closing = "Keep moving forward."
     parts.append(closing)
 
+    # Aerobt flag på gårsdagens pas. Står FØR store billede: det er dagsaktuelt,
+    # og det er den eneste linje der kan ændre hvad Kennet gør i eftermiddag.
+    if decoupling_note:
+        parts.append(f"❤️ Aerobt: {decoupling_note}")
+
     # Store billede — kun når trajectory_note er givet (søndage), ikke trunkeret
     if trajectory_note:
         parts.append(f"📊 Store billede: {trajectory_note}")
@@ -541,6 +547,7 @@ def _redact(msg):
 def generate_ai_assessment(week_num, weekday, day_name, ctl, tsb, weight, af_this_week, af_streak,
                              week_sessions, week_focus, today_session, tss_act, planned, travel_note=None,
                              trajectory_note=None, days_completed=None, compliance_summary=None, weight_goal=72,
+                             decoupling_note=None,
                              fat=None, fat_goal=20, fat_trend_note=None,
                              weight_date=None, fat_date=None,
                              weight_avg7=None, fat_avg7=None):
@@ -693,6 +700,14 @@ def generate_ai_assessment(week_num, weekday, day_name, ctl, tsb, weight, af_thi
         f"\n- UGENTLIGT STORE BILLEDE (kun søndage): {trajectory_note}"
         if trajectory_note else ""
     )
+    # Aerobt flag: ét pas hvor EF lå markant under egen median. Kommer fra
+    # decoupling.py, som allerede har hængt forbeholdene (varme, tidspunkt) på.
+    # Sætningen skal bruges ordret — modellen må ikke regne EF om eller opgradere
+    # ét dyrt pas til en formdiagnose.
+    decoupling_line = (
+        f"\n- AEROBT FLAG PÅ SENESTE PAS: {decoupling_note}"
+        if decoupling_note else ""
+    )
     fourth_line_instruction = (
         "\n4. 📊 Store billede — brug PRÆCIS tallene fra 'UGENTLIGT STORE BILLEDE' ovenfor "
         "(CTL vs. planmål, vægtudvikling over flere uger). Gæt eller genberegn intet selv."
@@ -710,7 +725,7 @@ def generate_ai_assessment(week_num, weekday, day_name, ctl, tsb, weight, af_thi
         f"- I dag: {today_line} [{today_status}]\n"
         f"- GENNEMFØRT denne uge (fuldførte kendsgerninger): {completed_str}\n"
         + (f"- MISSET denne uge (dag passeret, ikke gennemført): {missed_str}\n" if missed_str else "")
-        + f"- Resten af ugen (KUN fremtidige, endnu ikke forfaldne pas): {remaining}{weight_line}{fat_line}{avg_line}{distance_line}{travel_line}{trajectory_line}{compliance_line}\n\n"
+        + f"- Resten af ugen (KUN fremtidige, endnu ikke forfaldne pas): {remaining}{weight_line}{fat_line}{avg_line}{distance_line}{travel_line}{decoupling_line}{trajectory_line}{compliance_line}\n\n"
         f"VIGTIGT:\n"
         f"- TALPRÆCISION (ufravigelig): Gengiv ALLE tal PRÆCIS som de står i data ovenfor. "
         f"Rund aldrig af, glat aldrig ud, og skriv aldrig et 'pænere' nabotal — det gælder "
@@ -721,7 +736,14 @@ def generate_ai_assessment(week_num, weekday, day_name, ctl, tsb, weight, af_thi
         f"'FAKTISK:' efter et pas, er DET de eneste tal du må bruge om udførelsen. Ligger faktisk "
         f"og planlagt tæt, så nævn blot det faktiske tal; afviger de mærkbart, så nævn begge "
         f"eksplicit (fx '28,2 km mod planlagte 29'). Udled ALDRIG et udført tal fra label'en.\n"
-        f"- GROUNDING (ufravigelig): Pas i 'GENNEMFØRT denne uge' ER fuldført. Omtal dem ALDRIG som "
+        + (f"- AEROBT FLAG (ufravigelig, når linjen findes ovenfor): Nævn det i linje 1 "
+           f"(💪 Træning & load). Brug tallene og forbeholdene PRÆCIS som de står — regn "
+           f"ingenting om, og træk aldrig selv varme eller tidspunkt fra. Sig hvad passet "
+           f"kostede, og at forklaringen enten er varmen eller for højt tempo. Konkludér "
+           f"ALDRIG overtræning, overbelastning eller behov for hvile ud fra ét pas — "
+           f"det afgøres af CTL, TSB og wellness, ikke af én løbetur.\n"
+           if decoupling_note else "")
+        + f"- GROUNDING (ufravigelig): Pas i 'GENNEMFØRT denne uge' ER fuldført. Omtal dem ALDRIG som "
         f"manglende, glemt, sprunget over, udestående eller noget der 'skal'/'mangler' at ske. Et pas må "
         f"KUN kaldes manglende/misset hvis det står eksplicit i 'MISSET denne uge'. Hvis CTL ligger under "
         f"ugemålet, forklar det ud fra ugens KARAKTER (fx en let rejse-/restitutionsuge hvor gåture og "

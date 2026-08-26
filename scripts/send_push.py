@@ -35,7 +35,16 @@ try:
     from pywebpush import webpush, WebPushException
 except ImportError:
     webpush = None
-    WebPushException = Exception
+
+    class WebPushException(Exception):
+        """Pladsholder når pywebpush ikke er installeret.
+
+        Må IKKE være et alias for Exception. `_webpush_sender` fanger
+        WebPushException FØR den specifikke (ValueError, KeyError,
+        TypeError)-gren, så et alias ville sluge alt: enhver korrupt
+        subscription ville blive rapporteret som midlertidig fejl (False)
+        i stedet for død, aldrig blive ryddet, og fejlen ville være tavs.
+        """
 
 
 GH_TOKEN = os.environ.get("GITHUB_TOKEN", "")
@@ -161,6 +170,13 @@ def _webpush_sender(s, payload):
       "dead" = ugyldig subscription (fx korrupt base64-nøgle) => skal fjernes
       False  = midlertidig/ukendt fejl (beholdes, prøves igen næste gang)
     """
+    if webpush is None:
+        # Manglende afhængighed er et miljøproblem, ikke en død subscription.
+        # Returner False (midlertidig fejl) — ALDRIG "dead", som ville rydde
+        # samtlige subscriptions permanent, fordi et pip install fejlede.
+        print("    pywebpush ikke installeret — ingen afsendelse forsøgt")
+        return False
+
     try:
         webpush(
             subscription_info={"endpoint": s["endpoint"], "keys": s["keys"]},

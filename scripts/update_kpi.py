@@ -29,6 +29,7 @@ from modules.config   import (API_KEY, ATHLETE_ID, GH_TOKEN, ANTHROPIC_KEY,
                                api_get, ctl_plan_for_week, fix_enc, fmt, color_for)
 from modules.fitness  import get_fitness, get_wellness_7d, get_history, get_ctl_curve
 from modules.aerobic  import get_ef_history
+from modules import decoupling
 from modules.af       import (get_af_this_week, get_af_history, get_full_af_log,
                                get_af_streak, monday_this_week,
                                detect_alcohol_cluster)
@@ -514,11 +515,27 @@ def main():
     # --- Aerob effektivitet (EF): formsignal mellem tærskeltests ---
     # Ikke-blokerende: fejler kaldet, beholdes den eksisterende serie frem for
     # at nulstille grafen. Samme mønster som weekTssActual ovenfor.
+    # --- Aerobt flag på seneste pas ---
+    # Samme EF-tal, kortere horisont: trenden svarer på "hvordan går det over 42
+    # dage", flaget på "hvad kostede passet i går". Punkterne lå allerede i
+    # efHistory — de blev bare aldrig læst enkeltvis.
+    decoupling_note = None
     try:
         _ef = get_ef_history(days=180)
         if _ef:
             data['efHistory'] = _ef['history']
             data['efTrend']   = _ef['trend']
+            _flag = decoupling.latest(_ef.get('acts'), _ef['history'])
+            if _flag:
+                data['aerobicFlag'] = _flag
+                decoupling_note = decoupling.format_note(_flag)
+                print(f"  Aerobt flag: {_flag['date']} {_flag['discipline']} "
+                      f"{_flag['pct']:+.1f}% ({_flag['level']})")
+            else:
+                # Intet sammenligneligt pas inden for 2 dage: fjern et gammelt
+                # flag frem for at lade det stå og se dagsaktuelt ud.
+                data.pop('aerobicFlag', None)
+                print("  Aerobt flag: intet sammenligneligt pas de seneste 2 dage")
     except Exception as _e:
         print(f"  EF fejlede (ikke-blokerende): {_e}")
 
@@ -622,6 +639,7 @@ def main():
         ctl=ctl, tsb=tsb, weight=weight_coach, sleep=sleep, compliance=compliance,
         tss_act=tss_act, planned=planned, week_sessions=data['week_sessions'],
         travel_note=context_note, trajectory_note=trajectory_note, days_completed=days_completed,
+        decoupling_note=decoupling_note,
         weight_goal=data['weightGoal'], weight_date=weight_coach_date
     )
 
@@ -718,6 +736,7 @@ def main():
             data['week_sessions'], week_focus,
             today_session, tss_act, planned,
             travel_note=context_note, trajectory_note=trajectory_note, days_completed=days_completed,
+        decoupling_note=decoupling_note,
             compliance_summary=compliance_summary,
             weight_goal=data['weightGoal'],
             fat=fat_coach,

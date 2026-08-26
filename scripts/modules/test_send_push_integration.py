@@ -5,6 +5,8 @@ verificeres via Actions (i dag var hviledag). Mocker afsendelsen via en
 injiceret sender; ingen netværk, ingen VAPID. Køres af CI (X4).
 """
 import json
+
+import pytest
 import sys
 from pathlib import Path
 
@@ -120,6 +122,12 @@ def test_corrupt_subscription_does_not_crash_batch():
     efterladte test-subscriptions) må ikke vælte hele kørslen. Den ægte
     _webpush_sender skal returnere 'dead', ikke kaste.
     """
+    # Testen måler den ÆGTE pywebpush-adfærd på en korrupt base64-nøgle.
+    # Uden biblioteket findes den adfærd ikke, og et rødt kryds ville her
+    # betyde "afhængighed mangler", ikke "koden er forkert". CI installerer
+    # pywebpush, så testen kører rigtigt dér.
+    pytest.importorskip("pywebpush")
+
     corrupt = {"endpoint": "https://fcm.googleapis.com/fcm/send/BAD",
                "keys": {"p256dh": "BID_test3", "auth": "authtest3"},  # ugyldig base64
                "athlete": "kennet"}
