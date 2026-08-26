@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-08-26 05:53",
+    "updated": "2026-08-26 06:24",
     "week": 13,
     "totalWeeks": 14,
     "blockType": "BUILD",
@@ -12,13 +12,13 @@
   },
   "kpis": {
     "weight": {
-      "value": "71,5",
+      "value": "71,0",
       "unit": "kg",
-      "sub": "Sidst målt 25/8 · Mål <68 kg · snit 72,6 kg",
+      "sub": "Mål <68 kg · snit 72,3 kg",
       "color": "#E67E22"
     },
     "fat": {
-      "value": "21,6",
+      "value": "21,5",
       "unit": "%",
       "sub": "Mål <16%",
       "color": "#C0392B"
@@ -36,7 +36,7 @@
       "color": "#27AE60"
     },
     "sleep": {
-      "value": "7,8",
+      "value": "7,9",
       "unit": "t",
       "sub": "Snit 7,5t · mål 7t",
       "color": "#2874A6"
@@ -48,7 +48,7 @@
       "color": "#E67E22"
     },
     "hrv": {
-      "value": "58,0",
+      "value": "58,5",
       "unit": "ms",
       "sub": "Snit 7d",
       "color": "#7A6A58"
@@ -78,19 +78,19 @@
       "color": "#7A6A58"
     },
     "afStreak": {
-      "value": "9",
+      "value": "10",
       "unit": "",
       "sub": "Dage i træk · mål 6/uge",
       "color": "#59182A"
     }
   },
   "af": {
-    "weekDone": 2,
+    "weekDone": 3,
     "target": 6,
-    "streak": 9
+    "streak": 10
   },
-  "coachSpeech": "Onsdag — uge 13 af 14. {HL} Fokus: 147 af 212 TSS er i hus — 3 sessioner tilbage, heriblandt Svøm 2.000 m i træk, OW-svøm let 20 min (Gentofte). Vægt på 71,5 kg (målt 25/8) — hold protein højt og undgå lette kulhydrater om aftenen. 2 AF-dage i 3 afsluttede dage — 4 mangler i 4 dage tilbage. Hård uge — men det er sådan formen bygges. Hold ved.  \"Kroppen tror, hvad sindet siger.\"",
-  "coachHighlight": "Søvn på 7,8 timer er solid",
+  "coachSpeech": "Onsdag — uge 13 af 14. {HL} Godt: 3 AF-dage i 3 gennemførte dage — på rette spor. 3 mere og ugens mål er i hus. Fokus: 147 af 212 TSS er i hus — 3 sessioner tilbage, heriblandt Svøm 2.000 m i træk, OW-svøm let 20 min (Gentofte). Vægt på 71,0 kg — hold protein højt og undgå lette kulhydrater om aftenen. Keep moving forward.  \"Kroppen tror, hvad sindet siger.\"",
+  "coachHighlight": "Søvn på 7,9 timer er solid",
   "weekFocus": "Bevar skarphed og ro — Médoc-rytmen sidder i benene",
   "today": [
     {
@@ -518,7 +518,11 @@
       "v": 71.5,
       "real": true
     },
-    null
+    {
+      "date": "2026-08-26",
+      "v": 71.0,
+      "real": true
+    }
   ],
   "hrvHistory": [
     {
@@ -966,7 +970,11 @@
       "v": 69.0,
       "real": true
     },
-    null
+    {
+      "date": "2026-08-26",
+      "v": 62.0,
+      "real": true
+    }
   ],
   "sleepHistory": [
     {
@@ -1410,7 +1418,11 @@
       "v": 8.3,
       "real": true
     },
-    null
+    {
+      "date": "2026-08-26",
+      "v": 8.4,
+      "real": true
+    }
   ],
   "tsbHistory": [
     {
@@ -1950,7 +1962,8 @@
     "2026-08-22": 0,
     "2026-08-23": 0,
     "2026-08-24": 0,
-    "2026-08-25": 0
+    "2026-08-25": 0,
+    "2026-08-26": 0
   },
   "all_weeks": {
     "1": {
@@ -3076,7 +3089,7 @@
     },
     {
       "week": 13,
-      "done": 2,
+      "done": 3,
       "total": 3,
       "label": "Uge 13"
     }
@@ -3414,10 +3427,14 @@
       "v": 21.6,
       "real": true
     },
-    null
+    {
+      "date": "2026-08-26",
+      "v": 21.5,
+      "real": true
+    }
   ],
-  "coachAssessmentHtml": "<p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\"><strong>Dag 87 af 98 · Onsdag · Uge 13</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">💪 <strong>Træning & load</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">CTL er 52,7 med TSB på -1,7 — du er godt ladet og tæt på neutral. Ugen har allerede leveret solid substans: 17,8 km løb i Z2 med 84,9 % pace-compliance, to styrketure og en lang gåtur. Svømmens 2.000 m mangler stadig i dag — det er det eneste der er tilbage at sætte flueben ved for onsdagen.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">⚖️ <strong>Krop & kost</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Seneste vejning 25/8 viste 71,5 kg og 21,6 % fedt. 7-dages snittet på fedtprocent er 21,2 % — det er gået 0,5 procentpoint ned over de seneste syv dage, og det er den reelle retning. Vægtsnittet ligger på 72,5 kg, så der er stadig 4,5 kg til målet under 68 kg og 5,6 procentpoint til fedtmålet på under 16 % — men retningen på fedtprocenten er den rigtige.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">🎯 <strong>AF-status & fokus for resten af ugen</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Du har 2 AF-dage ud af 3 dage gået i ugen — det er stærkt. Streaken er oppe på 9 dage, og den skal du ikke spekulere over; bare hold den kørende. Fokus nu er svømmeturen i dag — 2.000 m i træk er præcis den mentale og fysiske bekræftelse du skal bruge inden Christiansborg Rundt om fire dage.</p>",
-  "coachAssessmentTs": "01:18",
+  "coachAssessmentHtml": "<p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\"><strong>Dag 87 af 98 · Onsdag · Uge 13</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">💪 <strong>Træning & load</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">CTL er 52,7 — markant over ugemålet på 47 — og TSB på -1,7 viser, at du er i god balance uden at være overkørt. Ugens tunge indsats var tirsdagens 17,8 km løb med 110 TSS og 84,9% tid i Z2-pace, som sad præcist i skiven. Nu venter dagens 2.000 m svøm: sæt et roligt, jævnt tempo fra start og hold det hele vejen — dette er ikke et hastigheds-pas, men et konfidenspas op mod Christiansborg Rundt.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">⚖️ <strong>Krop & kost</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Dagens vægt er 71,0 kg — 3,0 kg fra målet — og dagens fedtprocent er 21,5%. Det autoritative billede er 7-dages snittet: fedtprocenten er gået 0,5 procentpoint ned over de seneste 7 dage, og det er reel fremgang i kropssammensætning, ikke støj. Vægtsnittet på 72,2 kg er stadig et stykke fra 68 kg, men retningen i fedtprocenten er det vigtigste signal — du taber fedt, ikke muskelmasse. Fortsæt med at prioritere protein og undgå at spise dig ind i et kalorieunderskud så stort, at det rammer restitutionen.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">🎯 <strong>AF-status & fokus for resten af ugen</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Du har 3 AF-dage ud af 3 dage gået i ugen — perfekt tempo og en streak på 10 dage. Resten af ugen er enkelt: OW-svøm fredag og cykel indendørs søndag — begge lette pas, der holder kroppen kørende uden at belaste. Médoc er om ni dage: du skal ikke bygge mere fitness nu, du skal ankomme frisk og skarp.</p>",
+  "coachAssessmentTs": "04:24",
   "commute_pairing_warnings": [],
   "warnings": [],
   "tsb": -1.7,
@@ -3596,7 +3613,7 @@
     73.0,
     72.78,
     72.57,
-    72.5
+    72.25
   ],
   "fatMovingAvg7": [
     null,
@@ -3688,10 +3705,10 @@
     21.45,
     21.25,
     21.2,
-    21.18
+    21.23
   ],
-  "weightToGoal": 3.5,
-  "bodyFatToGoal": 5.6,
+  "weightToGoal": 3.0,
+  "bodyFatToGoal": 5.5,
   "ctlPlan": [
     34,
     36,
@@ -3720,12 +3737,12 @@
       "note": "Nøgle virker"
     }
   },
-  "credentialsCheckedTs": "2026-08-26T03:53:18.167498",
-  "coachAssessmentTsFull": "2026-08-26T01:18:49.122471",
-  "coachAssessmentWeightAtGen": 71.5,
-  "coachAssessmentAfAtGen": 2,
+  "credentialsCheckedTs": "2026-08-26T04:24:26.272488",
+  "coachAssessmentTsFull": "2026-08-26T04:24:26.272472",
+  "coachAssessmentWeightAtGen": 71.0,
+  "coachAssessmentAfAtGen": 3,
   "event_structure_warnings": [],
-  "coachAssessmentFatAtGen": 21.6,
+  "coachAssessmentFatAtGen": 21.5,
   "zones": {
     "runThreshold": "4:24/km",
     "bikeFtpW": 278,
@@ -4494,7 +4511,7 @@
     },
     {
       "date": "2026-08-26",
-      "v": 44,
+      "v": 42,
       "real": true
     }
   ]
