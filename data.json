@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-08-26 12:35",
+    "updated": "2026-08-26 13:19",
     "week": 13,
     "totalWeeks": 14,
     "blockType": "BUILD",
@@ -24,13 +24,13 @@
       "color": "#C0392B"
     },
     "ctl": {
-      "value": "51,7",
+      "value": "52,1",
       "unit": "",
       "sub": "Uge 13-mål 47 · Slutmål 43 (uge 14)",
       "color": "#27AE60"
     },
     "tsb": {
-      "value": "2,6",
+      "value": "1,1",
       "unit": "",
       "sub": "Form · CTL−ATL, frisk >0",
       "color": "#27AE60"
@@ -60,9 +60,9 @@
       "color": "#7A6A58"
     },
     "tssComp": {
-      "value": "147",
+      "value": "162",
       "unit": "TSS",
-      "sub": "147 af 207 planlagt TSS",
+      "sub": "162 af 207 planlagt TSS",
       "color": "#E67E22"
     },
     "bikeKm": {
@@ -89,17 +89,17 @@
     "target": 6,
     "streak": 10
   },
-  "coachSpeech": "Onsdag — uge 13 af 14. {HL} Godt: 3 AF-dage i 3 gennemførte dage — på rette spor. 3 mere og ugens mål er i hus. Fokus: 147 af 207 TSS er i hus — 3 sessioner tilbage, heriblandt OW-svøm let 20 min (Gentofte), Svøm 2.000 m — Christiansborg Rundt. Vægt på 71,0 kg — hold protein højt og undgå lette kulhydrater om aftenen. Keep moving forward.  \"Kroppen tror, hvad sindet siger.\"",
+  "coachSpeech": "Onsdag — uge 13 af 14. {HL} Godt: 3 AF-dage i 3 gennemførte dage — på rette spor. 3 mere og ugens mål er i hus. Fokus: 162 af 207 TSS er i hus — 3 sessioner tilbage, heriblandt OW-svøm let 20 min (Gentofte), Svøm 2.000 m — Christiansborg Rundt. Vægt på 71,0 kg — hold protein højt og undgå lette kulhydrater om aftenen. Keep moving forward.  \"Kroppen tror, hvad sindet siger.\"",
   "coachHighlight": "Søvn på 7,9 timer er solid",
   "weekFocus": "Bevar skarphed og ro — Médoc-rytmen sidder i benene",
   "today": [
     {
-      "discipline": "rest",
-      "title": "Hviledag",
+      "discipline": "walk",
+      "title": "Gentofte Gang",
       "duration": "",
       "zone": "–",
-      "desc": "Ingen planlagt træning i dag.",
-      "completed": false
+      "desc": "",
+      "completed": true
     }
   ],
   "week_sessions": [
@@ -149,6 +149,17 @@
       "actual_distance_m": null
     },
     {
+      "day": "Ons",
+      "disc": "walk",
+      "label": "Gentofte Gang",
+      "done": true,
+      "extra": true,
+      "actual_tss": 15,
+      "actual_mins": 89,
+      "actual_distance_m": 7950.29,
+      "today": true
+    },
+    {
       "day": "Fre",
       "disc": "openwater",
       "label": "OW-svøm let 20 min (Gentofte)",
@@ -189,7 +200,7 @@
     53.0,
     52.9,
     52.4,
-    51.7
+    52.1
   ],
   "weightHistory": [
     {
@@ -1871,7 +1882,7 @@
     },
     {
       "date": "2026-08-26",
-      "v": 2.7,
+      "v": 1.0,
       "real": true
     }
   ],
@@ -2925,6 +2936,17 @@
           "actual_distance_m": null
         },
         {
+          "day": "Ons",
+          "disc": "walk",
+          "label": "Gentofte Gang",
+          "done": true,
+          "extra": true,
+          "actual_tss": 15,
+          "actual_mins": 89,
+          "actual_distance_m": 7950.29,
+          "today": true
+        },
+        {
           "day": "Fre",
           "disc": "openwater",
           "label": "OW-svøm let 20 min (Gentofte)",
@@ -3093,11 +3115,11 @@
     }
   ],
   "train_mins": {
+    "walk": 186.0,
     "run": 94.0,
     "strength": 48.0,
-    "walk": 97.0,
     "planned": 245.0,
-    "actual_total": 239.0
+    "actual_total": 328.0
   },
   "fatHistory": [
     {
@@ -3431,11 +3453,11 @@
       "real": true
     }
   ],
-  "coachAssessmentHtml": "<p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\"><strong>Dag 87 af 98 · Onsdag · Uge 13</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">💪 <strong>Træning & load</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">CTL er 51,7 — det er 4,7 over ugemålet på 47, og TSB på 2,6 viser at du er frisk og velrestitueret op mod weekenden. Tirsdagens løb ramte 84,9 % af distancen i pace-Z2 over 17,8 km på 94 min — det er præcis den rigtige intensitet to uger fra Médoc. I dag er hviledag, og det er det rigtige valg: fredag er der let OW-svøm, lørdag er selve Christiansborg Rundt, og søndag lukker ugen med 90 min indendørs cykel.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">⚖️ <strong>Krop & kost</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Dagens vægt er 71,0 kg — 3,0 kg fra målet under 68 kg. Fedtprocenten er 21,9 % i dag mod et mål på under 16 %. Det afgørende er retningen: 7-dages snittet på fedtprocent er gået ned 0,4 procentpoint de seneste 7 dage, og det er den reelle bevægelse — ikke dagstallet alene. Vægten er et øjebliksbillede; at snittet falder på fedtprocent er det, der tæller.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">🎯 <strong>AF-status & fokus for resten af ugen</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Du har 3 AF-dage ud af 3 dage i ugen — perfekt udgangspunkt. Resten af ugen handler om én ting: komme frisk og rolig til startpontonerne lørdag. Hold kosten ren, sov godt, og lad kroppen gøre arbejdet.</p>",
-  "coachAssessmentTs": "06:50",
+  "coachAssessmentHtml": "<p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\"><strong>Dag 87 af 98 · Onsdag · Uge 13</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">💪 <strong>Træning & load</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">CTL ligger på 52,1 — markant over ugemålet på 47 — og TSB på 1,1 viser at du er i fin balance. Dagens Gentofte Gang på 8,0 km og 89 min gav 15 TSS og holder det let, præcis som det skal være to dage før Christiansborg Rundt. Tirsdagens løb på 17,8 km ramte 84,9 % i pace-Z2, hvilket er on target og viser at Médoc-rytmen sidder. Resten af ugen er lagt rigtigt op: let OW-svøm fredag, 2.000 m lørdag, og en rolig cykeltur søndag.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">⚖️ <strong>Krop & kost</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Dagens vejning viser 71,0 kg og 21,9 % fedt — det er øjebliksbilleder, ikke tendenser. Det autoritative billede er 7-dages snittet: vægten snitter 72,2 kg og fedtprocenten 21,3 %, og fedtprocenten er faldet 0,4 procentpoint over de seneste 7 dage — det er den reelle retning, og den er positiv. Du er stadig 3,0+ kg fra vægtmålet og 5+ procentpoint fra fedtprocentmålet på under 16 %, så der er et stykke vej endnu — men retningen er den rigtige.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">🎯 <strong>AF-status & fokus for resten af ugen</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Du har holdt 3 AF-dage ud af 3 dage i ugen — det er flot disciplin og holder stregen på 10 dage i træk. Prioriteten frem til lørdag er enkel: bevar ro i kroppen, sov godt, og hold mad og væske i orden så du møder Christiansborg Rundt frisk. Fristelserne dukker ofte op i weekenden — hold linjen.</p>",
+  "coachAssessmentTs": "11:19",
   "commute_pairing_warnings": [],
   "warnings": [],
-  "tsb": 2.6,
+  "tsb": 1.1,
   "swimHistory": [
     {
       "week": 1,
@@ -3516,9 +3538,9 @@
       "cumulative": 27374.0
     }
   ],
-  "coachAssessmentLastActId": "i179650480",
+  "coachAssessmentLastActId": "i179988722",
   "weekFocusWeek": 13,
-  "coachAssessmentPlanAtGen": "",
+  "coachAssessmentPlanAtGen": "Gentofte Gang",
   "weightGoal": 68,
   "bodyFatGoal": 16,
   "weightMovingAvg7": [
@@ -3735,8 +3757,8 @@
       "note": "Nøgle virker"
     }
   },
-  "credentialsCheckedTs": "2026-08-26T10:35:15.009057",
-  "coachAssessmentTsFull": "2026-08-26T06:50:10.750112",
+  "credentialsCheckedTs": "2026-08-26T11:19:44.145984",
+  "coachAssessmentTsFull": "2026-08-26T11:19:44.145968",
   "coachAssessmentWeightAtGen": 71.0,
   "coachAssessmentAfAtGen": 3,
   "event_structure_warnings": [
@@ -3845,7 +3867,7 @@
     "10": 471,
     "11": 374,
     "12": 367,
-    "13": 147
+    "13": 162
   },
   "racesUpcoming": [
     {
