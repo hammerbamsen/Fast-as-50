@@ -186,7 +186,7 @@ def trend(points, today=None, window=TREND_WINDOW):
 def get_ef_history(days=180):
     """Hent aktiviteter og byg EF-historik + trend pr. disciplin.
 
-    Returnerer {'history': {...}, 'trend': {...}} eller None ved API-fejl,
+    Returnerer {'history': {...}, 'trend': {...}, 'acts': [...]} eller None ved API-fejl,
     så kalderen kan beholde eksisterende data frem for at nulstille den.
     """
     newest = date.today()
@@ -202,4 +202,6 @@ def get_ef_history(days=180):
     tr = {disc: trend(pts[disc], today=newest) for disc in pts}
     print(f"  EF: løb {len(pts['run'])} pkt (trend {tr['run']['current']}), "
           f"cykel {len(pts['bike'])} pkt (trend {tr['bike']['current']})")
-    return {'history': pts, 'trend': tr}
+    # 'acts' følger med ud, så decoupling.py kan læse temperatur og starttidspunkt
+    # på det seneste pas uden at hente /activities en gang til.
+    return {'history': pts, 'trend': tr, 'acts': acts}

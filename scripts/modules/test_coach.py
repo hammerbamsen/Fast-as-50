@@ -140,3 +140,36 @@ def test_distance_prompt_line_uses_km_for_run():
     })
     assert '28,2 af 29,0 km' in line
     assert '28227' not in line
+
+
+# ── Aerobt flag i coach-teksten (26/8-2026) ─────────────────────────────
+# Flaget beregnes i decoupling.py, men skal også overleve HELE vejen ud i
+# den deterministiske coach-tale — ellers forsvinder det tavst hver gang
+# ANTHROPIC_API_KEY mangler eller AI-kaldet fejler, og det er præcis de
+# situationer hvor et regelbaseret signal er mest værd.
+
+def test_coach_speech_viser_aerobt_flag():
+    today_session = {
+        "today": True, "done": True, "disc": "run", "label": "Løb Z2 18 km",
+        "planned_distance_m": None, "actual_distance_m": None,
+    }
+    kwargs = _base_speech_kwargs(today_session, [today_session])
+    kwargs["decoupling_note"] = (
+        "Løbeturen 2026-08-25 (snitpuls 151) kostede 6,5 % mere puls pr. meter "
+        "end medianen af de seneste 4 sammenlignelige pas."
+    )
+    speech, _highlight = coach.generate_coach_speech(**kwargs)
+    assert "Aerobt" in speech
+    assert "151" in speech
+    assert "6,5 %" in speech
+
+
+def test_coach_speech_tier_uden_aerobt_flag():
+    """Ingen flag = ingen linje. Tavshed er den rigtige default."""
+    today_session = {
+        "today": True, "done": True, "disc": "run", "label": "Løb Z2 18 km",
+        "planned_distance_m": None, "actual_distance_m": None,
+    }
+    speech, _highlight = coach.generate_coach_speech(
+        **_base_speech_kwargs(today_session, [today_session]))
+    assert "Aerobt" not in speech
