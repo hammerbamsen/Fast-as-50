@@ -4470,29 +4470,8 @@
           "date": "2026-08-26",
           "entries": [
             {
-              "workout": {
-                "name": "Svøm 2.000 m i træk",
-                "type": "Swim",
-                "moving_time": 2880,
-                "description": "- 200m varm-op Z1 5m freeride\n- 2000m kontinuerligt, jævnt tempo Z2 38m freeride\n- 200m let cool Z1 5m freeride",
-                "workout_doc": {
-                  "steps": [
-                    {
-                      "text": "200m varm-op Z1",
-                      "duration": 300
-                    },
-                    {
-                      "text": "2000m kontinuerligt — jævnt tempo, ingen pauser",
-                      "duration": 2280
-                    },
-                    {
-                      "text": "200m let cool Z1",
-                      "duration": 300
-                    }
-                  ]
-                }
-              },
-              "note": "Kildeskovshallen — 2.000 m i træk, roligt. Distancen er pointen, ikke tempoet.",
+              "workout": null,
+              "note": "Aflyst — hviledag",
               "id": "47199eb5"
             }
           ]
