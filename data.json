@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-08-26 18:54",
+    "updated": "2026-08-26 21:02",
     "week": 13,
     "totalWeeks": 14,
     "blockType": "BUILD",
@@ -3453,8 +3453,8 @@
       "real": true
     }
   ],
-  "coachAssessmentHtml": "<p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\"><strong>Dag 87 af 98 · Onsdag · Uge 13</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">💪 <strong>Træning & load</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">CTL ligger på 52,1 — markant over ugemålet på 47 — og TSB på 1,1 viser at du er i fin balance. Dagens Gentofte Gang på 8,0 km og 89 min gav 15 TSS og holder det let, præcis som det skal være to dage før Christiansborg Rundt. Tirsdagens løb på 17,8 km ramte 84,9 % i pace-Z2, hvilket er on target og viser at Médoc-rytmen sidder. Resten af ugen er lagt rigtigt op: let OW-svøm fredag, 2.000 m lørdag, og en rolig cykeltur søndag.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">⚖️ <strong>Krop & kost</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Dagens vejning viser 71,0 kg og 21,9 % fedt — det er øjebliksbilleder, ikke tendenser. Det autoritative billede er 7-dages snittet: vægten snitter 72,2 kg og fedtprocenten 21,3 %, og fedtprocenten er faldet 0,4 procentpoint over de seneste 7 dage — det er den reelle retning, og den er positiv. Du er stadig 3,0+ kg fra vægtmålet og 5+ procentpoint fra fedtprocentmålet på under 16 %, så der er et stykke vej endnu — men retningen er den rigtige.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">🎯 <strong>AF-status & fokus for resten af ugen</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Du har holdt 3 AF-dage ud af 3 dage i ugen — det er flot disciplin og holder stregen på 10 dage i træk. Prioriteten frem til lørdag er enkel: bevar ro i kroppen, sov godt, og hold mad og væske i orden så du møder Christiansborg Rundt frisk. Fristelserne dukker ofte op i weekenden — hold linjen.</p>",
-  "coachAssessmentTs": "11:19",
+  "coachAssessmentHtml": "<p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\"><strong>Dag 87 af 98 · Onsdag · Uge 13</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">💪 <strong>Træning & load</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">CTL ligger på 52,1 — markant over ugemålet på 47 — og TSB er 1,1, så du er i god balance inden weekendens to hovednumre. Ugen har allerede leveret en solid Z2-løbetur på 17,8 km med 84,9 % i pace-zone, to styrketure og to gåture. Gentofte Gang i dag gav 15 TSS på 89 min og 8,0 km — let og korrekt til en onsdag i en skærpningsuge. Fredag OW-svøm, lørdag Christiansborg Rundt og søndag cykel indendørs udgør et passende afslutningsblok — hold dem som planlagt.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">⚖️ <strong>Krop & kost</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Vægten er 71,0 kg i dag, og 7-dages snittet er 72,2 kg — retningen er rigtigt nedad mod målet på 68 kg. Fedtprocenten er 21,9 % i dag, og 7-dages snittet er gået ned 0,4 procentpoint de seneste syv dage til 21,3 % — det er ægte fremgang, ikke væskebevægelse. Du er 3,0 kg fra vægtmålet og 5,3 procentpoint fra fedtprocentmålet på under 16 %; begge tal peger i den rigtige retning. Fortsæt det du gør — snittet taler for sig selv.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">🎯 <strong>AF-status & fokus for resten af ugen</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Du har 3 AF-dage ud af 3 dage gået i ugen — det er rent. Stregen er oppe på 10 dage, og den holder du ved at gøre præcis det samme torsdag, fredag, lørdag og søndag. Fokus frem mod lørdag er enkel: gem benene, lad Christiansborg Rundt blive den præstation ugen bygger op til.</p>",
+  "coachAssessmentTs": "19:02",
   "commute_pairing_warnings": [],
   "warnings": [],
   "tsb": 1.1,
@@ -3757,8 +3757,8 @@
       "note": "Nøgle virker"
     }
   },
-  "credentialsCheckedTs": "2026-08-26T16:54:11.327725",
-  "coachAssessmentTsFull": "2026-08-26T11:19:44.145968",
+  "credentialsCheckedTs": "2026-08-26T19:02:22.236006",
+  "coachAssessmentTsFull": "2026-08-26T19:02:22.235989",
   "coachAssessmentWeightAtGen": 71.0,
   "coachAssessmentAfAtGen": 3,
   "event_structure_warnings": [
