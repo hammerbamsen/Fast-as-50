@@ -25,3 +25,6 @@
 - HRV toppede 79 den 17/8 (post-camp rebound) og er siden faldet til 51–53, under 7-dages snittet på 58,4. Kennet melder tungt hoved, normal energi. Ingen infektionstegn endnu — men aftalt at Christiansborg droppes ved feber, ondt i halsen eller snot.
 - Svømmevolumen genoprettet: 3.401 m på ugen efter et lavt Mallorca-tal. Fredagens 1.500 m pool-simulation nåede dog kun 67 %, så 2.000 m i træk er stadig usvømmet — derfor onsdagens pas.
 - Vægt 72,6 kg (7d-snit 73,0), fedt 21,8 %. Søvn 7,8 t. AF 5 af 6 med søndagen tilbage.
+
+### Planændring 26/08 07:53
+- **onsdag 2026-08-26** (uge 13, cancel): Svøm 2.000 m i træk (48 min) → hviledag
