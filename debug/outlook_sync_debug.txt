@@ -1,15 +1,22 @@
 Token OK
-Uge 14: 2026-08-31 til 2026-09-06
-4 workouts fra Intervals
+Uge 15: 2026-09-07 til 2026-09-13
+8 workouts fra Intervals
 timeOverrides: 10 dato(er) fra data/plan.json
+  Slettet: 🥾 Gang let 45 min
+  Slettet: 🚴 Cykel Z1 45 min
+  Slettet: 🥾 Gang let 60 min
   Slettet: 💪 Styrke 25 min overkrop + core
-  Slettet: 🚴 Cykel indendørs 45 min Z2
-  Slettet: 🏃 Løb Z2 30 min
-  Slettet: 🏃 Løb Z1 15 min let
-Slettet: 4
-  Oprettet: 2026-08-31 💪 Styrke 25 min overkrop + core
-  Oprettet: 2026-09-01 🚴 Cykel indendørs 45 min Z2
-  Oprettet: 2026-09-02 🏃 Løb Z2 30 min
-  Oprettet: 2026-09-04 🏃 Løb Z1 15 min let
-Oprettet: 4 | Fejl: 0
+  Slettet: 🚴 Cykel Z2 60 min
+  Slettet: 🏃 Løb let Z1 30 min
+  Slettet: 🚴 Cykel Z2 90 min
+Slettet: 7
+  Oprettet: 2026-09-07 🥾 Gang let 45 min
+  Oprettet: 2026-09-08 🏃 Løb let Z1 30 min
+  Oprettet: 2026-09-09 🥾 Gang let 60 min
+  Oprettet: 2026-09-10 🚴 Cykel Z2 60 min
+  Oprettet: 2026-09-11 🏊 Svøm 2000m teknisk
+  Oprettet: 2026-09-12 🏃 Løb let Z1 30 min
+  Oprettet: 2026-09-12 💪 Styrke 25 min overkrop + core
+  Oprettet: 2026-09-13 🚴 Cykel Z2 90 min
+Oprettet: 8 | Fejl: 0
 DONE
