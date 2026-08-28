@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-08-28 13:39",
+    "updated": "2026-08-28 16:52",
     "week": 13,
     "totalWeeks": 16,
     "blockType": "BUILD",
@@ -78,18 +78,18 @@
       "color": "#7A6A58"
     },
     "afStreak": {
-      "value": "10",
+      "value": "11",
       "unit": "",
       "sub": "Dage i træk · mål 6/uge",
       "color": "#59182A"
     }
   },
   "af": {
-    "weekDone": 3,
+    "weekDone": 4,
     "target": 6,
-    "streak": 10
+    "streak": 11
   },
-  "coachSpeech": "Fredag — tre dage tilbage af uge 13. {HL} Fokus: 177 af 207 TSS er i hus — 3 sessioner tilbage, heriblandt OW-svøm let 20 min (Gentofte), Svøm 2.000 m — Christiansborg Rundt. Vægt på 72,3 kg — hold protein højt og undgå lette kulhydrater om aftenen. 3 AF-dage i 5 afsluttede dage — 3 mangler i 2 dage tilbage. Hård uge — men det er sådan formen bygges. Hold ved.  \"Den bedste træning er den, du faktisk gennemfører.\"",
+  "coachSpeech": "Fredag — tre dage tilbage af uge 13. {HL} Fokus: 177 af 207 TSS er i hus — 3 sessioner tilbage, heriblandt OW-svøm let 20 min (Gentofte), Svøm 2.000 m — Christiansborg Rundt. Vægt på 72,3 kg — hold protein højt og undgå lette kulhydrater om aftenen. 4 AF-dage i 5 afsluttede dage — 2 mangler i 2 dage tilbage. Hård uge — men det er sådan formen bygges. Hold ved.  \"Den bedste træning er den, du faktisk gennemfører.\"",
   "coachHighlight": "Søvn på 7,8 timer er solid",
   "weekFocus": "Bevar skarphed og ro — Médoc-rytmen sidder i benene",
   "today": [
@@ -2002,7 +2002,8 @@
     "2026-08-23": 0,
     "2026-08-24": 0,
     "2026-08-25": 0,
-    "2026-08-26": 0
+    "2026-08-26": 0,
+    "2026-08-27": 0
   },
   "all_weeks": {
     "1": {
@@ -3341,7 +3342,7 @@
     },
     {
       "week": 13,
-      "done": 3,
+      "done": 4,
       "total": 5,
       "label": "Uge 13"
     }
@@ -3685,8 +3686,8 @@
       "real": true
     }
   ],
-  "coachAssessmentHtml": "<p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\"><strong>Dag 89 af 98 · Fredag · Uge 13</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">💪 <strong>Træning & load</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">CTL er 50,2 — markant over ugens mål på 47 — og TSB på 7,7 viser at du er frisk og klar til lørdagens svøm. Tirsdagens løb landede på 17,8 km og 110 TSS med 84,9% i Z2-pace, præcis der det skal være. Dagens lette OW-svøm er endnu ikke gennemført — hold det let og teknisk, maks 20 minutter, og lad kroppen spare til Christiansborg Rundt i morgen.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">⚖️ <strong>Krop & kost</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Dagens vægt er 72,3 kg — 4,3 kg fra målet — og fedtprocenten er 20,8% mod et mål på under 16%. 7-dages snittet på 71,8 kg og 21,4% er de autoritative tal for retning, og fedtprocent-snittet er uændret over de seneste 7 dage, så vægttabet er endnu ikke dokumenteret som reelt fedttab. Det er kombinationen der tæller: vægten skal falde *med* fedtprocenten — ellers er det muskelmasse der forsvinder, og det er ikke gevinst i et capacity-år. Hold proteinet oppe og pas på kalorieunderskuddet ikke spiser af musklerne.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">🎯 <strong>AF-status & fokus for resten af ugen</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Du er på 3 AF-dage ud af 5 dage gået i ugen — solidt tempo mod de 6. Lørdag og søndag er to oplagte AF-dage, og dem kan du snildt sikre. Christiansborg Rundt er fokuspunktet i morgen — lad svømningen i dag være et rent opvarmningssignal til systemet, ikke en præstation.</p>",
-  "coachAssessmentTs": "11:39",
+  "coachAssessmentHtml": "<p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\"><strong>Dag 89 af 98 · Fredag · Uge 13</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">💪 <strong>Træning & load</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">CTL er oppe på 50,2 — det er over ugemålet på 47, og TSB på 7,7 viser at du er frisk og klar. I dag venter OW-svømmen på Gentofte: 20 minutter let, intet mere. Hold det ægte let — du skal møde Christiansborg Rundt på lørdag med friske skuldre, ikke halvtomme. Cykel indendørs på søndag lukker ugen fint af.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">⚖️ <strong>Krop & kost</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Dagens vægt er 72,3 kg og fedtprocent 20,8 % — det er 4,3 kg og 4,8 procentpoint fra målene. 7-dages snittet på 71,8 kg og 21,4 % er det der tæller for retning, og snittet på fedtprocent har ligget stabilt de seneste syv dage. Det er et klart signal om at kalorierne skal strammes til — ikke dramatisk, men konsekvent — ellers rykker fedtprocenten sig ikke.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">🎯 <strong>AF-status & fokus for resten af ugen</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Du er på 4 AF-dage ud af 5 dage gået denne uge — det er en stærk rate. Streak på 11 dage er solid. To dage tilbage på lørdag og søndag: hold linjen, og du lander ugen med et pænt resultat. Primær opgave nu er at møde Christiansborg Rundt veludhvilet og skarp — resten passer sig selv.</p>",
+  "coachAssessmentTs": "14:52",
   "commute_pairing_warnings": [],
   "warnings": [],
   "tsb": 7.7,
@@ -3991,10 +3992,10 @@
       "note": "Nøgle virker"
     }
   },
-  "credentialsCheckedTs": "2026-08-28T11:39:27.904261",
-  "coachAssessmentTsFull": "2026-08-28T11:39:27.904240",
+  "credentialsCheckedTs": "2026-08-28T14:52:24.747405",
+  "coachAssessmentTsFull": "2026-08-28T14:52:24.747388",
   "coachAssessmentWeightAtGen": 72.3,
-  "coachAssessmentAfAtGen": 3,
+  "coachAssessmentAfAtGen": 4,
   "event_structure_warnings": [
     {
       "date": "2026-08-29",
