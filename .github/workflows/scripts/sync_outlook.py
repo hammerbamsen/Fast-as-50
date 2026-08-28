@@ -11,7 +11,16 @@ USER          = 'kennet@hammerby.com'
 GRAPH         = f'https://graph.microsoft.com/v1.0/users/{USER}'
 TIMEOUT       = 30
 
-assert 1 <= WEEK <= 14, f'Ugyldig uge: {WEEK}'
+# PLAN_START/TOTAL_WEEKS laeses fra plan.json (rettet 28/8-2026 — var hardkodet
+# til medoc-2026's 01-06-2026/14 uger, hvilket fik uge 15-16 til at fejle her).
+import json as _json
+_prog = _json.load(open(os.path.join(os.path.dirname(os.path.abspath(__file__)),
+                                    '..', '..', '..', 'data', 'plan.json'),
+                        encoding='utf-8'))['program']
+PLAN_START_D = date.fromisoformat(_prog['start'])
+TOTAL_WEEKS  = _prog['totalWeeks']
+
+assert 1 <= WEEK <= TOTAL_WEEKS, f'Ugyldig uge: {WEEK} (program har {TOTAL_WEEKS} uger)'
 
 # Token
 resp = requests.post(
@@ -26,7 +35,7 @@ hdrs     = {'Authorization': f'Bearer {token}', 'Content-Type': 'application/jso
 hdrs_get = {k:v for k,v in hdrs.items() if k != 'Content-Type'}
 print('Token OK')
 
-plan_start = date(2026, 6, 1)
+plan_start = PLAN_START_D
 week_start = plan_start + timedelta(weeks=WEEK-1)
 week_end   = week_start + timedelta(days=6)
 print(f'Uge {WEEK}: {week_start} til {week_end}')
