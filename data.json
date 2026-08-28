@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-08-28 16:52",
+    "updated": "2026-08-28 23:46",
     "week": 13,
     "totalWeeks": 16,
     "blockType": "BUILD",
@@ -3686,8 +3686,8 @@
       "real": true
     }
   ],
-  "coachAssessmentHtml": "<p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\"><strong>Dag 89 af 98 · Fredag · Uge 13</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">💪 <strong>Træning & load</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">CTL er oppe på 50,2 — det er over ugemålet på 47, og TSB på 7,7 viser at du er frisk og klar. I dag venter OW-svømmen på Gentofte: 20 minutter let, intet mere. Hold det ægte let — du skal møde Christiansborg Rundt på lørdag med friske skuldre, ikke halvtomme. Cykel indendørs på søndag lukker ugen fint af.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">⚖️ <strong>Krop & kost</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Dagens vægt er 72,3 kg og fedtprocent 20,8 % — det er 4,3 kg og 4,8 procentpoint fra målene. 7-dages snittet på 71,8 kg og 21,4 % er det der tæller for retning, og snittet på fedtprocent har ligget stabilt de seneste syv dage. Det er et klart signal om at kalorierne skal strammes til — ikke dramatisk, men konsekvent — ellers rykker fedtprocenten sig ikke.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">🎯 <strong>AF-status & fokus for resten af ugen</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Du er på 4 AF-dage ud af 5 dage gået denne uge — det er en stærk rate. Streak på 11 dage er solid. To dage tilbage på lørdag og søndag: hold linjen, og du lander ugen med et pænt resultat. Primær opgave nu er at møde Christiansborg Rundt veludhvilet og skarp — resten passer sig selv.</p>",
-  "coachAssessmentTs": "14:52",
+  "coachAssessmentHtml": "<p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\"><strong>Dag 89 af 98 · Fredag · Uge 13</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">💪 <strong>Træning & load</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">CTL er oppe på 50,2 — det er 3,2 over ugemålet på 47, og TSB på 7,7 viser at du er frisk og klar. Ugen har været præcis det den skulle: rolig, kontrolleret, med Médoc-rytmen i benene. Tirsdagens løb landede på 17,8 km og 84,9% i pace-Z2 — det sidder rigtigt. I dag venter OW-svømmen på 20 min i Gentofte — hold den let, ingen prestige, bare vand under kroppen inden Christiansborg i morgen.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">⚖️ <strong>Krop & kost</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Dagsvægten er 72,3 kg — 4,3 kg fra målet — og fedtprocenten er 20,8% i dag mod et mål på under 16%. Det er 7-dages snittet der tæller for retning: vægtsnittet er 71,8 kg og fedtprocentssnittet ligger på 21,4% — og det snit har stået stille de seneste 7 dage. Det er signalet du skal handle på: fedtmassen rykker sig ikke, og det kræver at kosten er tættere på underskud end vedligehold. Tjek om restitutionsdage (som de rolige gangdage) stadig har et kalorieindtag der matcher en aktiv træningsdag — det er der det typisk slipper.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">🎯 <strong>AF-status & fokus for resten af ugen</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Du er på 4 AF-dage ud af 5 dage i ugen — det er stærkt, og streaken er oppe på 11 dage. For at nå 6 AF-dage skal lørdag og søndag begge holdes — det er fuldt realistisk, og Médoc er allerede overstået, så der er ingen \"fejring\" der skal forsvares. Hold hovedet koldt: i morgen er Christiansborg Rundt, og det er dit A-race i vandet — sov tidligt, spis enkelt, og lad svømmet tale for sig selv.</p>",
+  "coachAssessmentTs": "21:46",
   "commute_pairing_warnings": [],
   "warnings": [],
   "tsb": 7.7,
@@ -3992,8 +3992,8 @@
       "note": "Nøgle virker"
     }
   },
-  "credentialsCheckedTs": "2026-08-28T14:52:24.747405",
-  "coachAssessmentTsFull": "2026-08-28T14:52:24.747388",
+  "credentialsCheckedTs": "2026-08-28T21:46:21.311286",
+  "coachAssessmentTsFull": "2026-08-28T21:46:21.311261",
   "coachAssessmentWeightAtGen": 72.3,
   "coachAssessmentAfAtGen": 4,
   "event_structure_warnings": [
