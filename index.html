@@ -1552,7 +1552,15 @@ function buildSparklineSVG(chartId, W) {
     let last = null;
     for (let i=0;i<n;i++){
       if (smVals[i]===null) continue;
-      if (last!==null) smoothLine += `<line x1="${x(last)}" y1="${y(smVals[last])}" x2="${x(i)}" y2="${y(smVals[i])}" stroke="${color}" stroke-width="2.2" stroke-linecap="round"/>`;
+      if (last!==null) {
+        // Stiplet hvor der ikke er vejet. Segmentet mellem to punkter kan spænde
+        // over dage uden måling -- vægt har fire huller på 5, 9, 10 og 11 dage.
+        // Solid linje der tegnes hen over dem lod som om der lå data bagved.
+        // Grænsen er 3 dage: huller er enten 1-2 dage eller 5+, intet imellem.
+        const gapDays = dayNums ? (dayNums[i] - dayNums[last]) : 1;
+        const dash = gapDays >= 3 ? ' stroke-dasharray="5,4"' : '';
+        smoothLine += `<line x1="${x(last)}" y1="${y(smVals[last])}" x2="${x(i)}" y2="${y(smVals[i])}" stroke="${color}" stroke-width="2.2" stroke-linecap="round"${dash}/>`;
+      }
       last = i;
     }
     if (last!==null) smoothDot = `<circle cx="${x(last)}" cy="${y(smVals[last])}" r="3.5" fill="${color}" stroke="var(--white)" stroke-width="1.5"/>`;
