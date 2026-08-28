@@ -1,15 +1,17 @@
 Token OK
-Uge 16: 2026-09-14 til 2026-09-20
-7 workouts fra Intervals
-timeOverrides: 9 dato(er) fra data/plan.json
-  Slettet: 📊 Opdater Fast as Fifty dashboard
-Slettet: 1
-  Oprettet: 2026-09-14 🚴 Cykel Z2 45 min
-  Oprettet: 2026-09-14 💪 Styrke 25 min overkrop + core
-  Oprettet: 2026-09-15 🏃 Løb målpace 5×3 min (1:30-tempo)
-  Oprettet: 2026-09-16 🚴 Cykel Z1 40 min
-  Oprettet: 2026-09-17 🏃 Løb let 40 min + 6 strides
-  Oprettet: 2026-09-19 🥾 Gang let 30 min
-  Oprettet: 2026-09-20 🏃 CPH HALF — 21,1 km
-Oprettet: 7 | Fejl: 0
+Uge 14: 2026-08-31 til 2026-09-06
+5 workouts fra Intervals
+timeOverrides: 10 dato(er) fra data/plan.json
+  Slettet: 🏃 Løb Z2 50 min
+  Slettet: 🚴 Cykel indendørs 45 min Z2
+  Slettet: 💪 Styrke 25 min overkrop + core (race-uge)
+  Slettet: 🏃 Shakeout løb + strides
+  Slettet: 🏃 Løb Z1 15 min let
+Slettet: 5
+  Oprettet: 2026-08-31 🏃 Løb Z2 50 min
+  Oprettet: 2026-09-01 🚴 Cykel indendørs 45 min Z2
+  Oprettet: 2026-09-02 💪 Styrke 25 min overkrop + core (race-uge)
+  Oprettet: 2026-09-03 🏃 Shakeout løb + strides
+  Oprettet: 2026-09-04 🏃 Løb Z1 15 min let
+Oprettet: 5 | Fejl: 0
 DONE
