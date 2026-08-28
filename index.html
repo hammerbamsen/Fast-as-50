@@ -489,6 +489,7 @@ let D = {
   weightHistory: [],
   fatHistory: [],
   hrvHistory: [],
+  rhrHistory: [],
   sleepHistory: [],
   tsbHistory: [],
   tsb: null,  // sættes fra data.json — null = ukendt (viser ingen advarsel)
@@ -1352,10 +1353,10 @@ function renderBody() {
   </div>
   <div class="card">
     <div class="label" style="margin-bottom:12px">Tendenser — seneste ${(D.weightHistory||D.fatHistory||D.hrvHistory||D.sleepHistory||[]).length} dage</div>
-    ${sparkline(D.weightHistory, 'var(--gold)', 'VÆGT', 'kg', null, null)}
+    ${sparkline(D.weightHistory, 'var(--gold)', 'VÆGT', 'kg', null, null, true, D.weightGoal ?? STATIC.weight.goal)}
     <div style="height:14px"></div>
     ${D.fatHistory && D.fatHistory.filter(p=>p && p.real).length >= 2
-        ? sparkline(D.fatHistory, 'var(--run)', 'FEDT%', '%', null, null)
+        ? sparkline(D.fatHistory, 'var(--run)', 'FEDT%', '%', null, null, true, D.bodyFatGoal ?? STATIC.bodyFat.goal)
         : `<div style="display:flex;align-items:center;justify-content:space-between;padding:6px 4px 2px">
              <span style="font-family:Space Mono,monospace;font-size:9px;letter-spacing:.08em;color:var(--muted)">FEDT%</span>
              <span style="font-family:Space Mono,monospace;font-size:11px;color:var(--muted)">
@@ -1459,8 +1460,17 @@ function buildSparklineSVG(chartId, W) {
   const sortedVals = [...vals].sort((a,b)=>a-b);
   const p05 = percentileOf(sortedVals,0.05), p95 = percentileOf(sortedVals,0.95);
   const robust = (p95-p05) || (dataMax-dataMin) || 1;
-  const mn = minV ?? (p05 - robust*0.12);
-  const mx = maxV ?? (p95 + robust*0.12);
+  let mn = minV ?? (p05 - robust*0.12);
+  let mx = maxV ?? (p95 + robust*0.12);
+  // Mållinje: aksen udvides så målet altid er i billedet. Uden det lå 68 kg og
+  // 16 % uden for en akse der stoppede ved 71,2 og 20,5 -- målet kunne ikke ses,
+  // og p05/p95-skaleringen gjorde 0,3 kg dagsstøj til bjerge.
+  const goalV = cfg.goal;
+  if (goalV !== null && goalV !== undefined) {
+    const marg = (mx - mn) * 0.06 || 1;
+    if (goalV < mn) mn = goalV - marg;
+    if (goalV > mx) mx = goalV + marg;
+  }
   const clamp = v => Math.max(mn, Math.min(mx, v));
   const x = i => pad.l + (n===1?0:(i/(n-1))*iW);
   const y = v => pad.t + iH - ((clamp(v)-mn)/(mx-mn||1))*iH;
@@ -1535,6 +1545,8 @@ function buildSparklineSVG(chartId, W) {
       ${Math.abs(y(mn)-y(0)) > 8 || !(mn<0 && mx>0) ? `<text x="${W-pad.r}" y="${y(mn)+10}" text-anchor="end" fill="var(--muted)" font-size="8" font-family="'Space Mono',monospace">${mn.toFixed(dec)}</text>` : ''}
       ${(mn < 0 && mx > 0) ? `<line x1="${pad.l}" x2="${W-pad.r}" y1="${y(0)}" y2="${y(0)}" stroke="var(--ink)" stroke-width="1" stroke-dasharray="1,2" opacity="0.5"/>
       <text x="${W-pad.r}" y="${y(0)-3}" text-anchor="end" fill="var(--ink)" font-size="8" font-weight="700" font-family="'Space Mono',monospace">0</text>` : ''}
+      ${(goalV !== null && goalV !== undefined) ? `<line x1="${pad.l}" x2="${W-pad.r}" y1="${y(goalV)}" y2="${y(goalV)}" stroke="${color}" stroke-width="1" stroke-dasharray="4,3" opacity="0.5"/>
+      <text x="${pad.l}" y="${y(goalV)-3}" fill="${color}" font-size="8" opacity="0.75" font-family="'Space Mono',monospace">mål ${goalV.toFixed(dec)}</text>` : ''}
       <path d="${areaPath}" fill="url(#${gid})"/>
       ${lineSegments}
       ${smoothLine}
@@ -1736,12 +1748,13 @@ function efCard() {
   </div>`;
 }
 
-function sparkline(data, color, label, unit, minV, maxV, smooth) {
+function sparkline(data, color, label, unit, minV, maxV, smooth, goal) {
   // Filtrer nulls/undefined ud — vis fallback hvis ingen reelle data
   const cleaned=(data||[]).filter(d=>d!==null&&d!==undefined).filter(d=>{const v=typeof d==='object'?d.v:d;return v!==null&&v!==undefined&&!isNaN(v);});
   if (!cleaned || cleaned.length < 2) return '<div style="height:60px;display:flex;align-items:center;justify-content:center;font-family:Space Mono,monospace;font-size:10px;color:var(--muted)">Ingen data endnu</div>';
   const chartId = `spk${++sparklineSeq}`;
-  SPARKLINE_DATA[chartId] = { data: cleaned, color, label, unit, minV, maxV, smooth: !!smooth };
+  SPARKLINE_DATA[chartId] = { data: cleaned, color, label, unit, minV, maxV, smooth: !!smooth,
+                              goal: (goal !== undefined && goal !== null && isFinite(goal)) ? Number(goal) : null };
   const vals = cleaned.map(d=>typeof d==='object'?d.v:d);
   const last = vals[vals.length-1];
   // E: retningen kommer fra 7-dages snittet mod en uge tilbage. Tidligere blev
@@ -2214,6 +2227,10 @@ function applyRemote(remote) {
       if (remote.ctlCurve)       D.ctlCurve       = remote.ctlCurve;
       if (remote.weightHistory)  D.weightHistory  = remote.weightHistory;
       if (remote.hrvHistory)     D.hrvHistory     = remote.hrvHistory;
+      // rhrHistory manglede her: update_kpi.py har skrevet 90/90 dage til
+      // data.json, men feltet blev aldrig kopieret ind i D, så HVILEPULS-grafen
+      // (betinget på D.rhrHistory) blev aldrig tegnet.
+      if (remote.rhrHistory)     D.rhrHistory     = remote.rhrHistory;
       if (remote.sleepHistory)   D.sleepHistory   = remote.sleepHistory;
       if (remote.fatHistory)     D.fatHistory     = remote.fatHistory;
       if (remote.tsbHistory)     D.tsbHistory     = remote.tsbHistory;
