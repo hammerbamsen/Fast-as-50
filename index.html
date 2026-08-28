@@ -1406,13 +1406,32 @@ function renderRules() {
 // 7-dages trailing snit. Samme tærskel som _moving_avg_7 i update_kpi.py:
 // mindst 3 punkter i vinduet, ellers null. Bruges til at tegne signalet i stedet
 // for savtakken -- HRV svinger typisk 8 ms fra dag til dag mod et reelt spænd på ~33.
-function movingAvg7(vals){
+function movingAvg7(vals, dayNums){
   const out=[];
   for(let i=0;i<vals.length;i++){
-    const w=vals.slice(Math.max(0,i-6),i+1).filter(v=>v!==null&&v!==undefined&&!isNaN(v));
+    // Med dayNums er vinduet SYV DAGE. Uden var det syv MÅLINGER, og på vægt/fedt
+    // med 30 huller ud af 90 dage betød "7d" i praksis ca. ti kalenderdage.
+    const lo = dayNums ? (()=>{ let j=i; while(j>0 && dayNums[i]-dayNums[j-1] <= 6) j--; return j; })()
+                       : Math.max(0,i-6);
+    const w=vals.slice(lo,i+1).filter(v=>v!==null&&v!==undefined&&!isNaN(v));
     out.push(w.length>=3 ? w.reduce((a,b)=>a+b,0)/w.length : null);
   }
   return out;
+}
+
+// Dagnummer (epoke-dage) for hvert punkt, eller null hvis serien ikke bærer datoer.
+// Bruges både til x-placering og til datovinduet i movingAvg7.
+function dayNumsOf(dates){
+  if(!dates || dates.length<2) return null;
+  const out=[];
+  for(const d of dates){
+    if(!d) return null;
+    const t=new Date(String(d).slice(0,10)+'T00:00:00').getTime();
+    if(!isFinite(t)) return null;
+    out.push(Math.round(t/86400000));
+  }
+  for(let i=1;i<out.length;i++) if(out[i]<out[i-1]) return null;  // kræver kronologisk orden
+  return out[out.length-1] > out[0] ? out : null;
 }
 
 // Lineært interpoleret percentil på en SORTERET serie.
@@ -1424,12 +1443,13 @@ function percentileOf(sorted,p){
 
 // Retning ud fra 7-dages snittet mod snittet en uge tilbage (ikke sidste-mod-næstsidste,
 // som var ren støj). Falder tilbage til rå sidste-mod-næstsidste for korte serier.
-function trendFromAvg(vals){
-  const sm=movingAvg7(vals);
+function trendFromAvg(vals, dayNums){
+  const sm=movingAvg7(vals, dayNums);
   const idx=sm.map((v,i)=>v===null?-1:i).filter(i=>i>=0);
   if(idx.length>=2){
     const i=idx[idx.length-1];
-    const j=[...idx].reverse().find(k=>k<=i-7);
+    const j=dayNums ? [...idx].reverse().find(k=>dayNums[i]-dayNums[k] >= 7)
+                    : [...idx].reverse().find(k=>k<=i-7);
     if(j!==undefined) return {now:sm[i], then:sm[j], smoothed:true};
   }
   const n=vals.length;
@@ -1472,12 +1492,18 @@ function buildSparklineSVG(chartId, W) {
     if (goalV > mx) mx = goalV + marg;
   }
   const clamp = v => Math.max(mn, Math.min(mx, v));
-  const x = i => pad.l + (n===1?0:(i/(n-1))*iW);
+  // x-placering efter FAKTISK DATO, ikke arrayindeks. Serier med huller (vægt og
+  // fedt måles 60 af 90 dage) blev før tegnet med lige stor afstand mellem alle
+  // punkter, så et fire-dages hul fyldte det samme som ét døgn. Serier uden huller
+  // giver præcis samme geometri som før -- dayNums stiger da med 1 pr. punkt.
+  const dayNums = dayNumsOf(dates);
+  const dSpan = dayNums ? (dayNums[n-1] - dayNums[0]) : (n-1);
+  const x = i => pad.l + (n===1||dSpan===0 ? 0 : ((dayNums ? dayNums[i]-dayNums[0] : i)/dSpan)*iW);
   const y = v => pad.t + iH - ((clamp(v)-mn)/(mx-mn||1))*iH;
 
   // Område til fyld (bruger samme punkter, lige linjer)
   const baseline = (mn < 0 && mx > 0) ? y(0) : (H-pad.b);
-  const _areaSrc = cfg.smooth ? movingAvg7(vals) : null;
+  const _areaSrc = cfg.smooth ? movingAvg7(vals, dayNums) : null;
   const _aIdx = _areaSrc ? _areaSrc.map((v,i)=>v===null?-1:i).filter(i=>i>=0) : null;
   let areaPath;
   if (_aIdx && _aIdx.length>1) {
@@ -1500,7 +1526,7 @@ function buildSparklineSVG(chartId, W) {
   // B: på støjende serier (HRV, søvn) er 7-dages snittet hovedlinjen og rådata
   // baggrund. Søvnens reelle signal spænder 1,4 t -- dag-til-dag-udsvinget er 1,3 t.
   let smoothLine = '', smoothDot = '';
-  const smVals = smooth ? movingAvg7(vals) : null;
+  const smVals = smooth ? movingAvg7(vals, dayNums) : null;
   if (smooth && smVals) {
     let last = null;
     for (let i=0;i<n;i++){
@@ -1523,9 +1549,24 @@ function buildSparklineSVG(chartId, W) {
       return dayNames[d.getDay()];
     });
   } else {
-    const step = Math.ceil(n/5);
+    const keep = new Set([0, n-1]);
+    if (dayNums) {
+      // Labels fordeles jævnt over TIDEN og bindes til nærmeste faktiske punkt.
+      // Med indeksskridt lå de på hver 12. måling, hvilket på vægtserien gav
+      // datoerne 1/6, 23/6, 5/7, 27/7, 9/8 -- ujævne spring der lignede fejl.
+      const span = dayNums[n-1] - dayNums[0];
+      for (let s=1; s<=4; s++) {
+        const target = dayNums[0] + span*s/5;
+        let best=0, bd=Infinity;
+        for (let i=0;i<n;i++){ const d=Math.abs(dayNums[i]-target); if(d<bd){bd=d;best=i;} }
+        keep.add(best);
+      }
+    } else {
+      const step = Math.ceil(n/5);
+      for (let i=0;i<n;i++) if (i%step===0) keep.add(i);
+    }
     xLabels = vals.map((_,i)=>{
-      if (i!==0 && i!==n-1 && i%step!==0) return '';
+      if (!keep.has(i)) return '';
       let d;
       if (dates[i]) { d = new Date(dates[i]+'T00:00:00'); }
       else { d = new Date(today); d.setDate(today.getDate()-(n-1-i)); }
@@ -1760,7 +1801,7 @@ function sparkline(data, color, label, unit, minV, maxV, smooth, goal) {
   // E: retningen kommer fra 7-dages snittet mod en uge tilbage. Tidligere blev
   // sidste punkt sammenlignet med det næstsidste -- "8,7 t ↑" betød kun at i går
   // var lavere. Dødzone på 1 % så et fladt snit ikke vises som en bevægelse.
-  const tr = trendFromAvg(vals);
+  const tr = trendFromAvg(vals, dayNumsOf(cleaned.map(d=>typeof d==='object'&&d.date?d.date:null)));
   let trend = '→';
   if (tr) {
     const d = tr.now - tr.then;
