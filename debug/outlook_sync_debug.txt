@@ -1,5 +1,15 @@
-Traceback (most recent call last):
-  File "/home/runner/work/fast-as-50/fast-as-50/.github/workflows/scripts/sync_outlook.py", line 14, in <module>
-    assert 1 <= WEEK <= 14, f'Ugyldig uge: {WEEK}'
-           ^^^^^^^^^^^^^^^
-AssertionError: Ugyldig uge: 16
+Token OK
+Uge 15: 2026-09-07 til 2026-09-13
+7 workouts fra Intervals
+timeOverrides: 9 dato(er) fra data/plan.json
+  Slettet: 📊 Opdater Fast as Fifty dashboard
+Slettet: 1
+  Oprettet: 2026-09-07 🥾 Gang let 45 min
+  Oprettet: 2026-09-08 🚴 Cykel Z1 45 min
+  Oprettet: 2026-09-09 🥾 Gang let 60 min
+  Oprettet: 2026-09-09 💪 Styrke 25 min overkrop + core
+  Oprettet: 2026-09-10 🚴 Cykel Z2 60 min
+  Oprettet: 2026-09-12 🏃 Løb let Z1 30 min
+  Oprettet: 2026-09-13 🚴 Cykel Z2 90 min
+Oprettet: 7 | Fejl: 0
+DONE
