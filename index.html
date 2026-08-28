@@ -1493,26 +1493,29 @@ function buildSparklineSVG(chartId, W) {
   // C: aksen sættes af p5/p95, ikke af yderpunkterne. Én HRV-nat på 23 ms trak
   // tidligere hele aksen ned til 13,8 og efterlod halvdelen af højden tom.
   // Outliers klippes til kanten i stedet for at diktere skalaen.
-  const sortedVals = [...vals].sort((a,b)=>a-b);
+  const dayNums = dayNumsOf(dates);
+  // Når rådata er skjult, skal aksen skaleres efter den linje der FAKTISK tegnes.
+  // Med rådata-percentiler brugte fedtlinjen 18 af 74 px, fordi aksen dækkede en
+  // spredning man ikke kunne se. Snitserien er smallere og får derfor mere luft
+  // (25 % mod 12 %), så kurven ikke rører kanterne.
+  const axisSrc = cfg.hideRaw ? movingAvg7(vals, dayNums).filter(v=>v!==null) : vals;
+  const sortedVals = [...(axisSrc.length>=2 ? axisSrc : vals)].sort((a,b)=>a-b);
   const p05 = percentileOf(sortedVals,0.05), p95 = percentileOf(sortedVals,0.95);
   const robust = (p95-p05) || (dataMax-dataMin) || 1;
-  let mn = minV ?? (p05 - robust*0.12);
-  let mx = maxV ?? (p95 + robust*0.12);
-  // Mållinje: aksen udvides så målet altid er i billedet. Uden det lå 68 kg og
-  // 16 % uden for en akse der stoppede ved 71,2 og 20,5 -- målet kunne ikke ses,
-  // og p05/p95-skaleringen gjorde 0,3 kg dagsstøj til bjerge.
-  const goalV = cfg.goal;
-  if (goalV !== null && goalV !== undefined) {
-    const marg = (mx - mn) * 0.06 || 1;
-    if (goalV < mn) mn = goalV - marg;
-    if (goalV > mx) mx = goalV + marg;
-  }
+  const axPad = cfg.hideRaw ? 0.25 : 0.12;
+  let mn = minV ?? (p05 - robust*axPad);
+  let mx = maxV ?? (p95 + robust*axPad);
+  // Mållinjen tegnes KUN hvis målet allerede ligger inden for aksen. Tidligere
+  // blev aksen udvidet for at rumme det, og med 3,8 kg ned til 68 klemte det
+  // hele kurven sammen. Målet står i topkortet og i takeaway-linjen; her dukker
+  // det op af sig selv, når afstanden er lille nok til at være meningsfuld.
+  const goalRaw = cfg.goal;
+  const goalV = (goalRaw !== null && goalRaw !== undefined && goalRaw >= mn && goalRaw <= mx) ? goalRaw : null;
   const clamp = v => Math.max(mn, Math.min(mx, v));
   // x-placering efter FAKTISK DATO, ikke arrayindeks. Serier med huller (vægt og
   // fedt måles 60 af 90 dage) blev før tegnet med lige stor afstand mellem alle
   // punkter, så et fire-dages hul fyldte det samme som ét døgn. Serier uden huller
   // giver præcis samme geometri som før -- dayNums stiger da med 1 pr. punkt.
-  const dayNums = dayNumsOf(dates);
   const dSpan = dayNums ? (dayNums[n-1] - dayNums[0]) : (n-1);
   const x = i => pad.l + (n===1||dSpan===0 ? 0 : ((dayNums ? dayNums[i]-dayNums[0] : i)/dSpan)*iW);
   const y = v => pad.t + iH - ((clamp(v)-mn)/(mx-mn||1))*iH;
