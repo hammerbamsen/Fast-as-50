@@ -1,4 +1,4 @@
-name: Byg 14-ugers workouts i Intervals.icu
+name: Byg workouts i Intervals.icu
 
 on:
   schedule:
@@ -35,11 +35,14 @@ jobs:
         if: success()
         run: |
           WEEK=$(python3 -c "
+          import json
           from datetime import date
-          PLAN_START = date(2026, 6, 1)
+          prog = json.load(open('data/plan.json'))['program']
+          PLAN_START = date.fromisoformat(prog['start'])
+          TOTAL_WEEKS = prog['totalWeeks']
           today = date.today()
-          current_week = min(max((today - PLAN_START).days // 7 + 1, 1), 14)
-          next_week = min(current_week + 1, 14)
+          current_week = min(max((today - PLAN_START).days // 7 + 1, 1), TOTAL_WEEKS)
+          next_week = min(current_week + 1, TOTAL_WEEKS)
           print(next_week)
           ")
           echo "Næste uge = $WEEK"
