@@ -157,7 +157,7 @@
       "start": "2026-08-31",
       "blockType": "RACE",
       "ctlTarget": 43,
-      "tssTarget": 120,
+      "tssTarget": 93,
       "location": "Gentofte → Bordeaux tor",
       "note": "Marathon du Médoc lør 5. sep. Ren taper + race-ernæringsplan. Tir: cykel i stedet for løb (ingen løb to dage i streg). Ons: 25 min styrke overkrop/core, ingen benbelastning."
     },
@@ -166,7 +166,7 @@
       "start": "2026-09-07",
       "blockType": "RECOVERY",
       "ctlTarget": 40,
-      "tssTarget": 225,
+      "tssTarget": 265,
       "location": "Gentofte",
       "note": "Restitution efter Marathon du Médoc. Intet løb før tidligst lør 12/9 — 42 km excentrisk belastning kræver 10-14 dage. Cykel bærer den aerobe base."
     },
@@ -175,7 +175,7 @@
       "start": "2026-09-14",
       "blockType": "RACE",
       "ctlTarget": 41,
-      "tssTarget": 255,
+      "tssTarget": 336,
       "location": "Gentofte. RACE søn",
       "note": "CPH Half søn 20/9 — B-løb, mål sub 1:30 (4:16/km). Max 3 løb, ingen løb to dage i streg. Cut starter man 21/9, ikke før."
     }
@@ -4657,109 +4657,10 @@
           "entries": [
             {
               "workout": {
-                "name": "Løb Z2 50 min",
-                "type": "Run",
-                "moving_time": 3000,
-                "description": "- Varm-op 10m >5:39/km Pace\n- Base 35m 5:00-5:38/km Pace\n- Cool-down 5m >5:39/km Pace",
-                "workout_doc": {
-                  "steps": [
-                    {
-                      "text": "Varm-op >5:39/km",
-                      "pace": {
-                        "start": 65,
-                        "end": 78,
-                        "units": "%pace"
-                      },
-                      "duration": 600
-                    },
-                    {
-                      "text": "Base 5:00-5:38/km",
-                      "pace": {
-                        "start": 78,
-                        "end": 88,
-                        "units": "%pace"
-                      },
-                      "duration": 2100
-                    },
-                    {
-                      "text": "Cool-down >5:39/km",
-                      "pace": {
-                        "start": 65,
-                        "end": 78,
-                        "units": "%pace"
-                      },
-                      "duration": 300
-                    }
-                  ]
-                }
-              },
-              "note": "Løb Z2 50 min",
-              "id": "cf413246"
-            }
-          ]
-        },
-        {
-          "date": "2026-09-01",
-          "entries": [
-            {
-              "workout": {
-                "name": "Cykel indendørs 45 min Z2",
-                "type": "Ride",
-                "moving_time": 2700,
-                "description": "- Varm-op 8m ramp 50-60% FTP\n- Z2 rul 30m 60-68% FTP\n- Cool-down 7m ramp 58-45% FTP",
-                "workout_doc": {
-                  "steps": [
-                    {
-                      "ramp": true,
-                      "power": {
-                        "start": 50,
-                        "end": 60,
-                        "units": "%ftp"
-                      },
-                      "duration": 480,
-                      "warmup": true
-                    },
-                    {
-                      "text": "Z2 rul 60-68% FTP",
-                      "power": {
-                        "start": 60,
-                        "end": 68,
-                        "units": "%ftp"
-                      },
-                      "duration": 1800
-                    },
-                    {
-                      "ramp": true,
-                      "power": {
-                        "start": 58,
-                        "end": 45,
-                        "units": "%ftp"
-                      },
-                      "duration": 420,
-                      "cooldown": true
-                    }
-                  ]
-                }
-              },
-              "note": "Cykel indendørs 45 min Z2 — erstatter løb (ingen løb to dage i streg)",
-              "id": "4817641d"
-            }
-          ]
-        },
-        {
-          "date": "2026-09-02",
-          "entries": [
-            {
-              "workout": null,
-              "note": "Let dag — kun styrke overkrop/core, ingen benbelastning",
-              "id": "54548324"
-            },
-            {
-              "workout": {
-                "name": "Styrke 25 min overkrop + core (race-uge)",
+                "name": "Styrke 25 min overkrop + core",
                 "type": "WeightTraining",
                 "moving_time": 1500,
-                "description": "- Aktivering 5m freeride: Glute bridge ×15, Bird dog ×10/side, World's greatest stretch ×5/side\n\n2x\n- Skulderpres 10kg ×10 1m freeride\n- Roning 12.5kg ×12 1m freeride\n- Lat pullover 10kg ×12 1m freeride\n- Pause 90 sek 1.5m freeride\n\n2x\n- Planke 45 sek 1m freeride\n- Sideplanke 30 sek/side 1m freeride\n- Dead bug ×10/side 1m freeride\n- Pause 30 sek 0.5m freeride\n\n- Udstrækning 4m freeride\n\nINGEN squat, dødløft eller udfald — 3 dage før Médoc.",
+                "description": "- Aktivering 5m freeride: Glute bridge ×15, Bird dog ×10/side, World's greatest stretch ×5/side\n\n2x\n- Skulderpres 10kg ×10 1m freeride\n- Roning 12.5kg ×12 1m freeride\n- Lat pullover 10kg ×12 1m freeride\n- Pause 90 sek 1.5m freeride\n\n\n2x\n- Planke 45 sek 1m freeride\n- Sideplanke 30 sek/side 1m freeride\n- Dead bug ×10/side 1m freeride\n- Pause 30 sek 0.5m freeride\n\n- Udstrækning 4m freeride\n\nINGEN squat, dødløft eller udfald.",
                 "workout_doc": {
                   "steps": [
                     {
@@ -4819,29 +4720,77 @@
                   ]
                 }
               },
-              "note": "Styrke 25 min — overkrop + core, ingen ben",
-              "id": "a7c31d94"
+              "note": "Styrke overkrop + core — byttet med 2/9",
+              "id": "cf413246"
             }
           ]
         },
         {
-          "date": "2026-09-03",
+          "date": "2026-09-01",
           "entries": [
             {
-              "workout": null,
-              "note": "Fly → Bordeaux (tor 3. sep)",
-              "id": "2b3361a4"
-            },
-            {
               "workout": {
-                "name": "Shakeout løb + strides",
-                "type": "Run",
-                "moving_time": 1140,
-                "description": "- Let løb 10m >5:39/km Pace\n\n4x\n- Stride 20s 4:00-4:09/km Pace\n- Jog 40s >5:39/km Pace\n\n- Cool-down 5m >5:39/km Pace",
+                "name": "Cykel indendørs 45 min Z2",
+                "type": "Ride",
+                "moving_time": 2700,
+                "description": "- Varm-op 8m ramp 50-60% FTP\n- Z2 rul 30m 60-68% FTP\n- Cool-down 7m ramp 58-45% FTP",
                 "workout_doc": {
                   "steps": [
                     {
-                      "text": "Let løb >5:39/km",
+                      "ramp": true,
+                      "power": {
+                        "start": 50,
+                        "end": 60,
+                        "units": "%ftp"
+                      },
+                      "duration": 480,
+                      "warmup": true
+                    },
+                    {
+                      "text": "Z2 rul 60-68% FTP",
+                      "power": {
+                        "start": 60,
+                        "end": 68,
+                        "units": "%ftp"
+                      },
+                      "duration": 1800
+                    },
+                    {
+                      "ramp": true,
+                      "power": {
+                        "start": 58,
+                        "end": 45,
+                        "units": "%ftp"
+                      },
+                      "duration": 420,
+                      "cooldown": true
+                    }
+                  ]
+                }
+              },
+              "note": "Cykel indendørs 45 min Z2 — erstatter løb (ingen løb to dage i streg)",
+              "id": "4817641d"
+            }
+          ]
+        },
+        {
+          "date": "2026-09-02",
+          "entries": [
+            {
+              "workout": null,
+              "note": "Byttet med 31/8",
+              "id": "54548324"
+            },
+            {
+              "workout": {
+                "name": "Løb Z2 30 min",
+                "type": "Run",
+                "moving_time": 1800,
+                "description": "- Varm-op 10m >5:39/km Pace\n- Base 15m 5:00-5:38/km Pace\n- Cool-down 5m >5:39/km Pace",
+                "workout_doc": {
+                  "steps": [
+                    {
+                      "text": "Varm-op >5:39/km",
                       "pace": {
                         "start": 65,
                         "end": 78,
@@ -4850,28 +4799,13 @@
                       "duration": 600
                     },
                     {
-                      "reps": 4,
-                      "text": "4x",
-                      "steps": [
-                        {
-                          "text": "Stride 20s 4:00-4:09/km",
-                          "pace": {
-                            "start": 103,
-                            "end": 112,
-                            "units": "%pace"
-                          },
-                          "duration": 20
-                        },
-                        {
-                          "text": "Jog 40s >5:39/km",
-                          "pace": {
-                            "start": 65,
-                            "end": 78,
-                            "units": "%pace"
-                          },
-                          "duration": 40
-                        }
-                      ]
+                      "text": "Base 5:00-5:38/km",
+                      "pace": {
+                        "start": 78,
+                        "end": 88,
+                        "units": "%pace"
+                      },
+                      "duration": 900
                     },
                     {
                       "text": "Cool-down >5:39/km",
@@ -4885,8 +4819,18 @@
                   ]
                 }
               },
-              "note": "Shakeout efter fly → Bordeaux (tor 3. sep)",
-              "id": "71750790"
+              "note": "Sidste rigtige løb før Médoc — byttet fra 31/8, kortet til 30 min",
+              "id": "a7c31d94"
+            }
+          ]
+        },
+        {
+          "date": "2026-09-03",
+          "entries": [
+            {
+              "workout": null,
+              "note": "Fly → Bordeaux (tor 3. sep). Hviledag — shakeout droppet, løb flyttet til 2/9",
+              "id": "2b3361a4"
             }
           ]
         },
@@ -4971,45 +4915,25 @@
           "entries": [
             {
               "workout": {
-                "name": "Cykel Z1 45 min",
-                "type": "Ride",
-                "moving_time": 2700,
-                "description": "- Varm-op 5m ramp 40-50% FTP\n- Restitutionsrul 35m 44-56% FTP\n- Cool-down 5m ramp 50-40% FTP",
+                "name": "Løb let Z1 30 min",
+                "type": "Run",
+                "moving_time": 1800,
+                "description": "- Let løb 30m >5:39/km Pace",
                 "workout_doc": {
                   "steps": [
                     {
-                      "ramp": true,
-                      "power": {
-                        "start": 40,
-                        "end": 50,
-                        "units": "%ftp"
+                      "text": "Let løb >5:39/km",
+                      "pace": {
+                        "start": 65,
+                        "end": 78,
+                        "units": "%pace"
                       },
-                      "duration": 300,
-                      "warmup": true
-                    },
-                    {
-                      "text": "Restitutionsrul 44-56% FTP",
-                      "power": {
-                        "start": 44,
-                        "end": 56,
-                        "units": "%ftp"
-                      },
-                      "duration": 2100
-                    },
-                    {
-                      "ramp": true,
-                      "power": {
-                        "start": 50,
-                        "end": 40,
-                        "units": "%ftp"
-                      },
-                      "duration": 300,
-                      "cooldown": true
+                      "duration": 1800
                     }
                   ]
                 }
               },
-              "note": "Let rul, blodgennemstrømning i benene",
+              "note": "Let løb i Bordeaux — ingen trainer tilgængelig",
               "id": "44e0251a"
             }
           ]
@@ -5034,6 +4958,133 @@
               },
               "note": "Gang 60 min",
               "id": "005cb441"
+            }
+          ]
+        },
+        {
+          "date": "2026-09-10",
+          "entries": [
+            {
+              "workout": {
+                "name": "Cykel Z2 60 min",
+                "type": "Ride",
+                "moving_time": 3600,
+                "description": "- Varm-op 10m ramp 45-68% FTP\n- Aerob base 45m 56-76% FTP\n- Cool-down 5m ramp 68-45% FTP",
+                "workout_doc": {
+                  "steps": [
+                    {
+                      "ramp": true,
+                      "power": {
+                        "start": 45,
+                        "end": 68,
+                        "units": "%ftp"
+                      },
+                      "duration": 600,
+                      "warmup": true
+                    },
+                    {
+                      "text": "Aerob base 56-76% FTP",
+                      "power": {
+                        "start": 56,
+                        "end": 76,
+                        "units": "%ftp"
+                      },
+                      "duration": 2700
+                    },
+                    {
+                      "ramp": true,
+                      "power": {
+                        "start": 68,
+                        "end": 45,
+                        "units": "%ftp"
+                      },
+                      "duration": 300,
+                      "cooldown": true
+                    }
+                  ]
+                }
+              },
+              "note": "Første rigtige aerobe pas efter Médoc",
+              "id": "97500e1d"
+            }
+          ]
+        },
+        {
+          "date": "2026-09-11",
+          "entries": [
+            {
+              "workout": {
+                "name": "Svøm 2000m teknisk",
+                "type": "Swim",
+                "moving_time": 3360,
+                "description": "- 400m varm-op Z1 10m freeride\n\n6x\n- 100m teknik Z2 2m freeride\n\n\n8x\n- 100m moderat Z3 2m freeride\n- 30s pause 1m freeride\n\n- 400m cool Z1 10m freeride",
+                "workout_doc": {
+                  "steps": [
+                    {
+                      "text": "400m varm-op Z1",
+                      "duration": 600
+                    },
+                    {
+                      "reps": 6,
+                      "text": "6x",
+                      "steps": [
+                        {
+                          "text": "100m teknik Z2",
+                          "duration": 120
+                        }
+                      ]
+                    },
+                    {
+                      "reps": 8,
+                      "text": "8x",
+                      "steps": [
+                        {
+                          "text": "100m moderat Z3",
+                          "duration": 120
+                        },
+                        {
+                          "text": "30s pause",
+                          "duration": 60
+                        }
+                      ]
+                    },
+                    {
+                      "text": "400m cool Z1",
+                      "duration": 600
+                    }
+                  ]
+                }
+              },
+              "note": "Svøm 2.000 m — ingen benbelastning 6 dage efter Médoc",
+              "id": "c59c25f1"
+            }
+          ]
+        },
+        {
+          "date": "2026-09-12",
+          "entries": [
+            {
+              "workout": {
+                "name": "Løb let Z1 30 min",
+                "type": "Run",
+                "moving_time": 1800,
+                "description": "- Let løb 30m >5:39/km Pace",
+                "workout_doc": {
+                  "steps": [
+                    {
+                      "text": "Let løb >5:39/km",
+                      "pace": {
+                        "start": 65,
+                        "end": 78,
+                        "units": "%pace"
+                      },
+                      "duration": 1800
+                    }
+                  ]
+                }
+              },
+              "note": "FØRSTE LØB efter Médoc — kun hvis benene er rene. Tvivl = drop det og cykl i stedet",
+              "id": "37f0e37b"
             },
             {
               "workout": {
@@ -5100,94 +5151,8 @@
                   ]
                 }
               },
-              "note": "Styrke overkrop + core — ingen ben endnu",
-              "id": "90483e31"
-            }
-          ]
-        },
-        {
-          "date": "2026-09-10",
-          "entries": [
-            {
-              "workout": {
-                "name": "Cykel Z2 60 min",
-                "type": "Ride",
-                "moving_time": 3600,
-                "description": "- Varm-op 10m ramp 45-68% FTP\n- Aerob base 45m 56-76% FTP\n- Cool-down 5m ramp 68-45% FTP",
-                "workout_doc": {
-                  "steps": [
-                    {
-                      "ramp": true,
-                      "power": {
-                        "start": 45,
-                        "end": 68,
-                        "units": "%ftp"
-                      },
-                      "duration": 600,
-                      "warmup": true
-                    },
-                    {
-                      "text": "Aerob base 56-76% FTP",
-                      "power": {
-                        "start": 56,
-                        "end": 76,
-                        "units": "%ftp"
-                      },
-                      "duration": 2700
-                    },
-                    {
-                      "ramp": true,
-                      "power": {
-                        "start": 68,
-                        "end": 45,
-                        "units": "%ftp"
-                      },
-                      "duration": 300,
-                      "cooldown": true
-                    }
-                  ]
-                }
-              },
-              "note": "Første rigtige aerobe pas efter Médoc",
-              "id": "97500e1d"
-            }
-          ]
-        },
-        {
-          "date": "2026-09-11",
-          "entries": [
-            {
-              "workout": null,
-              "note": "Hvile",
-              "id": "c59c25f1"
-            }
-          ]
-        },
-        {
-          "date": "2026-09-12",
-          "entries": [
-            {
-              "workout": {
-                "name": "Løb let Z1 30 min",
-                "type": "Run",
-                "moving_time": 1800,
-                "description": "- Let løb 30m >5:39/km Pace",
-                "workout_doc": {
-                  "steps": [
-                    {
-                      "text": "Let løb >5:39/km",
-                      "pace": {
-                        "start": 65,
-                        "end": 78,
-                        "units": "%pace"
-                      },
-                      "duration": 1800
-                    }
-                  ]
-                }
-              },
-              "note": "FØRSTE LØB efter Médoc — kun hvis benene er rene. Tvivl = drop det og cykl i stedet",
-              "id": "37f0e37b"
+              "note": "Styrke overkrop + core — ben resumerer 21/9",
+              "id": "1a47f69f"
             }
           ]
         },
@@ -5512,6 +5477,74 @@
               },
               "note": "Sidste løb før CPH Half — racesko",
               "id": "e0c3cbde"
+            },
+            {
+              "workout": {
+                "name": "Styrke 25 min overkrop + core",
+                "type": "WeightTraining",
+                "moving_time": 1500,
+                "description": "- Aktivering 5m freeride: Glute bridge ×15, Bird dog ×10/side, World's greatest stretch ×5/side\n\n2x\n- Skulderpres 10kg ×10 1m freeride\n- Roning 12.5kg ×12 1m freeride\n- Lat pullover 10kg ×12 1m freeride\n- Pause 90 sek 1.5m freeride\n\n\n2x\n- Planke 45 sek 1m freeride\n- Sideplanke 30 sek/side 1m freeride\n- Dead bug ×10/side 1m freeride\n- Pause 30 sek 0.5m freeride\n\n- Udstrækning 4m freeride\n\nINGEN squat, dødløft eller udfald.",
+                "workout_doc": {
+                  "steps": [
+                    {
+                      "text": "Aktivering: Glute bridge ×15, Bird dog ×10/side, World's greatest stretch ×5/side",
+                      "duration": 300,
+                      "warmup": true
+                    },
+                    {
+                      "reps": 2,
+                      "text": "2x",
+                      "steps": [
+                        {
+                          "text": "Skulderpres 10kg ×10",
+                          "duration": 60
+                        },
+                        {
+                          "text": "Roning 12.5kg ×12",
+                          "duration": 60
+                        },
+                        {
+                          "text": "Lat pullover 10kg ×12",
+                          "duration": 60
+                        },
+                        {
+                          "text": "Pause 90 sek",
+                          "duration": 90
+                        }
+                      ]
+                    },
+                    {
+                      "reps": 2,
+                      "text": "2x",
+                      "steps": [
+                        {
+                          "text": "Planke 45 sek",
+                          "duration": 60
+                        },
+                        {
+                          "text": "Sideplanke 30 sek/side",
+                          "duration": 60
+                        },
+                        {
+                          "text": "Dead bug ×10/side",
+                          "duration": 60
+                        },
+                        {
+                          "text": "Pause 30 sek",
+                          "duration": 30
+                        }
+                      ]
+                    },
+                    {
+                      "text": "Udstrækning",
+                      "duration": 240,
+                      "cooldown": true
+                    }
+                  ]
+                }
+              },
+              "note": "Styrke overkrop + core — let, 3 dage før racet",
+              "id": "32222f37"
             }
           ]
         },
@@ -5519,9 +5552,118 @@
           "date": "2026-09-18",
           "entries": [
             {
-              "workout": null,
-              "note": "Hvile — carb-load starter",
+              "workout": {
+                "name": "Svøm 2000m teknisk",
+                "type": "Swim",
+                "moving_time": 3360,
+                "description": "- 400m varm-op Z1 10m freeride\n\n6x\n- 100m teknik Z2 2m freeride\n\n\n8x\n- 100m moderat Z3 2m freeride\n- 30s pause 1m freeride\n\n- 400m cool Z1 10m freeride",
+                "workout_doc": {
+                  "steps": [
+                    {
+                      "text": "400m varm-op Z1",
+                      "duration": 600
+                    },
+                    {
+                      "reps": 6,
+                      "text": "6x",
+                      "steps": [
+                        {
+                          "text": "100m teknik Z2",
+                          "duration": 120
+                        }
+                      ]
+                    },
+                    {
+                      "reps": 8,
+                      "text": "8x",
+                      "steps": [
+                        {
+                          "text": "100m moderat Z3",
+                          "duration": 120
+                        },
+                        {
+                          "text": "30s pause",
+                          "duration": 60
+                        }
+                      ]
+                    },
+                    {
+                      "text": "400m cool Z1",
+                      "duration": 600
+                    }
+                  ]
+                }
+              },
+              "note": "Svøm 2.000 m. Carb-load starter",
               "id": "3d4b75c3"
+            },
+            {
+              "workout": {
+                "name": "Styrke 25 min overkrop + core",
+                "type": "WeightTraining",
+                "moving_time": 1500,
+                "description": "- Aktivering 5m freeride: Glute bridge ×15, Bird dog ×10/side, World's greatest stretch ×5/side\n\n2x\n- Skulderpres 10kg ×10 1m freeride\n- Roning 12.5kg ×12 1m freeride\n- Lat pullover 10kg ×12 1m freeride\n- Pause 90 sek 1.5m freeride\n\n\n2x\n- Planke 45 sek 1m freeride\n- Sideplanke 30 sek/side 1m freeride\n- Dead bug ×10/side 1m freeride\n- Pause 30 sek 0.5m freeride\n\n- Udstrækning 4m freeride\n\nINGEN squat, dødløft eller udfald.",
+                "workout_doc": {
+                  "steps": [
+                    {
+                      "text": "Aktivering: Glute bridge ×15, Bird dog ×10/side, World's greatest stretch ×5/side",
+                      "duration": 300,
+                      "warmup": true
+                    },
+                    {
+                      "reps": 2,
+                      "text": "2x",
+                      "steps": [
+                        {
+                          "text": "Skulderpres 10kg ×10",
+                          "duration": 60
+                        },
+                        {
+                          "text": "Roning 12.5kg ×12",
+                          "duration": 60
+                        },
+                        {
+                          "text": "Lat pullover 10kg ×12",
+                          "duration": 60
+                        },
+                        {
+                          "text": "Pause 90 sek",
+                          "duration": 90
+                        }
+                      ]
+                    },
+                    {
+                      "reps": 2,
+                      "text": "2x",
+                      "steps": [
+                        {
+                          "text": "Planke 45 sek",
+                          "duration": 60
+                        },
+                        {
+                          "text": "Sideplanke 30 sek/side",
+                          "duration": 60
+                        },
+                        {
+                          "text": "Dead bug ×10/side",
+                          "duration": 60
+                        },
+                        {
+                          "text": "Pause 30 sek",
+                          "duration": 30
+                        }
+                      ]
+                    },
+                    {
+                      "text": "Udstrækning",
+                      "duration": 240,
+                      "cooldown": true
+                    }
+                  ]
+                }
+              },
+              "note": "Styrke overkrop + core — flyttet fra 19/9, intet styrkearbejde dagen før racet",
+              "id": "21eebed5"
             }
           ]
         },
@@ -5556,40 +5698,40 @@
                 "name": "CPH HALF — 21,1 km",
                 "type": "Run",
                 "moving_time": 5400,
-                "description": "- 0-5 km: åbn kontrolleret ~4:25/km 22m 4:19-4:29/km Pace\n- 5-18 km: målpace 4:16/km 55m 4:12-4:21/km Pace\n- 18-21,1 km: alt hvad der er tilbage 13m 4:00-4:16/km Pace\n\nMÅL: sub 1:30 = 4:16/km snit.\nÅbn på 4:25/km de første 5 km — 15 dage efter Médoc er benene et ubekendt.\nFøles det let ved 10 km: hold 4:16 og hent tiden ind.\nFøles det tungt: hold 4:25 og luk på 1:33-1:35 i stedet for at sprænge på 15 km.\nRacesko. Gel ved 8 km og 15 km.\nOpvarmning 15 min let + 3 strides FØR start — ikke en del af de 90 min.",
+                "description": "- 0-5 km: 4:16/km, lås tempoet 21m 4:12-4:16/km Pace\n- 5-15 km: 4:15/km 43m 4:12-4:16/km Pace\n- 15-21,1 km: 4:14/km eller hurtigere 26m 4:05-4:16/km Pace\n\nMÅL: sub 1:30. Snit 4:15/km giver 1:29:40 — 20 sek buffer.\nKm-splits: 5 km 21:20 | 10 km 42:35 | 15 km 63:50 | mål 1:29:40.\nLås 4:16 fra km 1. Ligger du over 4:20 ved 5 km, er dagen ikke der — hold 4:20 og luk stabilt i stedet for at jage det tabte.\nRacesko. Gel ved 8 km og 15 km. Opvarmning 15 min let + 3 strides før start.",
                 "workout_doc": {
                   "steps": [
                     {
-                      "text": "0-5 km: åbn kontrolleret ~4:25/km 4:19-4:29/km",
+                      "text": "0-5 km: 4:16/km, lås tempoet 4:12-4:16/km",
                       "pace": {
-                        "start": 98,
-                        "end": 102,
-                        "units": "%pace"
-                      },
-                      "duration": 1320
-                    },
-                    {
-                      "text": "5-18 km: målpace 4:16/km 4:12-4:21/km",
-                      "pace": {
-                        "start": 101,
+                        "start": 103,
                         "end": 105,
                         "units": "%pace"
                       },
-                      "duration": 3300
+                      "duration": 1260
                     },
                     {
-                      "text": "18-21,1 km: alt hvad der er tilbage 4:00-4:16/km",
+                      "text": "5-15 km: 4:15/km 4:12-4:16/km",
                       "pace": {
                         "start": 103,
-                        "end": 110,
+                        "end": 105,
                         "units": "%pace"
                       },
-                      "duration": 780
+                      "duration": 2580
+                    },
+                    {
+                      "text": "15-21,1 km: 4:14/km eller hurtigere 4:05-4:16/km",
+                      "pace": {
+                        "start": 103,
+                        "end": 108,
+                        "units": "%pace"
+                      },
+                      "duration": 1560
                     }
                   ]
                 }
               },
-              "note": "CPH HALF — B-løb. Mål sub 1:30",
+              "note": "CPH HALF — mål sub 1:30, 4:15/km snit",
               "id": "4743c2ee"
             }
           ]
