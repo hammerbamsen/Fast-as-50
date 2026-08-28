@@ -1,20 +1,20 @@
 {
   "meta": {
-    "updated": "2026-08-27 17:53",
+    "updated": "2026-08-28 02:15",
     "week": 13,
     "totalWeeks": 14,
     "blockType": "BUILD",
-    "daysToMedoc": 9,
-    "daysToChristiansborg": 2,
-    "dayName": "Torsdag",
-    "date": "27. aug",
+    "daysToMedoc": 8,
+    "daysToChristiansborg": 1,
+    "dayName": "Fredag",
+    "date": "28. aug",
     "rhrField": "restingHR"
   },
   "kpis": {
     "weight": {
       "value": "71,6",
       "unit": "kg",
-      "sub": "Mål <68 kg · snit 72,2 kg",
+      "sub": "Sidst målt 27/8 · Mål <68 kg · snit 72,1 kg",
       "color": "#E67E22"
     },
     "fat": {
@@ -24,19 +24,19 @@
       "color": "#C0392B"
     },
     "ctl": {
-      "value": "51,0",
+      "value": "50,2",
       "unit": "",
       "sub": "Uge 13-mål 47 · Slutmål 43 (uge 14)",
       "color": "#27AE60"
     },
     "tsb": {
-      "value": "5,9",
+      "value": "8,9",
       "unit": "",
       "sub": "Form · CTL−ATL, frisk >0",
       "color": "#27AE60"
     },
     "sleep": {
-      "value": "7,8",
+      "value": "7,7",
       "unit": "t",
       "sub": "Snit 7,5t · mål 7t",
       "color": "#2874A6"
@@ -48,7 +48,7 @@
       "color": "#E67E22"
     },
     "hrv": {
-      "value": "57,2",
+      "value": "57,7",
       "unit": "ms",
       "sub": "Snit 7d",
       "color": "#7A6A58"
@@ -89,17 +89,17 @@
     "target": 6,
     "streak": 10
   },
-  "coachSpeech": "Torsdag — uge 13 af 14. {HL} Fokus: 168 af 207 TSS er i hus — 3 sessioner tilbage, heriblandt OW-svøm let 20 min (Gentofte), Svøm 2.000 m — Christiansborg Rundt. Vægt på 71,6 kg — hold protein højt og undgå lette kulhydrater om aftenen. 3 AF-dage i 4 afsluttede dage — 3 mangler i 3 dage tilbage. Hård uge — men det er sådan formen bygges. Hold ved.  \"Du bliver til det, du gør ofte.\"",
-  "coachHighlight": "Søvn på 7,8 timer er solid",
+  "coachSpeech": "Fredag — tre dage tilbage af uge 13. {HL} Fokus: 168 af 207 TSS er i hus — 3 sessioner tilbage, heriblandt OW-svøm let 20 min (Gentofte), Svøm 2.000 m — Christiansborg Rundt. Vægt på 71,6 kg (målt 27/8) — hold protein højt og undgå lette kulhydrater om aftenen. 3 AF-dage i 5 afsluttede dage — 3 mangler i 2 dage tilbage. Hård uge — men det er sådan formen bygges. Hold ved.  \"Den bedste træning er den, du faktisk gennemfører.\"",
+  "coachHighlight": "Søvn på 7,7 timer er solid",
   "weekFocus": "Bevar skarphed og ro — Médoc-rytmen sidder i benene",
   "today": [
     {
-      "discipline": "walk",
-      "title": "Gentofte Gang",
+      "discipline": "openwater",
+      "title": "OW-svøm let 20 min (Gentofte)",
       "duration": "",
       "zone": "–",
       "desc": "",
-      "completed": true
+      "completed": false
     }
   ],
   "week_sessions": [
@@ -166,8 +166,7 @@
       "extra": true,
       "actual_tss": 6,
       "actual_mins": 54,
-      "actual_distance_m": 4849.31,
-      "today": true
+      "actual_distance_m": 4849.31
     },
     {
       "day": "Fre",
@@ -176,7 +175,8 @@
       "done": false,
       "planned_tss": 17,
       "planned_mins": 20,
-      "planned_distance_m": null
+      "planned_distance_m": null,
+      "today": true
     },
     {
       "day": "Lør",
@@ -210,14 +210,9 @@
     53.0,
     52.9,
     52.4,
-    51.0
+    50.2
   ],
   "weightHistory": [
-    {
-      "date": "2026-05-30",
-      "v": 74.5,
-      "real": true
-    },
     null,
     {
       "date": "2026-06-01",
@@ -542,14 +537,10 @@
       "date": "2026-08-27",
       "v": 71.6,
       "real": true
-    }
+    },
+    null
   ],
   "hrvHistory": [
-    {
-      "date": "2026-05-30",
-      "v": 39.0,
-      "real": true
-    },
     {
       "date": "2026-05-31",
       "v": 45.0,
@@ -994,14 +985,10 @@
       "date": "2026-08-27",
       "v": 49.0,
       "real": true
-    }
+    },
+    null
   ],
   "sleepHistory": [
-    {
-      "date": "2026-05-30",
-      "v": 8.1,
-      "real": true
-    },
     null,
     {
       "date": "2026-06-01",
@@ -1442,14 +1429,10 @@
       "date": "2026-08-27",
       "v": 8.6,
       "real": true
-    }
+    },
+    null
   ],
   "tsbHistory": [
-    {
-      "date": "2026-05-30",
-      "v": -13.8,
-      "real": true
-    },
     {
       "date": "2026-05-31",
       "v": -15.7,
@@ -1893,6 +1876,11 @@
     {
       "date": "2026-08-27",
       "v": 5.9,
+      "real": true
+    },
+    {
+      "date": "2026-08-28",
+      "v": 8.9,
       "real": true
     }
   ],
@@ -2963,8 +2951,7 @@
           "extra": true,
           "actual_tss": 6,
           "actual_mins": 54,
-          "actual_distance_m": 4849.31,
-          "today": true
+          "actual_distance_m": 4849.31
         },
         {
           "day": "Fre",
@@ -2973,7 +2960,8 @@
           "done": false,
           "planned_tss": 17,
           "planned_mins": 20,
-          "planned_distance_m": null
+          "planned_distance_m": null,
+          "today": true
         },
         {
           "day": "Lør",
@@ -3130,7 +3118,7 @@
     {
       "week": 13,
       "done": 3,
-      "total": 4,
+      "total": 5,
       "label": "Uge 13"
     }
   ],
@@ -3142,11 +3130,6 @@
     "actual_total": 382.0
   },
   "fatHistory": [
-    {
-      "date": "2026-05-30",
-      "v": 23.0,
-      "real": true
-    },
     null,
     {
       "date": "2026-06-01",
@@ -3471,19 +3454,20 @@
       "date": "2026-08-27",
       "v": 21.4,
       "real": true
-    }
+    },
+    null
   ],
-  "coachAssessmentHtml": "<p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\"><strong>Dag 88 af 98 · Torsdag · Uge 13</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">💪 <strong>Træning & load</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">CTL er oppe på 51,0 og TSB er 5,9 — du er frisk og godt ladet op præcis som planlagt inden Christiansborg Rundt lørdag. Tirsdagens løb ramte 84,9 % i pace-Z2 over 17,8 km — on target, og det er det vigtigste at have i benene denne uge. Dagens Gentofte-tur på 4,8 km og 6 TSS holdt kroppen i gang uden at tære på restitutionen. Fredag er en let OW-svøm på 20 min — hold den præcis så let som planlagt, ingenting skal bevises.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">⚖️ <strong>Krop & kost</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Vægten er 71,6 kg i dag — 3,6 kg fra målet under 68 kg. 7-dages snittet ligger på 72,1 kg, og fedtprocenten følger samme retning: 7-dages snittet er gået 0,1 procentpoint ned over de seneste 7 dage og ligger på 21,4 %, mod et mål på under 16 %. Det er langsomt, men det er den rigtige retning — fedtprocenten bevæger sig med vægten, ikke mod den, og det er ægte fremgang. I en uge med Médoc-fokus og lav TSS er det klogt at holde portionerne stramme uden at underspise — du skal have kræfter til lørdag og søndag.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">🎯 <strong>AF-status & fokus for resten af ugen</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Du har 3 AF-dage ud af 4 dage gået i ugen — en stærk pace med tre dage tilbage til at nå 6. Fredag, lørdag og søndag kan alle landes som AF-dage uden at det kræver noget ekstraordinært — hold dem rene, og streaken fortsætter. Fokus for resten af ugen er simpelt: beskyt søvnen, spis fornuftigt, og møde lørdag med rolige ben og et klart hoved til de 2.000 m i Christiansborg Rundt.</p>",
-  "coachAssessmentTs": "15:53",
+  "coachAssessmentHtml": "<p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\"><strong>Dag 89 af 98 · Fredag · Uge 13</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">💪 <strong>Træning & load</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">CTL er 50,2 — altså 3,2 over ugens mål på 47, og TSB er 8,9, så du er frisk og velrestitueret. Ugen er bygget fornuftigt op med gåture, løb og styrke, og tirsagens 17,8 km Z2-løb landede rigtigt med 84,9% i pace-zone — solidt udført. OW-svømmen på 20 min i Gentofte er endnu ikke gennemført i dag — hold den let og brug den som aktivering frem mod Christiansborg Rundt i morgen. Lørdag er dagen der tæller: 2.000 m i åbent vand er selve begivenheden.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">⚖️ <strong>Krop & kost</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Vægten var 71,6 kg ved seneste vejning den 27/8, og 7-dages snittet er 71,7 kg — afstanden til målet på under 68 kg er altså ca. 3,7 kg. Fedtprocenten var 21,4% den 27/8, og 7-dages snittet på 21,5% er gået 0,1 procentpoint op over de seneste 7 dage — det er den retning der tæller, og den peger forkert. Vægten alene siger lidt; det er fedtprocenten der afgør om fremgangen er reel — og her er der ikke fremgang lige nu. I en travl konkurrenceuge er det svært at justere kraftigt, men kalorierne skal holdes i skak også i Médoc-weekenden.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">🎯 <strong>AF-status & fokus for resten af ugen</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Du har 3 AF-dage ud af 5 dage gået i ugen — det svarer til 3/5, og der er stadig fredag aften, lørdag og søndag tilbage. Med mål om 6 AF-dage i ugen er der plads til én drink-dag i resten af ugen. Christiansborg Rundt og Médoc er inden for få dage — hold hovedet koldt og kroppen klar. Fokus nu: OW-svøm i dag, sov godt, og stå klar til startskuddet lørdag.</p>",
+  "coachAssessmentTs": "00:16",
   "commute_pairing_warnings": [],
   "warnings": [
     {
       "type": "hrv",
       "level": "warn",
-      "message": "HRV 49,0 ms — 14% under 7d-snit (57,2 ms). Kroppen er presset."
+      "message": "HRV 49,0 ms — 15% under 7d-snit (57,7 ms). Kroppen er presset."
     }
   ],
-  "tsb": 5.9,
+  "tsb": 8.9,
   "swimHistory": [
     {
       "week": 1,
@@ -3566,7 +3550,7 @@
   ],
   "coachAssessmentLastActId": "i180411105",
   "weekFocusWeek": 13,
-  "coachAssessmentPlanAtGen": "Gentofte Gang",
+  "coachAssessmentPlanAtGen": "OW-svøm let 20 min (Gentofte)",
   "weightGoal": 68,
   "bodyFatGoal": 16,
   "weightMovingAvg7": [
@@ -3575,8 +3559,7 @@
     null,
     null,
     null,
-    74.47,
-    74.6,
+    74.63,
     74.7,
     74.7,
     74.64,
@@ -3659,7 +3642,8 @@
     72.78,
     72.57,
     72.25,
-    72.08
+    72.08,
+    71.72
   ],
   "fatMovingAvg7": [
     null,
@@ -3667,7 +3651,6 @@
     null,
     null,
     null,
-    23.07,
     23.0,
     22.93,
     22.78,
@@ -3751,7 +3734,8 @@
     21.25,
     21.2,
     21.3,
-    21.38
+    21.38,
+    21.48
   ],
   "weightToGoal": 3.6,
   "bodyFatToGoal": 5.4,
@@ -3783,8 +3767,8 @@
       "note": "Nøgle virker"
     }
   },
-  "credentialsCheckedTs": "2026-08-27T15:53:53.775852",
-  "coachAssessmentTsFull": "2026-08-27T15:53:53.775834",
+  "credentialsCheckedTs": "2026-08-28T00:16:09.690923",
+  "coachAssessmentTsFull": "2026-08-28T00:16:09.690904",
   "coachAssessmentWeightAtGen": 71.6,
   "coachAssessmentAfAtGen": 3,
   "event_structure_warnings": [
@@ -3899,7 +3883,7 @@
     {
       "name": "Santini Stelvio Gran Fondo (lang rute)",
       "date": "2027-06-06",
-      "days": 283,
+      "days": 282,
       "priority": "B",
       "distance": "130km / 4500hm",
       "registered": true
@@ -3907,7 +3891,7 @@
     {
       "name": "Tour des Stations Ultrafondo",
       "date": "2027-08-28",
-      "days": 366,
+      "days": 365,
       "priority": "A",
       "distance": "242km / 8848hm",
       "registered": false
@@ -4120,11 +4104,6 @@
     }
   },
   "rhrHistory": [
-    {
-      "date": "2026-05-30",
-      "v": 46,
-      "real": true
-    },
     {
       "date": "2026-05-31",
       "v": 46,
@@ -4568,6 +4547,11 @@
     {
       "date": "2026-08-27",
       "v": 44,
+      "real": true
+    },
+    {
+      "date": "2026-08-28",
+      "v": 43,
       "real": true
     }
   ]
