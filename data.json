@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-08-29 15:06",
+    "updated": "2026-08-29 16:32",
     "week": 13,
     "totalWeeks": 16,
     "blockType": "BUILD",
@@ -78,18 +78,18 @@
       "color": "#27AE60"
     },
     "afStreak": {
-      "value": "11",
+      "value": "12",
       "unit": "",
       "sub": "Dage i træk · mål 6/uge",
       "color": "#59182A"
     }
   },
   "af": {
-    "weekDone": 4,
+    "weekDone": 5,
     "target": 6,
-    "streak": 11
+    "streak": 12
   },
-  "coachSpeech": "Lørdag — uge 13 af 16. {HL} Godt: Søvn på 7,9 timer er solid. Fokus: Vægt på 72,5 kg — hold protein højt og undgå lette kulhydrater om aftenen. 4 AF-dage i 6 afsluttede dage — 2 mangler i 1 dage tilbage. Keep moving forward.  \"AF-dage er ikke et offer — de er en investering i morgendagens energi.\"",
+  "coachSpeech": "Lørdag — uge 13 af 16. {HL} Godt: Søvn på 7,9 timer er solid. Fokus: Vægt på 72,5 kg — hold protein højt og undgå lette kulhydrater om aftenen. 5 AF-dage i 6 afsluttede dage — 1 mangler i 1 dage tilbage. Keep moving forward.  \"AF-dage er ikke et offer — de er en investering i morgendagens energi.\"",
   "coachHighlight": "111 procent af ugens TSS er i hus",
   "weekFocus": "Bevar skarphed og ro — Médoc-rytmen sidder i benene",
   "today": [
@@ -2027,7 +2027,8 @@
     "2026-08-24": 0,
     "2026-08-25": 0,
     "2026-08-26": 0,
-    "2026-08-27": 0
+    "2026-08-27": 0,
+    "2026-08-28": 0
   },
   "all_weeks": {
     "1": {
@@ -3382,7 +3383,7 @@
     },
     {
       "week": 13,
-      "done": 4,
+      "done": 5,
       "total": 6,
       "label": "Uge 13"
     }
@@ -3732,8 +3733,8 @@
       "real": true
     }
   ],
-  "coachAssessmentHtml": "<p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\"><strong>Dag 90 af 98 · Lørdag · Uge 13</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">💪 <strong>Træning & load</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">CTL er 49,9 — markant over ugemålet på 47 — og TSB ligger på 7,9, så du er frisk og i god balance. Svømningen i dag leverede 1988 m på 42 min med 40 TSS, og 49,9% af passet lå i Z2 på HR — det er on target for en race-sim-indsats hvor intensiteten naturligt rykker op og ned. Ugen som helhed er solid: løb, styrke, gang og nu race-svøm sidder alle i bøgerne. Søndagens 90 min indendørs cykel er det eneste der mangler — kør det roligt og varieret, så du afslutter ugen med god TSS uden at grave i TSB.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">⚖️ <strong>Krop & kost</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Dagens vejning viser 72,5 kg og fedtprocent på 21,6% — det er 4,5 kg fra vægmålet og 5,6 procentpoint fra fedtprocent-målet på under 16%. Det er de tal der tæller: vægten alene siger ingenting hvis muskelmassen ryger med ned. 7-dages snittet på fedtprocent er 21,3% og er faldet 0,1 procentpoint over de seneste 7 dage — det er den reelle retning, og den peger den rigtige vej, om end langsomt. Hold fokus på proteinindtag og søvn — det er der fedttabet faktisk sker.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">🎯 <strong>AF-status & fokus for resten af ugen</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Du har 4 AF-dage ud af 6 dage gået i ugen — det er godkendt, men ikke flot. Streaken er oppe på 11 dage, og Søndag er din chance for at holde den kørende og lande den sjette AF-dag i ugen. Médoc er om ni dage: brug resten af weekenden på at spise ordentligt, sove nok og møde startlinjen med ro i kroppen — ikke med nye impulser eller ekstra belastning.</p>",
-  "coachAssessmentTs": "13:06",
+  "coachAssessmentHtml": "<p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\"><strong>Dag 90 af 98 · Lørdag · Uge 13</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">💪 <strong>Træning & load</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">CTL ligger på 49,9 — det er klart over ugemålet på 47, og TSB på 7,9 viser at du er frisk og i balance. Svømningen i dag leverede 1.988 m på 42 min med 40 TSS, og zone-compliance var on target — 49,9 % i Z2 på HR er præcis det der forventes i en åbent-vand-lignende race-simulation. Det eneste der manglede denne uge var OW-svømmen fredag, men den samlede blok er solid. Søndag venter 90 min indendørs cykel — kør den med struktur og hold wattene i Z2 hele vejen.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">⚖️ <strong>Krop & kost</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Dagens vejning viser 72,5 kg og 21,6 % fedt — henholdsvis 4,5 kg og 5,6 procentpoint fra målene. 7-dages snittet, som er det autoritative tal, ligger på 71,8 kg og 21,3 % fedt, og fedtprocent-snittet er gået 0,1 point ned over de seneste 7 dage — retningen er rigtig, om end tempoet er langsomt. Vægten alene siger ikke meget; det er fedtprocenten der afgør om du taber det rigtige — og den peger i den rette retning. Hold kalorieunderskuddet skarpt uden at gå på kompromis med restitution og træningskvalitet de næste uger.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">🎯 <strong>AF-status & fokus for resten af ugen</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Du har 5 AF-dage ud af 6 dage gået i ugen — det er stærkt og godt inden for målet. Streak er oppe på 12 dage, og der er ingen grund til at ændre kurs nu. Hold den i morgen, så lander du ugen med en ren facit på AF-fronten. Fokus søndag: giv cykelturen struktur og lad kroppen arbejde sig stille ind i den afsluttende restitutionstilstand inden Médoc-ugen.</p>",
+  "coachAssessmentTs": "14:32",
   "commute_pairing_warnings": [],
   "warnings": [
     {
@@ -4044,10 +4045,10 @@
       "note": "Nøgle virker"
     }
   },
-  "credentialsCheckedTs": "2026-08-29T13:06:51.944796",
-  "coachAssessmentTsFull": "2026-08-29T13:06:51.944780",
+  "credentialsCheckedTs": "2026-08-29T14:32:32.701223",
+  "coachAssessmentTsFull": "2026-08-29T14:32:32.701208",
   "coachAssessmentWeightAtGen": 72.5,
-  "coachAssessmentAfAtGen": 4,
+  "coachAssessmentAfAtGen": 5,
   "event_structure_warnings": [
     {
       "date": "2026-08-29",
