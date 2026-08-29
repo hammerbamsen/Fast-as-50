@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-08-29 23:52",
+    "updated": "2026-08-30 01:55",
     "week": 13,
     "totalWeeks": 16,
     "blockType": "BUILD",
@@ -3764,8 +3764,8 @@
       "real": true
     }
   ],
-  "coachAssessmentHtml": "<p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\"><strong>Dag 90 af 98 · Lørdag · Uge 13</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">💪 <strong>Træning & load</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">CTL er oppe på 50,3 — markant over ugemålet på 47 — og TSB ligger på 6,0, så du er i god balance. Svømningen i dag leverede 1.988 m på 42 min med 40 TSS, og zone-compliance var on target. Den eneste miss denne uge var OW-svøm fredag, men det samlede billede er solidt. Søndag venter cykel indendørs 90 min — brug den til at lukke ugen kontrolleret, ikke til at presse CTL yderligere op.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">⚖️ <strong>Krop & kost</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Dagsvægt er 72,5 kg og fedtprocent 21,6 % — hhv. 4,5 kg og 5,6 procentpoint fra målene. 7-dages snittet på vægt er 71,8 kg og på fedtprocent 21,3 %, og det er de tal der viser retningen: fedtprocenten er faldet 0,1 point over de seneste 7 dage, hvilket er den reelle bevægelse. Det er ikke imponerende fart, men det er den rigtige retning. Hold øje med at vægttab og fedtprocentfald følges ad — falder vægten uden at fedtprocenten følger med, mister du muskelmasse, og det er det modsatte af hvad et capacity-år kræver.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">🎯 <strong>AF-status & fokus for resten af ugen</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Du er på 5 AF-dage ud af 6 dage gået i ugen — det er en stærk ratio. Søndag er den syvende dag, og én yderligere AF-dag her lukker ugen flot. Fokus er enkelt: rolig cykel søndag, ingen alkohol, og gå ind i uge 14 med overskud i benene til Médoc-rytmen.</p>",
-  "coachAssessmentTs": "16:32",
+  "coachAssessmentHtml": "<p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\"><strong>Dag 90 af 98 · Lørdag · Uge 13</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">💪 <strong>Træning & load</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">CTL er 50,3 — markant over ugemålet på 47 — og TSB ligger på 6,0, så du er frisk og i balance. Svømmen i dag leverede 1.988 m på 42 min med 40 TSS, og zone-compliance var on target. Ugen har været solid med stabil gennemførelse på tværs af styrke, gåture og løb — den eneste miss var OW-svømmen fredag. Til søndag: hold den indendørs cykel varieret og hold dig i ro — du skal ikke bygge mere load nu.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">⚖️ <strong>Krop & kost</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Vægten i dag er 72,5 kg — 4,5 kg fra målet — og fedtprocenten er 21,6 %, altså 5,6 procentpoint fra målet på under 16 %. 7-dages snittet på fedtprocent er 21,3 % og er gået 0,1 point ned over de seneste 7 dage — det er den reelle retning, og den peger rigtigt. Vægtsnittet på 71,8 kg er det autoritative billede på vægten; dagens 72,5 kg er blot et øjebliksbillede og ikke et signal om en tendens.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">🎯 <strong>AF-status & fokus for resten af ugen</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Du har 5 AF-dage ud af 6 dage gået i ugen — det er stærkt. Søndag er den eneste dag tilbage, og cyklen er dit fokus — alkohol ude af billedet giver dig den sjette AF-dag og lukker ugen rent. Médoc er om syv dage: benene sidder, formen er der — nu handler det om at lande frisk.</p>",
+  "coachAssessmentTs": "23:55",
   "commute_pairing_warnings": [],
   "warnings": [
     {
@@ -4076,8 +4076,8 @@
       "note": "Nøgle virker"
     }
   },
-  "credentialsCheckedTs": "2026-08-29T21:52:54.803862",
-  "coachAssessmentTsFull": "2026-08-29T16:32:41.852162",
+  "credentialsCheckedTs": "2026-08-29T23:55:20.419592",
+  "coachAssessmentTsFull": "2026-08-29T23:55:20.419563",
   "coachAssessmentWeightAtGen": 72.5,
   "coachAssessmentAfAtGen": 5,
   "event_structure_warnings": [
