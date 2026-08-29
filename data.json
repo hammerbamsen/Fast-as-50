@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-08-29 05:32",
+    "updated": "2026-08-29 12:51",
     "week": 13,
     "totalWeeks": 16,
     "blockType": "BUILD",
@@ -12,13 +12,13 @@
   },
   "kpis": {
     "weight": {
-      "value": "72,3",
+      "value": "72,5",
       "unit": "kg",
-      "sub": "Sidst målt 28/8 · Mål <68 kg · snit 71,8 kg",
+      "sub": "Mål <68 kg · snit 71,9 kg",
       "color": "#E67E22"
     },
     "fat": {
-      "value": "20,8",
+      "value": "21,6",
       "unit": "%",
       "sub": "Mål <16%",
       "color": "#C0392B"
@@ -89,7 +89,7 @@
     "target": 6,
     "streak": 11
   },
-  "coachSpeech": "Lørdag — uge 13 af 16. {HL} Fokus: 177 af 207 TSS er i hus — 2 sessioner tilbage, heriblandt Svøm 2.000 m — Christiansborg Rundt, Cykel indendørs 90 min varieret. OW-svøm let 20 min (Gentofte) er misset — vinduet er lukket. Vægt på 72,3 kg (målt 28/8) — hold protein højt og undgå lette kulhydrater om aftenen. 4 AF-dage i 6 afsluttede dage — 2 mangler i 1 dage tilbage. Hård uge — men det er sådan formen bygges. Hold ved.  \"AF-dage er ikke et offer — de er en investering i morgendagens energi.\"",
+  "coachSpeech": "Lørdag — uge 13 af 16. {HL} Fokus: 177 af 207 TSS er i hus — 2 sessioner tilbage, heriblandt Svøm 2.000 m — Christiansborg Rundt, Cykel indendørs 90 min varieret. OW-svøm let 20 min (Gentofte) er misset — vinduet er lukket. Vægt på 72,5 kg — hold protein højt og undgå lette kulhydrater om aftenen. 4 AF-dage i 6 afsluttede dage — 2 mangler i 1 dage tilbage. Hård uge — men det er sådan formen bygges. Hold ved.  \"AF-dage er ikke et offer — de er en investering i morgendagens energi.\"",
   "coachHighlight": "Søvn på 7,9 timer er solid",
   "weekFocus": "Bevar skarphed og ro — Médoc-rytmen sidder i benene",
   "today": [
@@ -552,7 +552,11 @@
       "v": 72.3,
       "real": true
     },
-    null
+    {
+      "date": "2026-08-29",
+      "v": 72.5,
+      "real": true
+    }
   ],
   "hrvHistory": [
     {
@@ -3678,10 +3682,14 @@
       "v": 20.8,
       "real": true
     },
-    null
+    {
+      "date": "2026-08-29",
+      "v": 21.6,
+      "real": true
+    }
   ],
-  "coachAssessmentHtml": "<p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\"><strong>Dag 90 af 98 · Lørdag · Uge 13</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">💪 <strong>Træning & load</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">CTL er oppe på 49,8 — godt over ugemålet på 47 — og TSB ligger på 8,3, så du er frisk og klar. Christiansborg Rundt er ikke forsøgt endnu: 2.000 m i dag er dit primære mål — det er den ene ting der tæller mest i dag. Søndagens indendørs cykel på 90 min er det eneste der er tilbage bagefter, og den ligger der som en fin afrunding på ugen.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">⚖️ <strong>Krop & kost</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Vægten var 72,3 kg ved seneste vejning 28/8, og fedtprocenten var 20,8 % samme dag — det er 4,3 kg fra vægmålet og 4,8 procentpoint fra fedtprocent-målet på under 16 %. 7-dages snittet på fedtprocenten er gået 0,2 point ned over de seneste 7 dage — det er den reelle retning, og den peger rigtigt. Fortsæt det du gør: fremgangen sker, den er bare ikke dramatisk, og det behøver den ikke være i en kapacitetsuge som denne.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">🎯 <strong>AF-status & fokus for resten af ugen</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Du har 4 AF-dage ud af 6 dage gået i ugen — det er en fornuftig kurs mod ugemålet på 6, og stregen på 11 dage er intakt. Gå i vandet i dag, og hold alkoholfri i aften og søndag — så lander du på 6/7 for ugen. Det er præcis det der skal til.</p>",
-  "coachAssessmentTs": "03:32",
+  "coachAssessmentHtml": "<p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\"><strong>Dag 90 af 98 · Lørdag · Uge 13</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">💪 <strong>Træning & load</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">CTL er 49,8 — klart over ugemålet på 47 — og TSB på 8,3 viser at du er udhvilet og klar. Ugen har været domineret af gåture og styrketræning, og det har holdt dit grønne tal. Nu venter dagens 2.000 m i Christiansborg Rundt: det er dit eneste strukturerede løft tilbage i dag, og du er i god form til det. Sæt dig i vandet med ro og lad teknik og rytme styre — du behøver ikke bevise noget i dag.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">⚖️ <strong>Krop & kost</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Dagens vejning viser 72,5 kg og 21,6 % fedt — henholdsvis 4,5 kg og 5,6 procentpoint fra dine mål. 7-dages snittet på 71,8 kg og 21,3 % fedt er det tal der tæller, og fedtprocent-snittet er faldet 0,1 point den seneste uge — retningen er rigtig, om end langsom. Hold øje med at vægttab og fedtprocentfald følges ad: falder vægten hurtigere end fedtprocenten, er det muskelmasse der ryger, og det er ikke en gevinst i et capacity-år.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">🎯 <strong>AF-status & fokus for resten af ugen</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Du har 4 AF-dage ud af 6 dage gået i ugen, og din streak er oppe på 11 dage — det er stærkt. I morgen er der cykel indendørs 90 min, og en sjette alkoholfri dag er inden for rækkevidde hvis du holder linjen i aften og i morgen. Kom i vandet, svøm din 2.000 m, og luk ugen af med ro på cyklen søndag.</p>",
+  "coachAssessmentTs": "10:52",
   "commute_pairing_warnings": [],
   "warnings": [
     {
@@ -3866,7 +3874,7 @@
     72.25,
     72.08,
     71.82,
-    71.66
+    71.8
   ],
   "fatMovingAvg7": [
     null,
@@ -3958,10 +3966,10 @@
     21.3,
     21.38,
     21.37,
-    21.28
+    21.33
   ],
-  "weightToGoal": 4.3,
-  "bodyFatToGoal": 4.8,
+  "weightToGoal": 4.5,
+  "bodyFatToGoal": 5.6,
   "ctlPlan": [
     34,
     36,
@@ -3992,9 +4000,9 @@
       "note": "Nøgle virker"
     }
   },
-  "credentialsCheckedTs": "2026-08-29T03:32:37.420898",
-  "coachAssessmentTsFull": "2026-08-29T03:32:37.420882",
-  "coachAssessmentWeightAtGen": 72.3,
+  "credentialsCheckedTs": "2026-08-29T10:52:05.025473",
+  "coachAssessmentTsFull": "2026-08-29T10:52:05.025456",
+  "coachAssessmentWeightAtGen": 72.5,
   "coachAssessmentAfAtGen": 4,
   "event_structure_warnings": [
     {
@@ -4007,7 +4015,7 @@
       "text": "workout_doc har ingen trin."
     }
   ],
-  "coachAssessmentFatAtGen": 20.8,
+  "coachAssessmentFatAtGen": 21.6,
   "zones": {
     "runThreshold": "4:24/km",
     "bikeFtpW": 278,
@@ -4767,7 +4775,7 @@
     },
     {
       "date": "2026-08-29",
-      "v": 43,
+      "v": 42,
       "real": true
     }
   ]
