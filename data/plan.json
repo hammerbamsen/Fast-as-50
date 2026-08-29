@@ -6037,15 +6037,31 @@
             },
             {
               "workout": {
-                "name": "Svøm almindelig 1500m",
+                "name": "Svøm almindelig 2300m",
                 "type": "Swim",
-                "moving_time": 3600,
-                "description": "Almindelig svøm — fri distance/intervaller, ingen drills. Formål: teste om ugens teknikfokus fra onsdag sidder uden bevidst tanke, under normal belastning.",
+                "moving_time": 4500,
+                "description": "- Opvarmning 400m rolig\n- Hovedsæt: 8×100m i jævnt tempo, 15-20 sek pause (800m)\n- 4×100m lidt hurtigere, 20 sek pause (400m)\n- Frit — distance/intervaller efter form, ingen drills (300m)\n- Udsvømning 400m rolig\n\n2300m i alt (2000-2500m målzone). Formål: teste om ugens teknikfokus fra onsdag sidder uden bevidst tanke, under normal belastning.",
                 "workout_doc": {
                   "steps": [
                     {
-                      "text": "Fri svøm — distance/intervaller efter form",
-                      "duration": 3600
+                      "text": "Opvarmning rolig",
+                      "duration": 600
+                    },
+                    {
+                      "text": "8×100m jævnt tempo",
+                      "duration": 1500
+                    },
+                    {
+                      "text": "4×100m lidt hurtigere",
+                      "duration": 900
+                    },
+                    {
+                      "text": "Frit — distance/intervaller efter form",
+                      "duration": 900
+                    },
+                    {
+                      "text": "Udsvømning rolig",
+                      "duration": 600
                     }
                   ]
                 }
@@ -6432,15 +6448,31 @@
             },
             {
               "workout": {
-                "name": "Svøm almindelig 1500m",
+                "name": "Svøm almindelig 2300m",
                 "type": "Swim",
-                "moving_time": 3600,
-                "description": "Almindelig svøm — fri distance/intervaller, ingen drills. Formål: teste om ugens teknikfokus fra onsdag sidder uden bevidst tanke, under normal belastning.",
+                "moving_time": 4500,
+                "description": "- Opvarmning 400m rolig\n- Hovedsæt: 8×100m i jævnt tempo, 15-20 sek pause (800m)\n- 4×100m lidt hurtigere, 20 sek pause (400m)\n- Frit — distance/intervaller efter form, ingen drills (300m)\n- Udsvømning 400m rolig\n\n2300m i alt (2000-2500m målzone). Formål: teste om ugens teknikfokus fra onsdag sidder uden bevidst tanke, under normal belastning.",
                 "workout_doc": {
                   "steps": [
                     {
-                      "text": "Fri svøm — distance/intervaller efter form",
-                      "duration": 3600
+                      "text": "Opvarmning rolig",
+                      "duration": 600
+                    },
+                    {
+                      "text": "8×100m jævnt tempo",
+                      "duration": 1500
+                    },
+                    {
+                      "text": "4×100m lidt hurtigere",
+                      "duration": 900
+                    },
+                    {
+                      "text": "Frit — distance/intervaller efter form",
+                      "duration": 900
+                    },
+                    {
+                      "text": "Udsvømning rolig",
+                      "duration": 600
                     }
                   ]
                 }
@@ -6823,15 +6855,31 @@
             },
             {
               "workout": {
-                "name": "Svøm almindelig 1500m",
+                "name": "Svøm almindelig 2300m",
                 "type": "Swim",
-                "moving_time": 3600,
-                "description": "Almindelig svøm — fri distance/intervaller, ingen drills. Formål: teste om ugens teknikfokus fra onsdag sidder uden bevidst tanke, under normal belastning.",
+                "moving_time": 4500,
+                "description": "- Opvarmning 400m rolig\n- Hovedsæt: 8×100m i jævnt tempo, 15-20 sek pause (800m)\n- 4×100m lidt hurtigere, 20 sek pause (400m)\n- Frit — distance/intervaller efter form, ingen drills (300m)\n- Udsvømning 400m rolig\n\n2300m i alt (2000-2500m målzone). Formål: teste om ugens teknikfokus fra onsdag sidder uden bevidst tanke, under normal belastning.",
                 "workout_doc": {
                   "steps": [
                     {
-                      "text": "Fri svøm — distance/intervaller efter form",
-                      "duration": 3600
+                      "text": "Opvarmning rolig",
+                      "duration": 600
+                    },
+                    {
+                      "text": "8×100m jævnt tempo",
+                      "duration": 1500
+                    },
+                    {
+                      "text": "4×100m lidt hurtigere",
+                      "duration": 900
+                    },
+                    {
+                      "text": "Frit — distance/intervaller efter form",
+                      "duration": 900
+                    },
+                    {
+                      "text": "Udsvømning rolig",
+                      "duration": 600
                     }
                   ]
                 }
@@ -7182,15 +7230,31 @@
             },
             {
               "workout": {
-                "name": "Svøm almindelig 1500m",
+                "name": "Svøm almindelig 2300m",
                 "type": "Swim",
-                "moving_time": 3600,
-                "description": "Almindelig svøm — fri distance/intervaller, ingen drills. Formål: teste om ugens teknikfokus fra onsdag sidder uden bevidst tanke, under normal belastning.",
+                "moving_time": 4500,
+                "description": "- Opvarmning 400m rolig\n- Hovedsæt: 8×100m i jævnt tempo, 15-20 sek pause (800m)\n- 4×100m lidt hurtigere, 20 sek pause (400m)\n- Frit — distance/intervaller efter form, ingen drills (300m)\n- Udsvømning 400m rolig\n\n2300m i alt (2000-2500m målzone). Formål: teste om ugens teknikfokus fra onsdag sidder uden bevidst tanke, under normal belastning.",
                 "workout_doc": {
                   "steps": [
                     {
-                      "text": "Fri svøm — distance/intervaller efter form",
-                      "duration": 3600
+                      "text": "Opvarmning rolig",
+                      "duration": 600
+                    },
+                    {
+                      "text": "8×100m jævnt tempo",
+                      "duration": 1500
+                    },
+                    {
+                      "text": "4×100m lidt hurtigere",
+                      "duration": 900
+                    },
+                    {
+                      "text": "Frit — distance/intervaller efter form",
+                      "duration": 900
+                    },
+                    {
+                      "text": "Udsvømning rolig",
+                      "duration": 600
                     }
                   ]
                 }
@@ -7595,15 +7659,31 @@
             },
             {
               "workout": {
-                "name": "Svøm almindelig 1500m",
+                "name": "Svøm almindelig 2300m",
                 "type": "Swim",
-                "moving_time": 3600,
-                "description": "Almindelig svøm — fri distance/intervaller, ingen drills. Formål: teste om ugens teknikfokus fra onsdag sidder uden bevidst tanke, under normal belastning.",
+                "moving_time": 4500,
+                "description": "- Opvarmning 400m rolig\n- Hovedsæt: 8×100m i jævnt tempo, 15-20 sek pause (800m)\n- 4×100m lidt hurtigere, 20 sek pause (400m)\n- Frit — distance/intervaller efter form, ingen drills (300m)\n- Udsvømning 400m rolig\n\n2300m i alt (2000-2500m målzone). Formål: teste om ugens teknikfokus fra onsdag sidder uden bevidst tanke, under normal belastning.",
                 "workout_doc": {
                   "steps": [
                     {
-                      "text": "Fri svøm — distance/intervaller efter form",
-                      "duration": 3600
+                      "text": "Opvarmning rolig",
+                      "duration": 600
+                    },
+                    {
+                      "text": "8×100m jævnt tempo",
+                      "duration": 1500
+                    },
+                    {
+                      "text": "4×100m lidt hurtigere",
+                      "duration": 900
+                    },
+                    {
+                      "text": "Frit — distance/intervaller efter form",
+                      "duration": 900
+                    },
+                    {
+                      "text": "Udsvømning rolig",
+                      "duration": 600
                     }
                   ]
                 }
