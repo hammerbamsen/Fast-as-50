@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-08-29 12:56",
+    "updated": "2026-08-29 15:06",
     "week": 13,
     "totalWeeks": 16,
     "blockType": "BUILD",
@@ -24,13 +24,13 @@
       "color": "#C0392B"
     },
     "ctl": {
-      "value": "49,8",
+      "value": "49,9",
       "unit": "",
       "sub": "Uge 13-mål 47 · Slutmål 41 (uge 16)",
       "color": "#27AE60"
     },
     "tsb": {
-      "value": "8,5",
+      "value": "7,9",
       "unit": "",
       "sub": "Form · CTL−ATL, frisk >0",
       "color": "#27AE60"
@@ -60,9 +60,9 @@
       "color": "#7A6A58"
     },
     "tssComp": {
-      "value": "190",
+      "value": "230",
       "unit": "TSS",
-      "sub": "190 af 207 planlagt TSS",
+      "sub": "230 af 207 planlagt TSS",
       "color": "#27AE60"
     },
     "bikeKm": {
@@ -72,10 +72,10 @@
       "color": "#C0392B"
     },
     "swimM": {
-      "value": "0",
+      "value": "1988",
       "unit": "m",
       "sub": "Svøm denne uge · mål 2000m (Christiansborg)",
-      "color": "#7A6A58"
+      "color": "#27AE60"
     },
     "afStreak": {
       "value": "11",
@@ -90,7 +90,7 @@
     "streak": 11
   },
   "coachSpeech": "Lørdag — uge 13 af 16. {HL} Godt: Søvn på 7,9 timer er solid. Fokus: Vægt på 72,5 kg — hold protein højt og undgå lette kulhydrater om aftenen. 4 AF-dage i 6 afsluttede dage — 2 mangler i 1 dage tilbage. Keep moving forward.  \"AF-dage er ikke et offer — de er en investering i morgendagens energi.\"",
-  "coachHighlight": "92 procent af ugens TSS er i hus",
+  "coachHighlight": "111 procent af ugens TSS er i hus",
   "weekFocus": "Bevar skarphed og ro — Médoc-rytmen sidder i benene",
   "today": [
     {
@@ -99,7 +99,7 @@
       "duration": "",
       "zone": "–",
       "desc": "",
-      "completed": false
+      "completed": true
     },
     {
       "discipline": "commute",
@@ -199,11 +199,17 @@
       "day": "Lør",
       "disc": "swim",
       "label": "Svøm 2.000 m — Christiansborg Rundt",
-      "done": false,
+      "done": true,
       "planned_tss": 35,
       "planned_mins": 40,
-      "planned_distance_m": 0,
-      "today": true
+      "planned_distance_m": null,
+      "today": true,
+      "completion": "done",
+      "completion_pct": 114,
+      "actual_tss": 40,
+      "actual_mins": 42,
+      "actual_distance_m": 1988.01,
+      "intervals_compliance": 114.3
     },
     {
       "day": "Lør",
@@ -239,7 +245,7 @@
     53.0,
     52.9,
     52.4,
-    49.8
+    49.9
   ],
   "weightHistory": [
     {
@@ -1929,7 +1935,7 @@
     },
     {
       "date": "2026-08-29",
-      "v": 8.5,
+      "v": 7.9,
       "real": true
     }
   ],
@@ -3026,11 +3032,17 @@
           "day": "Lør",
           "disc": "swim",
           "label": "Svøm 2.000 m — Christiansborg Rundt",
-          "done": false,
+          "done": true,
           "planned_tss": 35,
           "planned_mins": 40,
-          "planned_distance_m": 0,
-          "today": true
+          "planned_distance_m": null,
+          "today": true,
+          "completion": "done",
+          "completion_pct": 114,
+          "actual_tss": 40,
+          "actual_mins": 42,
+          "actual_distance_m": 1988.01,
+          "intervals_compliance": 114.3
         },
         {
           "day": "Lør",
@@ -3376,12 +3388,13 @@
     }
   ],
   "train_mins": {
+    "openwater": 42.0,
     "commute": 34.0,
     "strength": 68.0,
     "walk": 240.0,
     "run": 94.0,
     "planned": 245.0,
-    "actual_total": 436.0
+    "actual_total": 478.0
   },
   "fatHistory": [
     {
@@ -3719,8 +3732,8 @@
       "real": true
     }
   ],
-  "coachAssessmentHtml": "<p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\"><strong>Dag 90 af 98 · Lørdag · Uge 13</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">💪 <strong>Træning & load</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">CTL er 49,8 — det er 2,8 over ugemålet på 47, og TSB på 8,5 viser at du er frisk og klar. Ugen har kørt præcis som den skal: Z2-løbet tirsdag landede på 17,8 km med 84,9 % i pace-zone, det er on target. Nu mangler du bare dagens 2.000 m i Christiansborg Rundt — det er den vigtigste session i ugen, og du er i god form til at levere.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">⚖️ <strong>Krop & kost</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Dagens vejning viser 72,5 kg og fedtprocent på 21,6 %, men det autoritative billede er 7-dages snittet: 71,8 kg og 21,3 % — og snittet på fedtprocent er faldet 0,1 point over de seneste 7 dage, hvilket er den rigtige retning. Du er stadig 3,8 kg fra vægtmålet og 5,3 procentpoint fra fedtprocent-målet på under 16 %, så der er god vej endnu. Det er fedtprocenten der tæller mest her — hold fokus på kvalitetsmad og undgå at spare på proteinet.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">🎯 <strong>AF-status & fokus for resten af ugen</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Du er på 4 AF-dage ud af 6 dage gået i ugen — det er rimeligt, men du har stadig i dag og søndag til at lukke ugen stærkt. Streaken på 11 dage er solid og værd at beskytte. Prioritér dagens svøm nu, og lad søndagens cykeltur på 90 min blive en rolig afslutning på en god uge.</p>",
-  "coachAssessmentTs": "10:56",
+  "coachAssessmentHtml": "<p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\"><strong>Dag 90 af 98 · Lørdag · Uge 13</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">💪 <strong>Træning & load</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">CTL er 49,9 — markant over ugemålet på 47 — og TSB ligger på 7,9, så du er frisk og i god balance. Svømningen i dag leverede 1988 m på 42 min med 40 TSS, og 49,9% af passet lå i Z2 på HR — det er on target for en race-sim-indsats hvor intensiteten naturligt rykker op og ned. Ugen som helhed er solid: løb, styrke, gang og nu race-svøm sidder alle i bøgerne. Søndagens 90 min indendørs cykel er det eneste der mangler — kør det roligt og varieret, så du afslutter ugen med god TSS uden at grave i TSB.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">⚖️ <strong>Krop & kost</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Dagens vejning viser 72,5 kg og fedtprocent på 21,6% — det er 4,5 kg fra vægmålet og 5,6 procentpoint fra fedtprocent-målet på under 16%. Det er de tal der tæller: vægten alene siger ingenting hvis muskelmassen ryger med ned. 7-dages snittet på fedtprocent er 21,3% og er faldet 0,1 procentpoint over de seneste 7 dage — det er den reelle retning, og den peger den rigtige vej, om end langsomt. Hold fokus på proteinindtag og søvn — det er der fedttabet faktisk sker.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">🎯 <strong>AF-status & fokus for resten af ugen</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Du har 4 AF-dage ud af 6 dage gået i ugen — det er godkendt, men ikke flot. Streaken er oppe på 11 dage, og Søndag er din chance for at holde den kørende og lande den sjette AF-dag i ugen. Médoc er om ni dage: brug resten af weekenden på at spise ordentligt, sove nok og møde startlinjen med ro i kroppen — ikke med nye impulser eller ekstra belastning.</p>",
+  "coachAssessmentTs": "13:06",
   "commute_pairing_warnings": [],
   "warnings": [
     {
@@ -3729,7 +3742,7 @@
       "message": "HRV 49,0 ms — 19% under 7d-snit (60,2 ms). Kroppen er presset."
     }
   ],
-  "tsb": 8.5,
+  "tsb": 7.9,
   "swimHistory": [
     {
       "week": 1,
@@ -3806,11 +3819,11 @@
     {
       "week": 13,
       "date": "2026-08-24",
-      "meters": 0,
-      "cumulative": 27374.0
+      "meters": 1988.0,
+      "cumulative": 29362.0
     }
   ],
-  "coachAssessmentLastActId": "i180953533",
+  "coachAssessmentLastActId": "i180990473",
   "weekFocusWeek": 13,
   "coachAssessmentPlanAtGen": "Svøm 2.000 m — Christiansborg Rundt",
   "weightGoal": 68,
@@ -4031,8 +4044,8 @@
       "note": "Nøgle virker"
     }
   },
-  "credentialsCheckedTs": "2026-08-29T10:56:28.511703",
-  "coachAssessmentTsFull": "2026-08-29T10:56:28.511688",
+  "credentialsCheckedTs": "2026-08-29T13:06:51.944796",
+  "coachAssessmentTsFull": "2026-08-29T13:06:51.944780",
   "coachAssessmentWeightAtGen": 72.5,
   "coachAssessmentAfAtGen": 4,
   "event_structure_warnings": [
@@ -4141,7 +4154,7 @@
     "10": 471,
     "11": 374,
     "12": 367,
-    "13": 190
+    "13": 230
   },
   "racesUpcoming": [
     {
