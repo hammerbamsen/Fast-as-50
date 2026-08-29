@@ -1,126 +1,121 @@
 {
- "generated": "2026-08-28T11:39:29Z",
+ "generated": "2026-08-29T03:32:40Z",
  "kennet": {
   "seed": {
-   "date": "2026-08-28",
-   "ctl": 50.2,
-   "atl": 42.5
+   "date": "2026-08-29",
+   "ctl": 49.8,
+   "atl": 41.5
   },
   "projection": [
    {
-    "d": "2026-08-29",
-    "ctl": 49.0,
-    "tsb": 12.6
-   },
-   {
     "d": "2026-08-30",
-    "ctl": 49.3,
-    "tsb": 9.5
+    "ctl": 50.0,
+    "tsb": 5.9
    },
    {
     "d": "2026-08-31",
-    "ctl": 48.6,
-    "tsb": 11.2
+    "ctl": 49.4,
+    "tsb": 8.2
    },
    {
     "d": "2026-09-01",
-    "ctl": 48.0,
-    "tsb": 12.6
+    "ctl": 48.8,
+    "tsb": 10.2
    },
    {
     "d": "2026-09-02",
-    "ctl": 47.5,
-    "tsb": 13.8
+    "ctl": 48.2,
+    "tsb": 11.8
    },
    {
     "d": "2026-09-03",
-    "ctl": 46.3,
-    "tsb": 17.5
+    "ctl": 47.0,
+    "tsb": 15.8
    },
    {
     "d": "2026-09-04",
-    "ctl": 45.8,
-    "tsb": 17.7
+    "ctl": 46.5,
+    "tsb": 16.4
    },
    {
     "d": "2026-09-05",
-    "ctl": 44.7,
-    "tsb": 20.6
+    "ctl": 45.4,
+    "tsb": 19.6
    },
    {
     "d": "2026-09-06",
-    "ctl": 43.6,
-    "tsb": 23.0
+    "ctl": 44.3,
+    "tsb": 22.2
    },
    {
     "d": "2026-09-07",
-    "ctl": 43.5,
-    "tsb": 20.4
+    "ctl": 44.1,
+    "tsb": 19.8
    },
    {
     "d": "2026-09-08",
-    "ctl": 43.3,
-    "tsb": 18.2
+    "ctl": 44.0,
+    "tsb": 17.7
    },
    {
     "d": "2026-09-09",
-    "ctl": 43.2,
-    "tsb": 16.2
+    "ctl": 43.8,
+    "tsb": 15.9
    },
    {
     "d": "2026-09-10",
-    "ctl": 43.1,
-    "tsb": 14.5
+    "ctl": 43.7,
+    "tsb": 14.3
    },
    {
     "d": "2026-09-11",
-    "ctl": 43.0,
-    "tsb": 13.1
+    "ctl": 43.5,
+    "tsb": 13.0
    },
    {
     "d": "2026-09-12",
-    "ctl": 42.8,
+    "ctl": 43.4,
     "tsb": 11.8
    },
    {
     "d": "2026-09-13",
-    "ctl": 42.7,
-    "tsb": 10.7
+    "ctl": 43.3,
+    "tsb": 10.8
    },
    {
     "d": "2026-09-14",
-    "ctl": 42.9,
-    "tsb": 8.6
+    "ctl": 43.4,
+    "tsb": 8.7
    },
    {
     "d": "2026-09-15",
-    "ctl": 43.0,
-    "tsb": 6.7
+    "ctl": 43.5,
+    "tsb": 6.9
    },
    {
     "d": "2026-09-16",
-    "ctl": 43.1,
-    "tsb": 5.2
+    "ctl": 43.6,
+    "tsb": 5.4
    },
    {
     "d": "2026-09-17",
-    "ctl": 43.2,
-    "tsb": 3.8
+    "ctl": 43.7,
+    "tsb": 4.1
    },
    {
     "d": "2026-09-18",
-    "ctl": 43.3,
-    "tsb": 2.7
+    "ctl": 43.8,
+    "tsb": 3.0
    },
    {
     "d": "2026-09-19",
-    "ctl": 43.4,
-    "tsb": 1.8
+    "ctl": 43.9,
+    "tsb": 2.1
    },
    {
     "d": "2026-09-20",
-    "ctl": 43.5,
-    "tsb": 1.0
+    "ctl": 44.0,
+    "tsb": 1.3
    }
   ],
   "weeks": [
@@ -230,32 +225,40 @@
    },
    {
     "week": 13,
-    "projEndCtl": 49.3,
-    "deviation": 2.3,
-    "flags": []
+    "projEndCtl": 50.0,
+    "deviation": 3.0,
+    "flags": [
+     {
+      "week": 13,
+      "rule": "low_readiness",
+      "level": "WARN",
+      "msg": "Lav readiness i dag (HRV/søvn) — overvej at reducere dagens/ugens belastning",
+      "historic": false
+     }
+    ]
    },
    {
     "week": 14,
-    "projEndCtl": 43.6,
-    "deviation": 0.6,
+    "projEndCtl": 44.3,
+    "deviation": 1.3,
     "flags": []
    },
    {
     "week": 15,
-    "projEndCtl": 42.7,
-    "deviation": 2.7,
+    "projEndCtl": 43.3,
+    "deviation": 3.3,
     "flags": []
    },
    {
     "week": 16,
-    "projEndCtl": 43.5,
-    "deviation": 2.5,
+    "projEndCtl": 44.0,
+    "deviation": 3.0,
     "flags": [
      {
       "week": 16,
       "rule": "race_tsb",
       "level": "WARN",
-      "msg": "TSB 1.0 på race-dag (CPH Half) — mål +5 til +15",
+      "msg": "TSB 1.3 på race-dag (CPH Half) — mål +5 til +15",
       "historic": false
      }
     ]
@@ -291,22 +294,36 @@
     "historic": false
    },
    {
+    "week": 13,
+    "rule": "low_readiness",
+    "level": "WARN",
+    "msg": "Lav readiness i dag (HRV/søvn) — overvej at reducere dagens/ugens belastning",
+    "historic": false
+   },
+   {
     "week": 16,
     "rule": "race_tsb",
     "level": "WARN",
-    "msg": "TSB 1.0 på race-dag (CPH Half) — mål +5 til +15",
+    "msg": "TSB 1.3 på race-dag (CPH Half) — mål +5 til +15",
     "historic": false
    }
   ],
   "adaptation": {
    "triggered": false,
-   "missed7": 0,
-   "missed10": 0,
-   "missed": [],
+   "missed7": 1,
+   "missed10": 1,
+   "missed": [
+    {
+     "date": "2026-08-28",
+     "entry_id": "ed67d0c9",
+     "name": "OW-svøm let 20 min (Gentofte)",
+     "type": "OpenWaterSwim"
+    }
+   ],
    "suggestion": null,
    "phase_guard": null
   },
-  "readiness": "HIGH"
+  "readiness": "LOW"
  },
- "inputsHash": "683058abe0f5db9f"
+ "inputsHash": "ea270d3df5012a01"
 }
