@@ -5894,6 +5894,40 @@
               },
               "note": "AEROB PROBE — baseline for cuttet",
               "id": "8eb6ad9c"
+            },
+            {
+              "workout": {
+                "name": "Svøm teknik 1500m (fokus: catch)",
+                "type": "Swim",
+                "moving_time": 3600,
+                "description": "- Opvarmning 300m rolig, blandet\n- Drill-sæt: 8×25m Fist swim (svøm med lukkede næver — brug underarmen som åre, mærk fat i vandet), 15-20 sek pause\n- Main set: 8×50m hurtigt men med formen intakt, 20 sek pause — fokus: fat i vandet / træk fra ryg, ikke arm\n- Kick-sæt: 4×50m, fokus benspark/kropsposition, 20 sek pause\n- Udsvømning 400m rolig\n\n1500m i alt. Ét fokuspunkt ad gangen — roterer uge for uge (catch → hoved → hofte).",
+                "workout_doc": {
+                  "steps": [
+                    {
+                      "text": "Opvarmning rolig, blandet",
+                      "duration": 900
+                    },
+                    {
+                      "text": "8×25m Fist swim (svøm med lukkede næver — brug underarmen som åre, mærk fat i vandet)",
+                      "duration": 900
+                    },
+                    {
+                      "text": "Main set 8×50m hurtigt, form intakt — fat i vandet / træk fra ryg, ikke arm",
+                      "duration": 900
+                    },
+                    {
+                      "text": "Kick-sæt 4×50m — benspark/kropsposition",
+                      "duration": 600
+                    },
+                    {
+                      "text": "Udsvømning rolig",
+                      "duration": 300
+                    }
+                  ]
+                }
+              },
+              "note": "Svøm 2×/uge fra uge 3 — teknikpas (Kildeskovshallen), fokus catch",
+              "id": "f8425d55"
             }
           ]
         },
@@ -6000,6 +6034,24 @@
               },
               "note": "Cykel Z2+Z3",
               "id": "b191f07b"
+            },
+            {
+              "workout": {
+                "name": "Svøm almindelig 1500m",
+                "type": "Swim",
+                "moving_time": 3600,
+                "description": "Almindelig svøm — fri distance/intervaller, ingen drills. Formål: teste om ugens teknikfokus fra onsdag sidder uden bevidst tanke, under normal belastning.",
+                "workout_doc": {
+                  "steps": [
+                    {
+                      "text": "Fri svøm — distance/intervaller efter form",
+                      "duration": 3600
+                    }
+                  ]
+                }
+              },
+              "note": "Svøm 2×/uge fra uge 3 — almindeligt pas (Kildeskovshallen)",
+              "id": "09be5670"
             }
           ]
         },
@@ -6237,6 +6289,40 @@
               },
               "note": "Løb Z2",
               "id": "5acbb789"
+            },
+            {
+              "workout": {
+                "name": "Svøm teknik 1500m (fokus: hoved)",
+                "type": "Swim",
+                "moving_time": 3600,
+                "description": "- Opvarmning 300m rolig, blandet\n- Drill-sæt: 8×25m Catch-up drill (én arm i ro fremme til den anden er helt fremme før næste tag), 15-20 sek pause\n- Main set: 8×50m hurtigt men med formen intakt, 20 sek pause — fokus: hoved nede og stille, tør nakke\n- Kick-sæt: 4×50m, fokus benspark/kropsposition, 20 sek pause\n- Udsvømning 400m rolig\n\n1500m i alt. Ét fokuspunkt ad gangen — roterer uge for uge (catch → hoved → hofte).",
+                "workout_doc": {
+                  "steps": [
+                    {
+                      "text": "Opvarmning rolig, blandet",
+                      "duration": 900
+                    },
+                    {
+                      "text": "8×25m Catch-up drill (én arm i ro fremme til den anden er helt fremme før næste tag)",
+                      "duration": 900
+                    },
+                    {
+                      "text": "Main set 8×50m hurtigt, form intakt — hoved nede og stille, tør nakke",
+                      "duration": 900
+                    },
+                    {
+                      "text": "Kick-sæt 4×50m — benspark/kropsposition",
+                      "duration": 600
+                    },
+                    {
+                      "text": "Udsvømning rolig",
+                      "duration": 300
+                    }
+                  ]
+                }
+              },
+              "note": "Svøm 2×/uge fra uge 3 — teknikpas (Kildeskovshallen), fokus hoved",
+              "id": "66dc19f3"
             }
           ]
         },
@@ -6343,6 +6429,24 @@
               },
               "note": "Cykel Z2+Z3",
               "id": "032cc9a2"
+            },
+            {
+              "workout": {
+                "name": "Svøm almindelig 1500m",
+                "type": "Swim",
+                "moving_time": 3600,
+                "description": "Almindelig svøm — fri distance/intervaller, ingen drills. Formål: teste om ugens teknikfokus fra onsdag sidder uden bevidst tanke, under normal belastning.",
+                "workout_doc": {
+                  "steps": [
+                    {
+                      "text": "Fri svøm — distance/intervaller efter form",
+                      "duration": 3600
+                    }
+                  ]
+                }
+              },
+              "note": "Svøm 2×/uge fra uge 3 — almindeligt pas (Kildeskovshallen)",
+              "id": "b75264b3"
             }
           ]
         },
@@ -6576,6 +6680,40 @@
               },
               "note": "Løb Z2",
               "id": "64726e4d"
+            },
+            {
+              "workout": {
+                "name": "Svøm teknik 1500m (fokus: hofte)",
+                "type": "Swim",
+                "moving_time": 3600,
+                "description": "- Opvarmning 300m rolig, blandet\n- Drill-sæt: 8×25m Enarmscrawl m/finner (passiv arm langs siden, rotér fra hoften for at holde fart), 15-20 sek pause\n- Main set: 8×50m hurtigt men med formen intakt, 20 sek pause — fokus: rotation og skub fra hoften, ikke skuldrene\n- Kick-sæt: 4×50m, fokus benspark/kropsposition, 20 sek pause\n- Udsvømning 400m rolig\n\n1500m i alt. Ét fokuspunkt ad gangen — roterer uge for uge (catch → hoved → hofte).",
+                "workout_doc": {
+                  "steps": [
+                    {
+                      "text": "Opvarmning rolig, blandet",
+                      "duration": 900
+                    },
+                    {
+                      "text": "8×25m Enarmscrawl m/finner (passiv arm langs siden, rotér fra hoften for at holde fart)",
+                      "duration": 900
+                    },
+                    {
+                      "text": "Main set 8×50m hurtigt, form intakt — rotation og skub fra hoften, ikke skuldrene",
+                      "duration": 900
+                    },
+                    {
+                      "text": "Kick-sæt 4×50m — benspark/kropsposition",
+                      "duration": 600
+                    },
+                    {
+                      "text": "Udsvømning rolig",
+                      "duration": 300
+                    }
+                  ]
+                }
+              },
+              "note": "Svøm 2×/uge fra uge 3 — teknikpas (Kildeskovshallen), fokus hofte",
+              "id": "f9b3d1d8"
             }
           ]
         },
@@ -6682,6 +6820,24 @@
               },
               "note": "Baseline for 2027-sporet — watt beskyttes under cuttet, ikke jages",
               "id": "59e96f75"
+            },
+            {
+              "workout": {
+                "name": "Svøm almindelig 1500m",
+                "type": "Swim",
+                "moving_time": 3600,
+                "description": "Almindelig svøm — fri distance/intervaller, ingen drills. Formål: teste om ugens teknikfokus fra onsdag sidder uden bevidst tanke, under normal belastning.",
+                "workout_doc": {
+                  "steps": [
+                    {
+                      "text": "Fri svøm — distance/intervaller efter form",
+                      "duration": 3600
+                    }
+                  ]
+                }
+              },
+              "note": "Svøm 2×/uge fra uge 3 — almindeligt pas (Kildeskovshallen)",
+              "id": "0fb6e6fc"
             }
           ]
         },
@@ -6883,6 +7039,40 @@
               },
               "note": "Løb Z2",
               "id": "1baf83a1"
+            },
+            {
+              "workout": {
+                "name": "Svøm teknik 1500m (fokus: catch)",
+                "type": "Swim",
+                "moving_time": 3600,
+                "description": "- Opvarmning 300m rolig, blandet\n- Drill-sæt: 8×25m Fist swim (svøm med lukkede næver — brug underarmen som åre, mærk fat i vandet), 15-20 sek pause\n- Main set: 8×50m hurtigt men med formen intakt, 20 sek pause — fokus: fat i vandet / træk fra ryg, ikke arm\n- Kick-sæt: 4×50m, fokus benspark/kropsposition, 20 sek pause\n- Udsvømning 400m rolig\n\n1500m i alt. Ét fokuspunkt ad gangen — roterer uge for uge (catch → hoved → hofte).",
+                "workout_doc": {
+                  "steps": [
+                    {
+                      "text": "Opvarmning rolig, blandet",
+                      "duration": 900
+                    },
+                    {
+                      "text": "8×25m Fist swim (svøm med lukkede næver — brug underarmen som åre, mærk fat i vandet)",
+                      "duration": 900
+                    },
+                    {
+                      "text": "Main set 8×50m hurtigt, form intakt — fat i vandet / træk fra ryg, ikke arm",
+                      "duration": 900
+                    },
+                    {
+                      "text": "Kick-sæt 4×50m — benspark/kropsposition",
+                      "duration": 600
+                    },
+                    {
+                      "text": "Udsvømning rolig",
+                      "duration": 300
+                    }
+                  ]
+                }
+              },
+              "note": "Svøm 2×/uge fra uge 3 — teknikpas (Kildeskovshallen), fokus catch",
+              "id": "2db3431b"
             }
           ]
         },
@@ -6989,6 +7179,24 @@
               },
               "note": "Cykel Z2+Z3",
               "id": "8c529b45"
+            },
+            {
+              "workout": {
+                "name": "Svøm almindelig 1500m",
+                "type": "Swim",
+                "moving_time": 3600,
+                "description": "Almindelig svøm — fri distance/intervaller, ingen drills. Formål: teste om ugens teknikfokus fra onsdag sidder uden bevidst tanke, under normal belastning.",
+                "workout_doc": {
+                  "steps": [
+                    {
+                      "text": "Fri svøm — distance/intervaller efter form",
+                      "duration": 3600
+                    }
+                  ]
+                }
+              },
+              "note": "Svøm 2×/uge fra uge 3 — almindeligt pas (Kildeskovshallen)",
+              "id": "9ba78b29"
             }
           ]
         },
@@ -7244,6 +7452,40 @@
               },
               "note": "AEROB PROBE — måned 2",
               "id": "0bd207fa"
+            },
+            {
+              "workout": {
+                "name": "Svøm teknik 1500m (fokus: hoved)",
+                "type": "Swim",
+                "moving_time": 3600,
+                "description": "- Opvarmning 300m rolig, blandet\n- Drill-sæt: 8×25m Catch-up drill (én arm i ro fremme til den anden er helt fremme før næste tag), 15-20 sek pause\n- Main set: 8×50m hurtigt men med formen intakt, 20 sek pause — fokus: hoved nede og stille, tør nakke\n- Kick-sæt: 4×50m, fokus benspark/kropsposition, 20 sek pause\n- Udsvømning 400m rolig\n\n1500m i alt. Ét fokuspunkt ad gangen — roterer uge for uge (catch → hoved → hofte).",
+                "workout_doc": {
+                  "steps": [
+                    {
+                      "text": "Opvarmning rolig, blandet",
+                      "duration": 900
+                    },
+                    {
+                      "text": "8×25m Catch-up drill (én arm i ro fremme til den anden er helt fremme før næste tag)",
+                      "duration": 900
+                    },
+                    {
+                      "text": "Main set 8×50m hurtigt, form intakt — hoved nede og stille, tør nakke",
+                      "duration": 900
+                    },
+                    {
+                      "text": "Kick-sæt 4×50m — benspark/kropsposition",
+                      "duration": 600
+                    },
+                    {
+                      "text": "Udsvømning rolig",
+                      "duration": 300
+                    }
+                  ]
+                }
+              },
+              "note": "Svøm 2×/uge fra uge 3 — teknikpas (Kildeskovshallen), fokus hoved",
+              "id": "f5880c5c"
             }
           ]
         },
@@ -7350,6 +7592,24 @@
               },
               "note": "Cykel Z2+Z3",
               "id": "a245d99b"
+            },
+            {
+              "workout": {
+                "name": "Svøm almindelig 1500m",
+                "type": "Swim",
+                "moving_time": 3600,
+                "description": "Almindelig svøm — fri distance/intervaller, ingen drills. Formål: teste om ugens teknikfokus fra onsdag sidder uden bevidst tanke, under normal belastning.",
+                "workout_doc": {
+                  "steps": [
+                    {
+                      "text": "Fri svøm — distance/intervaller efter form",
+                      "duration": 3600
+                    }
+                  ]
+                }
+              },
+              "note": "Svøm 2×/uge fra uge 3 — almindeligt pas (Kildeskovshallen)",
+              "id": "517463a3"
             }
           ]
         },
@@ -7583,6 +7843,40 @@
               },
               "note": "Løb Z2",
               "id": "61a02f1b"
+            },
+            {
+              "workout": {
+                "name": "Svøm teknik 1500m (fokus: hofte)",
+                "type": "Swim",
+                "moving_time": 3600,
+                "description": "- Opvarmning 300m rolig, blandet\n- Drill-sæt: 8×25m Enarmscrawl m/finner (passiv arm langs siden, rotér fra hoften for at holde fart), 15-20 sek pause\n- Main set: 8×50m hurtigt men med formen intakt, 20 sek pause — fokus: rotation og skub fra hoften, ikke skuldrene\n- Kick-sæt: 4×50m, fokus benspark/kropsposition, 20 sek pause\n- Udsvømning 400m rolig\n\n1500m i alt. Ét fokuspunkt ad gangen — roterer uge for uge (catch → hoved → hofte).",
+                "workout_doc": {
+                  "steps": [
+                    {
+                      "text": "Opvarmning rolig, blandet",
+                      "duration": 900
+                    },
+                    {
+                      "text": "8×25m Enarmscrawl m/finner (passiv arm langs siden, rotér fra hoften for at holde fart)",
+                      "duration": 900
+                    },
+                    {
+                      "text": "Main set 8×50m hurtigt, form intakt — rotation og skub fra hoften, ikke skuldrene",
+                      "duration": 900
+                    },
+                    {
+                      "text": "Kick-sæt 4×50m — benspark/kropsposition",
+                      "duration": 600
+                    },
+                    {
+                      "text": "Udsvømning rolig",
+                      "duration": 300
+                    }
+                  ]
+                }
+              },
+              "note": "Svøm 2×/uge fra uge 3 — teknikpas (Kildeskovshallen), fokus hofte",
+              "id": "c06cd121"
             }
           ]
         },
