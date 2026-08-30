@@ -1,20 +1,20 @@
 {
   "meta": {
-    "updated": "2026-08-30 01:55",
+    "updated": "2026-08-30 06:01",
     "week": 13,
     "totalWeeks": 16,
     "blockType": "BUILD",
-    "daysToMedoc": 7,
-    "daysToChristiansborg": 0,
-    "dayName": "Lørdag",
-    "date": "29. aug",
+    "daysToMedoc": 6,
+    "daysToChristiansborg": -1,
+    "dayName": "Søndag",
+    "date": "30. aug",
     "rhrField": "restingHR"
   },
   "kpis": {
     "weight": {
       "value": "72,5",
       "unit": "kg",
-      "sub": "Mål <68 kg · snit 71,9 kg",
+      "sub": "Sidst målt 29/8 · Mål <68 kg · snit 71,8 kg",
       "color": "#E67E22"
     },
     "fat": {
@@ -24,13 +24,13 @@
       "color": "#C0392B"
     },
     "ctl": {
-      "value": "50,3",
+      "value": "50,7",
       "unit": "",
       "sub": "Uge 13-mål 47 · Slutmål 41 (uge 16)",
       "color": "#27AE60"
     },
     "tsb": {
-      "value": "6,0",
+      "value": "3,2",
       "unit": "",
       "sub": "Form · CTL−ATL, frisk >0",
       "color": "#27AE60"
@@ -48,7 +48,7 @@
       "color": "#E67E22"
     },
     "hrv": {
-      "value": "60,2",
+      "value": "61,3",
       "unit": "ms",
       "sub": "Snit 7d",
       "color": "#7A6A58"
@@ -89,33 +89,17 @@
     "target": 6,
     "streak": 0
   },
-  "coachSpeech": "Lørdag — uge 13 af 16. {HL} Godt: Søvn på 7,9 timer er solid. Fokus: Vægt på 72,5 kg — hold protein højt og undgå lette kulhydrater om aftenen. 5 AF-dage i 6 afsluttede dage — 1 mangler i 1 dage tilbage. Keep moving forward.  \"AF-dage er ikke et offer — de er en investering i morgendagens energi.\"",
+  "coachSpeech": "Søndag — afslut uge 13 stærkt. {HL} Godt: Søvn på 7,9 timer er solid. Fokus: Vægt på 72,5 kg (målt 29/8) — hold protein højt og undgå lette kulhydrater om aftenen. 5 AF-dage i 7 afsluttede dage — 1 mangler i 0 dage tilbage. Keep moving forward. 📊 Store billede: CTL 50,7 er 3.7 point FORAN ugeplanen (planmål uge 13: 47). Vægten har tabt 2.0 kg over de seneste 87 dage (74,5 → 72,5 kg).  \"Keep moving forward.\"",
   "coachHighlight": "120 procent af ugens TSS er i hus",
   "weekFocus": "Bevar skarphed og ro — Médoc-rytmen sidder i benene",
   "today": [
     {
-      "discipline": "swim",
-      "title": "Svøm 2.000 m — Christiansborg Rundt",
+      "discipline": "bike",
+      "title": "Cykel indendørs 90 min varieret",
       "duration": "",
       "zone": "–",
       "desc": "",
-      "completed": true
-    },
-    {
-      "discipline": "commute",
-      "title": "Gentofte Cykling",
-      "duration": "",
-      "zone": "–",
-      "desc": "",
-      "completed": true
-    },
-    {
-      "discipline": "commute",
-      "title": "København Cykling",
-      "duration": "",
-      "zone": "–",
-      "desc": "",
-      "completed": true
+      "completed": false
     }
   ],
   "week_sessions": [
@@ -211,7 +195,6 @@
       "planned_tss": 35,
       "planned_mins": 40,
       "planned_distance_m": null,
-      "today": true,
       "completion": "done",
       "completion_pct": 114,
       "actual_tss": 40,
@@ -227,8 +210,7 @@
       "extra": true,
       "actual_tss": 13,
       "actual_mins": 34,
-      "actual_distance_m": 9853.01,
-      "today": true
+      "actual_distance_m": 9853.01
     },
     {
       "day": "Lør",
@@ -238,8 +220,7 @@
       "extra": true,
       "actual_tss": 18,
       "actual_mins": 31,
-      "actual_distance_m": 10992.62,
-      "today": true
+      "actual_distance_m": 10992.62
     },
     {
       "day": "Søn",
@@ -248,7 +229,8 @@
       "done": false,
       "planned_tss": 68,
       "planned_mins": 90,
-      "planned_distance_m": null
+      "planned_distance_m": null,
+      "today": true
     }
   ],
   "ctlCurve": [
@@ -264,14 +246,9 @@
     53.0,
     52.9,
     52.4,
-    50.3
+    50.7
   ],
   "weightHistory": [
-    {
-      "date": "2026-06-01",
-      "v": 74.4,
-      "real": true
-    },
     null,
     null,
     {
@@ -600,14 +577,10 @@
       "date": "2026-08-29",
       "v": 72.5,
       "real": true
-    }
+    },
+    null
   ],
   "hrvHistory": [
-    {
-      "date": "2026-06-01",
-      "v": 42.0,
-      "real": true
-    },
     {
       "date": "2026-06-02",
       "v": 50.0,
@@ -1052,14 +1025,10 @@
       "date": "2026-08-29",
       "v": 49.0,
       "real": true
-    }
+    },
+    null
   ],
   "sleepHistory": [
-    {
-      "date": "2026-06-01",
-      "v": 7.9,
-      "real": true
-    },
     {
       "date": "2026-06-02",
       "v": 6.5,
@@ -1504,14 +1473,10 @@
       "date": "2026-08-29",
       "v": 7.5,
       "real": true
-    }
+    },
+    null
   ],
   "tsbHistory": [
-    {
-      "date": "2026-06-01",
-      "v": -10.5,
-      "real": true
-    },
     {
       "date": "2026-06-02",
       "v": -9.4,
@@ -1955,6 +1920,11 @@
     {
       "date": "2026-08-29",
       "v": 6.0,
+      "real": true
+    },
+    {
+      "date": "2026-08-30",
+      "v": 3.2,
       "real": true
     }
   ],
@@ -3057,7 +3027,6 @@
           "planned_tss": 35,
           "planned_mins": 40,
           "planned_distance_m": null,
-          "today": true,
           "completion": "done",
           "completion_pct": 114,
           "actual_tss": 40,
@@ -3073,8 +3042,7 @@
           "extra": true,
           "actual_tss": 13,
           "actual_mins": 34,
-          "actual_distance_m": 9853.01,
-          "today": true
+          "actual_distance_m": 9853.01
         },
         {
           "day": "Lør",
@@ -3084,8 +3052,7 @@
           "extra": true,
           "actual_tss": 18,
           "actual_mins": 31,
-          "actual_distance_m": 10992.62,
-          "today": true
+          "actual_distance_m": 10992.62
         },
         {
           "day": "Søn",
@@ -3094,7 +3061,8 @@
           "done": false,
           "planned_tss": 68,
           "planned_mins": 90,
-          "planned_distance_m": null
+          "planned_distance_m": null,
+          "today": true
         }
       ],
       "blockType": "TAPER",
@@ -3415,7 +3383,7 @@
     {
       "week": 13,
       "done": 5,
-      "total": 6,
+      "total": 7,
       "label": "Uge 13"
     }
   ],
@@ -3429,11 +3397,6 @@
     "actual_total": 509.0
   },
   "fatHistory": [
-    {
-      "date": "2026-06-01",
-      "v": 23.3,
-      "real": true
-    },
     null,
     null,
     {
@@ -3762,19 +3725,20 @@
       "date": "2026-08-29",
       "v": 21.6,
       "real": true
-    }
+    },
+    null
   ],
-  "coachAssessmentHtml": "<p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\"><strong>Dag 90 af 98 · Lørdag · Uge 13</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">💪 <strong>Træning & load</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">CTL er 50,3 — markant over ugemålet på 47 — og TSB ligger på 6,0, så du er frisk og i balance. Svømmen i dag leverede 1.988 m på 42 min med 40 TSS, og zone-compliance var on target. Ugen har været solid med stabil gennemførelse på tværs af styrke, gåture og løb — den eneste miss var OW-svømmen fredag. Til søndag: hold den indendørs cykel varieret og hold dig i ro — du skal ikke bygge mere load nu.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">⚖️ <strong>Krop & kost</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Vægten i dag er 72,5 kg — 4,5 kg fra målet — og fedtprocenten er 21,6 %, altså 5,6 procentpoint fra målet på under 16 %. 7-dages snittet på fedtprocent er 21,3 % og er gået 0,1 point ned over de seneste 7 dage — det er den reelle retning, og den peger rigtigt. Vægtsnittet på 71,8 kg er det autoritative billede på vægten; dagens 72,5 kg er blot et øjebliksbillede og ikke et signal om en tendens.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">🎯 <strong>AF-status & fokus for resten af ugen</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Du har 5 AF-dage ud af 6 dage gået i ugen — det er stærkt. Søndag er den eneste dag tilbage, og cyklen er dit fokus — alkohol ude af billedet giver dig den sjette AF-dag og lukker ugen rent. Médoc er om syv dage: benene sidder, formen er der — nu handler det om at lande frisk.</p>",
-  "coachAssessmentTs": "23:55",
+  "coachAssessmentHtml": "<p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\"><strong>Dag 91 af 98 · Søndag · Uge 13</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">💪 <strong>Træning & load</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">CTL er 50,7 — 3,7 point foran ugeplanen på 47 — og TSB ligger på 3,2, så du er velrestitueret og klar. Christiansborg Rundt i går var det vigtigste enkeltpas i ugen: 1.988 m på 42 min med 40 TSS, og det sad præcis som det skulle. Cykelindendørs-passet i dag er endnu ikke forsøgt — 90 min varieret er det der mangler, og med en TSB på plus er du i god form til at tage det med ro og bare samle de sidste TSS til ugen.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">⚖️ <strong>Krop & kost</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Ved seneste vejning 29/8 var vægten 72,5 kg og fedtprocenten 21,6 % — 7-dages snittet er 71,8 kg og 21,3 %. Fedtprocent-snittet er faldet 0,1 procentpoint over de seneste 7 dage, hvilket er den reelle retning — langsom, men den peger rigtigt. Afstanden til målene er stadig betydelig: 3,8 kg til under 68 kg og 5,3 procentpoint til under 16 % — det er et langt træk, og det kræver at tabet fortsætter som reelt fedttab, ikke muskelmasse.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">🎯 <strong>AF-status & fokus for resten af ugen</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Du har 5 AF-dage ud af 7 dage gået i ugen — det er solidt, og i dag kan du lukke ugen med endnu en. Christiansborg Rundt er gennemført, Médoc-rytmen sidder i benene — det handler nu om at holde ro og ikke overpræstere de sidste timer.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">📊 <strong>Store billede</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">CTL på 50,7 er 3,7 point foran ugeplanen for uge 13, hvor målet var 47 — det er en stærk position at gå ind i uge 14 fra. Vægten har bevæget sig 2,0 kg nedad over de seneste 87 dage, fra 74,5 kg til 72,5 kg — retningen er rigtig, tempoet er bæredygtigt.</p>",
+  "coachAssessmentTs": "04:01",
   "commute_pairing_warnings": [],
   "warnings": [
     {
       "type": "hrv",
       "level": "warn",
-      "message": "HRV 49,0 ms — 19% under 7d-snit (60,2 ms). Kroppen er presset."
+      "message": "HRV 49,0 ms — 20% under 7d-snit (61,3 ms). Kroppen er presset."
     }
   ],
-  "tsb": 6.0,
+  "tsb": 3.2,
   "swimHistory": [
     {
       "week": 1,
@@ -3857,7 +3821,7 @@
   ],
   "coachAssessmentLastActId": "i181053484",
   "weekFocusWeek": 13,
-  "coachAssessmentPlanAtGen": "Svøm 2.000 m — Christiansborg Rundt",
+  "coachAssessmentPlanAtGen": "Cykel indendørs 90 min varieret",
   "weightGoal": 68,
   "bodyFatGoal": 16,
   "weightMovingAvg7": [
@@ -3865,9 +3829,8 @@
     null,
     null,
     null,
-    74.63,
-    74.7,
-    74.7,
+    74.8,
+    74.78,
     74.64,
     74.65,
     74.59,
@@ -3950,6 +3913,7 @@
     72.25,
     72.08,
     71.82,
+    71.8,
     71.8
   ],
   "fatMovingAvg7": [
@@ -3957,9 +3921,8 @@
     null,
     null,
     null,
-    23.0,
-    22.93,
-    22.78,
+    22.8,
+    22.65,
     22.6,
     22.55,
     22.57,
@@ -4042,6 +4005,7 @@
     21.3,
     21.38,
     21.37,
+    21.33,
     21.33
   ],
   "weightToGoal": 4.5,
@@ -4076,21 +4040,11 @@
       "note": "Nøgle virker"
     }
   },
-  "credentialsCheckedTs": "2026-08-29T23:55:20.419592",
-  "coachAssessmentTsFull": "2026-08-29T23:55:20.419563",
+  "credentialsCheckedTs": "2026-08-30T04:01:26.138009",
+  "coachAssessmentTsFull": "2026-08-30T04:01:26.137969",
   "coachAssessmentWeightAtGen": 72.5,
   "coachAssessmentAfAtGen": 5,
-  "event_structure_warnings": [
-    {
-      "date": "2026-08-29",
-      "name": "Svøm 2.000 m — Christiansborg Rundt",
-      "type": "Swim",
-      "event_id": 131805077,
-      "level": "error",
-      "code": "INGEN_TRIN",
-      "text": "workout_doc har ingen trin."
-    }
-  ],
+  "event_structure_warnings": [],
   "coachAssessmentFatAtGen": 21.6,
   "zones": {
     "runThreshold": "4:24/km",
@@ -4192,7 +4146,7 @@
     {
       "name": "Santini Stelvio Gran Fondo (lang rute)",
       "date": "2027-06-06",
-      "days": 281,
+      "days": 280,
       "priority": "B",
       "distance": "130km / 4500hm",
       "registered": true
@@ -4200,7 +4154,7 @@
     {
       "name": "Tour des Stations Ultrafondo",
       "date": "2027-08-28",
-      "days": 364,
+      "days": 363,
       "priority": "A",
       "distance": "242km / 8848hm",
       "registered": false
@@ -4404,11 +4358,6 @@
     }
   },
   "rhrHistory": [
-    {
-      "date": "2026-06-01",
-      "v": 46,
-      "real": true
-    },
     {
       "date": "2026-06-02",
       "v": 46,
@@ -4852,6 +4801,11 @@
     {
       "date": "2026-08-29",
       "v": 42,
+      "real": true
+    },
+    {
+      "date": "2026-08-30",
+      "v": 46,
       "real": true
     }
   ]
