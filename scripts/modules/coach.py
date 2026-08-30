@@ -155,6 +155,50 @@ def build_weight_context_note(travel_label, delta, prior_date, threshold=0.8):
     return None
 
 
+
+def build_bike_library_line(weekday, week_ids=None):
+    """Kaelder-katalog til soendagens check-in.
+
+    Soendag er dagen hvor de kommende 14 dages kaelderpas laegges. Uden
+    kataloget i prompten opfinder modellen sine egne pas, og saa er
+    biblioteket bare 20 filer der ligger og stoever. Med det skal den
+    vaelge et id fra listen.
+
+    weekday: 0=mandag ... 6=soendag (samme konvention som resten af coach.py)
+    week_ids: valgte workout-id'er for ugen — valideres mod reglerne.
+    """
+    if weekday != 6:
+        return ""
+    try:
+        from . import bike_library
+    except ImportError:  # koert som script uden pakke-kontekst
+        import bike_library
+    try:
+        lib = bike_library.load()
+    except (IOError, OSError, ValueError):
+        return ""
+    cats = bike_library.meta(lib)["categories"]
+    rules = bike_library.meta(lib)["rules"]
+    lines = []
+    for key, label in cats.items():
+        ws = bike_library.by_category(key, lib)
+        if not ws:
+            continue
+        items = ", ".join("%s (%d min, %s)" % (w["id"], w["est_min"], w["load"]) for w in ws)
+        lines.append("  %s: %s" % (label, items))
+    out = (
+        "\n- KAELDER-KATALOG (obligatorisk kilde til indendoers cykelpas): "
+        "vaelg altid et id herfra, opfind aldrig et nyt pas.\n" + "\n".join(lines) +
+        "\n  Regler: max %d haarde og %d moderate cykelpas pr. uge, mindst %d timer "
+        "mellem to haarde." % (rules["maxHaardPerWeek"], rules["maxModeratPerWeek"],
+                               rules["minHoursBetweenHaard"])
+    )
+    if week_ids:
+        warn = bike_library.check_week(list(week_ids), lib)
+        if warn:
+            out += "\n  ADVARSEL paa den foreslaaede uge: " + " | ".join(warn)
+    return out
+
 def build_trajectory_note(week_num, ctl, weight, weight_history):
     """Bygger en 'store billede'-sætning til den UGENTLIGE opsummering (søndage) —
     i modsætning til den daglige tekst, som kun ser på i dags snapshot, kigger denne
@@ -714,6 +758,8 @@ def generate_ai_assessment(week_num, weekday, day_name, ctl, tsb, weight, af_thi
         if trajectory_note else ""
     )
 
+    bike_library_line = build_bike_library_line(weekday)
+
     prompt = (
         f"Du er Joel Friel-inspireret træningscoach for Kennet Hammerby, 51 år, erfaren Ironman-atlet "
         f"i et 14-ugers reset-år mod to mål: Christiansborg Rundt ({SWIM_GOAL_M}m svøm, 29. aug) og Marathon Médoc (5. sep).\n\n"
@@ -725,9 +771,14 @@ def generate_ai_assessment(week_num, weekday, day_name, ctl, tsb, weight, af_thi
         f"- I dag: {today_line} [{today_status}]\n"
         f"- GENNEMFØRT denne uge (fuldførte kendsgerninger): {completed_str}\n"
         + (f"- MISSET denne uge (dag passeret, ikke gennemført): {missed_str}\n" if missed_str else "")
-        + f"- Resten af ugen (KUN fremtidige, endnu ikke forfaldne pas): {remaining}{weight_line}{fat_line}{avg_line}{distance_line}{travel_line}{decoupling_line}{trajectory_line}{compliance_line}\n\n"
+        + f"- Resten af ugen (KUN fremtidige, endnu ikke forfaldne pas): {remaining}{weight_line}{fat_line}{avg_line}{distance_line}{travel_line}{decoupling_line}{trajectory_line}{compliance_line}{bike_library_line}\n\n"
         f"VIGTIGT:\n"
-        f"- TALPRÆCISION (ufravigelig): Gengiv ALLE tal PRÆCIS som de står i data ovenfor. "
+        + ("- KAELDERPAS (ufravigelig, naar KAELDER-KATALOG staar ovenfor): naar du "
+           "foreslaar indendoers cykeltraening, SKAL du bruge et workout-id fra kataloget "
+           "og skrive id'et med. Opfind aldrig et nyt pas og aendr aldrig watt-tallene i et "
+           "eksisterende. Overtraed aldrig reglerne for haarde/moderate pas.\n"
+           if bike_library_line else "")
+        +         f"- TALPRÆCISION (ufravigelig): Gengiv ALLE tal PRÆCIS som de står i data ovenfor. "
         f"Rund aldrig af, glat aldrig ud, og skriv aldrig et 'pænere' nabotal — det gælder "
         f"distance, tid, TSS, vægt, fedtprocent, CTL, TSB, pace og watt. 28,2 km er 28,2 km, "
         f"aldrig 28 og aldrig 29. Har du ikke tallet, så undlad det frem for at gætte.\n"

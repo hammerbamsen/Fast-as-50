@@ -1,0 +1,21 @@
+<workout_file>
+    <author>K. Hammerby / Fast as 50</author>
+    <name>FaF 6 Bjerg - Sa Calobra 1 x 30</name>
+    <description>9,5 km, 7% i snit, ca. 30 min. Én sammenhængende stigning på 86% ved 72 rpm. Ingen pauser — det er der ikke på bjerget.  PR at slå: 35:18 på 275 W (Mallorca 2023).</description>
+    <sportType>bike</sportType>
+    <tags><tag name="bjerg"/><tag name="sacalobra"/></tags>
+    <workout>
+        <Warmup Duration="600" PowerLow="0.4500" PowerHigh="0.6800"/>
+        <IntervalsT Repeat="2" OnDuration="60" OffDuration="60" OnPower="0.9500" OffPower="0.5500"/>
+        <SteadyState Duration="300" Power="0.6200"/>
+        <SteadyState Duration="1800" Power="0.8600" Cadence="72">
+            <textevent timeoffset="0" message="Læg ud kontrolleret."/>
+            <textevent timeoffset="300" message="Føles det for let, er det rigtigt."/>
+            <textevent timeoffset="900" message="Halvvejs — hårnålene"/>
+            <textevent timeoffset="1500" message="Sidste 5 — nu må du gerne trykke"/>
+            <textevent timeoffset="1740" message="Tunnellen"/>
+        </SteadyState>
+        <SteadyState Duration="600" Power="0.5500"/>
+        <Cooldown Duration="480" PowerLow="0.6000" PowerHigh="0.4000"/>
+    </workout>
+</workout_file>

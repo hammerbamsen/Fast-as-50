@@ -1,0 +1,15 @@
+<workout_file>
+    <author>K. Hammerby / Fast as 50</author>
+    <name>FaF 0 Test - FTP 20 min</name>
+    <description>Nulpunkt. Alt i biblioteket skalerer efter den. Køres indendørs, altid — samme trainer, samme blæseropsætning, samme tid på dagen.  [IKKE ERG-MODE — du styrer selv effekten.]  IKKE ERG — du skal selv styre effekten. Nyt FTP = 95% af 20-min snit. Begge blæsere på. Du undervurderer dig selv: læg ud 5 W over det du tror.</description>
+    <sportType>bike</sportType>
+    <tags><tag name="test"/></tags>
+    <workout>
+        <Warmup Duration="600" PowerLow="0.4500" PowerHigh="0.7000"/>
+        <IntervalsT Repeat="3" OnDuration="60" OffDuration="60" OnPower="1.0000" OffPower="0.5500"/>
+        <SteadyState Duration="300" Power="0.5500"/>
+        <SteadyState Duration="300" Power="0.6500"/>
+        <FreeRide Duration="1200" FlatRoad="1"/>
+        <Cooldown Duration="420" PowerLow="0.6000" PowerHigh="0.4000"/>
+    </workout>
+</workout_file>

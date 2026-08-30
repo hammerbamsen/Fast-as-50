@@ -1,0 +1,26 @@
+<workout_file>
+    <author>K. Hammerby / Fast as 50</author>
+    <name>FaF 3 SS - 3 x 15</name>
+    <description>Sweet spot som volumenværktøj — ikke som rygrad. Evidensen er svagere end populariteten: restitutionsprisen nærmer sig tærskelarbejdets uden stimulussen.  Kun ét sweet spot-pas i biblioteket, med vilje. Laktat i 3-6 mmol hæmmer CPT1/CPT2 og modarbejder fedtoxidationen Ultrafondo lever af.</description>
+    <sportType>bike</sportType>
+    <tags><tag name="sweetspot"/></tags>
+    <workout>
+        <Warmup Duration="600" PowerLow="0.4500" PowerHigh="0.7000"/>
+        <IntervalsT Repeat="3" OnDuration="60" OffDuration="60" OnPower="0.9500" OffPower="0.5500"/>
+        <SteadyState Duration="300" Power="0.6200"/>
+        <SteadyState Duration="900" Power="0.8900">
+            <textevent timeoffset="0" message="Find rytmen med det samme"/>
+            <textevent timeoffset="780" message="Sidste 2"/>
+        </SteadyState>
+        <SteadyState Duration="300" Power="0.5500"/>
+        <SteadyState Duration="900" Power="0.8900">
+            <textevent timeoffset="0" message="Samme watt som blok 1"/>
+        </SteadyState>
+        <SteadyState Duration="300" Power="0.5500"/>
+        <SteadyState Duration="900" Power="0.9000">
+            <textevent timeoffset="0" message="Du plejer at køre for konservativt"/>
+            <textevent timeoffset="780" message="Sidste 2 — tryk"/>
+        </SteadyState>
+        <Cooldown Duration="480" PowerLow="0.6000" PowerHigh="0.4000"/>
+    </workout>
+</workout_file>

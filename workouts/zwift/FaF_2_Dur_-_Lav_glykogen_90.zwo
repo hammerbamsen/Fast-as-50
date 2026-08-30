@@ -1,0 +1,18 @@
+<workout_file>
+    <author>K. Hammerby / Fast as 50</author>
+    <name>FaF 2 Dur - Lav glykogen 90</name>
+    <description>Fastet eller let morgenmad, ingen kulhydrat de første 60 minutter. Driver fedtoxidations-adaptation. Bruges sparsomt — max hver 10.-14. dag.  ALDRIG dagen før eller efter et hårdt pas. Ikke i uger med høj total belastning. Kronisk lav-CHO øger infektions- og overtræningsrisiko — det er et værktøj, ikke en vane.</description>
+    <sportType>bike</sportType>
+    <tags><tag name="durability"/><tag name="fedtoxidation"/></tags>
+    <workout>
+        <Warmup Duration="600" PowerLow="0.4500" PowerHigh="0.6000"/>
+        <SteadyState Duration="3000" Power="0.6400">
+            <textevent timeoffset="0" message="Kun vand de første 60 min."/>
+            <textevent timeoffset="1800" message="Stadig kun vand."/>
+        </SteadyState>
+        <SteadyState Duration="1320" Power="0.6800">
+            <textevent timeoffset="0" message="Nu må du spise. Normal plan resten."/>
+        </SteadyState>
+        <Cooldown Duration="480" PowerLow="0.6000" PowerHigh="0.4000"/>
+    </workout>
+</workout_file>

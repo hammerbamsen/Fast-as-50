@@ -1,0 +1,38 @@
+<workout_file>
+    <author>K. Hammerby / Fast as 50</author>
+    <name>FaF 2 Dur - Bjergtur 3 t</name>
+    <description>Fire stigningsblokke med energiplan hele vejen. Tættest på Tour des Stations hjemmefra. Kadence 72 — det er hvad der faktisk køres opad, ikke 55.</description>
+    <sportType>bike</sportType>
+    <tags><tag name="durability"/><tag name="bjerg"/><tag name="tds"/></tags>
+    <workout>
+        <Warmup Duration="900" PowerLow="0.4500" PowerHigh="0.6500"/>
+        <SteadyState Duration="900" Power="0.6600">
+            <textevent timeoffset="600" message="DRIK"/>
+        </SteadyState>
+        <SteadyState Duration="1800" Power="0.7600" Cadence="72">
+            <textevent timeoffset="0" message="30 min. Siddende, skuldrene ned."/>
+            <textevent timeoffset="900" message="Halvvejs"/>
+        </SteadyState>
+        <SteadyState Duration="600" Power="0.6000" Cadence="95">
+            <textevent timeoffset="0" message="SPIS + DRIK"/>
+        </SteadyState>
+        <SteadyState Duration="1800" Power="0.7800" Cadence="72">
+            <textevent timeoffset="900" message="Halvvejs"/>
+            <textevent timeoffset="1500" message="Sidste 5 — hold watt"/>
+        </SteadyState>
+        <SteadyState Duration="600" Power="0.6000" Cadence="95">
+            <textevent timeoffset="0" message="SPIS + DRIK"/>
+        </SteadyState>
+        <SteadyState Duration="1800" Power="0.7800" Cadence="72">
+            <textevent timeoffset="900" message="Nu skal hovedet arbejde"/>
+        </SteadyState>
+        <SteadyState Duration="600" Power="0.6000" Cadence="95">
+            <textevent timeoffset="0" message="SPIS + DRIK — sidste depot"/>
+        </SteadyState>
+        <SteadyState Duration="1500" Power="0.8000" Cadence="72">
+            <textevent timeoffset="0" message="Sidste. Køres hårdest."/>
+            <textevent timeoffset="1200" message="Sidste 5 — tryk igennem"/>
+        </SteadyState>
+        <Cooldown Duration="600" PowerLow="0.6000" PowerHigh="0.4000"/>
+    </workout>
+</workout_file>

@@ -1,0 +1,23 @@
+<workout_file>
+    <author>K. Hammerby / Fast as 50</author>
+    <name>FaF 2 Dur - Negativ split 2 t</name>
+    <description>Halvanden time Z2, derefter 40 minutter løftet til Z3. Træner at producere kvalitet i forudtrættet tilstand — uden prisen for et fuldt tærskelpas.</description>
+    <sportType>bike</sportType>
+    <tags><tag name="durability"/><tag name="tds"/></tags>
+    <workout>
+        <Warmup Duration="720" PowerLow="0.4500" PowerHigh="0.6200"/>
+        <SteadyState Duration="2100" Power="0.6600">
+            <textevent timeoffset="1200" message="DRIK"/>
+        </SteadyState>
+        <SteadyState Duration="2100" Power="0.7000">
+            <textevent timeoffset="1200" message="SPIS"/>
+        </SteadyState>
+        <SteadyState Duration="1200" Power="0.8000">
+            <textevent timeoffset="0" message="Nu løftes det. Ikke tærskel — bare højere."/>
+        </SteadyState>
+        <SteadyState Duration="1200" Power="0.8300">
+            <textevent timeoffset="600" message="Sidste 10 — hold tallet"/>
+        </SteadyState>
+        <Cooldown Duration="480" PowerLow="0.6000" PowerHigh="0.4000"/>
+    </workout>
+</workout_file>

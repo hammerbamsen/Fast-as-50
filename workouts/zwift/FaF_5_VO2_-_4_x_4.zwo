@@ -1,0 +1,16 @@
+<workout_file>
+    <author>K. Hammerby / Fast as 50</author>
+    <name>FaF 5 VO2 - 4 x 4</name>
+    <description>Klassikeren. Mentalt lettere at styre end 30/15 og lige så veldokumenteret. Brug den når du ikke orker at tælle sekunder.</description>
+    <sportType>bike</sportType>
+    <tags><tag name="vo2"/></tags>
+    <workout>
+        <Warmup Duration="720" PowerLow="0.4500" PowerHigh="0.7200"/>
+        <IntervalsT Repeat="3" OnDuration="60" OffDuration="60" OnPower="0.9000" OffPower="0.5500"/>
+        <SteadyState Duration="240" Power="0.5800"/>
+        <IntervalsT Repeat="4" OnDuration="240" OffDuration="240" OnPower="1.1000" OffPower="0.5000">
+            <textevent timeoffset="0" message="4 x 4 min @ 110% — jævnt fra sekund et, ikke sprint ud"/>
+        </IntervalsT>
+        <Cooldown Duration="480" PowerLow="0.6000" PowerHigh="0.4000"/>
+    </workout>
+</workout_file>

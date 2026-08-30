@@ -1,0 +1,25 @@
+<workout_file>
+    <author>K. Hammerby / Fast as 50</author>
+    <name>FaF 4 Tær - 3 x 12</name>
+    <description>Tærskel 97-100%. Her flyttes FTP. Den sidste blok skal føles urimelig.</description>
+    <sportType>bike</sportType>
+    <tags><tag name="taerskel"/></tags>
+    <workout>
+        <Warmup Duration="600" PowerLow="0.4500" PowerHigh="0.7000"/>
+        <IntervalsT Repeat="3" OnDuration="60" OffDuration="60" OnPower="1.0000" OffPower="0.5500"/>
+        <SteadyState Duration="300" Power="0.6200"/>
+        <SteadyState Duration="720" Power="0.9700">
+            <textevent timeoffset="0" message="97%. Kontrolleret."/>
+        </SteadyState>
+        <SteadyState Duration="360" Power="0.5500"/>
+        <SteadyState Duration="720" Power="0.9800">
+            <textevent timeoffset="360" message="Halvvejs — dyb vejrtrækning"/>
+        </SteadyState>
+        <SteadyState Duration="360" Power="0.5500"/>
+        <SteadyState Duration="720" Power="1.0000">
+            <textevent timeoffset="0" message="100%. Det skal gøre ondt."/>
+            <textevent timeoffset="600" message="Sidste 2"/>
+        </SteadyState>
+        <Cooldown Duration="480" PowerLow="0.6000" PowerHigh="0.4000"/>
+    </workout>
+</workout_file>

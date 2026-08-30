@@ -1,0 +1,22 @@
+<workout_file>
+    <author>K. Hammerby / Fast as 50</author>
+    <name>FaF 4 Tær - 2 x 20</name>
+    <description>Klassikeren. Kan du køre den uden at falde fra hinanden, er dit FTP sat for lavt.</description>
+    <sportType>bike</sportType>
+    <tags><tag name="taerskel"/></tags>
+    <workout>
+        <Warmup Duration="600" PowerLow="0.4500" PowerHigh="0.7000"/>
+        <IntervalsT Repeat="3" OnDuration="60" OffDuration="60" OnPower="1.0000" OffPower="0.5500"/>
+        <SteadyState Duration="300" Power="0.6200"/>
+        <SteadyState Duration="1200" Power="0.9500">
+            <textevent timeoffset="0" message="Find tallet og bliv der"/>
+            <textevent timeoffset="1080" message="Sidste 2"/>
+        </SteadyState>
+        <SteadyState Duration="600" Power="0.5500"/>
+        <SteadyState Duration="1200" Power="0.9500">
+            <textevent timeoffset="0" message="Samme tal. Ikke lavere."/>
+            <textevent timeoffset="600" message="Halvvejs — hovedet med"/>
+        </SteadyState>
+        <Cooldown Duration="480" PowerLow="0.6000" PowerHigh="0.4000"/>
+    </workout>
+</workout_file>

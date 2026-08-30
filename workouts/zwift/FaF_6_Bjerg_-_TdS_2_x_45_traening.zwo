@@ -1,0 +1,27 @@
+<workout_file>
+    <author>K. Hammerby / Fast as 50</author>
+    <name>FaF 6 Bjerg - TdS 2 x 45 træning</name>
+    <description>To stigninger af 45 minutter på 80%. Dette er et TRÆNINGSPAS, ikke en racesimulering — 80% kan ikke holdes i 13 timer af nogen.</description>
+    <sportType>bike</sportType>
+    <tags><tag name="bjerg"/><tag name="tds"/></tags>
+    <workout>
+        <Warmup Duration="900" PowerLow="0.4500" PowerHigh="0.6800"/>
+        <IntervalsT Repeat="2" OnDuration="60" OffDuration="60" OnPower="0.9500" OffPower="0.5500"/>
+        <SteadyState Duration="300" Power="0.6200"/>
+        <SteadyState Duration="2700" Power="0.8000" Cadence="74">
+            <textevent timeoffset="900" message="DRIK"/>
+            <textevent timeoffset="1800" message="SPIS"/>
+            <textevent timeoffset="2400" message="Sidste 5"/>
+        </SteadyState>
+        <SteadyState Duration="600" Power="0.5500" Cadence="95">
+            <textevent timeoffset="0" message="Spis og drik ordentligt"/>
+        </SteadyState>
+        <SteadyState Duration="2700" Power="0.8000" Cadence="74">
+            <textevent timeoffset="0" message="Samme tal. Her afgøres det."/>
+            <textevent timeoffset="900" message="DRIK"/>
+            <textevent timeoffset="1800" message="SPIS"/>
+            <textevent timeoffset="2400" message="Hold watt hele vejen op"/>
+        </SteadyState>
+        <Cooldown Duration="600" PowerLow="0.6000" PowerHigh="0.4000"/>
+    </workout>
+</workout_file>

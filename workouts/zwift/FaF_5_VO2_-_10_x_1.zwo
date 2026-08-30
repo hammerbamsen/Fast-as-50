@@ -1,0 +1,17 @@
+<workout_file>
+    <author>K. Hammerby / Fast as 50</author>
+    <name>FaF 5 VO2 - 10 x 1</name>
+    <description>Kort og brutalt. 55 minutter i alt — passer efter en lang arbejdsdag.</description>
+    <sportType>bike</sportType>
+    <tags><tag name="vo2"/></tags>
+    <workout>
+        <Warmup Duration="600" PowerLow="0.4500" PowerHigh="0.7000"/>
+        <IntervalsT Repeat="3" OnDuration="60" OffDuration="60" OnPower="0.9000" OffPower="0.5500"/>
+        <SteadyState Duration="300" Power="0.6000"/>
+        <IntervalsT Repeat="10" OnDuration="60" OffDuration="60" OnPower="1.2500" OffPower="0.5000">
+            <textevent timeoffset="0" message="10 x 1 min @ 125% — de første tre føles for lette"/>
+        </IntervalsT>
+        <SteadyState Duration="300" Power="0.5500"/>
+        <Cooldown Duration="420" PowerLow="0.6000" PowerHigh="0.4000"/>
+    </workout>
+</workout_file>

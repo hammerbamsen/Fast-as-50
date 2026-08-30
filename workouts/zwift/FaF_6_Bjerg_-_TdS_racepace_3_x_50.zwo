@@ -1,0 +1,33 @@
+<workout_file>
+    <author>K. Hammerby / Fast as 50</author>
+    <name>FaF 6 Bjerg - TdS racepace 3 x 50</name>
+    <description>Det faktiske Ultrafondo-tempo: 66-68% FTP i tre lange blokke. Formålet er pacing-disciplin, ikke belastning. Du skal lære hvor lavt det føles.  [IKKE ERG-MODE — du styrer selv effekten.]  IKKE ERG — hele pointen er at DU styrer watt. Ti års race-evalueringer siger du kører 20 W under target når det gælder; her øver du det modsatte problem: at blive på et lavt tal når benene vil mere.</description>
+    <sportType>bike</sportType>
+    <tags><tag name="bjerg"/><tag name="tds"/><tag name="pacing"/></tags>
+    <workout>
+        <Warmup Duration="900" PowerLow="0.4500" PowerHigh="0.6200"/>
+        <SteadyState Duration="3000" Power="0.6700" Cadence="74">
+            <textevent timeoffset="0" message="66-68%. Det føles latterligt let. Det er pointen."/>
+            <textevent timeoffset="900" message="DRIK"/>
+            <textevent timeoffset="1800" message="SPIS"/>
+            <textevent timeoffset="2700" message="Bliv på tallet — kig ikke på følelsen"/>
+        </SteadyState>
+        <SteadyState Duration="600" Power="0.5500">
+            <textevent timeoffset="0" message="SPIS + DRIK"/>
+        </SteadyState>
+        <SteadyState Duration="3000" Power="0.6700" Cadence="74">
+            <textevent timeoffset="900" message="DRIK"/>
+            <textevent timeoffset="1800" message="SPIS"/>
+            <textevent timeoffset="2400" message="Stadig samme watt?"/>
+        </SteadyState>
+        <SteadyState Duration="600" Power="0.5500">
+            <textevent timeoffset="0" message="SPIS + DRIK"/>
+        </SteadyState>
+        <SteadyState Duration="2400" Power="0.6800" Cadence="74">
+            <textevent timeoffset="0" message="Sidste. Nu kommer fristelsen til at trykke."/>
+            <textevent timeoffset="900" message="DRIK"/>
+            <textevent timeoffset="1800" message="Hold igen."/>
+        </SteadyState>
+        <Cooldown Duration="600" PowerLow="0.5800" PowerHigh="0.4000"/>
+    </workout>
+</workout_file>

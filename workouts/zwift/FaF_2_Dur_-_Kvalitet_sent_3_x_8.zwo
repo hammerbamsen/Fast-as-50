@@ -1,0 +1,26 @@
+<workout_file>
+    <author>K. Hammerby / Fast as 50</author>
+    <name>FaF 2 Dur - Kvalitet sent 3 x 8</name>
+    <description>Tærskelarbejde efter to timer i benene. Durability er den faktiske limiter for en 13-timers dag — evnen til at holde effekt uden drift, ikke motorens størrelse.  Det vigtigste pas i biblioteket. Watt i intervallerne skal matche et frisk 3x8 — falder de mere end 5%, var Z2-delen for hård eller du spiste for lidt.</description>
+    <sportType>bike</sportType>
+    <tags><tag name="durability"/><tag name="tds"/></tags>
+    <workout>
+        <Warmup Duration="900" PowerLow="0.4500" PowerHigh="0.6500"/>
+        <SteadyState Duration="2700" Power="0.6800">
+            <textevent timeoffset="0" message="Rolig. Det hårde kommer om to timer."/>
+            <textevent timeoffset="1200" message="DRIK"/>
+            <textevent timeoffset="2400" message="SPIS"/>
+        </SteadyState>
+        <SteadyState Duration="2700" Power="0.7000">
+            <textevent timeoffset="1200" message="DRIK"/>
+            <textevent timeoffset="2400" message="SPIS"/>
+        </SteadyState>
+        <SteadyState Duration="1800" Power="0.7000">
+            <textevent timeoffset="900" message="SPIS — sidste depot før intervallerne"/>
+        </SteadyState>
+        <IntervalsT Repeat="3" OnDuration="480" OffDuration="360" OnPower="0.9500" OffPower="0.5500">
+            <textevent timeoffset="0" message="3 x 8 min @ 95% — nu tæller det"/>
+        </IntervalsT>
+        <Cooldown Duration="720" PowerLow="0.6000" PowerHigh="0.4000"/>
+    </workout>
+</workout_file>

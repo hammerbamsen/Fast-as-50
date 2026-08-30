@@ -1,0 +1,19 @@
+<workout_file>
+    <author>K. Hammerby / Fast as 50</author>
+    <name>FaF 5 VO2 - 5 x 3</name>
+    <description>Mellemvejen. Største kondi-løftestang efter 50 — men dyr at komme sig fra. Max to hårde pas om ugen, mindst 72 timer imellem.</description>
+    <sportType>bike</sportType>
+    <tags><tag name="vo2"/></tags>
+    <workout>
+        <Warmup Duration="600" PowerLow="0.4500" PowerHigh="0.7000"/>
+        <IntervalsT Repeat="3" OnDuration="60" OffDuration="60" OnPower="0.9000" OffPower="0.5500"/>
+        <SteadyState Duration="240" Power="0.6000"/>
+        <IntervalsT Repeat="3" OnDuration="30" OffDuration="30" OnPower="1.1000" OffPower="0.5000"/>
+        <SteadyState Duration="300" Power="0.5500"/>
+        <IntervalsT Repeat="5" OnDuration="180" OffDuration="180" OnPower="1.1600" OffPower="0.5000">
+            <textevent timeoffset="0" message="5 x 3 min @ 116%"/>
+        </IntervalsT>
+        <SteadyState Duration="300" Power="0.6000"/>
+        <Cooldown Duration="480" PowerLow="0.6000" PowerHigh="0.4000"/>
+    </workout>
+</workout_file>

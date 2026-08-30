@@ -1,0 +1,35 @@
+<workout_file>
+    <author>K. Hammerby / Fast as 50</author>
+    <name>FaF 1 Z2 - Depottur 2 t</name>
+    <description>To timer Z2 med fast energiplan. Lige så meget mavetræning som bentræning. Race-evalueringerne siger det samme i ni år: energiplanen er det der knækker dig.  Mål: 80-100 g kulhydrat i timen. Notér bagefter hvad du spiste og hvordan maven lå.</description>
+    <sportType>bike</sportType>
+    <tags><tag name="z2"/><tag name="nutrition"/></tags>
+    <workout>
+        <Warmup Duration="600" PowerLow="0.4500" PowerHigh="0.6200"/>
+        <SteadyState Duration="1200" Power="0.6600">
+            <textevent timeoffset="0" message="Sæt uret: spis hvert 20. min, drik hvert 15."/>
+            <textevent timeoffset="600" message="DRIK"/>
+            <textevent timeoffset="1140" message="SPIS"/>
+        </SteadyState>
+        <SteadyState Duration="1200" Power="0.7000">
+            <textevent timeoffset="600" message="DRIK"/>
+            <textevent timeoffset="1140" message="SPIS"/>
+        </SteadyState>
+        <SteadyState Duration="1200" Power="0.6600">
+            <textevent timeoffset="600" message="DRIK"/>
+            <textevent timeoffset="1140" message="SPIS"/>
+        </SteadyState>
+        <SteadyState Duration="1200" Power="0.7200">
+            <textevent timeoffset="600" message="DRIK"/>
+            <textevent timeoffset="1140" message="SPIS"/>
+        </SteadyState>
+        <SteadyState Duration="1200" Power="0.6600">
+            <textevent timeoffset="600" message="DRIK"/>
+            <textevent timeoffset="1140" message="SPIS — sidste depot"/>
+        </SteadyState>
+        <SteadyState Duration="600" Power="0.7000">
+            <textevent timeoffset="0" message="Hold formen når du er træt."/>
+        </SteadyState>
+        <Cooldown Duration="600" PowerLow="0.6200" PowerHigh="0.4000"/>
+    </workout>
+</workout_file>

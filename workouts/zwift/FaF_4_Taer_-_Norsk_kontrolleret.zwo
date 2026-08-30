@@ -1,0 +1,19 @@
+<workout_file>
+    <author>K. Hammerby / Fast as 50</author>
+    <name>FaF 4 Tær - Norsk kontrolleret</name>
+    <description>Det der overlever af den norske metode: kontrolleret sub-maksimalt tærskelarbejde i to intensiteter. Ikke dobbeltpas — det overføres ikke til en 52-årig.  Progression sker via flere reps, ikke højere watt. 4x10 bliver til 5x10 før 90% bliver til 92%.</description>
+    <sportType>bike</sportType>
+    <tags><tag name="taerskel"/><tag name="norsk"/></tags>
+    <workout>
+        <Warmup Duration="720" PowerLow="0.4500" PowerHigh="0.7000"/>
+        <IntervalsT Repeat="2" OnDuration="60" OffDuration="60" OnPower="0.9500" OffPower="0.5500"/>
+        <IntervalsT Repeat="4" OnDuration="600" OffDuration="120" OnPower="0.9000" OffPower="0.5500">
+            <textevent timeoffset="0" message="4 x 10 min @ 90% — skal føles for let. Det er meningen."/>
+        </IntervalsT>
+        <SteadyState Duration="240" Power="0.5500"/>
+        <IntervalsT Repeat="5" OnDuration="240" OffDuration="90" OnPower="0.9700" OffPower="0.5500">
+            <textevent timeoffset="0" message="5 x 4 min @ 97% — stadig kontrolleret"/>
+        </IntervalsT>
+        <Cooldown Duration="480" PowerLow="0.6000" PowerHigh="0.4000"/>
+    </workout>
+</workout_file>

@@ -1,0 +1,24 @@
+<workout_file>
+    <author>K. Hammerby / Fast as 50</author>
+    <name>FaF 5 VO2 - Ronnestad 3 x 13 x 30-15</name>
+    <description>Det bedst dokumenterede VO2-format for trænede cyklister. Korte pauser holder iltoptaget oppe mellem stødene, så du akkumulerer mere tid over 90% VO2max.  Bygget på Ronnestad 2020 (n=18 eliteryttere, 3 uger). Lille studie, stor popularitet — brug det, men tro ikke det er magi.</description>
+    <sportType>bike</sportType>
+    <tags><tag name="vo2"/></tags>
+    <workout>
+        <Warmup Duration="720" PowerLow="0.4500" PowerHigh="0.7000"/>
+        <IntervalsT Repeat="3" OnDuration="60" OffDuration="60" OnPower="0.9000" OffPower="0.5500"/>
+        <SteadyState Duration="240" Power="0.5500"/>
+        <IntervalsT Repeat="13" OnDuration="30" OffDuration="15" OnPower="1.2000" OffPower="0.5000">
+            <textevent timeoffset="0" message="BLOK 1"/>
+        </IntervalsT>
+        <SteadyState Duration="180" Power="0.5500"/>
+        <IntervalsT Repeat="13" OnDuration="30" OffDuration="15" OnPower="1.2000" OffPower="0.5000">
+            <textevent timeoffset="0" message="BLOK 2"/>
+        </IntervalsT>
+        <SteadyState Duration="180" Power="0.5500"/>
+        <IntervalsT Repeat="13" OnDuration="30" OffDuration="15" OnPower="1.2200" OffPower="0.5000">
+            <textevent timeoffset="0" message="BLOK 3"/>
+        </IntervalsT>
+        <Cooldown Duration="480" PowerLow="0.6000" PowerHigh="0.4000"/>
+    </workout>
+</workout_file>

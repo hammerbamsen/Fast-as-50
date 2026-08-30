@@ -1,0 +1,2053 @@
+{
+  "meta": {
+    "version": 2,
+    "updated": "2026-08-30",
+    "target": "Tour des Stations Ultrafondo, august 2027",
+    "ftpBasis": "indoor",
+    "categories": {
+      "test": "0 Test",
+      "z2": "1 Zone 2",
+      "durability": "2 Durability",
+      "sweetspot": "3 Sweet spot",
+      "taerskel": "4 Tærskel",
+      "vo2": "5 VO2max",
+      "bjerg": "6 Bjerg / TdS"
+    },
+    "rules": {
+      "maxHaardPerWeek": 2,
+      "maxModeratPerWeek": 2,
+      "minHoursBetweenHaard": 72,
+      "note": "Belastning sættes pr. workout i feltet 'load', ikke udledt af kategori. Friel 5+2: fem lette dage, to hårde, mindst én helt fri. Styrketræning 2x/uge tæller i den samlede belastning, men ikke i maxHaardPerWeek — den gælder cykelpas. Muskelproteinsyntese tager 72+ timer ved 50 mod 24-48 ved 35.",
+      "lavGlykogenMinDaysBetween": 10
+    }
+  },
+  "workouts": [
+    {
+      "id": "test_ftp20",
+      "name": "FaF 0 Test - FTP 20 min",
+      "category": "test",
+      "load": "haard",
+      "est_min": 53,
+      "purpose": "Nulpunkt. Alt i biblioteket skalerer efter den. Køres indendørs, altid — samme trainer, samme blæseropsætning, samme tid på dagen.",
+      "erg": false,
+      "notes": "IKKE ERG — du skal selv styre effekten. Nyt FTP = 95% af 20-min snit. Begge blæsere på. Du undervurderer dig selv: læg ud 5 W over det du tror.",
+      "tags": [
+        "test"
+      ],
+      "steps": [
+        {
+          "type": "ramp",
+          "min": 10,
+          "from": 45,
+          "to": 70,
+          "kind": "warmup",
+          "text": "Varm-op"
+        },
+        {
+          "type": "reps",
+          "n": 3,
+          "steps": [
+            {
+              "type": "steady",
+              "min": 1,
+              "pct": 100,
+              "text": "Åbner"
+            },
+            {
+              "type": "steady",
+              "min": 1,
+              "pct": 55,
+              "text": "Pause"
+            }
+          ]
+        },
+        {
+          "type": "steady",
+          "min": 5,
+          "pct": 55,
+          "text": "Let"
+        },
+        {
+          "type": "steady",
+          "min": 5,
+          "pct": 65,
+          "text": "Sidste rolige minutter"
+        },
+        {
+          "type": "free",
+          "min": 20,
+          "text": "20 MIN TEST — jævn maksindsats. Første 5 min skal føles for let."
+        },
+        {
+          "type": "ramp",
+          "min": 7,
+          "from": 60,
+          "to": 40,
+          "kind": "cooldown",
+          "text": "Cool-down"
+        }
+      ]
+    },
+    {
+      "id": "z2_grundtur_80",
+      "name": "FaF 1 Z2 - Grundtur 80",
+      "category": "z2",
+      "load": "let",
+      "est_min": 80,
+      "purpose": "Ren zone 2. Skal føles kedeligt. Fundamentet under alt andet — og den enkeltfaktor der bedst forudsiger hvor lidt VO2max falder med alderen.",
+      "erg": true,
+      "notes": "",
+      "tags": [
+        "z2",
+        "base"
+      ],
+      "steps": [
+        {
+          "type": "ramp",
+          "min": 10,
+          "from": 45,
+          "to": 62,
+          "kind": "warmup",
+          "text": "Varm-op"
+        },
+        {
+          "type": "steady",
+          "min": 25,
+          "pct": 66,
+          "text": "Zone 2",
+          "msgs": [
+            [
+              0,
+              "Zone 2. Du skal kunne tale hele vejen."
+            ],
+            [
+              900,
+              "Drik."
+            ]
+          ]
+        },
+        {
+          "type": "steady",
+          "min": 5,
+          "pct": 70,
+          "text": "Kadence 100",
+          "cad": 100
+        },
+        {
+          "type": "steady",
+          "min": 25,
+          "pct": 66,
+          "text": "Zone 2",
+          "msgs": [
+            [
+              900,
+              "Drik igen."
+            ]
+          ]
+        },
+        {
+          "type": "steady",
+          "min": 5,
+          "pct": 70,
+          "text": "Kadence 100",
+          "cad": 100
+        },
+        {
+          "type": "ramp",
+          "min": 10,
+          "from": 62,
+          "to": 40,
+          "kind": "cooldown",
+          "text": "Cool-down"
+        }
+      ]
+    },
+    {
+      "id": "z2_depottur_2t",
+      "name": "FaF 1 Z2 - Depottur 2 t",
+      "category": "z2",
+      "load": "let",
+      "est_min": 130,
+      "purpose": "To timer Z2 med fast energiplan. Lige så meget mavetræning som bentræning. Race-evalueringerne siger det samme i ni år: energiplanen er det der knækker dig.",
+      "erg": true,
+      "notes": "Mål: 80-100 g kulhydrat i timen. Notér bagefter hvad du spiste og hvordan maven lå.",
+      "tags": [
+        "z2",
+        "nutrition"
+      ],
+      "steps": [
+        {
+          "type": "ramp",
+          "min": 10,
+          "from": 45,
+          "to": 62,
+          "kind": "warmup",
+          "text": "Varm-op"
+        },
+        {
+          "type": "steady",
+          "min": 20,
+          "pct": 66,
+          "text": "Z2",
+          "msgs": [
+            [
+              0,
+              "Sæt uret: spis hvert 20. min, drik hvert 15."
+            ],
+            [
+              600,
+              "DRIK"
+            ],
+            [
+              1140,
+              "SPIS"
+            ]
+          ]
+        },
+        {
+          "type": "steady",
+          "min": 20,
+          "pct": 70,
+          "text": "Z2",
+          "msgs": [
+            [
+              600,
+              "DRIK"
+            ],
+            [
+              1140,
+              "SPIS"
+            ]
+          ]
+        },
+        {
+          "type": "steady",
+          "min": 20,
+          "pct": 66,
+          "text": "Z2",
+          "msgs": [
+            [
+              600,
+              "DRIK"
+            ],
+            [
+              1140,
+              "SPIS"
+            ]
+          ]
+        },
+        {
+          "type": "steady",
+          "min": 20,
+          "pct": 72,
+          "text": "Z2 let op",
+          "msgs": [
+            [
+              600,
+              "DRIK"
+            ],
+            [
+              1140,
+              "SPIS"
+            ]
+          ]
+        },
+        {
+          "type": "steady",
+          "min": 20,
+          "pct": 66,
+          "text": "Z2",
+          "msgs": [
+            [
+              600,
+              "DRIK"
+            ],
+            [
+              1140,
+              "SPIS — sidste depot"
+            ]
+          ]
+        },
+        {
+          "type": "steady",
+          "min": 10,
+          "pct": 70,
+          "text": "Sidste 10",
+          "msgs": [
+            [
+              0,
+              "Hold formen når du er træt."
+            ]
+          ]
+        },
+        {
+          "type": "ramp",
+          "min": 10,
+          "from": 62,
+          "to": 40,
+          "kind": "cooldown",
+          "text": "Cool-down"
+        }
+      ]
+    },
+    {
+      "id": "dur_sent_i_turen",
+      "name": "FaF 2 Dur - Kvalitet sent 3 x 8",
+      "category": "durability",
+      "load": "haard",
+      "est_min": 189,
+      "purpose": "Tærskelarbejde efter to timer i benene. Durability er den faktiske limiter for en 13-timers dag — evnen til at holde effekt uden drift, ikke motorens størrelse.",
+      "erg": true,
+      "notes": "Det vigtigste pas i biblioteket. Watt i intervallerne skal matche et frisk 3x8 — falder de mere end 5%, var Z2-delen for hård eller du spiste for lidt.",
+      "tags": [
+        "durability",
+        "tds"
+      ],
+      "steps": [
+        {
+          "type": "ramp",
+          "min": 15,
+          "from": 45,
+          "to": 65,
+          "kind": "warmup",
+          "text": "Varm-op"
+        },
+        {
+          "type": "steady",
+          "min": 45,
+          "pct": 68,
+          "text": "Z2",
+          "msgs": [
+            [
+              0,
+              "Rolig. Det hårde kommer om to timer."
+            ],
+            [
+              1200,
+              "DRIK"
+            ],
+            [
+              2400,
+              "SPIS"
+            ]
+          ]
+        },
+        {
+          "type": "steady",
+          "min": 45,
+          "pct": 70,
+          "text": "Z2",
+          "msgs": [
+            [
+              1200,
+              "DRIK"
+            ],
+            [
+              2400,
+              "SPIS"
+            ]
+          ]
+        },
+        {
+          "type": "steady",
+          "min": 30,
+          "pct": 70,
+          "text": "Z2",
+          "msgs": [
+            [
+              900,
+              "SPIS — sidste depot før intervallerne"
+            ]
+          ]
+        },
+        {
+          "type": "reps",
+          "n": 3,
+          "steps": [
+            {
+              "type": "steady",
+              "min": 8,
+              "pct": 95,
+              "text": "Tærskel på trætte ben"
+            },
+            {
+              "type": "steady",
+              "min": 6,
+              "pct": 55,
+              "text": "Pause"
+            }
+          ],
+          "text": "3 x 8 min @ 95% — nu tæller det"
+        },
+        {
+          "type": "ramp",
+          "min": 12,
+          "from": 60,
+          "to": 40,
+          "kind": "cooldown",
+          "text": "Cool-down"
+        }
+      ]
+    },
+    {
+      "id": "dur_bjergtur_3t",
+      "name": "FaF 2 Dur - Bjergtur 3 t",
+      "category": "durability",
+      "load": "moderat",
+      "est_min": 185,
+      "purpose": "Fire stigningsblokke med energiplan hele vejen. Tættest på Tour des Stations hjemmefra. Kadence 72 — det er hvad der faktisk køres opad, ikke 55.",
+      "erg": true,
+      "notes": "",
+      "tags": [
+        "durability",
+        "bjerg",
+        "tds"
+      ],
+      "steps": [
+        {
+          "type": "ramp",
+          "min": 15,
+          "from": 45,
+          "to": 65,
+          "kind": "warmup",
+          "text": "Varm-op"
+        },
+        {
+          "type": "steady",
+          "min": 15,
+          "pct": 66,
+          "text": "Z2",
+          "msgs": [
+            [
+              600,
+              "DRIK"
+            ]
+          ]
+        },
+        {
+          "type": "steady",
+          "min": 30,
+          "pct": 76,
+          "text": "STIGNING 1",
+          "cad": 72,
+          "msgs": [
+            [
+              0,
+              "30 min. Siddende, skuldrene ned."
+            ],
+            [
+              900,
+              "Halvvejs"
+            ]
+          ]
+        },
+        {
+          "type": "steady",
+          "min": 10,
+          "pct": 60,
+          "text": "Nedkørsel",
+          "cad": 95,
+          "msgs": [
+            [
+              0,
+              "SPIS + DRIK"
+            ]
+          ]
+        },
+        {
+          "type": "steady",
+          "min": 30,
+          "pct": 78,
+          "text": "STIGNING 2",
+          "cad": 72,
+          "msgs": [
+            [
+              900,
+              "Halvvejs"
+            ],
+            [
+              1500,
+              "Sidste 5 — hold watt"
+            ]
+          ]
+        },
+        {
+          "type": "steady",
+          "min": 10,
+          "pct": 60,
+          "text": "Nedkørsel",
+          "cad": 95,
+          "msgs": [
+            [
+              0,
+              "SPIS + DRIK"
+            ]
+          ]
+        },
+        {
+          "type": "steady",
+          "min": 30,
+          "pct": 78,
+          "text": "STIGNING 3",
+          "cad": 72,
+          "msgs": [
+            [
+              900,
+              "Nu skal hovedet arbejde"
+            ]
+          ]
+        },
+        {
+          "type": "steady",
+          "min": 10,
+          "pct": 60,
+          "text": "Nedkørsel",
+          "cad": 95,
+          "msgs": [
+            [
+              0,
+              "SPIS + DRIK — sidste depot"
+            ]
+          ]
+        },
+        {
+          "type": "steady",
+          "min": 25,
+          "pct": 80,
+          "text": "STIGNING 4",
+          "cad": 72,
+          "msgs": [
+            [
+              0,
+              "Sidste. Køres hårdest."
+            ],
+            [
+              1200,
+              "Sidste 5 — tryk igennem"
+            ]
+          ]
+        },
+        {
+          "type": "ramp",
+          "min": 10,
+          "from": 60,
+          "to": 40,
+          "kind": "cooldown",
+          "text": "Cool-down"
+        }
+      ]
+    },
+    {
+      "id": "dur_negativ_split",
+      "name": "FaF 2 Dur - Negativ split 2 t",
+      "category": "durability",
+      "load": "moderat",
+      "est_min": 130,
+      "purpose": "Halvanden time Z2, derefter 40 minutter løftet til Z3. Træner at producere kvalitet i forudtrættet tilstand — uden prisen for et fuldt tærskelpas.",
+      "erg": true,
+      "notes": "",
+      "tags": [
+        "durability",
+        "tds"
+      ],
+      "steps": [
+        {
+          "type": "ramp",
+          "min": 12,
+          "from": 45,
+          "to": 62,
+          "kind": "warmup",
+          "text": "Varm-op"
+        },
+        {
+          "type": "steady",
+          "min": 35,
+          "pct": 66,
+          "text": "Z2",
+          "msgs": [
+            [
+              1200,
+              "DRIK"
+            ]
+          ]
+        },
+        {
+          "type": "steady",
+          "min": 35,
+          "pct": 70,
+          "text": "Z2",
+          "msgs": [
+            [
+              1200,
+              "SPIS"
+            ]
+          ]
+        },
+        {
+          "type": "steady",
+          "min": 20,
+          "pct": 80,
+          "text": "Op i Z3",
+          "msgs": [
+            [
+              0,
+              "Nu løftes det. Ikke tærskel — bare højere."
+            ]
+          ]
+        },
+        {
+          "type": "steady",
+          "min": 20,
+          "pct": 83,
+          "text": "Z3 højere",
+          "msgs": [
+            [
+              600,
+              "Sidste 10 — hold tallet"
+            ]
+          ]
+        },
+        {
+          "type": "ramp",
+          "min": 8,
+          "from": 60,
+          "to": 40,
+          "kind": "cooldown",
+          "text": "Cool-down"
+        }
+      ]
+    },
+    {
+      "id": "dur_lav_glykogen",
+      "name": "FaF 2 Dur - Lav glykogen 90",
+      "category": "durability",
+      "load": "let",
+      "est_min": 90,
+      "purpose": "Fastet eller let morgenmad, ingen kulhydrat de første 60 minutter. Driver fedtoxidations-adaptation. Bruges sparsomt — max hver 10.-14. dag.",
+      "erg": true,
+      "notes": "ALDRIG dagen før eller efter et hårdt pas. Ikke i uger med høj total belastning. Kronisk lav-CHO øger infektions- og overtræningsrisiko — det er et værktøj, ikke en vane.",
+      "tags": [
+        "durability",
+        "fedtoxidation"
+      ],
+      "steps": [
+        {
+          "type": "ramp",
+          "min": 10,
+          "from": 45,
+          "to": 60,
+          "kind": "warmup",
+          "text": "Varm-op"
+        },
+        {
+          "type": "steady",
+          "min": 50,
+          "pct": 64,
+          "text": "Z2 lav",
+          "msgs": [
+            [
+              0,
+              "Kun vand de første 60 min."
+            ],
+            [
+              1800,
+              "Stadig kun vand."
+            ]
+          ]
+        },
+        {
+          "type": "steady",
+          "min": 22,
+          "pct": 68,
+          "text": "Z2",
+          "msgs": [
+            [
+              0,
+              "Nu må du spise. Normal plan resten."
+            ]
+          ]
+        },
+        {
+          "type": "ramp",
+          "min": 8,
+          "from": 60,
+          "to": 40,
+          "kind": "cooldown",
+          "text": "Cool-down"
+        }
+      ]
+    },
+    {
+      "id": "ss_3x15",
+      "name": "FaF 3 SS - 3 x 15",
+      "category": "sweetspot",
+      "load": "moderat",
+      "est_min": 84,
+      "purpose": "Sweet spot som volumenværktøj — ikke som rygrad. Evidensen er svagere end populariteten: restitutionsprisen nærmer sig tærskelarbejdets uden stimulussen.",
+      "erg": true,
+      "notes": "Kun ét sweet spot-pas i biblioteket, med vilje. Laktat i 3-6 mmol hæmmer CPT1/CPT2 og modarbejder fedtoxidationen Ultrafondo lever af.",
+      "tags": [
+        "sweetspot"
+      ],
+      "steps": [
+        {
+          "type": "ramp",
+          "min": 10,
+          "from": 45,
+          "to": 70,
+          "kind": "warmup",
+          "text": "Varm-op"
+        },
+        {
+          "type": "reps",
+          "n": 3,
+          "steps": [
+            {
+              "type": "steady",
+              "min": 1,
+              "pct": 95,
+              "text": "Åbner"
+            },
+            {
+              "type": "steady",
+              "min": 1,
+              "pct": 55,
+              "text": "Pause"
+            }
+          ]
+        },
+        {
+          "type": "steady",
+          "min": 5,
+          "pct": 62,
+          "text": "Let"
+        },
+        {
+          "type": "steady",
+          "min": 15,
+          "pct": 89,
+          "text": "BLOK 1",
+          "msgs": [
+            [
+              0,
+              "Find rytmen med det samme"
+            ],
+            [
+              780,
+              "Sidste 2"
+            ]
+          ]
+        },
+        {
+          "type": "steady",
+          "min": 5,
+          "pct": 55,
+          "text": "Pause"
+        },
+        {
+          "type": "steady",
+          "min": 15,
+          "pct": 89,
+          "text": "BLOK 2",
+          "msgs": [
+            [
+              0,
+              "Samme watt som blok 1"
+            ]
+          ]
+        },
+        {
+          "type": "steady",
+          "min": 5,
+          "pct": 55,
+          "text": "Pause"
+        },
+        {
+          "type": "steady",
+          "min": 15,
+          "pct": 90,
+          "text": "BLOK 3",
+          "msgs": [
+            [
+              0,
+              "Du plejer at køre for konservativt"
+            ],
+            [
+              780,
+              "Sidste 2 — tryk"
+            ]
+          ]
+        },
+        {
+          "type": "ramp",
+          "min": 8,
+          "from": 60,
+          "to": 40,
+          "kind": "cooldown",
+          "text": "Cool-down"
+        }
+      ]
+    },
+    {
+      "id": "tae_3x12",
+      "name": "FaF 4 Tær - 3 x 12",
+      "category": "taerskel",
+      "load": "haard",
+      "est_min": 77,
+      "purpose": "Tærskel 97-100%. Her flyttes FTP. Den sidste blok skal føles urimelig.",
+      "erg": true,
+      "notes": "",
+      "tags": [
+        "taerskel"
+      ],
+      "steps": [
+        {
+          "type": "ramp",
+          "min": 10,
+          "from": 45,
+          "to": 70,
+          "kind": "warmup",
+          "text": "Varm-op"
+        },
+        {
+          "type": "reps",
+          "n": 3,
+          "steps": [
+            {
+              "type": "steady",
+              "min": 1,
+              "pct": 100,
+              "text": "Åbner"
+            },
+            {
+              "type": "steady",
+              "min": 1,
+              "pct": 55,
+              "text": "Pause"
+            }
+          ]
+        },
+        {
+          "type": "steady",
+          "min": 5,
+          "pct": 62,
+          "text": "Let"
+        },
+        {
+          "type": "steady",
+          "min": 12,
+          "pct": 97,
+          "text": "BLOK 1",
+          "msgs": [
+            [
+              0,
+              "97%. Kontrolleret."
+            ]
+          ]
+        },
+        {
+          "type": "steady",
+          "min": 6,
+          "pct": 55,
+          "text": "Pause"
+        },
+        {
+          "type": "steady",
+          "min": 12,
+          "pct": 98,
+          "text": "BLOK 2",
+          "msgs": [
+            [
+              360,
+              "Halvvejs — dyb vejrtrækning"
+            ]
+          ]
+        },
+        {
+          "type": "steady",
+          "min": 6,
+          "pct": 55,
+          "text": "Pause"
+        },
+        {
+          "type": "steady",
+          "min": 12,
+          "pct": 100,
+          "text": "BLOK 3",
+          "msgs": [
+            [
+              0,
+              "100%. Det skal gøre ondt."
+            ],
+            [
+              600,
+              "Sidste 2"
+            ]
+          ]
+        },
+        {
+          "type": "ramp",
+          "min": 8,
+          "from": 60,
+          "to": 40,
+          "kind": "cooldown",
+          "text": "Cool-down"
+        }
+      ]
+    },
+    {
+      "id": "tae_2x20",
+      "name": "FaF 4 Tær - 2 x 20",
+      "category": "taerskel",
+      "load": "haard",
+      "est_min": 79,
+      "purpose": "Klassikeren. Kan du køre den uden at falde fra hinanden, er dit FTP sat for lavt.",
+      "erg": true,
+      "notes": "",
+      "tags": [
+        "taerskel"
+      ],
+      "steps": [
+        {
+          "type": "ramp",
+          "min": 10,
+          "from": 45,
+          "to": 70,
+          "kind": "warmup",
+          "text": "Varm-op"
+        },
+        {
+          "type": "reps",
+          "n": 3,
+          "steps": [
+            {
+              "type": "steady",
+              "min": 1,
+              "pct": 100,
+              "text": "Åbner"
+            },
+            {
+              "type": "steady",
+              "min": 1,
+              "pct": 55,
+              "text": "Pause"
+            }
+          ]
+        },
+        {
+          "type": "steady",
+          "min": 5,
+          "pct": 62,
+          "text": "Let"
+        },
+        {
+          "type": "steady",
+          "min": 20,
+          "pct": 95,
+          "text": "BLOK 1",
+          "msgs": [
+            [
+              0,
+              "Find tallet og bliv der"
+            ],
+            [
+              1080,
+              "Sidste 2"
+            ]
+          ]
+        },
+        {
+          "type": "steady",
+          "min": 10,
+          "pct": 55,
+          "text": "Pause"
+        },
+        {
+          "type": "steady",
+          "min": 20,
+          "pct": 95,
+          "text": "BLOK 2",
+          "msgs": [
+            [
+              0,
+              "Samme tal. Ikke lavere."
+            ],
+            [
+              600,
+              "Halvvejs — hovedet med"
+            ]
+          ]
+        },
+        {
+          "type": "ramp",
+          "min": 8,
+          "from": 60,
+          "to": 40,
+          "kind": "cooldown",
+          "text": "Cool-down"
+        }
+      ]
+    },
+    {
+      "id": "tae_over_unders",
+      "name": "FaF 4 Tær - Over-unders 3 x 10",
+      "category": "taerskel",
+      "load": "haard",
+      "est_min": 71,
+      "purpose": "2 min under / 1 min over, uden pause imellem. Laktatclearing mens du stadig arbejder — det gradienten kræver når den skifter.",
+      "erg": true,
+      "notes": "Praksis-standard, men svag direkte evidens — ingen isoleret RCT mod lige tærskelintervaller. Fysiologisk logik er god.",
+      "tags": [
+        "taerskel"
+      ],
+      "steps": [
+        {
+          "type": "ramp",
+          "min": 10,
+          "from": 45,
+          "to": 70,
+          "kind": "warmup",
+          "text": "Varm-op"
+        },
+        {
+          "type": "reps",
+          "n": 3,
+          "steps": [
+            {
+              "type": "steady",
+              "min": 1,
+              "pct": 100,
+              "text": "Åbner"
+            },
+            {
+              "type": "steady",
+              "min": 1,
+              "pct": 55,
+              "text": "Pause"
+            }
+          ]
+        },
+        {
+          "type": "steady",
+          "min": 5,
+          "pct": 62,
+          "text": "Let"
+        },
+        {
+          "type": "reps",
+          "n": 3,
+          "steps": [
+            {
+              "type": "steady",
+              "min": 2,
+              "pct": 95,
+              "text": "Under"
+            },
+            {
+              "type": "steady",
+              "min": 1,
+              "pct": 105,
+              "text": "Over"
+            }
+          ],
+          "text": "BLOK 1"
+        },
+        {
+          "type": "steady",
+          "min": 1,
+          "pct": 95,
+          "text": "Ud"
+        },
+        {
+          "type": "steady",
+          "min": 6,
+          "pct": 55,
+          "text": "Pause"
+        },
+        {
+          "type": "reps",
+          "n": 3,
+          "steps": [
+            {
+              "type": "steady",
+              "min": 2,
+              "pct": 95,
+              "text": "Under"
+            },
+            {
+              "type": "steady",
+              "min": 1,
+              "pct": 105,
+              "text": "Over"
+            }
+          ],
+          "text": "BLOK 2"
+        },
+        {
+          "type": "steady",
+          "min": 1,
+          "pct": 95,
+          "text": "Ud"
+        },
+        {
+          "type": "steady",
+          "min": 6,
+          "pct": 55,
+          "text": "Pause"
+        },
+        {
+          "type": "reps",
+          "n": 3,
+          "steps": [
+            {
+              "type": "steady",
+              "min": 2,
+              "pct": 95,
+              "text": "Under"
+            },
+            {
+              "type": "steady",
+              "min": 1,
+              "pct": 106,
+              "text": "Over"
+            }
+          ],
+          "text": "BLOK 3"
+        },
+        {
+          "type": "steady",
+          "min": 1,
+          "pct": 96,
+          "text": "Ud"
+        },
+        {
+          "type": "ramp",
+          "min": 8,
+          "from": 60,
+          "to": 40,
+          "kind": "cooldown",
+          "text": "Cool-down"
+        }
+      ]
+    },
+    {
+      "id": "tae_norsk",
+      "name": "FaF 4 Tær - Norsk kontrolleret",
+      "category": "taerskel",
+      "load": "haard",
+      "est_min": 103,
+      "purpose": "Det der overlever af den norske metode: kontrolleret sub-maksimalt tærskelarbejde i to intensiteter. Ikke dobbeltpas — det overføres ikke til en 52-årig.",
+      "erg": true,
+      "notes": "Progression sker via flere reps, ikke højere watt. 4x10 bliver til 5x10 før 90% bliver til 92%.",
+      "tags": [
+        "taerskel",
+        "norsk"
+      ],
+      "steps": [
+        {
+          "type": "ramp",
+          "min": 12,
+          "from": 45,
+          "to": 70,
+          "kind": "warmup",
+          "text": "Varm-op"
+        },
+        {
+          "type": "reps",
+          "n": 2,
+          "steps": [
+            {
+              "type": "steady",
+              "min": 1,
+              "pct": 95,
+              "text": "Åbner"
+            },
+            {
+              "type": "steady",
+              "min": 1,
+              "pct": 55,
+              "text": "Pause"
+            }
+          ]
+        },
+        {
+          "type": "reps",
+          "n": 4,
+          "steps": [
+            {
+              "type": "steady",
+              "min": 10,
+              "pct": 90,
+              "text": "Lav tærskel"
+            },
+            {
+              "type": "steady",
+              "min": 2,
+              "pct": 55,
+              "text": "Pause"
+            }
+          ],
+          "text": "4 x 10 min @ 90% — skal føles for let. Det er meningen."
+        },
+        {
+          "type": "steady",
+          "min": 4,
+          "pct": 55,
+          "text": "Pause"
+        },
+        {
+          "type": "reps",
+          "n": 5,
+          "steps": [
+            {
+              "type": "steady",
+              "min": 4,
+              "pct": 97,
+              "text": "Høj tærskel"
+            },
+            {
+              "type": "steady",
+              "min": 1.5,
+              "pct": 55,
+              "text": "Pause"
+            }
+          ],
+          "text": "5 x 4 min @ 97% — stadig kontrolleret"
+        },
+        {
+          "type": "ramp",
+          "min": 8,
+          "from": 60,
+          "to": 40,
+          "kind": "cooldown",
+          "text": "Cool-down"
+        }
+      ]
+    },
+    {
+      "id": "vo2_ronnestad_3015",
+      "name": "FaF 5 VO2 - Ronnestad 3 x 13 x 30-15",
+      "category": "vo2",
+      "load": "haard",
+      "est_min": 65,
+      "purpose": "Det bedst dokumenterede VO2-format for trænede cyklister. Korte pauser holder iltoptaget oppe mellem stødene, så du akkumulerer mere tid over 90% VO2max.",
+      "erg": true,
+      "notes": "Bygget på Ronnestad 2020 (n=18 eliteryttere, 3 uger). Lille studie, stor popularitet — brug det, men tro ikke det er magi.",
+      "tags": [
+        "vo2"
+      ],
+      "steps": [
+        {
+          "type": "ramp",
+          "min": 12,
+          "from": 45,
+          "to": 70,
+          "kind": "warmup",
+          "text": "Varm-op"
+        },
+        {
+          "type": "reps",
+          "n": 3,
+          "steps": [
+            {
+              "type": "steady",
+              "min": 1,
+              "pct": 90,
+              "text": "Åbner"
+            },
+            {
+              "type": "steady",
+              "min": 1,
+              "pct": 55,
+              "text": "Pause"
+            }
+          ]
+        },
+        {
+          "type": "steady",
+          "min": 4,
+          "pct": 55,
+          "text": "Let"
+        },
+        {
+          "type": "reps",
+          "n": 13,
+          "steps": [
+            {
+              "type": "steady",
+              "min": 0.5,
+              "pct": 120,
+              "text": "Stød"
+            },
+            {
+              "type": "steady",
+              "min": 0.25,
+              "pct": 50,
+              "text": "Pause"
+            }
+          ],
+          "text": "BLOK 1"
+        },
+        {
+          "type": "steady",
+          "min": 3,
+          "pct": 55,
+          "text": "Pause"
+        },
+        {
+          "type": "reps",
+          "n": 13,
+          "steps": [
+            {
+              "type": "steady",
+              "min": 0.5,
+              "pct": 120,
+              "text": "Stød"
+            },
+            {
+              "type": "steady",
+              "min": 0.25,
+              "pct": 50,
+              "text": "Pause"
+            }
+          ],
+          "text": "BLOK 2"
+        },
+        {
+          "type": "steady",
+          "min": 3,
+          "pct": 55,
+          "text": "Pause"
+        },
+        {
+          "type": "reps",
+          "n": 13,
+          "steps": [
+            {
+              "type": "steady",
+              "min": 0.5,
+              "pct": 122,
+              "text": "Stød"
+            },
+            {
+              "type": "steady",
+              "min": 0.25,
+              "pct": 50,
+              "text": "Pause"
+            }
+          ],
+          "text": "BLOK 3"
+        },
+        {
+          "type": "ramp",
+          "min": 8,
+          "from": 60,
+          "to": 40,
+          "kind": "cooldown",
+          "text": "Cool-down"
+        }
+      ]
+    },
+    {
+      "id": "vo2_4x4",
+      "name": "FaF 5 VO2 - 4 x 4",
+      "category": "vo2",
+      "load": "haard",
+      "est_min": 62,
+      "purpose": "Klassikeren. Mentalt lettere at styre end 30/15 og lige så veldokumenteret. Brug den når du ikke orker at tælle sekunder.",
+      "erg": true,
+      "notes": "",
+      "tags": [
+        "vo2"
+      ],
+      "steps": [
+        {
+          "type": "ramp",
+          "min": 12,
+          "from": 45,
+          "to": 72,
+          "kind": "warmup",
+          "text": "Varm-op"
+        },
+        {
+          "type": "reps",
+          "n": 3,
+          "steps": [
+            {
+              "type": "steady",
+              "min": 1,
+              "pct": 90,
+              "text": "Åbner"
+            },
+            {
+              "type": "steady",
+              "min": 1,
+              "pct": 55,
+              "text": "Pause"
+            }
+          ]
+        },
+        {
+          "type": "steady",
+          "min": 4,
+          "pct": 58,
+          "text": "Let"
+        },
+        {
+          "type": "reps",
+          "n": 4,
+          "steps": [
+            {
+              "type": "steady",
+              "min": 4,
+              "pct": 110,
+              "text": "4 min"
+            },
+            {
+              "type": "steady",
+              "min": 4,
+              "pct": 50,
+              "text": "Pause"
+            }
+          ],
+          "text": "4 x 4 min @ 110% — jævnt fra sekund et, ikke sprint ud"
+        },
+        {
+          "type": "ramp",
+          "min": 8,
+          "from": 60,
+          "to": 40,
+          "kind": "cooldown",
+          "text": "Cool-down"
+        }
+      ]
+    },
+    {
+      "id": "vo2_5x3",
+      "name": "FaF 5 VO2 - 5 x 3",
+      "category": "vo2",
+      "load": "haard",
+      "est_min": 71,
+      "purpose": "Mellemvejen. Største kondi-løftestang efter 50 — men dyr at komme sig fra. Max to hårde pas om ugen, mindst 72 timer imellem.",
+      "erg": true,
+      "notes": "",
+      "tags": [
+        "vo2"
+      ],
+      "steps": [
+        {
+          "type": "ramp",
+          "min": 10,
+          "from": 45,
+          "to": 70,
+          "kind": "warmup",
+          "text": "Varm-op"
+        },
+        {
+          "type": "reps",
+          "n": 3,
+          "steps": [
+            {
+              "type": "steady",
+              "min": 1,
+              "pct": 90,
+              "text": "Åbner"
+            },
+            {
+              "type": "steady",
+              "min": 1,
+              "pct": 55,
+              "text": "Pause"
+            }
+          ]
+        },
+        {
+          "type": "steady",
+          "min": 4,
+          "pct": 60,
+          "text": "Let"
+        },
+        {
+          "type": "reps",
+          "n": 3,
+          "steps": [
+            {
+              "type": "steady",
+              "min": 0.5,
+              "pct": 110,
+              "text": "Stød"
+            },
+            {
+              "type": "steady",
+              "min": 0.5,
+              "pct": 50,
+              "text": "Pause"
+            }
+          ]
+        },
+        {
+          "type": "steady",
+          "min": 5,
+          "pct": 55,
+          "text": "Let"
+        },
+        {
+          "type": "reps",
+          "n": 5,
+          "steps": [
+            {
+              "type": "steady",
+              "min": 3,
+              "pct": 116,
+              "text": "3 min"
+            },
+            {
+              "type": "steady",
+              "min": 3,
+              "pct": 50,
+              "text": "Pause"
+            }
+          ],
+          "text": "5 x 3 min @ 116%"
+        },
+        {
+          "type": "steady",
+          "min": 5,
+          "pct": 60,
+          "text": "Ud"
+        },
+        {
+          "type": "ramp",
+          "min": 8,
+          "from": 60,
+          "to": 40,
+          "kind": "cooldown",
+          "text": "Cool-down"
+        }
+      ]
+    },
+    {
+      "id": "vo2_10x1",
+      "name": "FaF 5 VO2 - 10 x 1",
+      "category": "vo2",
+      "load": "haard",
+      "est_min": 53,
+      "purpose": "Kort og brutalt. 55 minutter i alt — passer efter en lang arbejdsdag.",
+      "erg": true,
+      "notes": "",
+      "tags": [
+        "vo2"
+      ],
+      "steps": [
+        {
+          "type": "ramp",
+          "min": 10,
+          "from": 45,
+          "to": 70,
+          "kind": "warmup",
+          "text": "Varm-op"
+        },
+        {
+          "type": "reps",
+          "n": 3,
+          "steps": [
+            {
+              "type": "steady",
+              "min": 1,
+              "pct": 90,
+              "text": "Åbner"
+            },
+            {
+              "type": "steady",
+              "min": 1,
+              "pct": 55,
+              "text": "Pause"
+            }
+          ]
+        },
+        {
+          "type": "steady",
+          "min": 5,
+          "pct": 60,
+          "text": "Let"
+        },
+        {
+          "type": "reps",
+          "n": 10,
+          "steps": [
+            {
+              "type": "steady",
+              "min": 1,
+              "pct": 125,
+              "text": "1 min"
+            },
+            {
+              "type": "steady",
+              "min": 1,
+              "pct": 50,
+              "text": "Pause"
+            }
+          ],
+          "text": "10 x 1 min @ 125% — de første tre føles for lette"
+        },
+        {
+          "type": "steady",
+          "min": 5,
+          "pct": 55,
+          "text": "Ud"
+        },
+        {
+          "type": "ramp",
+          "min": 7,
+          "from": 60,
+          "to": 40,
+          "kind": "cooldown",
+          "text": "Cool-down"
+        }
+      ]
+    },
+    {
+      "id": "bjerg_sa_calobra_1x30",
+      "name": "FaF 6 Bjerg - Sa Calobra 1 x 30",
+      "category": "bjerg",
+      "load": "moderat",
+      "est_min": 67,
+      "purpose": "9,5 km, 7% i snit, ca. 30 min. Én sammenhængende stigning på 86% ved 72 rpm. Ingen pauser — det er der ikke på bjerget.",
+      "erg": true,
+      "notes": "PR at slå: 35:18 på 275 W (Mallorca 2023).",
+      "tags": [
+        "bjerg",
+        "sacalobra"
+      ],
+      "steps": [
+        {
+          "type": "ramp",
+          "min": 10,
+          "from": 45,
+          "to": 68,
+          "kind": "warmup",
+          "text": "Varm-op"
+        },
+        {
+          "type": "reps",
+          "n": 2,
+          "steps": [
+            {
+              "type": "steady",
+              "min": 1,
+              "pct": 95,
+              "text": "Åbner"
+            },
+            {
+              "type": "steady",
+              "min": 1,
+              "pct": 55,
+              "text": "Pause"
+            }
+          ]
+        },
+        {
+          "type": "steady",
+          "min": 5,
+          "pct": 62,
+          "text": "Sæt gearet"
+        },
+        {
+          "type": "steady",
+          "min": 30,
+          "pct": 86,
+          "text": "SA CALOBRA",
+          "cad": 72,
+          "msgs": [
+            [
+              0,
+              "Læg ud kontrolleret."
+            ],
+            [
+              300,
+              "Føles det for let, er det rigtigt."
+            ],
+            [
+              900,
+              "Halvvejs — hårnålene"
+            ],
+            [
+              1500,
+              "Sidste 5 — nu må du gerne trykke"
+            ],
+            [
+              1740,
+              "Tunnellen"
+            ]
+          ]
+        },
+        {
+          "type": "steady",
+          "min": 10,
+          "pct": 55,
+          "text": "Toppen. Drik."
+        },
+        {
+          "type": "ramp",
+          "min": 8,
+          "from": 60,
+          "to": 40,
+          "kind": "cooldown",
+          "text": "Cool-down"
+        }
+      ]
+    },
+    {
+      "id": "bjerg_sa_calobra_2x25",
+      "name": "FaF 6 Bjerg - Sa Calobra 2 x 25",
+      "category": "bjerg",
+      "load": "moderat",
+      "est_min": 96,
+      "purpose": "To gange med nedkørsel imellem. Kan du gentage en indsats? Det spørger Tour des Stations om syv gange.",
+      "erg": true,
+      "notes": "",
+      "tags": [
+        "bjerg",
+        "sacalobra"
+      ],
+      "steps": [
+        {
+          "type": "ramp",
+          "min": 10,
+          "from": 45,
+          "to": 68,
+          "kind": "warmup",
+          "text": "Varm-op"
+        },
+        {
+          "type": "reps",
+          "n": 2,
+          "steps": [
+            {
+              "type": "steady",
+              "min": 1,
+              "pct": 95,
+              "text": "Åbner"
+            },
+            {
+              "type": "steady",
+              "min": 1,
+              "pct": 55,
+              "text": "Pause"
+            }
+          ]
+        },
+        {
+          "type": "steady",
+          "min": 5,
+          "pct": 62,
+          "text": "Let"
+        },
+        {
+          "type": "steady",
+          "min": 25,
+          "pct": 86,
+          "text": "STIGNING 1",
+          "cad": 72,
+          "msgs": [
+            [
+              750,
+              "Halvvejs"
+            ],
+            [
+              1320,
+              "Sidste 3"
+            ]
+          ]
+        },
+        {
+          "type": "steady",
+          "min": 12,
+          "pct": 55,
+          "text": "Nedkørsel",
+          "cad": 95,
+          "msgs": [
+            [
+              0,
+              "SPIS og DRIK. Du skal kunne det samme igen."
+            ]
+          ]
+        },
+        {
+          "type": "steady",
+          "min": 25,
+          "pct": 86,
+          "text": "STIGNING 2",
+          "cad": 72,
+          "msgs": [
+            [
+              0,
+              "Samme watt. Ikke lavere."
+            ],
+            [
+              750,
+              "Her vil hovedet forhandle"
+            ],
+            [
+              1200,
+              "Sidste 5"
+            ]
+          ]
+        },
+        {
+          "type": "steady",
+          "min": 7,
+          "pct": 55,
+          "text": "Ud"
+        },
+        {
+          "type": "ramp",
+          "min": 8,
+          "from": 60,
+          "to": 40,
+          "kind": "cooldown",
+          "text": "Cool-down"
+        }
+      ]
+    },
+    {
+      "id": "bjerg_tds_2x45",
+      "name": "FaF 6 Bjerg - TdS 2 x 45 træning",
+      "category": "bjerg",
+      "load": "moderat",
+      "est_min": 134,
+      "purpose": "To stigninger af 45 minutter på 80%. Dette er et TRÆNINGSPAS, ikke en racesimulering — 80% kan ikke holdes i 13 timer af nogen.",
+      "erg": true,
+      "notes": "",
+      "tags": [
+        "bjerg",
+        "tds"
+      ],
+      "steps": [
+        {
+          "type": "ramp",
+          "min": 15,
+          "from": 45,
+          "to": 68,
+          "kind": "warmup",
+          "text": "Varm-op"
+        },
+        {
+          "type": "reps",
+          "n": 2,
+          "steps": [
+            {
+              "type": "steady",
+              "min": 1,
+              "pct": 95,
+              "text": "Åbner"
+            },
+            {
+              "type": "steady",
+              "min": 1,
+              "pct": 55,
+              "text": "Pause"
+            }
+          ]
+        },
+        {
+          "type": "steady",
+          "min": 5,
+          "pct": 62,
+          "text": "Let"
+        },
+        {
+          "type": "steady",
+          "min": 45,
+          "pct": 80,
+          "text": "STIGNING 1",
+          "cad": 74,
+          "msgs": [
+            [
+              900,
+              "DRIK"
+            ],
+            [
+              1800,
+              "SPIS"
+            ],
+            [
+              2400,
+              "Sidste 5"
+            ]
+          ]
+        },
+        {
+          "type": "steady",
+          "min": 10,
+          "pct": 55,
+          "text": "Nedkørsel",
+          "cad": 95,
+          "msgs": [
+            [
+              0,
+              "Spis og drik ordentligt"
+            ]
+          ]
+        },
+        {
+          "type": "steady",
+          "min": 45,
+          "pct": 80,
+          "text": "STIGNING 2",
+          "cad": 74,
+          "msgs": [
+            [
+              0,
+              "Samme tal. Her afgøres det."
+            ],
+            [
+              900,
+              "DRIK"
+            ],
+            [
+              1800,
+              "SPIS"
+            ],
+            [
+              2400,
+              "Hold watt hele vejen op"
+            ]
+          ]
+        },
+        {
+          "type": "ramp",
+          "min": 10,
+          "from": 60,
+          "to": 40,
+          "kind": "cooldown",
+          "text": "Cool-down"
+        }
+      ]
+    },
+    {
+      "id": "bjerg_tds_racepace",
+      "name": "FaF 6 Bjerg - TdS racepace 3 x 50",
+      "category": "bjerg",
+      "load": "let",
+      "est_min": 185,
+      "purpose": "Det faktiske Ultrafondo-tempo: 66-68% FTP i tre lange blokke. Formålet er pacing-disciplin, ikke belastning. Du skal lære hvor lavt det føles.",
+      "erg": false,
+      "notes": "IKKE ERG — hele pointen er at DU styrer watt. Ti års race-evalueringer siger du kører 20 W under target når det gælder; her øver du det modsatte problem: at blive på et lavt tal når benene vil mere.",
+      "tags": [
+        "bjerg",
+        "tds",
+        "pacing"
+      ],
+      "steps": [
+        {
+          "type": "ramp",
+          "min": 15,
+          "from": 45,
+          "to": 62,
+          "kind": "warmup",
+          "text": "Varm-op"
+        },
+        {
+          "type": "steady",
+          "min": 50,
+          "pct": 67,
+          "text": "BLOK 1",
+          "cad": 74,
+          "msgs": [
+            [
+              0,
+              "66-68%. Det føles latterligt let. Det er pointen."
+            ],
+            [
+              900,
+              "DRIK"
+            ],
+            [
+              1800,
+              "SPIS"
+            ],
+            [
+              2700,
+              "Bliv på tallet — kig ikke på følelsen"
+            ]
+          ]
+        },
+        {
+          "type": "steady",
+          "min": 10,
+          "pct": 55,
+          "text": "Depot",
+          "msgs": [
+            [
+              0,
+              "SPIS + DRIK"
+            ]
+          ]
+        },
+        {
+          "type": "steady",
+          "min": 50,
+          "pct": 67,
+          "text": "BLOK 2",
+          "cad": 74,
+          "msgs": [
+            [
+              900,
+              "DRIK"
+            ],
+            [
+              1800,
+              "SPIS"
+            ],
+            [
+              2400,
+              "Stadig samme watt?"
+            ]
+          ]
+        },
+        {
+          "type": "steady",
+          "min": 10,
+          "pct": 55,
+          "text": "Depot",
+          "msgs": [
+            [
+              0,
+              "SPIS + DRIK"
+            ]
+          ]
+        },
+        {
+          "type": "steady",
+          "min": 40,
+          "pct": 68,
+          "text": "BLOK 3",
+          "cad": 74,
+          "msgs": [
+            [
+              0,
+              "Sidste. Nu kommer fristelsen til at trykke."
+            ],
+            [
+              900,
+              "DRIK"
+            ],
+            [
+              1800,
+              "Hold igen."
+            ]
+          ]
+        },
+        {
+          "type": "ramp",
+          "min": 10,
+          "from": 58,
+          "to": 40,
+          "kind": "cooldown",
+          "text": "Cool-down"
+        }
+      ]
+    }
+  ]
+}

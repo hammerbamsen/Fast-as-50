@@ -502,6 +502,15 @@ def ow_swim(tot_min=45, label="Open water"):
     return {"name": f"OW-svøm {label} {tot_min} min", "type": "OpenWaterSwim",
             "moving_time": tot_min*60, "description": desc, "workout_doc": doc}
 
+# ── Kaelder-bibliotek (data/bike_library.json) ──────────────────
+# Én kilde til sandhed for indendørs cykelpas. Samme JSON genererer
+# Zwift-.zwo-filerne via scripts/build_zwo.py, så de to aldrig drifter.
+def bike_lib(workout_id):
+    """Hent et kaelderpas fra biblioteket i samme format som funktionerne ovenfor."""
+    from modules import bike_library
+    return bike_library.to_intervals(workout_id)
+
+
 def bike_sa_calobra():
     """Sa Calobra via Puig Major — tidlig afgang, op ad Puig Major, ned til Sa Calobra,
     de 26 sving op igen, retur. Stor fjeld-Z2-dag med Z3 på selve stigningerne."""
