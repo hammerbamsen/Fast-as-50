@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-08-30 12:03",
+    "updated": "2026-08-30 15:09",
     "week": 13,
     "totalWeeks": 16,
     "blockType": "BUILD",
@@ -24,13 +24,13 @@
       "color": "#C0392B"
     },
     "ctl": {
-      "value": "50,7",
+      "value": "52,3",
       "unit": "",
       "sub": "Uge 13-mål 47 · Slutmål 41 (uge 16)",
       "color": "#27AE60"
     },
     "tsb": {
-      "value": "2,7",
+      "value": "-4,8",
       "unit": "",
       "sub": "Form · CTL−ATL, frisk >0",
       "color": "#27AE60"
@@ -62,7 +62,7 @@
     "tssComp": {
       "value": "320",
       "unit": "TSS",
-      "sub": "320 af 207 planlagt TSS",
+      "sub": "320 af 172 planlagt TSS",
       "color": "#27AE60"
     },
     "bikeKm": {
@@ -78,19 +78,19 @@
       "color": "#27AE60"
     },
     "afStreak": {
-      "value": "0",
+      "value": "1",
       "unit": "",
       "sub": "Dage i træk · mål 6/uge",
       "color": "#59182A"
     }
   },
   "af": {
-    "weekDone": 5,
+    "weekDone": 6,
     "target": 6,
-    "streak": 0
+    "streak": 1
   },
-  "coachSpeech": "Søndag — afslut uge 13 stærkt. {HL} Godt: Søvn på 8,0 timer er solid. Fokus: Vægt på 73,0 kg — hold protein højt og undgå lette kulhydrater om aftenen. 5 AF-dage i 7 afsluttede dage — 1 mangler i 0 dage tilbage. Keep moving forward. 📊 Store billede: CTL 50,7 er 3.7 point FORAN ugeplanen (planmål uge 13: 47). Vægten har tabt 1.5 kg over de seneste 87 dage (74,5 → 73,0 kg).  \"Keep moving forward.\"",
-  "coachHighlight": "155 procent af ugens TSS er i hus",
+  "coachSpeech": "Søndag — afslut uge 13 stærkt. {HL} Godt: Søvn på 8,0 timer er solid. 6/7 AF-dage — ugens mål er ramt. Fokus: Vægt på 73,0 kg — hold protein højt og undgå lette kulhydrater om aftenen. Keep moving forward. 📊 Store billede: CTL 52,3 er 5.3 point FORAN ugeplanen (planmål uge 13: 47). Vægten har tabt 1.5 kg over de seneste 87 dage (74,5 → 73,0 kg).  \"Keep moving forward.\"",
+  "coachHighlight": "186 procent af ugens TSS er i hus",
   "weekFocus": "Bevar skarphed og ro — Médoc-rytmen sidder i benene",
   "today": [
     {
@@ -143,8 +143,7 @@
       "completion_pct": 99,
       "actual_tss": 110,
       "actual_mins": 94,
-      "actual_distance_m": 17827.77,
-      "intervals_compliance": 126.4
+      "actual_distance_m": 17827.77
     },
     {
       "day": "Tir",
@@ -197,21 +196,6 @@
     },
     {
       "day": "Lør",
-      "disc": "swim",
-      "label": "Svøm 2.000 m — Christiansborg Rundt",
-      "done": true,
-      "planned_tss": 35,
-      "planned_mins": 40,
-      "planned_distance_m": null,
-      "completion": "done",
-      "completion_pct": 114,
-      "actual_tss": 40,
-      "actual_mins": 42,
-      "actual_distance_m": 1988.01,
-      "intervals_compliance": 114.3
-    },
-    {
-      "day": "Lør",
       "disc": "commute",
       "label": "Gentofte Cykling",
       "done": true,
@@ -219,6 +203,16 @@
       "actual_tss": 13,
       "actual_mins": 34,
       "actual_distance_m": 9853.01
+    },
+    {
+      "day": "Lør",
+      "disc": "openwater",
+      "label": "København Svømning i åbent vand",
+      "done": true,
+      "extra": true,
+      "actual_tss": 40,
+      "actual_mins": 42,
+      "actual_distance_m": 1988.01
     },
     {
       "day": "Lør",
@@ -243,8 +237,7 @@
       "completion_pct": 101,
       "actual_tss": 69,
       "actual_mins": 90,
-      "actual_distance_m": 49238.15,
-      "intervals_compliance": 101.5
+      "actual_distance_m": 49238.15
     },
     {
       "day": "Søn",
@@ -271,7 +264,7 @@
     53.0,
     52.9,
     52.4,
-    50.7
+    52.3
   ],
   "weightHistory": [
     null,
@@ -1961,7 +1954,7 @@
     },
     {
       "date": "2026-08-30",
-      "v": 2.7,
+      "v": -4.7,
       "real": true
     }
   ],
@@ -2055,7 +2048,8 @@
     "2026-08-26": 0,
     "2026-08-27": 0,
     "2026-08-28": 0,
-    "2026-08-29": 1
+    "2026-08-29": 1,
+    "2026-08-30": 0
   },
   "all_weeks": {
     "1": {
@@ -3004,8 +2998,7 @@
           "completion_pct": 99,
           "actual_tss": 110,
           "actual_mins": 94,
-          "actual_distance_m": 17827.77,
-          "intervals_compliance": 126.4
+          "actual_distance_m": 17827.77
         },
         {
           "day": "Tir",
@@ -3058,21 +3051,6 @@
         },
         {
           "day": "Lør",
-          "disc": "swim",
-          "label": "Svøm 2.000 m — Christiansborg Rundt",
-          "done": true,
-          "planned_tss": 35,
-          "planned_mins": 40,
-          "planned_distance_m": null,
-          "completion": "done",
-          "completion_pct": 114,
-          "actual_tss": 40,
-          "actual_mins": 42,
-          "actual_distance_m": 1988.01,
-          "intervals_compliance": 114.3
-        },
-        {
-          "day": "Lør",
           "disc": "commute",
           "label": "Gentofte Cykling",
           "done": true,
@@ -3080,6 +3058,16 @@
           "actual_tss": 13,
           "actual_mins": 34,
           "actual_distance_m": 9853.01
+        },
+        {
+          "day": "Lør",
+          "disc": "openwater",
+          "label": "København Svømning i åbent vand",
+          "done": true,
+          "extra": true,
+          "actual_tss": 40,
+          "actual_mins": 42,
+          "actual_distance_m": 1988.01
         },
         {
           "day": "Lør",
@@ -3104,8 +3092,7 @@
           "completion_pct": 101,
           "actual_tss": 69,
           "actual_mins": 90,
-          "actual_distance_m": 49238.15,
-          "intervals_compliance": 101.5
+          "actual_distance_m": 49238.15
         },
         {
           "day": "Søn",
@@ -3436,7 +3423,7 @@
     },
     {
       "week": 13,
-      "done": 5,
+      "done": 6,
       "total": 7,
       "label": "Uge 13"
     }
@@ -3448,7 +3435,7 @@
     "openwater": 42.0,
     "walk": 240.0,
     "run": 94.0,
-    "planned": 245.0,
+    "planned": 205.0,
     "actual_total": 619.0
   },
   "fatHistory": [
@@ -3787,8 +3774,8 @@
       "real": true
     }
   ],
-  "coachAssessmentHtml": "<p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\"><strong>Dag 91 af 98 · Søndag · Uge 13</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">💪 <strong>Træning & load</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Cykelturen i dag leverede 69 TSS på 90 minutter med tre reps alle inden for target-zonen (222W, 223W, 227W) og et negativt split på 5W — det er godt udført. CTL ender på 50,7 med en TSB på 2,7, hvilket betyder du ankommer til uge 14 i nærmest perfekt balance: ladet op og frisk. Ingen røde flag på load-siden.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">⚖️ <strong>Krop & kost</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Dagens vejning viser 73,0 kg og 22,1% fedt. 7-dages snittet på vægt er 72,0 kg og på fedtprocent 21,4% — det er de tal der tæller for retningen. Du er 5,0 kg fra vægmålet og 5,4 procentpoint fra fedtprocent-målet på under 16% — begge dele har en vej endnu, og det er fedtprocenten der skal flytte sig, ikke bare vægten.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">🎯 <strong>AF-status & fokus for resten af ugen</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Du har 5 AF-dage ud af 7 dage gået i denne uge — der er stadig i dag tilbage, og målet er 6. Ugen slutter her på træningssiden, så det handler nu om at lande søndagen rigtigt og gå ind i uge 14 med ro i kroppen og skarphed i benene.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">📊 <strong>Store billede</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">CTL på 50,7 er 3,7 point foran ugeplanen (planmål uge 13: 47) — du har bygget mere kapacitet end planlagt, og det er et solidt udgangspunkt for finaleugen. Over de seneste 87 dage er vægten gået fra 74,5 kg til 73,0 kg — en reel bevægelse på 1,5 kg, men tempoet skal op hvis målet skal nås.</p>",
-  "coachAssessmentTs": "09:41",
+  "coachAssessmentHtml": "<p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\"><strong>Dag 91 af 98 · Søndag · Uge 13</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">💪 <strong>Træning & load</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">CTL er 52,3 med en TSB på -4,8 — kroppen er belastet, men inden for en fornuftig margin. Søndagens cykeltur leverede 69 TSS med tre reps alle inden for target-zonen (222W, 223W, 227W) og et svagt negativt split på 5W — det er præcis den kontrol der skal til i capacity-mode. Ugen som helhed har kombineret styrke, gåture, et solidt Z2-løb, åbent vand og to cykelture — en bred og fornuftig belastning.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">⚖️ <strong>Krop & kost</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Dagens vægt er 73,0 kg, og 7-dages snittet er 72,0 kg — retningen vurderes udelukkende på snittet, og det er det der tæller. Fedtprocenten er 22,1% i dag med et 7-dages snit på 21,4%, og snittet har været uændret de seneste 7 dage — det er et signal om at vægttabet ikke aktuelt hentes fra fedt. Mål er under 68 kg og under 16% fedt, så der er stadig et godt stykke vej på begge fronter — og det er fedtprocenten der skal bevæge sig, ikke kun vægten.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">🎯 <strong>AF-status & fokus for resten af ugen</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">6 AF-dage ud af 7 dage i ugen — det er præcis på målet. Der er ingen planlagte pas tilbage, så ugen lukker med ro. Fokus er at komme til mandag frisk: TSB er negativ og kroppen kan godt bruge natten til at reparere.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">📊 <strong>Store billede</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">CTL er 52,3 — det er 5,3 point foran ugeplanen, der satte 47 som mål for uge 13. Over de seneste 87 dage er vægten gået fra 74,5 kg til 73,0 kg, altså 1,5 kg ned. Fremgangen er reel, men tempoet er lavt set mod målet — og som nævnt ovenfor er fedtprocenten den vigtigste markør for om tabet faktisk er fedt og ikke bare muskler eller vand.</p>",
+  "coachAssessmentTs": "13:09",
   "commute_pairing_warnings": [],
   "warnings": [
     {
@@ -3797,7 +3784,7 @@
       "message": "HRV 51,0 ms — 15% under 7d-snit (60,0 ms). Kroppen er presset."
     }
   ],
-  "tsb": 2.7,
+  "tsb": -4.8,
   "swimHistory": [
     {
       "week": 1,
@@ -4099,10 +4086,10 @@
       "note": "Nøgle virker"
     }
   },
-  "credentialsCheckedTs": "2026-08-30T10:03:03.684082",
-  "coachAssessmentTsFull": "2026-08-30T09:41:53.990383",
+  "credentialsCheckedTs": "2026-08-30T13:09:33.799285",
+  "coachAssessmentTsFull": "2026-08-30T13:09:33.799267",
   "coachAssessmentWeightAtGen": 73.0,
-  "coachAssessmentAfAtGen": 5,
+  "coachAssessmentAfAtGen": 6,
   "event_structure_warnings": [],
   "coachAssessmentFatAtGen": 22.1,
   "zones": {
