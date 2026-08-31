@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-08-31 13:03",
+    "updated": "2026-08-31 20:04",
     "week": 14,
     "totalWeeks": 16,
     "blockType": "BUILD",
@@ -3573,8 +3573,8 @@
       "real": true
     }
   ],
-  "coachAssessmentHtml": "<p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\"><strong>Dag 92 af 98 · Mandag · Uge 14</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">💪 <strong>Træning & load</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">CTL ligger på 49,5 — godt over ugemålets 43 — og TSB på 4,9 viser at du er frisk og klar. Styrketræningen i dag landede på 20 min og 5 TSS, hvilket passer perfekt til en taper-uge hvor pointen er at holde kroppen aktiv uden at trække på reserverne. De resterende pas — cykel tirsdag, løb onsdag og et let løb fredag — er kortvarige og lette af en grund: du skal ankomme til Médoc med benzin på tanken, ikke tom.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">⚖️ <strong>Krop & kost</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Dagens vejning viser 73,1 kg og 22,6 % fedt. 7-dages snittet er 72,1 kg og 21,7 % fedt — og det er snittet der fortæller den reelle historie. Fedtprocent-snittet er steget 0,5 point over de seneste 7 dage, og det er den retning du skal holde øje med. Du er 5,1 kg fra vægmålet og 5,7 procentpoint fra fedtprocent-målet — begge afstande kræver at tabet sker i fedt, ikke muskelmasse, ellers tæller det ikke.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">🎯 <strong>AF-status & fokus for resten af ugen</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Du er 1/1 på AF-dage i den uge der er gået — det er godt. Médoc er lørdag, så hold linjen tørt frem til løbet — der er ingen gevinst i at teste vingummierne denne uge. Fokus er simpelt: sov, spis rent, gennemfør de tre korte pas og mød startlinjen frisk.</p>",
-  "coachAssessmentTs": "11:03",
+  "coachAssessmentHtml": "<p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\"><strong>Dag 92 af 98 · Mandag · Uge 14</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">💪 <strong>Træning & load</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">CTL ligger på 49,5 — godt over ugemålet på 43 — og TSB er 4,9, hvilket er præcis det positive hvilemæssige udgangspunkt du vil have ind i en taperafslutning. Styrketræningen i dag leverede 5 TSS på 20 minutter, passende og kontrolleret. Resten af ugen er let designet: cykel Z2 tirsdag, løb Z2 onsdag og et lille frisk-ben-løb fredag — hold dem præcist i de angivne zoner og undgå fristelsen til at presse. Du er skarp nok nu — opgaven er at bevare det.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">⚖️ <strong>Krop & kost</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Dagens vejning viser 73,1 kg og 22,6 % fedt — afstanden til målet er henholdsvis 5,1 kg og 6,6 procentpoint, begge kræver vedholdenhed. Det autoritative billede er 7-dages snittet: fedtprocenten er steget 0,5 point i snit over de seneste 7 dage — det er den reelle retning, og den er gal. Vægtsnittet på 72,1 kg er én ting, men hvis fedtprocenten kryber op mens vægten falder, taber du muskelmasse og ikke fedt — og det er det modsatte af hvad et capacity-år kræver. Hold proteinet højt de næste dage og tjek at kaloriereduktionen ikke æder din muskelmasse.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">🎯 <strong>AF-status & fokus for resten af ugen</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Du er 1/1 på AF-dage i ugen indtil nu — streaken er 2 dage, og det er en god start. Seks AF-dage denne uge er målet, og med Médoc på lørdag er det ikke bare et principspørgsmål — alkohol i taperen sænker søvnkvalitet og restitution mærkbart. Hold fokus: rolig uge, stramme zoner, ingen fristelser — og mødt frisk op lørdag.</p>",
+  "coachAssessmentTs": "18:04",
   "commute_pairing_warnings": [],
   "warnings": [],
   "tsb": 4.9,
@@ -3885,8 +3885,8 @@
       "note": "Nøgle virker"
     }
   },
-  "credentialsCheckedTs": "2026-08-31T11:03:16.700575",
-  "coachAssessmentTsFull": "2026-08-31T11:03:16.700560",
+  "credentialsCheckedTs": "2026-08-31T18:04:54.419649",
+  "coachAssessmentTsFull": "2026-08-31T18:04:54.419634",
   "coachAssessmentWeightAtGen": 73.1,
   "coachAssessmentAfAtGen": 1,
   "event_structure_warnings": [],
