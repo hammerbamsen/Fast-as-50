@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-08-31 20:04",
+    "updated": "2026-08-31 21:21",
     "week": 14,
     "totalWeeks": 16,
     "blockType": "BUILD",
@@ -24,13 +24,13 @@
       "color": "#C0392B"
     },
     "ctl": {
-      "value": "49,5",
+      "value": "49,8",
       "unit": "",
       "sub": "Uge 14-mål 43 · Slutmål 41 (uge 16)",
       "color": "#27AE60"
     },
     "tsb": {
-      "value": "4,9",
+      "value": "3,9",
       "unit": "",
       "sub": "Form · CTL−ATL, frisk >0",
       "color": "#27AE60"
@@ -60,9 +60,9 @@
       "color": "#7A6A58"
     },
     "tssComp": {
-      "value": "5",
+      "value": "15",
       "unit": "TSS",
-      "sub": "5 af 93 planlagt TSS",
+      "sub": "15 af 93 planlagt TSS",
       "color": "#C0392B"
     },
     "bikeKm": {
@@ -89,13 +89,21 @@
     "target": 6,
     "streak": 2
   },
-  "coachSpeech": "Ny uge starter — uge 14 af 16. Build-uge. {HL} Godt: 1 AF-dage i 1 gennemførte dage — på rette spor. 5 mere og ugens mål er i hus. Fokus: 5 af 93 TSS er i hus — 3 sessioner tilbage, heriblandt Cykel indendørs 45 min Z2, Løb Z2 30 min. Vægt på 73,1 kg — hold protein højt og undgå lette kulhydrater om aftenen. Keep moving forward.  \"Det er ikke om at have tid. Det er om at tage den.\"",
+  "coachSpeech": "Ny uge starter — uge 14 af 16. Build-uge. {HL} Godt: 1 AF-dage i 1 gennemførte dage — på rette spor. 5 mere og ugens mål er i hus. Fokus: 15 af 93 TSS er i hus — 3 sessioner tilbage, heriblandt Cykel indendørs 45 min Z2, Løb Z2 30 min. Vægt på 73,1 kg — hold protein højt og undgå lette kulhydrater om aftenen. Keep moving forward.  \"Det er ikke om at have tid. Det er om at tage den.\"",
   "coachHighlight": "Søvn på 8,0 timer er solid",
   "weekFocus": "Taper færdig — hold kroppen klar til Médoc-lørdagen",
   "today": [
     {
       "discipline": "strength",
       "title": "Styrke 25 min overkrop + core",
+      "duration": "",
+      "zone": "–",
+      "desc": "",
+      "completed": true
+    },
+    {
+      "discipline": "walk",
+      "title": "København Gang",
       "duration": "",
       "zone": "–",
       "desc": "",
@@ -117,6 +125,17 @@
       "actual_tss": 5,
       "actual_mins": 20,
       "actual_distance_m": null
+    },
+    {
+      "day": "Man",
+      "disc": "walk",
+      "label": "København Gang",
+      "done": true,
+      "extra": true,
+      "actual_tss": 10,
+      "actual_mins": 49,
+      "actual_distance_m": 4347.48,
+      "today": true
     },
     {
       "day": "Tir",
@@ -160,7 +179,7 @@
     52.9,
     52.4,
     50.7,
-    49.5
+    49.8
   ],
   "weightHistory": [
     null,
@@ -1854,7 +1873,7 @@
     },
     {
       "date": "2026-08-31",
-      "v": 5.0,
+      "v": 3.9,
       "real": true
     }
   ],
@@ -2919,6 +2938,17 @@
           "actual_distance_m": null
         },
         {
+          "day": "Man",
+          "disc": "walk",
+          "label": "København Gang",
+          "done": true,
+          "extra": true,
+          "actual_tss": 10,
+          "actual_mins": 49,
+          "actual_distance_m": 4347.48,
+          "today": true
+        },
+        {
           "day": "Tir",
           "disc": "bike",
           "label": "Cykel indendørs 45 min Z2",
@@ -3229,9 +3259,10 @@
     }
   ],
   "train_mins": {
+    "walk": 49.0,
     "strength": 20.0,
     "planned": 115.0,
-    "actual_total": 20.0
+    "actual_total": 69.0
   },
   "fatHistory": [
     null,
@@ -3573,11 +3604,11 @@
       "real": true
     }
   ],
-  "coachAssessmentHtml": "<p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\"><strong>Dag 92 af 98 · Mandag · Uge 14</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">💪 <strong>Træning & load</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">CTL ligger på 49,5 — godt over ugemålet på 43 — og TSB er 4,9, hvilket er præcis det positive hvilemæssige udgangspunkt du vil have ind i en taperafslutning. Styrketræningen i dag leverede 5 TSS på 20 minutter, passende og kontrolleret. Resten af ugen er let designet: cykel Z2 tirsdag, løb Z2 onsdag og et lille frisk-ben-løb fredag — hold dem præcist i de angivne zoner og undgå fristelsen til at presse. Du er skarp nok nu — opgaven er at bevare det.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">⚖️ <strong>Krop & kost</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Dagens vejning viser 73,1 kg og 22,6 % fedt — afstanden til målet er henholdsvis 5,1 kg og 6,6 procentpoint, begge kræver vedholdenhed. Det autoritative billede er 7-dages snittet: fedtprocenten er steget 0,5 point i snit over de seneste 7 dage — det er den reelle retning, og den er gal. Vægtsnittet på 72,1 kg er én ting, men hvis fedtprocenten kryber op mens vægten falder, taber du muskelmasse og ikke fedt — og det er det modsatte af hvad et capacity-år kræver. Hold proteinet højt de næste dage og tjek at kaloriereduktionen ikke æder din muskelmasse.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">🎯 <strong>AF-status & fokus for resten af ugen</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Du er 1/1 på AF-dage i ugen indtil nu — streaken er 2 dage, og det er en god start. Seks AF-dage denne uge er målet, og med Médoc på lørdag er det ikke bare et principspørgsmål — alkohol i taperen sænker søvnkvalitet og restitution mærkbart. Hold fokus: rolig uge, stramme zoner, ingen fristelser — og mødt frisk op lørdag.</p>",
-  "coachAssessmentTs": "18:04",
+  "coachAssessmentHtml": "<p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\"><strong>Dag 92 af 98 · Mandag · Uge 14</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">💪 <strong>Træning & load</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">CTL ligger på 49,8 — godt over ugens mål på 43 — og TSB er 3,9, så kroppen er klar og finjusteret til Médoc lørdag. Du fik 20 minutter styrke og core ind med 5 TSS, præcis det der hører til i en taper: nok til at holde musklerne aktiverede, ikke nok til at belaste. Tirsdag og onsdag er der stadig cykel og løb på programmet — hold dem korte og rolige, nøjagtigt som planlagt.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">⚖️ <strong>Krop & kost</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Dagen viser 73,1 kg og 22,6 % fedt, men 7-dages snittet — som er det autoritative tal — ligger på 72,1 kg og 21,7 % fedtprocent. Det er snittet der tæller for retningen, og fedtprocenten er faktisk steget 0,5 point over de seneste syv dage ifølge snittet. Afstanden til målet er 4,1 kg på vægten og 5,7 procentpoint på fedt. I en tapeuge er det ikke stedet at skrue op for kalorieunderskuddet — men hold styr på sukker og alkohol de næste dage, så du ikke går til start med ekstra ballast.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">🎯 <strong>AF-status & fokus for resten af ugen</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Du er 1/1 på AF-dage så langt i ugen — fin start. Seks AF-dage på syv er målet, og med Médoc lørdag giver det sig selv at holde tungen lige i munden de næste dage. Prioritér søvn, væske og enkle måltider — det er den reelle taper-disciplin nu.</p>",
+  "coachAssessmentTs": "19:21",
   "commute_pairing_warnings": [],
   "warnings": [],
-  "tsb": 4.9,
+  "tsb": 3.9,
   "swimHistory": [
     {
       "week": 1,
@@ -3664,7 +3695,7 @@
       "cumulative": 29362.0
     }
   ],
-  "coachAssessmentLastActId": "i181544151",
+  "coachAssessmentLastActId": "i181843815",
   "weekFocusWeek": 14,
   "coachAssessmentPlanAtGen": "Styrke 25 min overkrop + core",
   "weightGoal": 68,
@@ -3885,8 +3916,8 @@
       "note": "Nøgle virker"
     }
   },
-  "credentialsCheckedTs": "2026-08-31T18:04:54.419649",
-  "coachAssessmentTsFull": "2026-08-31T18:04:54.419634",
+  "credentialsCheckedTs": "2026-08-31T19:21:34.404965",
+  "coachAssessmentTsFull": "2026-08-31T19:21:34.404950",
   "coachAssessmentWeightAtGen": 73.1,
   "coachAssessmentAfAtGen": 1,
   "event_structure_warnings": [],
@@ -3986,7 +4017,7 @@
     "11": 374,
     "12": 367,
     "13": 320,
-    "14": 5
+    "14": 15
   },
   "racesUpcoming": [
     {
