@@ -1,111 +1,106 @@
 {
- "generated": "2026-08-31T19:21:36Z",
+ "generated": "2026-09-01T01:46:27Z",
  "kennet": {
   "seed": {
-   "date": "2026-08-31",
-   "ctl": 49.8,
-   "atl": 45.9
+   "date": "2026-09-01",
+   "ctl": 49.4,
+   "atl": 44.3
   },
   "projection": [
    {
-    "d": "2026-09-01",
-    "ctl": 49.2,
-    "tsb": 6.5
-   },
-   {
     "d": "2026-09-02",
-    "ctl": 48.6,
-    "tsb": 8.7
+    "ctl": 48.8,
+    "tsb": 7.5
    },
    {
     "d": "2026-09-03",
-    "ctl": 47.4,
-    "tsb": 13.2
+    "ctl": 47.6,
+    "tsb": 12.2
    },
    {
     "d": "2026-09-04",
-    "ctl": 46.8,
-    "tsb": 14.2
+    "ctl": 47.0,
+    "tsb": 13.4
    },
    {
     "d": "2026-09-05",
-    "ctl": 45.7,
-    "tsb": 17.7
+    "ctl": 45.9,
+    "tsb": 17.1
    },
    {
     "d": "2026-09-06",
-    "ctl": 44.6,
-    "tsb": 20.6
+    "ctl": 44.8,
+    "tsb": 20.1
    },
    {
     "d": "2026-09-07",
-    "ctl": 44.5,
-    "tsb": 18.5
+    "ctl": 44.7,
+    "tsb": 18.1
    },
    {
     "d": "2026-09-08",
-    "ctl": 44.3,
-    "tsb": 16.6
+    "ctl": 44.5,
+    "tsb": 16.3
    },
    {
     "d": "2026-09-09",
-    "ctl": 44.1,
-    "tsb": 15.0
+    "ctl": 44.3,
+    "tsb": 14.7
    },
    {
     "d": "2026-09-10",
-    "ctl": 44.0,
-    "tsb": 13.6
+    "ctl": 44.2,
+    "tsb": 13.4
    },
    {
     "d": "2026-09-11",
-    "ctl": 43.8,
-    "tsb": 12.4
+    "ctl": 44.0,
+    "tsb": 12.2
    },
    {
     "d": "2026-09-12",
-    "ctl": 43.7,
-    "tsb": 11.4
+    "ctl": 43.9,
+    "tsb": 11.2
    },
    {
     "d": "2026-09-13",
-    "ctl": 43.6,
-    "tsb": 10.4
+    "ctl": 43.7,
+    "tsb": 10.3
    },
    {
     "d": "2026-09-14",
-    "ctl": 43.7,
+    "ctl": 43.8,
     "tsb": 8.4
    },
    {
     "d": "2026-09-15",
-    "ctl": 43.8,
+    "ctl": 43.9,
     "tsb": 6.7
    },
    {
     "d": "2026-09-16",
-    "ctl": 43.9,
+    "ctl": 44.0,
     "tsb": 5.2
    },
    {
     "d": "2026-09-17",
-    "ctl": 44.0,
+    "ctl": 44.1,
     "tsb": 4.0
    },
    {
     "d": "2026-09-18",
-    "ctl": 44.1,
-    "tsb": 2.9
+    "ctl": 44.2,
+    "tsb": 3.0
    },
    {
     "d": "2026-09-19",
-    "ctl": 44.2,
+    "ctl": 44.3,
     "tsb": 2.1
    },
    {
     "d": "2026-09-20",
-    "ctl": 44.3,
-    "tsb": 1.3
+    "ctl": 44.4,
+    "tsb": 1.4
    }
   ],
   "weeks": [
@@ -221,26 +216,26 @@
    },
    {
     "week": 14,
-    "projEndCtl": 44.6,
-    "deviation": 1.6,
+    "projEndCtl": 44.8,
+    "deviation": 1.8,
     "flags": []
    },
    {
     "week": 15,
-    "projEndCtl": 43.6,
-    "deviation": 3.6,
+    "projEndCtl": 43.7,
+    "deviation": 3.7,
     "flags": []
    },
    {
     "week": 16,
-    "projEndCtl": 44.3,
-    "deviation": 3.3,
+    "projEndCtl": 44.4,
+    "deviation": 3.4,
     "flags": [
      {
       "week": 16,
       "rule": "race_tsb",
       "level": "WARN",
-      "msg": "TSB 1.3 på race-dag (CPH Half) — mål +5 til +15",
+      "msg": "TSB 1.4 på race-dag (CPH Half) — mål +5 til +15",
       "historic": false
      }
     ]
@@ -279,7 +274,7 @@
     "week": 16,
     "rule": "race_tsb",
     "level": "WARN",
-    "msg": "TSB 1.3 på race-dag (CPH Half) — mål +5 til +15",
+    "msg": "TSB 1.4 på race-dag (CPH Half) — mål +5 til +15",
     "historic": false
    }
   ],
@@ -293,5 +288,5 @@
   },
   "readiness": "HIGH"
  },
- "inputsHash": "ee3a5cf8078e10e4"
+ "inputsHash": "8665ada814968c3c"
 }
