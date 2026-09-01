@@ -1,20 +1,20 @@
 {
   "meta": {
-    "updated": "2026-09-01 00:58",
+    "updated": "2026-09-01 03:46",
     "week": 14,
     "totalWeeks": 16,
     "blockType": "BUILD",
-    "daysToMedoc": 5,
-    "daysToChristiansborg": -2,
-    "dayName": "Mandag",
-    "date": "31. aug",
+    "daysToMedoc": 4,
+    "daysToChristiansborg": -3,
+    "dayName": "Tirsdag",
+    "date": "1. sep",
     "rhrField": "restingHR"
   },
   "kpis": {
     "weight": {
       "value": "73,1",
       "unit": "kg",
-      "sub": "Mål <68 kg · snit 72,1 kg",
+      "sub": "Sidst målt 31/8 · Mål <68 kg · snit 72,1 kg",
       "color": "#E67E22"
     },
     "fat": {
@@ -24,19 +24,19 @@
       "color": "#C0392B"
     },
     "ctl": {
-      "value": "49,8",
+      "value": "49,4",
       "unit": "",
       "sub": "Uge 14-mål 43 · Slutmål 41 (uge 16)",
       "color": "#27AE60"
     },
     "tsb": {
-      "value": "3,9",
+      "value": "5,1",
       "unit": "",
       "sub": "Form · CTL−ATL, frisk >0",
       "color": "#27AE60"
     },
     "sleep": {
-      "value": "8,0",
+      "value": "8,2",
       "unit": "t",
       "sub": "Snit 7,5t · mål 7t",
       "color": "#2874A6"
@@ -48,13 +48,13 @@
       "color": "#7A6A58"
     },
     "hrv": {
-      "value": "60,2",
+      "value": "60,4",
       "unit": "ms",
       "sub": "Snit 7d",
       "color": "#7A6A58"
     },
     "rhr": {
-      "value": "42",
+      "value": "43",
       "unit": "slag",
       "sub": "Hvilepuls · snit 7d",
       "color": "#7A6A58"
@@ -89,25 +89,17 @@
     "target": 6,
     "streak": 2
   },
-  "coachSpeech": "Ny uge starter — uge 14 af 16. Build-uge. {HL} Godt: 1 AF-dage i 1 gennemførte dage — på rette spor. 5 mere og ugens mål er i hus. Fokus: 15 af 93 TSS er i hus — 3 sessioner tilbage, heriblandt Cykel indendørs 45 min Z2, Løb Z2 30 min. Vægt på 73,1 kg — hold protein højt og undgå lette kulhydrater om aftenen. Keep moving forward.  \"Det er ikke om at have tid. Det er om at tage den.\"",
-  "coachHighlight": "Søvn på 8,0 timer er solid",
+  "coachSpeech": "Tirsdag — uge 14 af 16. {HL} Fokus: 15 af 93 TSS er i hus — 3 sessioner tilbage, heriblandt Cykel indendørs 45 min Z2, Løb Z2 30 min. Vægt på 73,1 kg (målt 31/8) — hold protein højt og undgå lette kulhydrater om aftenen. 1 AF-dage i 2 afsluttede dage — 5 mangler i 5 dage tilbage. Hård uge — men det er sådan formen bygges. Hold ved.  \"Kroppen tror, hvad sindet siger.\"",
+  "coachHighlight": "Søvn på 8,2 timer er solid",
   "weekFocus": "Taper færdig — hold kroppen klar til Médoc-lørdagen",
   "today": [
     {
-      "discipline": "strength",
-      "title": "Styrke 25 min overkrop + core",
+      "discipline": "bike",
+      "title": "Cykel indendørs 45 min Z2",
       "duration": "",
       "zone": "–",
       "desc": "",
-      "completed": true
-    },
-    {
-      "discipline": "walk",
-      "title": "København Gang",
-      "duration": "",
-      "zone": "–",
-      "desc": "",
-      "completed": true
+      "completed": false
     }
   ],
   "week_sessions": [
@@ -119,7 +111,6 @@
       "planned_tss": 17,
       "planned_mins": 25,
       "planned_distance_m": null,
-      "today": true,
       "completion": "partial",
       "completion_pct": 29,
       "actual_tss": 5,
@@ -134,8 +125,7 @@
       "extra": true,
       "actual_tss": 10,
       "actual_mins": 49,
-      "actual_distance_m": 4347.48,
-      "today": true
+      "actual_distance_m": 4347.48
     },
     {
       "day": "Tir",
@@ -144,7 +134,8 @@
       "done": false,
       "planned_tss": 34,
       "planned_mins": 45,
-      "planned_distance_m": null
+      "planned_distance_m": null,
+      "today": true
     },
     {
       "day": "Ons",
@@ -179,10 +170,9 @@
     52.9,
     52.4,
     50.7,
-    49.8
+    49.4
   ],
   "weightHistory": [
-    null,
     {
       "date": "2026-06-04",
       "v": 74.5,
@@ -519,14 +509,10 @@
       "date": "2026-08-31",
       "v": 73.1,
       "real": true
-    }
+    },
+    null
   ],
   "hrvHistory": [
-    {
-      "date": "2026-06-03",
-      "v": 50.0,
-      "real": true
-    },
     {
       "date": "2026-06-04",
       "v": 43.0,
@@ -971,14 +957,10 @@
       "date": "2026-08-31",
       "v": 63.0,
       "real": true
-    }
+    },
+    null
   ],
   "sleepHistory": [
-    {
-      "date": "2026-06-03",
-      "v": 6.3,
-      "real": true
-    },
     {
       "date": "2026-06-04",
       "v": 7.9,
@@ -1423,14 +1405,10 @@
       "date": "2026-08-31",
       "v": 7.7,
       "real": true
-    }
+    },
+    null
   ],
   "tsbHistory": [
-    {
-      "date": "2026-06-03",
-      "v": -7.5,
-      "real": true
-    },
     {
       "date": "2026-06-04",
       "v": -4.5,
@@ -1874,6 +1852,11 @@
     {
       "date": "2026-08-31",
       "v": 3.9,
+      "real": true
+    },
+    {
+      "date": "2026-09-01",
+      "v": 5.1,
       "real": true
     }
   ],
@@ -2930,7 +2913,6 @@
           "planned_tss": 17,
           "planned_mins": 25,
           "planned_distance_m": null,
-          "today": true,
           "completion": "partial",
           "completion_pct": 29,
           "actual_tss": 5,
@@ -2945,8 +2927,7 @@
           "extra": true,
           "actual_tss": 10,
           "actual_mins": 49,
-          "actual_distance_m": 4347.48,
-          "today": true
+          "actual_distance_m": 4347.48
         },
         {
           "day": "Tir",
@@ -2955,7 +2936,8 @@
           "done": false,
           "planned_tss": 34,
           "planned_mins": 45,
-          "planned_distance_m": null
+          "planned_distance_m": null,
+          "today": true
         },
         {
           "day": "Ons",
@@ -3254,7 +3236,7 @@
     {
       "week": 14,
       "done": 1,
-      "total": 1,
+      "total": 2,
       "label": "Uge 14"
     }
   ],
@@ -3265,7 +3247,6 @@
     "actual_total": 69.0
   },
   "fatHistory": [
-    null,
     {
       "date": "2026-06-04",
       "v": 22.9,
@@ -3602,13 +3583,14 @@
       "date": "2026-08-31",
       "v": 22.6,
       "real": true
-    }
+    },
+    null
   ],
-  "coachAssessmentHtml": "<p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\"><strong>Dag 92 af 98 · Mandag · Uge 14</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">💪 <strong>Træning & load</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">CTL ligger på 49,8 — godt over ugens mål på 43 — og TSB er 3,9, så kroppen er klar og finjusteret til Médoc lørdag. Du fik 20 minutter styrke og core ind med 5 TSS, præcis det der hører til i en taper: nok til at holde musklerne aktiverede, ikke nok til at belaste. Tirsdag og onsdag er der stadig cykel og løb på programmet — hold dem korte og rolige, nøjagtigt som planlagt.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">⚖️ <strong>Krop & kost</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Dagen viser 73,1 kg og 22,6 % fedt, men 7-dages snittet — som er det autoritative tal — ligger på 72,1 kg og 21,7 % fedtprocent. Det er snittet der tæller for retningen, og fedtprocenten er faktisk steget 0,5 point over de seneste syv dage ifølge snittet. Afstanden til målet er 4,1 kg på vægten og 5,7 procentpoint på fedt. I en tapeuge er det ikke stedet at skrue op for kalorieunderskuddet — men hold styr på sukker og alkohol de næste dage, så du ikke går til start med ekstra ballast.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">🎯 <strong>AF-status & fokus for resten af ugen</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Du er 1/1 på AF-dage så langt i ugen — fin start. Seks AF-dage på syv er målet, og med Médoc lørdag giver det sig selv at holde tungen lige i munden de næste dage. Prioritér søvn, væske og enkle måltider — det er den reelle taper-disciplin nu.</p>",
-  "coachAssessmentTs": "19:21",
+  "coachAssessmentHtml": "<p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\"><strong>Dag 93 af 98 · Tirsdag · Uge 14</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">💪 <strong>Træning & load</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">CTL er 49,4 med TSB på 5,1 — kroppen er udhvilet og klar, præcis som den skal være tre dage før Médoc. Ugen har indtil videre givet 15 TSS fra styrke og gåtur, og i dag venter 45 min cykel Z2 indendørs — hold wattene stabilt i Z2 og lad det være et aktivt frihjul, ikke et pres. Ons-løbet på 30 min Z2 og Fre's lette 15 min er alt hvad der skal til herfra — gør ikke mere, gør det rigtigt.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">⚖️ <strong>Krop & kost</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Vægten var 73,1 kg ved seneste vejning 31/8 — 5,1 kg fra målet. 7-dages snittet er 72,2 kg, som er det retvisende billede. Fedtprocenten var 22,6 % den 31/8 — 6,6 procentpoint fra målet på under 16 %; 7-dages snittet er 21,7 %, og det er steget 0,5 point over de seneste 7 dage, hvilket er den reelle retning at holde øje med. Vægten falder, men fedtprocenten bevæger sig opad — det mønster fortæller at det er muskelmasse der forsvinder, ikke fedt, og det er ikke fremgang i et capacity-år. Hold proteinen høj og sørg for at søvn og restitution er i orden denne uge — det er der du kan gøre en forskel nu.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">🎯 <strong>AF-status & fokus for resten af ugen</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Du har 1 AF-dag ud af 2 dage gået i ugen — det er et fornuftigt udgangspunkt med mål om 6 AF-dage. Resten af ugen er enkel: to korte løbeture og en cykel i dag, og ellers handler det om at sove godt, spise rigtigt og komme til start på lørdag med friske ben. Lad være med at \"gøre noget ekstra\" — din krop er klar, og jobbet nu er at holde den der.</p>",
+  "coachAssessmentTs": "01:46",
   "commute_pairing_warnings": [],
   "warnings": [],
-  "tsb": 3.9,
+  "tsb": 5.1,
   "swimHistory": [
     {
       "week": 1,
@@ -3697,11 +3679,10 @@
   ],
   "coachAssessmentLastActId": "i181843815",
   "weekFocusWeek": 14,
-  "coachAssessmentPlanAtGen": "Styrke 25 min overkrop + core",
+  "coachAssessmentPlanAtGen": "Cykel indendørs 45 min Z2",
   "weightGoal": 68,
   "bodyFatGoal": 16,
   "weightMovingAvg7": [
-    null,
     null,
     null,
     74.8,
@@ -3790,10 +3771,10 @@
     71.82,
     71.8,
     71.97,
-    72.14
+    72.14,
+    72.25
   ],
   "fatMovingAvg7": [
-    null,
     null,
     null,
     22.8,
@@ -3882,7 +3863,8 @@
     21.37,
     21.33,
     21.44,
-    21.71
+    21.71,
+    21.73
   ],
   "weightToGoal": 5.1,
   "bodyFatToGoal": 6.6,
@@ -3916,8 +3898,8 @@
       "note": "Nøgle virker"
     }
   },
-  "credentialsCheckedTs": "2026-08-31T22:58:13.432896",
-  "coachAssessmentTsFull": "2026-08-31T19:21:34.404950",
+  "credentialsCheckedTs": "2026-09-01T01:46:24.894155",
+  "coachAssessmentTsFull": "2026-09-01T01:46:24.894136",
   "coachAssessmentWeightAtGen": 73.1,
   "coachAssessmentAfAtGen": 1,
   "event_structure_warnings": [],
@@ -4023,7 +4005,7 @@
     {
       "name": "Santini Stelvio Gran Fondo (lang rute)",
       "date": "2027-06-06",
-      "days": 279,
+      "days": 278,
       "priority": "B",
       "distance": "130km / 4500hm",
       "registered": true
@@ -4031,7 +4013,7 @@
     {
       "name": "Tour des Stations Ultrafondo",
       "date": "2027-08-28",
-      "days": 362,
+      "days": 361,
       "priority": "A",
       "distance": "242km / 8848hm",
       "registered": false
@@ -4226,10 +4208,10 @@
   "efTrend": {
     "run": {
       "current": 1.352,
-      "previous": 1.348,
-      "pct": 0.3,
+      "previous": 1.336,
+      "pct": 1.2,
       "n": 4,
-      "n_prev": 5,
+      "n_prev": 4,
       "window": 42,
       "thin": false
     },
@@ -4244,11 +4226,6 @@
     }
   },
   "rhrHistory": [
-    {
-      "date": "2026-06-03",
-      "v": 40,
-      "real": true
-    },
     {
       "date": "2026-06-04",
       "v": 42,
@@ -4692,6 +4669,11 @@
     {
       "date": "2026-08-31",
       "v": 42,
+      "real": true
+    },
+    {
+      "date": "2026-09-01",
+      "v": 47,
       "real": true
     }
   ],
