@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-09-01 09:22",
+    "updated": "2026-09-01 12:17",
     "week": 14,
     "totalWeeks": 16,
     "blockType": "BUILD",
@@ -24,13 +24,13 @@
       "color": "#C0392B"
     },
     "ctl": {
-      "value": "49,3",
+      "value": "49,7",
       "unit": "",
       "sub": "Uge 14-mål 43 · Slutmål 41 (uge 16)",
       "color": "#27AE60"
     },
     "tsb": {
-      "value": "7,4",
+      "value": "5,8",
       "unit": "",
       "sub": "Form · CTL−ATL, frisk >0",
       "color": "#27AE60"
@@ -60,9 +60,9 @@
       "color": "#7A6A58"
     },
     "tssComp": {
-      "value": "46",
+      "value": "61",
       "unit": "TSS",
-      "sub": "46 af 93 planlagt TSS",
+      "sub": "61 af 93 planlagt TSS",
       "color": "#C0392B"
     },
     "bikeKm": {
@@ -89,13 +89,21 @@
     "target": 6,
     "streak": 2
   },
-  "coachSpeech": "Tirsdag — uge 14 af 16. {HL} Fokus: 46 af 93 TSS er i hus — 2 sessioner tilbage, heriblandt Løb Z2 30 min, Løb Z1 15 min let. Vægt på 72,2 kg — hold protein højt og undgå lette kulhydrater om aftenen. 1 AF-dage i 2 afsluttede dage — 5 mangler i 5 dage tilbage. Hård uge — men det er sådan formen bygges. Hold ved. ❤️ Aerobt: Cykelpasset 1/9 (snitpuls 125) kostede 5,6 % mere puls pr. meter end medianen af de seneste 5 sammenlignelige pas (EF 1,416 mod 1,500). Konkluder ikke overtræning ud fra ét pas — sig hvad passet kostede, og at det enten var varmen eller for højt tempo.  \"Kroppen tror, hvad sindet siger.\"",
+  "coachSpeech": "Tirsdag — uge 14 af 16. {HL} Fokus: 61 af 93 TSS er i hus — 2 sessioner tilbage, heriblandt Løb Z2 30 min, Løb Z1 15 min let. Vægt på 72,2 kg — hold protein højt og undgå lette kulhydrater om aftenen. 1 AF-dage i 2 afsluttede dage — 5 mangler i 5 dage tilbage. Hård uge — men det er sådan formen bygges. Hold ved. ❤️ Aerobt: Cykelpasset 1/9 (snitpuls 125) kostede 5,6 % mere puls pr. meter end medianen af de seneste 5 sammenlignelige pas (EF 1,416 mod 1,500). Konkluder ikke overtræning ud fra ét pas — sig hvad passet kostede, og at det enten var varmen eller for højt tempo.  \"Kroppen tror, hvad sindet siger.\"",
   "coachHighlight": "Søvn på 8,1 timer er solid",
   "weekFocus": "Taper færdig — hold kroppen klar til Médoc-lørdagen",
   "today": [
     {
       "discipline": "bike",
       "title": "Cykel indendørs 45 min Z2",
+      "duration": "",
+      "zone": "–",
+      "desc": "",
+      "completed": true
+    },
+    {
+      "discipline": "walk",
+      "title": "Gentofte Gang",
       "duration": "",
       "zone": "–",
       "desc": "",
@@ -144,6 +152,17 @@
       "intervals_compliance": 91.2
     },
     {
+      "day": "Tir",
+      "disc": "walk",
+      "label": "Gentofte Gang",
+      "done": true,
+      "extra": true,
+      "actual_tss": 15,
+      "actual_mins": 52,
+      "actual_distance_m": 4850.24,
+      "today": true
+    },
+    {
       "day": "Ons",
       "disc": "run",
       "label": "Løb Z2 30 min",
@@ -176,7 +195,7 @@
     52.9,
     52.4,
     50.7,
-    49.3
+    49.7
   ],
   "weightHistory": [
     {
@@ -1874,7 +1893,7 @@
     },
     {
       "date": "2026-09-01",
-      "v": 7.4,
+      "v": 5.7,
       "real": true
     }
   ],
@@ -2964,6 +2983,17 @@
           "intervals_compliance": 91.2
         },
         {
+          "day": "Tir",
+          "disc": "walk",
+          "label": "Gentofte Gang",
+          "done": true,
+          "extra": true,
+          "actual_tss": 15,
+          "actual_mins": 52,
+          "actual_distance_m": 4850.24,
+          "today": true
+        },
+        {
           "day": "Ons",
           "disc": "run",
           "label": "Løb Z2 30 min",
@@ -3265,11 +3295,11 @@
     }
   ],
   "train_mins": {
+    "walk": 101.0,
     "bike": 45.0,
-    "walk": 49.0,
     "strength": 20.0,
     "planned": 115.0,
-    "actual_total": 114.0
+    "actual_total": 166.0
   },
   "fatHistory": [
     {
@@ -3615,11 +3645,11 @@
       "real": true
     }
   ],
-  "coachAssessmentHtml": "<p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\"><strong>Dag 93 af 98 · Tirsdag · Uge 14</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">💪 <strong>Træning & load</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Cykelpasset i dag gav 31 TSS over 45 min og 23,9 km — zone-compliance var on target, med 86,6 % af tiden i Z2-watt og de resterende 13,4 % på frihjul/nedkørsler, ikke lav indsats. Bemærk dog: snitpulsen på 125 kostede 5,6 % mere pr. meter end medianen for de seneste 5 sammenlignelige pas (EF 1,416 mod 1,500) — forklaringen er sandsynligvis varmen eller at tempoet lå en anelse for højt; husk det til næste indendørstur. CTL er 49,3 og TSB er 7,4 — du er i god restitutionsbalance og ramt præcis rigtigt til Médoc lørdag. Ons-løbeturen på 30 min Z2 og Fre's lette 15 min Z1 holder kroppen i gang uden at trykke TSB ned.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">⚖️ <strong>Krop & kost</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Dagens vægt er 72,2 kg — 4,2 kg fra målet under 68 kg. Fedtprocenten er målt til 20,8 % i dag, men 7-dages snittet er det autoritative tal for retning, og det ligger på 21,6 % og er steget 0,4 procentpoint over de seneste 7 dage — det er den reelle tendens, og den går den forkerte vej. Vægten alene siger lidt; det er fedtprocenten der afgør om du bevæger dig mod målet på under 16 %, og her peger snittet i den forkerte retning. I en taper-uge med lavt volumen er det svært at flytte fedtprocenten nedad — hold særligt fokus på kostvalg de næste dage.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">🎯 <strong>AF-status & fokus for resten af ugen</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Du har 1 AF-dag ud af 2 dage gået i ugen — det er godkendt. Resten af ugen handler om ét: ankom til Médoc-startstregen med friske ben og et skud selvtillid i kroppen. De to korte løbeture onsdag og fredag er nok til at holde fornemmelsen, og du behøver ikke tilføje noget ekstra. Hold alkoholen fra nu og frem til løbet — både for restitutionen og for at give AF-tæller og fedtprocent de bedste betingelser.</p>",
-  "coachAssessmentTs": "06:17",
+  "coachAssessmentHtml": "<p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\"><strong>Dag 93 af 98 · Tirsdag · Uge 14</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">💪 <strong>Træning & load</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Cykelpasset i dag gav 31 TSS på 45 min — godt gennemført, og zone-compliance var on target med 86,6 % af tiden i Z2 (watt). Det seneste cykelkørte pas kostede 5,6 % mere puls pr. watt end medianen af de fem foregående sammenlignelige pas (EF 1,416 mod 1,500) — forklaringen er sandsynligvis varmen eller et lidt for højt tempo, ikke et tegn på overbelastning. CTL ligger på 49,7 med TSB på +5,8 — kroppen er frisk og klar, præcis som den skal være i en taperende uge op mod Médoc lørdag. Løbet onsdag (Z2, 30 min) og det lette løb fredag (Z1, 15 min) holder dig aktiv uden at trække på restitutionen.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">⚖️ <strong>Krop & kost</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Vægten er 72,2 kg i dag — 4,2 kg fra målet under 68 kg. Fedtprocenten er 20,8 % i dag mod målet på under 16 %. Det vigtige her er retningen: 7-dages snittet for fedtprocent er 21,6 % og er steget 0,4 procentpoint over de seneste syv dage — det er den reelle retning, og den går den forkerte vej lige nu. Hold øje med om kalorierne matcher det reducerede træningsvolumen i taperugen, og prioritér protein for at beskytte muskelmassen.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">🎯 <strong>AF-status & fokus for resten af ugen</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Du er 1 AF-dag ud af 2 dage gået denne uge — det holder. Fokus nu er enkelt: kom til startstregen lørdag med friske ben og et roligt hoved. De to resterende pas er bevidst korte — lad dem være det, og modstå fristelsen til at \"kompensere\" med ekstra indsats.</p>",
+  "coachAssessmentTs": "10:17",
   "commute_pairing_warnings": [],
   "warnings": [],
-  "tsb": 7.4,
+  "tsb": 5.8,
   "swimHistory": [
     {
       "week": 1,
@@ -3706,7 +3736,7 @@
       "cumulative": 29362.0
     }
   ],
-  "coachAssessmentLastActId": "i181943048",
+  "coachAssessmentLastActId": "i182010317",
   "weekFocusWeek": 14,
   "coachAssessmentPlanAtGen": "Cykel indendørs 45 min Z2",
   "weightGoal": 68,
@@ -3927,8 +3957,8 @@
       "note": "Nøgle virker"
     }
   },
-  "credentialsCheckedTs": "2026-09-01T07:22:19.653013",
-  "coachAssessmentTsFull": "2026-09-01T06:17:11.013913",
+  "credentialsCheckedTs": "2026-09-01T10:17:50.767868",
+  "coachAssessmentTsFull": "2026-09-01T10:17:50.767849",
   "coachAssessmentWeightAtGen": 72.2,
   "coachAssessmentAfAtGen": 1,
   "event_structure_warnings": [],
@@ -4028,7 +4058,7 @@
     "11": 374,
     "12": 367,
     "13": 320,
-    "14": 46
+    "14": 61
   },
   "racesUpcoming": [
     {
