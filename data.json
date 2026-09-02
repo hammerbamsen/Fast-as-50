@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-09-02 16:08",
+    "updated": "2026-09-02 19:15",
     "week": 14,
     "totalWeeks": 16,
     "blockType": "BUILD",
@@ -62,8 +62,8 @@
     "tssComp": {
       "value": "110",
       "unit": "TSS",
-      "sub": "110 af 93 planlagt TSS",
-      "color": "#27AE60"
+      "sub": "110 af 138 planlagt TSS",
+      "color": "#E67E22"
     },
     "bikeKm": {
       "value": "23,9",
@@ -78,7 +78,7 @@
       "color": "#7A6A58"
     },
     "afStreak": {
-      "value": "3",
+      "value": "0",
       "unit": "",
       "sub": "Dage i træk · mål 6/uge",
       "color": "#59182A"
@@ -87,10 +87,10 @@
   "af": {
     "weekDone": 2,
     "target": 6,
-    "streak": 3
+    "streak": 0
   },
-  "coachSpeech": "Onsdag — uge 14 af 16. {HL} Godt: Søvn på 8,1 timer er solid. Fokus: Vægt på 72,3 kg — hold protein højt og undgå lette kulhydrater om aftenen. 2 AF-dage i 3 afsluttede dage — 4 mangler i 4 dage tilbage. Keep moving forward. ❤️ Aerobt: Cykelpasset 1/9 (snitpuls 125) kostede 5,6 % mere puls pr. meter end medianen af de seneste 5 sammenlignelige pas (EF 1,416 mod 1,500). Konkluder ikke overtræning ud fra ét pas — sig hvad passet kostede, og at det enten var varmen eller for højt tempo.  \"Sæt målet højt, men sæt i dag realistisk.\"",
-  "coachHighlight": "118 procent af ugens TSS er i hus",
+  "coachSpeech": "Onsdag — uge 14 af 16. {HL} Fokus: 110 af 138 TSS er i hus — 2 sessioner tilbage, heriblandt Cykel indendørs 60 min race-uge åbnere, Løb Z1 15 min let. Vægt på 72,3 kg — hold protein højt og undgå lette kulhydrater om aftenen. 2 AF-dage i 3 afsluttede dage — 4 mangler i 4 dage tilbage. Hård uge — men det er sådan formen bygges. Hold ved. ❤️ Aerobt: Cykelpasset 1/9 (snitpuls 125) kostede 5,6 % mere puls pr. meter end medianen af de seneste 5 sammenlignelige pas (EF 1,416 mod 1,500). Konkluder ikke overtræning ud fra ét pas — sig hvad passet kostede, og at det enten var varmen eller for højt tempo.  \"Sæt målet højt, men sæt i dag realistisk.\"",
+  "coachHighlight": "Søvn på 8,1 timer er solid",
   "weekFocus": "Taper færdig — hold kroppen klar til Médoc-lørdagen",
   "today": [
     {
@@ -177,6 +177,15 @@
       "actual_mins": 33,
       "actual_distance_m": 6588.52,
       "intervals_compliance": 150.0
+    },
+    {
+      "day": "Tor",
+      "disc": "bike",
+      "label": "Cykel indendørs 60 min race-uge åbnere",
+      "done": false,
+      "planned_tss": 45,
+      "planned_mins": 60,
+      "planned_distance_m": null
     },
     {
       "day": "Fre",
@@ -1997,7 +2006,8 @@
     "2026-08-29": 1,
     "2026-08-30": 0,
     "2026-08-31": 0,
-    "2026-09-01": 0
+    "2026-09-01": 0,
+    "2026-09-02": 1
   },
   "all_weeks": {
     "1": {
@@ -3026,6 +3036,15 @@
           "intervals_compliance": 150.0
         },
         {
+          "day": "Tor",
+          "disc": "bike",
+          "label": "Cykel indendørs 60 min race-uge åbnere",
+          "done": false,
+          "planned_tss": 45,
+          "planned_mins": 60,
+          "planned_distance_m": null
+        },
+        {
           "day": "Fre",
           "disc": "run",
           "label": "Løb Z1 15 min let",
@@ -3322,7 +3341,7 @@
     "strength": 40.0,
     "walk": 101.0,
     "bike": 45.0,
-    "planned": 115.0,
+    "planned": 175.0,
     "actual_total": 219.0
   },
   "fatHistory": [
@@ -3981,11 +4000,21 @@
       "note": "Nøgle virker"
     }
   },
-  "credentialsCheckedTs": "2026-09-02T14:08:39.559408",
+  "credentialsCheckedTs": "2026-09-02T17:15:28.505941",
   "coachAssessmentTsFull": "2026-09-02T14:08:39.559391",
   "coachAssessmentWeightAtGen": 72.3,
   "coachAssessmentAfAtGen": 2,
-  "event_structure_warnings": [],
+  "event_structure_warnings": [
+    {
+      "date": "2026-09-03",
+      "name": "Cykel indendørs 60 min race-uge åbnere",
+      "type": "Ride",
+      "event_id": 133417354,
+      "level": "error",
+      "code": "INGEN_TRIN",
+      "text": "workout_doc har ingen trin."
+    }
+  ],
   "coachAssessmentFatAtGen": 21.3,
   "zones": {
     "runThreshold": "4:24/km",
