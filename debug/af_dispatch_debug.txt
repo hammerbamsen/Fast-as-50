@@ -1,4 +1,4 @@
-tid_utc: 2026-09-01T10:20:11
-dato: 2026-09-01
+tid_utc: 2026-09-02T17:15:14
+dato: 2026-09-02
 http: 200
-svar: {"id":"2026-09-01","ctl":49.690777,"atl":43.946346,"rampRate":-3.2863274,"ctlLoad":46.0,"atlLoad":46.0,"sportInfo":[{"type":"Ride","eftp":273.63046,"wPrime":23383.68,"pMax":577.54895}],"updated":"2026-09-01T10:20:11.198+00:00","weight":72.22,"restingHR":43,"hrv":63.0,"hrvSDNN":null,"menstrualPhase":null,"menstrualPhasePredicted":null,"kcalConsumed":null,"sleepSecs":27600,"sleepScore":90.0,"sleepQu
+svar: {"id":"2026-09-02","ctl":49.509827,"atl":44.49505,"rampRate":-2.573742,"ctlLoad":42.0,"atlLoad":42.0,"sportInfo":[{"type":"Ride","eftp":273.35684,"wPrime":23360.297,"pMax":576.97144}],"updated":"2026-09-02T17:15:14.541+00:00","weight":72.339,"restingHR":41,"hrv":72.0,"hrvSDNN":null,"menstrualPhase":null,"menstrualPhasePredicted":null,"kcalConsumed":null,"sleepSecs":28063,"sleepScore":94.0,"sleepQu
