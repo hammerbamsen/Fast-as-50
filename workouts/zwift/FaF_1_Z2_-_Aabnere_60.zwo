@@ -1,0 +1,23 @@
+<workout_file>
+    <author>K. Hammerby / Fast as 50</author>
+    <name>FaF 1 Z2 - Åbnere 60</name>
+    <description>Race-uge og stille uger. Zone 2 med fire korte åbnere i høj kadence, så benene vågner uden at der bygges træthed. Bygget 2/9-2026 to dage før Médoc.  Benene skal føles lette bagefter — ellers var det for hårdt. Ikke et træningspas.</description>
+    <sportType>bike</sportType>
+    <tags><tag name="z2"/><tag name="race-uge"/><tag name="aabnere"/></tags>
+    <workout>
+        <Warmup Duration="600" PowerLow="0.4500" PowerHigh="0.6200"/>
+        <SteadyState Duration="1200" Power="0.6200">
+            <textevent timeoffset="0" message="Zone 2. Du skal kunne tale hele vejen."/>
+            <textevent timeoffset="900" message="Drik."/>
+        </SteadyState>
+        <SteadyState Duration="120" Power="0.8500" Cadence="95"/>
+        <SteadyState Duration="180" Power="0.4800"/>
+        <SteadyState Duration="120" Power="0.8500" Cadence="95"/>
+        <SteadyState Duration="180" Power="0.4800"/>
+        <SteadyState Duration="120" Power="0.8500" Cadence="95"/>
+        <SteadyState Duration="180" Power="0.4800"/>
+        <SteadyState Duration="120" Power="0.8500" Cadence="95"/>
+        <SteadyState Duration="180" Power="0.4800"/>
+        <Cooldown Duration="600" PowerLow="0.6200" PowerHigh="0.4000"/>
+    </workout>
+</workout_file>
