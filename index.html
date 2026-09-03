@@ -421,17 +421,15 @@ const STATIC = {
   // Periodisering og CTL-mål kommer fra data.json (ctlPlan/blockTypes — kilde:
   // plan.json -> programs.<aktivt>). Intet program hardkodes her.
   strength:["Dumbbell Thruster","Renegade Row","Push-Up","KB Swing","One-Arm KB Row","Romanian Deadlift","Bulgarian Split Squat"],
+  // Kennets 7 principper ("Fast as 50") — kilde: projektbeskrivelsen.
   rules:[
-    {n:"01",title:"Protein prioritet",body:"≥ 150 g protein/dag. Prioritér ved hvert måltid."},
-    {n:"02",title:"Intentionel alkohol",body:"5 AF-dage/uge minimum. Undtagelser er valg, ikke vaner."},
-    {n:"03",title:"Grønt fundament",body:"Grøntsager ved hvert hovedmåltid. Farve = næring."},
-    {n:"04",title:"Hverdagsdisciplin",body:"Strukturerede hverdage. Weekend som belønning, ikke flugt."},
-    {n:"05",title:"Søvn som træning",body:"≥ 7 timers søvn. Det er recovery, ikke luksus."},
-    {n:"06",title:"Styrke 2×/uge",body:"Functional Strength 2 protokol. Konsistens > intensitet."},
-    {n:"07",title:"Daglig bevægelse",body:"Min. 20 min aktiv bevægelse hver dag."},
-    {n:"08",title:"System over vilje",body:"Byg systemer der fungerer når motivationen svigter."},
-    {n:"09",title:"Mental skarphed",body:"Læs, reflektér, skriv. Hjernen er også en muskel."},
-    {n:"10",title:"Kapacitet over performance",body:"Mål: kapacitet ved 50+. Ikke podium — holdbarhed."},
+    {n:"01",title:"Protein først — altid",body:"≥ 150 g protein/dag, protein ved hvert måltid. Det eneste makronæringsstof der beskytter muskelmasse over 50."},
+    {n:"02",title:"Alkohol er et bevidst valg — ikke en vane",body:"6 AF-dage/uge. Hvis jeg drikker, er det fordi jeg aktivt har valgt det."},
+    {n:"03",title:"Bevæg dig hver dag — men ikke altid hårdt",body:"Z2, gang, cykel, svømning tæller. Hvile er strategi, ikke svaghed."},
+    {n:"04",title:"Søvn er ikke luksus",body:"7-8 timer. Ikke forhandleligt. Alt andet kollapser uden det."},
+    {n:"05",title:"Styrketræning 2× om ugen — resten af livet",body:"Muskelmasse, knogletæthed og balance afgør om man er funktionel som 70-årig."},
+    {n:"06",title:"Mental skarphed er også træning",body:"Læs. Tænk langsomt. Brug stilheden."},
+    {n:"07",title:"Fleksibilitet over rigiditet",body:"Et system der holder — ikke et der kræver perfekt udførelse hver dag."},
   ],
   // start = programmets baseline (juni-26). goal er KUN fallback — det rigtige mål
   // kommer fra data.json (weightGoal/bodyFatGoal, kilde: plan.json goals).
@@ -455,9 +453,9 @@ let D = {
   afHistory: [],
   af_log: null,
   train_mins: {run:0, bike:0, swim:0, strength:0},
-  coachSpeech:"Du starter fra CTL 34 — lavere end din Ironman-baggrund tilsiger, men ærligt. {HL} Uge 1: etabler rytmen. 5 AF-dage, protein ved hvert måltid.",
+  coachSpeech:"Du starter fra CTL 34 — lavere end din Ironman-baggrund tilsiger, men ærligt. {HL} Uge 1: etabler rytmen. 6 AF-dage, protein ved hvert måltid.",
   coachHighlight:"14 uger konsistens løfter dig til CTL 60.",
-  weekFocus:"Aktivér systemet. Første build-uge — hold igen på intensitet, byg volumen gradvist. Fokus: protein ≥ 150 g/dag, søvn ≥ 7 t, 5 AF-dage.",
+  weekFocus:"Aktivér systemet. Første build-uge — hold igen på intensitet, byg volumen gradvist. Fokus: protein ≥ 150 g/dag, søvn ≥ 7 t, 6 AF-dage.",
   coachAssessment: null,
   coachAssessmentHtml: '',
   coachAssessmentTs: '',
