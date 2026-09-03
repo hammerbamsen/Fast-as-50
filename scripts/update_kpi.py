@@ -68,6 +68,44 @@ def _sync_repo():
         print(f"  ⚠️ Git sync exception (fortsætter): {e}")
 
 
+def sleep_kpi(sleep_history, fallback_avg=None, goal=None):
+    """Søvn-KPI: (sidste nat, 7d-snit, sub-tekst, farve).
+
+    sleep_history = [{date, v, real}, ...] (fitness.get_history). Værdien er
+    seneste punkt med en værdi; snittet er de seneste 7 punkter med værdi.
+    Farve måles på snittet: >=7,0 grøn, 6,5-7,0 orange, <6,5 rød.
+    """
+    goal = SLEEP_GOAL_HOURS if goal is None else goal
+    vals = [float(r['v']) for r in (sleep_history or [])
+            if isinstance(r, dict) and r.get('v') is not None]
+    last = vals[-1] if vals else fallback_avg
+    avg7 = round(sum(vals[-7:]) / len(vals[-7:]), 1) if vals else fallback_avg
+    if avg7 is None:
+        return last, None, f'Snit 7d — · mål {goal}t', '#7A6A58'
+    color = '#27AE60' if avg7 >= 7.0 else ('#E67E22' if avg7 >= 6.5 else '#C0392B')
+    return last, avg7, f'Snit 7d {fmt(avg7, 1)}t · mål {goal}t', color
+
+
+def af_kpi(week_done, streak, af_history, goal):
+    """AF DAGE-KPI: (sub-tekst, farve).
+
+    sub = "af 6 denne uge · snit 4 uger X,X · streak N". 4-ugers snittet er
+    de seneste 4 afsluttede uger (total == 7) i af_history; er der ingen
+    afsluttede uger endnu, bruges det der findes.
+    """
+    hist = [w for w in (af_history or []) if isinstance(w, dict) and w.get('total')]
+    full = [w for w in hist if w.get('total') == 7] or hist
+    last4 = full[-4:]
+    avg4 = round(sum(w['done'] for w in last4) / len(last4), 1) if last4 else None
+    sub = f'af {goal} denne uge'
+    if avg4 is not None:
+        sub += f' · snit 4 uger {fmt(avg4, 1)}'
+    if streak:
+        sub += f' · streak {streak}'
+    color = '#27AE60' if (week_done or 0) >= goal else '#59182A'
+    return sub, color
+
+
 def main():
     _sync_repo()
     today     = date.today()
@@ -365,12 +403,23 @@ def main():
     else:
         _swim_sub   = 'Svøm denne uge'
         _swim_color = '#7A6A58'
+    # Søvn: værdi = sidste nats søvn (seneste sleepHistory-punkt med værdi),
+    # sub = ægte 7-dages snit beregnet fra sleepHistory. Farve på snittet.
+    sleep_last, sleep_avg7, _sleep_sub, _sleep_color = sleep_kpi(
+        (history or {}).get('sleepHistory'), fallback_avg=sleep)
+    print(f"  Søvn: sidste nat {sleep_last} · snit 7d {sleep_avg7}")
+
+    # AF DAGE: værdi = AF-dage denne uge, sub = mål + 4-ugers snit fra
+    # af_history, streak som lille hale. Hentes her (før kpis) — bruges igen nedenfor.
+    af_history = get_af_history()
+    _af_sub, _af_color = af_kpi(af_days, af_streak, af_history, AF_GOAL)
+
     data['kpis'] = {
         'weight':     {'value': fmt(weight),          'unit': 'kg', 'sub': weight_sub, 'color': color_for(weight, data['weightGoal'], lower=True)  if weight     else '#7A6A58'},
         'fat':        {'value': fmt(fat),              'unit': '%',  'sub': f"Mål <{data['bodyFatGoal']}%",                       'color': color_for(fat, data['bodyFatGoal'], lower=True)     if fat        else '#7A6A58'},
         'ctl':        {'value': fmt(ctl, 1),           'unit': '',   'sub': f"Uge {week_num}-mål {ctl_plan_for_week(week_num)} · {week_meta.get('blockType', '')}".rstrip(' ·'), 'color': color_for(ctl, ctl_plan_for_week(week_num), lower=False) if ctl else '#7A6A58'},
         'tsb':        {'value': fmt(tsb, 1),           'unit': '',   'sub': ('Hård blok · CTL−ATL, frisk >0' if tsb and tsb < -10 else 'Form · CTL−ATL, frisk >0'), 'color': '#E67E22' if tsb and tsb < -10 else '#27AE60'},
-        'sleep':      {'value': fmt(sleep, 1),         'unit': 't',  'sub': f'Snit 7,5t · mål {SLEEP_GOAL_HOURS}t',            'color': '#2874A6'},
+        'sleep':      {'value': fmt(sleep_last, 1) if sleep_last else '—', 'unit': 't', 'sub': _sleep_sub, 'color': _sleep_color},
         'runKm':      {'value': fmt(km_week, 1),       'unit': 'km', 'sub': _run_sub,                                   'color': _run_color},
         'hrv':        {'value': fmt(hrv, 1),           'unit': 'ms', 'sub': 'Snit 7d',                       'color': '#7A6A58'},
         'rhr':        {'value': fmt(rhr_avg, 0) if rhr_avg else '—', 'unit': 'slag', 'sub': 'Hvilepuls · snit 7d', 'color': '#7A6A58'},
@@ -379,7 +428,7 @@ def main():
                        'color': tss_color},
         'bikeKm':     {'value': fmt(bike_km, 1),       'unit': 'km', 'sub': 'Cykel denne uge',                  'color': color_for(bike_km, 50, lower=False) if bike_km else '#7A6A58'},
         'swimM':      {'value': fmt(swim_m, 0) if swim_m else '0',    'unit': 'm',  'sub': _swim_sub,                                  'color': _swim_color},
-        'afStreak':   {'value': str(af_streak),        'unit': '',   'sub': f'Dage i træk · mål {AF_GOAL}/uge',           'color': '#59182A'},
+        'afStreak':   {'value': str(af_days),          'unit': '',   'sub': _af_sub,                                    'color': _af_color},
     }
 
     # --- TSB / HRV advarsler (sendes til dashboard for visning) ---
@@ -479,8 +528,7 @@ def main():
             data['warnings'] = warnings
             print(f"  ⚠️  Alkohol-klynge: {cluster}")
 
-    # --- AF historik: uge-for-uge siden projektstart ---
-    af_history = get_af_history()
+    # --- AF historik: uge-for-uge siden projektstart (hentet ovenfor til AF-KPI'en) ---
     if af_history:
         data['af_history'] = af_history
 
