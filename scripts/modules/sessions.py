@@ -2,9 +2,16 @@
 import math as _math
 import re
 from datetime import date, timedelta
-from .config import (PLAN as _PLAN, TOTAL_WEEKS, PLAN_START, BASE, AUTH, api_get, fix_enc, fmt, color_for, ctl_plan_for_week,
-                      DAY_SHORT, BLOCK_TYPES, RUN_PACE_ZONES_SEC_PER_KM, BIKE_ZONES_WATTS)
+from .config import (PLAN as _PLAN, ACTIVE_PROGRAM, TOTAL_WEEKS, PLAN_START, BASE, AUTH, api_get, fix_enc, fmt, color_for, ctl_plan_for_week,
+                      DAY_SHORT, BLOCK_TYPES, RUN_PACE_ZONES_SEC_PER_KM, BIKE_ZONES_WATTS, athlete_age)
 from .af import monday_this_week
+from . import programs as _programs
+
+
+def current_week_no(today=None):
+    """Ugenummer i det aktive program (clampet 1..TOTAL_WEEKS) — eneste sted
+    ugen beregnes i dette modul. Ingen lokale (dato - start)//7-udtryk."""
+    return _programs.week_no(ACTIVE_PROGRAM, today or date.today())
 
 # ── Rep-for-rep-analyse af intervalpas ───────────────────────────────────────
 # Et stykke tæller som "arbejde" hvis det er hurtigere/hårdere end target-zonens
@@ -1021,12 +1028,10 @@ def planned_tss_this_week():
     monday = today - timedelta(days=today.weekday())
     sunday = monday + timedelta(days=6)
 
-    # Fallback-tabel (bruges kun hvis live-data ikke kan hentes)
-    week1 = date(2026, 6, 1)
-    diff  = (today - week1).days
-    week_num = min(max(diff // 7 + 1, 1), TOTAL_WEEKS)
-    fallback = {1:383,2:460,3:466,4:167,5:511,6:490,7:546,8:186,
-                9:596,10:598,11:638,12:194,13:345,14:245}.get(week_num, 400)
+    # Fallback (bruges kun hvis live-data ikke kan hentes): ugens tssTarget
+    # fra det aktive program i plan.json — ikke en hardkodet uge-tabel.
+    week_num = current_week_no(today)
+    fallback = _programs.week_meta(ACTIVE_PROGRAM, week_num).get('tssTarget') or 400
 
     r = api_get(f'{BASE}/events', auth=AUTH,
                      params={'oldest': str(monday), 'newest': str(sunday)})
@@ -1287,13 +1292,20 @@ def build_week_sessions(done_map, planned_sessions):
     return result
 
 
-def get_planned_weeks():
-    """Hent planned workouts fra Intervals for forrige, denne og næste uge.
+def get_planned_weeks(weeks_back=2, weeks_ahead=6):
+    """Hent planned workouts fra Intervals for et vindue omkring den aktuelle uge.
     Returnerer all_weeks dict: {week_num: {sessions: [...], focus: str, blockType: str}}
+
+    Vinduet er aktuel uge -weeks_back .. +weeks_ahead (clampet til programmet).
+    weeks_back=None og weeks_ahead=None -> hele programmet. For et 51-ugers
+    program må vi ALDRIG hente alt: data.json ville eksplodere og Intervals-
+    kaldet blive tungt.
     """
     week1     = PLAN_START
     today     = date.today()
-    week_num  = min(max((today - week1).days // 7 + 1, 1), TOTAL_WEEKS)
+    week_num  = current_week_no(today)
+    w_first   = 1 if weeks_back is None else max(1, week_num - weeks_back)
+    w_last    = TOTAL_WEEKS if weeks_ahead is None else min(TOTAL_WEEKS, week_num + weeks_ahead)
 
     # BLOCK_TYPES og DAY_SHORT kommer fra config.py (afledt af plan.json) —
     # rettet 6/8-2026. Var lokale hardkodede uge 1-14-kopier her, der stille
@@ -1310,10 +1322,10 @@ def get_planned_weeks():
 
     all_weeks = {}
 
-    # Ét samlet API-kald for hele planperioden (uge 1-TOTAL_WEEKS) i stedet for
-    # TOTAL_WEEKS individuelle kald
-    plan_start = week1
-    plan_end   = week1 + timedelta(weeks=TOTAL_WEEKS) - timedelta(days=1)
+    # Ét samlet API-kald for hele vinduet (uge w_first-w_last) i stedet for
+    # individuelle kald pr. uge
+    plan_start = week1 + timedelta(weeks=w_first - 1)
+    plan_end   = week1 + timedelta(weeks=w_last) - timedelta(days=1)
     r = api_get(f'{BASE}/events', auth=AUTH,
                 params={'oldest': str(plan_start), 'newest': str(plan_end)})
     if not r or r.status_code != 200:
@@ -1322,8 +1334,8 @@ def get_planned_weeks():
 
     all_events = r.json()
 
-    # Initialiser alle uger i det aktive program
-    for w in range(1, TOTAL_WEEKS + 1):
+    # Initialiser ugerne i vinduet
+    for w in range(w_first, w_last + 1):
         all_weeks[w] = {'sessions': [], 'blockType': BLOCK_TYPES.get(w, 'BUILD'), 'focus': ''}
 
     day_order = {d:i for i,d in enumerate(DAY_SHORT)}
@@ -1339,10 +1351,9 @@ def get_planned_weeks():
         except:
             continue
         # Beregn hvilken planuge dette event tilhører
-        delta_days = (dt - week1).days
-        if delta_days < 0 or delta_days >= TOTAL_WEEKS * 7:
+        w = _programs.week_no_raw(ACTIVE_PROGRAM, dt)
+        if w not in all_weeks:
             continue
-        w = delta_days // 7 + 1
         day_idx = dt.weekday()
         disc = TYPE_MAP.get(wo.get('type',''), 'free')
         name = fix_enc(wo.get('name', 'Træning'))
@@ -1442,12 +1453,11 @@ QUOTES_PHILOSOPHY = [
 
 
 def get_swim_history():
-    """Hent ugentlig svømdistance (meter) siden projektstart uge 1.
-    Bruges til svøm-progression mod Christiansborg Rundt 2000m (29/8-2026).
+    """Hent ugentlig svømdistance (meter) siden det aktive programs uge 1.
+    Bruges til svøm-progression når programmet har et svømmemål (goals.swimMeters).
     Returnerer liste: [{week, date_str, meters, cumulative}]
     """
-    from datetime import date, timedelta
-    week1 = date(2026, 6, 1)
+    week1 = PLAN_START
     today = date.today()
     oldest = str(week1)
     newest = str(today)
@@ -1480,7 +1490,7 @@ def get_swim_history():
         by_week[w] = round(by_week.get(w, 0) + dist_m, 0)
 
     # Byg kronologisk liste uge 1 → nu
-    current_week = min(max((today - week1).days // 7 + 1, 1), TOTAL_WEEKS)
+    current_week = current_week_no(today)
     result = []
     cumulative = 0
     for w in range(1, current_week + 1):
@@ -1526,9 +1536,10 @@ def generate_week_focus_ai(week_num, sessions, block_type, ctl=None, tsb=None, w
 
     note_str = f"\nMaster Plan-note for ugen: \"{week_note}\"" if week_note else ""
 
+    _age = athlete_age()
     prompt = (
-        f"Du er træningscoach for Kennet Hammerby, 51 år, erfaren Ironman-atlet.\n"
-        f"Han er i uge {week_num} af 14 i sit 'Fast as Fifty' program.\n"
+        f"Du er træningscoach for Kennet Hammerby, {f'{_age} år, ' if _age else ''}erfaren Ironman-atlet.\n"
+        f"Han er i uge {week_num} af {TOTAL_WEEKS} i programmet '{ACTIVE_PROGRAM.get('name', 'Fast as Fifty')}'.\n"
         f"Ugetype: {block_label}.\n"
         f"Fitness: {fitness_str}.\n"
         f"{'VO2-stimulus planlagt denne uge.' if has_vo2 else 'Ingen VO2-stimulus denne uge.'}"

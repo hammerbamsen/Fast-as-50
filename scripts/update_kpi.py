@@ -21,12 +21,11 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 # ── Moduler ──────────────────────────────────────────────────────────────────
 from modules.config   import (API_KEY, ATHLETE_ID, GH_TOKEN, ANTHROPIC_KEY,
                                REPO, BASE, AUTH, CTL_PLAN, BLOCK_TYPES,
-                               PLAN_START, TOTAL_WEEKS, RACES,
+                               PLAN, ACTIVE_PROGRAM, PROGRAM_ID, TOTAL_WEEKS,
                                DK_DAYS, DAY_SHORT, DK_MONTHS,
-                               CTL_START, CTL_GOAL, AF_GOAL, SLEEP_GOAL_HOURS,
-                               SWIM_GOAL_M, RUN_KM_GOAL, RUN_KM_GOAL_WEEK, GOALS,
-                               NEXT_RACES,
+                               CTL_START, CTL_GOAL, AF_GOAL, SLEEP_GOAL_HOURS, GOALS,
                                api_get, ctl_plan_for_week, fix_enc, fmt, color_for)
+from modules import programs as _programs
 from modules.fitness  import get_fitness, get_wellness_7d, get_history, get_ctl_curve
 from modules.aerobic  import get_ef_history
 from modules import decoupling
@@ -73,10 +72,13 @@ def main():
     _sync_repo()
     today     = date.today()
     weekday   = today.weekday()
-    week1     = PLAN_START
-    week_num  = min(max((today - week1).days // 7 + 1, 1), TOTAL_WEEKS)
+    # Uge/dag kommer fra det aktive program (programs.py) — ingen lokal clamp.
+    week_num  = _programs.week_no(ACTIVE_PROGRAM, today)
+    week_meta = _programs.week_meta(ACTIVE_PROGRAM, week_num)
+    days_total = _programs.days_total(ACTIVE_PROGRAM)
 
-    print(f"=== KPI opdatering {today} (uge {week_num}) ===")
+    print(f"=== KPI opdatering {today} — {PROGRAM_ID} uge {week_num}/{TOTAL_WEEKS} "
+          f"({week_meta.get('blockType', '?')}) ===")
 
     fitness    = get_fitness()
     wellness   = get_wellness_7d()
@@ -138,11 +140,25 @@ def main():
     data['meta']['updated']              = now_cph.strftime("%Y-%m-%d %H:%M")
     data['meta']['dayName']              = DK_DAYS[weekday]
     data['meta']['date']                 = f"{today.day}. {DK_MONTHS[today.month-1]}"
-    _race_dates = {r['name']: date.fromisoformat(r['date']) for r in RACES}
-    data['meta']['daysToMedoc']          = ((_race_dates.get('Marathon du Médoc') or date(2026, 9, 5)) - today).days
-    data['meta']['daysToChristiansborg'] = ((_race_dates.get('Christiansborg Rundt') or date(2026, 8, 29)) - today).days
+    # Program + næste løb (på tværs af programmer) — erstatter daysToMedoc/
+    # daysToChristiansborg, som var bundet til ét bestemt program.
+    _upcoming = _programs.upcoming_races(PLAN, 'kennet', today)
+    _next = _upcoming[0] if _upcoming else None
+    data['meta'].pop('daysToMedoc', None)
+    data['meta'].pop('daysToChristiansborg', None)
+    data['meta']['nextRace']             = ({'name': _next.get('name'), 'date': _next.get('date'),
+                                             'daysTo': _next.get('daysTo'),
+                                             'priority': _next.get('priority', '')}
+                                            if _next else None)
+    data['meta']['programId']            = PROGRAM_ID
+    data['meta']['programName']          = ACTIVE_PROGRAM.get('name')
+    data['meta']['phase']                = week_meta.get('phase')
+    data['meta']['blockType']            = week_meta.get('blockType')
     data['meta']['week']                 = week_num
     data['meta']['totalWeeks']           = TOTAL_WEEKS
+    data['meta']['programDay']           = _programs.program_day(ACTIVE_PROGRAM, today)
+    data['meta']['programDays']          = days_total
+    data['blockType']                    = week_meta.get('blockType') or 'BUILD'  # læses af coach-speech + index.html
     try:
         from modules.fitness import RHR_FIELD_SEEN
         data['meta']['rhrField'] = RHR_FIELD_SEEN.get('field')
@@ -164,20 +180,20 @@ def main():
         print(f"  Zoner kunne ikke laeses fra plan.json (ikke-blokerende): {_e}")
 
     # --- Mål (sættes FØR KPI-blokken bygges, da den læser disse felter) ---
-    # --- Kommende sæson: løb med nedtælling til dashboardet ---
-    #     Kilden er plan.json -> nextSeason.races. Hardkod dem aldrig i index.html.
-    _today = date.today()
+    # --- Kommende løb med nedtælling til dashboardet ---
+    #     Kilden er plan.json -> programs.*.races (aktivt + senere programmer).
+    #     Hardkod dem aldrig i index.html.
     data['racesUpcoming'] = [
         {
             'name': r.get('name'),
             'date': r.get('date'),
-            'days': (date.fromisoformat(r['date']) - _today).days,
+            'days': r.get('daysTo'),
             'priority': r.get('priority', ''),
             'distance': r.get('distance', ''),
             'registered': r.get('registered'),
+            'programId': r.get('programId'),
         }
-        for r in NEXT_RACES
-        if r.get('date') and date.fromisoformat(r['date']) >= _today
+        for r in _upcoming
     ]
 
     data['weightGoal']   = GOALS.get('weightKg', 68)
@@ -329,20 +345,38 @@ def main():
     print(f"  Vægt-sub: {weight_sub} (måling i dag: {weight_is_today})")
 
     tss_color = color_for(compliance, 85, lower=False) if compliance else '#7A6A58'
+
+    # Løb-km og svøm: mål findes KUN hvis det aktive program har dem i goals
+    # (medoc-2026: runKmPerWeek/swimMeters; tds-2027: ingen -> neutral visning).
+    # Farven måles mod SAMME tal som teksten viser — ikke et andet, skjult tal.
+    _run_goal  = GOALS.get('runKmPerWeek')
+    _swim_goal = GOALS.get('swimMeters')
+    if _run_goal:
+        _run_sub   = f'Mål {_run_goal}+ km/uge'
+        _run_color = color_for(km_week, _run_goal, lower=False) if km_week else '#7A6A58'
+    else:
+        _run_sub   = 'Løb denne uge'
+        _run_color = '#7A6A58'
+    if _swim_goal:
+        _swim_sub   = f'Svøm denne uge · mål {_swim_goal}m'
+        _swim_color = color_for(swim_m, _swim_goal, lower=False) if swim_m else '#7A6A58'
+    else:
+        _swim_sub   = 'Svøm denne uge'
+        _swim_color = '#7A6A58'
     data['kpis'] = {
         'weight':     {'value': fmt(weight),          'unit': 'kg', 'sub': weight_sub, 'color': color_for(weight, data['weightGoal'], lower=True)  if weight     else '#7A6A58'},
         'fat':        {'value': fmt(fat),              'unit': '%',  'sub': f"Mål <{data['bodyFatGoal']}%",                       'color': color_for(fat, data['bodyFatGoal'], lower=True)     if fat        else '#7A6A58'},
-        'ctl':        {'value': fmt(ctl, 1),           'unit': '',   'sub': f'Uge {week_num}-mål {ctl_plan_for_week(week_num)} · Slutmål {CTL_GOAL} (uge {len(CTL_PLAN)})', 'color': color_for(ctl, CTL_GOAL, lower=False)    if ctl        else '#7A6A58'},
+        'ctl':        {'value': fmt(ctl, 1),           'unit': '',   'sub': f"Uge {week_num}-mål {ctl_plan_for_week(week_num)} · {week_meta.get('blockType', '')}".rstrip(' ·'), 'color': color_for(ctl, ctl_plan_for_week(week_num), lower=False) if ctl else '#7A6A58'},
         'tsb':        {'value': fmt(tsb, 1),           'unit': '',   'sub': ('Hård blok · CTL−ATL, frisk >0' if tsb and tsb < -10 else 'Form · CTL−ATL, frisk >0'), 'color': '#E67E22' if tsb and tsb < -10 else '#27AE60'},
         'sleep':      {'value': fmt(sleep, 1),         'unit': 't',  'sub': f'Snit 7,5t · mål {SLEEP_GOAL_HOURS}t',            'color': '#2874A6'},
-        'runKm':      {'value': fmt(km_week, 1),       'unit': 'km', 'sub': f'Mål {RUN_KM_GOAL}+ km uge {RUN_KM_GOAL_WEEK}',             'color': color_for(km_week, 20, lower=False) if km_week   else '#7A6A58'},
+        'runKm':      {'value': fmt(km_week, 1),       'unit': 'km', 'sub': _run_sub,                                   'color': _run_color},
         'hrv':        {'value': fmt(hrv, 1),           'unit': 'ms', 'sub': 'Snit 7d',                       'color': '#7A6A58'},
         'rhr':        {'value': fmt(rhr_avg, 0) if rhr_avg else '—', 'unit': 'slag', 'sub': 'Hvilepuls · snit 7d', 'color': '#7A6A58'},
         'tssComp':    {'value': fmt(tss_act, 0) if tss_act else '0', 'unit': 'TSS',
                        'sub': f'{int(tss_act or 0)} af {int(planned)} planlagt TSS',
                        'color': tss_color},
         'bikeKm':     {'value': fmt(bike_km, 1),       'unit': 'km', 'sub': 'Cykel denne uge',                  'color': color_for(bike_km, 50, lower=False) if bike_km else '#7A6A58'},
-        'swimM':      {'value': fmt(swim_m, 0) if swim_m else '0',    'unit': 'm',  'sub': f'Svøm denne uge · mål {SWIM_GOAL_M}m (Christiansborg)',  'color': color_for(swim_m, SWIM_GOAL_M, lower=False) if swim_m else '#7A6A58'},
+        'swimM':      {'value': fmt(swim_m, 0) if swim_m else '0',    'unit': 'm',  'sub': _swim_sub,                                  'color': _swim_color},
         'afStreak':   {'value': str(af_streak),        'unit': '',   'sub': f'Dage i træk · mål {AF_GOAL}/uge',           'color': '#59182A'},
     }
 
@@ -500,7 +534,7 @@ def main():
 
     # --- Historisk faktisk TSS pr. uge (backfill til Excel + ugesummer) ---
     try:
-        _wk_tss = get_weekly_tss_actual(PLAN_START, TOTAL_WEEKS)
+        _wk_tss = get_weekly_tss_actual(date.fromisoformat(ACTIVE_PROGRAM['start']), TOTAL_WEEKS)
         if _wk_tss:
             data['weekTssActual'] = {str(k): v for k, v in sorted(_wk_tss.items())}
             print(f"  weekTssActual -> {len(_wk_tss)} uger")
@@ -551,24 +585,8 @@ def main():
                 print(f"  weekFocus cached (uge {week_num}) -- springer AI-kald over")
                 dynamic_focus = _focus_cached_text
             else:
-                # Hent Master Plan-note for denne uge
-                _master_notes = {
-                    1: 'Etableringsuge — TSB endte -8',
-                    2: 'Mallorca uge. TSS synkroniseringsfejl.',
-                    3: 'Mallorca-camp gennemført.',
-                    4: 'Recovery uge. Fuldt AF 7/7.',
-                    5: 'Tilbage til hverdagsrytme.',
-                    6: 'Rejseuge — let cykel/løb, vedligehold.',
-                    7: 'Stor cykel-uge #2.',
-                    8: 'Restitution + rejsedag hjem.',
-                    9: 'Musik i Gentofte i ugen efter (31/7–2/8) – planlæg let.',
-                    10: 'Svømme-fokus øges mod Christiansborg Rundt.',
-                    11: 'Peak TSS-uge.',
-                    12: 'Svømme-specifik uge, nedtrapning starter.',
-                    13: f'Race week: {SWIM_GOAL_M} m svøm 29/8. Taper ind, kort løb.',
-                    14: 'Marathon Médoc 5/9.',
-                }
-                _week_note = _master_notes.get(week_num)
+                # Ugens note fra programmet i plan.json (programs.<id>.weeks[].note)
+                _week_note = week_meta.get('note')
                 dynamic_focus = generate_week_focus_ai(
                     week_num, this_week.get('sessions', []),
                     BLOCK_TYPES.get(week_num, 'BUILD'),
@@ -750,9 +768,9 @@ def main():
         ai_text = fix_enc(ai_text)  # AI-svar kan komme tilbage Latin-1-mis-decoded -- ret ved kilden
     if ai_text:
         # Konverter til simpel HTML (samme logik som dashboardet)
-        # Tilføj korrekt header hardcodet (forhindrer AI i at skrive forkert "Dag X af 14 uger")
-        program_day = (date.today() - PLAN_START).days + 1
-        header_str = f"Dag {program_day} af 98 · {DK_DAYS[weekday]} · Uge {week_num}"
+        # Tilføj korrekt header hardcodet (forhindrer AI i at skrive forkert "Dag X af N uger")
+        program_day = _programs.program_day(ACTIVE_PROGRAM, date.today())
+        header_str = f"Dag {program_day} af {days_total} · {DK_DAYS[weekday]} · Uge {week_num}"
         header_html = f'<p style="margin:0 0 8px;font-family:\'Hanken Grotesk\',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)"><strong>{header_str}</strong></p>'
         html_lines = [header_html]
         for line in ai_text.split('\n'):

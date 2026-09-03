@@ -1,6 +1,6 @@
 """Fitness, wellness og historik fra Intervals.icu."""
 from datetime import date, timedelta
-from .config import BASE, AUTH, api_get
+from .config import BASE, AUTH, api_get, PLAN_START
 
 
 def get_fitness():
@@ -149,9 +149,9 @@ def get_history(existing=None):
 
 
 def get_ctl_curve():
-    """Bygger CTL-kurve live fra projektstart til i dag (ét punkt pr. uge)."""
-    from datetime import date, timedelta
-    week1   = date(2026, 6, 1)
+    """Bygger CTL-kurve live fra det aktive programs uge 1 til i dag (ét punkt
+    pr. uge) — indekseres 1:1 mod ctlPlan i dashboardet."""
+    week1   = PLAN_START
     today   = date.today()
     oldest  = str(week1)
     newest  = str(today)
