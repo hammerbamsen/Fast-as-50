@@ -1,55 +1,55 @@
 {
- "generated": "2026-09-03T01:18:37Z",
+ "generated": "2026-09-03T05:47:15Z",
  "kennet": {
   "seed": {
    "date": "2026-09-03",
-   "ctl": 49.4,
-   "atl": 44.6
+   "ctl": 49.3,
+   "atl": 44.0
   },
   "projection": [
    {
     "d": "2026-09-04",
-    "ctl": 48.8,
-    "tsb": 7.2
+    "ctl": 48.7,
+    "tsb": 7.6
    },
    {
     "d": "2026-09-05",
-    "ctl": 47.6,
-    "tsb": 12.0
+    "ctl": 47.5,
+    "tsb": 12.3
    },
    {
     "d": "2026-09-06",
-    "ctl": 46.5,
-    "tsb": 16.0
+    "ctl": 46.4,
+    "tsb": 16.2
    },
    {
     "d": "2026-09-07",
-    "ctl": 46.3,
-    "tsb": 14.7
+    "ctl": 46.2,
+    "tsb": 14.9
    },
    {
     "d": "2026-09-08",
-    "ctl": 46.1,
-    "tsb": 13.6
+    "ctl": 46.0,
+    "tsb": 13.8
    },
    {
     "d": "2026-09-09",
-    "ctl": 45.9,
-    "tsb": 12.6
+    "ctl": 45.8,
+    "tsb": 12.8
    },
    {
     "d": "2026-09-10",
-    "ctl": 45.7,
-    "tsb": 11.8
+    "ctl": 45.6,
+    "tsb": 11.9
    },
    {
     "d": "2026-09-11",
-    "ctl": 45.5,
-    "tsb": 11.0
+    "ctl": 45.4,
+    "tsb": 11.1
    },
    {
     "d": "2026-09-12",
-    "ctl": 45.3,
+    "ctl": 45.2,
     "tsb": 10.4
    },
    {
@@ -59,12 +59,12 @@
    },
    {
     "d": "2026-09-14",
-    "ctl": 45.2,
-    "tsb": 8.0
+    "ctl": 45.1,
+    "tsb": 8.1
    },
    {
     "d": "2026-09-15",
-    "ctl": 45.3,
+    "ctl": 45.2,
     "tsb": 6.6
    },
    {
@@ -74,12 +74,12 @@
    },
    {
     "d": "2026-09-17",
-    "ctl": 45.4,
+    "ctl": 45.3,
     "tsb": 4.2
    },
    {
     "d": "2026-09-18",
-    "ctl": 45.5,
+    "ctl": 45.4,
     "tsb": 3.3
    },
    {
@@ -89,7 +89,7 @@
    },
    {
     "d": "2026-09-20",
-    "ctl": 45.6,
+    "ctl": 45.5,
     "tsb": 1.9
    }
   ],
@@ -206,9 +206,17 @@
    },
    {
     "week": 14,
-    "projEndCtl": 46.5,
-    "deviation": 3.5,
-    "flags": []
+    "projEndCtl": 46.4,
+    "deviation": 3.4,
+    "flags": [
+     {
+      "week": 14,
+      "rule": "low_readiness",
+      "level": "WARN",
+      "msg": "Lav readiness i dag (HRV/søvn) — overvej at reducere dagens/ugens belastning",
+      "historic": false
+     }
+    ]
    },
    {
     "week": 15,
@@ -218,8 +226,8 @@
    },
    {
     "week": 16,
-    "projEndCtl": 45.6,
-    "deviation": 4.6,
+    "projEndCtl": 45.5,
+    "deviation": 4.5,
     "flags": [
      {
       "week": 16,
@@ -261,6 +269,13 @@
     "historic": false
    },
    {
+    "week": 14,
+    "rule": "low_readiness",
+    "level": "WARN",
+    "msg": "Lav readiness i dag (HRV/søvn) — overvej at reducere dagens/ugens belastning",
+    "historic": false
+   },
+   {
     "week": 16,
     "rule": "race_tsb",
     "level": "WARN",
@@ -276,7 +291,7 @@
    "suggestion": null,
    "phase_guard": null
   },
-  "readiness": "HIGH"
+  "readiness": "LOW"
  },
- "inputsHash": "2d1982761c57f91d"
+ "inputsHash": "029c347cf16b312c"
 }
