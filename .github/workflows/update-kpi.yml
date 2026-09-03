@@ -46,21 +46,5 @@ jobs:
           # -> tom streng -> cachen respekteres som hidtil.
           COACH_FORCE: ${{ inputs.force_coach && '1' || '' }}
         run: python scripts/update_kpi.py
-      - name: Commit og push data.json
-        run: |
-          git config user.name "Fast as Fifty Bot"
-          git config user.email "bot@hammerbamsen.github.io"
-          git add data.json
-          if git diff --staged --quiet; then
-            echo "Ingen ændringer"
-            exit 0
-          fi
-          git commit -m "KPI auto-opdatering $(date +%Y-%m-%d_%H:%M)"
-          for i in 1 2 3; do
-            git fetch origin main
-            git rebase origin/main && git push origin main && echo "Push OK forsøg $i" && exit 0
-            git rebase --abort 2>/dev/null || true
-            sleep 3
-          done
-          echo "Push fejlede efter 3 forsøg"
-          exit 1
+      # data.json skrives af scriptet via GitHub Contents API (modules/github.gh_put)
+      # — intet lokalt commit/push-step nødvendigt (fjernet 3/9-2026, var dødt).

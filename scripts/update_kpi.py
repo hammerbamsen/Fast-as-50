@@ -923,28 +923,8 @@ def main():
     except Exception as _e:
         print(f"  ⚠️ plan_view fejlede (ikke-blokerende): {_e}")
 
-    # --- Opdater kpis[] i index.html ---
-    sha_html, html = gh_get('index.html')
-    if html:
-        lines = ['kpis:[']
-        kpis_list = [
-            ('VÆGT',      data['kpis']['weight']),
-            ('FEDT%',     data['kpis']['fat']),
-            ('CTL',       data['kpis']['ctl']),
-            ('TSS COMP.', {'value': fmt(compliance,0) if compliance else '—', 'unit': '%' if compliance else '', 'sub': f"Planlagt {int(planned)} TSS", 'color': color_for(compliance, 85, lower=False) if compliance else '#7A6A58'}),
-            ('HRV',       data['kpis']['hrv']),
-            ('LØB KM',    data['kpis']['runKm']),
-        ]
-        for label, k in kpis_list:
-            lines.append(f'    {{label:"{label}", value:"{k["value"]}", unit:"{k["unit"]}", sub:"{k["sub"]}", color:"{k["color"]}"}},')
-        lines.append('  ]')
-        kpis_block = '\n'.join(lines)
-        import re as _re
-        html = _re.sub(r'kpis:\[[\s\S]*?\]', kpis_block, html, count=1)
-        # Bump version
-        now = datetime.now().strftime("%Y%m%d-%H%M")
-        html = _re.sub(r'<!-- v[\d\-]+ -->', f'<!-- v{now} -->', html)
-        gh_put('index.html', sha_html, html, f'KPI kpis[] opdateret {today}')
+    # index.html's D.kpis er kun fallback — applyRemote() læser kpis fra data.json.
+    # Den gamle regex-erstatning af kpis:[...] + push af index.html er fjernet 3/9-2026.
 
     print("=== Done ===")
 
