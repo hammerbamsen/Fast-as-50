@@ -8,12 +8,16 @@ import sys
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
 from modules import plan_view
+from modules import programs
 
 PLAN = json.loads(
     (Path(__file__).resolve().parent.parent.parent / "data" / "plan.json")
     .read_text(encoding="utf-8"))
 
-SEED = dict(seed_ctl=46.8, seed_atl=57.4, seed_date="2026-07-07")
+# `today` låses til seed-datoen, så testen er uafhængig af kørselsdatoen:
+# det aktive program pr. 7/7-2026 er medoc-2026 (14 uger).
+SEED = dict(seed_ctl=46.8, seed_atl=57.4, seed_date="2026-07-07", today="2026-07-07")
+PROGRAM = programs.active_program(PLAN, "kennet", SEED["today"])
 
 
 def test_compute_shape():
@@ -21,15 +25,16 @@ def test_compute_shape():
     assert set(v) == {"generated", "kennet"}
     k = v["kennet"]
     assert k["seed"] == {"date": "2026-07-07", "ctl": 46.8, "atl": 57.4}
-    assert len(k["weeks"]) == PLAN["program"]["totalWeeks"]
+    assert k["programId"] == PROGRAM["id"] == "medoc-2026"
+    assert len(k["weeks"]) == PROGRAM["totalWeeks"] == 14
     assert isinstance(k["projection"], list) and k["projection"]
 
 
 def test_projection_runs_to_plan_end():
     v = plan_view.compute(PLAN, **SEED)
     proj = v["kennet"]["projection"]
-    start = date.fromisoformat(PLAN["program"]["start"])
-    plan_end = start + timedelta(weeks=PLAN["program"]["totalWeeks"])
+    start = date.fromisoformat(PROGRAM["start"])
+    plan_end = start + timedelta(weeks=PROGRAM["totalWeeks"])
     assert proj[0]["d"] == "2026-07-08"          # dagen efter seed
     assert proj[-1]["d"] == str(plan_end - timedelta(days=1))
     for p in proj:
@@ -38,7 +43,7 @@ def test_projection_runs_to_plan_end():
 
 def test_deviation_is_proj_minus_target():
     v = plan_view.compute(PLAN, **SEED)
-    targets = {w["week"]: w["ctlTarget"] for w in PLAN["weeks"]}
+    targets = {w["week"]: w["ctlTarget"] for w in PROGRAM["weeks"]}
     checked = 0
     for w in v["kennet"]["weeks"]:
         if w["projEndCtl"] is not None:
@@ -123,3 +128,13 @@ def test_optional_flag_changes_inputs_hash():
     b = plan_view.inputs_hash(json.dumps(p2, ensure_ascii=False),
                               46.8, 57.4, "2026-07-07")
     assert a != b
+
+
+def test_compute_uses_program_active_on_today():
+    """Efter 7/9-2026 er tds-2027 aktivt: 51 uger, projektion til 29/8-2027."""
+    v = plan_view.compute(PLAN, seed_ctl=45.0, seed_atl=40.0,
+                          seed_date="2026-09-07", today="2026-09-07")
+    k = v["kennet"]
+    assert k["programId"] == "tds-2027"
+    assert len(k["weeks"]) == 51
+    assert k["projection"][-1]["d"] == "2027-08-29"

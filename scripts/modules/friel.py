@@ -19,6 +19,11 @@ løbe-regler er HARD, ramp/TSB er HARD ved brud på hårdt loft, WARN ved blødt
 """
 from datetime import date, timedelta
 
+try:
+    from . import programs as _programs
+except ImportError:  # test_friel.py importerer modulet som top-level
+    import programs as _programs
+
 CTL_TC = 42.0   # dage, Coggan/Friel standard
 ATL_TC = 7.0
 
@@ -76,13 +81,31 @@ def readiness_band(hrv_today, hrv_avg, sleep_last):
 
 def _phase(weeks_meta, w):
     """Normaliseret fase for uge w. Ukendt/manglende blockType -> ''
-    (= hidtidig adfærd, bagudkompatibelt)."""
+    (= hidtidig adfærd, bagudkompatibelt).
+
+    Blok-typer på tværs af programmer:
+      BUILD, BUILD+, SPECIFIK, SPECIFIK+, STELVIO, PEAK, CAMP -> "BUILD" (belastning)
+      BASE, BASE+, TRANSITION                                -> "BASE"
+      RECOVERY / TAPER / RACE                                -> uændret
+    """
     bt = ((weeks_meta.get(w) or {}).get("blockType") or "").upper()
-    if bt.startswith("BUILD"):
+    if bt.startswith(("BUILD", "SPECIFIK", "STELVIO", "PEAK", "CAMP")):
         return "BUILD"
+    if bt.startswith(("BASE", "TRANSITION")):
+        return "BASE"
     if bt in ("RECOVERY", "TAPER", "RACE"):
         return bt
     return ""
+
+
+def _program(plan, athlete="kennet", today=None):
+    """Det aktive program for atleten (programs.py) — eneste kilde til start,
+    totalWeeks, weeks og races i dette modul. Legacy-fixtures uden `programs`
+    syntetiseres automatisk, så gamle tests virker uændret."""
+    p = _programs.active_program(plan, athlete, today)
+    if p is None:
+        raise KeyError(f"Intet program for atlet {athlete!r} i plan.json")
+    return p
 
 VO2_MARKERS = ("vo2", "5×3", "4×5", "6×3", "5x3", "4x5", "6x3",
                "bjerg z4", "bjerg-intervaller", "sa calobra")
@@ -103,10 +126,11 @@ def _week_no(d_iso, plan_start):
     return (date.fromisoformat(d_iso) - plan_start).days // 7 + 1
 
 
-def _camp_weeks(plan):
+def _camp_weeks(plan, program=None):
     """Uger med rejse-ophold markeret som camp (Mallorca) — TSB-gulv -35."""
     camps = set()
-    plan_start = date.fromisoformat(plan["program"]["start"])
+    program = program or _program(plan)
+    plan_start = date.fromisoformat(program["start"])
     for t in plan.get("travel", []):
         name = (t.get("name") or t.get("label") or "").lower()
         if "mallorca" not in name:
@@ -119,29 +143,32 @@ def _camp_weeks(plan):
         d = s
         while d <= e:
             w = (d - plan_start).days // 7 + 1
-            if 1 <= w <= plan["program"]["totalWeeks"]:
+            if 1 <= w <= program["totalWeeks"]:
                 camps.add(w)
             d += timedelta(days=1)
     return camps
 
 
-def structural_flags(plan, athlete="kennet"):
-    """Regler der kun kræver dagslisten: løb/uge, fortløbende løb, VO2, recovery-placering."""
+def structural_flags(plan, athlete="kennet", today=None):
+    """Regler der kun kræver dagslisten: løb/uge, fortløbende løb, VO2, recovery-placering.
+    Uger regnes relativt til atletens AKTIVE program pr. `today`."""
     flags = []
-    plan_start = date.fromisoformat(plan["program"]["start"])
+    program = _program(plan, athlete, today)
+    plan_start = date.fromisoformat(program["start"])
     days = plan["athletes"][athlete]["days"]
-    weeks_meta = {w["week"]: w for w in plan["weeks"]}
-    total_weeks = plan["program"]["totalWeeks"]
+    weeks_meta = _programs.weeks_meta(program)
+    total_weeks = program["totalWeeks"]
 
     runs_per_week = {w: 0 for w in range(1, total_weeks + 1)}
     vo2_per_week = {w: 0 for w in range(1, total_weeks + 1)}
+    planned_weeks = set()   # uger med mindst én dag i dagslisten (endnu ikke planlagte uger flagges ikke)
     run_dates = []
 
     # Løbsdage er ikke træningspas. Selve løbet (og taper/race-ugernes
     # bevidst hyppige, korte shakeouts) må ikke udløse max_runs /
     # consecutive_runs — ellers står de to vigtigste uger permanent røde og
     # de ægte signaler drukner.
-    race_dates = {r.get("date") for r in (plan.get("races") or []) if r.get("date")}
+    race_dates = {r.get("date") for r in (program.get("races") or []) if r.get("date")}
 
     def _load_rules_apply(week_no):
         bt = (weeks_meta.get(week_no, {}).get("blockType") or "").upper()
@@ -151,6 +178,7 @@ def structural_flags(plan, athlete="kennet"):
         w = _week_no(d["date"], plan_start)
         if not 1 <= w <= total_weeks:
             continue
+        planned_weeks.add(w)
         if d["date"] in race_dates:
             continue
         day_has_run = False
@@ -180,10 +208,11 @@ def structural_flags(plan, athlete="kennet"):
             flags.append({"week": w, "rule": "consecutive_runs", "level": "HARD",
                           "msg": f"Fortløbende løbedage {a.isoformat()} + {b.isoformat()}"})
 
-    # VO2 1x pr. build-uge — WARN (0 eller >1)
+    # VO2 1x pr. build-uge — WARN (0 eller >1). Kun uger der faktisk er
+    # planlagt (har dage) — et 51-ugers program planlægges fase for fase.
     for w in range(1, total_weeks + 1):
         bt = (weeks_meta.get(w, {}).get("blockType") or "").upper()
-        if bt.startswith("BUILD"):
+        if bt.startswith("BUILD") and w in planned_weeks:
             if vo2_per_week[w] == 0:
                 flags.append({"week": w, "rule": "vo2_missing", "level": "WARN",
                               "msg": f"Ingen VO2-stimulus i build-uge {w}"})
@@ -206,7 +235,7 @@ def structural_flags(plan, athlete="kennet"):
     return flags
 
 
-def project_fitness(plan, seed_ctl, seed_atl, seed_date):
+def project_fitness(plan, seed_ctl, seed_atl, seed_date, today=None):
     """
     CTL/ATL/TSB-projektion pr. dag ud fra ugentlige TSS-targets (jævnt fordelt
     på træningsdage). Seedet med FAKTISK Intervals-fitness — ikke lærebogsstart.
@@ -219,9 +248,10 @@ def project_fitness(plan, seed_ctl, seed_atl, seed_date):
     samme uge-TSS blot fordelt på færre dage, og projektionen ville være
     uændret — altså ingen effekt.
     """
-    plan_start = date.fromisoformat(plan["program"]["start"])
-    total_weeks = plan["program"]["totalWeeks"]
-    weeks_meta = {w["week"]: w for w in plan["weeks"]}
+    program = _program(plan, "kennet", today)
+    plan_start = date.fromisoformat(program["start"])
+    total_weeks = program["totalWeeks"]
+    weeks_meta = _programs.weeks_meta(program)
     days = plan["athletes"]["kennet"]["days"]
 
     training_days = {}   # week -> antal dage med workout (valgfrie tæller MED)
@@ -254,18 +284,19 @@ def project_fitness(plan, seed_ctl, seed_atl, seed_date):
 
 
 def load_flags(plan, seed_ctl, seed_atl, seed_date,
-               readiness=None, current_week=None):
+               readiness=None, current_week=None, today=None):
     """Belastningsregler: TSB-gulv og CTL-ramp, på projekteret fitness.
 
     T1: readiness ('LOW'/'NORMAL'/'HIGH') justerer KUN current_week's TSB-gulv.
     readiness=None (default) -> hidtidig adfærd, fuldt bagudkompatibelt.
     """
     flags = []
-    plan_start = date.fromisoformat(plan["program"]["start"])
-    total_weeks = plan["program"]["totalWeeks"]
-    weeks_meta = {w["week"]: w for w in plan["weeks"]}
-    camps = _camp_weeks(plan)
-    proj = project_fitness(plan, seed_ctl, seed_atl, seed_date)
+    program = _program(plan, "kennet", today)
+    plan_start = date.fromisoformat(program["start"])
+    total_weeks = program["totalWeeks"]
+    weeks_meta = _programs.weeks_meta(program)
+    camps = _camp_weeks(plan, program)
+    proj = project_fitness(plan, seed_ctl, seed_atl, seed_date, today=today)
 
     worst_tsb = {}
     week_end_ctl = {}
@@ -324,9 +355,9 @@ def load_flags(plan, seed_ctl, seed_atl, seed_date,
         prev = week_end_ctl[w]
 
     # Race-dags-readiness: TSB på hver race-dag bør ligge i +5..+25.
-    # Håndterer dobbelt-race (Christiansborg 29/8 + Médoc 5/9, 7 dage imellem):
-    # begge datoer checkes individuelt; TSB vedligeholdes imellem, genopbygges ikke.
-    for r in plan.get("races", []):
+    # Håndterer dobbelt-race (to løb med 7 dage imellem): begge datoer checkes
+    # individuelt; TSB vedligeholdes imellem, genopbygges ikke.
+    for r in program.get("races", []):
         d_iso = r.get("date")
         v = proj.get(d_iso)
         if not v:
@@ -349,17 +380,18 @@ def load_flags(plan, seed_ctl, seed_atl, seed_date,
 
 
 def validate(plan, seed_ctl=None, seed_atl=None, seed_date=None, athlete="kennet",
-             readiness=None, current_week=None):
+             readiness=None, current_week=None, today=None):
     """Samlet validering. Uden seed køres kun strukturregler.
 
     T1: readiness/current_week videreføres til load_flags (kun Kennet).
     Default None -> hidtidig adfærd, bagudkompatibelt.
+    `today` styrer hvilket program der valideres mod (default: i dag).
     """
-    flags = structural_flags(plan, athlete=athlete)
+    flags = structural_flags(plan, athlete=athlete, today=today)
     if seed_ctl is not None and athlete == "kennet":
         flags += load_flags(plan, seed_ctl, seed_atl, seed_date,
-                            readiness=readiness, current_week=current_week)
-    actuals = plan["athletes"].get(athlete, {}).get("actualsThroughWeek", 0)
+                            readiness=readiness, current_week=current_week, today=today)
+    actuals = _programs.actuals_through_week(plan, athlete, _program(plan, athlete, today))
     for f in flags:
         f["historic"] = f["week"] <= actuals
     return sorted(flags, key=lambda f: (f["historic"] is False, f["week"], f["rule"]))

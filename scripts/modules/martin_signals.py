@@ -15,6 +15,11 @@ Alt andet (fx flyt af 30 min recovery-spin) er støj og logges ikke.
 """
 from datetime import date, datetime, timezone, timedelta
 
+try:
+    from . import programs as _programs
+except ImportError:  # test_martin_signals.py importerer modulet som top-level
+    import programs as _programs
+
 HARD_MARKERS = ("vo2", "z4", "z5", "interval", "tempo", "tærskel", "taerskel",
                 "5×3", "4×5", "6×3", "5x3", "4x5", "6x3")
 LONG_SECONDS = 90 * 60          # langt pas
@@ -79,11 +84,12 @@ def _relevant(before, after):
     return delta >= DAY_DELTA_SECONDS
 
 
-def _week_no(d_iso, plan):
+def _week_no(d_iso, plan, athlete="kennet"):
+    """Ugenummer i det program der er aktivt på selve datoen (programs.py)."""
     try:
-        start = date.fromisoformat(plan["program"]["start"])
-        return (date.fromisoformat(d_iso) - start).days // 7 + 1
-    except (KeyError, ValueError):
+        program = _programs.active_program(plan, athlete, d_iso)
+        return _programs.week_no_raw(program, d_iso) if program else None
+    except (KeyError, ValueError, TypeError):
         return None
 
 
@@ -107,7 +113,7 @@ def build_signal(old_plan, new_plan, action, dates_changed, athlete="kennet",
         after = _day_workouts(new_plan, d_iso, athlete)
         if not _relevant(before, after):
             continue
-        w = _week_no(d_iso, new_plan)
+        w = _week_no(d_iso, new_plan, athlete)
         b_s = "; ".join(_fmt_wo(x) for x in before) or "hviledag"
         a_s = "; ".join(_fmt_wo(x) for x in after) or "hviledag"
         wk = f"uge {w}, " if w else ""

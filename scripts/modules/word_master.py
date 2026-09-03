@@ -15,6 +15,8 @@ Kaldes fra apply_edit.py efter plan.json-commit, og fra regen-docx.yml.
 Onedrive-sync.yml fanger commits automatisk.
 """
 from datetime import date, timedelta
+
+from . import programs as _programs
 from pathlib import Path
 
 from docx import Document
@@ -245,15 +247,18 @@ def _season_page(doc, season, theme_color):
 def generate_eva(plan: dict) -> bytes:
     doc = Document()
     eva = plan["athletes"]["eva"]
-    prog = eva["program"]
-    race = next((r for r in plan["races"] if r["date"] == prog["raceDay"]), None)
-    races = [race] if race else []
+    # Evas program via programs.py (atlet-specifikt athletes.eva.program +
+    # athletes.eva.weeks; frosset på seneste program efter programslut).
+    prog = _programs.active_program(plan, "eva")
+    if prog is None:
+        raise KeyError("Intet program for eva i plan.json")
+    races = list(prog.get("races") or [])
     stamp = f"Genereret {date.today().isoformat()} fra plan.json"
 
     _title_page(doc, prog, races, stamp, TEAL, is_eva=True)
-    for wm in eva["weeks"]:
+    for wm in prog.get("weeks", []):
         _week_page(doc, wm, eva["days"], "note", TEAL)
-    _summary_page(doc, prog, eva["weeks"], "note", TEAL)
+    _summary_page(doc, prog, prog.get("weeks", []), "note", TEAL)
 
     from io import BytesIO
     buf = BytesIO()
