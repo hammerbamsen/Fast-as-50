@@ -1,7 +1,7 @@
 """Coach-tekst, AI-assessment og QA-logik."""
 import os, re, json, urllib.request as _urllib_req
 from datetime import date, timedelta
-from .config import (PLAN, ACTIVE_PROGRAM, TOTAL_WEEKS, BASE, AUTH, api_get, fix_enc, fmt, ctl_plan_for_week, ANTHROPIC_KEY,
+from .config import (PLAN, ACTIVE_PROGRAM, GOALS, TOTAL_WEEKS, BASE, AUTH, api_get, fix_enc, fmt, ctl_plan_for_week, ANTHROPIC_KEY,
                       DK_DAYS, DK_MONTHS, DAY_SHORT,
                       CTL_START, CTL_GOAL, AF_GOAL, SLEEP_GOAL_HOURS, athlete_age)
 from . import programs as _programs
@@ -240,7 +240,15 @@ def build_trajectory_note(week_num, ctl, weight, weight_history):
     return " ".join(parts) if parts else None
 
 
-def qa_coach_speech(speech, week_sessions, ctl, tsb, weight, af_this_week, tss_act, planned, weight_goal=72):
+def _goal(value, key, fallback):
+    """Mål fra det aktive programs goals (plan.json) når kalderen ikke giver et."""
+    if value is not None:
+        return value
+    return (GOALS or {}).get(key, fallback)
+
+
+def qa_coach_speech(speech, week_sessions, ctl, tsb, weight, af_this_week, tss_act, planned, weight_goal=None):
+    weight_goal = _goal(weight_goal, 'weightKg', 68)
     """QA-tjek: returner liste af fejl hvis coach-teksten modsiger de faktiske data.
     Bruges til at stoppe en forkert tekst fra at gå live.
 
@@ -343,7 +351,7 @@ def dk_day(iso):
 def generate_coach_speech(week_num, weekday, streak, af_this_week, today_session, block_type, week_focus,
                            ctl=None, tsb=None, weight=None, sleep=None, compliance=None,
                            tss_act=None, planned=None, remaining_sessions=None, week_sessions=None,
-                           travel_note=None, trajectory_note=None, days_completed=None, weight_goal=72,
+                           travel_note=None, trajectory_note=None, days_completed=None, weight_goal=None,
                            decoupling_note=None,
                            weight_date=None):
     """Genererer daglig coach-tekst: dagsintro + session + Friel/Martin-vurdering (godt/fokus).
@@ -354,6 +362,7 @@ def generate_coach_speech(week_num, weekday, streak, af_this_week, today_session
     - Vær direkte og præcis — ikke generisk motivation
     - Brug masterplanen som kontekst — TSS=0 mandag morgen er normalt, ikke et rødt flag
     """
+    weight_goal = _goal(weight_goal, 'weightKg', 68)
 
     # Brug week_sessions (live fra Intervals) som kilden til dagens og resten af ugens plan
     # Dette er altid opdateret og matcher hvad der faktisk er i Intervals.icu
@@ -488,7 +497,8 @@ def generate_coach_speech(week_num, weekday, streak, af_this_week, today_session
             # kan modsige den faktiske retning.
             weight_aside = f"Vægt på {fmt(weight)} kg{_wsuf} — {travel_note}"
         else:
-            focus.append(f"Vægt på {fmt(weight)} kg{_wsuf} — hold protein højt og undgå lette kulhydrater om aftenen.")
+            focus.append(f"Vægt på {fmt(weight)} kg{_wsuf} — protein ved hvert måltid, alkohol som bevidst valg, "
+                         f"søvn 7-8 t. Vægt/fedt vurderes på 7d-snit mod planen, ikke på én vejning.")
 
     if sleep is not None:
         if sleep >= SLEEP_GOAL_HOURS:
@@ -602,12 +612,14 @@ def _redact(msg):
 
 def generate_ai_assessment(week_num, weekday, day_name, ctl, tsb, weight, af_this_week, af_streak,
                              week_sessions, week_focus, today_session, tss_act, planned, travel_note=None,
-                             trajectory_note=None, days_completed=None, compliance_summary=None, weight_goal=72,
+                             trajectory_note=None, days_completed=None, compliance_summary=None, weight_goal=None,
                              decoupling_note=None,
-                             fat=None, fat_goal=20, fat_trend_note=None,
+                             fat=None, fat_goal=None, fat_trend_note=None,
                              weight_date=None, fat_date=None,
                              weight_avg7=None, fat_avg7=None):
     """Kalder Anthropic API server-side og returnerer HTML-formateret coach-vurdering."""
+    weight_goal = _goal(weight_goal, 'weightKg', 68)
+    fat_goal = _goal(fat_goal, 'bodyFatPct', 16)
     global LAST_AI_ERROR
     LAST_AI_ERROR = None
     if not ANTHROPIC_KEY:
