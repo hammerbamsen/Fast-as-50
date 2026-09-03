@@ -179,24 +179,34 @@
           "start": "2026-09-07",
           "phase": "TRANSITION",
           "blockType": "RECOVERY",
-          "ctlTarget": 40,
+          "ctlTarget": 47,
           "ftpTarget": 278,
-          "tssTarget": 265,
+          "tssTarget": 150,
           "location": "Gentofte",
           "note": "Restitution efter Marathon du Médoc. Intet løb før tidligst lør 12/9 — 42 km excentrisk belastning kræver 10-14 dage. Cykel bærer den aerobe base.",
-          "wkgTarget": 3.97
+          "wkgTarget": 3.97,
+          "purpose": "Restitution efter Médoc — gang, svøm og let cykel; første korte løb tidligst lør 12/9.",
+          "quota": {
+            "haard": 0,
+            "moderat": 0
+          }
         },
         {
           "week": 2,
           "start": "2026-09-14",
           "phase": "TRANSITION",
           "blockType": "RACE",
-          "ctlTarget": 41,
+          "ctlTarget": 45,
           "ftpTarget": 278,
-          "tssTarget": 336,
+          "tssTarget": 250,
           "location": "Gentofte. RACE søn",
-          "note": "CPH Half søn 20/9 — B-løb, mål sub 1:30 (4:16/km). Max 3 løb, ingen løb to dage i streg. Cut starter man 21/9, ikke før.",
-          "wkgTarget": 3.97
+          "note": "CPH Half søn 20/9 — B-løb. Mål sub 1:30 med beslutningsregel ved 5 km. Cut starter IKKE før mandag 21/9.",
+          "wkgTarget": 3.97,
+          "purpose": "Race-uge: én målpace-åbner, let cykel/svøm, CPH Half som B-løb.",
+          "quota": {
+            "haard": 0,
+            "moderat": 0
+          }
         },
         {
           "week": 3,
@@ -207,8 +217,13 @@
           "ftpTarget": 278,
           "tssTarget": 380,
           "location": "Gentofte",
-          "note": "Cykel bliver primær. Styrke 2x starter — unilateralt.",
-          "wkgTarget": 3.97
+          "note": "Cut starter. Kælder starter med FTP-test tor 24/9. Styrke unilateralt 2× starter.",
+          "wkgTarget": 3.97,
+          "purpose": "Base 1/2: cut og kælder starter — aerobe prober (cykel + løb) som EF-baseline, FTP-test tor 24/9.",
+          "quota": {
+            "haard": 1,
+            "moderat": 0
+          }
         },
         {
           "week": 4,
@@ -219,7 +234,12 @@
           "ftpTarget": 278,
           "tssTarget": 400,
           "location": "Gentofte",
-          "wkgTarget": 3.97
+          "wkgTarget": 3.97,
+          "purpose": "Base 2/2: ren Z2 på cykel, første durability-pas (negativ split) lørdag, løb Z2 2×.",
+          "quota": {
+            "haard": 0,
+            "moderat": 1
+          }
         },
         {
           "week": 5,
@@ -230,8 +250,13 @@
           "ftpTarget": 278,
           "tssTarget": 250,
           "location": "Gentofte",
-          "note": "FTP-test. Baseline for 2027-sporet — forventet ~278 W (4,0 W/kg). Watt beskyttes under cut, ikke jages.",
-          "wkgTarget": 3.97
+          "note": "Recovery. Ingen test (kørt 24/9).",
+          "wkgTarget": 3.97,
+          "purpose": "Recovery: styrke 2 sæt let, korte Z2-pas, ingen test.",
+          "quota": {
+            "haard": 0,
+            "moderat": 0
+          }
         },
         {
           "week": 6,
@@ -242,7 +267,12 @@
           "ftpTarget": 278,
           "tssTarget": 420,
           "location": "Gentofte",
-          "wkgTarget": 3.97
+          "wkgTarget": 3.97,
+          "purpose": "Base 1/2: sweet spot + over-unders i kælderen, lang bjergtur lørdag, løb Z2 2×.",
+          "quota": {
+            "haard": 1,
+            "moderat": 2
+          }
         },
         {
           "week": 7,
@@ -253,7 +283,12 @@
           "ftpTarget": 278,
           "tssTarget": 440,
           "location": "Gentofte",
-          "wkgTarget": 3.97
+          "wkgTarget": 3.97,
+          "purpose": "Base 2/2: tærskel 3×12 tirsdag og kvalitet sent i turen lørdag (96 t imellem) — aerob probe måned 2 på løb.",
+          "quota": {
+            "haard": 2,
+            "moderat": 0
+          }
         },
         {
           "week": 8,
@@ -265,7 +300,12 @@
           "tssTarget": 260,
           "location": "Gentofte",
           "note": "Stelvio couples-tilmelding deadline 29/10 (med Eva).",
-          "wkgTarget": 3.97
+          "wkgTarget": 3.97,
+          "purpose": "Recovery: lette Z2-pas, styrke 2 sæt, Stelvio couples-tilmelding tor 29/10.",
+          "quota": {
+            "haard": 0,
+            "moderat": 0
+          }
         },
         {
           "week": 9,
@@ -1028,7 +1068,7 @@
       "week": 15,
       "start": "2026-09-07",
       "blockType": "RECOVERY",
-      "ctlTarget": 40,
+      "ctlTarget": 47,
       "tssTarget": 265,
       "location": "Gentofte",
       "note": "Restitution efter Marathon du Médoc. Intet løb før tidligst lør 12/9 — 42 km excentrisk belastning kræver 10-14 dage. Cykel bærer den aerobe base."
@@ -1037,7 +1077,7 @@
       "week": 16,
       "start": "2026-09-14",
       "blockType": "RACE",
-      "ctlTarget": 41,
+      "ctlTarget": 45,
       "tssTarget": 336,
       "location": "Gentofte. RACE søn",
       "note": "CPH Half søn 20/9 — B-løb, mål sub 1:30 (4:16/km). Max 3 løb, ingen løb to dage i streg. Cut starter man 21/9, ikke før."
@@ -10203,24 +10243,34 @@
         "start": "2026-09-07",
         "phase": "TRANSITION",
         "blockType": "RECOVERY",
-        "ctlTarget": 50,
+        "ctlTarget": 47,
         "ftpTarget": 278,
-        "tssTarget": 120,
+        "tssTarget": 150,
         "location": "Gentofte",
-        "note": "Post-Médoc. Intet struktureret. Gå, spis, sov.",
-        "wkgTarget": 3.97
+        "note": "Restitution efter Marathon du Médoc. Intet løb før tidligst lør 12/9 — 42 km excentrisk belastning kræver 10-14 dage. Cykel bærer den aerobe base.",
+        "wkgTarget": 3.97,
+        "purpose": "Restitution efter Médoc — gang, svøm og let cykel; første korte løb tidligst lør 12/9.",
+        "quota": {
+          "haard": 0,
+          "moderat": 0
+        }
       },
       {
         "week": 2,
         "start": "2026-09-14",
         "phase": "TRANSITION",
-        "blockType": "RECOVERY",
-        "ctlTarget": 46,
+        "blockType": "RACE",
+        "ctlTarget": 45,
         "ftpTarget": 278,
-        "tssTarget": 180,
-        "location": "Gentofte",
-        "note": "Fri leg. Svøm afvikles permanent efter denne uge.",
-        "wkgTarget": 3.97
+        "tssTarget": 250,
+        "location": "Gentofte. RACE søn",
+        "note": "CPH Half søn 20/9 — B-løb. Mål sub 1:30 med beslutningsregel ved 5 km. Cut starter IKKE før mandag 21/9.",
+        "wkgTarget": 3.97,
+        "purpose": "Race-uge: én målpace-åbner, let cykel/svøm, CPH Half som B-løb.",
+        "quota": {
+          "haard": 0,
+          "moderat": 0
+        }
       },
       {
         "week": 3,
@@ -10231,8 +10281,13 @@
         "ftpTarget": 278,
         "tssTarget": 380,
         "location": "Gentofte",
-        "note": "Cykel bliver primær. Styrke 2x starter — unilateralt.",
-        "wkgTarget": 3.97
+        "note": "Cut starter. Kælder starter med FTP-test tor 24/9. Styrke unilateralt 2× starter.",
+        "wkgTarget": 3.97,
+        "purpose": "Base 1/2: cut og kælder starter — aerobe prober (cykel + løb) som EF-baseline, FTP-test tor 24/9.",
+        "quota": {
+          "haard": 1,
+          "moderat": 0
+        }
       },
       {
         "week": 4,
@@ -10243,7 +10298,12 @@
         "ftpTarget": 278,
         "tssTarget": 400,
         "location": "Gentofte",
-        "wkgTarget": 3.97
+        "wkgTarget": 3.97,
+        "purpose": "Base 2/2: ren Z2 på cykel, første durability-pas (negativ split) lørdag, løb Z2 2×.",
+        "quota": {
+          "haard": 0,
+          "moderat": 1
+        }
       },
       {
         "week": 5,
@@ -10254,8 +10314,13 @@
         "ftpTarget": 278,
         "tssTarget": 250,
         "location": "Gentofte",
-        "note": "FTP-test. Baseline for 2027-sporet — forventet ~278 W (4,0 W/kg). Watt beskyttes under cut, ikke jages.",
-        "wkgTarget": 3.97
+        "note": "Recovery. Ingen test (kørt 24/9).",
+        "wkgTarget": 3.97,
+        "purpose": "Recovery: styrke 2 sæt let, korte Z2-pas, ingen test.",
+        "quota": {
+          "haard": 0,
+          "moderat": 0
+        }
       },
       {
         "week": 6,
@@ -10266,7 +10331,12 @@
         "ftpTarget": 278,
         "tssTarget": 420,
         "location": "Gentofte",
-        "wkgTarget": 3.97
+        "wkgTarget": 3.97,
+        "purpose": "Base 1/2: sweet spot + over-unders i kælderen, lang bjergtur lørdag, løb Z2 2×.",
+        "quota": {
+          "haard": 1,
+          "moderat": 2
+        }
       },
       {
         "week": 7,
@@ -10277,7 +10347,12 @@
         "ftpTarget": 278,
         "tssTarget": 440,
         "location": "Gentofte",
-        "wkgTarget": 3.97
+        "wkgTarget": 3.97,
+        "purpose": "Base 2/2: tærskel 3×12 tirsdag og kvalitet sent i turen lørdag (96 t imellem) — aerob probe måned 2 på løb.",
+        "quota": {
+          "haard": 2,
+          "moderat": 0
+        }
       },
       {
         "week": 8,
@@ -10289,7 +10364,12 @@
         "tssTarget": 260,
         "location": "Gentofte",
         "note": "Stelvio couples-tilmelding deadline 29/10 (med Eva).",
-        "wkgTarget": 3.97
+        "wkgTarget": 3.97,
+        "purpose": "Recovery: lette Z2-pas, styrke 2 sæt, Stelvio couples-tilmelding tor 29/10.",
+        "quota": {
+          "haard": 0,
+          "moderat": 0
+        }
       },
       {
         "week": 9,

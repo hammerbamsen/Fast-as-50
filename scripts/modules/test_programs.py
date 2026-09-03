@@ -85,11 +85,17 @@ def test_before_first_program_returns_first_upcoming():
     assert P.week_no(p, "2026-01-01") == 1
 
 
-def test_tds_weeks_1_2_inherit_legacy_15_16():
+def test_tds_weeks_1_2_match_legacy_15_16():
     tds = P.list_programs(PLAN)["tds-2027"]
     w1, w2 = P.week_meta(tds, 1), P.week_meta(tds, 2)
-    assert (w1["blockType"], w1["ctlTarget"], w1["tssTarget"]) == ("RECOVERY", 40, 265)
-    assert (w2["blockType"], w2["ctlTarget"], w2["tssTarget"]) == ("RACE", 41, 336)
+    assert (w1["blockType"], w1["ctlTarget"], w1["tssTarget"]) == ("RECOVERY", 47, 150)
+    assert (w2["blockType"], w2["ctlTarget"], w2["tssTarget"]) == ("RACE", 45, 250)
+    # legacy uge 15-16 og season2027 uge 1-8 skal følge med (samme tal)
+    legacy = {w["week"]: w for w in PLAN["weeks"]}
+    assert legacy[15]["ctlTarget"] == 47 and legacy[16]["ctlTarget"] == 45
+    assert PLAN["season2027"]["weeks"][:8] == tds["weeks"][:8]
+    for w in tds["weeks"][:8]:
+        assert "purpose" in w and set(w["quota"]) == {"haard", "moderat"}
     assert w1["phase"] == "TRANSITION" and w1["ftpTarget"] == 278
     assert tds["weightPlan"]["cutStartsFrom"] == "2026-09-21"
     assert "21/9" in tds["weightPlan"]["note"] and "19 uger" in tds["weightPlan"]["note"]
@@ -120,7 +126,7 @@ def test_eva_gets_her_own_program():
 def test_ctl_plan_and_block_types():
     tds = P.list_programs(PLAN)["tds-2027"]
     cp = P.ctl_plan(tds)
-    assert len(cp) == 51 and cp[0] == 40 and cp[-1] == 82
+    assert len(cp) == 51 and cp[0] == 47 and cp[-1] == 82
     bt = P.block_types(tds)
     assert bt[1] == "RECOVERY" and bt[51] == "RACE"
 
