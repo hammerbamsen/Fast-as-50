@@ -165,6 +165,8 @@ def main():
     except Exception:
         data['meta']['rhrField'] = None
     data['ctlPlan']                      = CTL_PLAN
+    data['blockTypes']                   = {str(k): v for k, v in BLOCK_TYPES.items()}   # periodisering i index.html
+    data['goals']                        = GOALS                                           # programmets mål (svøm/løb-KPI'er)
 
     # --- Zoner: plan.json er master, dashboardet laeser dem herfra (28/7-2026) ---
     # index.html havde hardcodede fallbacks (260 sek/km, 270 W) og fulgte aldrig
