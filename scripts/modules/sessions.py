@@ -1121,7 +1121,9 @@ def parse_planned_distance_m(label):
 # sin planlagte varighed og alligevel blive stemplet 'minimal' (<20% paa TSS) og
 # dermed ikke markeret gennemfoert. For disse discipliner er tid det aegte maal.
 # Tilfoejet 13/8-2026 efter torsdagens hike: 90 af 120 min = 18% paa TSS.
-DURATION_FIRST_DISCS = ('hike', 'walk')
+# 3/9-2026: 'strength' med — styrke giver naesten ingen TSS (ingen effekt/puls-
+# zoner), saa et fuldt gennemfoert 45-min pas stod som 'minimal'. Tid er maalet.
+DURATION_FIRST_DISCS = ('hike', 'walk', 'strength')
 
 def calc_completion(actual_tss, planned_tss, actual_mins, planned_mins,
                      actual_distance_m=None, planned_distance_m=None, threshold=0.80,
