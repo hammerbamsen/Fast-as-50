@@ -1,6 +1,869 @@
 {
-  "version": 3,
-  "updated": "2026-08-28",
+  "version": 4,
+  "updated": "2026-09-03",
+  "programs": {
+    "medoc-2026": {
+      "id": "medoc-2026",
+      "name": "Fast as Fifty — Christiansborg + Médoc 2026",
+      "athletes": [
+        "kennet",
+        "eva"
+      ],
+      "start": "2026-06-01",
+      "end": "2026-09-06",
+      "totalWeeks": 14,
+      "philosophy": "capacity",
+      "description": "14-ugers reset-år: kapacitet, ikke performance. CTL-opbygning, fedttab, AF-disciplin. Mål: Christiansborg Rundt 29/8 (2000 m OW-svøm) og Marathon du Médoc 5/9.",
+      "weeks": [
+        {
+          "week": 1,
+          "start": "2026-06-01",
+          "blockType": "BUILD",
+          "ctlTarget": 34,
+          "tssTarget": 290,
+          "location": "Malmø/Gentofte"
+        },
+        {
+          "week": 2,
+          "start": "2026-06-08",
+          "blockType": "BUILD+",
+          "ctlTarget": 36,
+          "tssTarget": 340,
+          "location": "Gentofte → Mallorca"
+        },
+        {
+          "week": 3,
+          "start": "2026-06-15",
+          "blockType": "BUILD+",
+          "ctlTarget": 38,
+          "tssTarget": 370,
+          "location": "Mallorca → Gentofte"
+        },
+        {
+          "week": 4,
+          "start": "2026-06-22",
+          "blockType": "RECOVERY",
+          "ctlTarget": 41,
+          "tssTarget": 180,
+          "location": "Gentofte"
+        },
+        {
+          "week": 5,
+          "start": "2026-06-29",
+          "blockType": "BUILD",
+          "ctlTarget": 48,
+          "tssTarget": 385,
+          "location": "Gentofte"
+        },
+        {
+          "week": 6,
+          "start": "2026-07-06",
+          "blockType": "RECOVERY",
+          "ctlTarget": 50,
+          "tssTarget": 300,
+          "location": "Gentofte → Wales 8.-12.",
+          "note": "Løbefokus — ingen cykel i Wales. Trail Z2 + vandring."
+        },
+        {
+          "week": 7,
+          "start": "2026-07-13",
+          "blockType": "BUILD",
+          "ctlTarget": 54,
+          "tssTarget": 430,
+          "location": "Gentofte → Mallorca 16.",
+          "note": "Man-ons Gentofte, tor-søn Mallorca ride-block."
+        },
+        {
+          "week": 8,
+          "start": "2026-07-20",
+          "blockType": "BUILD+",
+          "ctlTarget": 60,
+          "tssTarget": 480,
+          "location": "Mallorca → hjem 22.",
+          "note": "Store cykeldage man-tir. Langtur 26 km lørdag — ladder starter. TSB-gulv -35."
+        },
+        {
+          "week": 9,
+          "start": "2026-07-27",
+          "blockType": "RECOVERY",
+          "ctlTarget": 48,
+          "tssTarget": 270,
+          "location": "Gentofte",
+          "note": "Fuld aflastning + FTP- og threshold-retest. Musik i Gentofte fre-søn."
+        },
+        {
+          "week": 10,
+          "start": "2026-08-03",
+          "blockType": "BUILD",
+          "ctlTarget": 50,
+          "tssTarget": 420,
+          "location": "Gentofte → fly søn 9.",
+          "note": "Langtur 28-30 km. Open water-svøm starter."
+        },
+        {
+          "week": 11,
+          "start": "2026-08-10",
+          "blockType": "BUILD+",
+          "ctlTarget": 53,
+          "tssTarget": 500,
+          "location": "Mallorca (hjem søn 16.)",
+          "note": "Camp #2. TSB-gulv -35 overvåges dagligt."
+        },
+        {
+          "week": 12,
+          "start": "2026-08-17",
+          "blockType": "BUILD",
+          "ctlTarget": 51,
+          "tssTarget": 300,
+          "location": "Gentofte → Norge lør",
+          "note": "Sidste langtur 32 km tirsdag. OW-svøm x2."
+        },
+        {
+          "week": 13,
+          "start": "2026-08-24",
+          "blockType": "TAPER",
+          "ctlTarget": 47,
+          "tssTarget": 180,
+          "location": "Gentofte (hjem fra Norge søn 23.). RACE lør",
+          "note": "Christiansborg Rundt lør 29. aug — svømmes UTAPERET (2000 m, bevidst valg). Løb Z2 18 km tir (simulation udgået efter aftale). Svøm 2.000 m i træk ons. Søn: cykel indendørs i stedet for løb (ingen løb to dage i streg). Médoc løbes med Eva."
+        },
+        {
+          "week": 14,
+          "start": "2026-08-31",
+          "blockType": "RACE",
+          "ctlTarget": 43,
+          "tssTarget": 93,
+          "location": "Gentofte → Bordeaux tor",
+          "note": "Marathon du Médoc lør 5. sep. Ren taper + race-ernæringsplan. Tir: cykel i stedet for løb (ingen løb to dage i streg). Ons: 25 min styrke overkrop/core, ingen benbelastning."
+        }
+      ],
+      "races": [
+        {
+          "name": "Christiansborg Rundt",
+          "date": "2026-08-29",
+          "type": "openwater_swim",
+          "distance": "2000m",
+          "priority": "A"
+        },
+        {
+          "name": "Marathon du Médoc",
+          "date": "2026-09-05",
+          "type": "marathon",
+          "distance": "42.2km",
+          "priority": "A"
+        }
+      ],
+      "goals": {
+        "weightKg": 68,
+        "bodyFatPct": 16,
+        "afDaysPerWeek": 6,
+        "sleepHours": 7,
+        "swimMeters": 2000,
+        "runKmPerWeek": 40
+      }
+    },
+    "tds-2027": {
+      "id": "tds-2027",
+      "name": "Tour des Stations 2027",
+      "athletes": [
+        "kennet"
+      ],
+      "start": "2026-09-07",
+      "end": "2027-08-29",
+      "totalWeeks": 51,
+      "philosophy": "durability",
+      "description": "51-ugers cykelsæson mod Tour des Stations Ultrafondo 28/8-2027 (242 km / 8848 hm). Uge 1-2: restitution efter Médoc + CPH Half 20/9. Cut starter 21/9. Transition → Base → Build → Stelvio (B-løb 6/6) → Specifik → Taper. Durability frem for peak-form: CTL bygges jævnt, styrke 2x/uge hele vejen.",
+      "weeks": [
+        {
+          "week": 1,
+          "start": "2026-09-07",
+          "phase": "TRANSITION",
+          "blockType": "RECOVERY",
+          "ctlTarget": 40,
+          "ftpTarget": 278,
+          "tssTarget": 265,
+          "location": "Gentofte",
+          "note": "Restitution efter Marathon du Médoc. Intet løb før tidligst lør 12/9 — 42 km excentrisk belastning kræver 10-14 dage. Cykel bærer den aerobe base.",
+          "wkgTarget": 3.97
+        },
+        {
+          "week": 2,
+          "start": "2026-09-14",
+          "phase": "TRANSITION",
+          "blockType": "RACE",
+          "ctlTarget": 41,
+          "ftpTarget": 278,
+          "tssTarget": 336,
+          "location": "Gentofte. RACE søn",
+          "note": "CPH Half søn 20/9 — B-løb, mål sub 1:30 (4:16/km). Max 3 løb, ingen løb to dage i streg. Cut starter man 21/9, ikke før.",
+          "wkgTarget": 3.97
+        },
+        {
+          "week": 3,
+          "start": "2026-09-21",
+          "phase": "TRANSITION",
+          "blockType": "BASE",
+          "ctlTarget": 48,
+          "ftpTarget": 278,
+          "tssTarget": 380,
+          "location": "Gentofte",
+          "note": "Cykel bliver primær. Styrke 2x starter — unilateralt.",
+          "wkgTarget": 3.97
+        },
+        {
+          "week": 4,
+          "start": "2026-09-28",
+          "phase": "TRANSITION",
+          "blockType": "BASE",
+          "ctlTarget": 51,
+          "ftpTarget": 278,
+          "tssTarget": 400,
+          "location": "Gentofte",
+          "wkgTarget": 3.97
+        },
+        {
+          "week": 5,
+          "start": "2026-10-05",
+          "phase": "TRANSITION",
+          "blockType": "RECOVERY",
+          "ctlTarget": 50,
+          "ftpTarget": 278,
+          "tssTarget": 250,
+          "location": "Gentofte",
+          "note": "FTP-test. Baseline for 2027-sporet — forventet ~278 W (4,0 W/kg). Watt beskyttes under cut, ikke jages.",
+          "wkgTarget": 3.97
+        },
+        {
+          "week": 6,
+          "start": "2026-10-12",
+          "phase": "TRANSITION",
+          "blockType": "BASE",
+          "ctlTarget": 53,
+          "ftpTarget": 278,
+          "tssTarget": 420,
+          "location": "Gentofte",
+          "wkgTarget": 3.97
+        },
+        {
+          "week": 7,
+          "start": "2026-10-19",
+          "phase": "TRANSITION",
+          "blockType": "BASE",
+          "ctlTarget": 56,
+          "ftpTarget": 278,
+          "tssTarget": 440,
+          "location": "Gentofte",
+          "wkgTarget": 3.97
+        },
+        {
+          "week": 8,
+          "start": "2026-10-26",
+          "phase": "TRANSITION",
+          "blockType": "RECOVERY",
+          "ctlTarget": 55,
+          "ftpTarget": 278,
+          "tssTarget": 260,
+          "location": "Gentofte",
+          "note": "Stelvio couples-tilmelding deadline 29/10 (med Eva).",
+          "wkgTarget": 3.97
+        },
+        {
+          "week": 9,
+          "start": "2026-11-02",
+          "phase": "BASE",
+          "blockType": "BASE",
+          "ctlTarget": 57,
+          "ftpTarget": 292,
+          "tssTarget": 440,
+          "location": "Gentofte (indendørs)",
+          "note": "Vinterblok. Sweet spot. Løb 3× holdes.",
+          "wkgTarget": 4.29
+        },
+        {
+          "week": 10,
+          "start": "2026-11-09",
+          "phase": "BASE",
+          "blockType": "BASE",
+          "ctlTarget": 59,
+          "ftpTarget": 292,
+          "tssTarget": 460,
+          "location": "Gentofte",
+          "wkgTarget": 4.29
+        },
+        {
+          "week": 11,
+          "start": "2026-11-16",
+          "phase": "BASE",
+          "blockType": "BASE+",
+          "ctlTarget": 62,
+          "ftpTarget": 292,
+          "tssTarget": 490,
+          "location": "Gentofte",
+          "wkgTarget": 4.29
+        },
+        {
+          "week": 12,
+          "start": "2026-11-23",
+          "phase": "BASE",
+          "blockType": "RECOVERY",
+          "ctlTarget": 60,
+          "ftpTarget": 292,
+          "tssTarget": 270,
+          "location": "Gentofte",
+          "wkgTarget": 4.29
+        },
+        {
+          "week": 13,
+          "start": "2026-11-30",
+          "phase": "BASE",
+          "blockType": "BASE",
+          "ctlTarget": 62,
+          "ftpTarget": 292,
+          "tssTarget": 460,
+          "location": "Gentofte",
+          "wkgTarget": 4.29
+        },
+        {
+          "week": 14,
+          "start": "2026-12-07",
+          "phase": "BASE",
+          "blockType": "BASE",
+          "ctlTarget": 64,
+          "ftpTarget": 292,
+          "tssTarget": 480,
+          "location": "Gentofte",
+          "wkgTarget": 4.29
+        },
+        {
+          "week": 15,
+          "start": "2026-12-14",
+          "phase": "BASE",
+          "blockType": "BASE+",
+          "ctlTarget": 66,
+          "ftpTarget": 292,
+          "tssTarget": 500,
+          "location": "Gentofte",
+          "wkgTarget": 4.29
+        },
+        {
+          "week": 16,
+          "start": "2026-12-21",
+          "phase": "BASE",
+          "blockType": "RECOVERY",
+          "ctlTarget": 63,
+          "ftpTarget": 292,
+          "tssTarget": 260,
+          "location": "Gentofte",
+          "note": "Jul. Planlagt lav — ikke en fiasko.",
+          "wkgTarget": 4.29
+        },
+        {
+          "week": 17,
+          "start": "2026-12-28",
+          "phase": "BASE",
+          "blockType": "RECOVERY",
+          "ctlTarget": 61,
+          "ftpTarget": 292,
+          "tssTarget": 240,
+          "location": "Gentofte",
+          "note": "Nytår.",
+          "wkgTarget": 4.29
+        },
+        {
+          "week": 18,
+          "start": "2027-01-04",
+          "phase": "BASE",
+          "blockType": "BASE",
+          "ctlTarget": 63,
+          "ftpTarget": 292,
+          "tssTarget": 460,
+          "location": "Gentofte",
+          "wkgTarget": 4.29
+        },
+        {
+          "week": 19,
+          "start": "2027-01-11",
+          "phase": "BASE",
+          "blockType": "BASE",
+          "ctlTarget": 65,
+          "ftpTarget": 292,
+          "tssTarget": 480,
+          "location": "Gentofte",
+          "wkgTarget": 4.29
+        },
+        {
+          "week": 20,
+          "start": "2027-01-18",
+          "phase": "BASE",
+          "blockType": "BASE+",
+          "ctlTarget": 68,
+          "ftpTarget": 292,
+          "tssTarget": 510,
+          "location": "Gentofte",
+          "wkgTarget": 4.29
+        },
+        {
+          "week": 21,
+          "start": "2027-01-25",
+          "phase": "BASE",
+          "blockType": "RECOVERY",
+          "ctlTarget": 66,
+          "ftpTarget": 292,
+          "tssTarget": 280,
+          "location": "Gentofte",
+          "note": "FTP-test. Forventet ~292 W ved 68 kg = 4,3 W/kg. Vaegtmaal skal vaere naaet her.",
+          "wkgTarget": 4.29
+        },
+        {
+          "week": 22,
+          "start": "2027-02-01",
+          "phase": "BASE",
+          "blockType": "BASE",
+          "ctlTarget": 68,
+          "ftpTarget": 292,
+          "tssTarget": 480,
+          "location": "Gentofte",
+          "wkgTarget": 4.29
+        },
+        {
+          "week": 23,
+          "start": "2027-02-08",
+          "phase": "BUILD",
+          "blockType": "BUILD",
+          "ctlTarget": 70,
+          "ftpTarget": 305,
+          "tssTarget": 500,
+          "location": "Gentofte",
+          "note": "Tærskelarbejde ind. 2 kvalitetspas/uge.",
+          "wkgTarget": 4.49
+        },
+        {
+          "week": 24,
+          "start": "2027-02-15",
+          "phase": "BUILD",
+          "blockType": "BUILD",
+          "ctlTarget": 72,
+          "ftpTarget": 305,
+          "tssTarget": 520,
+          "location": "Gentofte",
+          "wkgTarget": 4.49
+        },
+        {
+          "week": 25,
+          "start": "2027-02-22",
+          "phase": "BUILD",
+          "blockType": "RECOVERY",
+          "ctlTarget": 70,
+          "ftpTarget": 305,
+          "tssTarget": 290,
+          "location": "Gentofte",
+          "wkgTarget": 4.49
+        },
+        {
+          "week": 26,
+          "start": "2027-03-01",
+          "phase": "BUILD",
+          "blockType": "BUILD",
+          "ctlTarget": 72,
+          "ftpTarget": 305,
+          "tssTarget": 510,
+          "location": "Gentofte",
+          "wkgTarget": 4.49
+        },
+        {
+          "week": 27,
+          "start": "2027-03-08",
+          "phase": "BUILD",
+          "blockType": "BUILD",
+          "ctlTarget": 74,
+          "ftpTarget": 305,
+          "tssTarget": 530,
+          "location": "Gentofte",
+          "wkgTarget": 4.49
+        },
+        {
+          "week": 28,
+          "start": "2027-03-15",
+          "phase": "BUILD",
+          "blockType": "BUILD+",
+          "ctlTarget": 77,
+          "ftpTarget": 305,
+          "tssTarget": 560,
+          "location": "Gentofte",
+          "wkgTarget": 4.49
+        },
+        {
+          "week": 29,
+          "start": "2027-03-22",
+          "phase": "BUILD",
+          "blockType": "RECOVERY",
+          "ctlTarget": 74,
+          "ftpTarget": 305,
+          "tssTarget": 300,
+          "location": "Gentofte",
+          "note": "Forlejr-aflastning.",
+          "wkgTarget": 4.49
+        },
+        {
+          "week": 30,
+          "start": "2027-03-29",
+          "phase": "BUILD",
+          "blockType": "CAMP",
+          "ctlTarget": 80,
+          "ftpTarget": 305,
+          "tssTarget": 750,
+          "location": "Mallorca",
+          "note": "LEJR #1 Mallorca. 20-25 t. Her bygges CTL — ikke i Gentofte. SA CALOBRA PR-FORSOEG: 9,45 km / 627 hm. PR at slaa er 35:18 sat paa 275 W. Koer den tidligt i lejren paa friske ben, ikke til sidst.",
+          "wkgTarget": 4.49,
+          "keySession": "Sa Calobra PR-forsoeg (PR 35:18 @ 275 W)"
+        },
+        {
+          "week": 31,
+          "start": "2027-04-05",
+          "phase": "BUILD",
+          "blockType": "RECOVERY",
+          "ctlTarget": 77,
+          "ftpTarget": 305,
+          "tssTarget": 280,
+          "location": "Gentofte",
+          "note": "Fuld aflastning efter lejr. TSB-gulv -30.",
+          "wkgTarget": 4.49
+        },
+        {
+          "week": 32,
+          "start": "2027-04-12",
+          "phase": "BUILD",
+          "blockType": "BUILD",
+          "ctlTarget": 78,
+          "ftpTarget": 305,
+          "tssTarget": 530,
+          "location": "Gentofte",
+          "wkgTarget": 4.49
+        },
+        {
+          "week": 33,
+          "start": "2027-04-19",
+          "phase": "BUILD",
+          "blockType": "BUILD",
+          "ctlTarget": 80,
+          "ftpTarget": 305,
+          "tssTarget": 550,
+          "location": "Gentofte",
+          "wkgTarget": 4.49
+        },
+        {
+          "week": 34,
+          "start": "2027-04-26",
+          "phase": "BUILD",
+          "blockType": "RECOVERY",
+          "ctlTarget": 77,
+          "ftpTarget": 305,
+          "tssTarget": 300,
+          "location": "Gentofte",
+          "wkgTarget": 4.49
+        },
+        {
+          "week": 35,
+          "start": "2027-05-03",
+          "phase": "BUILD",
+          "blockType": "BUILD",
+          "ctlTarget": 79,
+          "ftpTarget": 305,
+          "tssTarget": 520,
+          "location": "Gentofte",
+          "wkgTarget": 4.49
+        },
+        {
+          "week": 36,
+          "start": "2027-05-10",
+          "phase": "STELVIO",
+          "blockType": "BUILD",
+          "ctlTarget": 81,
+          "ftpTarget": 308,
+          "tssTarget": 540,
+          "location": "Gentofte",
+          "wkgTarget": 4.53
+        },
+        {
+          "week": 37,
+          "start": "2027-05-17",
+          "phase": "STELVIO",
+          "blockType": "BUILD+",
+          "ctlTarget": 83,
+          "ftpTarget": 308,
+          "tssTarget": 560,
+          "location": "Gentofte",
+          "note": "FTP-test. Forventet ~305 W = 4,5 W/kg. Sidste port foer Stelvio.",
+          "wkgTarget": 4.53
+        },
+        {
+          "week": 38,
+          "start": "2027-05-24",
+          "phase": "STELVIO",
+          "blockType": "RECOVERY",
+          "ctlTarget": 80,
+          "ftpTarget": 308,
+          "tssTarget": 300,
+          "location": "Gentofte",
+          "note": "Taper mod Stelvio.",
+          "wkgTarget": 4.53
+        },
+        {
+          "week": 39,
+          "start": "2027-05-31",
+          "phase": "STELVIO",
+          "blockType": "RACE",
+          "ctlTarget": 78,
+          "ftpTarget": 308,
+          "tssTarget": 350,
+          "location": "Bormio",
+          "note": "LA STELVIO SANTINI (Santini Stelvio Gran Fondo, lang rute) søn 6/6 — 130 km / 4.500 hm. B-løb, tilmeldt 16/7-2026 sammen med Eva. Form-check mod TdS: kør den som hårdt træningspas, ikke som A-løb.",
+          "wkgTarget": 4.53,
+          "keySession": "La Stelvio Santini 6/6 — 130 km / 4.500 hm"
+        },
+        {
+          "week": 40,
+          "start": "2027-06-07",
+          "phase": "SPECIFIK",
+          "blockType": "RECOVERY",
+          "ctlTarget": 76,
+          "ftpTarget": 320,
+          "tssTarget": 280,
+          "location": "Gentofte",
+          "note": "Post-Stelvio. Evaluer mod TdS-model.",
+          "wkgTarget": 4.71
+        },
+        {
+          "week": 41,
+          "start": "2027-06-14",
+          "phase": "SPECIFIK",
+          "blockType": "SPECIFIK",
+          "ctlTarget": 78,
+          "ftpTarget": 320,
+          "tssTarget": 540,
+          "location": "Gentofte",
+          "note": "Langtur vokser: 6 t+. Fueling øves hver gang.",
+          "wkgTarget": 4.71
+        },
+        {
+          "week": 42,
+          "start": "2027-06-21",
+          "phase": "SPECIFIK",
+          "blockType": "SPECIFIK",
+          "ctlTarget": 80,
+          "ftpTarget": 320,
+          "tssTarget": 570,
+          "location": "Gentofte",
+          "wkgTarget": 4.71
+        },
+        {
+          "week": 43,
+          "start": "2027-06-28",
+          "phase": "SPECIFIK",
+          "blockType": "RECOVERY",
+          "ctlTarget": 78,
+          "ftpTarget": 320,
+          "tssTarget": 300,
+          "location": "Gentofte",
+          "wkgTarget": 4.71
+        },
+        {
+          "week": 44,
+          "start": "2027-07-05",
+          "phase": "SPECIFIK",
+          "blockType": "SPECIFIK",
+          "ctlTarget": 80,
+          "ftpTarget": 320,
+          "tssTarget": 560,
+          "location": "Gentofte",
+          "note": "Løb ned til 1-2 rolige. Cyklen har forkørselsret.",
+          "wkgTarget": 4.71
+        },
+        {
+          "week": 45,
+          "start": "2027-07-12",
+          "phase": "SPECIFIK",
+          "blockType": "SPECIFIK+",
+          "ctlTarget": 83,
+          "ftpTarget": 320,
+          "tssTarget": 590,
+          "location": "Gentofte",
+          "wkgTarget": 4.71
+        },
+        {
+          "week": 46,
+          "start": "2027-07-19",
+          "phase": "SPECIFIK",
+          "blockType": "CAMP",
+          "ctlTarget": 88,
+          "ftpTarget": 320,
+          "tssTarget": 780,
+          "location": "Alperne",
+          "note": "LEJR #2 Alperne. Back-to-back bjergdage. CTL-peak. Gearing testes. FTP-test i lejren — porten mod 320 W (4,7 W/kg).",
+          "wkgTarget": 4.71
+        },
+        {
+          "week": 47,
+          "start": "2027-07-26",
+          "phase": "SPECIFIK",
+          "blockType": "RECOVERY",
+          "ctlTarget": 84,
+          "ftpTarget": 320,
+          "tssTarget": 300,
+          "location": "Gentofte",
+          "wkgTarget": 4.71
+        },
+        {
+          "week": 48,
+          "start": "2027-08-02",
+          "phase": "SPECIFIK",
+          "blockType": "SPECIFIK",
+          "ctlTarget": 86,
+          "ftpTarget": 320,
+          "tssTarget": 580,
+          "location": "Gentofte",
+          "wkgTarget": 4.71
+        },
+        {
+          "week": 49,
+          "start": "2027-08-09",
+          "phase": "SPECIFIK",
+          "blockType": "SPECIFIK",
+          "ctlTarget": 87,
+          "ftpTarget": 320,
+          "tssTarget": 560,
+          "location": "Gentofte",
+          "note": "Sidste større uge.",
+          "wkgTarget": 4.71
+        },
+        {
+          "week": 50,
+          "start": "2027-08-16",
+          "phase": "TAPER",
+          "blockType": "TAPER",
+          "ctlTarget": 85,
+          "ftpTarget": 320,
+          "tssTarget": 350,
+          "location": "Gentofte",
+          "note": "Intensitet holdes, volumen falder.",
+          "wkgTarget": 4.71
+        },
+        {
+          "week": 51,
+          "start": "2027-08-23",
+          "phase": "TAPER",
+          "blockType": "RACE",
+          "ctlTarget": 82,
+          "ftpTarget": 320,
+          "tssTarget": 180,
+          "location": "Le Châble/Verbier",
+          "note": "TOUR DES STATIONS ULTRAFONDO lør 28/8 — A-løb. Start 02:30.",
+          "wkgTarget": 4.71
+        }
+      ],
+      "races": [
+        {
+          "name": "CPH Half",
+          "date": "2026-09-20",
+          "type": "half_marathon",
+          "distance": "21.1km",
+          "priority": "B"
+        },
+        {
+          "name": "Santini Stelvio Gran Fondo (lang rute)",
+          "date": "2027-06-06",
+          "type": "granfondo",
+          "distance": "130km / 4500hm",
+          "priority": "B",
+          "note": "B-løb. TILMELDT 16/7-2026 (med Eva). Hyggeløb + form-check mod TdS.",
+          "registered": true,
+          "registeredDate": "2026-07-16"
+        },
+        {
+          "name": "Tour des Stations Ultrafondo",
+          "date": "2027-08-28",
+          "dateApprox": false,
+          "type": "ultrafondo",
+          "distance": "242km / 8848hm",
+          "priority": "A",
+          "note": "A-løb. IKKE TILMELDT — 2027 åbner først ca. sep-26. Tjek 20/9. Cutoff 20:30 Croix-de-Cœur. Start 02:30 (18 t margin).",
+          "registered": false,
+          "registrationOpens": "2026-09 (efter 2026-udgaven 29/8) — verificeret hos arrangøren 16/7",
+          "registrationUrl": "https://tourdesstations.ch/inscriptions/"
+        }
+      ],
+      "goals": {
+        "weightKg": 68,
+        "bodyFatPct": 16,
+        "afDaysPerWeek": 6,
+        "sleepHours": 7,
+        "strengthPerWeek": 2
+      },
+      "phases": [
+        {
+          "name": "TRANSITION",
+          "weekFrom": 1,
+          "weekTo": 8,
+          "ftpTarget": 278,
+          "wkgTarget": 3.97
+        },
+        {
+          "name": "BASE",
+          "weekFrom": 9,
+          "weekTo": 22,
+          "ftpTarget": 292,
+          "wkgTarget": 4.29
+        },
+        {
+          "name": "BUILD",
+          "weekFrom": 23,
+          "weekTo": 35,
+          "ftpTarget": 305,
+          "wkgTarget": 4.49
+        },
+        {
+          "name": "STELVIO",
+          "weekFrom": 36,
+          "weekTo": 39,
+          "ftpTarget": 308,
+          "wkgTarget": 4.53
+        },
+        {
+          "name": "SPECIFIK",
+          "weekFrom": 40,
+          "weekTo": 49,
+          "ftpTarget": 320,
+          "wkgTarget": 4.71
+        },
+        {
+          "name": "TAPER",
+          "weekFrom": 50,
+          "weekTo": 51,
+          "ftpTarget": 320,
+          "wkgTarget": 4.71
+        }
+      ],
+      "weightPlan": {
+        "startKg": 72.2,
+        "targetKg": 68,
+        "targetDate": "2027-01-31",
+        "bodyFatPctTarget": 16,
+        "bodyFatPctStart": 21.8,
+        "cutStartsFrom": "2026-09-21",
+        "holdFromMonth": "2027-02",
+        "maxLossPerWeekKg": 0.25,
+        "note": "72,2 -> 68 kg over 19 uger fra 21/9 = 0,21 kg/uge, inden for loftet. Intet underskud foer Medoc 5/9. Fedt 21,8 -> 16 %: kraever ca. 4,9 kg fedt vaek og 0,7 kg muskel paa — styrke 2x/uge er ikke valgfri. Garmin-fedtprocent er bioimpedans: styr efter 7-dages snittet, ikke dagstallet. Fra februar vedligehold i 7 mdr. Der slankes ikke under en build."
+      },
+      "ftpStart": 278,
+      "ftpTarget": 320,
+      "wkgStart": 3.85,
+      "wkgTarget": 4.71,
+      "hoursPerWeekAvg": 12,
+      "hoursPerWeekPeak": 15,
+      "ctlPeak": 88,
+      "ctlAtRace": 82
+    }
+  },
   "program": {
     "name": "Fast as Fifty",
     "start": "2026-06-01",
@@ -281,6 +1144,7 @@
   "athletes": {
     "kennet": {
       "name": "Kennet",
+      "birthYear": 1974,
       "source": "intervals",
       "zones": {
         "runThreshold": "4:24/km",
@@ -418,6 +1282,7 @@
         ]
       },
       "actualsThroughWeek": 8,
+      "actualsThroughWeekProgram": "medoc-2026",
       "days": [
         {
           "date": "2026-06-01",
@@ -8824,6 +9689,16 @@
           "kennet",
           "eva"
         ]
+      },
+      "tds-2027": {
+        "id": "tds-2027",
+        "name": "Tour des Stations 2027",
+        "raceDay": "2027-08-28",
+        "phase": "planned",
+        "athletes": [
+          "kennet"
+        ],
+        "note": "Aktivt program vælges efter dato (programs.<id>.start/end) — phase er kun information."
       }
     },
     "archive": [
