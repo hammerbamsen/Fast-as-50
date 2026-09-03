@@ -861,7 +861,7 @@ function renderToday() {
   ${kpiGrid()}
 
   <div class="card"><div class="label">Ugefokus</div>${renderFocus(D.weekFocus)}</div>
-  <div style="text-align:center;padding:8px 0 16px;font-family:'Space Mono',monospace;font-size:9px;color:var(--muted);letter-spacing:.06em">SIDST OPDATERET <span id='last-updated'></span> · <span id="live-time"></span></div>
+  <div style="text-align:center;padding:8px 0 16px;font-family:'Space Mono',monospace;font-size:9px;color:var(--muted);letter-spacing:.06em">SIDST OPDATERET <span id='last-updated'>${D.lastUpdated || '—'}</span> · <span id="live-time"></span></div>
   `;
   setTimeout(()=>{const el=document.getElementById('live-time');if(el)el.textContent=new Date().toLocaleTimeString('da-DK',{hour:'2-digit',minute:'2-digit'});},50);
 }
@@ -940,7 +940,7 @@ function renderWeek() {
       </div>
       <div style="width:1px;height:36px;background:rgba(255,255,255,.1)"></div>
       <div style="text-align:center">
-        <div style="font-family:'Newsreader',serif;font-size:32px;color:var(--gold);line-height:1">${D.afDays.weekDone}/7</div>
+        <div style="font-family:'Newsreader',serif;font-size:32px;color:var(--gold);line-height:1">${D.afDays.weekDone}/${D.afDays.target}</div>
         <div style="font-family:'Space Mono',monospace;font-size:9px;color:rgba(255,255,255,.5);letter-spacing:.08em">DENNE UGE</div>
       </div>
     </div>` : ''}
@@ -2306,9 +2306,10 @@ function checkReadiness(readiness) { const existing = document.getElementById('r
 // Begge kaldere bruger nu denne funktion, så de ikke kan drifte fra hinanden.
 function applyRemote(remote) {
       const m = remote.meta || {};
+      D.meta = m;   // sticky-bar/CTL-mål læser D.meta.week — blev aldrig sat før 3/9-26
       if (m.updated)                    D.lastUpdated            = m.updated;
-      const luEl = document.getElementById('last-updated');
-      if (luEl) luEl.textContent = m.updated || D.lastUpdated || '—';
+      // "SIDST OPDATERET" renderes fra D.lastUpdated i templaten (efter navigate()) —
+      // et textContent sat her blev overskrevet af re-renderingen nedenfor.
       checkStaleness(m.updated); fetch("https://raw.githubusercontent.com/hammerbamsen/fast-as-50/main/data/plan_view.json?t=" + Date.now()).then(rv=>rv.ok?rv.json():null).then(view=>checkReadiness(view&&view.kennet&&view.kennet.readiness)).catch(()=>{});
       if (remote.zones)                 D.zones                  = remote.zones;
       if (m.week)                       D.week                   = m.week;
@@ -2334,18 +2335,20 @@ function applyRemote(remote) {
         const km = remote.kpis;
         D.kpis = [
           // Træning
-          {cat:"Træning", label:"CTL",       value:km.ctl?.value    ||"—", unit:"",    sub:km.ctl?.sub    ||"Mål 60 (uge 14)",   color:"#C0392B"},
-          {cat:"Træning", label:"FORM",       value:km.tsb?.value    ||"—", unit:"",    sub:km.tsb?.sub    ||"Bygger",             color:km.tsb?.color||"#F39C12"},
-          {cat:"Træning", label:"LØB KM",     value:km.runKm?.value  ||"—", unit:"km",  sub:km.runKm?.sub  ||"Mål 40+ km",         color:"#C0392B"},
-          {cat:"Træning", label:"CYKEL KM",   value:km.bikeKm?.value ||"—", unit:"km",  sub:km.bikeKm?.sub ||"Cykel denne uge",    color:"var(--bike)"},
+          // Farver kommer fra data.json (update_kpi.py måler dem mod målet) —
+          // ingen hardkodede farver her; neutral grå kun hvis feltet mangler.
+          {cat:"Træning", label:"CTL",       value:km.ctl?.value    ||"—", unit:"",    sub:km.ctl?.sub    ||"Ugens mål",          color:km.ctl?.color    ||"#7A6A58"},
+          {cat:"Træning", label:"FORM",       value:km.tsb?.value    ||"—", unit:"",    sub:km.tsb?.sub    ||"Bygger",             color:km.tsb?.color    ||"#7A6A58"},
+          {cat:"Træning", label:"LØB KM",     value:km.runKm?.value  ||"—", unit:"km",  sub:km.runKm?.sub  ||"Løb denne uge",      color:km.runKm?.color  ||"#7A6A58"},
+          {cat:"Træning", label:"CYKEL KM",   value:km.bikeKm?.value ||"—", unit:"km",  sub:km.bikeKm?.sub ||"Cykel denne uge",    color:km.bikeKm?.color ||"var(--bike)"},
           {cat:"Træning", label:"TSS UGE",    value:km.tssComp?.value||"0", unit:km.tssComp?.unit||"TSS", sub:km.tssComp?.sub||"Mål denne uge", color:km.tssComp?.color||"#7A6A58"},
           // Krop
-          {cat:"Krop",    label:"VÆGT",       value:km.weight?.value ||"—", unit:"kg",  sub:km.weight?.sub ||"Mål <68 kg",         color:"#27AE60"},
-          {cat:"Krop",    label:"FEDT%",      value:km.fat?.value    ||"—", unit:"%",   sub:km.fat?.sub    ||"Mål <16%",           color:"#F39C12"},
-          {cat:"Krop",    label:"AF STREAK",  value:km.afStreak?.value||"—", unit:"",   sub:km.afStreak?.sub||"Dage i træk",        color:"#59182A"},
-          {cat:"Krop",    label:"SØVN",       value:km.sleep?.value  ||"—", unit:"t",   sub:km.sleep?.sub  ||"Mål 7t",             color:"#2874A6"},
-          {cat:"Krop",    label:"HRV",        value:km.hrv?.value    ||"—", unit:"ms",  sub:km.hrv?.sub    ||"Stabil",             color:"#7A6A58"},
-          {cat:"Svøm",    label:"SVØM UGE",   value:km.swimM?.value  ||"0",  unit:"m",   sub:km.swimM?.sub  ||"Svøm denne uge", color:"var(--swim)"},
+          {cat:"Krop",    label:"VÆGT",       value:km.weight?.value ||"—", unit:"kg",  sub:km.weight?.sub ||"Mål",                color:km.weight?.color ||"#7A6A58"},
+          {cat:"Krop",    label:"FEDT%",      value:km.fat?.value    ||"—", unit:"%",   sub:km.fat?.sub    ||"Mål",                color:km.fat?.color    ||"#7A6A58"},
+          {cat:"Krop",    label:"AF DAGE",    value:km.afStreak?.value||"—", unit:"",   sub:km.afStreak?.sub||`af ${D.afDays.target} denne uge`, color:km.afStreak?.color||"#59182A"},
+          {cat:"Krop",    label:"SØVN",       value:km.sleep?.value  ||"—", unit:"t",   sub:km.sleep?.sub  ||"Snit 7d · mål 7t",   color:km.sleep?.color  ||"#7A6A58"},
+          {cat:"Krop",    label:"HRV",        value:km.hrv?.value    ||"—", unit:"ms",  sub:km.hrv?.sub    ||"Snit 7d",            color:km.hrv?.color    ||"#7A6A58"},
+          {cat:"Svøm",    label:"SVØM UGE",   value:km.swimM?.value  ||"0",  unit:"m",   sub:km.swimM?.sub  ||"Svøm denne uge",     color:km.swimM?.color  ||"var(--swim)"},
         ];
       }
       if (remote.weightGoal  !== undefined) D.weightGoal  = remote.weightGoal;
