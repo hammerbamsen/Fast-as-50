@@ -4,9 +4,13 @@ on:
   workflow_dispatch:
     inputs:
       week:
-        description: 'Uge nummer (1-14)'
+        description: 'Uge nummer i programmet (1..totalWeeks)'
         required: true
         default: '2'
+      program:
+        description: 'Program-id fra plan.json (tom = det program der er aktivt i dag)'
+        required: false
+        default: ''
   schedule:
     # Søndag 18:00 UTC = 20:00 CET — sikkerhedsnet efter søndagsrutinen.
     # Fanger Intervals-ændringer lavet via direkte PUT, som build-workouts.yml ikke ser.
@@ -16,9 +20,14 @@ on:
   workflow_call:
     inputs:
       week:
-        description: 'Uge nummer (1-14)'
+        description: 'Uge nummer i programmet (1..totalWeeks)'
         required: true
         type: string
+      program:
+        description: 'Program-id fra plan.json (tom = aktivt program i dag)'
+        required: false
+        type: string
+        default: ''
 
 permissions:
   contents: write
@@ -37,23 +46,33 @@ jobs:
         id: uge
         env:
           WEEK_IN: ${{ inputs.week || github.event.inputs.week || github.event.client_payload.week }}
+          PROGRAM_IN: ${{ inputs.program || github.event.inputs.program || github.event.client_payload.program }}
         run: |
           set -euo pipefail
+          PROGRAM="${PROGRAM_IN:-}"
           if [ -n "${WEEK_IN:-}" ]; then
             WEEK="$WEEK_IN"
-            echo "Uge fra input: $WEEK"
+            echo "Uge fra input: $WEEK (program: ${PROGRAM:-aktivt i dag})"
           elif [ "${{ github.event_name }}" = "schedule" ]; then
-            WEEK=$(python3 -c "
-          from datetime import date
-          PLAN_START = date(2026, 6, 1)
-          cur = min(max((date.today() - PLAN_START).days // 7 + 1, 1), 14)
-          print(min(cur + 1, 14))
+            # Kommende uge: programmet der er aktivt om 7 dage (modules/programs.py)
+            OUT=$(python3 -c "
+          import json, sys
+          from datetime import date, timedelta
+          sys.path.insert(0, 'scripts')
+          from modules import programs
+          plan = json.load(open('data/plan.json', encoding='utf-8'))
+          nxt = date.today() + timedelta(days=7)
+          prog = programs.active_program(plan, 'kennet', nxt)
+          print(prog['id'], programs.week_no(prog, nxt))
           ")
-            echo "Uge beregnet fra cron (kommende uge): $WEEK"
+            PROGRAM=$(echo "$OUT" | awk '{print $1}')
+            WEEK=$(echo "$OUT" | awk '{print $2}')
+            echo "Uge beregnet fra cron (kommende uge): $PROGRAM uge $WEEK"
           else
             echo "FEJL: week-input mangler og eventet er ikke schedule — afbryder"; exit 1
           fi
           echo "week=$WEEK" >> "$GITHUB_OUTPUT"
+          echo "program=$PROGRAM" >> "$GITHUB_OUTPUT"
 
       - name: Slet og genopret Traening-events i Outlook
         env:
@@ -63,6 +82,7 @@ jobs:
           INTERVALS_API_KEY:    ${{ secrets.INTERVALS_API_KEY }}
           INTERVALS_ATHLETE_ID: ${{ secrets.INTERVALS_ATHLETE_ID }}
           WEEK: ${{ steps.uge.outputs.week }}
+          PROGRAM: ${{ steps.uge.outputs.program }}
         run: |
           set -o pipefail
           if [ -z "$WEEK" ]; then echo "FEJL: week mangler efter beregning — afbryder"; exit 1; fi

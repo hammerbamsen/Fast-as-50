@@ -11,16 +11,27 @@ USER          = 'kennet@hammerby.com'
 GRAPH         = f'https://graph.microsoft.com/v1.0/users/{USER}'
 TIMEOUT       = 30
 
-# PLAN_START/TOTAL_WEEKS laeses fra plan.json (rettet 28/8-2026 — var hardkodet
-# til medoc-2026's 01-06-2026/14 uger, hvilket fik uge 15-16 til at fejle her).
-import json as _json
-_prog = _json.load(open(os.path.join(os.path.dirname(os.path.abspath(__file__)),
-                                    '..', '..', '..', 'data', 'plan.json'),
-                        encoding='utf-8'))['program']
+# Program og uge (rettet 3/9-2026): WEEK er ugenummer i programmet PROGRAM
+# (program-id fra plan.json -> programs). Mangler PROGRAM, bruges det program
+# der er aktivt i dag (modules/programs.py). Var før bundet til det ene legacy
+# 'program'-felt og frøs derfor på sidste uge ved programskifte.
+import json as _json, sys as _sys
+_REPO_ROOT = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', '..', '..')
+_sys.path.insert(0, os.path.join(_REPO_ROOT, 'scripts'))
+from modules import programs as _programs
+_plan = _json.load(open(os.path.join(_REPO_ROOT, 'data', 'plan.json'), encoding='utf-8'))
+PROGRAM_ID = os.environ.get('PROGRAM', '').strip()
+if PROGRAM_ID:
+    _prog = _programs.list_programs(_plan).get(PROGRAM_ID)
+    assert _prog, f'Ukendt program: {PROGRAM_ID!r}'
+else:
+    _prog = _programs.active_program(_plan, 'kennet')
+    PROGRAM_ID = _prog['id']
 PLAN_START_D = date.fromisoformat(_prog['start'])
 TOTAL_WEEKS  = _prog['totalWeeks']
 
-assert 1 <= WEEK <= TOTAL_WEEKS, f'Ugyldig uge: {WEEK} (program har {TOTAL_WEEKS} uger)'
+assert 1 <= WEEK <= TOTAL_WEEKS, f'Ugyldig uge: {WEEK} (program {PROGRAM_ID} har {TOTAL_WEEKS} uger)'
+print(f'Program {PROGRAM_ID}: uge {WEEK} af {TOTAL_WEEKS}')
 
 # Token
 resp = requests.post(
