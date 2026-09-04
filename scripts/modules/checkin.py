@@ -111,10 +111,19 @@ def hunger_days(log, n=7):
     return sum(1 for e in _last(log, n) if e.get('sult') == 2)
 
 
+# Før 4/9-2026 betød Alkohol=1 blot "drak" (af.html). Valgt/autopilot-skelnen
+# findes først fra log-arket i v2.0 — ældre 1'ere må ikke vises som "valgt".
+KIND_CUTOVER = '2026-09-04'
+
+
 def af_kinds(log):
-    """{dato: 'valgt'|'autopilot'} for drikkedage registreret som 1/2."""
-    return {e['date']: ALKOHOL_KIND[e['alkohol']]
-            for e in (log or []) if e.get('alkohol') in ALKOHOL_KIND}
+    """{dato: 'valgt'|'autopilot'|'drak'} for drikkedage (1/2). Før KIND_CUTOVER: 'drak'."""
+    out = {}
+    for e in (log or []):
+        a = e.get('alkohol')
+        if a in ALKOHOL_KIND:
+            out[e['date']] = ALKOHOL_KIND[a] if e['date'] >= KIND_CUTOVER else 'drak'
+    return out
 
 
 def coach_line(log):
