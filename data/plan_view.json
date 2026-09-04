@@ -1,22 +1,22 @@
 {
- "generated": "2026-09-04T06:55:25Z",
+ "generated": "2026-09-04T14:41:56Z",
  "kennet": {
   "programId": "medoc-2026",
   "seed": {
    "date": "2026-09-04",
-   "ctl": 48.4,
-   "atl": 39.5
+   "ctl": 48.6,
+   "atl": 41.0
   },
   "projection": [
    {
     "d": "2026-09-05",
-    "ctl": 47.2,
-    "tsb": 13.4
+    "ctl": 47.4,
+    "tsb": 12.3
    },
    {
     "d": "2026-09-06",
-    "ctl": 46.1,
-    "tsb": 17.1
+    "ctl": 46.3,
+    "tsb": 16.2
    }
   ],
   "weeks": [
@@ -132,8 +132,8 @@
    },
    {
     "week": 14,
-    "projEndCtl": 46.1,
-    "deviation": 3.1,
+    "projEndCtl": 46.3,
+    "deviation": 3.3,
     "flags": []
    }
   ],
@@ -177,5 +177,5 @@
   },
   "readiness": "HIGH"
  },
- "inputsHash": "e17484df2f81467d"
+ "inputsHash": "f653df90a7e49ec2"
 }
