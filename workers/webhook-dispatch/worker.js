@@ -81,6 +81,7 @@ export default {
           protein: body.protein,
           energi: body.energi,
           stress: body.stress,
+          sult: body.sult,
         }),
       });
     }

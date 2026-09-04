@@ -616,8 +616,12 @@ def generate_ai_assessment(week_num, weekday, day_name, ctl, tsb, weight, af_thi
                              decoupling_note=None,
                              fat=None, fat_goal=None, fat_trend_note=None,
                              weight_date=None, fat_date=None,
-                             weight_avg7=None, fat_avg7=None):
-    """Kalder Anthropic API server-side og returnerer HTML-formateret coach-vurdering."""
+                             weight_avg7=None, fat_avg7=None, checkin_line=None):
+    """Kalder Anthropic API server-side og returnerer HTML-formateret coach-vurdering.
+
+    checkin_line: én linje fra checkin.coach_line() ("Protein 3/3-dage sidste 7: n ·
+    aftensult-dage: m · energi-snit: x") — kun med i prompten når data findes.
+    """
     weight_goal = _goal(weight_goal, 'weightKg', 68)
     fat_goal = _goal(fat_goal, 'bodyFatPct', 16)
     global LAST_AI_ERROR
@@ -768,6 +772,8 @@ def generate_ai_assessment(week_num, weekday, day_name, ctl, tsb, weight, af_thi
         f"\n- UGENTLIGT STORE BILLEDE (kun søndage): {trajectory_note}"
         if trajectory_note else ""
     )
+    checkin_prompt_line = f"\n- Check-in (Kennets egne registreringer): {checkin_line}" if checkin_line else ""
+
     # Aerobt flag: ét pas hvor EF lå markant under egen median. Kommer fra
     # decoupling.py, som allerede har hængt forbeholdene (varme, tidspunkt) på.
     # Sætningen skal bruges ordret — modellen må ikke regne EF om eller opgradere
@@ -802,7 +808,7 @@ def generate_ai_assessment(week_num, weekday, day_name, ctl, tsb, weight, af_thi
         f"- I dag: {today_line} [{today_status}]\n"
         f"- GENNEMFØRT denne uge (fuldførte kendsgerninger): {completed_str}\n"
         + (f"- MISSET denne uge (dag passeret, ikke gennemført): {missed_str}\n" if missed_str else "")
-        + f"- Resten af ugen (KUN fremtidige, endnu ikke forfaldne pas): {remaining}{weight_line}{fat_line}{avg_line}{distance_line}{travel_line}{decoupling_line}{trajectory_line}{compliance_line}{bike_library_line}\n\n"
+        + f"- Resten af ugen (KUN fremtidige, endnu ikke forfaldne pas): {remaining}{weight_line}{fat_line}{avg_line}{distance_line}{travel_line}{decoupling_line}{trajectory_line}{checkin_prompt_line}{compliance_line}{bike_library_line}\n\n"
         f"VIGTIGT:\n"
         + ("- KAELDERPAS (ufravigelig, naar KAELDER-KATALOG staar ovenfor): naar du "
            "foreslaar indendoers cykeltraening, SKAL du bruge et workout-id fra kataloget "
