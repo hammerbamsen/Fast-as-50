@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-09-04 08:56",
+    "updated": "2026-09-04 09:15",
     "week": 14,
     "totalWeeks": 14,
     "blockType": "RACE",
@@ -91,6 +91,12 @@
       "unit": "",
       "sub": "af 6 denne uge · snit 4 uger 5,5 · streak 1",
       "color": "#59182A"
+    },
+    "protein": {
+      "value": "0",
+      "unit": "/7",
+      "sub": "3/3-dage · 4 uger 0,0",
+      "color": "#7A6A58"
     }
   },
   "af": {
@@ -2996,7 +3002,7 @@
       "note": "Nøgle virker"
     }
   },
-  "credentialsCheckedTs": "2026-09-04T06:56:29.671599",
+  "credentialsCheckedTs": "2026-09-04T07:15:47.779462",
   "coachAssessmentTsFull": "2026-09-04T06:55:21.548350",
   "coachAssessmentWeightAtGen": 72.3,
   "coachAssessmentAfAtGen": 3,
@@ -3855,5 +3861,212 @@
     "sleepHours": 7,
     "swimMeters": 2000,
     "runKmPerWeek": 40
+  },
+  "checkinLog": [
+    {
+      "date": "2026-08-08",
+      "alkohol": 0,
+      "protein": null,
+      "energi": null,
+      "sult": null
+    },
+    {
+      "date": "2026-08-09",
+      "alkohol": 0,
+      "protein": null,
+      "energi": null,
+      "sult": null
+    },
+    {
+      "date": "2026-08-10",
+      "alkohol": 0,
+      "protein": null,
+      "energi": null,
+      "sult": null
+    },
+    {
+      "date": "2026-08-11",
+      "alkohol": 0,
+      "protein": null,
+      "energi": null,
+      "sult": null
+    },
+    {
+      "date": "2026-08-12",
+      "alkohol": 0,
+      "protein": null,
+      "energi": null,
+      "sult": null
+    },
+    {
+      "date": "2026-08-13",
+      "alkohol": 1,
+      "protein": null,
+      "energi": null,
+      "sult": null
+    },
+    {
+      "date": "2026-08-14",
+      "alkohol": 1,
+      "protein": null,
+      "energi": null,
+      "sult": null
+    },
+    {
+      "date": "2026-08-15",
+      "alkohol": 1,
+      "protein": null,
+      "energi": null,
+      "sult": null
+    },
+    {
+      "date": "2026-08-16",
+      "alkohol": 1,
+      "protein": null,
+      "energi": null,
+      "sult": null
+    },
+    {
+      "date": "2026-08-17",
+      "alkohol": 0,
+      "protein": null,
+      "energi": null,
+      "sult": null
+    },
+    {
+      "date": "2026-08-18",
+      "alkohol": 0,
+      "protein": null,
+      "energi": null,
+      "sult": null
+    },
+    {
+      "date": "2026-08-19",
+      "alkohol": 0,
+      "protein": null,
+      "energi": null,
+      "sult": null
+    },
+    {
+      "date": "2026-08-20",
+      "alkohol": 0,
+      "protein": null,
+      "energi": null,
+      "sult": null
+    },
+    {
+      "date": "2026-08-21",
+      "alkohol": 0,
+      "protein": null,
+      "energi": null,
+      "sult": null
+    },
+    {
+      "date": "2026-08-22",
+      "alkohol": 0,
+      "protein": null,
+      "energi": null,
+      "sult": null
+    },
+    {
+      "date": "2026-08-23",
+      "alkohol": 0,
+      "protein": null,
+      "energi": null,
+      "sult": null
+    },
+    {
+      "date": "2026-08-24",
+      "alkohol": 0,
+      "protein": null,
+      "energi": null,
+      "sult": null
+    },
+    {
+      "date": "2026-08-25",
+      "alkohol": 0,
+      "protein": null,
+      "energi": null,
+      "sult": null
+    },
+    {
+      "date": "2026-08-26",
+      "alkohol": 0,
+      "protein": null,
+      "energi": null,
+      "sult": null
+    },
+    {
+      "date": "2026-08-27",
+      "alkohol": 0,
+      "protein": null,
+      "energi": null,
+      "sult": null
+    },
+    {
+      "date": "2026-08-28",
+      "alkohol": 0,
+      "protein": null,
+      "energi": null,
+      "sult": null
+    },
+    {
+      "date": "2026-08-29",
+      "alkohol": 1,
+      "protein": null,
+      "energi": null,
+      "sult": null
+    },
+    {
+      "date": "2026-08-30",
+      "alkohol": 0,
+      "protein": null,
+      "energi": null,
+      "sult": null
+    },
+    {
+      "date": "2026-08-31",
+      "alkohol": 0,
+      "protein": null,
+      "energi": null,
+      "sult": null
+    },
+    {
+      "date": "2026-09-01",
+      "alkohol": 0,
+      "protein": null,
+      "energi": null,
+      "sult": null
+    },
+    {
+      "date": "2026-09-02",
+      "alkohol": 1,
+      "protein": null,
+      "energi": null,
+      "sult": null
+    },
+    {
+      "date": "2026-09-03",
+      "alkohol": 0,
+      "protein": null,
+      "energi": null,
+      "sult": null
+    },
+    {
+      "date": "2026-09-04",
+      "alkohol": null,
+      "protein": null,
+      "energi": null,
+      "sult": null
+    }
+  ],
+  "energy7": null,
+  "af_kind": {
+    "2026-08-13": "valgt",
+    "2026-08-14": "valgt",
+    "2026-08-15": "valgt",
+    "2026-08-16": "valgt",
+    "2026-08-29": "valgt",
+    "2026-09-02": "valgt"
   }
 }
