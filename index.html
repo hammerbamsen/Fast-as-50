@@ -396,7 +396,7 @@ details.fold[open] > summary::after { content:"▴"; }
 
   <span class="q lab" style="display:block;font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin:4px 0 6px">Sidste 7 dage</span>
   <div class="dots" id="log-dots"></div>
-  <div class="legend">Øverste række: AF-dag (grøn) · valgt (gul) · bare skete (rød). Nederste: protein 3/3 · 2/3 · ≤1.</div>
+  <div class="legend">Øverste række: AF-dag (grøn) · valgt (gul) · bare skete / før 4/9 (rød). Nederste: protein 3/3 · 2/3 · ≤1.</div>
   <button class="close" onclick="showLogSheet(false)">Luk</button>
 </div>
 
@@ -2395,7 +2395,8 @@ function renderLogDots(){
     const dt = new Date(); dt.setDate(dt.getDate() - i);
     const iso = isoOf(dt);
     const e = iso === t ? cur : (byDate[iso] || {});
-    const af = e.alkohol == null ? 'none' : (e.alkohol === 0 ? 'af' : e.alkohol === 2 ? 'af x' : 'af v');
+    const kind = (D.af_kind || {})[e.date];
+    const af = e.alkohol == null ? 'none' : (e.alkohol === 0 ? 'af' : (e.alkohol === 2 || kind === 'drak' || kind === 'autopilot') ? 'af x' : 'af v');
     const pr = e.protein == null ? 'none' : 'p' + e.protein;
     days.push(`<div><span class="lab">${DK_DAY_SHORT[(dt.getDay()+6)%7]}</span><i class="${af}"></i><i class="${pr}"></i></div>`);
   }
@@ -2589,6 +2590,7 @@ function applyRemote(remote) {
       if (remote.af_history)             { D.afHistory = remote.af_history; }
       if (remote.af_log)                 { D.af_log    = remote.af_log; }
       if (Array.isArray(remote.checkinLog)) D.checkinLog = remote.checkinLog;
+      if (remote.af_kind && typeof remote.af_kind === 'object') D.af_kind = remote.af_kind;
       if ('energy7' in remote)           D.energy7 = remote.energy7;
       if (remote.kpis && remote.kpis.protein) D.kpiProtein = remote.kpis.protein;
       if (remote.kpis) {

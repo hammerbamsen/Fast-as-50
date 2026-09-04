@@ -65,7 +65,12 @@ def test_aftensult_taeller_kun_ja():
 
 def test_af_kinds_kun_for_drikkedage():
     log = build_checkin_log(_rows({0: {'Alkohol': 0}, 1: {'Alkohol': 1}, 2: {'Alkohol': 2}}), today=TODAY)
-    assert af_kinds(log) == {'2026-09-03': 'valgt', '2026-09-02': 'autopilot'}
+    assert af_kinds(log) == {'2026-09-03': 'drak', '2026-09-02': 'drak'}   # før KIND_CUTOVER = 'drak'
+
+
+def test_af_kinds_efter_cutover():
+    log = [{'date': '2026-09-10', 'alkohol': 1}, {'date': '2026-09-11', 'alkohol': 2}, {'date': '2026-09-12', 'alkohol': 0}]
+    assert af_kinds(log) == {'2026-09-10': 'valgt', '2026-09-11': 'autopilot'}
 
 
 def test_coach_line():
