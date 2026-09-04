@@ -11,7 +11,8 @@
 <meta name="apple-mobile-web-app-title" content="Fast as Fifty">
 <link rel="manifest" href="manifest.json">
 <link rel="apple-touch-icon" href="icon.svg">
-<meta name="theme-color" content="#59182A">
+<meta name="theme-color" content="#16324F">
+<meta name="color-scheme" content="light dark">
 <title>Fast as Fifty</title>
 <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,400;0,600;1,400&family=Hanken+Grotesk:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
@@ -41,15 +42,31 @@
 </script>
 <style>
 :root {
-  --wine: #59182A; --wine-d: #3E0F1D; --wine-l: #7A2038;
-  --gold: #BE863A; --gold-l: #D4A55A;
-  --cream: #ECE4D7; --cream-d: #DDD3C3;
-  --ink: #1A1008; --muted: #7A6A58; --white: #FDFAF6;
-  --run: #C0392B; --bike: #2874A6; --swim: #1A7A5E; --strength: #7D3C98; --free: #7A6A58; --walk: #2E8B57; --hike: #8B6914; --commute: #1A6B8A; --openwater: #0B5394;
+  /* Blå palet (4/9-26, fra I dag-prototypen). --wine/--gold beholder navnene
+     så resten af filen virker; --cream/--cream-d/--white er aliaser for
+     --bg/--line/--card, så gamle regler følger temaet automatisk. */
+  --wine: #16324F; --wine-d: #0E2238; --wine-l: #24507A;
+  --gold: #D3A24A; --gold-l: #E8BC6A;
+  --bg: #EEF2F5; --bg-2: #DFE6EC; --card: #FBFCFD; --line: #CCD6DF;
+  --ink: #12202E; --muted: #5C6B7A;
+  --hero: #16324F; --hero-ink: #F4F7FA; --hero-muted: #B8C7D6;
+  --ok: #2E8B57; --watch: #D3A24A; --act: #C0392B;
+  --cream: var(--bg); --cream-d: var(--line); --white: var(--card);
+  --run: #C0392B; --bike: #3A8FD1; --swim: #1A7A5E; --strength: #7D3C98; --free: #6B7A88; --walk: #2E8B57; --hike: #8B6914; --commute: #1A6B8A; --openwater: #0B5394; --race: #BE863A;
   --r: 12px;
 }
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0F1A25; --bg-2: #16232F; --card: #1B2A38; --ink: #E6EDF3; --muted: #9FB0C0; --line: #2C3D4D;
+    --hero: #1E3F63; --hero-ink: #F4F7FA; --hero-muted: #B8C7D6; --gold: #E8BC6A; --ok: #4FAE7B; --watch: #E8BC6A; --act: #E0564A;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0F1A25; --bg-2: #16232F; --card: #1B2A38; --ink: #E6EDF3; --muted: #9FB0C0; --line: #2C3D4D;
+  --hero: #1E3F63; --hero-ink: #F4F7FA; --hero-muted: #B8C7D6; --gold: #E8BC6A; --ok: #4FAE7B; --watch: #E8BC6A; --act: #E0564A;
+}
 *,*::before,*::after { box-sizing: border-box; margin:0; padding:0; }
-html,body { height:100%; background:var(--cream); font-family:'Hanken Grotesk',sans-serif; color:var(--ink); }
+html,body { height:100%; background:var(--bg); font-family:'Hanken Grotesk',sans-serif; color:var(--ink); }
 ::-webkit-scrollbar { width:4px; }
 ::-webkit-scrollbar-thumb { background:var(--cream-d); border-radius:2px; }
 
@@ -57,11 +74,12 @@ html,body { height:100%; background:var(--cream); font-family:'Hanken Grotesk',s
 .app { display:flex; min-height:100vh; }
 .sidebar { width:200px; flex-shrink:0; background:var(--wine); display:flex; flex-direction:column; position:fixed; top:0; left:0; height:100vh; z-index:50; }
 .main { margin-left:200px; flex:1; padding:28px 28px 80px; max-width:860px; }
-.bottom-nav { display:none; position:fixed; bottom:0; left:0; right:0; background:var(--wine); border-top:1px solid var(--wine-l); padding:6px 0 14px; z-index:100; justify-content:space-around; align-items:center; }
+.bottom-nav { display:none; position:fixed; bottom:0; left:0; right:0; background:var(--card); border-top:1px solid var(--line); padding:6px 0 max(14px,env(safe-area-inset-bottom)); z-index:100; justify-content:space-around; align-items:center; }
 
 @media(max-width:768px) {
   .sidebar { display:none !important; }
   .main { margin-left:0 !important; padding:16px 14px 90px !important; max-width:100% !important; }
+  .page-header { margin-bottom:10px; }
   .bottom-nav { display:flex !important; }
   .mobile-refresh-btn { display:flex !important; }
   .desktop-only { display:none !important; }
@@ -87,21 +105,23 @@ html,body { height:100%; background:var(--cream); font-family:'Hanken Grotesk',s
 
 /* Sidebar */
 .sidebar-logo { padding:22px 20px 18px; border-bottom:1px solid var(--wine-l); }
-.sidebar-logo-text { font-family:'Newsreader',serif; font-size:20px; color:var(--white); line-height:1.1; }
+.sidebar-logo-text { font-family:'Newsreader',serif; font-size:20px; color:var(--hero-ink); line-height:1.1; }
 .sidebar-logo-text span { color:var(--gold); }
 .sidebar-sub { font-family:'Space Mono',monospace; font-size:9px; color:rgba(255,255,255,0.35); margin-top:4px; letter-spacing:.08em; }
 .sidebar-nav { flex:1; padding:10px; }
 .nav-btn { width:100%; display:flex; align-items:center; gap:10px; padding:10px; border-radius:8px; border:none; background:transparent; border-left:3px solid transparent; color:rgba(255,255,255,.55); font-family:'Hanken Grotesk',sans-serif; font-size:14px; cursor:pointer; text-align:left; transition:all .15s; margin-bottom:2px; }
 .nav-btn:hover { color:rgba(255,255,255,.85); background:rgba(255,255,255,.05); }
-.nav-btn.active { color:var(--gold); background:rgba(190,134,58,.15); border-left-color:var(--gold); font-weight:600; }
+.nav-btn.active { color:var(--gold); background:rgba(211,162,74,.15); border-left-color:var(--gold); font-weight:600; }
 .nav-btn svg { flex-shrink:0; }
 .sidebar-footer { padding:14px 20px; border-top:1px solid var(--wine-l); }
 .sidebar-footer-week { font-family:'Space Mono',monospace; font-size:9px; color:var(--gold); letter-spacing:.07em; margin-bottom:2px; }
 .sidebar-footer-block { font-family:'Space Mono',monospace; font-size:9px; color:rgba(255,255,255,.3); }
 
 /* Bottom nav */
-.bottom-btn { display:flex; flex-direction:column; align-items:center; gap:3px; background:none; border:none; cursor:pointer; padding:4px 8px; color:rgba(255,255,255,.4); transition:color .15s; }
-.bottom-btn.active { color:var(--gold); }
+.bottom-btn { display:flex; flex-direction:column; align-items:center; gap:3px; background:none; border:none; cursor:pointer; padding:4px 14px; color:var(--muted); transition:color .15s; }
+.bottom-btn.active { color:var(--wine); }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .bottom-btn.active { color:var(--gold); } }
+:root[data-theme="dark"] .bottom-btn.active { color:var(--gold); }
 .bottom-btn span { font-family:'Hanken Grotesk',sans-serif; font-size:10px; font-weight:400; }
 .bottom-btn.active span { font-weight:700; }
 
@@ -114,62 +134,20 @@ html,body { height:100%; background:var(--cream); font-family:'Hanken Grotesk',s
 
 /* Cards */
 .card { background:var(--white); border-radius:var(--r); padding:18px 16px; border:1px solid var(--cream-d); margin-bottom:14px; }
-.card-wine { background:var(--wine); border-color:transparent; position:relative; overflow:hidden; }
+.card-wine { background:var(--hero); border-color:transparent; position:relative; overflow:hidden; }
 .card-wine::before { content:''; position:absolute; top:-20px; right:-20px; width:120px; height:120px; border-radius:50%; background:var(--wine-l); opacity:.4; }
 .label { font-family:'Space Mono',monospace; font-size:10px; color:var(--muted); letter-spacing:.08em; text-transform:uppercase; margin-bottom:12px; }
 .label-gold { color:var(--gold); }
 
 /* Coach speech */
-.coach-text { font-family:'Hanken Grotesk',sans-serif; font-size:14px; color:#FDFAF6; line-height:1.65; position:relative; }
+.coach-text { font-family:'Hanken Grotesk',sans-serif; font-size:14px; color:var(--hero-ink); line-height:1.65; position:relative; }
 .coach-hl { color:var(--gold); font-weight:700; }
-
-/* KPI grid */
-.kpi-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:10px; margin-bottom:14px; } @media(max-width:400px){.kpi-grid{grid-template-columns:repeat(2,1fr);}}
-.kpi-card { background:var(--white); border-radius:10px; padding:14px 10px 16px; border:1px solid var(--cream-d); position:relative; overflow:hidden; }
-.kpi-bar { position:absolute; bottom:0; left:0; right:0; height:3px; border-radius:0 0 10px 10px; }
-.kpi-label { font-family:'Space Mono',monospace; font-size:9px; color:var(--muted); letter-spacing:.07em; margin-bottom:6px; }
-.kpi-value { font-family:'Newsreader',serif; font-size:22px; color:var(--wine); line-height:1; margin-bottom:4px; }
-.kpi-unit { font-size:12px; color:var(--muted); font-family:'Space Mono',monospace; }
-.kpi-sub { font-family:'Hanken Grotesk',sans-serif; font-size:11px; color:var(--muted); }
-
-/* Session hero */
-.session-hero { padding:24px 20px; }
-.session-top { display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:14px; position:relative; }
-.session-title { font-family:'Newsreader',serif; font-size:26px; color:var(--white); margin:8px 0 6px; }
-.session-meta { display:flex; gap:12px; }
-.session-duration { font-family:'Space Mono',monospace; font-size:12px; color:var(--gold); }
-.session-zone { font-family:'Space Mono',monospace; font-size:12px; color:rgba(255,255,255,.6); }
-.session-desc { font-family:'Hanken Grotesk',sans-serif; font-size:13px; color:rgba(255,255,255,.7); margin-top:10px; line-height:1.5; max-width:320px; }
-.complete-btn { background:transparent; border:1.5px solid var(--gold); border-radius:8px; padding:10px 16px; color:var(--gold); font-family:'Hanken Grotesk',sans-serif; font-size:13px; font-weight:700; cursor:pointer; display:flex; align-items:center; gap:6px; transition:all .2s; white-space:nowrap; }
-.complete-btn.done { background:var(--gold); color:var(--wine); }
-
-/* Week strip */
-.week-strip { display:flex; gap:5px; }
-.wday { flex:1; border-radius:8px; padding:8px 3px; display:flex; flex-direction:column; align-items:center; gap:4px; border:1.5px solid var(--cream-d); background:rgba(221,211,195,.4); }
-.wday.is-today { border-color:var(--wine); background:rgba(89,24,42,.08); }
-.wday.done-run { border-color:var(--run); background:rgba(192,57,43,.1); }
-.wday.done-bike { border-color:var(--bike); background:rgba(40,116,166,.1); }
-.wday.done-swim { border-color:var(--swim); background:rgba(26,122,94,.1); }
-.wday.done-strength { border-color:var(--strength); background:rgba(125,60,152,.1); }
-.wday.done-free { border-color:var(--free); background:rgba(122,106,88,.1); }
-.wday.done-walk { border-color:var(--walk); background:rgba(46,139,87,.1); }
-.wday.done-hike { border-color:var(--hike); background:rgba(139,105,20,.1); }
-.wday.done-commute { border-color:var(--commute); background:rgba(26,107,138,.1); }
-.wday.done-openwater { border-color:var(--openwater); background:rgba(11,83,148,.1); }
-.wday-name { font-family:'Space Mono',monospace; font-size:9px; color:var(--muted); font-weight:400; }
-.wday.is-today .wday-name { color:var(--wine); font-weight:700; }
 
 /* Status row */
 .status-row { display:grid; grid-template-columns:1fr 1fr 1fr auto; gap:10px; margin-bottom:14px; }
 .stat-card { background:var(--white); border-radius:10px; padding:14px 10px; border:1px solid var(--cream-d); text-align:center; }
 .stat-label { font-family:'Space Mono',monospace; font-size:9px; color:var(--muted); letter-spacing:.08em; margin-bottom:4px; }
 .stat-value { font-family:'Newsreader',serif; font-size:26px; color:var(--wine); line-height:1; }
-
-/* Sticky statusbar */
-.sticky-bar { position:sticky; top:0; z-index:100; background:var(--wine); padding:7px 16px; display:flex; justify-content:space-between; align-items:center; margin:0 -16px 14px; border-bottom:2px solid rgba(255,255,255,.1); }
-.sticky-bar-item { display:flex; flex-direction:column; align-items:center; }
-.sticky-bar-label { font-family:'Space Mono',monospace; font-size:8px; color:rgba(255,255,255,.5); letter-spacing:.08em; }
-.sticky-bar-value { font-family:'Newsreader',serif; font-size:18px; color:var(--gold); line-height:1.1; }
 
 .stat-sub { font-family:'Space Mono',monospace; font-size:9px; color:var(--muted); margin-top:2px; }
 
@@ -189,7 +167,7 @@ html,body { height:100%; background:var(--cream); font-family:'Hanken Grotesk',s
 .prog-muted { color:var(--muted); font-size:10px; }
 .prog-track { position:relative; height:8px; background:var(--cream-d); border-radius:4px; }
 .prog-fill { position:absolute; left:0; top:0; height:100%; border-radius:4px; transition:width .6s; }
-.prog-dot { position:absolute; top:-2px; width:12px; height:12px; border-radius:50%; border:2px solid white; transform:translateX(-50%); }
+.prog-dot { position:absolute; top:-2px; width:12px; height:12px; border-radius:50%; border:2px solid var(--card); transform:translateX(-50%); }
 .prog-pct { text-align:right; margin-top:3px; font-family:'Space Mono',monospace; font-size:9px; }
 
 /* Zone bars */
@@ -213,17 +191,17 @@ html,body { height:100%; background:var(--cream); font-family:'Hanken Grotesk',s
 
 /* Week sessions */
 .wsession { display:flex; align-items:center; gap:12px; padding:14px; border-radius:10px; margin-bottom:8px; border:1.5px solid var(--cream-d); background:var(--white); }
-.wsession.is-today { border-color:var(--wine); background:rgba(89,24,42,.05); }
+.wsession.is-today { border-color:var(--wine); background:rgba(58,143,209,.08); }
 .wsession-icon { width:38px; height:38px; border-radius:8px; display:flex; align-items:center; justify-content:center; flex-shrink:0; }
 .wsession-body { flex:1; }
 .wsession-title { font-family:'Hanken Grotesk',sans-serif; font-size:15px; font-weight:600; color:var(--ink); display:flex; align-items:center; flex-wrap:wrap; gap:6px; }
 .wsession-day { font-family:'Space Mono',monospace; font-size:11px; color:var(--muted); }
-.today-badge { font-family:'Space Mono',monospace; font-size:9px; background:var(--wine); color:#fff; padding:2px 7px; border-radius:3px; letter-spacing:.04em; }
-.wsession.is-extra { margin-left:22px; margin-top:-4px; padding:10px 14px; background:rgba(221,211,195,.22); border-style:dashed; border-color:var(--cream-d); position:relative; }
+.today-badge { font-family:'Space Mono',monospace; font-size:9px; background:var(--wine); color:var(--hero-ink); padding:2px 7px; border-radius:3px; letter-spacing:.04em; }
+.wsession.is-extra { margin-left:22px; margin-top:-4px; padding:10px 14px; background:var(--bg-2); border-style:dashed; border-color:var(--cream-d); position:relative; }
 .wsession.is-extra::before { content:""; position:absolute; left:-13px; top:50%; width:11px; height:1.5px; background:var(--cream-d); }
 .wsession.is-extra .wsession-icon { width:30px; height:30px; }
 .wsession.is-extra .wsession-title { font-size:13px; font-weight:500; color:var(--muted); }
-.extra-badge { font-family:'Space Mono',monospace; font-size:8px; letter-spacing:.04em; background:rgba(122,106,88,.14); color:var(--free); padding:2px 6px; border-radius:3px; margin-left:6px; font-weight:700; }
+.extra-badge { font-family:'Space Mono',monospace; font-size:8px; letter-spacing:.04em; background:rgba(107,122,136,.18); color:var(--free); padding:2px 6px; border-radius:3px; margin-left:6px; font-weight:700; }
 
 /* Event cards */
 .event-card { display:flex; align-items:center; gap:12px; padding:12px; background:var(--cream); border-radius:8px; margin-bottom:10px; }
@@ -241,10 +219,98 @@ html,body { height:100%; background:var(--cream); font-family:'Hanken Grotesk',s
 .eq-note { font-family:'Space Mono',monospace; font-size:10px; color:var(--muted); margin-top:10px; }
 
 /* Weekday page header card */
-.hero-card { background:var(--wine); border-radius:var(--r); padding:20px 18px; margin-bottom:16px; }
+.hero-card { background:var(--hero); border-radius:var(--r); padding:20px 18px; margin-bottom:16px; }
 .hero-eyebrow { font-family:'Space Mono',monospace; font-size:10px; color:var(--gold); letter-spacing:.1em; margin-bottom:4px; }
-.hero-title { font-family:'Newsreader',serif; font-size:24px; color:var(--white); margin:0 0 2px; }
+.hero-title { font-family:'Newsreader',serif; font-size:24px; color:var(--hero-ink); margin:0 0 2px; }
 .hero-sub { font-family:'Hanken Grotesk',sans-serif; font-size:13px; color:rgba(255,255,255,.6); }
+
+/* ── I dag v2 (4/9-26, fra prototypen) ── */
+.age { display:flex; align-items:center; gap:6px; font-family:'Space Mono',monospace; font-size:10px; letter-spacing:.06em; text-transform:uppercase; color:var(--muted); }
+.age i { width:8px; height:8px; border-radius:50%; background:var(--ok); display:inline-block; flex:none; }
+.hero { background:var(--hero); color:var(--hero-ink); border-radius:14px; padding:16px 16px 14px; position:relative; overflow:hidden; margin-bottom:12px; }
+.hero::after { content:""; position:absolute; right:-40px; top:-40px; width:160px; height:160px; border-radius:50%; background:rgba(255,255,255,.05); pointer-events:none; }
+.ready { display:flex; align-items:center; gap:10px; flex-wrap:wrap; font-family:'Space Mono',monospace; font-size:11px; color:var(--hero-muted); letter-spacing:.02em; }
+.ready .dot { width:10px; height:10px; border-radius:50%; flex:none; }
+.ready b { color:var(--hero-ink); font-weight:700; }
+.hero h1 { font-family:'Newsreader',serif; font-weight:600; font-size:30px; line-height:1.1; margin:12px 0 6px; text-wrap:balance; }
+.hero .sub { color:var(--hero-muted); font-size:14px; margin:0 0 12px; line-height:1.45; }
+.hero .sub + .sub { margin-top:-6px; }
+.hero .row { display:flex; gap:8px; flex-wrap:wrap; position:relative; }
+.btn { appearance:none; border:1px solid var(--gold); background:transparent; color:var(--gold-l); font:600 13px 'Hanken Grotesk',sans-serif; padding:9px 14px; border-radius:10px; cursor:pointer; text-decoration:none; display:inline-block; }
+.btn.fill { background:var(--gold); color:var(--wine-d); border-color:var(--gold); }
+.btn.fill.done { background:transparent; color:var(--gold-l); opacity:.85; }
+.btn:focus-visible { outline:2px solid var(--gold-l); outline-offset:2px; }
+.week { display:grid; grid-template-columns:repeat(7,1fr); gap:6px; margin-bottom:8px; }
+.day { background:var(--card); border:1px solid var(--line); border-radius:10px; padding:8px 0 7px; text-align:center; cursor:pointer; min-height:58px; display:flex; flex-direction:column; align-items:center; gap:6px; }
+.day .lab { font-family:'Space Mono',monospace; font-size:10px; letter-spacing:.06em; text-transform:uppercase; color:var(--muted); }
+.day.today { border-color:var(--wine); border-width:2px; }
+.day.today .lab { color:var(--ink); font-weight:700; }
+.day.sel { background:var(--bg-2); }
+.chips { display:flex; gap:3px; justify-content:center; flex-wrap:wrap; padding:0 4px; }
+.chip { width:10px; height:10px; border-radius:3px; border:1.5px solid var(--c); background:transparent; }
+.chip.done { background:var(--c); }
+.chip.race { width:auto; height:auto; border:0; font-size:12px; line-height:1; }
+.dayinfo { background:var(--card); border-radius:10px; padding:10px 14px; font-size:14px; display:none; border:1px solid var(--line); margin-bottom:12px; }
+.dayinfo.show { display:block; }
+.dayinfo .lab { display:block; margin-bottom:4px; font-family:'Space Mono',monospace; font-size:10px; letter-spacing:.06em; text-transform:uppercase; color:var(--muted); }
+.dayinfo ul { margin:0; padding-left:18px; }
+.dayinfo li { margin:2px 0; }
+.tag { display:inline-block; font-family:'Space Mono',monospace; font-size:10px; padding:1px 6px; border-radius:5px; color:#fff; background:var(--c); margin-left:6px; vertical-align:middle; }
+.action { background:var(--card); border:1px solid var(--line); border-left:3px solid var(--gold); border-radius:14px; padding:12px 14px; margin-bottom:12px; }
+.action .lab { display:block; margin-bottom:4px; font-family:'Space Mono',monospace; font-size:10px; letter-spacing:.06em; text-transform:uppercase; color:var(--muted); }
+.action p { margin:0; font-size:15px; color:var(--ink); }
+.action p + p { margin-top:6px; color:var(--muted); font-size:13px; }
+.logbtn { width:100%; background:var(--wine); color:var(--hero-ink); border:0; border-radius:14px; padding:14px; font:600 16px 'Hanken Grotesk',sans-serif; cursor:pointer; display:flex; justify-content:space-between; align-items:center; margin-bottom:14px; }
+.logbtn span.small { font:400 12px 'Space Mono',monospace; color:var(--hero-muted); letter-spacing:.04em; }
+.logbtn:focus-visible { outline:2px solid var(--gold); outline-offset:2px; }
+.banner { border-radius:10px; padding:9px 12px; margin-bottom:12px; font-family:'Space Mono',monospace; font-size:11px; line-height:1.45; display:flex; gap:8px; align-items:flex-start; }
+.banner.info { background:var(--bg-2); color:var(--muted); }
+.banner.warn { background:rgba(230,126,34,.14); color:#B4661A; }
+.banner.act  { background:rgba(192,57,43,.14); color:var(--act); }
+.banner b { font-weight:700; }
+.banner .row { display:block; color:var(--ink); font-family:'Hanken Grotesk',sans-serif; font-size:12px; margin-top:2px; }
+.plan-open { display:flex; justify-content:space-between; align-items:center; gap:10px; width:100%; background:var(--card); border:1.5px solid var(--wine); color:var(--wine); border-radius:12px; padding:13px 14px; font:600 14px 'Hanken Grotesk',sans-serif; text-decoration:none; margin-bottom:14px; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .plan-open { border-color:var(--gold); color:var(--gold); } }
+:root[data-theme="dark"] .plan-open { border-color:var(--gold); color:var(--gold); }
+.section-h { font-family:'Newsreader',serif; font-size:22px; font-weight:600; color:var(--ink); margin:22px 0 12px; padding-bottom:6px; border-bottom:1px solid var(--line); }
+.section-h:first-child { margin-top:4px; }
+details.fold > summary { list-style:none; cursor:pointer; display:flex; justify-content:space-between; align-items:center; }
+details.fold > summary::-webkit-details-marker { display:none; }
+details.fold > summary::after { content:"▾"; color:var(--muted); font-size:14px; }
+details.fold[open] > summary::after { content:"▴"; }
+
+/* log-ark */
+.scrim { position:fixed; inset:0; background:rgba(10,20,30,.5); display:none; z-index:200; }
+.scrim.show { display:block; }
+.sheet { visibility:hidden; position:fixed; left:50%; bottom:0; transform:translate(-50%,105%); width:100%; max-width:430px; max-height:92vh; overflow-y:auto; background:var(--card); color:var(--ink); border-radius:18px 18px 0 0; padding:10px 16px max(20px,env(safe-area-inset-bottom)); z-index:201; transition:transform .25s ease, visibility 0s linear .25s; box-shadow:0 -8px 30px rgba(0,0,0,.18); }
+.sheet.show { visibility:visible; transform:translate(-50%,0); transition:transform .25s ease, visibility 0s; }
+@media (prefers-reduced-motion:reduce) { .sheet { transition:none; } }
+.handle { width:40px; height:4px; border-radius:2px; background:var(--line); margin:0 auto 12px; }
+.sheet h2 { font-family:'Newsreader',serif; font-weight:600; font-size:22px; margin:0 0 2px; }
+.sheet .sub { color:var(--muted); font-size:13px; margin:0 0 12px; }
+.q { margin:0 0 12px; }
+.q .lab { display:block; margin-bottom:6px; font-family:'Space Mono',monospace; font-size:11px; letter-spacing:.06em; text-transform:uppercase; color:var(--muted); }
+.opts { display:grid; gap:6px; }
+.opts.c2 { grid-template-columns:1fr 1fr; } .opts.c3 { grid-template-columns:1fr 1fr 1fr; }
+.opt { border:1.5px solid var(--line); background:var(--bg); color:var(--ink); border-radius:10px; padding:12px 6px; font:600 14px 'Hanken Grotesk',sans-serif; cursor:pointer; min-height:50px; }
+.opt small { display:block; font-weight:400; font-size:11px; color:var(--muted); }
+.opt.on { border-color:var(--wine); background:var(--wine); color:#fff; }
+.opt.on small { color:var(--hero-muted); }
+.opt.on.bad { border-color:var(--act); background:var(--act); }
+.opt:focus-visible { outline:2px solid var(--gold); outline-offset:2px; }
+.sub-q { display:none; margin-top:6px; }
+.sub-q.show { display:grid; }
+.saved { font-family:'Space Mono',monospace; font-size:11px; color:var(--ok); min-height:14px; margin:2px 0 8px; }
+.saved.err { color:var(--act); }
+.dots { display:grid; grid-template-columns:repeat(7,1fr); gap:6px; margin-top:4px; }
+.dots div { text-align:center; }
+.dots .lab { font-family:'Space Mono',monospace; font-size:9px; text-transform:uppercase; color:var(--muted); display:block; margin-bottom:4px; }
+.dots i { display:block; height:8px; border-radius:4px; margin:2px auto; width:70%; }
+.dots i.af { background:var(--ok); } .dots i.af.v { background:var(--watch); } .dots i.af.x { background:var(--act); }
+.dots i.p2 { background:var(--ok); } .dots i.p1 { background:var(--watch); } .dots i.p0 { background:var(--act); }
+.dots i.none { background:var(--line); }
+.legend { font-size:11px; color:var(--muted); margin-top:8px; }
+.close { margin-top:12px; width:100%; background:var(--bg-2); border:0; border-radius:10px; padding:12px; font:600 14px 'Hanken Grotesk',sans-serif; color:var(--ink); cursor:pointer; }
 
 /* Page sections */
 .page { display:none; }
@@ -292,22 +358,16 @@ html,body { height:100%; background:var(--cream); font-family:'Hanken Grotesk',s
     </div>
     <div class="page-meta" style="display:flex;align-items:center;gap:10px;">
       <button class="mobile-refresh-btn" id="mobile-refresh-btn" onclick="triggerRefresh()">↻ OPDATÉR</button>
-      <div>
-        <div class="page-meta-week" id="pm-week">UGE 1/14</div>
-        <div id="pm-block">BUILD</div>
-      </div>
+      <div class="age" id="data-age" title="Alder på data.json"><i></i><span>Data —</span></div>
     </div>
   </div>
 
   <div id="refresh-status-m" class="mobile-refresh-status"></div>
 
   <div id="page-today" class="page active"></div>
-  <div id="page-week" class="page"></div>
-  <div id="page-overview" class="page"></div>
+  <div id="page-plan" class="page"></div>
   <div id="page-body" class="page"></div>
-  <div id="page-rules" class="page"></div>
-
-  <div id="push-toggle-main" style="margin:18px 4px 90px;padding-top:14px;border-top:1px solid rgba(0,0,0,.08)"></div>
+  <div id="page-more" class="page"></div>
 </main>
 
 <!-- BOTTOM NAV -->
@@ -315,10 +375,38 @@ html,body { height:100%; background:var(--cream); font-family:'Hanken Grotesk',s
 
 </div>
 
+<!-- LOG-ARK (Registrér i dag) — 4 spørgsmål, gemmer ved hvert tryk -->
+<div class="scrim" id="log-scrim" onclick="showLogSheet(false)"></div>
+<div class="sheet" id="log-sheet" role="dialog" aria-label="Registrér i dag" aria-hidden="true">
+  <div class="handle"></div>
+  <h2 id="log-title">I dag</h2>
+  <p class="sub">Tryk — det gemmes med det samme. Intet er obligatorisk.</p>
+  <div class="saved" id="log-saved"></div>
+
+  <div class="q"><span class="lab">Alkohol i dag?</span>
+    <div class="opts c2"><button class="opt" data-q="af" data-v="nej">Nej<small>AF-dag</small></button><button class="opt bad" data-q="af" data-v="ja">Ja</button></div>
+    <div class="opts c2 sub-q" id="log-af-sub"><button class="opt" data-q="afv" data-v="valgt">Valgt<small>bevidst — tæller ikke som fejl</small></button><button class="opt bad" data-q="afv" data-v="skete">Bare skete<small>autopilot</small></button></div>
+  </div>
+  <div class="q"><span class="lab">Protein i hovedmåltiderne?</span>
+    <div class="opts c3"><button class="opt" data-q="pro" data-v="2">3 af 3<small>≈ 150 g</small></button><button class="opt" data-q="pro" data-v="1">2 af 3</button><button class="opt bad" data-q="pro" data-v="0">≤ 1</button></div>
+  </div>
+  <div class="q"><span class="lab">Energi?</span>
+    <div class="opts c3"><button class="opt bad" data-q="en" data-v="1">Lav</button><button class="opt" data-q="en" data-v="3">Ok</button><button class="opt" data-q="en" data-v="5">Høj</button></div>
+  </div>
+  <div class="q"><span class="lab">Sulten om aftenen?</span>
+    <div class="opts c3"><button class="opt" data-q="sult" data-v="0">Nej</button><button class="opt" data-q="sult" data-v="1">Lidt</button><button class="opt bad" data-q="sult" data-v="2">Ja</button></div>
+  </div>
+
+  <span class="q lab" style="display:block;font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin:4px 0 6px">Sidste 7 dage</span>
+  <div class="dots" id="log-dots"></div>
+  <div class="legend">Øverste række: AF-dag (grøn) · valgt (gul) · bare skete (rød). Nederste: protein 3/3 · 2/3 · ≤1.</div>
+  <button class="close" onclick="showLogSheet(false)">Luk</button>
+</div>
+
 <script>
 // ── Static config ─────────────────────────────────────────────
 const C = {
-  run:"#C0392B", bike:"#2874A6", swim:"#1A7A5E", strength:"#7D3C98", free:"#7A6A58", walk:"#2E8B57", hike:"#8B6914", commute:"#1A6B8A", openwater:"#0B5394"
+  run:"#C0392B", bike:"#3A8FD1", swim:"#1A7A5E", strength:"#7D3C98", free:"#6B7A88", walk:"#2E8B57", hike:"#8B6914", commute:"#1A6B8A", openwater:"#0B5394"
 };
 
 // ── Zoneberegner (9/7-2026): dynamiske zoner fra tærskel + FTP ────────────
@@ -336,7 +424,7 @@ const ZONE_CALC = {
   runZones(){
     const t = this.thrSec();
     const F = [ // [labelmin-faktor, labelmax-faktor] af tærskel-sekunder
-      {label:'Z2', name:'Aerob base', lo:296/260, hi:334/260, color:'#2874A6'},
+      {label:'Z2', name:'Aerob base', lo:296/260, hi:334/260, color:'#3A8FD1'},
       {label:'Z3', name:'Tempo',      lo:266/260, hi:295/260, color:'#27AE60'},
       {label:'Z4', name:'Threshold',  lo:253/260, hi:265/260, color:'#F39C12'},
       {label:'Z5', name:'VO2max',     lo:233/260, hi:252/260, color:'#E67E22'},
@@ -351,7 +439,7 @@ const ZONE_CALC = {
     const f = this.ftp();
     const F = [
       {label:'Z1', name:'Restitution', lo:0,       hi:150/270, color:'#7F8C8D', openLo:true},
-      {label:'Z2', name:'Aerob base',  lo:150/270, hi:205/270, color:'#2874A6'},
+      {label:'Z2', name:'Aerob base',  lo:150/270, hi:205/270, color:'#3A8FD1'},
       {label:'Z3', name:'Tempo',       lo:205/270, hi:245/270, color:'#27AE60'},
       {label:'Z4', name:'Threshold',   lo:245/270, hi:285/270, color:'#F39C12'},
       {label:'Z5', name:'VO2max',      lo:285/270, hi:325/270, color:'#E67E22'},
@@ -486,6 +574,10 @@ let D = {
   efTrend:   { run: null, bike: null },
   aerobicFlag: null,                       // seneste pas vurderet mod egen EF-median
   today:null,
+  checkinLog: [],   // [{date, alkohol, protein, energi, sult}] sidste 28 dage (data.json)
+  kpiProtein: null, // data.json kpis.protein
+  energy7: null,
+  readinessRemote: null,
 };
 
 let sessionDoneList = [];
@@ -512,6 +604,7 @@ const ICONS = {
   flag:`<svg width="SIZE" height="SIZE" viewBox="0 0 24 24" fill="none" stroke="COLOR" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 5a5 5 0 0 1 7 0a5 5 0 0 0 7 0v9a5 5 0 0 1 -7 0a5 5 0 0 0 -7 0v-9z"/><line x1="5" y1="21" x2="5" y2="14"/></svg>`,
   rest:`<svg width="SIZE" height="SIZE" viewBox="0 0 24 24" fill="none" stroke="COLOR" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1 -9 -9z"/></svg>`,
   plan:`<svg width="SIZE" height="SIZE" viewBox="0 0 24 24" fill="none" stroke="COLOR" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="19" r="2"/><circle cx="18" cy="5" r="2"/><path d="M12 19h4.5a3.5 3.5 0 0 0 0 -7h-8a3.5 3.5 0 0 1 0 -7h3.5"/></svg>`,
+  more:`<svg width="SIZE" height="SIZE" viewBox="0 0 24 24" fill="none" stroke="COLOR" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="1.5"/><circle cx="5" cy="12" r="1.5"/><circle cx="19" cy="12" r="1.5"/></svg>`,
 };
 
 function icon(name, size=20, color="currentColor") {
@@ -524,59 +617,6 @@ function discTag(disc, small=false) {
 }
 
 // ── Helpers ───────────────────────────────────────────────────
-function afRing(done, target) {
-  const DAYS_IN_WEEK = 7;
-  const GREEN_AT = 5;
-  const r=22, circ=2*Math.PI*r;
-  const pct = Math.min(done/DAYS_IN_WEEK, 1);
-  const color = done >= GREEN_AT ? "#27AE60" : "var(--wine)";
-  return `<div class="af-ring">
-    <svg width="60" height="60" viewBox="0 0 60 60">
-      <circle cx="30" cy="30" r="${r}" fill="none" stroke="var(--cream-d)" stroke-width="5"/>
-      <circle cx="30" cy="30" r="${r}" fill="none" stroke="${color}" stroke-width="5"
-        stroke-dasharray="${circ}" stroke-dashoffset="${circ*(1-pct)}"
-        stroke-linecap="round" transform="rotate(-90 30 30)"/>
-      <text x="30" y="35" text-anchor="middle" fill="${color}" font-size="13"
-        font-family="'Space Mono',monospace" font-weight="700">${done}/7</text>
-    </svg>
-    <span class="af-ring-label">AF-DAGE</span>
-  </div>`;
-}
-
-function weekStrip() {
-  const DAGE = ["Man","Tir","Ons","Tor","Fre","Lør","Søn"];
-  // Gruppér sessioner pr. ugedag — én boks pr. dag
-  const byDay = {};
-  D.week_sessions.forEach(s => {
-    (byDay[s.day] = byDay[s.day] || []).push(s);
-  });
-  return `<div class="week-strip">${DAGE.map(dag => {
-    const sessions = byDay[dag] || [];
-    const isToday = sessions.some(s => s.today);
-    const done = sessions.length > 0 && sessions.every(s => s.done);
-    const anyDone = sessions.some(s => s.done);
-    // Saml unikke discipliner for dagen (planlagt + ekstra)
-    const discs = [];
-    sessions.forEach(s => {
-      if (s.disc && !discs.includes(s.disc)) discs.push(s.disc);
-      if (s.disc2 && !discs.includes(s.disc2)) discs.push(s.disc2);
-    });
-    const doneClass = anyDone && discs.length ? `done-${discs[0]}` : "";
-    const todayClass = isToday ? "is-today" : "";
-    let ico;
-    if (discs.length === 0) {
-      ico = `<span style="font-family:'Space Mono',monospace;font-size:11px;color:var(--cream-d)">·</span>`;
-    } else {
-      const col = d => anyDone ? C[d] : (isToday ? "var(--wine)" : "var(--muted)");
-      const sz = discs.length > 2 ? 11 : 13;
-      ico = `<span style="display:flex;gap:2px;align-items:center;flex-wrap:wrap;justify-content:center">${discs.map(d => icon(d, sz, col(d))).join("")}</span>`;
-    }
-    return `<div class="wday ${doneClass} ${todayClass}">
-      <span class="wday-name">${dag}</span>${ico}
-    </div>`;
-  }).join("")}</div>`;
-}
-
 function progressMetric(label, startVal, nowVal, goalVal, unit, color) {
   const isInverse = startVal > goalVal;
   const diff = Math.round(Math.abs(nowVal - goalVal) * 10) / 10;
@@ -744,116 +784,195 @@ async function checkSystemHealth() {
 // skærmen. Farve styres af level, ikke af type, så nye typer virker automatisk.
 const WARN_ICONS = { tsb: '⚠️', hrv: '💜', alcohol_cluster: '🎯' };
 
-function warnBanner(w) {
-  if (!w || !w.message) return '';
-  const color = w.level === 'critical' ? '#C0392B' : w.level === 'warn' ? '#E67E22' : '#7A6A58';
-  const icon  = WARN_ICONS[w.type] || '⚠️';
-  return `<div style="background:${color}15;border:1px solid ${color}40;border-radius:8px;padding:8px 12px;margin-bottom:10px;display:flex;align-items:center;gap:8px"><span style="font-size:16px">${icon}</span><span style="font-family:'Space Mono',monospace;font-size:10px;color:${color};line-height:1.4">${w.message}</span></div>`;
+// ── I dag v2 (4/9-26) ─────────────────────────────────────────
+// Alt herunder læser fra data.json (D). Ingen KPI-kort, ingen coach-tale —
+// den bor foldet på Plan-fanen. Én handlingslinje, ét banner ad gangen.
+const DK_DAY_SHORT = ["Man","Tir","Ons","Tor","Fre","Lør","Søn"];
+const DK_MON_SHORT = ["jan","feb","mar","apr","maj","jun","jul","aug","sep","okt","nov","dec"];
+const esc = t => String(t == null ? '' : t).replace(/[<>&"]/g, c => ({'<':'&lt;','>':'&gt;','&':'&amp;','"':'&quot;'}[c]));
+const fmtDa = (v, d=1) => (v == null || isNaN(v)) ? '—' : Number(v).toFixed(d).replace('.', ',');
+function isoOf(dt){ return dt.getFullYear() + '-' + String(dt.getMonth()+1).padStart(2,'0') + '-' + String(dt.getDate()).padStart(2,'0'); }
+function todayIso(){ return isoOf(new Date()); }
+function mondayOf(dt){ const m = new Date(dt); m.setHours(0,0,0,0); m.setDate(m.getDate() - ((m.getDay()+6)%7)); return m; }
+function lastVal(series){ for (const p of [...(series||[])].reverse()) if (p && p.v != null && !isNaN(p.v)) return p; return null; }
+function meanOf(vals){ return vals.length ? vals.reduce((a,b)=>a+b,0)/vals.length : null; }
+function sdOf(vals){ if (vals.length < 2) return null; const m = meanOf(vals); return Math.sqrt(vals.reduce((a,v)=>a+(v-m)*(v-m),0)/(vals.length-1)); }
+
+// Readiness: HRV i dag mod 7d-snit (%) og mod 42-dages baseline (±1 SD),
+// søvn sidste nat, form = TSB. Samme regel som prototypen.
+function readinessInfo(){
+  const hv = (D.hrvHistory||[]).filter(p=>p && p.v!=null && !isNaN(p.v));
+  const hrvToday = hv.length ? hv[hv.length-1].v : null;
+  const avg7  = meanOf(hv.slice(-7).map(p=>p.v));
+  const base  = hv.slice(-42).map(p=>p.v);
+  const avg42 = meanOf(base), sd42 = sdOf(base);
+  const z = (hrvToday!=null && avg42!=null && sd42) ? (hrvToday-avg42)/sd42 : null;
+  const pct = (hrvToday!=null && avg7) ? Math.round((hrvToday/avg7-1)*100) : null;
+  const sl = lastVal(D.sleepHistory); const sleep = sl ? sl.v : null;
+  const tsb = (D.tsb==null || isNaN(parseFloat(D.tsb))) ? null : parseFloat(D.tsb);
+  let level = 'ok';
+  if ((z!=null && z < -1) || (sleep!=null && sleep < 6)) level = 'act';
+  else if ((z!=null && z < -0.5) || (sleep!=null && sleep < 7) || (tsb!=null && tsb < -20)) level = 'watch';
+  return {hrvToday, avg7, pct, z, sleep, tsb, level};
 }
 
-function renderWarnings(list, tsbVal) {
-  const out = (list || []).filter(w => w && w.message).slice();
-  // Sikkerhedsnet: hvis data.json er stale og mangler tsb-advarslen, men TSB
-  // reelt er under -30, vises den alligevel. Aldrig som dublet.
-  if (tsbVal < -30 && !out.some(w => w.type === 'tsb')) {
-    out.unshift({ type: 'tsb', level: 'critical',
-                  message: `TSB ${tsbVal.toFixed(0)} — høj træthed. Overvej let dag eller hvile.` });
+function readinessLine(r){
+  const parts = [`<span class="dot" style="background:var(--${r.level})"></span>`];
+  if (r.hrvToday!=null) parts.push(`<span>HRV <b>${fmtDa(r.hrvToday,0)}</b>${r.pct!=null ? ` ${r.pct>=0?'+':''}${r.pct} % vs 7d` : ''}</span>`);
+  if (r.sleep!=null)    parts.push(`<span>Søvn <b>${fmtDa(r.sleep)} t</b></span>`);
+  if (r.tsb!=null)      parts.push(`<span>Form <b>${r.tsb>0?'+':''}${fmtDa(r.tsb)}</b></span>`);
+  if (parts.length===1) parts.push('<span>Ingen wellness-data endnu</span>');
+  return parts.join('');
+}
+
+function todaySessionsNorm(){
+  let t = D.today;
+  if (!t) return [];
+  if (!Array.isArray(t)) t = [t];
+  return t.filter(Boolean);
+}
+
+// Ugestribe: 7 dagkort fra week_sessions + løb fra racesUpcoming i denne uge.
+function weekDaysModel(){
+  const mon = mondayOf(new Date()), tIso = todayIso();
+  const byDay = {}; DK_DAY_SHORT.forEach(d => byDay[d] = []);
+  (D.week_sessions||[]).forEach(s => { if (byDay[s.day]) byDay[s.day].push(s); });
+  const races = {};
+  (D.racesUpcoming||[]).forEach(r => { if (r && r.date) races[r.date] = r; });
+  if (D.nextRace && D.nextRace.date) races[D.nextRace.date] = races[D.nextRace.date] || D.nextRace;
+  return DK_DAY_SHORT.map((d,i) => {
+    const dt = new Date(mon); dt.setDate(mon.getDate()+i);
+    const iso = isoOf(dt);
+    return { d, iso, today: iso===tIso, race: races[iso] || null, dateLabel: `${dt.getDate()}. ${DK_MON_SHORT[dt.getMonth()]}`,
+             s: byDay[d].map(x => ({ l:x.label, c:x.disc, c2:x.disc2, done:!!x.done, extra:!!x.extra })) };
+  });
+}
+
+function weekStripV2(){
+  return `<div class="week" id="week-strip">${weekDaysModel().map((day,i)=>`
+    <div class="day${day.today?' today':''}" role="button" tabindex="0" onclick="toggleDayInfo(${i})" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleDayInfo(${i});}">
+      <span class="lab">${day.d}</span>
+      <div class="chips">${day.race ? '<span class="chip race" title="'+esc(day.race.name)+'">🏆</span>' : ''}${day.s.map(x=>`<span class="chip${x.done?' done':''}" style="--c:var(--${x.c||'free'})"></span>`).join('')}${(!day.race && !day.s.length) ? '<span class="chip" style="--c:var(--line)"></span>' : ''}</div>
+    </div>`).join('')}</div>
+  <div class="dayinfo" id="dayinfo" data-i=""></div>`;
+}
+
+function toggleDayInfo(i){
+  const strip = document.getElementById('week-strip'), info = document.getElementById('dayinfo');
+  if (!strip || !info) return;
+  [...strip.children].forEach(c => c.classList.remove('sel'));
+  if (info.dataset.i === String(i) && info.classList.contains('show')) { info.classList.remove('show'); info.dataset.i=''; return; }
+  const day = weekDaysModel()[i];
+  strip.children[i].classList.add('sel'); info.dataset.i = String(i); info.classList.add('show');
+  const items = [];
+  if (day.race) items.push(`<li>🏆 ${esc(day.race.name)}${day.race.distance ? ' · '+esc(day.race.distance) : ''}</li>`);
+  day.s.forEach(x => items.push(`<li>${esc(x.l)}${x.done?' ✓':''}${x.extra?'<span class="tag" style="--c:var(--walk)">ekstra</span>':''}</li>`));
+  if (!items.length) items.push('<li style="color:var(--muted)">Fri</li>');
+  info.innerHTML = `<span class="lab">${day.d} ${day.dateLabel}${day.today?' · i dag':''}</span><ul>${items.join('')}</ul>`;
+}
+
+// "Én ting i dag": højeste advarsel > coachHighlight > weekFocus. Begrundelse
+// = de næste relevante fakta (søvn under 7, HRV-drop, næste løb om N dage).
+function oneThing(r){
+  const rank = { critical:0, warn:1 };
+  const warns = (D.warnings||[]).filter(w=>w&&w.message).sort((a,b)=>(rank[a.level]??2)-(rank[b.level]??2));
+  let main = warns.length ? warns[0].message : (D.coachHighlight || D.weekFocus || '');
+  if (!main) main = D.dataLoaded ? 'Ingen særlig besked i dag.' : '—';
+  main = capFirst(String(main).trim());
+  if (main && !/[.!?…]$/.test(main)) main += '.';
+  const why = [];
+  if (r.sleep!=null && r.sleep < 7) why.push(`Søvn ${fmtDa(r.sleep)} t i nat — under 7.`);
+  if (r.pct!=null && r.pct <= -10) why.push(`HRV ${Math.abs(r.pct)} % under 7d-snit.`);
+  if (D.nextRace && D.nextRace.name) {
+    const n = D.nextRace.daysTo;
+    why.push(n===0 ? `${D.nextRace.name} er i dag.` : n===1 ? `I morgen: ${D.nextRace.name}.` : `Næste løb: ${D.nextRace.name} om ${n} dage.`);
   }
-  const rank = { critical: 0, warn: 1 };
-  out.sort((a, b) => (rank[a.level] ?? 2) - (rank[b.level] ?? 2));
-  return out.map(warnBanner).join('');
+  return `<div class="action"><span class="lab">Én ting i dag</span><p>${esc(main)}</p>${why.length?`<p>${esc(why.slice(0,2).join(' '))}</p>`:''}</div>`;
+}
+
+// Ét banner-slot: data-fejl > stale > nøgler > kritisk advarsel > readiness.
+function bannerSlotHtml(){
+  if (!D.dataLoaded) return '<div class="banner act"><span>⛔</span><span>Kunne ikke hente data — skærmen er ikke opdateret.</span></div>';
+  const st = staleInfo(D.lastUpdated);
+  if (st && st.hours > 12) return `<div class="banner act"><span>⚠️</span><span>Data er ${st.hours} timer gamle. Automatisk opdatering ser ud til at hænge.</span></div>`;
+  const c = D.credentials || {};
+  const bad = Object.keys(c).filter(k => c[k] && !c[k].ok);
+  if (bad.length) return `<div class="banner act"><span>⛔</span><span><b>Nøgle-problem</b>${bad.map(k=>`<span class="row"><b>${esc(k)}</b> — ${esc(c[k].note)}</span>`).join('')}</span></div>`;
+  const crit = (D.warnings||[]).find(w => w && w.level==='critical' && w.message);
+  if (crit) return `<div class="banner act"><span>${WARN_ICONS[crit.type]||'⚠️'}</span><span>${esc(crit.message)}</span></div>`;
+  if (st && st.hours > 6) return `<div class="banner info"><span>ⓘ</span><span>Data er ${st.hours} timer gamle — opdateres automatisk.</span></div>`;
+  if (D.readinessRemote === 'LOW' || readinessInfo().level === 'act') return '<div class="banner warn"><span>💜</span><span>Lav readiness i dag (HRV/søvn) — overvej at tage det roligt.</span></div>';
+  return '';
+}
+function updateBannerSlot(){ const el = document.getElementById('banner-slot'); if (el) el.innerHTML = bannerSlotHtml(); }
+
+function staleInfo(updatedStr){
+  if (!updatedStr) return null;
+  const ts = new Date(String(updatedStr).replace(' ', 'T'));
+  if (isNaN(ts.getTime())) return null;
+  const min = Math.round((Date.now() - ts.getTime())/60000);
+  return { min, hours: Math.round(min/60), time: String(updatedStr).slice(11,16) };
+}
+
+// Data-alder-prik i headeren: grøn <6 t, gul 6-12 t, rød >12 t.
+function updateDataAge(){
+  const el = document.getElementById('data-age'); if (!el) return;
+  const st = staleInfo(D.lastUpdated);
+  const offline = (typeof navigator !== 'undefined' && navigator.onLine === false);
+  let col = 'var(--line)', txt = 'Data —';
+  if (st) { col = st.hours > 12 ? 'var(--act)' : st.hours > 6 ? 'var(--watch)' : 'var(--ok)'; txt = (offline ? 'Offline — viser data fra ' : 'Data ') + st.time; }
+  else if (offline) { txt = 'Offline'; col = 'var(--act)'; }
+  el.innerHTML = `<i style="background:${col}"></i><span>${txt}</span>`;
+}
+
+function logStateText(){
+  const e = logCurrent();
+  const n = ['alkohol','protein','energi','sult'].filter(k => e[k] != null).length;
+  return n ? `${n} af 4 registreret` : 'AF · protein · energi · sult';
 }
 
 function renderToday() {
   // Reset completed-flags hvis det er en ny dag
-  const todayStr = new Date().toISOString().split("T")[0];
+  const todayStr = todayIso();
   const lastDone = localStorage.getItem("session_done_date");
   if (lastDone !== todayStr) {
     sessionDoneList = [];
     localStorage.removeItem("session_done_" + lastDone);
   }
-  // Normaliser D.today til altid at være et array (bagudkompatibelt med gammelt flat format)
-  let todaySessions = D.today;
-  if (!todaySessions) todaySessions = [];
-  else if (!Array.isArray(todaySessions)) todaySessions = [todaySessions];
-  if (todaySessions.length === 0) {
-    todaySessions = [{discipline:"free",title:"Ingen session planlagt",duration:"",zone:"–",desc:"",completed:false}];
-  }
-  // Init/sync sessionDoneList med antal sessioner i dag
-  if (sessionDoneList.length !== todaySessions.length) {
-    sessionDoneList = todaySessions.map(s => !!s.completed);
-  }
-  todaySessions.forEach((s, i) => {
-    if (s.completed && !sessionDoneList[i]) sessionDoneList[i] = true;
-  });
+  const sessions = todaySessionsNorm();
+  if (sessionDoneList.length !== sessions.length) sessionDoneList = sessions.map(s => !!s.completed);
+  sessions.forEach((s, i) => { if (s.completed && !sessionDoneList[i]) sessionDoneList[i] = true; });
   if (sessionDoneList.some(Boolean)) localStorage.setItem("session_done_date", todayStr);
-  const parts=D.coachSpeech.split("{HL}");
+
+  const r = readinessInfo();
+  const first = sessions[0] || null;
+  const isFree = !first || /^(hviledag|ingen session planlagt|fri)$/i.test(first.title||'');
+  const title = first && !isFree ? first.title : 'Fri';
+  const sub = first && first.desc ? first.desc : (isFree ? (D.weekFocus || '') : [first.duration, first.zone && first.zone!=='–' ? 'Zone '+first.zone : ''].filter(Boolean).join(' · '));
+  const extra = sessions.slice(1).map(s => `+ ${esc(s.title)}${s.duration ? ' · '+esc(s.duration) : ''}`).join('<br>');
+  const done0 = !!sessionDoneList[0];
+  const planLink = `plan.html#${todayStr}`;
   setTimeout(checkSystemHealth, 0);
   return `
+  <div id="banner-slot">${bannerSlotHtml()}</div>
   <div id="system-health"></div>
-  ${todaySessions.map((s, i) => {
-    const isCompleted = sessionDoneList[i];
-    return `
-  <div class="card card-wine session-hero">
-    <div class="session-top">
-      <div>
-        <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px">
-          ${icon(s.discipline,22,"var(--gold)")} ${discTag(s.discipline)}
-        </div>
-        <div class="session-title">${s.title}</div>
-        <div class="session-meta">
-          <span class="session-duration">${s.duration}</span>
-          ${s.zone!=="–"?`<span class="session-zone">Zone ${s.zone}</span>`:""}
-        </div>
-        <div class="session-desc">${s.desc}</div>
-      </div>
-      <button class="complete-btn ${isCompleted?"done":""}" onclick="toggleDone(this, ${i})">
-        ${icon("check",15,isCompleted?"var(--wine)":"var(--gold)")} ${isCompleted?"Gennemført":"Markér gennemført"}
-      </button>
+  <div class="hero">
+    <div class="ready" id="ready">${readinessLine(r)}</div>
+    <h1>${esc(title)}</h1>
+    ${sub ? `<p class="sub">${esc(sub)}</p>` : ''}
+    ${extra ? `<p class="sub">${extra}</p>` : ''}
+    <div class="row">
+      ${first && !isFree ? `<button class="btn fill ${done0?'done':''}" id="btn-done" onclick="toggleDone(this, 0)" ${done0?'disabled':''}>${done0?'Gennemført ✓':'Markér gennemført'}</button>` : ''}
+      <a class="btn" href="${planLink}">Byt / aflys</a>
     </div>
-  </div>`;
-  }).join("")}
-
-  <div class="card">
-    <div class="label">Uge ${D.week} — overblik</div>
-    ${weekStrip()}
   </div>
-  <div class="sticky-bar">
-    ${(() => {
-      const ctlVal = parseFloat((D.kpis||[]).find(k=>k.label==='CTL'||k.label==='CTL FITNESS')?.value) || '—';
-      const tsbVal = parseFloat(D.tsb) || 0;
-      const tsbColor = tsbVal < -30 ? '#E74C3C' : tsbVal < -10 ? '#E67E22' : '#27AE60';
-      const ctlGoalBar = (() => { const w = (D.meta && D.meta.week) ? D.meta.week : 0; return w > 0 && w <= CTL_PLAN.length ? CTL_PLAN[w-1] : 60; })();
-      const ctlColorBar = ctlVal >= ctlGoalBar*0.95 ? '#27AE60' : ctlVal >= ctlGoalBar*0.8 ? '#E67E22' : '#C0392B';
-      return `
-        <div class="sticky-bar-item"><div class="sticky-bar-label">CTL</div><div class="sticky-bar-value" style="color:${ctlColorBar}">${ctlVal}<span style="font-size:11px;color:rgba(255,255,255,.45)">/${ctlGoalBar}</span></div></div>
-        <div class="sticky-bar-item"><div class="sticky-bar-label">FORM</div><div class="sticky-bar-value" style="color:${tsbColor}">${tsbVal >= 0 ? '+' : ''}${tsbVal.toFixed ? tsbVal.toFixed(0) : tsbVal}</div></div>
-        <div class="sticky-bar-item"><div class="sticky-bar-label">AF DAGE</div><div class="sticky-bar-value">${D.afDays.weekDone}/${D.afDays.target}</div></div>
-        ${D.nextRace ? `<div class="sticky-bar-item"><div class="sticky-bar-label">${(D.nextRace.name||"RACE").split(" ")[0].toUpperCase().slice(0,10)}</div><div class="sticky-bar-value">${D.nextRace.daysTo}d</div></div>` : ""}
-      `;
-    })()}
-  </div>
-
-  ${(() => {
-    const ctlVal = parseFloat((D.kpis||[]).find(k=>k.label==='CTL'||k.label==='CTL FITNESS')?.['value']) || 0;
-    const tsbVal = parseFloat(D.tsb) || 0;
-    const ctlGoal = (() => { const w = (D.meta && D.meta.week) ? D.meta.week : 0; return w > 0 && w <= CTL_PLAN.length ? CTL_PLAN[w-1] : 60; })();
-    const ctlColor = ctlVal >= ctlGoal*0.95 ? '#27AE60' : ctlVal >= ctlGoal*0.8 ? '#E67E22' : '#C0392B';
-    return renderWarnings(D.warnings, tsbVal);
-  })()}
-
-  <div class="card card-wine" style="padding:20px 18px">
-    <div class="label label-gold" style="margin-bottom:10px">TRÆNER + DIÆTIST · UGE ${D.week}</div>
-    <div style="font-family:'Hanken Grotesk',sans-serif;font-size:14px;color:#FDFAF6;line-height:1.65;position:relative">${parts[0]||""}<span style="color:var(--gold);font-weight:700">${D.coachHighlight||""}</span>${parts[1]||""}</div>
-  </div>
-
-  ${kpiGrid()}
-
-  <div class="card"><div class="label">Ugefokus</div>${renderFocus(D.weekFocus)}</div>
-  <div style="text-align:center;padding:8px 0 16px;font-family:'Space Mono',monospace;font-size:9px;color:var(--muted);letter-spacing:.06em">SIDST OPDATERET <span id='last-updated'>${D.lastUpdated || '—'}</span> · <span id="live-time"></span></div>
+  ${weekStripV2()}
+  ${oneThing(r)}
+  <button class="logbtn" onclick="showLogSheet(true)"><span>Registrér i dag</span><span class="small" id="log-state">${logStateText()}</span></button>
+  <div style="text-align:center;padding:4px 0 16px;font-family:'Space Mono',monospace;font-size:9px;color:var(--muted);letter-spacing:.06em">SIDST OPDATERET <span id='last-updated'>${D.lastUpdated || '—'}</span> · <span id="live-time"></span></div>
   `;
-  setTimeout(()=>{const el=document.getElementById('live-time');if(el)el.textContent=new Date().toLocaleTimeString('da-DK',{hour:'2-digit',minute:'2-digit'});},50);
 }
+setTimeout(()=>{const el=document.getElementById('live-time');if(el)el.textContent=new Date().toLocaleTimeString('da-DK',{hour:'2-digit',minute:'2-digit'});},50);
 
 let viewWeek = 0; // 0=denne uge, -1=forrige, +1=næste
 
@@ -934,20 +1053,6 @@ function renderWeek() {
       </div>
     </div>` : ''}
   </div>
-  ${isCurrentWeek ? `
-  <div id="coach-assessment-box" class="card" style="border-left:3px solid var(--wine);padding:16px 18px;margin-bottom:14px;">
-    <div class="label" style="display:flex;align-items:center;justify-content:space-between;margin-bottom:10px">
-      <span>COACH-VURDERING</span>
-      <button id="coach-refresh-btn" onclick="refreshCoachAssessment()" style="background:none;border:none;cursor:pointer;color:var(--muted);font-size:18px;line-height:1;padding:0 4px;min-width:38px;text-align:right;font-family:'Space Mono',monospace;" title="Opdatér">↻</button>
-    </div>
-    <div id="coach-assessment-content">
-      <div style="display:flex;align-items:center;gap:10px;color:var(--muted);font-family:'Space Mono',monospace;font-size:11px;">
-        <div class="spinner" style="width:14px;height:14px;border-width:2px"></div>
-        Analyserer ugedata...
-      </div>
-    </div>
-    <div id="coach-assessment-ts" style="font-family:'Space Mono',monospace;font-size:9px;color:var(--muted);margin-top:10px;"></div>
-  </div>` : ''}
   ${sessions.length === 0 ? `<div class="card" style="text-align:center;color:var(--muted);font-family:'Space Mono',monospace;font-size:11px;padding:32px">DATA IKKE TILGÆNGELIG</div>` : (() => {
     const ALL_DAYS = ["Man","Tir","Ons","Tor","Fre","Lør","Søn"];
     const byDay = {};
@@ -958,7 +1063,7 @@ function renderWeek() {
       const hasPlanned = ds.some(s => !s.extra);
       const restBlock = `
   <div class="wsession" style="opacity:0.45">
-    <div class="wsession-icon" style="background:#7A6A5812">${icon("rest",18,"#7A6A58")}</div>
+    <div class="wsession-icon" style="background:${C.free}12">${icon("rest",18,C.free)}</div>
     <div class="wsession-body">
       <div class="wsession-title" style="color:var(--muted)">Hviledag</div>
       <div class="wsession-day">${day}</div>
@@ -967,10 +1072,10 @@ function renderWeek() {
       if (ds.length === 0) return restBlock;
       return (!hasPlanned ? restBlock : '') + ds.map(s=>`
   <div class="wsession ${(s.today && isCurrentWeek)?"is-today":""} ${s.extra?"is-extra":""}">
-    <div class="wsession-icon" style="background:${C[s.disc]||'#7A6A58'}18">
+    <div class="wsession-icon" style="background:${C[s.disc]||C.free}18">
       ${s.disc2
-        ? `<span style="display:flex;gap:2px;align-items:center">${icon(s.disc,14,C[s.disc]||'#7A6A58')}${icon(s.disc2,14,C[s.disc2]||'#7A6A58')}</span>`
-        : icon(s.disc,18,C[s.disc]||'#7A6A58')}
+        ? `<span style="display:flex;gap:2px;align-items:center">${icon(s.disc,14,C[s.disc]||C.free)}${icon(s.disc2,14,C[s.disc2]||C.free)}</span>`
+        : icon(s.disc,18,C[s.disc]||C.free)}
     </div>
     <div class="wsession-body">
       <div class="wsession-title">${s.label.replace('Mallorca','<span style="font-size:10px;color:var(--muted)">📍 Mallorca</span>')}${(s.today&&isCurrentWeek&&!s.extra)?`<span class="today-badge">I DAG</span>`:""}${s.extra?`<span class="extra-badge">EKSTRA</span>`:""}</div>
@@ -978,15 +1083,71 @@ function renderWeek() {
     </div>
     ${s.disc2
       ? `<span style="display:flex;gap:6px;align-items:center">
-           <span style="display:flex;gap:3px;align-items:center">${discTag(s.disc,true)}${s.done ? icon("check",15,C[s.disc]||'#7A6A58') : ''}</span>
-           <span style="display:flex;gap:3px;align-items:center">${discTag(s.disc2,true)}${s.done ? icon("check",15,C[s.disc2]||'#7A6A58') : ''}</span>
+           <span style="display:flex;gap:3px;align-items:center">${discTag(s.disc,true)}${s.done ? icon("check",15,C[s.disc]||C.free) : ''}</span>
+           <span style="display:flex;gap:3px;align-items:center">${discTag(s.disc2,true)}${s.done ? icon("check",15,C[s.disc2]||C.free) : ''}</span>
          </span>`
-      : `<span style="display:flex;gap:3px;align-items:center">${discTag(s.disc,true)}${s.done ? icon("check",18,C[s.disc]||'#7A6A58') : ''}</span>`}
+      : `<span style="display:flex;gap:3px;align-items:center">${discTag(s.disc,true)}${s.done ? icon("check",18,C[s.disc]||C.free) : ''}</span>`}
   </div>`).join("");
     }).join("");
   })()}
   <div class="card" style="margin-top:8px"><div class="label">Ugefokus</div>${renderFocus(focus)}</div>
+  ${isCurrentWeek ? coachFoldedCard() : ''}
   `;
+}
+
+// Coach-tale + AI-vurdering — kun her, og foldet. I dag-fanen viser dem ikke.
+function coachFoldedCard() {
+  const parts = (D.coachSpeech || '').split("{HL}");
+  const speech = D.coachSpeech
+    ? `<div class="card card-wine" style="padding:16px 18px;margin:12px 0 10px"><div class="label label-gold" style="margin-bottom:8px">TRÆNER + DIÆTIST · UGE ${D.week}</div><div class="coach-text">${parts[0]||""}<span class="coach-hl">${D.coachHighlight||""}</span>${parts[1]||""}</div></div>`
+    : '';
+  return `
+  <details class="fold card" id="coach-assessment-box" style="border-left:3px solid var(--wine);padding:14px 18px;margin-bottom:14px" ontoggle="if(this.open&&typeof loadCoachAssessment==='function')loadCoachAssessment(false)">
+    <summary><span class="label" style="margin:0">COACH-VURDERING</span></summary>
+    ${speech}
+    <div style="display:flex;justify-content:flex-end;margin:6px 0 2px">
+      <button id="coach-refresh-btn" onclick="refreshCoachAssessment()" style="background:none;border:none;cursor:pointer;color:var(--muted);font-size:18px;line-height:1;padding:0 4px;min-width:38px;text-align:right;font-family:'Space Mono',monospace;" title="Opdatér">↻</button>
+    </div>
+    <div id="coach-assessment-content">
+      <div style="display:flex;align-items:center;gap:10px;color:var(--muted);font-family:'Space Mono',monospace;font-size:11px;">
+        <div class="spinner" style="width:14px;height:14px;border-width:2px"></div>
+        Analyserer ugedata...
+      </div>
+    </div>
+    <div id="coach-assessment-ts" style="font-family:'Space Mono',monospace;font-size:9px;color:var(--muted);margin-top:10px;"></div>
+  </details>`;
+}
+
+// Plan-fanen (midlertidig indtil blok 4): ugeindhold + knap til plan.html.
+function renderPlan() {
+  return `
+  <a class="plan-open" href="plan.html"><span>Åbn planlægning (flyt / aflys / skift pas)</span><span>→</span></a>
+  ${renderWeek()}`;
+}
+
+// Mere-fanen: Træning (gammel side) + Regler + System.
+function renderMore() {
+  const c = D.credentials || {};
+  const credRows = Object.keys(c).length
+    ? Object.keys(c).map(k => `<div style="display:flex;justify-content:space-between;gap:10px;font-size:13px;margin-top:4px"><span>${esc(k)}</span><span style="color:${c[k] && c[k].ok ? 'var(--ok)' : 'var(--act)'};font-family:'Space Mono',monospace;font-size:11px">${c[k] && c[k].ok ? '✓ ' : '✕ '}${esc((c[k]||{}).note||'')}</span></div>`).join('')
+    : '<div style="font-size:12px;color:var(--muted);margin-top:4px">Ingen nøgle-status i data.json</div>';
+  return `
+  <h2 class="section-h">Træning</h2>
+  ${renderOverview()}
+  <h2 class="section-h">Regler</h2>
+  ${renderRules()}
+  <h2 class="section-h">System</h2>
+  <div class="card">
+    <div class="label">Status</div>
+    <div style="display:flex;justify-content:space-between;font-size:13px"><span>Sidst opdateret</span><span style="font-family:'Space Mono',monospace;font-size:11px">${esc(D.lastUpdated||'—')}</span></div>
+    <div style="display:flex;justify-content:space-between;font-size:13px;margin-top:4px"><span>Coach-vurdering</span><span style="font-family:'Space Mono',monospace;font-size:11px">${esc(D.coachAssessmentTs||'—')}${D.coachAssessmentStale?' · forældet':''}</span></div>
+    <div style="border-top:1px solid var(--line);margin:10px 0 6px"></div>
+    <div class="label" style="margin-bottom:4px">Nøgler${D.credentialsCheckedTs ? ' · tjekket ' + esc(D.credentialsCheckedTs) : ''}</div>
+    ${credRows}
+    <div style="border-top:1px solid var(--line);margin:10px 0 6px"></div>
+    <div class="label" style="margin-bottom:6px">Påmindelser</div>
+    <div id="push-toggle-main"></div>
+  </div>`;
 }
 
 // Vurderingen kan være gammel uden at noget andet røber det (AI-kaldet fejler
@@ -1181,35 +1342,10 @@ function changeWeekView(delta) {
   const newW = D.week + viewWeek + delta;
   if (newW < 1 || newW > D.totalWeeks) return;
   viewWeek += delta;
-  navigate('week');
+  navigate('plan');
 }
 
 
-
-function kpiGrid() {
-  const cats = [
-    {id:'Træning', label:'TRÆNING'},
-    {id:'Krop',    label:'KROP'},
-  ];
-  let html = '';
-  cats.forEach(function(cat) {
-    const items = D.kpis.filter(function(k){ return k.cat === cat.id; });
-    if (!items.length) return;
-    html += '<div style="margin-bottom:16px">';
-    html += '<div style="font-family:Space Mono,monospace;font-size:9px;color:var(--muted);letter-spacing:.1em;text-transform:uppercase;margin-bottom:8px;padding-left:2px">' + cat.label + '</div>';
-    html += '<div class="kpi-grid">';
-    items.forEach(function(k) {
-      html += '<div class="kpi-card">';
-      html += '<div class="kpi-bar" style="background:' + k.color + '"></div>';
-      html += '<div class="kpi-label">' + k.label + '</div>';
-      html += '<div class="kpi-value">' + k.value + '<span class="kpi-unit">' + k.unit + '</span></div>';
-      html += '<div class="kpi-sub">' + k.sub + '</div>';
-      html += '</div>';
-    });
-    html += '</div></div>';
-  });
-  return html;
-}
 
 function upcomingRacesCard(){
   // Kommende løb på tværs af programmer — kilde er plan.json -> programs.*.races
@@ -1231,11 +1367,7 @@ function upcomingRacesCard(){
 
 function renderOverview() {
   return `
-  <div class="hero-card">
-    <div class="hero-eyebrow">SÆSON 2026</div>
-    <div class="hero-title">Træning</div>
-    <div class="hero-sub">${D.programName ? D.programName + " · " : ""}${D.totalWeeks}-ugers periodeplan + events</div>
-  </div>
+  <div style="font-family:'Space Mono',monospace;font-size:10px;color:var(--muted);letter-spacing:.06em;margin:-4px 0 12px">${esc(D.programName ? D.programName + " · " : "")}${D.totalWeeks}-UGERS PERIODEPLAN + EVENTS</div>
   ${upcomingRacesCard()}
   <div class="card"><div class="label">${D.totalWeeks}-ugers periodeplan</div>${periodTimeline()}</div>
   <div class="card">
@@ -1391,16 +1523,37 @@ function renderBody() {
       ${afHistoryViz(D.afHistory || [])}
     </div>
   </div>
+  ${proteinCard()}
 `;
+}
+
+// Protein-kort (fra data.checkinLog + kpis.protein): 7 prikker + tekstlinje + energi-snit.
+function proteinCard() {
+  const log = D.checkinLog || [];
+  const k = D.kpiProtein || null;
+  const last7 = log.slice(-7);
+  const dots = last7.length ? last7.map(e => {
+    const dt = new Date(e.date + 'T12:00:00');
+    const cls = e.protein == null ? 'none' : 'p' + e.protein;
+    return `<div><span class="lab">${DK_DAY_SHORT[(dt.getDay()+6)%7]}</span><i class="${cls}"></i></div>`;
+  }).join('') : '';
+  const val = k ? `${esc(k.value)}<span style="font-size:14px;color:var(--muted)">${esc(k.unit)}</span>` : '—';
+  const en = D.energy7;
+  return `<div class="card">
+    <div class="label" style="margin-bottom:10px">Protein — 3 af 3 måltider</div>
+    <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:8px">
+      <div style="font-family:'Newsreader',serif;font-size:28px;color:${k ? k.color : 'var(--muted)'};line-height:1">${val}</div>
+      <div style="font-family:'Space Mono',monospace;font-size:10px;color:var(--muted)">${k ? esc(k.sub) : 'Ingen registreringer endnu'}</div>
+    </div>
+    ${dots ? `<div class="dots">${dots}</div>` : '<div style="font-family:Space Mono,monospace;font-size:10px;color:var(--muted)">Registrér i log-arket på I dag-fanen.</div>'}
+    <div style="display:flex;justify-content:space-between;font-size:12px;color:var(--muted);margin-top:10px;padding-top:8px;border-top:1px solid var(--line)">
+      <span>Energi-snit 7d</span><span style="font-family:'Space Mono',monospace;color:var(--ink)">${en != null ? fmtDa(en) + ' / 5' : '—'}</span>
+    </div>
+  </div>`;
 }
 
 function renderRules() {
   return `
-  <div class="hero-card">
-    <div class="hero-eyebrow">FAST AS FIFTY</div>
-    <div class="hero-title">Leveregler</div>
-    <div class="hero-sub" style="font-style:italic">Keep moving forward</div>
-  </div>
   ${STATIC.rules.map(r=>`<div class="rule-row">
     <span class="rule-num">${r.n}</span>
     <div><div class="rule-title">${r.title}</div><div class="rule-body">${r.body}</div></div>
@@ -1629,7 +1782,7 @@ function buildSparklineSVG(chartId, W) {
       ${smoothDot}
       ${smooth ? '' : (()=>{const i=n-1; return reals[i]
         ? `<circle cx="${x(i)}" cy="${y(vals[i])}" r="3.5" fill="${color}" stroke="var(--white)" stroke-width="1.5"/>`
-        : `<circle cx="${x(i)}" cy="${y(vals[i])}" r="3.5" fill="var(--cream)" stroke="${color}" stroke-width="1.5" stroke-dasharray="2,2"/>`})()}
+        : `<circle cx="${x(i)}" cy="${y(vals[i])}" r="3.5" fill="var(--card)" stroke="${color}" stroke-width="1.5" stroke-dasharray="2,2"/>`})()}
       ${xLabels.map((l,i)=>`<text x="${x(i)}" y="${H-4}" text-anchor="middle" fill="${i===n-1?color:'var(--muted)'}" font-weight="${i===n-1?700:400}" font-size="8" font-family="'Space Mono',monospace">${l}</text>`).join("")}
     </svg>`;
 }
@@ -1938,7 +2091,7 @@ function _afValFor(weekNum, dayIdx) {
 function _afDotHtml(val, label, labelGap) {
   let bg, fg, sym, lbl;
   if (val === 0)      { bg = 'var(--wine)';    fg = 'var(--gold)';  sym = '✓'; lbl = 'var(--wine)'; }
-  else if (val === 1) { bg = 'var(--run)';     fg = 'var(--cream)'; sym = '✕'; lbl = 'var(--run)'; }
+  else if (val === 1) { bg = 'var(--run)';     fg = '#fff'; sym = '✕'; lbl = 'var(--run)'; }
   else                { bg = 'var(--cream-d)'; fg = 'var(--muted)'; sym = '·'; lbl = 'var(--muted)'; }
   return '<div style="display:flex;flex-direction:column;align-items:center;gap:' + labelGap + 'px">' +
     '<div style="width:28px;height:28px;border-radius:50%;background:' + bg + ';display:flex;align-items:center;justify-content:center">' +
@@ -2068,7 +2221,7 @@ function afStreakViz(done, target, streak) {
       continue;
     }
     const bg  = val === 0 ? 'var(--wine)' : 'var(--run)';
-    const fg  = val === 0 ? 'var(--gold)' : 'var(--cream)';
+    const fg  = val === 0 ? 'var(--gold)' : '#fff';
     const sym = val === 0 ? '✓' : '✕';
     dots += '<div style="display:flex;flex-direction:column;align-items:center;gap:3px">' +
       '<div style="width:28px;height:28px;border-radius:50%;background:' + bg + ';display:flex;align-items:center;justify-content:center">' +
@@ -2179,15 +2332,145 @@ function trainingDonut() {
   </div>${extraSection}`;
 }
 
+// ── Log-ark: Registrér i dag (4/9-26) ─────────────────────────
+// Fire spørgsmål, gemmer ved hvert tryk til Worker'ens /checkin (samme
+// endpoint som checkin.html). Felter: date, alkohol (0 nej / 1 ja valgt /
+// 2 ja bare skete), protein (2 = 3 af 3, 1 = 2 af 3, 0 = ≤1), energi
+// (1 lav / 3 ok / 5 høj), sult (0 nej / 1 lidt / 2 ja). Optimistisk UI:
+// dagens valg gemmes i localStorage og lægges oven på data.checkinLog, så
+// arket viser det rigtige før data.json har kørt.
+const LOG_KEY_PREFIX = 'faf-log-';
+let _logSendTimer = null;
+
+function logLocal(){
+  try { return JSON.parse(localStorage.getItem(LOG_KEY_PREFIX + todayIso()) || '{}') || {}; } catch(e) { return {}; }
+}
+function logPersist(o){ try { localStorage.setItem(LOG_KEY_PREFIX + todayIso(), JSON.stringify(o)); } catch(e) {} }
+
+// Dagens værdier: data.json (server) med lokale, nyere valg oven på.
+function logCurrent(){
+  const t = todayIso();
+  const remote = (D.checkinLog||[]).find(e => e && e.date === t) || {};
+  const local = logLocal();
+  const out = { date: t };
+  ['alkohol','protein','energi','sult'].forEach(k => {
+    // Nøgle findes lokalt = nyere end data.json (null = fravalgt lokalt).
+    out[k] = (k in local) ? local[k] : (remote[k] != null ? remote[k] : null);
+  });
+  return out;
+}
+
+function showLogSheet(on){
+  const sheet = document.getElementById('log-sheet'), scrim = document.getElementById('log-scrim');
+  if (!sheet) return;
+  if (on) {
+    const now = new Date();
+    const dk = ["Søndag","Mandag","Tirsdag","Onsdag","Torsdag","Fredag","Lørdag"];
+    document.getElementById('log-title').textContent = `${dk[now.getDay()]} ${now.getDate()}. ${DK_MON_SHORT[now.getMonth()]}`;
+    renderLogSheet();
+  }
+  sheet.classList.toggle('show', on); scrim.classList.toggle('show', on);
+  sheet.setAttribute('aria-hidden', on ? 'false' : 'true');
+}
+
+function renderLogSheet(){
+  const e = logCurrent();
+  const sel = {
+    af:   e.alkohol == null ? null : (e.alkohol === 0 ? 'nej' : 'ja'),
+    afv:  e.alkohol == null || e.alkohol === 0 ? null : (e.alkohol === 2 ? 'skete' : 'valgt'),
+    pro:  e.protein == null ? null : String(e.protein),
+    en:   e.energi == null ? null : String(e.energi <= 2 ? 1 : e.energi >= 4 ? 5 : 3),
+    sult: e.sult == null ? null : String(e.sult),
+  };
+  document.querySelectorAll('#log-sheet .opt').forEach(o => o.classList.toggle('on', sel[o.dataset.q] === o.dataset.v));
+  document.getElementById('log-af-sub').classList.toggle('show', sel.af === 'ja');
+  const st = document.getElementById('log-state'); if (st) st.textContent = logStateText();
+  renderLogDots();
+}
+
+function renderLogDots(){
+  const box = document.getElementById('log-dots'); if (!box) return;
+  const t = todayIso();
+  const byDate = {}; (D.checkinLog||[]).forEach(x => { if (x && x.date) byDate[x.date] = x; });
+  const cur = logCurrent();
+  const days = [];
+  for (let i = 6; i >= 0; i--) {
+    const dt = new Date(); dt.setDate(dt.getDate() - i);
+    const iso = isoOf(dt);
+    const e = iso === t ? cur : (byDate[iso] || {});
+    const af = e.alkohol == null ? 'none' : (e.alkohol === 0 ? 'af' : e.alkohol === 2 ? 'af x' : 'af v');
+    const pr = e.protein == null ? 'none' : 'p' + e.protein;
+    days.push(`<div><span class="lab">${DK_DAY_SHORT[(dt.getDay()+6)%7]}</span><i class="${af}"></i><i class="${pr}"></i></div>`);
+  }
+  box.innerHTML = days.join('');
+}
+
+function logSay(txt, err){
+  const el = document.getElementById('log-saved'); if (!el) return;
+  el.textContent = txt; el.classList.toggle('err', !!err);
+}
+
+// Tryk på en mulighed: opdatér lokalt, gentegn, send (debounced 600 ms så
+// Ja -> Valgt bliver ét kald).
+function logPick(q, v){
+  const cur = logCurrent(); const local = logLocal();
+  const same = (a,b) => a != null && String(a) === String(b);
+  if (q === 'af') {
+    if (v === 'nej') local.alkohol = same(cur.alkohol, 0) ? null : 0;
+    else             local.alkohol = (cur.alkohol != null && cur.alkohol !== 0) ? null : 1;   // Ja = valgt indtil andet vælges
+  } else if (q === 'afv') {
+    local.alkohol = v === 'skete' ? 2 : 1;
+  } else if (q === 'pro') {
+    local.protein = same(cur.protein, v) ? null : parseInt(v, 10);
+  } else if (q === 'en') {
+    const cv = cur.energi == null ? null : (cur.energi <= 2 ? 1 : cur.energi >= 4 ? 5 : 3);
+    local.energi = same(cv, v) ? null : parseInt(v, 10);
+  } else if (q === 'sult') {
+    local.sult = same(cur.sult, v) ? null : parseInt(v, 10);
+  }
+  logPersist(local);
+  renderLogSheet();
+  logSay('Gemmer…');
+  clearTimeout(_logSendTimer);
+  _logSendTimer = setTimeout(logSend, 600);
+}
+
+async function logSend(){
+  const e = logCurrent();
+  const payload = { date: e.date };
+  ['alkohol','protein','energi','sult'].forEach(k => { if (e[k] != null) payload[k] = e[k]; });
+  if (Object.keys(payload).length === 1) { logSay(''); return; }   // alt fravalgt — intet at sende
+  try {
+    await dispatchViaWorker('/checkin', payload);
+    logSay('Gemt ' + new Date().toLocaleTimeString('da-DK', {hour:'2-digit', minute:'2-digit'}));
+  } catch(err) {
+    if (err.code === 'NO_SECRET' || err.status === 401) {
+      const val = (window.prompt(err.code === 'NO_SECRET'
+        ? 'App-koden mangler på denne enhed.\n\nIndsæt den samme kode som i AF-appen:'
+        : 'App-koden blev afvist af Worker\'en.\n\nIndsæt den rigtige kode:') || '').trim();
+      if (val) { setSecret(val); return logSend(); }
+      logSay('Ikke gemt — app-kode mangler', true);
+    } else {
+      logSay('Ikke gemt — ' + (err.code === 'NO_URL' ? 'Worker-URL mangler' : err.status ? 'Worker svarede ' + err.status : 'netværksfejl'), true);
+    }
+  }
+}
+
+document.addEventListener('click', ev => {
+  const o = ev.target.closest('#log-sheet .opt'); if (!o) return;
+  logPick(o.dataset.q, o.dataset.v);
+});
+document.addEventListener('keydown', ev => { if (ev.key === 'Escape') showLogSheet(false); });
+
 // ── Navigation ────────────────────────────────────────────────
+// Én kilde for faner: sidebar, bottom-nav, swipe og hash-routing læser herfra.
 const PAGES = [
-  {id:"today",    label:"I dag",    icon:"today"},
-  {id:"plan",     label:"Plan",     icon:"plan", href:"plan.html"},
-  {id:"week",     label:"Uge",      icon:"week"},
-  {id:"overview", label:"Træning",  icon:"overview"},
-  {id:"body",     label:"Krop",     icon:"body"},
-  {id:"rules",    label:"Regler",   icon:"rules"},
+  {id:"today", label:"I dag", icon:"today"},
+  {id:"plan",  label:"Plan",  icon:"plan"},
+  {id:"body",  label:"Krop",  icon:"body"},
+  {id:"more",  label:"Mere",  icon:"more"},
 ];
+const PAGE_RENDERS = { today: () => renderToday(), plan: () => renderPlan(), body: () => renderBody(), more: () => renderMore() };
 
 let activePage = "today";
 
@@ -2199,34 +2482,44 @@ function renderNav() {
 
   document.getElementById("bottom-nav").innerHTML = PAGES.map(p=>`
     <button class="bottom-btn ${activePage===p.id?"active":""}" onclick="navigate('${p.id}')">
-      ${icon(p.icon, 22, activePage===p.id?"var(--gold)":"rgba(255,255,255,.4)")}
+      ${icon(p.icon, 22, "currentColor")}
       <span>${p.label}</span>
     </button>`).join("");
 }
 
+// Statuslinje under titlen: "Fredag 4. sep · Uge 14 af 14 · RACE" (I dag),
+// ellers kun uge/blok.
+function pageSubText(pageId) {
+  const now2 = new Date();
+  const dk2 = ["Søndag","Mandag","Tirsdag","Onsdag","Torsdag","Fredag","Lørdag"];
+  const dateTxt = `${dk2[now2.getDay()]} ${now2.getDate()}. ${DK_MON_SHORT[now2.getMonth()]}`;
+  const weekTxt = D.week ? `Uge ${D.week} af ${D.totalWeeks}` : '';
+  const parts = pageId === "today" ? [dateTxt, weekTxt, D.blockType] : [weekTxt, D.blockType];
+  return parts.filter(Boolean).join(' · ');
+}
+
 function navigate(pageId) {
-  const pageLink = PAGES.find(p=>p.id===pageId);
-  if (pageLink && pageLink.href) { location.href = pageLink.href; return; }
+  if (!PAGES.some(p=>p.id===pageId)) pageId = "today";
   activePage = pageId;
   const page = PAGES.find(p=>p.id===pageId);
   document.getElementById("page-title").textContent = page.label;
-  const now2 = new Date();
-  const dk2 = ["Søndag","Mandag","Tirsdag","Onsdag","Torsdag","Fredag","Lørdag"];
-  const dm2 = ["jan","feb","mar","apr","maj","jun","jul","aug","sep","okt","nov","dec"];
-  const liveDayName = dk2[now2.getDay()];
-  const liveDate = `${now2.getDate()}. ${dm2[now2.getMonth()]}`;
-  document.getElementById("page-sub").textContent = pageId==="today" ? `${liveDayName}, ${liveDate}` : "";
+  document.getElementById("page-sub").textContent = pageSubText(pageId);
 
   PAGES.forEach(p=>{ const el=document.getElementById(`page-${p.id}`); if(el) el.classList.remove("active"); });
   document.getElementById(`page-${pageId}`).classList.add("active");
 
   // Render den aktive side
-  const renders = {today:renderToday, week:renderWeek, overview:renderOverview, body:renderBody, rules:renderRules};
   try {
-    document.getElementById(`page-${pageId}`).innerHTML = renders[pageId]();
+    document.getElementById(`page-${pageId}`).innerHTML = PAGE_RENDERS[pageId]();
     requestAnimationFrame(redrawSparklines);
-    if (pageId === 'week' && typeof loadCoachAssessment === 'function') {
+    if (pageId === 'plan' && typeof loadCoachAssessment === 'function') {
       setTimeout(function(){ loadCoachAssessment(false); }, 60);
+    }
+    if (pageId === 'more' && typeof renderPushToggle === 'function') {
+      setTimeout(function(){ renderPushToggle('push-toggle-main'); }, 0);
+    }
+    if (pageId === 'today') {
+      setTimeout(()=>{const el=document.getElementById('live-time');if(el)el.textContent=new Date().toLocaleTimeString('da-DK',{hour:'2-digit',minute:'2-digit'});},50);
     }
   } catch(e) {
     console.error('RENDER FEJL i ' + pageId + ':', e.message);
@@ -2238,66 +2531,28 @@ function navigate(pageId) {
 
 function toggleDone(btn, idx) {
   sessionDoneList[idx] = true;
-  const todayStr2 = new Date().toISOString().split("T")[0];
+  const todayStr2 = todayIso();
   localStorage.setItem("session_done_" + todayStr2, JSON.stringify(sessionDoneList));
   localStorage.setItem("session_done_date", todayStr2);
-  const isDone = sessionDoneList[idx];
-  btn.className = `complete-btn ${isDone?"done":""}`;
-  btn.innerHTML = `${icon("check",15,isDone?"var(--wine)":"var(--gold)")} ${isDone?"Gennemført":"Markér gennemført"}`;
+  btn.className = 'btn fill done';
+  btn.textContent = 'Gennemført ✓';
+  btn.disabled = true;
 }
 
-// ── Staleness-banner: rolig info >6t, advarsel >12t (kilde-neutral) ──
-function checkStaleness(updatedStr) {
-  const existing = document.getElementById('stale-banner');
-  if (!updatedStr) return;
-  const ts = new Date(updatedStr.replace(' ', 'T'));
-  if (isNaN(ts.getTime())) return;
-  const ageMin = Math.round((Date.now() - ts.getTime()) / 60000);
-  const hrs = Math.round(ageMin / 60);
+// Bannere (stale / datafejl / readiness) går alle gennem ét slot øverst på
+// I dag-fanen (bannerSlotHtml) — ingen body.prepend længere. Readiness fra
+// plan_view.json gemmes på D og gentegner slottet når svaret kommer.
+function checkStaleness(_updatedStr) { updateDataAge(); updateBannerSlot(); }
+function showDataError(_show) { updateBannerSlot(); }
+function checkReadiness(readiness) { D.readinessRemote = readiness || null; updateBannerSlot(); }
+window.addEventListener('online',  updateDataAge);
+window.addEventListener('offline', updateDataAge);
 
-  if (ageMin <= 360) {
-    if (existing) existing.remove();
-    return;
-  }
-
-  const warn = ageMin > 720;
-  const html = warn
-    ? '⚠️ Data er ' + hrs + ' timer gamle. Automatisk opdatering ser ud til at hænge.'
-    : 'Data er ' + hrs + ' timer gamle — opdateres automatisk.';
-  const bg = warn ? '#E67E22' : '#EDE6D8';
-  const fg = warn ? '#fff' : '#7A6A58';
-  const css = 'position:relative;z-index:9999;background:' + bg + ';color:' + fg +
-              ';font-family:\u0027Space Mono\u0027,monospace;font-size:11px;padding:8px 14px;text-align:center;line-height:1.4';
-
-  if (existing) { existing.innerHTML = html; existing.style.cssText = css; return; }
-  const b = document.createElement('div');
-  b.id = 'stale-banner';
-  b.style.cssText = css;
-  b.innerHTML = html;
-  document.body.prepend(b);
-}
-
-// Fejlbjælke når data.json ikke kunne hentes. Samme mønster som
-// readiness-bjælken, men i rødt og øverst.
-function showDataError(show) {
-  const existing = document.getElementById('data-error-banner');
-  if (!show) { if (existing) existing.remove(); return; }
-  const css = "position:relative;z-index:9999;background:#C0392B;color:#FDFAF6;font-family:'Space Mono',monospace;font-size:11px;padding:8px 14px;text-align:center;line-height:1.4";
-  const html = 'Kunne ikke hente data — skærmen er ikke opdateret.';
-  if (existing) { existing.innerHTML = html; return; }
-  const b = document.createElement('div');
-  b.id = 'data-error-banner';
-  b.style.cssText = css;
-  b.innerHTML = html;
-  document.body.prepend(b);
-}
-
-function checkReadiness(readiness) { const existing = document.getElementById('readiness-banner'); if (readiness !== 'LOW') { if (existing) existing.remove(); return; } const html = 'Lav readiness i dag (HRV/søvn) — overvej at tage det roligt.'; const css = 'position:relative;z-index:9999;background:#EDE6D8;color:#7A6A58;font-family:\'Space Mono\',monospace;font-size:11px;padding:8px 14px;text-align:center;line-height:1.4'; if (existing) { existing.innerHTML = html; existing.style.cssText = css; return; } const b = document.createElement('div'); b.id = 'readiness-banner'; b.style.cssText = css; b.innerHTML = html; document.body.prepend(b); } function updateMeta() {
+function updateMeta() {
   document.getElementById("sf-week").textContent = `UGE ${D.week}/${D.totalWeeks}`;
   document.getElementById("sf-block").textContent = `${D.blockType} BLOCK`;
-  document.getElementById("pm-week").textContent = `UGE ${D.week}/${D.totalWeeks}`;
-  document.getElementById("pm-block").textContent = D.blockType;
-  document.getElementById("page-sub").textContent = activePage==="today" ? `${D.dayName}, ${D.date}` : "";
+  document.getElementById("page-sub").textContent = pageSubText(activePage);
+  updateDataAge();
 }
 
 // ── Fetch data.json og render ─────────────────────────────────
@@ -2336,23 +2591,26 @@ function applyRemote(remote) {
       }
       if (remote.af_history)             { D.afHistory = remote.af_history; }
       if (remote.af_log)                 { D.af_log    = remote.af_log; }
+      if (Array.isArray(remote.checkinLog)) D.checkinLog = remote.checkinLog;
+      if ('energy7' in remote)           D.energy7 = remote.energy7;
+      if (remote.kpis && remote.kpis.protein) D.kpiProtein = remote.kpis.protein;
       if (remote.kpis) {
         const km = remote.kpis;
         D.kpis = [
           // Træning
           // Farver kommer fra data.json (update_kpi.py måler dem mod målet) —
           // ingen hardkodede farver her; neutral grå kun hvis feltet mangler.
-          {cat:"Træning", label:"CTL",       value:km.ctl?.value    ||"—", unit:"",    sub:km.ctl?.sub    ||"Ugens mål",          color:km.ctl?.color    ||"#7A6A58"},
-          {cat:"Træning", label:"FORM",       value:km.tsb?.value    ||"—", unit:"",    sub:km.tsb?.sub    ||"Bygger",             color:km.tsb?.color    ||"#7A6A58"},
-          {cat:"Træning", label:"LØB KM",     value:km.runKm?.value  ||"—", unit:"km",  sub:km.runKm?.sub  ||"Løb denne uge",      color:km.runKm?.color  ||"#7A6A58"},
+          {cat:"Træning", label:"CTL",       value:km.ctl?.value    ||"—", unit:"",    sub:km.ctl?.sub    ||"Ugens mål",          color:km.ctl?.color    ||"#6B7A88"},
+          {cat:"Træning", label:"FORM",       value:km.tsb?.value    ||"—", unit:"",    sub:km.tsb?.sub    ||"Bygger",             color:km.tsb?.color    ||"#6B7A88"},
+          {cat:"Træning", label:"LØB KM",     value:km.runKm?.value  ||"—", unit:"km",  sub:km.runKm?.sub  ||"Løb denne uge",      color:km.runKm?.color  ||"#6B7A88"},
           {cat:"Træning", label:"CYKEL KM",   value:km.bikeKm?.value ||"—", unit:"km",  sub:km.bikeKm?.sub ||"Cykel denne uge",    color:km.bikeKm?.color ||"var(--bike)"},
-          {cat:"Træning", label:"TSS UGE",    value:km.tssComp?.value||"0", unit:km.tssComp?.unit||"TSS", sub:km.tssComp?.sub||"Mål denne uge", color:km.tssComp?.color||"#7A6A58"},
+          {cat:"Træning", label:"TSS UGE",    value:km.tssComp?.value||"0", unit:km.tssComp?.unit||"TSS", sub:km.tssComp?.sub||"Mål denne uge", color:km.tssComp?.color||"#6B7A88"},
           // Krop
-          {cat:"Krop",    label:"VÆGT",       value:km.weight?.value ||"—", unit:"kg",  sub:km.weight?.sub ||"Mål",                color:km.weight?.color ||"#7A6A58"},
-          {cat:"Krop",    label:"FEDT%",      value:km.fat?.value    ||"—", unit:"%",   sub:km.fat?.sub    ||"Mål",                color:km.fat?.color    ||"#7A6A58"},
-          {cat:"Krop",    label:"AF DAGE",    value:km.afStreak?.value||"—", unit:"",   sub:km.afStreak?.sub||`af ${D.afDays.target} denne uge`, color:km.afStreak?.color||"#59182A"},
-          {cat:"Krop",    label:"SØVN",       value:km.sleep?.value  ||"—", unit:"t",   sub:km.sleep?.sub  ||"Snit 7d · mål 7t",   color:km.sleep?.color  ||"#7A6A58"},
-          {cat:"Krop",    label:"HRV",        value:km.hrv?.value    ||"—", unit:"ms",  sub:km.hrv?.sub    ||"Snit 7d",            color:km.hrv?.color    ||"#7A6A58"},
+          {cat:"Krop",    label:"VÆGT",       value:km.weight?.value ||"—", unit:"kg",  sub:km.weight?.sub ||"Mål",                color:km.weight?.color ||"#6B7A88"},
+          {cat:"Krop",    label:"FEDT%",      value:km.fat?.value    ||"—", unit:"%",   sub:km.fat?.sub    ||"Mål",                color:km.fat?.color    ||"#6B7A88"},
+          {cat:"Krop",    label:"AF DAGE",    value:km.afStreak?.value||"—", unit:"",   sub:km.afStreak?.sub||`af ${D.afDays.target} denne uge`, color:km.afStreak?.color||"#6B7A88"},
+          {cat:"Krop",    label:"SØVN",       value:km.sleep?.value  ||"—", unit:"t",   sub:km.sleep?.sub  ||"Snit 7d · mål 7t",   color:km.sleep?.color  ||"#6B7A88"},
+          {cat:"Krop",    label:"HRV",        value:km.hrv?.value    ||"—", unit:"ms",  sub:km.hrv?.sub    ||"Snit 7d",            color:km.hrv?.color    ||"#6B7A88"},
           {cat:"Svøm",    label:"SVØM UGE",   value:km.swimM?.value  ||"0",  unit:"m",   sub:km.swimM?.sub  ||"Svøm denne uge",     color:km.swimM?.color  ||"var(--swim)"},
         ];
       }
@@ -2429,8 +2687,10 @@ async function init() {
   renderNav();
   updateMeta();
   const initialPage = location.hash.slice(1);
-  const validPages = PAGES.filter(p=>!p.href).map(p=>p.id);
+  const validPages = PAGES.map(p=>p.id);
   navigate(validPages.includes(initialPage) ? initialPage : "today");
+  // Push-nudgen om aftenen linker til index.html#log — åbn arket direkte.
+  if (initialPage === 'log') { setTimeout(() => showLogSheet(true), 150); }
 
   // Hent friske data i baggrunden
   try {
@@ -2645,7 +2905,7 @@ async function _dataStamp() {
 (function() {
   let startX = 0, startY = 0, swiping = false;
   const threshold = 50;
-  const PAGE_IDS = ['today','week','overview','body','rules'];
+  const PAGE_IDS = PAGES.map(p => p.id);   // én kilde: PAGES
 
   document.addEventListener('touchstart', e => {
     startX = e.touches[0].clientX;
@@ -2827,9 +3087,9 @@ async function renderPushToggle(containerId){
         'Påmindelser er tilladt, men mangler adgang til at nå serveren.'
         + '<div style="margin-top:8px">Indsæt den delte hemmelighed (samme som i Plan-fanen):</div>'
         + '<input class="pt-token" type="password" placeholder="delt hemmelighed" '
-        + 'style="width:100%;margin-top:6px;padding:7px 9px;border-radius:7px;border:1px solid var(--wine-l,#ccc);font-family:monospace;font-size:11px;box-sizing:border-box">'
-        + '<button class="pt-token-save" style="margin-top:6px;padding:7px 12px;border-radius:7px;border:none;background:var(--wine,#59182A);color:#fff;cursor:pointer;font:inherit;font-size:12px">Gem og aktivér</button>'
-        + '<div class="pt-token-msg" style="font-size:12px;color:var(--muted,#888);margin-top:6px"></div>');
+        + 'style="width:100%;margin-top:6px;padding:7px 9px;border-radius:7px;border:1px solid var(--line);font-family:monospace;font-size:11px;box-sizing:border-box">'
+        + '<button class="pt-token-save" style="margin-top:6px;padding:7px 12px;border-radius:7px;border:none;background:var(--wine);color:#fff;cursor:pointer;font:inherit;font-size:12px">Gem og aktivér</button>'
+        + '<div class="pt-token-msg" style="font-size:12px;color:var(--muted);margin-top:6px"></div>');
       el.querySelector(".pt-token-save").onclick = async () => {
         const val = el.querySelector(".pt-token").value.trim();
         const m = el.querySelector(".pt-token-msg");
@@ -2843,7 +3103,7 @@ async function renderPushToggle(containerId){
       };
       return;
     }
-    el.innerHTML = wrap('Påmindelser er slået <b>til</b> · <button class="pt-off" style="background:none;border:none;color:var(--muted,#888);text-decoration:underline;cursor:pointer;font:inherit">slå fra</button>');
+    el.innerHTML = wrap('Påmindelser er slået <b>til</b> · <button class="pt-off" style="background:none;border:none;color:var(--muted);text-decoration:underline;cursor:pointer;font:inherit">slå fra</button>');
     const off = el.querySelector(".pt-off");
     if (off) off.onclick = async () => { await pushUnsubscribe(); renderPushToggle("push-toggle"); renderPushToggle("push-toggle-main"); };
     return;
@@ -2853,7 +3113,7 @@ async function renderPushToggle(containerId){
     return;
   }
   // default — tilbyd opt-in
-  el.innerHTML = `<button class="pt-on" style="padding:8px 14px;border-radius:8px;border:none;background:var(--teal,var(--wine,#59182A));color:#fff;cursor:pointer;font:inherit;font-size:13px">Slå daglige påmindelser til</button><div class="pt-msg" style="font-size:12px;color:var(--muted,#888);margin-top:6px"></div>`;
+  el.innerHTML = `<button class="pt-on" style="padding:8px 14px;border-radius:8px;border:none;background:var(--wine);color:#fff;cursor:pointer;font:inherit;font-size:13px">Slå daglige påmindelser til</button><div class="pt-msg" style="font-size:12px;color:var(--muted);margin-top:6px"></div>`;
   el.querySelector(".pt-on").onclick = async () => {
     const msg = el.querySelector(".pt-msg");
     if (msg) msg.textContent = "Aktiverer…";

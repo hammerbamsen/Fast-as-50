@@ -29,6 +29,7 @@ from modules import programs as _programs
 from modules.fitness  import get_fitness, get_wellness_7d, get_history, get_ctl_curve
 from modules.aerobic  import get_ef_history
 from modules import decoupling
+from modules import checkin as _checkin
 from modules.af       import (get_af_this_week, get_af_history, get_full_af_log,
                                get_af_streak, monday_this_week,
                                detect_alcohol_cluster)
@@ -532,6 +533,20 @@ def main():
     if af_history:
         data['af_history'] = af_history
 
+    # --- Check-in-log (alkohol/protein/energi/aftensult) sidste 28 dage ---
+    # Samme wellness-kilde som af_log. Bruges af I dag-fanens log-ark (7 prikker),
+    # Krop-fanens protein-kort og én linje i coach-prompten. af_log holder sig til
+    # 0/1 (af.html/index læser det); hvordan drikkedagen blev registreret
+    # (valgt/autopilot) ligger i checkinLog.alkohol (1/2) og i af_kind.
+    checkin_log = _checkin.get_checkin_log()
+    data['checkinLog'] = checkin_log
+    data['kpis']['protein'] = _checkin.protein_kpi(checkin_log)
+    data['energy7'] = _checkin.energy_avg(checkin_log, 7)
+    data['af_kind'] = _checkin.af_kinds(checkin_log)
+    checkin_line = _checkin.coach_line(checkin_log)
+    if checkin_line:
+        print(f"  Check-in: {checkin_line}")
+
     # --- Træningstimer per type + planlagt ---
     planned_mins = get_planned_mins_this_week()
     # Altid overskriv train_mins — også ved ugestart hvor der ingen aktiviteter er endnu
@@ -813,7 +828,8 @@ def main():
             weight_date=weight_coach_date,
             fat_date=fat_coach_date,
             weight_avg7=_latest_avg(data.get('weightMovingAvg7')),
-            fat_avg7=_latest_avg(data.get('fatMovingAvg7'))
+            fat_avg7=_latest_avg(data.get('fatMovingAvg7')),
+            checkin_line=checkin_line
         )
         ai_text = fix_enc(ai_text)  # AI-svar kan komme tilbage Latin-1-mis-decoded -- ret ved kilden
     if ai_text:

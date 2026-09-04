@@ -30,13 +30,20 @@ jobs:
           PROTEIN="${{ github.event.client_payload.protein }}"
           ENERGI="${{ github.event.client_payload.energi }}"
           STRESS="${{ github.event.client_payload.stress }}"
+          SULT="${{ github.event.client_payload.sult }}"
 
-          # Byg JSON payload
-          PAYLOAD="{\"Alkohol\": $ALKOHOL"
-          if [ -n "$PROTEIN" ]; then PAYLOAD="$PAYLOAD, \"protein\": $PROTEIN"; fi
-          if [ -n "$ENERGI" ]; then PAYLOAD="$PAYLOAD, \"motivation\": $ENERGI"; fi
-          if [ -n "$STRESS" ]; then PAYLOAD="$PAYLOAD, \"fatigue\": $STRESS"; fi
-          PAYLOAD="$PAYLOAD}"
+          # Byg JSON payload. Alle felter er valgfrie (log-arket i index.html
+          # gemmer ved hvert tryk, så alkohol kan mangle). Alkohol: 0 = AF-dag,
+          # 1 = drak (valgt), 2 = drak (bare skete) — af.py regner alt != 0 som drikkedag.
+          FIELDS=""
+          if [ -n "$ALKOHOL" ]; then FIELDS="$FIELDS, \"Alkohol\": $ALKOHOL"; fi
+          if [ -n "$PROTEIN" ]; then FIELDS="$FIELDS, \"protein\": $PROTEIN"; fi
+          if [ -n "$ENERGI" ]; then FIELDS="$FIELDS, \"motivation\": $ENERGI"; fi
+          if [ -n "$STRESS" ]; then FIELDS="$FIELDS, \"fatigue\": $STRESS"; fi
+          # Aftensult: custom wellness-felt i Intervals (0 nej / 1 lidt / 2 ja)
+          if [ -n "$SULT" ]; then FIELDS="$FIELDS, \"Aftensult\": $SULT"; fi
+          if [ -z "$FIELDS" ]; then echo "::error::Tom payload for $DATE"; exit 1; fi
+          PAYLOAD="{${FIELDS#, }}"
 
           HTTP=$(curl -s -o /tmp/resp.txt -w "%{http_code}" --max-time 30 --retry 3 --retry-all-errors --retry-delay 3 -X PUT \
             "https://intervals.icu/api/v1/athlete/i599466/wellness/$DATE" \
