@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-09-04 14:51",
+    "updated": "2026-09-04 16:41",
     "week": 14,
     "totalWeeks": 14,
     "blockType": "RACE",
@@ -33,13 +33,13 @@
       "color": "#C0392B"
     },
     "ctl": {
-      "value": "48,4",
+      "value": "48,6",
       "unit": "",
       "sub": "Uge 14-mål 43 · RACE",
       "color": "#27AE60"
     },
     "tsb": {
-      "value": "8,9",
+      "value": "7,6",
       "unit": "",
       "sub": "Form · CTL−ATL, frisk >0",
       "color": "#27AE60"
@@ -69,9 +69,9 @@
       "color": "#7A6A58"
     },
     "tssComp": {
-      "value": "161",
+      "value": "172",
       "unit": "TSS",
-      "sub": "161 af 132 planlagt TSS",
+      "sub": "172 af 132 planlagt TSS",
       "color": "#27AE60"
     },
     "bikeKm": {
@@ -89,28 +89,36 @@
     "afStreak": {
       "value": "3",
       "unit": "",
-      "sub": "af 6 denne uge · snit 4 uger 5,5 · streak 1",
+      "sub": "af 6 denne uge · snit 4 uger 5,5",
       "color": "#59182A"
     },
     "protein": {
       "value": "0",
       "unit": "/7",
       "sub": "3/3-dage · 4 uger 0,0",
-      "color": "#7A6A58"
+      "color": "#C0392B"
     }
   },
   "af": {
     "weekDone": 3,
     "target": 6,
-    "streak": 1
+    "streak": 0
   },
   "coachSpeech": "Fredag — tre dage tilbage af uge 14. {HL} Godt: Søvn på 7,8 timer er solid. Fokus: Vægt på 72,3 kg (målt 3/9) — protein ved hvert måltid, alkohol som bevidst valg, søvn 7-8 t. Vægt/fedt vurderes på 7d-snit mod planen, ikke på én vejning. 3 AF-dage i 5 afsluttede dage — 3 mangler i 2 dage tilbage. Alle sessioner i hus. Juster de små ting, og resten følger.  \"AF-dage er ikke et offer — de er en investering i morgendagens energi.\"",
-  "coachHighlight": "122 procent af ugens TSS er i hus",
+  "coachHighlight": "130 procent af ugens TSS er i hus",
   "weekFocus": "Taper færdig — hold kroppen klar til Médoc-lørdagen",
   "today": [
     {
       "discipline": "run",
       "title": "Løb Z1 15 min let",
+      "duration": "",
+      "zone": "–",
+      "desc": "",
+      "completed": true
+    },
+    {
+      "discipline": "walk",
+      "title": "Bordeaux Gang",
       "duration": "",
       "zone": "–",
       "desc": "",
@@ -222,6 +230,17 @@
       "actual_mins": 13,
       "actual_distance_m": 2015.24,
       "intervals_compliance": 71.4
+    },
+    {
+      "day": "Fre",
+      "disc": "walk",
+      "label": "Bordeaux Gang",
+      "done": true,
+      "extra": true,
+      "actual_tss": 11,
+      "actual_mins": 89,
+      "actual_distance_m": 6703.15,
+      "today": true
     }
   ],
   "ctlCurve": [
@@ -238,7 +257,7 @@
     52.9,
     52.4,
     50.7,
-    48.4
+    48.6
   ],
   "weightHistory": [
     {
@@ -1932,7 +1951,7 @@
     },
     {
       "date": "2026-09-04",
-      "v": 8.9,
+      "v": 7.7,
       "real": true
     }
   ],
@@ -2031,7 +2050,8 @@
     "2026-08-31": 0,
     "2026-09-01": 0,
     "2026-09-02": 1,
-    "2026-09-03": 0
+    "2026-09-03": 0,
+    "2026-09-04": 1
   },
   "all_weeks": {
     "12": {
@@ -2252,6 +2272,17 @@
           "actual_mins": 13,
           "actual_distance_m": 2015.24,
           "intervals_compliance": 71.4
+        },
+        {
+          "day": "Fre",
+          "disc": "walk",
+          "label": "Bordeaux Gang",
+          "done": true,
+          "extra": true,
+          "actual_tss": 11,
+          "actual_mins": 89,
+          "actual_distance_m": 6703.15,
+          "today": true
         }
       ],
       "blockType": "RACE",
@@ -2345,12 +2376,12 @@
     }
   ],
   "train_mins": {
+    "walk": 190.0,
     "run": 46.0,
     "bike": 105.0,
     "strength": 40.0,
-    "walk": 101.0,
     "planned": 175.0,
-    "actual_total": 292.0
+    "actual_total": 381.0
   },
   "fatHistory": [
     {
@@ -2692,11 +2723,11 @@
     },
     null
   ],
-  "coachAssessmentHtml": "<p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\"><strong>Dag 96 af 98 · Fredag · Uge 14</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">💪 <strong>Træning & load</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">CTL er 48.4 og TSB 8.9 — du er frisk og over ugemålet på 43, og det er præcis det der skal til inden Médoc lørdag. Onsdag løb du for hurtigt: 42.6% af tiden lå over target-pace, og HR nåede aldrig at følge med — næste gang du løber Z2, sæt tempoet ned fra start, ikke bagfra. Fredagens korte løb på 2,0 km og 13 min var rent Z1 med 99.4% i zone — godt kontrolleret. Ugen er i mål træningsmæssigt; resten er recovery og logistik.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">⚖️ <strong>Krop & kost</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Vægten var 72.3 kg ved seneste vejning 3/9 — 4.3 kg fra målet under 68 kg. Fedtprocenten var 21.9% samme dag, og 7-dages snittet er 21.7% — snittet er gået op 0.3 procentpoint de seneste 7 dage, og det er den retning der tæller, ikke enkeltmålingen. Det er ikke en god kombination to dage før Médoc: vægten er ikke faldet nok, og fedtprocenten peger opad i snittet. Hold styr på kalorierne resten af ugen — undgå at overspise på carb-load-logikken og hold proteinet oppe så du ikke taber muskelmasse.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">🎯 <strong>AF-status & fokus for resten af ugen</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Du har 3 AF-dage ud af 5 dage gået — det er 3/5, og du har lørdag og søndag tilbage til at nå dit ugamål på 6. Med Médoc lørdag og recovery søndag er det fuldt muligt. Hold fokus: to dage uden alkohol er enkelt at gennemføre, og din TSB er allerede sund — ødelæg ikke opbygningen med et glas for meget fredag aften.</p>",
-  "coachAssessmentTs": "06:55",
+  "coachAssessmentHtml": "<p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\"><strong>Dag 96 af 98 · Fredag · Uge 14</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">💪 <strong>Træning & load</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">CTL er 48,6 — altså over ugemålet på 43, og TSB er 7,6. Kroppen er klar. Ugens arbejde er gjort: cykel, løb og styrke er i kassen, og fredagens 2,0 km / 13 min / 10 TSS sad præcist i Z1. Onsdag løb du for hurtigt til at ramme Z2-pace — 51,4 % i zone mod et mål på 55 % — så til næste tilsvarende Z2-løbetur: sæt tempoet lavere end du tror, og lad pulsen stige ind i zonen i stedet for at jagte den.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">⚖️ <strong>Krop & kost</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Vægten var 72,3 kg ved seneste vejning 3/9, og fedtprocenten var 21,9 % samme dag. Det er henholdsvis 4,3 kg fra og 5,9 procentpoint fra dine mål. Det der tæller som retning er 7-dages snittet: fedtprocenten er gået *op* 0,3 point over de seneste 7 dage — det er den reelle bevægelse, og den går den forkerte vej. Proteinregistreringen er 0 ud af 3 dage — det er den enkleste løftestang du ikke bruger.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">🎯 <strong>AF-status & fokus for resten af ugen</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">3 AF-dage ud af 5 dage gået — det er acceptabelt set relativt til hvor langt ugen er nået. Du har lørdag og søndag til at lukke ugen stærkt på den front. Fokus nu: spis, sov og hold benene friske til Médoc lørdag. Der er ingen planlagte pas tilbage — brug det.</p>",
+  "coachAssessmentTs": "14:41",
   "commute_pairing_warnings": [],
   "warnings": [],
-  "tsb": 8.9,
+  "tsb": 7.6,
   "swimHistory": [
     {
       "week": 1,
@@ -2783,7 +2814,7 @@
       "cumulative": 29362.0
     }
   ],
-  "coachAssessmentLastActId": "i183120381",
+  "coachAssessmentLastActId": "i183279947",
   "weekFocusWeek": 14,
   "coachAssessmentPlanAtGen": "Løb Z1 15 min let",
   "weightGoal": 68,
@@ -3002,8 +3033,8 @@
       "note": "Nøgle virker"
     }
   },
-  "credentialsCheckedTs": "2026-09-04T12:51:18.256742",
-  "coachAssessmentTsFull": "2026-09-04T06:55:21.548350",
+  "credentialsCheckedTs": "2026-09-04T14:41:53.453269",
+  "coachAssessmentTsFull": "2026-09-04T14:41:53.453252",
   "coachAssessmentWeightAtGen": 72.3,
   "coachAssessmentAfAtGen": 3,
   "event_structure_warnings": [],
@@ -3103,7 +3134,7 @@
     "11": 374,
     "12": 367,
     "13": 320,
-    "14": 161
+    "14": 172
   },
   "racesUpcoming": [
     {
@@ -4054,19 +4085,20 @@
     },
     {
       "date": "2026-09-04",
-      "alkohol": null,
-      "protein": null,
-      "energi": null,
+      "alkohol": 1,
+      "protein": 1,
+      "energi": 1,
       "sult": null
     }
   ],
-  "energy7": null,
+  "energy7": 1.0,
   "af_kind": {
     "2026-08-13": "drak",
     "2026-08-14": "drak",
     "2026-08-15": "drak",
     "2026-08-16": "drak",
     "2026-08-29": "drak",
-    "2026-09-02": "drak"
+    "2026-09-02": "drak",
+    "2026-09-04": "valgt"
   }
 }
