@@ -6,8 +6,8 @@ og drev fra plan.json. Excel er backup og tracking — plan.json er master.
 
 Faneblade:
   Oversigt    nu vs. mål (vægt, fedt, FTP, W/kg, CTL) + racedatoer
-  Plan 2026   14-ugers Médoc-plan
-  Plan 2027   51-ugers TdS-plan med FTP- og W/kg-mål pr. uge
+  Plan <år>   ét faneblad pr. program i plan.json -> programs (fx medoc-2026, tds-2027)
+              med FTP- og W/kg-mål pr. uge hvor programmet har dem
   Tracking    daglig historik: vægt, fedt, CTL, TSB, HRV, søvn
   Ugesummer   planlagt vs. faktisk TSS pr. uge
   Zoner       aktuelle løbe- og cykelzoner
@@ -17,6 +17,8 @@ from io import BytesIO
 from openpyxl import Workbook
 from openpyxl.styles import Alignment, Border, Font, PatternFill, Side
 from openpyxl.utils import get_column_letter
+
+from . import programs as _programs
 
 # Fast as Fifty-paletten (samme bordeaux/guld som dashboardet)
 BORDEAUX = "4A1520"
@@ -63,9 +65,12 @@ def _title(ws, text, sub=None):
 
 def _sheet_oversigt(wb, plan, dash):
     ws = wb.create_sheet("Oversigt")
-    s27 = plan.get("season2027", {})
-    wp = s27.get("weightPlan", {})
-    goals = plan.get("goals", {})
+    # Langsigtede mål (FTP/W-kg/CTL/vægtplan) kommer fra det SENESTE program
+    # for Kennet — det er dét der bærer sæsonmålene.
+    _progs = _programs.programs_for(plan, "kennet")
+    s27 = _progs[-1] if _progs else {}
+    wp = s27.get("weightPlan") or {}
+    goals = (_programs.active_program(plan, "kennet") or {}).get("goals") or plan.get("goals", {})
     zones = plan.get("athletes", {}).get("kennet", {}).get("zones", {})
 
     _title(ws, "FAST AS FIFTY — status og mål",
@@ -91,7 +96,7 @@ def _sheet_oversigt(wb, plan, dash):
              [26, 12, 12, 14, 62])
     rows = [
         ("Vægt (kg)", w_now, wp.get("targetKg"), wp.get("targetDate"),
-         "Max %s kg/uge. Cut starter %s — intet underskud før Médoc."
+         "Max %s kg/uge. Cut starter %s."
          % (wp.get("maxLossPerWeekKg"), wp.get("cutStartsFrom"))),
         ("Fedtprocent (Garmin)", f_now, wp.get("bodyFatPctTarget"), wp.get("targetDate"),
          "Bioimpedans — styr efter 7-dages snittet i Tracking, ikke dagstallet."),
@@ -111,10 +116,14 @@ def _sheet_oversigt(wb, plan, dash):
     ws.cell(row=r, column=1, value="LØB").font = GOLD_FONT
     _headers(ws, r + 1, ["Løb", "Dato", "Prioritet", "Distance", "Tilmeldt", "Note"],
              [34, 12, 11, 20, 11, 58])
-    # Løbene kommer fra plan.json — 2026 fra races, 2027 fra nextSeason.races.
+    # Løbene kommer fra plan.json -> programs.*.races (alle Kennets programmer).
     # Hardkod dem aldrig her: tilmeldingsstatus og distancer vedligeholdes i kilden.
-    races = list(plan.get("races", []))
-    races += list((plan.get("nextSeason") or {}).get("races") or [])
+    races, _seen = [], set()
+    for _p in _progs:
+        for _r in _p.get("races", []):
+            if (_r.get("name"), _r.get("date")) not in _seen:
+                _seen.add((_r.get("name"), _r.get("date")))
+                races.append(_r)
     for i, race in enumerate(races, start=r + 2):
         reg = race.get("registered")
         if reg is True:
@@ -128,36 +137,25 @@ def _sheet_oversigt(wb, plan, dash):
     return ws
 
 
-def _sheet_plan_2026(wb, plan):
-    ws = wb.create_sheet("Plan 2026")
-    _title(ws, "Plan 2026 — Christiansborg + Marathon du Médoc",
-           "%s uger fra %s" % (plan["program"]["totalWeeks"], plan["program"]["start"]))
-    _headers(ws, 4, ["Uge", "Start", "Blok", "CTL-mål", "TSS-mål", "Lokation", "Note"],
-             [6, 12, 12, 10, 10, 30, 70])
-    for i, w in enumerate(sorted(plan.get("weeks", []), key=lambda x: x["week"]), start=5):
-        _row(ws, i, [w.get("week"), w.get("start"), w.get("blockType"),
-                     w.get("ctlTarget"), w.get("tssTarget"),
-                     w.get("location", ""), w.get("note", "")])
-    return ws
-
-
-def _sheet_plan_2027(wb, plan):
-    ws = wb.create_sheet("Plan 2027")
-    s27 = plan.get("season2027", {})
-    weeks = s27.get("weeks", [])
+def _sheet_program(wb, plan, program):
+    """Ét faneblad pr. program: uge, start, fase, blok, CTL/FTP/W-kg/TSS-mål."""
+    year = program.get("end", program.get("start", ""))[:4]
+    ws = wb.create_sheet(f"Plan {year}")
+    weeks = sorted(program.get("weeks", []), key=lambda x: x["week"])
     if not weeks:
         return ws
-    _title(ws, "Plan 2027 — Tour des Stations Ultrafondo",
-           "%s uger fra %s til %s · FTP %s → %s W · W/kg %s → %s"
-           % (len(weeks), weeks[0]["start"], weeks[-1]["start"],
-              s27.get("ftpStart"), s27.get("ftpTarget"),
-              s27.get("wkgStart"), s27.get("wkgTarget")))
+    sub = "%s uger fra %s til %s" % (program.get("totalWeeks"), program.get("start"), program.get("end"))
+    if program.get("ftpStart") or program.get("ftpTarget"):
+        sub += " · FTP %s → %s W · W/kg %s → %s" % (
+            program.get("ftpStart"), program.get("ftpTarget"),
+            program.get("wkgStart"), program.get("wkgTarget"))
+    _title(ws, "%s — %s" % (year, program.get("name", program.get("id"))), sub)
     _headers(ws, 4, ["Uge", "Start", "Fase", "Blok", "CTL-mål", "FTP-mål",
                      "W/kg-mål", "TSS-mål", "Lokation", "Note"],
              [6, 12, 12, 11, 9, 9, 9, 9, 24, 70])
     fmt = {7: "0.00"}
     for i, w in enumerate(weeks, start=5):
-        _row(ws, i, [w.get("week"), w.get("start"), w.get("phase"), w.get("blockType"),
+        _row(ws, i, [w.get("week"), w.get("start"), w.get("phase", ""), w.get("blockType"),
                      w.get("ctlTarget"), w.get("ftpTarget"), w.get("wkgTarget"),
                      w.get("tssTarget"), w.get("location", ""), w.get("note", "")], fmt)
     return ws
@@ -195,9 +193,11 @@ def _sheet_tracking(wb, dash):
     return ws
 
 
-def _sheet_ugesummer(wb, plan, dash):
+def _sheet_ugesummer(wb, plan, dash, program):
+    """Planlagt vs. faktisk pr. uge for det AKTIVE program (data.json's ctlCurve
+    og weekTssActual er indekseret mod samme program)."""
     ws = wb.create_sheet("Ugesummer")
-    _title(ws, "Ugesummer — planlagt vs. faktisk",
+    _title(ws, "Ugesummer — planlagt vs. faktisk (%s)" % program.get("id"),
            "Faktisk TSS summeres fra gennemførte sessioner i data.json.")
     _headers(ws, 4, ["Uge", "Start", "Blok", "CTL-mål", "CTL faktisk",
                      "TSS-mål", "TSS faktisk", "Afvigelse"],
@@ -205,7 +205,7 @@ def _sheet_ugesummer(wb, plan, dash):
     ctl_actual = dash.get("ctlCurve") or []
     all_weeks = dash.get("all_weeks") or {}
     week_tss = dash.get("weekTssActual") or {}
-    for i, w in enumerate(sorted(plan.get("weeks", []), key=lambda x: x["week"]), start=5):
+    for i, w in enumerate(sorted(program.get("weeks", []), key=lambda x: x["week"]), start=5):
         wk = w["week"]
         actual_ctl = ctl_actual[wk - 1] if wk - 1 < len(ctl_actual) else None
         # Historisk backfill fra Intervals er primaer kilde; sessions-summen
@@ -248,10 +248,11 @@ def generate(plan, dash=None):
     wb = Workbook()
     wb.remove(wb.active)
     _sheet_oversigt(wb, plan, dash)
-    _sheet_plan_2026(wb, plan)
-    _sheet_plan_2027(wb, plan)
+    active = _programs.active_program(plan, "kennet")
+    for program in _programs.programs_for(plan, "kennet"):
+        _sheet_program(wb, plan, program)
     _sheet_tracking(wb, dash)
-    _sheet_ugesummer(wb, plan, dash)
+    _sheet_ugesummer(wb, plan, dash, active)
     _sheet_zoner(wb, plan)
     buf = BytesIO()
     wb.save(buf)

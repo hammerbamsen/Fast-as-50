@@ -28,6 +28,7 @@ from typing import Optional
 
 from . import friel
 from . import plan_coherence
+from . import programs as _programs
 
 
 def inputs_hash(plan_raw: str, seed_ctl, seed_atl, seed_date: str,
@@ -43,8 +44,12 @@ def inputs_hash(plan_raw: str, seed_ctl, seed_atl, seed_date: str,
 
 
 def compute(plan: dict, seed_ctl, seed_atl, seed_date: str,
-            readiness=None, current_week=None, adaptation=None, coherence=None) -> dict:
+            readiness=None, current_week=None, adaptation=None, coherence=None,
+            today=None) -> dict:
     """Ren beregning — ingen I/O. Testes direkte.
+
+    `today` vælger det aktive program (programs.active_program); default i dag.
+    Uger, projektionens slutdato og ctlTarget-afvigelser er programmets.
 
     T1: readiness/current_week videreføres til Friel-validering. Default None
     -> hidtidig adfærd.
@@ -55,27 +60,26 @@ def compute(plan: dict, seed_ctl, seed_atl, seed_date: str,
     friel-flags) — flettes ind i den samlede flags-liste når givet. Default
     None -> hidtidig adfærd, fuldt bagudkompatibelt.
     """
+    program = _programs.active_program(plan, "kennet", today)
     flags = friel.validate(plan, seed_ctl=seed_ctl, seed_atl=seed_atl,
                            seed_date=seed_date,
-                           readiness=readiness, current_week=current_week)
+                           readiness=readiness, current_week=current_week,
+                           today=today)
     if coherence:
         flags = flags + coherence
-    proj = friel.project_fitness(plan, seed_ctl, seed_atl, seed_date)
+    proj = friel.project_fitness(plan, seed_ctl, seed_atl, seed_date, today=today)
 
     projection = [{"d": d, "ctl": v["ctl"], "tsb": v["tsb"]}
                   for d, v in sorted(proj.items())]
 
     week_end_ctl = {}
-    plan_start = plan["program"]["start"]
-    from datetime import date as _date
-    ps = _date.fromisoformat(plan_start)
     for d_iso, v in sorted(proj.items()):
-        w = (_date.fromisoformat(d_iso) - ps).days // 7 + 1
-        if 1 <= w <= plan["program"]["totalWeeks"]:
+        w = _programs.week_no_raw(program, d_iso)
+        if 1 <= w <= program["totalWeeks"]:
             week_end_ctl[w] = v["ctl"]
 
     weeks = []
-    for wm in plan["weeks"]:
+    for wm in program.get("weeks", []):
         w = wm["week"]
         proj_end = week_end_ctl.get(w)
         deviation = (round(proj_end - wm["ctlTarget"], 1)
@@ -89,6 +93,7 @@ def compute(plan: dict, seed_ctl, seed_atl, seed_date: str,
         })
 
     kennet = {
+        "programId": program.get("id"),
         "seed": {"date": seed_date,
                  "ctl": round(float(seed_ctl), 1),
                  "atl": round(float(seed_atl), 1)},
@@ -143,11 +148,10 @@ def update_plan_view(fitness: Optional[dict], wellness: Optional[dict] = None,
         readiness = friel.readiness_band(
             wellness.get("hrv"), wellness.get("hrv_avg"), wellness.get("sleep_avg"))
         try:
-            ps = _date.fromisoformat(plan["program"]["start"])
-            cw = (_date.today() - ps).days // 7 + 1
-            if 1 <= cw <= plan["program"]["totalWeeks"]:
-                current_week = cw
-        except (KeyError, ValueError):
+            _prog = _programs.active_program(plan, "kennet", _date.today())
+            if _prog and _programs.in_program(_prog, _date.today()):
+                current_week = _programs.week_no(_prog, _date.today())
+        except (KeyError, ValueError, TypeError):
             pass
 
     # T3: detektér missede pas + byg forslag (fase-guardet). Deterministisk

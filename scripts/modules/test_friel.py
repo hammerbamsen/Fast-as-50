@@ -437,3 +437,41 @@ def test_missing_races_key_is_safe():
     days = [day("2026-06-01", RUN), day("2026-06-02", RUN)]
     p = mk_plan(days)          # ingen 'races'-nøgle overhovedet
     assert any(f["rule"] == "consecutive_runs" for f in friel.structural_flags(p))
+
+
+# ── Program-drevet validering (3/9-2026) ────────────────────────────────────
+
+def test_phase_normalises_new_block_types():
+    wm = {w: {"blockType": bt} for w, bt in enumerate(
+        ["BASE", "BASE+", "TRANSITION", "SPECIFIK", "SPECIFIK+", "STELVIO", "PEAK",
+         "BUILD", "BUILD+", "CAMP", "RECOVERY", "TAPER", "RACE", None], start=1)}
+    exp = ["BASE", "BASE", "BASE", "BUILD", "BUILD", "BUILD", "BUILD",
+           "BUILD", "BUILD", "BUILD", "RECOVERY", "TAPER", "RACE", ""]
+    assert [friel._phase(wm, w) for w in range(1, 15)] == exp
+
+
+def test_validate_against_real_plan_after_program_switch():
+    """Mod den rigtige plan.json: efter 7/9-2026 valideres mod tds-2027 (51 uger),
+    og actualsThroughWeek (skrevet mod medoc-2026) markerer INTET som historisk."""
+    import json
+    plan = json.load(open(os.path.join(os.path.dirname(__file__), "..", "..", "data", "plan.json"),
+                          encoding="utf-8"))
+    flags = friel.validate(plan, seed_ctl=45.0, seed_atl=40.0, seed_date="2026-09-07",
+                           today="2026-10-01")
+    assert all(1 <= f["week"] <= 51 for f in flags)
+    assert not any(f["historic"] for f in flags)
+    # Før skiftet: medoc-2026, 14 uger, historik <= actualsThroughWeek
+    flags = friel.validate(plan, seed_ctl=45.0, seed_atl=40.0, seed_date="2026-07-07",
+                           today="2026-07-07")
+    assert all(1 <= f["week"] <= 14 for f in flags)
+    actuals = plan["athletes"]["kennet"]["actualsThroughWeek"]
+    assert all(f["historic"] == (f["week"] <= actuals) for f in flags)
+
+
+def test_vo2_missing_ignores_unplanned_weeks():
+    """Build-uger uden en eneste dag i dagslisten er ikke planlagt endnu — intet flag."""
+    weeks = [{"week": w, "blockType": "BUILD", "tssTarget": 300} for w in (1, 2)]
+    days = [day("2026-06-01", RUN)]
+    flags = friel.structural_flags(mk_plan(days, weeks=weeks))
+    assert any(f["rule"] == "vo2_missing" and f["week"] == 1 for f in flags)
+    assert not any(f["rule"] == "vo2_missing" and f["week"] == 2 for f in flags)

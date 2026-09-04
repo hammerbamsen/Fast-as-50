@@ -1,6 +1,6 @@
 """AF-dage (alkoholfrie dage) — hentning og historik."""
 from datetime import date, timedelta
-from .config import BASE, AUTH, api_get, DAY_SHORT
+from .config import BASE, AUTH, api_get, DAY_SHORT, PLAN_START, TOTAL_WEEKS, PROJECT_START
 
 
 def monday_this_week():
@@ -52,11 +52,10 @@ def get_af_this_week():
 
 
 def get_af_history():
-    """Henter AF-historik uge for uge siden projektstart (2026-06-01).
+    """Henter AF-historik uge for uge siden det aktive programs uge 1.
     Returnerer liste af dicts: [{week: 1, done: 7, total: 7, label: 'Uge 1'}, ...]
     """
-    from datetime import date, timedelta
-    project_start = date(2026, 6, 1)  # Mandag uge 1
+    project_start = PLAN_START  # Mandag uge 1 i det aktive program
     today = date.today()
     
     # Hent al wellness siden projektstart
@@ -95,7 +94,7 @@ def get_af_history():
         
         week_start += timedelta(days=7)
         week_num += 1
-        if week_num > 14:
+        if week_num > TOTAL_WEEKS:
             break
     
     print(f"  AF historik: {history}")
@@ -103,10 +102,10 @@ def get_af_history():
 
 
 def get_full_af_log():
-    """Henter dag-for-dag AF log siden projektstart til brug i af.html.
+    """Henter dag-for-dag AF log siden projektstart (første program) til af.html.
     Returnerer {dato: 0/1} hvor 0 = AF-dag, 1 = ikke AF.
     """
-    project_start = date(2026, 6, 1)
+    project_start = PROJECT_START
     today = date.today()
     r = api_get(f"{BASE}/wellness", auth=AUTH,
                      params={"oldest": str(project_start), "newest": str(today)})

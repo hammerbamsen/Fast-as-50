@@ -90,7 +90,7 @@ def _speech(weight, weight_date):
 
 
 def test_speech_uden_dato_naevner_ikke_maalt():
-    assert 'målt' not in _speech(72.2, None)
+    assert '(målt' not in _speech(72.2, None)   # '(målt 3/9)' — ikke 'måltid'
 
 
 def test_speech_med_dato_naevner_datoen():

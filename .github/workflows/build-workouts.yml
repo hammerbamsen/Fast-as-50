@@ -18,6 +18,7 @@ jobs:
     runs-on: ubuntu-latest
     outputs:
       week: ${{ steps.nextweek.outputs.week }}
+      program: ${{ steps.nextweek.outputs.program }}
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -30,23 +31,27 @@ jobs:
           WEEK_ONLY: ${{ github.event.inputs.week_only || '0' }}
         run: python3 scripts/build_workouts.py $WEEK_ONLY
 
-      - name: Beregn næste uge
+      - name: Beregn næste uge (program + ugenummer via modules/programs.py)
         id: nextweek
         if: success()
         run: |
-          WEEK=$(python3 -c "
-          import json
-          from datetime import date
-          prog = json.load(open('data/plan.json'))['program']
-          PLAN_START = date.fromisoformat(prog['start'])
-          TOTAL_WEEKS = prog['totalWeeks']
-          today = date.today()
-          current_week = min(max((today - PLAN_START).days // 7 + 1, 1), TOTAL_WEEKS)
-          next_week = min(current_week + 1, TOTAL_WEEKS)
-          print(next_week)
+          # Programmet der er aktivt om 7 dage — så et programskifte (fx medoc-2026
+          # -> tds-2027) giver uge 1 i det nye program, ikke sidste uge i det gamle.
+          OUT=$(python3 -c "
+          import json, sys
+          from datetime import date, timedelta
+          sys.path.insert(0, 'scripts')
+          from modules import programs
+          plan = json.load(open('data/plan.json', encoding='utf-8'))
+          nxt = date.today() + timedelta(days=7)
+          prog = programs.active_program(plan, 'kennet', nxt)
+          print(prog['id'], programs.week_no(prog, nxt))
           ")
-          echo "Næste uge = $WEEK"
+          PROGRAM=$(echo "$OUT" | awk '{print $1}')
+          WEEK=$(echo "$OUT" | awk '{print $2}')
+          echo "Næste uge = $PROGRAM uge $WEEK"
           echo "week=$WEEK" >> "$GITHUB_OUTPUT"
+          echo "program=$PROGRAM" >> "$GITHUB_OUTPUT"
 
       - name: Notifikation ved fejl
         if: failure()
@@ -61,4 +66,5 @@ jobs:
     uses: ./.github/workflows/create-outlook-events.yml
     with:
       week: ${{ needs.build-workouts.outputs.week }}
+      program: ${{ needs.build-workouts.outputs.program }}
     secrets: inherit

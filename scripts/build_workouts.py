@@ -1,8 +1,10 @@
 #!/usr/bin/env python3
 """
-Fast as Fifty — 14-ugers program til Intervals.icu
-Datoer verificeret mod Outlook-kalender.
+Fast as Fifty — upload af Kennets plan (data/plan.json) til Intervals.icu
+Uger regnes i det AKTIVE program (modules/programs.py) — programmet vælges
+efter dato, så scriptet virker på tværs af medoc-2026, tds-2027 osv.
 
+Historisk uge-oversigt for medoc-2026 (bevaret som dokumentation):
 Uge  1: 01-07 jun  BUILD    Gentofte
 Uge  2: 08-14 jun  BUILD+   Man-Ons Gentofte | Tor-Søn Mallorca #1
 Uge  3: 15-21 jun  BUILD+   Man-Ons Mallorca | Tor hjem | Fre-Søn Gentofte
@@ -126,13 +128,14 @@ def load_plan_json():
     with open(PLAN_JSON, encoding="utf-8") as f:
         return json.load(f)
 
-# PLAN_START/TOTAL_WEEKS læses fra plan.json's program-felt (rettet 6/8-2026 —
-# var hardkodet til medoc-2026's 01-06-2026/14 uger og cappede stille et
-# fremtidigt, længere program). Ved programskifte (fx tds-2027, 51 uger) er
-# det nok at opdatere program.start/totalWeeks i plan.json — ingen kode ændres.
-_plan_program = load_plan_json()["program"]
-PLAN_START    = date.fromisoformat(_plan_program["start"])
-TOTAL_WEEKS   = _plan_program["totalWeeks"]
+# Det aktive program vælges efter dagens dato via modules/programs.py (3/9-2026).
+# Før var start/totalWeeks læst fra det ene legacy 'program'-felt, som frøs
+# på sidste uge når programmet sluttede. Nu: plan.json -> programs.<id>.
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from modules import programs as _programs
+ACTIVE_PROGRAM = _programs.active_program(load_plan_json(), "kennet")
+PLAN_START     = date.fromisoformat(ACTIVE_PROGRAM["start"])
+TOTAL_WEEKS    = ACTIVE_PROGRAM["totalWeeks"]
 
 # ── Zone-definitioner ───────────────────────────────────────────
 # INGEN hardkodede pace-strenge (28/7-2026). Teksten UDLEDES af
@@ -525,7 +528,7 @@ def bike_sa_calobra():
     return {"name": "Cykel Sa Calobra via Puig Major", "type": "Ride",
             "moving_time": 280*60, "description": desc, "workout_doc": doc}
 
-# ── 14-ugers plan ───────────────────────────────────────────────
+# ── Plan (læses fra plan.json) ─────────────────────────────────
 
 def make_plan():
     """Kennets plan som (date, workout_dict|None, note)-tupler — læst fra plan.json.
@@ -698,7 +701,9 @@ def upload(session, wo, dt):
     return None
 
 # ── Main ────────────────────────────────────────────────────────
-def run_plan(session, week_filter=0):
+def run_plan(session, week_filter=0, from_date=None):
+    """week_filter>0: kun den uge i det aktive program. week_filter=0: alle dage
+    (evt. fra og med from_date — bruges af auto-tilstand på tværs af programmer)."""
     plan     = make_plan()
     days_da  = ["Man","Tir","Ons","Tor","Fre","Lør","Søn"]
     ok = skip = err = 0
@@ -709,8 +714,12 @@ def run_plan(session, week_filter=0):
     from collections import defaultdict
     by_date = defaultdict(list)
     for dt, wo, note in plan:
-        week = (dt - PLAN_START).days // 7 + 1
+        # Uge i det aktive program (u-clampet: dage uden for programmet får
+        # uge <1 / >TOTAL_WEEKS og rammes kun af week_filter=0 = alle dage)
+        week = _programs.week_no_raw(ACTIVE_PROGRAM, dt)
         if week_filter > 0 and week != week_filter:
+            continue
+        if from_date and dt < from_date:
             continue
         by_date[dt].append((wo, note, week))
 
@@ -810,19 +819,21 @@ def main():
     all_posted = {}  # akkumuleret posted dict på tværs af uger
 
     if week_arg == -1:
-        # Alle uger i det aktive program
-        print(f"Uploader alle {TOTAL_WEEKS} uger...")
+        # Alle dage i plan.json (uanset program)
+        print(f"Uploader alle dage i plan.json (aktivt program: {ACTIVE_PROGRAM['id']}, {TOTAL_WEEKS} uger)...")
         ok, skip, err, posted_week = run_plan(session, week_filter=0)
         total_ok += ok; total_skip += skip; total_err += err
         all_posted.update(posted_week)
     elif week_arg == 0:
-        # Auto: fra aktuel uge til programmets sidste uge
-        current_week = min(max((date.today() - PLAN_START).days // 7 + 1, 1), TOTAL_WEEKS)
-        print(f"Auto-tilstand: uploader uge {current_week}–{TOTAL_WEEKS}")
-        for w in range(current_week, TOTAL_WEEKS + 1):
-            ok, skip, err, posted_week = run_plan(session, week_filter=w)
-            total_ok += ok; total_skip += skip; total_err += err
-            all_posted.update(posted_week)
+        # Auto: alle planlagte dage fra og med mandag i denne uge — på tværs af
+        # programmer, så søndagskørslen før et programskifte også får det nye
+        # programs uge 1 med (var før begrænset til det aktive programs uger).
+        monday = date.today() - timedelta(days=date.today().weekday())
+        current_week = _programs.week_no(ACTIVE_PROGRAM, date.today())
+        print(f"Auto-tilstand ({ACTIVE_PROGRAM['id']} uge {current_week}): uploader alle dage fra {monday}")
+        ok, skip, err, posted_week = run_plan(session, week_filter=0, from_date=monday)
+        total_ok += ok; total_skip += skip; total_err += err
+        all_posted.update(posted_week)
     else:
         # Specifik uge
         ok, skip, err, posted_week = run_plan(session, week_filter=week_arg)

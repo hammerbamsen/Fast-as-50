@@ -109,6 +109,15 @@ def intervals_create(day_iso: str, workout: dict):
 
 # -- Outlook (Graph) ------------------------------------------------------
 
+def _is_iso_date(value) -> bool:
+    """True for 'YYYY-MM-DD' — alt andet (fx 'restore') er ikke en synk-dato."""
+    try:
+        date.fromisoformat(str(value))
+        return True
+    except (TypeError, ValueError):
+        return False
+
+
 def outlook_token():
     r = requests.post(
         f"https://login.microsoftonline.com/{AZURE_TENANT}/oauth2/v2.0/token",
@@ -261,10 +270,19 @@ def main():
     except Exception as ex:
         print(f"ADVARSEL Martin-signal fejlede (ignoreres): {ex}")
 
+    # dates_changed kan indeholde ikke-datoer — restore_from_commit giver
+    # ["restore"] (hele planen), og der findes ingen dato at synke. Sådanne
+    # værdier springes over i Intervals/Outlook i stedet for at blive sendt
+    # som dato (3/9-2026: "restore" blev sendt til Outlook som en dato).
+    sync_dates = [d for d in dates if _is_iso_date(d)]
+    skipped = [d for d in dates if not _is_iso_date(d)]
+    if skipped:
+        print(f"Intervals/Outlook: springer ikke-datoer over: {', '.join(skipped)}")
+
     # Intervals+Outlook: KUN for Kennet — Eva bruger .ics-eksport i stedet
     if athlete == "kennet":
         # Intervals — for hver berørt dato: slet+opret
-        for d_iso in dates:
+        for d_iso in sync_dates:
             try:
                 n = intervals_delete_date(d_iso)
                 print(f"Intervals slettet {d_iso}: {n} events")
@@ -284,7 +302,7 @@ def main():
     if athlete == "kennet":
         try:
             tok = outlook_token()
-            for d_iso in dates:
+            for d_iso in sync_dates:
                 try:
                     day = days_map.get(d_iso, {"entries": []})
                     outlook_sync_date(d_iso, day.get("entries", []), tok)

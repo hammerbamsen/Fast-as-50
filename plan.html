@@ -246,7 +246,7 @@ function weekFlagsHtml(vw, currentWeek){
 }
 
 function weekBlock(plan, view, w, todayIso, expandedDays=true){
-  const meta = plan.weeks.find(x=>x.week===w) || {};
+  const meta = (PROG.weeks||[]).find(x=>x.week===w) || {};
   const vw = view && view.kennet.weeks.find(x=>x.week===w);
   const start = new Date(meta.start+"T12:00:00");
   const daysMap = Object.fromEntries(plan.athletes.kennet.days.map(d=>[d.date,d]));
@@ -268,21 +268,59 @@ function weekBlock(plan, view, w, todayIso, expandedDays=true){
       <div class="acc-body">${dev}${days}</div></div>`;
 }
 
+// ═══ PROGRAMVALG (samme regel som scripts/modules/programs.py) ═══
+// plan.json -> programs (id -> program). Aktivt program = start <= i dag <= end,
+// ellers det seneste program der er startet, ellers det først kommende.
+// Fallback for gammel plan.json uden `programs`: syntetisér fra program/weeks/races.
+function programsFor(plan, athlete){
+  let progs = plan.programs && Object.keys(plan.programs).length
+    ? Object.entries(plan.programs).map(([id,p])=>({id, ...p}))
+    : (plan.program ? [{id:"legacy", athletes:[athlete], ...plan.program,
+                        weeks: plan.weeks||[], races: plan.races||[], goals: plan.goals||{}}] : []);
+  progs = progs.map(p => ({...p, end: p.end || iso(addDays(new Date(p.start+"T12:00:00"), p.totalWeeks*7-1))}));
+  return progs.filter(p => (p.athletes||[]).includes(athlete)).sort((a,b)=>a.start.localeCompare(b.start));
+}
+function activeProgram(plan, athlete, todayIso){
+  const cands = programsFor(plan, athlete);
+  if(!cands.length) return null;
+  const cur = cands.filter(p => p.start <= todayIso && todayIso <= p.end);
+  if(cur.length) return cur[cur.length-1];
+  const started = cands.filter(p => p.start <= todayIso);
+  return started.length ? started[started.length-1] : cands[0];
+}
+function upcomingRaces(plan, athlete, todayIso){
+  const seen = new Set(), out = [];
+  for(const p of programsFor(plan, athlete)) for(const r of (p.races||[])){
+    const k = r.name+"|"+r.date;
+    if(!r.date || r.date < todayIso || seen.has(k)) continue;
+    seen.add(k); out.push(r);
+  }
+  return out.sort((a,b)=>a.date.localeCompare(b.date));
+}
+let PROG = null;  // det aktive program (sættes i main)
+
 function currentWeekOf(plan, todayIso){
-  const start = new Date(plan.program.start+"T12:00:00");
+  const prog = PROG || activeProgram(plan, "kennet", todayIso);
+  const start = new Date(prog.start+"T12:00:00");
   const t = new Date(todayIso+"T12:00:00");
-  return Math.min(Math.max(Math.floor((t-start)/864e5/7)+1, 1), plan.program.totalWeeks);
+  return Math.min(Math.max(Math.floor((t-start)/864e5/7)+1, 1), prog.totalWeeks);
 }
 
 function ctlChart(plan, view, dash){
-  const start = new Date(plan.program.start+"T12:00:00");
-  const end = addDays(start, plan.program.totalWeeks*7);
+  const start = new Date(PROG.start+"T12:00:00");
+  const end = addDays(start, PROG.totalWeeks*7);
   const W=640, H=220, PL=34, PR=8, PT=10, PB=24;
   const x = d => PL + ( (new Date(d+"T12:00:00")-start)/(end-start) ) * (W-PL-PR);
-  const target = plan.weeks.map(w=>({d: iso(addDays(new Date(w.start+"T12:00:00"),6)), v:w.ctlTarget}));
-  const proj = view ? view.kennet.projection : [];
-  const actual = (dash && Array.isArray(dash.ctlCurve) ? dash.ctlCurve : [])
-    .map((v,i)=>({d: iso(addDays(new Date(plan.weeks[i].start+"T12:00:00"),6)), v}));
+  const pweeks = PROG.weeks||[];
+  const target = pweeks.map(w=>({d: iso(addDays(new Date(w.start+"T12:00:00"),6)), v:w.ctlTarget}));
+  // Projektion/ctlCurve vises kun hvis de er beregnet mod SAMME program (programId);
+  // mangler feltet (ældre plan_view.json/data.json) antages det at passe.
+  const sameProg = (obj) => !obj || !obj.programId || obj.programId === PROG.id;
+  const proj = (view && sameProg(view.kennet)) ? view.kennet.projection : [];
+  // ctlCurve i data.json er indekseret mod det aktive programs uge 1 (fitness.get_ctl_curve)
+  const actual = (dash && Array.isArray(dash.ctlCurve) && sameProg(dash.meta) ? dash.ctlCurve : [])
+    .filter((v,i)=>i < pweeks.length)
+    .map((v,i)=>({d: iso(addDays(new Date(pweeks[i].start+"T12:00:00"),6)), v}));
   const seed = view ? view.kennet.seed : null;
   const all = [...target.map(p=>p.v), ...proj.map(p=>p.ctl), ...actual.map(p=>p.v)].filter(v=>v!=null);
   const lo = Math.floor(Math.min(...all,30)/10)*10, hi = Math.ceil(Math.max(...all,70)/10)*10;
@@ -401,22 +439,25 @@ async function main(){
   dash = await getJSON("data.json", true);
 
   const todayIso = iso(new Date());
+  PROG = activeProgram(plan, "kennet", todayIso);
+  if(!PROG){ content.innerHTML = u4Err("plan.json har intet program for kennet", {retry:"main()"}); return; }
   const cur = currentWeekOf(plan, todayIso);
-  const meta = plan.weeks.find(w=>w.week===cur) || {};
+  const meta = (PROG.weeks||[]).find(w=>w.week===cur) || {};
   const daysTo = r => Math.max(0, Math.round((new Date(r.date+"T12:00:00") - new Date(todayIso+"T12:00:00"))/864e5));
+  const races = upcomingRaces(plan, "kennet", todayIso).slice(0, 3);
   document.getElementById("head-sub").textContent =
-    `Uge ${cur} af ${plan.program.totalWeeks} · ${meta.blockType||""} · ${meta.location||""}  —  ` +
-    plan.races.map(r=>`${daysTo(r)} dage til ${r.name}`).join(" · ");
+    `${PROG.name} · Uge ${cur} af ${PROG.totalWeeks} · ${meta.phase ? meta.phase+" / " : ""}${meta.blockType||""} · ${meta.location||""}  —  ` +
+    races.map(r=>`${daysTo(r)} dage til ${r.name}`).join(" · ");
 
   let html = adaptationBanner(view) +
     `<div class="card"><h2>CTL — faktisk, projektion og pejlemærke</h2>${ctlChart(plan, view, dash)}</div>`;
 
   html += `<div class="section-title">Denne uge + 2 frem</div>`;
-  for(let w=cur; w<=Math.min(cur+2, plan.program.totalWeeks); w++)
+  for(let w=cur; w<=Math.min(cur+2, PROG.totalWeeks); w++)
     html += weekBlock(plan, view, w, todayIso, true);
 
-  html += `<div class="section-title">Fuld plan · uge 1–${plan.program.totalWeeks}</div>`;
-  for(let w=1; w<=plan.program.totalWeeks; w++)
+  html += `<div class="section-title">Fuld plan · ${esc(PROG.name)} · uge 1–${PROG.totalWeeks}</div>`;
+  for(let w=1; w<=PROG.totalWeeks; w++)
     html += weekBlock(plan, view, w, todayIso, false);
 
   content.innerHTML = html;

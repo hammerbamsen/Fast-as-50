@@ -1,6 +1,909 @@
 {
-  "version": 3,
-  "updated": "2026-08-28",
+  "version": 4,
+  "updated": "2026-09-03",
+  "programs": {
+    "medoc-2026": {
+      "id": "medoc-2026",
+      "name": "Fast as Fifty — Christiansborg + Médoc 2026",
+      "athletes": [
+        "kennet",
+        "eva"
+      ],
+      "start": "2026-06-01",
+      "end": "2026-09-06",
+      "totalWeeks": 14,
+      "philosophy": "capacity",
+      "description": "14-ugers reset-år: kapacitet, ikke performance. CTL-opbygning, fedttab, AF-disciplin. Mål: Christiansborg Rundt 29/8 (2000 m OW-svøm) og Marathon du Médoc 5/9.",
+      "weeks": [
+        {
+          "week": 1,
+          "start": "2026-06-01",
+          "blockType": "BUILD",
+          "ctlTarget": 34,
+          "tssTarget": 290,
+          "location": "Malmø/Gentofte"
+        },
+        {
+          "week": 2,
+          "start": "2026-06-08",
+          "blockType": "BUILD+",
+          "ctlTarget": 36,
+          "tssTarget": 340,
+          "location": "Gentofte → Mallorca"
+        },
+        {
+          "week": 3,
+          "start": "2026-06-15",
+          "blockType": "BUILD+",
+          "ctlTarget": 38,
+          "tssTarget": 370,
+          "location": "Mallorca → Gentofte"
+        },
+        {
+          "week": 4,
+          "start": "2026-06-22",
+          "blockType": "RECOVERY",
+          "ctlTarget": 41,
+          "tssTarget": 180,
+          "location": "Gentofte"
+        },
+        {
+          "week": 5,
+          "start": "2026-06-29",
+          "blockType": "BUILD",
+          "ctlTarget": 48,
+          "tssTarget": 385,
+          "location": "Gentofte"
+        },
+        {
+          "week": 6,
+          "start": "2026-07-06",
+          "blockType": "RECOVERY",
+          "ctlTarget": 50,
+          "tssTarget": 300,
+          "location": "Gentofte → Wales 8.-12.",
+          "note": "Løbefokus — ingen cykel i Wales. Trail Z2 + vandring."
+        },
+        {
+          "week": 7,
+          "start": "2026-07-13",
+          "blockType": "BUILD",
+          "ctlTarget": 54,
+          "tssTarget": 430,
+          "location": "Gentofte → Mallorca 16.",
+          "note": "Man-ons Gentofte, tor-søn Mallorca ride-block."
+        },
+        {
+          "week": 8,
+          "start": "2026-07-20",
+          "blockType": "BUILD+",
+          "ctlTarget": 60,
+          "tssTarget": 480,
+          "location": "Mallorca → hjem 22.",
+          "note": "Store cykeldage man-tir. Langtur 26 km lørdag — ladder starter. TSB-gulv -35."
+        },
+        {
+          "week": 9,
+          "start": "2026-07-27",
+          "blockType": "RECOVERY",
+          "ctlTarget": 48,
+          "tssTarget": 270,
+          "location": "Gentofte",
+          "note": "Fuld aflastning + FTP- og threshold-retest. Musik i Gentofte fre-søn."
+        },
+        {
+          "week": 10,
+          "start": "2026-08-03",
+          "blockType": "BUILD",
+          "ctlTarget": 50,
+          "tssTarget": 420,
+          "location": "Gentofte → fly søn 9.",
+          "note": "Langtur 28-30 km. Open water-svøm starter."
+        },
+        {
+          "week": 11,
+          "start": "2026-08-10",
+          "blockType": "BUILD+",
+          "ctlTarget": 53,
+          "tssTarget": 500,
+          "location": "Mallorca (hjem søn 16.)",
+          "note": "Camp #2. TSB-gulv -35 overvåges dagligt."
+        },
+        {
+          "week": 12,
+          "start": "2026-08-17",
+          "blockType": "BUILD",
+          "ctlTarget": 51,
+          "tssTarget": 300,
+          "location": "Gentofte → Norge lør",
+          "note": "Sidste langtur 32 km tirsdag. OW-svøm x2."
+        },
+        {
+          "week": 13,
+          "start": "2026-08-24",
+          "blockType": "TAPER",
+          "ctlTarget": 47,
+          "tssTarget": 180,
+          "location": "Gentofte (hjem fra Norge søn 23.). RACE lør",
+          "note": "Christiansborg Rundt lør 29. aug — svømmes UTAPERET (2000 m, bevidst valg). Løb Z2 18 km tir (simulation udgået efter aftale). Svøm 2.000 m i træk ons. Søn: cykel indendørs i stedet for løb (ingen løb to dage i streg). Médoc løbes med Eva."
+        },
+        {
+          "week": 14,
+          "start": "2026-08-31",
+          "blockType": "RACE",
+          "ctlTarget": 43,
+          "tssTarget": 93,
+          "location": "Gentofte → Bordeaux tor",
+          "note": "Marathon du Médoc lør 5. sep. Ren taper + race-ernæringsplan. Tir: cykel i stedet for løb (ingen løb to dage i streg). Ons: 25 min styrke overkrop/core, ingen benbelastning."
+        }
+      ],
+      "races": [
+        {
+          "name": "Christiansborg Rundt",
+          "date": "2026-08-29",
+          "type": "openwater_swim",
+          "distance": "2000m",
+          "priority": "A"
+        },
+        {
+          "name": "Marathon du Médoc",
+          "date": "2026-09-05",
+          "type": "marathon",
+          "distance": "42.2km",
+          "priority": "A"
+        }
+      ],
+      "goals": {
+        "weightKg": 68,
+        "bodyFatPct": 16,
+        "afDaysPerWeek": 6,
+        "sleepHours": 7,
+        "swimMeters": 2000,
+        "runKmPerWeek": 40
+      }
+    },
+    "tds-2027": {
+      "id": "tds-2027",
+      "name": "Tour des Stations 2027",
+      "athletes": [
+        "kennet"
+      ],
+      "start": "2026-09-07",
+      "end": "2027-08-29",
+      "totalWeeks": 51,
+      "philosophy": "durability",
+      "description": "51-ugers cykelsæson mod Tour des Stations Ultrafondo 28/8-2027 (242 km / 8848 hm). Uge 1-2: restitution efter Médoc + CPH Half 20/9. Cut starter 21/9. Transition → Base → Build → Stelvio (B-løb 6/6) → Specifik → Taper. Durability frem for peak-form: CTL bygges jævnt, styrke 2x/uge hele vejen.",
+      "weeks": [
+        {
+          "week": 1,
+          "start": "2026-09-07",
+          "phase": "TRANSITION",
+          "blockType": "RECOVERY",
+          "ctlTarget": 47,
+          "ftpTarget": 278,
+          "tssTarget": 150,
+          "location": "Gentofte",
+          "note": "Restitution efter Marathon du Médoc. Intet løb før tidligst lør 12/9 — 42 km excentrisk belastning kræver 10-14 dage. Cykel bærer den aerobe base.",
+          "wkgTarget": 3.97,
+          "purpose": "Restitution efter Médoc — gang, svøm og let cykel; første korte løb tidligst lør 12/9.",
+          "quota": {
+            "haard": 0,
+            "moderat": 0
+          }
+        },
+        {
+          "week": 2,
+          "start": "2026-09-14",
+          "phase": "TRANSITION",
+          "blockType": "RACE",
+          "ctlTarget": 45,
+          "ftpTarget": 278,
+          "tssTarget": 250,
+          "location": "Gentofte. RACE søn",
+          "note": "CPH Half søn 20/9 — B-løb. Mål sub 1:30 med beslutningsregel ved 5 km. Cut starter IKKE før mandag 21/9.",
+          "wkgTarget": 3.97,
+          "purpose": "Race-uge: én målpace-åbner, let cykel/svøm, CPH Half som B-løb.",
+          "quota": {
+            "haard": 0,
+            "moderat": 0
+          }
+        },
+        {
+          "week": 3,
+          "start": "2026-09-21",
+          "phase": "TRANSITION",
+          "blockType": "BASE",
+          "ctlTarget": 48,
+          "ftpTarget": 278,
+          "tssTarget": 380,
+          "location": "Gentofte",
+          "note": "Cut starter. Kælder starter med FTP-test tor 24/9. Styrke unilateralt 2× starter.",
+          "wkgTarget": 3.97,
+          "purpose": "Base 1/2: cut og kælder starter — aerobe prober (cykel + løb) som EF-baseline, FTP-test tor 24/9.",
+          "quota": {
+            "haard": 1,
+            "moderat": 0
+          }
+        },
+        {
+          "week": 4,
+          "start": "2026-09-28",
+          "phase": "TRANSITION",
+          "blockType": "BASE",
+          "ctlTarget": 51,
+          "ftpTarget": 278,
+          "tssTarget": 400,
+          "location": "Gentofte",
+          "wkgTarget": 3.97,
+          "purpose": "Base 2/2: ren Z2 på cykel, første durability-pas (negativ split) lørdag, løb Z2 2×.",
+          "quota": {
+            "haard": 0,
+            "moderat": 1
+          }
+        },
+        {
+          "week": 5,
+          "start": "2026-10-05",
+          "phase": "TRANSITION",
+          "blockType": "RECOVERY",
+          "ctlTarget": 50,
+          "ftpTarget": 278,
+          "tssTarget": 250,
+          "location": "Gentofte",
+          "note": "Recovery. Ingen test (kørt 24/9).",
+          "wkgTarget": 3.97,
+          "purpose": "Recovery: styrke 2 sæt let, korte Z2-pas, ingen test.",
+          "quota": {
+            "haard": 0,
+            "moderat": 0
+          }
+        },
+        {
+          "week": 6,
+          "start": "2026-10-12",
+          "phase": "TRANSITION",
+          "blockType": "BASE",
+          "ctlTarget": 53,
+          "ftpTarget": 278,
+          "tssTarget": 420,
+          "location": "Gentofte",
+          "wkgTarget": 3.97,
+          "purpose": "Base 1/2: sweet spot + over-unders i kælderen, lang bjergtur lørdag, løb Z2 2×.",
+          "quota": {
+            "haard": 1,
+            "moderat": 2
+          }
+        },
+        {
+          "week": 7,
+          "start": "2026-10-19",
+          "phase": "TRANSITION",
+          "blockType": "BASE",
+          "ctlTarget": 56,
+          "ftpTarget": 278,
+          "tssTarget": 440,
+          "location": "Gentofte",
+          "wkgTarget": 3.97,
+          "purpose": "Base 2/2: tærskel 3×12 tirsdag og kvalitet sent i turen lørdag (96 t imellem) — aerob probe måned 2 på løb.",
+          "quota": {
+            "haard": 2,
+            "moderat": 0
+          }
+        },
+        {
+          "week": 8,
+          "start": "2026-10-26",
+          "phase": "TRANSITION",
+          "blockType": "RECOVERY",
+          "ctlTarget": 55,
+          "ftpTarget": 278,
+          "tssTarget": 260,
+          "location": "Gentofte",
+          "note": "Stelvio couples-tilmelding deadline 29/10 (med Eva).",
+          "wkgTarget": 3.97,
+          "purpose": "Recovery: lette Z2-pas, styrke 2 sæt, Stelvio couples-tilmelding tor 29/10.",
+          "quota": {
+            "haard": 0,
+            "moderat": 0
+          }
+        },
+        {
+          "week": 9,
+          "start": "2026-11-02",
+          "phase": "BASE",
+          "blockType": "BASE",
+          "ctlTarget": 57,
+          "ftpTarget": 292,
+          "tssTarget": 440,
+          "location": "Gentofte (indendørs)",
+          "note": "Vinterblok. Sweet spot. Løb 3× holdes.",
+          "wkgTarget": 4.29
+        },
+        {
+          "week": 10,
+          "start": "2026-11-09",
+          "phase": "BASE",
+          "blockType": "BASE",
+          "ctlTarget": 59,
+          "ftpTarget": 292,
+          "tssTarget": 460,
+          "location": "Gentofte",
+          "wkgTarget": 4.29
+        },
+        {
+          "week": 11,
+          "start": "2026-11-16",
+          "phase": "BASE",
+          "blockType": "BASE+",
+          "ctlTarget": 62,
+          "ftpTarget": 292,
+          "tssTarget": 490,
+          "location": "Gentofte",
+          "wkgTarget": 4.29
+        },
+        {
+          "week": 12,
+          "start": "2026-11-23",
+          "phase": "BASE",
+          "blockType": "RECOVERY",
+          "ctlTarget": 60,
+          "ftpTarget": 292,
+          "tssTarget": 270,
+          "location": "Gentofte",
+          "wkgTarget": 4.29
+        },
+        {
+          "week": 13,
+          "start": "2026-11-30",
+          "phase": "BASE",
+          "blockType": "BASE",
+          "ctlTarget": 62,
+          "ftpTarget": 292,
+          "tssTarget": 460,
+          "location": "Gentofte",
+          "wkgTarget": 4.29
+        },
+        {
+          "week": 14,
+          "start": "2026-12-07",
+          "phase": "BASE",
+          "blockType": "BASE",
+          "ctlTarget": 64,
+          "ftpTarget": 292,
+          "tssTarget": 480,
+          "location": "Gentofte",
+          "wkgTarget": 4.29
+        },
+        {
+          "week": 15,
+          "start": "2026-12-14",
+          "phase": "BASE",
+          "blockType": "BASE+",
+          "ctlTarget": 66,
+          "ftpTarget": 292,
+          "tssTarget": 500,
+          "location": "Gentofte",
+          "wkgTarget": 4.29
+        },
+        {
+          "week": 16,
+          "start": "2026-12-21",
+          "phase": "BASE",
+          "blockType": "RECOVERY",
+          "ctlTarget": 63,
+          "ftpTarget": 292,
+          "tssTarget": 260,
+          "location": "Gentofte",
+          "note": "Jul. Planlagt lav — ikke en fiasko.",
+          "wkgTarget": 4.29
+        },
+        {
+          "week": 17,
+          "start": "2026-12-28",
+          "phase": "BASE",
+          "blockType": "RECOVERY",
+          "ctlTarget": 61,
+          "ftpTarget": 292,
+          "tssTarget": 240,
+          "location": "Gentofte",
+          "note": "Nytår.",
+          "wkgTarget": 4.29
+        },
+        {
+          "week": 18,
+          "start": "2027-01-04",
+          "phase": "BASE",
+          "blockType": "BASE",
+          "ctlTarget": 63,
+          "ftpTarget": 292,
+          "tssTarget": 460,
+          "location": "Gentofte",
+          "wkgTarget": 4.29
+        },
+        {
+          "week": 19,
+          "start": "2027-01-11",
+          "phase": "BASE",
+          "blockType": "BASE",
+          "ctlTarget": 65,
+          "ftpTarget": 292,
+          "tssTarget": 480,
+          "location": "Gentofte",
+          "wkgTarget": 4.29
+        },
+        {
+          "week": 20,
+          "start": "2027-01-18",
+          "phase": "BASE",
+          "blockType": "BASE+",
+          "ctlTarget": 68,
+          "ftpTarget": 292,
+          "tssTarget": 510,
+          "location": "Gentofte",
+          "wkgTarget": 4.29
+        },
+        {
+          "week": 21,
+          "start": "2027-01-25",
+          "phase": "BASE",
+          "blockType": "RECOVERY",
+          "ctlTarget": 66,
+          "ftpTarget": 292,
+          "tssTarget": 280,
+          "location": "Gentofte",
+          "note": "FTP-test. Forventet ~292 W ved 68 kg = 4,3 W/kg. Vaegtmaal skal vaere naaet her.",
+          "wkgTarget": 4.29
+        },
+        {
+          "week": 22,
+          "start": "2027-02-01",
+          "phase": "BASE",
+          "blockType": "BASE",
+          "ctlTarget": 68,
+          "ftpTarget": 292,
+          "tssTarget": 480,
+          "location": "Gentofte",
+          "wkgTarget": 4.29
+        },
+        {
+          "week": 23,
+          "start": "2027-02-08",
+          "phase": "BUILD",
+          "blockType": "BUILD",
+          "ctlTarget": 70,
+          "ftpTarget": 305,
+          "tssTarget": 500,
+          "location": "Gentofte",
+          "note": "Tærskelarbejde ind. 2 kvalitetspas/uge.",
+          "wkgTarget": 4.49
+        },
+        {
+          "week": 24,
+          "start": "2027-02-15",
+          "phase": "BUILD",
+          "blockType": "BUILD",
+          "ctlTarget": 72,
+          "ftpTarget": 305,
+          "tssTarget": 520,
+          "location": "Gentofte",
+          "wkgTarget": 4.49
+        },
+        {
+          "week": 25,
+          "start": "2027-02-22",
+          "phase": "BUILD",
+          "blockType": "RECOVERY",
+          "ctlTarget": 70,
+          "ftpTarget": 305,
+          "tssTarget": 290,
+          "location": "Gentofte",
+          "wkgTarget": 4.49
+        },
+        {
+          "week": 26,
+          "start": "2027-03-01",
+          "phase": "BUILD",
+          "blockType": "BUILD",
+          "ctlTarget": 72,
+          "ftpTarget": 305,
+          "tssTarget": 510,
+          "location": "Gentofte",
+          "wkgTarget": 4.49
+        },
+        {
+          "week": 27,
+          "start": "2027-03-08",
+          "phase": "BUILD",
+          "blockType": "BUILD",
+          "ctlTarget": 74,
+          "ftpTarget": 305,
+          "tssTarget": 530,
+          "location": "Gentofte",
+          "wkgTarget": 4.49
+        },
+        {
+          "week": 28,
+          "start": "2027-03-15",
+          "phase": "BUILD",
+          "blockType": "BUILD+",
+          "ctlTarget": 77,
+          "ftpTarget": 305,
+          "tssTarget": 560,
+          "location": "Gentofte",
+          "wkgTarget": 4.49
+        },
+        {
+          "week": 29,
+          "start": "2027-03-22",
+          "phase": "BUILD",
+          "blockType": "RECOVERY",
+          "ctlTarget": 74,
+          "ftpTarget": 305,
+          "tssTarget": 300,
+          "location": "Gentofte",
+          "note": "Forlejr-aflastning.",
+          "wkgTarget": 4.49
+        },
+        {
+          "week": 30,
+          "start": "2027-03-29",
+          "phase": "BUILD",
+          "blockType": "CAMP",
+          "ctlTarget": 80,
+          "ftpTarget": 305,
+          "tssTarget": 750,
+          "location": "Mallorca",
+          "note": "LEJR #1 Mallorca. 20-25 t. Her bygges CTL — ikke i Gentofte. SA CALOBRA PR-FORSOEG: 9,45 km / 627 hm. PR at slaa er 35:18 sat paa 275 W. Koer den tidligt i lejren paa friske ben, ikke til sidst.",
+          "wkgTarget": 4.49,
+          "keySession": "Sa Calobra PR-forsoeg (PR 35:18 @ 275 W)"
+        },
+        {
+          "week": 31,
+          "start": "2027-04-05",
+          "phase": "BUILD",
+          "blockType": "RECOVERY",
+          "ctlTarget": 77,
+          "ftpTarget": 305,
+          "tssTarget": 280,
+          "location": "Gentofte",
+          "note": "Fuld aflastning efter lejr. TSB-gulv -30.",
+          "wkgTarget": 4.49
+        },
+        {
+          "week": 32,
+          "start": "2027-04-12",
+          "phase": "BUILD",
+          "blockType": "BUILD",
+          "ctlTarget": 78,
+          "ftpTarget": 305,
+          "tssTarget": 530,
+          "location": "Gentofte",
+          "wkgTarget": 4.49
+        },
+        {
+          "week": 33,
+          "start": "2027-04-19",
+          "phase": "BUILD",
+          "blockType": "BUILD",
+          "ctlTarget": 80,
+          "ftpTarget": 305,
+          "tssTarget": 550,
+          "location": "Gentofte",
+          "wkgTarget": 4.49
+        },
+        {
+          "week": 34,
+          "start": "2027-04-26",
+          "phase": "BUILD",
+          "blockType": "RECOVERY",
+          "ctlTarget": 77,
+          "ftpTarget": 305,
+          "tssTarget": 300,
+          "location": "Gentofte",
+          "wkgTarget": 4.49
+        },
+        {
+          "week": 35,
+          "start": "2027-05-03",
+          "phase": "BUILD",
+          "blockType": "BUILD",
+          "ctlTarget": 79,
+          "ftpTarget": 305,
+          "tssTarget": 520,
+          "location": "Gentofte",
+          "wkgTarget": 4.49
+        },
+        {
+          "week": 36,
+          "start": "2027-05-10",
+          "phase": "STELVIO",
+          "blockType": "BUILD",
+          "ctlTarget": 81,
+          "ftpTarget": 308,
+          "tssTarget": 540,
+          "location": "Gentofte",
+          "wkgTarget": 4.53
+        },
+        {
+          "week": 37,
+          "start": "2027-05-17",
+          "phase": "STELVIO",
+          "blockType": "BUILD+",
+          "ctlTarget": 83,
+          "ftpTarget": 308,
+          "tssTarget": 560,
+          "location": "Gentofte",
+          "note": "FTP-test. Forventet ~305 W = 4,5 W/kg. Sidste port foer Stelvio.",
+          "wkgTarget": 4.53
+        },
+        {
+          "week": 38,
+          "start": "2027-05-24",
+          "phase": "STELVIO",
+          "blockType": "RECOVERY",
+          "ctlTarget": 80,
+          "ftpTarget": 308,
+          "tssTarget": 300,
+          "location": "Gentofte",
+          "note": "Taper mod Stelvio.",
+          "wkgTarget": 4.53
+        },
+        {
+          "week": 39,
+          "start": "2027-05-31",
+          "phase": "STELVIO",
+          "blockType": "RACE",
+          "ctlTarget": 78,
+          "ftpTarget": 308,
+          "tssTarget": 350,
+          "location": "Bormio",
+          "note": "LA STELVIO SANTINI (Santini Stelvio Gran Fondo, lang rute) søn 6/6 — 130 km / 4.500 hm. B-løb, tilmeldt 16/7-2026 sammen med Eva. Form-check mod TdS: kør den som hårdt træningspas, ikke som A-løb.",
+          "wkgTarget": 4.53,
+          "keySession": "La Stelvio Santini 6/6 — 130 km / 4.500 hm"
+        },
+        {
+          "week": 40,
+          "start": "2027-06-07",
+          "phase": "SPECIFIK",
+          "blockType": "RECOVERY",
+          "ctlTarget": 76,
+          "ftpTarget": 320,
+          "tssTarget": 280,
+          "location": "Gentofte",
+          "note": "Post-Stelvio. Evaluer mod TdS-model.",
+          "wkgTarget": 4.71
+        },
+        {
+          "week": 41,
+          "start": "2027-06-14",
+          "phase": "SPECIFIK",
+          "blockType": "SPECIFIK",
+          "ctlTarget": 78,
+          "ftpTarget": 320,
+          "tssTarget": 540,
+          "location": "Gentofte",
+          "note": "Langtur vokser: 6 t+. Fueling øves hver gang.",
+          "wkgTarget": 4.71
+        },
+        {
+          "week": 42,
+          "start": "2027-06-21",
+          "phase": "SPECIFIK",
+          "blockType": "SPECIFIK",
+          "ctlTarget": 80,
+          "ftpTarget": 320,
+          "tssTarget": 570,
+          "location": "Gentofte",
+          "wkgTarget": 4.71
+        },
+        {
+          "week": 43,
+          "start": "2027-06-28",
+          "phase": "SPECIFIK",
+          "blockType": "RECOVERY",
+          "ctlTarget": 78,
+          "ftpTarget": 320,
+          "tssTarget": 300,
+          "location": "Gentofte",
+          "wkgTarget": 4.71
+        },
+        {
+          "week": 44,
+          "start": "2027-07-05",
+          "phase": "SPECIFIK",
+          "blockType": "SPECIFIK",
+          "ctlTarget": 80,
+          "ftpTarget": 320,
+          "tssTarget": 560,
+          "location": "Gentofte",
+          "note": "Løb ned til 1-2 rolige. Cyklen har forkørselsret.",
+          "wkgTarget": 4.71
+        },
+        {
+          "week": 45,
+          "start": "2027-07-12",
+          "phase": "SPECIFIK",
+          "blockType": "SPECIFIK+",
+          "ctlTarget": 83,
+          "ftpTarget": 320,
+          "tssTarget": 590,
+          "location": "Gentofte",
+          "wkgTarget": 4.71
+        },
+        {
+          "week": 46,
+          "start": "2027-07-19",
+          "phase": "SPECIFIK",
+          "blockType": "CAMP",
+          "ctlTarget": 88,
+          "ftpTarget": 320,
+          "tssTarget": 780,
+          "location": "Alperne",
+          "note": "LEJR #2 Alperne. Back-to-back bjergdage. CTL-peak. Gearing testes. FTP-test i lejren — porten mod 320 W (4,7 W/kg).",
+          "wkgTarget": 4.71
+        },
+        {
+          "week": 47,
+          "start": "2027-07-26",
+          "phase": "SPECIFIK",
+          "blockType": "RECOVERY",
+          "ctlTarget": 84,
+          "ftpTarget": 320,
+          "tssTarget": 300,
+          "location": "Gentofte",
+          "wkgTarget": 4.71
+        },
+        {
+          "week": 48,
+          "start": "2027-08-02",
+          "phase": "SPECIFIK",
+          "blockType": "SPECIFIK",
+          "ctlTarget": 86,
+          "ftpTarget": 320,
+          "tssTarget": 580,
+          "location": "Gentofte",
+          "wkgTarget": 4.71
+        },
+        {
+          "week": 49,
+          "start": "2027-08-09",
+          "phase": "SPECIFIK",
+          "blockType": "SPECIFIK",
+          "ctlTarget": 87,
+          "ftpTarget": 320,
+          "tssTarget": 560,
+          "location": "Gentofte",
+          "note": "Sidste større uge.",
+          "wkgTarget": 4.71
+        },
+        {
+          "week": 50,
+          "start": "2027-08-16",
+          "phase": "TAPER",
+          "blockType": "TAPER",
+          "ctlTarget": 85,
+          "ftpTarget": 320,
+          "tssTarget": 350,
+          "location": "Gentofte",
+          "note": "Intensitet holdes, volumen falder.",
+          "wkgTarget": 4.71
+        },
+        {
+          "week": 51,
+          "start": "2027-08-23",
+          "phase": "TAPER",
+          "blockType": "RACE",
+          "ctlTarget": 82,
+          "ftpTarget": 320,
+          "tssTarget": 180,
+          "location": "Le Châble/Verbier",
+          "note": "TOUR DES STATIONS ULTRAFONDO lør 28/8 — A-løb. Start 02:30.",
+          "wkgTarget": 4.71
+        }
+      ],
+      "races": [
+        {
+          "name": "CPH Half",
+          "date": "2026-09-20",
+          "type": "half_marathon",
+          "distance": "21.1km",
+          "priority": "B"
+        },
+        {
+          "name": "Santini Stelvio Gran Fondo (lang rute)",
+          "date": "2027-06-06",
+          "type": "granfondo",
+          "distance": "130km / 4500hm",
+          "priority": "B",
+          "note": "B-løb. TILMELDT 16/7-2026 (med Eva). Hyggeløb + form-check mod TdS.",
+          "registered": true,
+          "registeredDate": "2026-07-16"
+        },
+        {
+          "name": "Tour des Stations Ultrafondo",
+          "date": "2027-08-28",
+          "dateApprox": false,
+          "type": "ultrafondo",
+          "distance": "242km / 8848hm",
+          "priority": "A",
+          "note": "A-løb. IKKE TILMELDT — 2027 åbner først ca. sep-26. Tjek 20/9. Cutoff 20:30 Croix-de-Cœur. Start 02:30 (18 t margin).",
+          "registered": false,
+          "registrationOpens": "2026-09 (efter 2026-udgaven 29/8) — verificeret hos arrangøren 16/7",
+          "registrationUrl": "https://tourdesstations.ch/inscriptions/"
+        }
+      ],
+      "goals": {
+        "weightKg": 68,
+        "bodyFatPct": 16,
+        "afDaysPerWeek": 6,
+        "sleepHours": 7,
+        "strengthPerWeek": 2
+      },
+      "phases": [
+        {
+          "name": "TRANSITION",
+          "weekFrom": 1,
+          "weekTo": 8,
+          "ftpTarget": 278,
+          "wkgTarget": 3.97
+        },
+        {
+          "name": "BASE",
+          "weekFrom": 9,
+          "weekTo": 22,
+          "ftpTarget": 292,
+          "wkgTarget": 4.29
+        },
+        {
+          "name": "BUILD",
+          "weekFrom": 23,
+          "weekTo": 35,
+          "ftpTarget": 305,
+          "wkgTarget": 4.49
+        },
+        {
+          "name": "STELVIO",
+          "weekFrom": 36,
+          "weekTo": 39,
+          "ftpTarget": 308,
+          "wkgTarget": 4.53
+        },
+        {
+          "name": "SPECIFIK",
+          "weekFrom": 40,
+          "weekTo": 49,
+          "ftpTarget": 320,
+          "wkgTarget": 4.71
+        },
+        {
+          "name": "TAPER",
+          "weekFrom": 50,
+          "weekTo": 51,
+          "ftpTarget": 320,
+          "wkgTarget": 4.71
+        }
+      ],
+      "weightPlan": {
+        "startKg": 72.2,
+        "targetKg": 68,
+        "targetDate": "2027-01-31",
+        "bodyFatPctTarget": 16,
+        "bodyFatPctStart": 21.8,
+        "cutStartsFrom": "2026-09-21",
+        "holdFromMonth": "2027-02",
+        "maxLossPerWeekKg": 0.25,
+        "note": "72,2 -> 68 kg over 19 uger fra 21/9 = 0,21 kg/uge, inden for loftet. Intet underskud foer Medoc 5/9. Fedt 21,8 -> 16 %: kraever ca. 4,9 kg fedt vaek og 0,7 kg muskel paa — styrke 2x/uge er ikke valgfri. Garmin-fedtprocent er bioimpedans: styr efter 7-dages snittet, ikke dagstallet. Fra februar vedligehold i 7 mdr. Der slankes ikke under en build."
+      },
+      "ftpStart": 278,
+      "ftpTarget": 320,
+      "wkgStart": 3.85,
+      "wkgTarget": 4.71,
+      "hoursPerWeekAvg": 12,
+      "hoursPerWeekPeak": 15,
+      "ctlPeak": 88,
+      "ctlAtRace": 82
+    }
+  },
   "program": {
     "name": "Fast as Fifty",
     "start": "2026-06-01",
@@ -165,7 +1068,7 @@
       "week": 15,
       "start": "2026-09-07",
       "blockType": "RECOVERY",
-      "ctlTarget": 40,
+      "ctlTarget": 47,
       "tssTarget": 265,
       "location": "Gentofte",
       "note": "Restitution efter Marathon du Médoc. Intet løb før tidligst lør 12/9 — 42 km excentrisk belastning kræver 10-14 dage. Cykel bærer den aerobe base."
@@ -174,7 +1077,7 @@
       "week": 16,
       "start": "2026-09-14",
       "blockType": "RACE",
-      "ctlTarget": 41,
+      "ctlTarget": 45,
       "tssTarget": 336,
       "location": "Gentofte. RACE søn",
       "note": "CPH Half søn 20/9 — B-løb, mål sub 1:30 (4:16/km). Max 3 løb, ingen løb to dage i streg. Cut starter man 21/9, ikke før."
@@ -281,6 +1184,7 @@
   "athletes": {
     "kennet": {
       "name": "Kennet",
+      "birthYear": 1974,
       "source": "intervals",
       "zones": {
         "runThreshold": "4:24/km",
@@ -418,6 +1322,7 @@
         ]
       },
       "actualsThroughWeek": 8,
+      "actualsThroughWeekProgram": "medoc-2026",
       "days": [
         {
           "date": "2026-06-01",
@@ -4906,7 +5811,7 @@
                 }
               },
               "note": "Restitution efter Médoc — gang, intet løb",
-              "id": "25de7cee"
+              "id": "629a4f17"
             }
           ]
         },
@@ -4915,26 +5820,21 @@
           "entries": [
             {
               "workout": {
-                "name": "Løb let Z1 30 min",
-                "type": "Run",
-                "moving_time": 1800,
-                "description": "- Let løb 30m >5:39/km Pace",
+                "name": "Gang let 60 min",
+                "type": "Hike",
+                "moving_time": 3600,
+                "description": "- Gang Z1 60m freeride",
                 "workout_doc": {
                   "steps": [
                     {
-                      "text": "Let løb >5:39/km",
-                      "pace": {
-                        "start": 65,
-                        "end": 78,
-                        "units": "%pace"
-                      },
-                      "duration": 1800
+                      "text": "Gang Z1",
+                      "duration": 3600
                     }
                   ]
                 }
               },
-              "note": "Let løb i Bordeaux — ingen trainer tilgængelig",
-              "id": "44e0251a"
+              "note": "Gang i Bordeaux — restitution",
+              "id": "6074cfa1"
             }
           ]
         },
@@ -4956,8 +5856,8 @@
                   ]
                 }
               },
-              "note": "Gang 60 min",
-              "id": "005cb441"
+              "note": "Restitution — gang, stadig intet løb",
+              "id": "de214011"
             }
           ]
         },
@@ -5004,8 +5904,8 @@
                   ]
                 }
               },
-              "note": "Første rigtige aerobe pas efter Médoc",
-              "id": "97500e1d"
+              "note": "Første aerobe pas efter Médoc — ude, let",
+              "id": "c5b3eeb5"
             }
           ]
         },
@@ -5055,8 +5955,8 @@
                   ]
                 }
               },
-              "note": "Svøm 2.000 m — ingen benbelastning 6 dage efter Médoc",
-              "id": "c59c25f1"
+              "note": "Svøm — ingen benbelastning 6 dage efter Médoc",
+              "id": "0f216251"
             }
           ]
         },
@@ -5083,8 +5983,8 @@
                   ]
                 }
               },
-              "note": "FØRSTE LØB efter Médoc — kun hvis benene er rene. Tvivl = drop det og cykl i stedet",
-              "id": "37f0e37b"
+              "note": "Første løb efter Médoc — kun hvis benene er rene — tvivl = drop",
+              "id": "75b8dbd2"
             },
             {
               "workout": {
@@ -5152,7 +6052,7 @@
                 }
               },
               "note": "Styrke overkrop + core — ben resumerer 21/9",
-              "id": "1a47f69f"
+              "id": "1e0d0569"
             }
           ]
         },
@@ -5199,8 +6099,8 @@
                   ]
                 }
               },
-              "note": "Lang aerob tur — ben uden løbebelastning",
-              "id": "36df16c2"
+              "note": "Aerob base — ugens længste pas",
+              "id": "5abcef7a"
             }
           ]
         },
@@ -5247,8 +6147,8 @@
                   ]
                 }
               },
-              "note": "Let rul",
-              "id": "894b0152"
+              "note": "Let rul — race-uge",
+              "id": "8f193e97"
             },
             {
               "workout": {
@@ -5315,8 +6215,8 @@
                   ]
                 }
               },
-              "note": "Sidste styrke før løbet",
-              "id": "e868812a"
+              "note": "Styrke overkrop + core — sidste før løbet",
+              "id": "3fe4e63b"
             }
           ]
         },
@@ -5325,10 +6225,10 @@
           "entries": [
             {
               "workout": {
-                "name": "Løb målpace 5×3 min (1:30-tempo)",
+                "name": "Løb målpace 4×3 min (1:30-tempo)",
                 "type": "Run",
-                "moving_time": 3000,
-                "description": "- Varm-op 15m >5:39/km Pace\n\n5x\n- Målpace-interval 3m 4:12-4:21/km Pace\n- Pause 2m >5:39/km Pace\n\n- Cool-down 10m >5:39/km Pace\n\nMålpace 1:30 = 4:16/km. Kør efter fornemmelse — det skal føles kontrolleret, ikke hårdt. Første kvalitetspas efter Médoc.",
+                "moving_time": 2700,
+                "description": "- Varm-op 15m >5:39/km Pace\n\n4x\n- Målpace-interval 3m 4:12-4:21/km Pace\n- Pause 2m >5:39/km Pace\n\n- Cool-down 10m >5:39/km Pace\n\nMålpace 1:30 = 4:16/km. Kør efter fornemmelse — det skal føles kontrolleret, ikke hårdt. 4 reps, ikke 5 — 10 dage efter maraton. 2 min gang imellem.",
                 "workout_doc": {
                   "steps": [
                     {
@@ -5341,8 +6241,8 @@
                       "duration": 900
                     },
                     {
-                      "reps": 5,
-                      "text": "5x",
+                      "reps": 4,
+                      "text": "4x",
                       "steps": [
                         {
                           "text": "Målpace-interval 4:12-4:21/km",
@@ -5354,7 +6254,7 @@
                           "duration": 180
                         },
                         {
-                          "text": "Pause >5:39/km",
+                          "text": "Gang/jog >5:39/km",
                           "pace": {
                             "start": 65,
                             "end": 78,
@@ -5376,8 +6276,8 @@
                   ]
                 }
               },
-              "note": "Målpace-åbner mod 1:30",
-              "id": "e1de3faa"
+              "note": "Målpace-åbner mod 1:30. 4 reps, ikke 5 — 10 dage efter maraton",
+              "id": "86a116af"
             }
           ]
         },
@@ -5425,7 +6325,7 @@
                 }
               },
               "note": "Restitution mellem de to løbepas",
-              "id": "bd73a9d6"
+              "id": "02c2a5ea"
             }
           ]
         },
@@ -5475,76 +6375,8 @@
                   ]
                 }
               },
-              "note": "Sidste løb før CPH Half — racesko",
-              "id": "e0c3cbde"
-            },
-            {
-              "workout": {
-                "name": "Styrke 25 min overkrop + core",
-                "type": "WeightTraining",
-                "moving_time": 1500,
-                "description": "- Aktivering 5m freeride: Glute bridge ×15, Bird dog ×10/side, World's greatest stretch ×5/side\n\n2x\n- Skulderpres 10kg ×10 1m freeride\n- Roning 12.5kg ×12 1m freeride\n- Lat pullover 10kg ×12 1m freeride\n- Pause 90 sek 1.5m freeride\n\n\n2x\n- Planke 45 sek 1m freeride\n- Sideplanke 30 sek/side 1m freeride\n- Dead bug ×10/side 1m freeride\n- Pause 30 sek 0.5m freeride\n\n- Udstrækning 4m freeride\n\nINGEN squat, dødløft eller udfald.",
-                "workout_doc": {
-                  "steps": [
-                    {
-                      "text": "Aktivering: Glute bridge ×15, Bird dog ×10/side, World's greatest stretch ×5/side",
-                      "duration": 300,
-                      "warmup": true
-                    },
-                    {
-                      "reps": 2,
-                      "text": "2x",
-                      "steps": [
-                        {
-                          "text": "Skulderpres 10kg ×10",
-                          "duration": 60
-                        },
-                        {
-                          "text": "Roning 12.5kg ×12",
-                          "duration": 60
-                        },
-                        {
-                          "text": "Lat pullover 10kg ×12",
-                          "duration": 60
-                        },
-                        {
-                          "text": "Pause 90 sek",
-                          "duration": 90
-                        }
-                      ]
-                    },
-                    {
-                      "reps": 2,
-                      "text": "2x",
-                      "steps": [
-                        {
-                          "text": "Planke 45 sek",
-                          "duration": 60
-                        },
-                        {
-                          "text": "Sideplanke 30 sek/side",
-                          "duration": 60
-                        },
-                        {
-                          "text": "Dead bug ×10/side",
-                          "duration": 60
-                        },
-                        {
-                          "text": "Pause 30 sek",
-                          "duration": 30
-                        }
-                      ]
-                    },
-                    {
-                      "text": "Udstrækning",
-                      "duration": 240,
-                      "cooldown": true
-                    }
-                  ]
-                }
-              },
-              "note": "Styrke overkrop + core — let, 3 dage før racet",
-              "id": "32222f37"
+              "note": "Sidste løb før CPH Half — racesko, strides er aktivering",
+              "id": "bf4bc1fa"
             }
           ]
         },
@@ -5553,10 +6385,10 @@
           "entries": [
             {
               "workout": {
-                "name": "Svøm 2000m teknisk",
+                "name": "Svøm 2000m let",
                 "type": "Swim",
                 "moving_time": 3360,
-                "description": "- 400m varm-op Z1 10m freeride\n\n6x\n- 100m teknik Z2 2m freeride\n\n\n8x\n- 100m moderat Z3 2m freeride\n- 30s pause 1m freeride\n\n- 400m cool Z1 10m freeride",
+                "description": "- 400m varm-op Z1 10m freeride\n\n6x\n- 100m teknik Z2 2m freeride\n\n\n8x\n- 100m let Z2 2m freeride\n- 30s pause 1m freeride\n\n- 400m cool Z1 10m freeride\n\n2000m i alt, alt i let tempo — ingen benbelastning to dage før racet.",
                 "workout_doc": {
                   "steps": [
                     {
@@ -5578,7 +6410,7 @@
                       "text": "8x",
                       "steps": [
                         {
-                          "text": "100m moderat Z3",
+                          "text": "100m let Z2",
                           "duration": 120
                         },
                         {
@@ -5594,76 +6426,8 @@
                   ]
                 }
               },
-              "note": "Svøm 2.000 m. Carb-load starter",
-              "id": "3d4b75c3"
-            },
-            {
-              "workout": {
-                "name": "Styrke 25 min overkrop + core",
-                "type": "WeightTraining",
-                "moving_time": 1500,
-                "description": "- Aktivering 5m freeride: Glute bridge ×15, Bird dog ×10/side, World's greatest stretch ×5/side\n\n2x\n- Skulderpres 10kg ×10 1m freeride\n- Roning 12.5kg ×12 1m freeride\n- Lat pullover 10kg ×12 1m freeride\n- Pause 90 sek 1.5m freeride\n\n\n2x\n- Planke 45 sek 1m freeride\n- Sideplanke 30 sek/side 1m freeride\n- Dead bug ×10/side 1m freeride\n- Pause 30 sek 0.5m freeride\n\n- Udstrækning 4m freeride\n\nINGEN squat, dødløft eller udfald.",
-                "workout_doc": {
-                  "steps": [
-                    {
-                      "text": "Aktivering: Glute bridge ×15, Bird dog ×10/side, World's greatest stretch ×5/side",
-                      "duration": 300,
-                      "warmup": true
-                    },
-                    {
-                      "reps": 2,
-                      "text": "2x",
-                      "steps": [
-                        {
-                          "text": "Skulderpres 10kg ×10",
-                          "duration": 60
-                        },
-                        {
-                          "text": "Roning 12.5kg ×12",
-                          "duration": 60
-                        },
-                        {
-                          "text": "Lat pullover 10kg ×12",
-                          "duration": 60
-                        },
-                        {
-                          "text": "Pause 90 sek",
-                          "duration": 90
-                        }
-                      ]
-                    },
-                    {
-                      "reps": 2,
-                      "text": "2x",
-                      "steps": [
-                        {
-                          "text": "Planke 45 sek",
-                          "duration": 60
-                        },
-                        {
-                          "text": "Sideplanke 30 sek/side",
-                          "duration": 60
-                        },
-                        {
-                          "text": "Dead bug ×10/side",
-                          "duration": 60
-                        },
-                        {
-                          "text": "Pause 30 sek",
-                          "duration": 30
-                        }
-                      ]
-                    },
-                    {
-                      "text": "Udstrækning",
-                      "duration": 240,
-                      "cooldown": true
-                    }
-                  ]
-                }
-              },
-              "note": "Styrke overkrop + core — flyttet fra 19/9, intet styrkearbejde dagen før racet",
-              "id": "21eebed5"
+              "note": "Svøm let — ingen benbelastning to dage før racet",
+              "id": "3fb4af82"
             }
           ]
         },
@@ -5686,7 +6450,7 @@
                 }
               },
               "note": "Let gang, benene op resten af dagen. Racesko på i 10 min",
-              "id": "4218dbc4"
+              "id": "d175134b"
             }
           ]
         },
@@ -5698,7 +6462,7 @@
                 "name": "CPH HALF — 21,1 km",
                 "type": "Run",
                 "moving_time": 5400,
-                "description": "- 0-5 km: 4:16/km, lås tempoet 21m 4:12-4:16/km Pace\n- 5-15 km: 4:15/km 43m 4:12-4:16/km Pace\n- 15-21,1 km: 4:14/km eller hurtigere 26m 4:05-4:16/km Pace\n\nMÅL: sub 1:30. Snit 4:15/km giver 1:29:40 — 20 sek buffer.\nKm-splits: 5 km 21:20 | 10 km 42:35 | 15 km 63:50 | mål 1:29:40.\nLås 4:16 fra km 1. Ligger du over 4:20 ved 5 km, er dagen ikke der — hold 4:20 og luk stabilt i stedet for at jage det tabte.\nRacesko. Gel ved 8 km og 15 km. Opvarmning 15 min let + 3 strides før start.",
+                "description": "- 0-5 km: 4:16/km, lås tempoet 21m 4:12-4:16/km Pace\n- 5-15 km: 4:15/km 43m 4:12-4:16/km Pace\n- 15-21,1 km: 4:14/km eller hurtigere 26m 4:05-4:16/km Pace\n\nMÅL: sub 1:30. Snit 4:15/km giver 1:29:40 — 20 sek buffer.\nKm-splits: 5 km 21:20 | 10 km 42:35 | 15 km 63:50 | mål 1:29:40.\nBeslutningsregel ved 5 km: gå efter 4:16 KUN hvis de første 5 km føles kontrollerede — ellers 4:35/km og nyd det. B-løb.\nRacesko. Gel ved 8 km og 15 km. Opvarmning 15 min let + 3 strides før start.",
                 "workout_doc": {
                   "steps": [
                     {
@@ -5731,8 +6495,8 @@
                   ]
                 }
               },
-              "note": "CPH HALF — mål sub 1:30, 4:15/km snit",
-              "id": "4743c2ee"
+              "note": "Mål sub 1:30 (4:16/km). Beslutningsregel: gå efter 4:16 kun hvis de første 5 km føles kontrollerede — ellers 4:35/km og nyd det. B-løb.",
+              "id": "2d868f45"
             }
           ]
         },
@@ -5780,8 +6544,8 @@
                   ]
                 }
               },
-              "note": "Styrke 2x/uge starter — unilateralt (2027-sporet)",
-              "id": "9c9272a7"
+              "note": "Cut starter. Styrke 2×/uge unilateralt starter",
+              "id": "f3618294"
             }
           ]
         },
@@ -5790,55 +6554,86 @@
           "entries": [
             {
               "workout": {
-                "name": "AEROB PROBE + Cykel Z2 70 min",
+                "name": "FaF 1 Z2 - Grundtur 80",
                 "type": "Ride",
-                "moving_time": 4200,
-                "description": "- Varm-op 10m ramp 45-60% FTP\n- PROBE 25 min @ 190 W FAST — samme watt hver gang 25m 68% FTP\n- Aerob base 30m 56-76% FTP\n- Cool-down 5m ramp 60-40% FTP\n\nPROBEN ER MÅLINGEN. Samme hometrainer, samme 190 W, samme tid på dagen, ventilator på. Notér gennemsnitspuls for de SIDSTE 15 min af proben.\nLavere puls end sidste måned = bedre form. Højere = træthed eller for stort underskud.\nKør ikke proben på trætte ben — flyt den en dag hvis TSB er under −20.",
+                "moving_time": 4800,
+                "description": "- Varm-op 10m ramp 45-62% FTP\n- Zone 2 25m 66% FTP\n- Kadence 100 5m 70% FTP @ 100 rpm\n- Zone 2 25m 66% FTP\n- Kadence 100 5m 70% FTP @ 100 rpm\n- Cool-down 10m ramp 62-40% FTP\n\nFORMÅL: Ren zone 2. Skal føles kedeligt. Fundamentet under alt andet — og den enkeltfaktor der bedst forudsiger hvor lidt VO2max falder med alderen.",
                 "workout_doc": {
                   "steps": [
                     {
                       "ramp": true,
                       "power": {
                         "start": 45,
-                        "end": 60,
+                        "end": 62,
                         "units": "%ftp"
                       },
                       "duration": 600,
-                      "warmup": true
+                      "warmup": true,
+                      "text": "Varm-op"
                     },
                     {
-                      "text": "PROBE 25 min @ 190 W FAST — notér snit-puls sidste 15 min",
                       "power": {
-                        "start": 68,
-                        "end": 68,
+                        "start": 66,
+                        "end": 66,
                         "units": "%ftp"
                       },
-                      "duration": 1500
+                      "duration": 1500,
+                      "text": "Zone 2 66% FTP"
                     },
                     {
-                      "text": "Aerob base 56-76% FTP",
                       "power": {
-                        "start": 56,
-                        "end": 76,
+                        "start": 70,
+                        "end": 70,
                         "units": "%ftp"
                       },
-                      "duration": 1800
+                      "duration": 300,
+                      "text": "Kadence 100 70% FTP",
+                      "cadence": {
+                        "start": 100,
+                        "end": 100,
+                        "units": "rpm"
+                      }
+                    },
+                    {
+                      "power": {
+                        "start": 66,
+                        "end": 66,
+                        "units": "%ftp"
+                      },
+                      "duration": 1500,
+                      "text": "Zone 2 66% FTP"
+                    },
+                    {
+                      "power": {
+                        "start": 70,
+                        "end": 70,
+                        "units": "%ftp"
+                      },
+                      "duration": 300,
+                      "text": "Kadence 100 70% FTP",
+                      "cadence": {
+                        "start": 100,
+                        "end": 100,
+                        "units": "rpm"
+                      }
                     },
                     {
                       "ramp": true,
                       "power": {
-                        "start": 60,
+                        "start": 62,
                         "end": 40,
                         "units": "%ftp"
                       },
-                      "duration": 300,
-                      "cooldown": true
+                      "duration": 600,
+                      "cooldown": true,
+                      "text": "Cool-down"
                     }
                   ]
                 }
               },
-              "note": "AEROB PROBE — baseline for cuttet",
-              "id": "1ad7f007"
+              "note": "AEROB PROBE — EF-baseline for cuttet. Kan køres ude som ren Z2 samme varighed",
+              "libraryId": "z2_grundtur_80",
+              "id": "af9ed202"
             }
           ]
         },
@@ -5892,47 +6687,101 @@
                   ]
                 }
               },
-              "note": "AEROB PROBE — baseline for cuttet",
-              "id": "8eb6ad9c"
-            },
-            {
-              "workout": {
-                "name": "Svøm teknik 1500m (fokus: catch)",
-                "type": "Swim",
-                "moving_time": 3600,
-                "description": "- Opvarmning 300m rolig, blandet\n- Drill-sæt: 8×25m Fist swim (svøm med lukkede næver — brug underarmen som åre, mærk fat i vandet), 15-20 sek pause\n- Main set: 8×50m hurtigt men med formen intakt, 20 sek pause — fokus: fat i vandet / træk fra ryg, ikke arm\n- Kick-sæt: 4×50m, fokus benspark/kropsposition, 20 sek pause\n- Udsvømning 400m rolig\n\n1500m i alt. Ét fokuspunkt ad gangen — roterer uge for uge (catch → hoved → hofte).",
-                "workout_doc": {
-                  "steps": [
-                    {
-                      "text": "Opvarmning rolig, blandet",
-                      "duration": 900
-                    },
-                    {
-                      "text": "8×25m Fist swim (svøm med lukkede næver — brug underarmen som åre, mærk fat i vandet)",
-                      "duration": 900
-                    },
-                    {
-                      "text": "Main set 8×50m hurtigt, form intakt — fat i vandet / træk fra ryg, ikke arm",
-                      "duration": 900
-                    },
-                    {
-                      "text": "Kick-sæt 4×50m — benspark/kropsposition",
-                      "duration": 600
-                    },
-                    {
-                      "text": "Udsvømning rolig",
-                      "duration": 300
-                    }
-                  ]
-                }
-              },
-              "note": "Svøm 2×/uge fra uge 3 — teknikpas (Kildeskovshallen), fokus catch",
-              "id": "f8425d55"
+              "note": "AEROB PROBE — EF-baseline for cuttet (løb)",
+              "id": "437c99b0"
             }
           ]
         },
         {
           "date": "2026-09-24",
+          "entries": [
+            {
+              "workout": {
+                "name": "FaF 0 Test - FTP 20 min",
+                "type": "Ride",
+                "moving_time": 3180,
+                "description": "- Varm-op 10m ramp 45-70% FTP\n\n3x \n- Åbner 1m 100% FTP\n- Pause 1m 55% FTP\n\n- Let 5m 55% FTP\n- Sidste rolige minutter 5m 65% FTP\n- 20 MIN TEST — jævn maksindsats. Første 5 min skal føles for let. 20m freeride\n- Cool-down 7m ramp 60-40% FTP\n\nFORMÅL: Nulpunkt. Alt i biblioteket skalerer efter den. Køres indendørs, altid — samme trainer, samme blæseropsætning, samme tid på dagen.\n\n⚠ IKKE ERG-MODE — du styrer selv effekten.\n\nIKKE ERG — du skal selv styre effekten. Nyt FTP = 95% af 20-min snit. Begge blæsere på. Du undervurderer dig selv: læg ud 5 W over det du tror.",
+                "workout_doc": {
+                  "steps": [
+                    {
+                      "ramp": true,
+                      "power": {
+                        "start": 45,
+                        "end": 70,
+                        "units": "%ftp"
+                      },
+                      "duration": 600,
+                      "warmup": true,
+                      "text": "Varm-op"
+                    },
+                    {
+                      "reps": 3,
+                      "text": "3x",
+                      "steps": [
+                        {
+                          "power": {
+                            "start": 100,
+                            "end": 100,
+                            "units": "%ftp"
+                          },
+                          "duration": 60,
+                          "text": "Åbner 100% FTP"
+                        },
+                        {
+                          "power": {
+                            "start": 55,
+                            "end": 55,
+                            "units": "%ftp"
+                          },
+                          "duration": 60,
+                          "text": "Pause 55% FTP"
+                        }
+                      ]
+                    },
+                    {
+                      "power": {
+                        "start": 55,
+                        "end": 55,
+                        "units": "%ftp"
+                      },
+                      "duration": 300,
+                      "text": "Let 55% FTP"
+                    },
+                    {
+                      "power": {
+                        "start": 65,
+                        "end": 65,
+                        "units": "%ftp"
+                      },
+                      "duration": 300,
+                      "text": "Sidste rolige minutter 65% FTP"
+                    },
+                    {
+                      "text": "20 MIN TEST — jævn maksindsats. Første 5 min skal føles for let.",
+                      "duration": 1200
+                    },
+                    {
+                      "ramp": true,
+                      "power": {
+                        "start": 60,
+                        "end": 40,
+                        "units": "%ftp"
+                      },
+                      "duration": 420,
+                      "cooldown": true,
+                      "text": "Cool-down"
+                    }
+                  ]
+                }
+              },
+              "note": "Første kælderpas. IKKE ERG. Opdatér zoner samme dag",
+              "libraryId": "test_ftp20",
+              "id": "0d3d7bb7"
+            }
+          ]
+        },
+        {
+          "date": "2026-09-25",
           "entries": [
             {
               "workout": {
@@ -5976,98 +6825,41 @@
                 }
               },
               "note": "Styrke Unilateral B",
-              "id": "31db8482"
-            }
-          ]
-        },
-        {
-          "date": "2026-09-25",
-          "entries": [
-            {
-              "workout": {
-                "name": "Cykel Z2+Z3 105 min",
-                "type": "Ride",
-                "moving_time": 6300,
-                "description": "- Varm-op 15m ramp 45-68% FTP\n- Aerob base 25m 56-76% FTP\n- Sweet spot-blok 50m 76-91% FTP\n- Cool-down 15m ramp 76-45% FTP",
-                "workout_doc": {
-                  "steps": [
-                    {
-                      "ramp": true,
-                      "power": {
-                        "start": 45,
-                        "end": 68,
-                        "units": "%ftp"
-                      },
-                      "duration": 900,
-                      "warmup": true
-                    },
-                    {
-                      "text": "Aerob base 56-76% FTP",
-                      "power": {
-                        "start": 56,
-                        "end": 76,
-                        "units": "%ftp"
-                      },
-                      "duration": 1500
-                    },
-                    {
-                      "text": "Sweet spot-blok 76-91% FTP",
-                      "power": {
-                        "start": 76,
-                        "end": 91,
-                        "units": "%ftp"
-                      },
-                      "duration": 3000
-                    },
-                    {
-                      "ramp": true,
-                      "power": {
-                        "start": 76,
-                        "end": 45,
-                        "units": "%ftp"
-                      },
-                      "duration": 900,
-                      "cooldown": true
-                    }
-                  ]
-                }
-              },
-              "note": "Cykel Z2+Z3",
-              "id": "b191f07b"
+              "id": "451fd3ed"
             },
             {
               "workout": {
-                "name": "Svøm almindelig 2500m",
+                "name": "Svøm teknik 1500m (fokus: catch)",
                 "type": "Swim",
-                "moving_time": 4800,
-                "description": "- Opvarmning 400m rolig\n- Hovedsæt: 8×100m i jævnt tempo, 15-20 sek pause (800m)\n- 4×100m lidt hurtigere, 20 sek pause (400m)\n- Frit — distance/intervaller efter form, ingen drills (500m)\n- Udsvømning 400m rolig\n\n2500m i alt. Formål: teste om ugens teknikfokus fra onsdag sidder uden bevidst tanke, under normal belastning.",
+                "moving_time": 3600,
+                "description": "- Opvarmning 300m rolig, blandet\n- Drill-sæt: 8×25m Fist swim (svøm med lukkede næver — brug underarmen som åre, mærk fat i vandet), 15-20 sek pause\n- Main set: 8×50m hurtigt men med formen intakt, 20 sek pause — fokus: fat i vandet / træk fra ryg, ikke arm\n- Kick-sæt: 4×50m, fokus benspark/kropsposition, 20 sek pause\n- Udsvømning 400m rolig\n\n1500m i alt. Ét fokuspunkt ad gangen — roterer uge for uge (catch → hoved → hofte).",
                 "workout_doc": {
                   "steps": [
                     {
-                      "text": "Opvarmning rolig",
+                      "text": "Opvarmning rolig, blandet",
+                      "duration": 900
+                    },
+                    {
+                      "text": "8×25m Fist swim (svøm med lukkede næver — brug underarmen som åre, mærk fat i vandet)",
+                      "duration": 900
+                    },
+                    {
+                      "text": "Main set 8×50m hurtigt, form intakt — fat i vandet / træk fra ryg, ikke arm",
+                      "duration": 900
+                    },
+                    {
+                      "text": "Kick-sæt 4×50m — benspark/kropsposition",
                       "duration": 600
-                    },
-                    {
-                      "text": "8×100m jævnt tempo",
-                      "duration": 1500
-                    },
-                    {
-                      "text": "4×100m lidt hurtigere",
-                      "duration": 900
-                    },
-                    {
-                      "text": "Frit — distance/intervaller efter form",
-                      "duration": 900
                     },
                     {
                       "text": "Udsvømning rolig",
-                      "duration": 600
+                      "duration": 300
                     }
                   ]
                 }
               },
-              "note": "Svøm 2×/uge fra uge 3 — almindeligt pas (Kildeskovshallen)",
-              "id": "09be5670"
+              "note": "Svøm teknik let (Kildeskovshallen) — fokus catch",
+              "id": "5776410d"
             }
           ]
         },
@@ -6076,46 +6868,94 @@
           "entries": [
             {
               "workout": {
-                "name": "Cykel Z2 160 min",
+                "name": "FaF 1 Z2 - Depottur 2 t",
                 "type": "Ride",
-                "moving_time": 9600,
-                "description": "- Varm-op 10m ramp 45-68% FTP\n- Aerob base 145m 56-76% FTP\n- Cool-down 5m ramp 68-45% FTP",
+                "moving_time": 7800,
+                "description": "- Varm-op 10m ramp 45-62% FTP\n- Z2 20m 66% FTP\n- Z2 20m 70% FTP\n- Z2 20m 66% FTP\n- Z2 let op 20m 72% FTP\n- Z2 20m 66% FTP\n- Sidste 10 10m 70% FTP\n- Cool-down 10m ramp 62-40% FTP\n\nFORMÅL: To timer Z2 med fast energiplan. Lige så meget mavetræning som bentræning. Race-evalueringerne siger det samme i ni år: energiplanen er det der knækker dig.\n\nMål: 80-100 g kulhydrat i timen. Notér bagefter hvad du spiste og hvordan maven lå.",
                 "workout_doc": {
                   "steps": [
                     {
                       "ramp": true,
                       "power": {
                         "start": 45,
-                        "end": 68,
+                        "end": 62,
                         "units": "%ftp"
                       },
                       "duration": 600,
-                      "warmup": true
+                      "warmup": true,
+                      "text": "Varm-op"
                     },
                     {
-                      "text": "Aerob base 56-76% FTP",
                       "power": {
-                        "start": 56,
-                        "end": 76,
+                        "start": 66,
+                        "end": 66,
                         "units": "%ftp"
                       },
-                      "duration": 8700
+                      "duration": 1200,
+                      "text": "Z2 66% FTP"
+                    },
+                    {
+                      "power": {
+                        "start": 70,
+                        "end": 70,
+                        "units": "%ftp"
+                      },
+                      "duration": 1200,
+                      "text": "Z2 70% FTP"
+                    },
+                    {
+                      "power": {
+                        "start": 66,
+                        "end": 66,
+                        "units": "%ftp"
+                      },
+                      "duration": 1200,
+                      "text": "Z2 66% FTP"
+                    },
+                    {
+                      "power": {
+                        "start": 72,
+                        "end": 72,
+                        "units": "%ftp"
+                      },
+                      "duration": 1200,
+                      "text": "Z2 let op 72% FTP"
+                    },
+                    {
+                      "power": {
+                        "start": 66,
+                        "end": 66,
+                        "units": "%ftp"
+                      },
+                      "duration": 1200,
+                      "text": "Z2 66% FTP"
+                    },
+                    {
+                      "power": {
+                        "start": 70,
+                        "end": 70,
+                        "units": "%ftp"
+                      },
+                      "duration": 600,
+                      "text": "Sidste 10 70% FTP"
                     },
                     {
                       "ramp": true,
                       "power": {
-                        "start": 68,
-                        "end": 45,
+                        "start": 62,
+                        "end": 40,
                         "units": "%ftp"
                       },
-                      "duration": 300,
-                      "cooldown": true
+                      "duration": 600,
+                      "cooldown": true,
+                      "text": "Cool-down"
                     }
                   ]
                 }
               },
-              "note": "Lang cykel Z2 — ugens nøgletur",
-              "id": "9004b3f2"
+              "note": "Ude hvis tørt og >8 °C, ren Z2 samme varighed; ellers kælder",
+              "libraryId": "z2_depottur_2t",
+              "id": "e11fdbd5"
             }
           ]
         },
@@ -6160,8 +7000,8 @@
                   ]
                 }
               },
-              "note": "Løb Z2",
-              "id": "eecc2948"
+              "note": "Løb Z2 — ugens lange løb",
+              "id": "18834023"
             }
           ]
         },
@@ -6210,7 +7050,7 @@
                 }
               },
               "note": "Styrke Unilateral A",
-              "id": "e2f5e455"
+              "id": "61704615"
             }
           ]
         },
@@ -6219,46 +7059,86 @@
           "entries": [
             {
               "workout": {
-                "name": "Cykel Z2 75 min",
+                "name": "FaF 1 Z2 - Grundtur 80",
                 "type": "Ride",
-                "moving_time": 4500,
-                "description": "- Varm-op 10m ramp 45-68% FTP\n- Aerob base 60m 56-76% FTP\n- Cool-down 5m ramp 68-45% FTP",
+                "moving_time": 4800,
+                "description": "- Varm-op 10m ramp 45-62% FTP\n- Zone 2 25m 66% FTP\n- Kadence 100 5m 70% FTP @ 100 rpm\n- Zone 2 25m 66% FTP\n- Kadence 100 5m 70% FTP @ 100 rpm\n- Cool-down 10m ramp 62-40% FTP\n\nFORMÅL: Ren zone 2. Skal føles kedeligt. Fundamentet under alt andet — og den enkeltfaktor der bedst forudsiger hvor lidt VO2max falder med alderen.",
                 "workout_doc": {
                   "steps": [
                     {
                       "ramp": true,
                       "power": {
                         "start": 45,
-                        "end": 68,
+                        "end": 62,
                         "units": "%ftp"
                       },
                       "duration": 600,
-                      "warmup": true
+                      "warmup": true,
+                      "text": "Varm-op"
                     },
                     {
-                      "text": "Aerob base 56-76% FTP",
                       "power": {
-                        "start": 56,
-                        "end": 76,
+                        "start": 66,
+                        "end": 66,
                         "units": "%ftp"
                       },
-                      "duration": 3600
+                      "duration": 1500,
+                      "text": "Zone 2 66% FTP"
+                    },
+                    {
+                      "power": {
+                        "start": 70,
+                        "end": 70,
+                        "units": "%ftp"
+                      },
+                      "duration": 300,
+                      "text": "Kadence 100 70% FTP",
+                      "cadence": {
+                        "start": 100,
+                        "end": 100,
+                        "units": "rpm"
+                      }
+                    },
+                    {
+                      "power": {
+                        "start": 66,
+                        "end": 66,
+                        "units": "%ftp"
+                      },
+                      "duration": 1500,
+                      "text": "Zone 2 66% FTP"
+                    },
+                    {
+                      "power": {
+                        "start": 70,
+                        "end": 70,
+                        "units": "%ftp"
+                      },
+                      "duration": 300,
+                      "text": "Kadence 100 70% FTP",
+                      "cadence": {
+                        "start": 100,
+                        "end": 100,
+                        "units": "rpm"
+                      }
                     },
                     {
                       "ramp": true,
                       "power": {
-                        "start": 68,
-                        "end": 45,
+                        "start": 62,
+                        "end": 40,
                         "units": "%ftp"
                       },
-                      "duration": 300,
-                      "cooldown": true
+                      "duration": 600,
+                      "cooldown": true,
+                      "text": "Cool-down"
                     }
                   ]
                 }
               },
-              "note": "Cykel Z2 — cykel er primær fra uge 3",
-              "id": "d57eabaa"
+              "note": "Z2 grundtur — kælder",
+              "libraryId": "z2_grundtur_80",
+              "id": "41bc1394"
             }
           ]
         },
@@ -6267,10 +7147,10 @@
           "entries": [
             {
               "workout": {
-                "name": "Løb Z2 50 min",
+                "name": "Løb Z2 45 min",
                 "type": "Run",
-                "moving_time": 3000,
-                "description": "- Varm-op 10m >5:39/km Pace\n- Base 35m 5:00-5:38/km Pace\n- Cool-down 5m >5:39/km Pace",
+                "moving_time": 2700,
+                "description": "- Varm-op 10m >5:39/km Pace\n- Base 30m 5:00-5:38/km Pace\n- Cool-down 5m >5:39/km Pace",
                 "workout_doc": {
                   "steps": [
                     {
@@ -6289,7 +7169,7 @@
                         "end": 88,
                         "units": "%pace"
                       },
-                      "duration": 2100
+                      "duration": 1800
                     },
                     {
                       "text": "Cool-down >5:39/km",
@@ -6304,47 +7184,88 @@
                 }
               },
               "note": "Løb Z2",
-              "id": "5acbb789"
-            },
-            {
-              "workout": {
-                "name": "Svøm teknik 1500m (fokus: hoved)",
-                "type": "Swim",
-                "moving_time": 3600,
-                "description": "- Opvarmning 300m rolig, blandet\n- Drill-sæt: 8×25m Catch-up drill (én arm i ro fremme til den anden er helt fremme før næste tag), 15-20 sek pause\n- Main set: 8×50m hurtigt men med formen intakt, 20 sek pause — fokus: hoved nede og stille, tør nakke\n- Kick-sæt: 4×50m, fokus benspark/kropsposition, 20 sek pause\n- Udsvømning 400m rolig\n\n1500m i alt. Ét fokuspunkt ad gangen — roterer uge for uge (catch → hoved → hofte).",
-                "workout_doc": {
-                  "steps": [
-                    {
-                      "text": "Opvarmning rolig, blandet",
-                      "duration": 900
-                    },
-                    {
-                      "text": "8×25m Catch-up drill (én arm i ro fremme til den anden er helt fremme før næste tag)",
-                      "duration": 900
-                    },
-                    {
-                      "text": "Main set 8×50m hurtigt, form intakt — hoved nede og stille, tør nakke",
-                      "duration": 900
-                    },
-                    {
-                      "text": "Kick-sæt 4×50m — benspark/kropsposition",
-                      "duration": 600
-                    },
-                    {
-                      "text": "Udsvømning rolig",
-                      "duration": 300
-                    }
-                  ]
-                }
-              },
-              "note": "Svøm 2×/uge fra uge 3 — teknikpas (Kildeskovshallen), fokus hoved",
-              "id": "66dc19f3"
+              "id": "caee0ff5"
             }
           ]
         },
         {
           "date": "2026-10-01",
           "entries": [
+            {
+              "workout": {
+                "name": "FaF 1 Z2 - Åbnere 60",
+                "type": "Ride",
+                "moving_time": 3600,
+                "description": "- Varm-op 10m ramp 45-62% FTP\n- Zone 2 20m 62% FTP\n\n4x \n- Åbner 95+ rpm 2m 85% FTP @ 95 rpm\n- Let 3m 48% FTP\n\n- Cool-down 10m ramp 62-40% FTP\n\nFORMÅL: Race-uge og stille uger. Zone 2 med fire korte åbnere i høj kadence, så benene vågner uden at der bygges træthed. Bygget 2/9-2026 to dage før Médoc.\n\nBenene skal føles lette bagefter — ellers var det for hårdt. Ikke et træningspas.",
+                "workout_doc": {
+                  "steps": [
+                    {
+                      "ramp": true,
+                      "power": {
+                        "start": 45,
+                        "end": 62,
+                        "units": "%ftp"
+                      },
+                      "duration": 600,
+                      "warmup": true,
+                      "text": "Varm-op"
+                    },
+                    {
+                      "power": {
+                        "start": 62,
+                        "end": 62,
+                        "units": "%ftp"
+                      },
+                      "duration": 1200,
+                      "text": "Zone 2 62% FTP"
+                    },
+                    {
+                      "reps": 4,
+                      "text": "4x",
+                      "steps": [
+                        {
+                          "power": {
+                            "start": 85,
+                            "end": 85,
+                            "units": "%ftp"
+                          },
+                          "duration": 120,
+                          "text": "Åbner 95+ rpm 85% FTP",
+                          "cadence": {
+                            "start": 95,
+                            "end": 95,
+                            "units": "rpm"
+                          }
+                        },
+                        {
+                          "power": {
+                            "start": 48,
+                            "end": 48,
+                            "units": "%ftp"
+                          },
+                          "duration": 180,
+                          "text": "Let 48% FTP"
+                        }
+                      ]
+                    },
+                    {
+                      "ramp": true,
+                      "power": {
+                        "start": 62,
+                        "end": 40,
+                        "units": "%ftp"
+                      },
+                      "duration": 600,
+                      "cooldown": true,
+                      "text": "Cool-down"
+                    }
+                  ]
+                }
+              },
+              "note": "Z2 åbnere — kort kælderpas før styrke",
+              "libraryId": "z2_aabnere_60",
+              "id": "745f6a02"
+            },
             {
               "workout": {
                 "name": "Styrke Unilateral B 3 sæt",
@@ -6387,7 +7308,7 @@
                 }
               },
               "note": "Styrke Unilateral B",
-              "id": "9e776597"
+              "id": "b65a88a8"
             }
           ]
         },
@@ -6396,89 +7317,37 @@
           "entries": [
             {
               "workout": {
-                "name": "Cykel Z2+Z3 105 min",
-                "type": "Ride",
-                "moving_time": 6300,
-                "description": "- Varm-op 15m ramp 45-68% FTP\n- Aerob base 25m 56-76% FTP\n- Sweet spot-blok 50m 76-91% FTP\n- Cool-down 15m ramp 76-45% FTP",
-                "workout_doc": {
-                  "steps": [
-                    {
-                      "ramp": true,
-                      "power": {
-                        "start": 45,
-                        "end": 68,
-                        "units": "%ftp"
-                      },
-                      "duration": 900,
-                      "warmup": true
-                    },
-                    {
-                      "text": "Aerob base 56-76% FTP",
-                      "power": {
-                        "start": 56,
-                        "end": 76,
-                        "units": "%ftp"
-                      },
-                      "duration": 1500
-                    },
-                    {
-                      "text": "Sweet spot-blok 76-91% FTP",
-                      "power": {
-                        "start": 76,
-                        "end": 91,
-                        "units": "%ftp"
-                      },
-                      "duration": 3000
-                    },
-                    {
-                      "ramp": true,
-                      "power": {
-                        "start": 76,
-                        "end": 45,
-                        "units": "%ftp"
-                      },
-                      "duration": 900,
-                      "cooldown": true
-                    }
-                  ]
-                }
-              },
-              "note": "Cykel Z2+Z3",
-              "id": "032cc9a2"
-            },
-            {
-              "workout": {
-                "name": "Svøm almindelig 2500m",
+                "name": "Svøm teknik 1500m (fokus: hoved)",
                 "type": "Swim",
-                "moving_time": 4800,
-                "description": "- Opvarmning 400m rolig\n- Hovedsæt: 8×100m i jævnt tempo, 15-20 sek pause (800m)\n- 4×100m lidt hurtigere, 20 sek pause (400m)\n- Frit — distance/intervaller efter form, ingen drills (500m)\n- Udsvømning 400m rolig\n\n2500m i alt. Formål: teste om ugens teknikfokus fra onsdag sidder uden bevidst tanke, under normal belastning.",
+                "moving_time": 3600,
+                "description": "- Opvarmning 300m rolig, blandet\n- Drill-sæt: 8×25m Catch-up drill (én arm i ro fremme til den anden er helt fremme før næste tag), 15-20 sek pause\n- Main set: 8×50m hurtigt men med formen intakt, 20 sek pause — fokus: hoved nede og stille, tør nakke\n- Kick-sæt: 4×50m, fokus benspark/kropsposition, 20 sek pause\n- Udsvømning 400m rolig\n\n1500m i alt. Ét fokuspunkt ad gangen — roterer uge for uge (catch → hoved → hofte).",
                 "workout_doc": {
                   "steps": [
                     {
-                      "text": "Opvarmning rolig",
+                      "text": "Opvarmning rolig, blandet",
+                      "duration": 900
+                    },
+                    {
+                      "text": "8×25m Catch-up drill (én arm i ro fremme til den anden er helt fremme før næste tag)",
+                      "duration": 900
+                    },
+                    {
+                      "text": "Main set 8×50m hurtigt, form intakt — hoved nede og stille, tør nakke",
+                      "duration": 900
+                    },
+                    {
+                      "text": "Kick-sæt 4×50m — benspark/kropsposition",
                       "duration": 600
-                    },
-                    {
-                      "text": "8×100m jævnt tempo",
-                      "duration": 1500
-                    },
-                    {
-                      "text": "4×100m lidt hurtigere",
-                      "duration": 900
-                    },
-                    {
-                      "text": "Frit — distance/intervaller efter form",
-                      "duration": 900
                     },
                     {
                       "text": "Udsvømning rolig",
-                      "duration": 600
+                      "duration": 300
                     }
                   ]
                 }
               },
-              "note": "Svøm 2×/uge fra uge 3 — almindeligt pas (Kildeskovshallen)",
-              "id": "b75264b3"
+              "note": "Svøm teknik let (Kildeskovshallen) — fokus hoved",
+              "id": "65d9d9ef"
             }
           ]
         },
@@ -6487,46 +7356,76 @@
           "entries": [
             {
               "workout": {
-                "name": "Cykel Z2 165 min",
+                "name": "FaF 2 Dur - Negativ split 2 t",
                 "type": "Ride",
-                "moving_time": 9900,
-                "description": "- Varm-op 10m ramp 45-68% FTP\n- Aerob base 150m 56-76% FTP\n- Cool-down 5m ramp 68-45% FTP",
+                "moving_time": 7800,
+                "description": "- Varm-op 12m ramp 45-62% FTP\n- Z2 35m 66% FTP\n- Z2 35m 70% FTP\n- Op i Z3 20m 80% FTP\n- Z3 højere 20m 83% FTP\n- Cool-down 8m ramp 60-40% FTP\n\nFORMÅL: Halvanden time Z2, derefter 40 minutter løftet til Z3. Træner at producere kvalitet i forudtrættet tilstand — uden prisen for et fuldt tærskelpas.",
                 "workout_doc": {
                   "steps": [
                     {
                       "ramp": true,
                       "power": {
                         "start": 45,
-                        "end": 68,
+                        "end": 62,
                         "units": "%ftp"
                       },
-                      "duration": 600,
-                      "warmup": true
+                      "duration": 720,
+                      "warmup": true,
+                      "text": "Varm-op"
                     },
                     {
-                      "text": "Aerob base 56-76% FTP",
                       "power": {
-                        "start": 56,
-                        "end": 76,
+                        "start": 66,
+                        "end": 66,
                         "units": "%ftp"
                       },
-                      "duration": 9000
+                      "duration": 2100,
+                      "text": "Z2 66% FTP"
+                    },
+                    {
+                      "power": {
+                        "start": 70,
+                        "end": 70,
+                        "units": "%ftp"
+                      },
+                      "duration": 2100,
+                      "text": "Z2 70% FTP"
+                    },
+                    {
+                      "power": {
+                        "start": 80,
+                        "end": 80,
+                        "units": "%ftp"
+                      },
+                      "duration": 1200,
+                      "text": "Op i Z3 80% FTP"
+                    },
+                    {
+                      "power": {
+                        "start": 83,
+                        "end": 83,
+                        "units": "%ftp"
+                      },
+                      "duration": 1200,
+                      "text": "Z3 højere 83% FTP"
                     },
                     {
                       "ramp": true,
                       "power": {
-                        "start": 68,
-                        "end": 45,
+                        "start": 60,
+                        "end": 40,
                         "units": "%ftp"
                       },
-                      "duration": 300,
-                      "cooldown": true
+                      "duration": 480,
+                      "cooldown": true,
+                      "text": "Cool-down"
                     }
                   ]
                 }
               },
-              "note": "Lang cykel Z2 — ugens nøgletur",
-              "id": "f9dee8bd"
+              "note": "Ude hvis tørt og >8 °C, ren Z2 samme varighed; ellers kælder",
+              "libraryId": "dur_negativ_split",
+              "id": "d7a733a9"
             }
           ]
         },
@@ -6571,8 +7470,8 @@
                   ]
                 }
               },
-              "note": "Løb Z2",
-              "id": "3fb578f1"
+              "note": "Løb Z2 — ugens lange løb",
+              "id": "cf8b15d4"
             }
           ]
         },
@@ -6616,8 +7515,8 @@
                   ]
                 }
               },
-              "note": "Styrke recovery",
-              "id": "9f9a81e4"
+              "note": "Recovery-uge — styrke 2 sæt let",
+              "id": "aaa159ce"
             }
           ]
         },
@@ -6626,46 +7525,78 @@
           "entries": [
             {
               "workout": {
-                "name": "Cykel Z2 70 min",
+                "name": "FaF 1 Z2 - Åbnere 60",
                 "type": "Ride",
-                "moving_time": 4200,
-                "description": "- Varm-op 10m ramp 45-68% FTP\n- Aerob base 55m 56-76% FTP\n- Cool-down 5m ramp 68-45% FTP",
+                "moving_time": 3600,
+                "description": "- Varm-op 10m ramp 45-62% FTP\n- Zone 2 20m 62% FTP\n\n4x \n- Åbner 95+ rpm 2m 85% FTP @ 95 rpm\n- Let 3m 48% FTP\n\n- Cool-down 10m ramp 62-40% FTP\n\nFORMÅL: Race-uge og stille uger. Zone 2 med fire korte åbnere i høj kadence, så benene vågner uden at der bygges træthed. Bygget 2/9-2026 to dage før Médoc.\n\nBenene skal føles lette bagefter — ellers var det for hårdt. Ikke et træningspas.",
                 "workout_doc": {
                   "steps": [
                     {
                       "ramp": true,
                       "power": {
                         "start": 45,
-                        "end": 68,
+                        "end": 62,
                         "units": "%ftp"
                       },
                       "duration": 600,
-                      "warmup": true
+                      "warmup": true,
+                      "text": "Varm-op"
                     },
                     {
-                      "text": "Aerob base 56-76% FTP",
                       "power": {
-                        "start": 56,
-                        "end": 76,
+                        "start": 62,
+                        "end": 62,
                         "units": "%ftp"
                       },
-                      "duration": 3300
+                      "duration": 1200,
+                      "text": "Zone 2 62% FTP"
+                    },
+                    {
+                      "reps": 4,
+                      "text": "4x",
+                      "steps": [
+                        {
+                          "power": {
+                            "start": 85,
+                            "end": 85,
+                            "units": "%ftp"
+                          },
+                          "duration": 120,
+                          "text": "Åbner 95+ rpm 85% FTP",
+                          "cadence": {
+                            "start": 95,
+                            "end": 95,
+                            "units": "rpm"
+                          }
+                        },
+                        {
+                          "power": {
+                            "start": 48,
+                            "end": 48,
+                            "units": "%ftp"
+                          },
+                          "duration": 180,
+                          "text": "Let 48% FTP"
+                        }
+                      ]
                     },
                     {
                       "ramp": true,
                       "power": {
-                        "start": 68,
-                        "end": 45,
+                        "start": 62,
+                        "end": 40,
                         "units": "%ftp"
                       },
-                      "duration": 300,
-                      "cooldown": true
+                      "duration": 600,
+                      "cooldown": true,
+                      "text": "Cool-down"
                     }
                   ]
                 }
               },
-              "note": "Cykel Z2",
-              "id": "d2d7cf9b"
+              "note": "Z2 åbnere — let, recovery-uge",
+              "libraryId": "z2_aabnere_60",
+              "id": "b693c850"
             }
           ]
         },
@@ -6674,10 +7605,10 @@
           "entries": [
             {
               "workout": {
-                "name": "Løb Z2 45 min",
+                "name": "Løb Z2 40 min",
                 "type": "Run",
-                "moving_time": 2700,
-                "description": "- Varm-op 10m >5:39/km Pace\n- Base 30m 5:00-5:38/km Pace\n- Cool-down 5m >5:39/km Pace",
+                "moving_time": 2400,
+                "description": "- Varm-op 10m >5:39/km Pace\n- Base 25m 5:00-5:38/km Pace\n- Cool-down 5m >5:39/km Pace",
                 "workout_doc": {
                   "steps": [
                     {
@@ -6696,7 +7627,7 @@
                         "end": 88,
                         "units": "%pace"
                       },
-                      "duration": 1800
+                      "duration": 1500
                     },
                     {
                       "text": "Cool-down >5:39/km",
@@ -6710,42 +7641,8 @@
                   ]
                 }
               },
-              "note": "Løb Z2",
-              "id": "64726e4d"
-            },
-            {
-              "workout": {
-                "name": "Svøm teknik 1500m (fokus: hofte)",
-                "type": "Swim",
-                "moving_time": 3600,
-                "description": "- Opvarmning 300m rolig, blandet\n- Drill-sæt: 8×25m Enarmscrawl m/finner (passiv arm langs siden, rotér fra hoften for at holde fart), 15-20 sek pause\n- Main set: 8×50m hurtigt men med formen intakt, 20 sek pause — fokus: rotation og skub fra hoften, ikke skuldrene\n- Kick-sæt: 4×50m, fokus benspark/kropsposition, 20 sek pause\n- Udsvømning 400m rolig\n\n1500m i alt. Ét fokuspunkt ad gangen — roterer uge for uge (catch → hoved → hofte).",
-                "workout_doc": {
-                  "steps": [
-                    {
-                      "text": "Opvarmning rolig, blandet",
-                      "duration": 900
-                    },
-                    {
-                      "text": "8×25m Enarmscrawl m/finner (passiv arm langs siden, rotér fra hoften for at holde fart)",
-                      "duration": 900
-                    },
-                    {
-                      "text": "Main set 8×50m hurtigt, form intakt — rotation og skub fra hoften, ikke skuldrene",
-                      "duration": 900
-                    },
-                    {
-                      "text": "Kick-sæt 4×50m — benspark/kropsposition",
-                      "duration": 600
-                    },
-                    {
-                      "text": "Udsvømning rolig",
-                      "duration": 300
-                    }
-                  ]
-                }
-              },
-              "note": "Svøm 2×/uge fra uge 3 — teknikpas (Kildeskovshallen), fokus hofte",
-              "id": "f9b3d1d8"
+              "note": "Løb Z2 let — recovery",
+              "id": "ff7ed91e"
             }
           ]
         },
@@ -6789,8 +7686,8 @@
                   ]
                 }
               },
-              "note": "Styrke recovery",
-              "id": "8eb5c69d"
+              "note": "Recovery-uge — styrke 2 sæt let",
+              "id": "0e612c15"
             }
           ]
         },
@@ -6799,93 +7696,37 @@
           "entries": [
             {
               "workout": {
-                "name": "FTP-TEST 20 min (opdatér zoner efter)",
-                "type": "Ride",
-                "moving_time": 3900,
-                "description": "- Varm-op progressiv 20m ramp 45-72% FTP\n- Åbner 5 min 5m 91-100% FTP\n- Let 5m 44-56% FTP\n- 20 MIN ALL-OUT TEST — jævn max-indsats 20m freeride\n- Cool-down 15m ramp 60-40% FTP\n\nEfter testen: nyt FTP = 95% af 20-min snit-watt. Opdatér i Intervals → Settings.",
-                "workout_doc": {
-                  "steps": [
-                    {
-                      "ramp": true,
-                      "power": {
-                        "start": 45,
-                        "end": 72,
-                        "units": "%ftp"
-                      },
-                      "duration": 1200,
-                      "warmup": true
-                    },
-                    {
-                      "text": "Åbner 5 min 91-100% FTP",
-                      "power": {
-                        "start": 91,
-                        "end": 100,
-                        "units": "%ftp"
-                      },
-                      "duration": 300
-                    },
-                    {
-                      "text": "Let 44-56% FTP",
-                      "power": {
-                        "start": 44,
-                        "end": 56,
-                        "units": "%ftp"
-                      },
-                      "duration": 300
-                    },
-                    {
-                      "text": "20 MIN ALL-OUT TEST — jævn max-indsats",
-                      "duration": 1200
-                    },
-                    {
-                      "ramp": true,
-                      "power": {
-                        "start": 60,
-                        "end": 40,
-                        "units": "%ftp"
-                      },
-                      "duration": 900,
-                      "cooldown": true
-                    }
-                  ]
-                }
-              },
-              "note": "Baseline for 2027-sporet — watt beskyttes under cuttet, ikke jages",
-              "id": "59e96f75"
-            },
-            {
-              "workout": {
-                "name": "Svøm almindelig 2500m",
+                "name": "Svøm teknik 1500m (fokus: hofte)",
                 "type": "Swim",
-                "moving_time": 4800,
-                "description": "- Opvarmning 400m rolig\n- Hovedsæt: 8×100m i jævnt tempo, 15-20 sek pause (800m)\n- 4×100m lidt hurtigere, 20 sek pause (400m)\n- Frit — distance/intervaller efter form, ingen drills (500m)\n- Udsvømning 400m rolig\n\n2500m i alt. Formål: teste om ugens teknikfokus fra onsdag sidder uden bevidst tanke, under normal belastning.",
+                "moving_time": 3600,
+                "description": "- Opvarmning 300m rolig, blandet\n- Drill-sæt: 8×25m Enarmscrawl m/finner (passiv arm langs siden, rotér fra hoften for at holde fart), 15-20 sek pause\n- Main set: 8×50m hurtigt men med formen intakt, 20 sek pause — fokus: rotation og skub fra hoften, ikke skuldrene\n- Kick-sæt: 4×50m, fokus benspark/kropsposition, 20 sek pause\n- Udsvømning 400m rolig\n\n1500m i alt. Ét fokuspunkt ad gangen — roterer uge for uge (catch → hoved → hofte).",
                 "workout_doc": {
                   "steps": [
                     {
-                      "text": "Opvarmning rolig",
+                      "text": "Opvarmning rolig, blandet",
+                      "duration": 900
+                    },
+                    {
+                      "text": "8×25m Enarmscrawl m/finner (passiv arm langs siden, rotér fra hoften for at holde fart)",
+                      "duration": 900
+                    },
+                    {
+                      "text": "Main set 8×50m hurtigt, form intakt — rotation og skub fra hoften, ikke skuldrene",
+                      "duration": 900
+                    },
+                    {
+                      "text": "Kick-sæt 4×50m — benspark/kropsposition",
                       "duration": 600
-                    },
-                    {
-                      "text": "8×100m jævnt tempo",
-                      "duration": 1500
-                    },
-                    {
-                      "text": "4×100m lidt hurtigere",
-                      "duration": 900
-                    },
-                    {
-                      "text": "Frit — distance/intervaller efter form",
-                      "duration": 900
                     },
                     {
                       "text": "Udsvømning rolig",
-                      "duration": 600
+                      "duration": 300
                     }
                   ]
                 }
               },
-              "note": "Svøm 2×/uge fra uge 3 — almindeligt pas (Kildeskovshallen)",
-              "id": "0fb6e6fc"
+              "note": "Svøm teknik let (Kildeskovshallen) — fokus hofte",
+              "id": "4109401a"
             }
           ]
         },
@@ -6894,46 +7735,86 @@
           "entries": [
             {
               "workout": {
-                "name": "Cykel Z2 140 min",
+                "name": "FaF 1 Z2 - Grundtur 80",
                 "type": "Ride",
-                "moving_time": 8400,
-                "description": "- Varm-op 10m ramp 45-68% FTP\n- Aerob base 125m 56-76% FTP\n- Cool-down 5m ramp 68-45% FTP",
+                "moving_time": 4800,
+                "description": "- Varm-op 10m ramp 45-62% FTP\n- Zone 2 25m 66% FTP\n- Kadence 100 5m 70% FTP @ 100 rpm\n- Zone 2 25m 66% FTP\n- Kadence 100 5m 70% FTP @ 100 rpm\n- Cool-down 10m ramp 62-40% FTP\n\nFORMÅL: Ren zone 2. Skal føles kedeligt. Fundamentet under alt andet — og den enkeltfaktor der bedst forudsiger hvor lidt VO2max falder med alderen.",
                 "workout_doc": {
                   "steps": [
                     {
                       "ramp": true,
                       "power": {
                         "start": 45,
-                        "end": 68,
+                        "end": 62,
                         "units": "%ftp"
                       },
                       "duration": 600,
-                      "warmup": true
+                      "warmup": true,
+                      "text": "Varm-op"
                     },
                     {
-                      "text": "Aerob base 56-76% FTP",
                       "power": {
-                        "start": 56,
-                        "end": 76,
+                        "start": 66,
+                        "end": 66,
                         "units": "%ftp"
                       },
-                      "duration": 7500
+                      "duration": 1500,
+                      "text": "Zone 2 66% FTP"
+                    },
+                    {
+                      "power": {
+                        "start": 70,
+                        "end": 70,
+                        "units": "%ftp"
+                      },
+                      "duration": 300,
+                      "text": "Kadence 100 70% FTP",
+                      "cadence": {
+                        "start": 100,
+                        "end": 100,
+                        "units": "rpm"
+                      }
+                    },
+                    {
+                      "power": {
+                        "start": 66,
+                        "end": 66,
+                        "units": "%ftp"
+                      },
+                      "duration": 1500,
+                      "text": "Zone 2 66% FTP"
+                    },
+                    {
+                      "power": {
+                        "start": 70,
+                        "end": 70,
+                        "units": "%ftp"
+                      },
+                      "duration": 300,
+                      "text": "Kadence 100 70% FTP",
+                      "cadence": {
+                        "start": 100,
+                        "end": 100,
+                        "units": "rpm"
+                      }
                     },
                     {
                       "ramp": true,
                       "power": {
-                        "start": 68,
-                        "end": 45,
+                        "start": 62,
+                        "end": 40,
                         "units": "%ftp"
                       },
-                      "duration": 300,
-                      "cooldown": true
+                      "duration": 600,
+                      "cooldown": true,
+                      "text": "Cool-down"
                     }
                   ]
                 }
               },
-              "note": "Lang cykel Z2",
-              "id": "3a3cde33"
+              "note": "Ude hvis tørt og >8 °C, ren Z2 samme varighed; ellers kælder",
+              "libraryId": "z2_grundtur_80",
+              "id": "1e402480"
             }
           ]
         },
@@ -6941,9 +7822,22 @@
           "date": "2026-10-11",
           "entries": [
             {
-              "workout": null,
-              "note": "Hvile — recovery-uge",
-              "id": "a16a7ce2"
+              "workout": {
+                "name": "Gang let 60 min",
+                "type": "Hike",
+                "moving_time": 3600,
+                "description": "- Gang Z1 60m freeride",
+                "workout_doc": {
+                  "steps": [
+                    {
+                      "text": "Gang Z1",
+                      "duration": 3600
+                    }
+                  ]
+                }
+              },
+              "note": "Gang — recovery-ugen slutter let",
+              "id": "cf0a391b"
             }
           ]
         },
@@ -6992,7 +7886,7 @@
                 }
               },
               "note": "Styrke Unilateral A",
-              "id": "33b27dbb"
+              "id": "fd380a6b"
             }
           ]
         },
@@ -7001,46 +7895,118 @@
           "entries": [
             {
               "workout": {
-                "name": "Cykel Z2 80 min",
+                "name": "FaF 3 SS - 3 x 15",
                 "type": "Ride",
-                "moving_time": 4800,
-                "description": "- Varm-op 10m ramp 45-68% FTP\n- Aerob base 65m 56-76% FTP\n- Cool-down 5m ramp 68-45% FTP",
+                "moving_time": 5040,
+                "description": "- Varm-op 10m ramp 45-70% FTP\n\n3x \n- Åbner 1m 95% FTP\n- Pause 1m 55% FTP\n\n- Let 5m 62% FTP\n- BLOK 1 15m 89% FTP\n- Pause 5m 55% FTP\n- BLOK 2 15m 89% FTP\n- Pause 5m 55% FTP\n- BLOK 3 15m 90% FTP\n- Cool-down 8m ramp 60-40% FTP\n\nFORMÅL: Sweet spot som volumenværktøj — ikke som rygrad. Evidensen er svagere end populariteten: restitutionsprisen nærmer sig tærskelarbejdets uden stimulussen.\n\nKun ét sweet spot-pas i biblioteket, med vilje. Laktat i 3-6 mmol hæmmer CPT1/CPT2 og modarbejder fedtoxidationen Ultrafondo lever af.",
                 "workout_doc": {
                   "steps": [
                     {
                       "ramp": true,
                       "power": {
                         "start": 45,
-                        "end": 68,
+                        "end": 70,
                         "units": "%ftp"
                       },
                       "duration": 600,
-                      "warmup": true
+                      "warmup": true,
+                      "text": "Varm-op"
                     },
                     {
-                      "text": "Aerob base 56-76% FTP",
+                      "reps": 3,
+                      "text": "3x",
+                      "steps": [
+                        {
+                          "power": {
+                            "start": 95,
+                            "end": 95,
+                            "units": "%ftp"
+                          },
+                          "duration": 60,
+                          "text": "Åbner 95% FTP"
+                        },
+                        {
+                          "power": {
+                            "start": 55,
+                            "end": 55,
+                            "units": "%ftp"
+                          },
+                          "duration": 60,
+                          "text": "Pause 55% FTP"
+                        }
+                      ]
+                    },
+                    {
                       "power": {
-                        "start": 56,
-                        "end": 76,
+                        "start": 62,
+                        "end": 62,
                         "units": "%ftp"
                       },
-                      "duration": 3900
+                      "duration": 300,
+                      "text": "Let 62% FTP"
+                    },
+                    {
+                      "power": {
+                        "start": 89,
+                        "end": 89,
+                        "units": "%ftp"
+                      },
+                      "duration": 900,
+                      "text": "BLOK 1 89% FTP"
+                    },
+                    {
+                      "power": {
+                        "start": 55,
+                        "end": 55,
+                        "units": "%ftp"
+                      },
+                      "duration": 300,
+                      "text": "Pause 55% FTP"
+                    },
+                    {
+                      "power": {
+                        "start": 89,
+                        "end": 89,
+                        "units": "%ftp"
+                      },
+                      "duration": 900,
+                      "text": "BLOK 2 89% FTP"
+                    },
+                    {
+                      "power": {
+                        "start": 55,
+                        "end": 55,
+                        "units": "%ftp"
+                      },
+                      "duration": 300,
+                      "text": "Pause 55% FTP"
+                    },
+                    {
+                      "power": {
+                        "start": 90,
+                        "end": 90,
+                        "units": "%ftp"
+                      },
+                      "duration": 900,
+                      "text": "BLOK 3 90% FTP"
                     },
                     {
                       "ramp": true,
                       "power": {
-                        "start": 68,
-                        "end": 45,
+                        "start": 60,
+                        "end": 40,
                         "units": "%ftp"
                       },
-                      "duration": 300,
-                      "cooldown": true
+                      "duration": 480,
+                      "cooldown": true,
+                      "text": "Cool-down"
                     }
                   ]
                 }
               },
-              "note": "Cykel Z2 — cykel er primær fra uge 3",
-              "id": "697a452d"
+              "note": "Sweet spot — ugens moderate pas",
+              "libraryId": "ss_3x15",
+              "id": "90102880"
             }
           ]
         },
@@ -7049,10 +8015,10 @@
           "entries": [
             {
               "workout": {
-                "name": "Løb Z2 50 min",
+                "name": "Løb Z2 45 min",
                 "type": "Run",
-                "moving_time": 3000,
-                "description": "- Varm-op 10m >5:39/km Pace\n- Base 35m 5:00-5:38/km Pace\n- Cool-down 5m >5:39/km Pace",
+                "moving_time": 2700,
+                "description": "- Varm-op 10m >5:39/km Pace\n- Base 30m 5:00-5:38/km Pace\n- Cool-down 5m >5:39/km Pace",
                 "workout_doc": {
                   "steps": [
                     {
@@ -7071,7 +8037,7 @@
                         "end": 88,
                         "units": "%pace"
                       },
-                      "duration": 2100
+                      "duration": 1800
                     },
                     {
                       "text": "Cool-down >5:39/km",
@@ -7086,46 +8052,204 @@
                 }
               },
               "note": "Løb Z2",
-              "id": "1baf83a1"
-            },
-            {
-              "workout": {
-                "name": "Svøm teknik 1500m (fokus: catch)",
-                "type": "Swim",
-                "moving_time": 3600,
-                "description": "- Opvarmning 300m rolig, blandet\n- Drill-sæt: 8×25m Fist swim (svøm med lukkede næver — brug underarmen som åre, mærk fat i vandet), 15-20 sek pause\n- Main set: 8×50m hurtigt men med formen intakt, 20 sek pause — fokus: fat i vandet / træk fra ryg, ikke arm\n- Kick-sæt: 4×50m, fokus benspark/kropsposition, 20 sek pause\n- Udsvømning 400m rolig\n\n1500m i alt. Ét fokuspunkt ad gangen — roterer uge for uge (catch → hoved → hofte).",
-                "workout_doc": {
-                  "steps": [
-                    {
-                      "text": "Opvarmning rolig, blandet",
-                      "duration": 900
-                    },
-                    {
-                      "text": "8×25m Fist swim (svøm med lukkede næver — brug underarmen som åre, mærk fat i vandet)",
-                      "duration": 900
-                    },
-                    {
-                      "text": "Main set 8×50m hurtigt, form intakt — fat i vandet / træk fra ryg, ikke arm",
-                      "duration": 900
-                    },
-                    {
-                      "text": "Kick-sæt 4×50m — benspark/kropsposition",
-                      "duration": 600
-                    },
-                    {
-                      "text": "Udsvømning rolig",
-                      "duration": 300
-                    }
-                  ]
-                }
-              },
-              "note": "Svøm 2×/uge fra uge 3 — teknikpas (Kildeskovshallen), fokus catch",
-              "id": "2db3431b"
+              "id": "3d500d62"
             }
           ]
         },
         {
           "date": "2026-10-15",
+          "entries": [
+            {
+              "workout": {
+                "name": "FaF 4 Tær - Over-unders 3 x 10",
+                "type": "Ride",
+                "moving_time": 4260,
+                "description": "- Varm-op 10m ramp 45-70% FTP\n\n3x \n- Åbner 1m 100% FTP\n- Pause 1m 55% FTP\n\n- Let 5m 62% FTP\n\n3x BLOK 1\n- Under 2m 95% FTP\n- Over 1m 105% FTP\n\n- Ud 1m 95% FTP\n- Pause 6m 55% FTP\n\n3x BLOK 2\n- Under 2m 95% FTP\n- Over 1m 105% FTP\n\n- Ud 1m 95% FTP\n- Pause 6m 55% FTP\n\n3x BLOK 3\n- Under 2m 95% FTP\n- Over 1m 106% FTP\n\n- Ud 1m 96% FTP\n- Cool-down 8m ramp 60-40% FTP\n\nFORMÅL: 2 min under / 1 min over, uden pause imellem. Laktatclearing mens du stadig arbejder — det gradienten kræver når den skifter.\n\nPraksis-standard, men svag direkte evidens — ingen isoleret RCT mod lige tærskelintervaller. Fysiologisk logik er god.",
+                "workout_doc": {
+                  "steps": [
+                    {
+                      "ramp": true,
+                      "power": {
+                        "start": 45,
+                        "end": 70,
+                        "units": "%ftp"
+                      },
+                      "duration": 600,
+                      "warmup": true,
+                      "text": "Varm-op"
+                    },
+                    {
+                      "reps": 3,
+                      "text": "3x",
+                      "steps": [
+                        {
+                          "power": {
+                            "start": 100,
+                            "end": 100,
+                            "units": "%ftp"
+                          },
+                          "duration": 60,
+                          "text": "Åbner 100% FTP"
+                        },
+                        {
+                          "power": {
+                            "start": 55,
+                            "end": 55,
+                            "units": "%ftp"
+                          },
+                          "duration": 60,
+                          "text": "Pause 55% FTP"
+                        }
+                      ]
+                    },
+                    {
+                      "power": {
+                        "start": 62,
+                        "end": 62,
+                        "units": "%ftp"
+                      },
+                      "duration": 300,
+                      "text": "Let 62% FTP"
+                    },
+                    {
+                      "reps": 3,
+                      "text": "BLOK 1",
+                      "steps": [
+                        {
+                          "power": {
+                            "start": 95,
+                            "end": 95,
+                            "units": "%ftp"
+                          },
+                          "duration": 120,
+                          "text": "Under 95% FTP"
+                        },
+                        {
+                          "power": {
+                            "start": 105,
+                            "end": 105,
+                            "units": "%ftp"
+                          },
+                          "duration": 60,
+                          "text": "Over 105% FTP"
+                        }
+                      ]
+                    },
+                    {
+                      "power": {
+                        "start": 95,
+                        "end": 95,
+                        "units": "%ftp"
+                      },
+                      "duration": 60,
+                      "text": "Ud 95% FTP"
+                    },
+                    {
+                      "power": {
+                        "start": 55,
+                        "end": 55,
+                        "units": "%ftp"
+                      },
+                      "duration": 360,
+                      "text": "Pause 55% FTP"
+                    },
+                    {
+                      "reps": 3,
+                      "text": "BLOK 2",
+                      "steps": [
+                        {
+                          "power": {
+                            "start": 95,
+                            "end": 95,
+                            "units": "%ftp"
+                          },
+                          "duration": 120,
+                          "text": "Under 95% FTP"
+                        },
+                        {
+                          "power": {
+                            "start": 105,
+                            "end": 105,
+                            "units": "%ftp"
+                          },
+                          "duration": 60,
+                          "text": "Over 105% FTP"
+                        }
+                      ]
+                    },
+                    {
+                      "power": {
+                        "start": 95,
+                        "end": 95,
+                        "units": "%ftp"
+                      },
+                      "duration": 60,
+                      "text": "Ud 95% FTP"
+                    },
+                    {
+                      "power": {
+                        "start": 55,
+                        "end": 55,
+                        "units": "%ftp"
+                      },
+                      "duration": 360,
+                      "text": "Pause 55% FTP"
+                    },
+                    {
+                      "reps": 3,
+                      "text": "BLOK 3",
+                      "steps": [
+                        {
+                          "power": {
+                            "start": 95,
+                            "end": 95,
+                            "units": "%ftp"
+                          },
+                          "duration": 120,
+                          "text": "Under 95% FTP"
+                        },
+                        {
+                          "power": {
+                            "start": 106,
+                            "end": 106,
+                            "units": "%ftp"
+                          },
+                          "duration": 60,
+                          "text": "Over 106% FTP"
+                        }
+                      ]
+                    },
+                    {
+                      "power": {
+                        "start": 96,
+                        "end": 96,
+                        "units": "%ftp"
+                      },
+                      "duration": 60,
+                      "text": "Ud 96% FTP"
+                    },
+                    {
+                      "ramp": true,
+                      "power": {
+                        "start": 60,
+                        "end": 40,
+                        "units": "%ftp"
+                      },
+                      "duration": 480,
+                      "cooldown": true,
+                      "text": "Cool-down"
+                    }
+                  ]
+                }
+              },
+              "note": "Tærskel — ugens hårde pas",
+              "libraryId": "tae_over_unders",
+              "id": "1ad65b9a"
+            }
+          ]
+        },
+        {
+          "date": "2026-10-16",
           "entries": [
             {
               "workout": {
@@ -7169,98 +8293,41 @@
                 }
               },
               "note": "Styrke Unilateral B",
-              "id": "35e596ea"
-            }
-          ]
-        },
-        {
-          "date": "2026-10-16",
-          "entries": [
-            {
-              "workout": {
-                "name": "Cykel Z2+Z3 115 min",
-                "type": "Ride",
-                "moving_time": 6900,
-                "description": "- Varm-op 15m ramp 45-68% FTP\n- Aerob base 30m 56-76% FTP\n- Sweet spot-blok 55m 76-91% FTP\n- Cool-down 15m ramp 76-45% FTP",
-                "workout_doc": {
-                  "steps": [
-                    {
-                      "ramp": true,
-                      "power": {
-                        "start": 45,
-                        "end": 68,
-                        "units": "%ftp"
-                      },
-                      "duration": 900,
-                      "warmup": true
-                    },
-                    {
-                      "text": "Aerob base 56-76% FTP",
-                      "power": {
-                        "start": 56,
-                        "end": 76,
-                        "units": "%ftp"
-                      },
-                      "duration": 1800
-                    },
-                    {
-                      "text": "Sweet spot-blok 76-91% FTP",
-                      "power": {
-                        "start": 76,
-                        "end": 91,
-                        "units": "%ftp"
-                      },
-                      "duration": 3300
-                    },
-                    {
-                      "ramp": true,
-                      "power": {
-                        "start": 76,
-                        "end": 45,
-                        "units": "%ftp"
-                      },
-                      "duration": 900,
-                      "cooldown": true
-                    }
-                  ]
-                }
-              },
-              "note": "Cykel Z2+Z3",
-              "id": "8c529b45"
+              "id": "371cb833"
             },
             {
               "workout": {
-                "name": "Svøm almindelig 2500m",
+                "name": "Svøm teknik 1500m (fokus: catch)",
                 "type": "Swim",
-                "moving_time": 4800,
-                "description": "- Opvarmning 400m rolig\n- Hovedsæt: 8×100m i jævnt tempo, 15-20 sek pause (800m)\n- 4×100m lidt hurtigere, 20 sek pause (400m)\n- Frit — distance/intervaller efter form, ingen drills (500m)\n- Udsvømning 400m rolig\n\n2500m i alt. Formål: teste om ugens teknikfokus fra onsdag sidder uden bevidst tanke, under normal belastning.",
+                "moving_time": 3600,
+                "description": "- Opvarmning 300m rolig, blandet\n- Drill-sæt: 8×25m Fist swim (svøm med lukkede næver — brug underarmen som åre, mærk fat i vandet), 15-20 sek pause\n- Main set: 8×50m hurtigt men med formen intakt, 20 sek pause — fokus: fat i vandet / træk fra ryg, ikke arm\n- Kick-sæt: 4×50m, fokus benspark/kropsposition, 20 sek pause\n- Udsvømning 400m rolig\n\n1500m i alt. Ét fokuspunkt ad gangen — roterer uge for uge (catch → hoved → hofte).",
                 "workout_doc": {
                   "steps": [
                     {
-                      "text": "Opvarmning rolig",
+                      "text": "Opvarmning rolig, blandet",
+                      "duration": 900
+                    },
+                    {
+                      "text": "8×25m Fist swim (svøm med lukkede næver — brug underarmen som åre, mærk fat i vandet)",
+                      "duration": 900
+                    },
+                    {
+                      "text": "Main set 8×50m hurtigt, form intakt — fat i vandet / træk fra ryg, ikke arm",
+                      "duration": 900
+                    },
+                    {
+                      "text": "Kick-sæt 4×50m — benspark/kropsposition",
                       "duration": 600
-                    },
-                    {
-                      "text": "8×100m jævnt tempo",
-                      "duration": 1500
-                    },
-                    {
-                      "text": "4×100m lidt hurtigere",
-                      "duration": 900
-                    },
-                    {
-                      "text": "Frit — distance/intervaller efter form",
-                      "duration": 900
                     },
                     {
                       "text": "Udsvømning rolig",
-                      "duration": 600
+                      "duration": 300
                     }
                   ]
                 }
               },
-              "note": "Svøm 2×/uge fra uge 3 — almindeligt pas (Kildeskovshallen)",
-              "id": "9ba78b29"
+              "note": "Svøm teknik (Kildeskovshallen) — fokus catch",
+              "id": "98bea106"
             }
           ]
         },
@@ -7269,46 +8336,147 @@
           "entries": [
             {
               "workout": {
-                "name": "Cykel Z2 175 min",
+                "name": "FaF 2 Dur - Bjergtur 3 t",
                 "type": "Ride",
-                "moving_time": 10500,
-                "description": "- Varm-op 10m ramp 45-68% FTP\n- Aerob base 160m 56-76% FTP\n- Cool-down 5m ramp 68-45% FTP",
+                "moving_time": 11100,
+                "description": "- Varm-op 15m ramp 45-65% FTP\n- Z2 15m 66% FTP\n- STIGNING 1 30m 76% FTP @ 72 rpm\n- Nedkørsel 10m 60% FTP @ 95 rpm\n- STIGNING 2 30m 78% FTP @ 72 rpm\n- Nedkørsel 10m 60% FTP @ 95 rpm\n- STIGNING 3 30m 78% FTP @ 72 rpm\n- Nedkørsel 10m 60% FTP @ 95 rpm\n- STIGNING 4 25m 80% FTP @ 72 rpm\n- Cool-down 10m ramp 60-40% FTP\n\nFORMÅL: Fire stigningsblokke med energiplan hele vejen. Tættest på Tour des Stations hjemmefra. Kadence 72 — det er hvad der faktisk køres opad, ikke 55.",
                 "workout_doc": {
                   "steps": [
                     {
                       "ramp": true,
                       "power": {
                         "start": 45,
-                        "end": 68,
+                        "end": 65,
                         "units": "%ftp"
                       },
-                      "duration": 600,
-                      "warmup": true
+                      "duration": 900,
+                      "warmup": true,
+                      "text": "Varm-op"
                     },
                     {
-                      "text": "Aerob base 56-76% FTP",
                       "power": {
-                        "start": 56,
+                        "start": 66,
+                        "end": 66,
+                        "units": "%ftp"
+                      },
+                      "duration": 900,
+                      "text": "Z2 66% FTP"
+                    },
+                    {
+                      "power": {
+                        "start": 76,
                         "end": 76,
                         "units": "%ftp"
                       },
-                      "duration": 9600
+                      "duration": 1800,
+                      "text": "STIGNING 1 76% FTP",
+                      "cadence": {
+                        "start": 72,
+                        "end": 72,
+                        "units": "rpm"
+                      }
+                    },
+                    {
+                      "power": {
+                        "start": 60,
+                        "end": 60,
+                        "units": "%ftp"
+                      },
+                      "duration": 600,
+                      "text": "Nedkørsel 60% FTP",
+                      "cadence": {
+                        "start": 95,
+                        "end": 95,
+                        "units": "rpm"
+                      }
+                    },
+                    {
+                      "power": {
+                        "start": 78,
+                        "end": 78,
+                        "units": "%ftp"
+                      },
+                      "duration": 1800,
+                      "text": "STIGNING 2 78% FTP",
+                      "cadence": {
+                        "start": 72,
+                        "end": 72,
+                        "units": "rpm"
+                      }
+                    },
+                    {
+                      "power": {
+                        "start": 60,
+                        "end": 60,
+                        "units": "%ftp"
+                      },
+                      "duration": 600,
+                      "text": "Nedkørsel 60% FTP",
+                      "cadence": {
+                        "start": 95,
+                        "end": 95,
+                        "units": "rpm"
+                      }
+                    },
+                    {
+                      "power": {
+                        "start": 78,
+                        "end": 78,
+                        "units": "%ftp"
+                      },
+                      "duration": 1800,
+                      "text": "STIGNING 3 78% FTP",
+                      "cadence": {
+                        "start": 72,
+                        "end": 72,
+                        "units": "rpm"
+                      }
+                    },
+                    {
+                      "power": {
+                        "start": 60,
+                        "end": 60,
+                        "units": "%ftp"
+                      },
+                      "duration": 600,
+                      "text": "Nedkørsel 60% FTP",
+                      "cadence": {
+                        "start": 95,
+                        "end": 95,
+                        "units": "rpm"
+                      }
+                    },
+                    {
+                      "power": {
+                        "start": 80,
+                        "end": 80,
+                        "units": "%ftp"
+                      },
+                      "duration": 1500,
+                      "text": "STIGNING 4 80% FTP",
+                      "cadence": {
+                        "start": 72,
+                        "end": 72,
+                        "units": "rpm"
+                      }
                     },
                     {
                       "ramp": true,
                       "power": {
-                        "start": 68,
-                        "end": 45,
+                        "start": 60,
+                        "end": 40,
                         "units": "%ftp"
                       },
-                      "duration": 300,
-                      "cooldown": true
+                      "duration": 600,
+                      "cooldown": true,
+                      "text": "Cool-down"
                     }
                   ]
                 }
               },
-              "note": "Lang cykel Z2 — ugens nøgletur",
-              "id": "42eadbf1"
+              "note": "Kælder — lang bjergtur, moderat",
+              "libraryId": "dur_bjergtur_3t",
+              "id": "86dd12d6"
             }
           ]
         },
@@ -7317,10 +8485,10 @@
           "entries": [
             {
               "workout": {
-                "name": "Lang løb Z2 55 min",
+                "name": "Lang løb Z2 50 min",
                 "type": "Run",
-                "moving_time": 3300,
-                "description": "- Varm-op 10m >5:39/km Pace\n- Lang base 40m 5:00-5:38/km Pace\n- Cool-down 5m >5:39/km Pace",
+                "moving_time": 3000,
+                "description": "- Varm-op 10m >5:39/km Pace\n- Lang base 35m 5:00-5:38/km Pace\n- Cool-down 5m >5:39/km Pace",
                 "workout_doc": {
                   "steps": [
                     {
@@ -7339,7 +8507,7 @@
                         "end": 88,
                         "units": "%pace"
                       },
-                      "duration": 2400
+                      "duration": 2100
                     },
                     {
                       "text": "Cool-down >5:39/km",
@@ -7353,8 +8521,8 @@
                   ]
                 }
               },
-              "note": "Løb Z2",
-              "id": "2df9cc87"
+              "note": "Løb Z2 — ugens lange løb",
+              "id": "7c4cb9e9"
             }
           ]
         },
@@ -7403,7 +8571,7 @@
                 }
               },
               "note": "Styrke Unilateral A",
-              "id": "27c49631"
+              "id": "12acfc68"
             }
           ]
         },
@@ -7412,39 +8580,100 @@
           "entries": [
             {
               "workout": {
-                "name": "AEROB PROBE + Cykel Z2 85 min",
+                "name": "FaF 4 Tær - 3 x 12",
                 "type": "Ride",
-                "moving_time": 5100,
-                "description": "- Varm-op 10m ramp 45-60% FTP\n- PROBE 25 min @ 190 W FAST — samme watt hver gang 25m 68% FTP\n- Aerob base 45m 56-76% FTP\n- Cool-down 5m ramp 60-40% FTP\n\nPROBEN ER MÅLINGEN. Samme hometrainer, samme 190 W, samme tid på dagen, ventilator på. Notér gennemsnitspuls for de SIDSTE 15 min af proben.\nLavere puls end sidste måned = bedre form. Højere = træthed eller for stort underskud.\nKør ikke proben på trætte ben — flyt den en dag hvis TSB er under −20.",
+                "moving_time": 4620,
+                "description": "- Varm-op 10m ramp 45-70% FTP\n\n3x \n- Åbner 1m 100% FTP\n- Pause 1m 55% FTP\n\n- Let 5m 62% FTP\n- BLOK 1 12m 97% FTP\n- Pause 6m 55% FTP\n- BLOK 2 12m 98% FTP\n- Pause 6m 55% FTP\n- BLOK 3 12m 100% FTP\n- Cool-down 8m ramp 60-40% FTP\n\nFORMÅL: Tærskel 97-100%. Her flyttes FTP. Den sidste blok skal føles urimelig.",
                 "workout_doc": {
                   "steps": [
                     {
                       "ramp": true,
                       "power": {
                         "start": 45,
-                        "end": 60,
+                        "end": 70,
                         "units": "%ftp"
                       },
                       "duration": 600,
-                      "warmup": true
+                      "warmup": true,
+                      "text": "Varm-op"
                     },
                     {
-                      "text": "PROBE 25 min @ 190 W FAST — notér snit-puls sidste 15 min",
-                      "power": {
-                        "start": 68,
-                        "end": 68,
-                        "units": "%ftp"
-                      },
-                      "duration": 1500
+                      "reps": 3,
+                      "text": "3x",
+                      "steps": [
+                        {
+                          "power": {
+                            "start": 100,
+                            "end": 100,
+                            "units": "%ftp"
+                          },
+                          "duration": 60,
+                          "text": "Åbner 100% FTP"
+                        },
+                        {
+                          "power": {
+                            "start": 55,
+                            "end": 55,
+                            "units": "%ftp"
+                          },
+                          "duration": 60,
+                          "text": "Pause 55% FTP"
+                        }
+                      ]
                     },
                     {
-                      "text": "Aerob base 56-76% FTP",
                       "power": {
-                        "start": 56,
-                        "end": 76,
+                        "start": 62,
+                        "end": 62,
                         "units": "%ftp"
                       },
-                      "duration": 2700
+                      "duration": 300,
+                      "text": "Let 62% FTP"
+                    },
+                    {
+                      "power": {
+                        "start": 97,
+                        "end": 97,
+                        "units": "%ftp"
+                      },
+                      "duration": 720,
+                      "text": "BLOK 1 97% FTP"
+                    },
+                    {
+                      "power": {
+                        "start": 55,
+                        "end": 55,
+                        "units": "%ftp"
+                      },
+                      "duration": 360,
+                      "text": "Pause 55% FTP"
+                    },
+                    {
+                      "power": {
+                        "start": 98,
+                        "end": 98,
+                        "units": "%ftp"
+                      },
+                      "duration": 720,
+                      "text": "BLOK 2 98% FTP"
+                    },
+                    {
+                      "power": {
+                        "start": 55,
+                        "end": 55,
+                        "units": "%ftp"
+                      },
+                      "duration": 360,
+                      "text": "Pause 55% FTP"
+                    },
+                    {
+                      "power": {
+                        "start": 100,
+                        "end": 100,
+                        "units": "%ftp"
+                      },
+                      "duration": 720,
+                      "text": "BLOK 3 100% FTP"
                     },
                     {
                       "ramp": true,
@@ -7453,14 +8682,16 @@
                         "end": 40,
                         "units": "%ftp"
                       },
-                      "duration": 300,
-                      "cooldown": true
+                      "duration": 480,
+                      "cooldown": true,
+                      "text": "Cool-down"
                     }
                   ]
                 }
               },
-              "note": "AEROB PROBE — måned 2",
-              "id": "4af601af"
+              "note": "Tærskel — hårdt pas 1 (96 t til lørdag)",
+              "libraryId": "tae_3x12",
+              "id": "2b20bee2"
             }
           ]
         },
@@ -7469,10 +8700,10 @@
           "entries": [
             {
               "workout": {
-                "name": "AEROB PROBE + Løb Z2 50 min",
+                "name": "AEROB PROBE + Løb Z2 45 min",
                 "type": "Run",
-                "moving_time": 3000,
-                "description": "- Varm-op 10m >5:39/km Pace\n- PROBE 5 km @ 5:15/km FAST — samme rute hver gang 26m 5:15/km Pace\n- Base 9m 5:00-5:38/km Pace\n- Cool-down 5m >5:39/km Pace\n\nPROBEN ER MÅLINGEN. Samme flade rute, samme 5:15/km, samme tid på dagen. Notér gennemsnitspuls for de 5 km.\nLavere puls end sidste måned = bedre form. Højere = træthed eller for stort underskud.\nBlæst og over 22 grader ugyldiggør målingen — flyt den.",
+                "moving_time": 2700,
+                "description": "- Varm-op 10m >5:39/km Pace\n- PROBE 5 km @ 5:15/km FAST — samme rute hver gang 26m 5:15/km Pace\n- Base 4m 5:00-5:38/km Pace\n- Cool-down 5m >5:39/km Pace\n\nPROBEN ER MÅLINGEN. Samme flade rute, samme 5:15/km, samme tid på dagen. Notér gennemsnitspuls for de 5 km.\nLavere puls end sidste måned = bedre form. Højere = træthed eller for stort underskud.\nBlæst og over 22 grader ugyldiggør målingen — flyt den.",
                 "workout_doc": {
                   "steps": [
                     {
@@ -7500,7 +8731,7 @@
                         "end": 88,
                         "units": "%pace"
                       },
-                      "duration": 540
+                      "duration": 240
                     },
                     {
                       "text": "Cool-down >5:39/km",
@@ -7514,48 +8745,97 @@
                   ]
                 }
               },
-              "note": "AEROB PROBE — måned 2",
-              "id": "0bd207fa"
-            },
-            {
-              "workout": {
-                "name": "Svøm teknik 1500m (fokus: hoved)",
-                "type": "Swim",
-                "moving_time": 3600,
-                "description": "- Opvarmning 300m rolig, blandet\n- Drill-sæt: 8×25m Catch-up drill (én arm i ro fremme til den anden er helt fremme før næste tag), 15-20 sek pause\n- Main set: 8×50m hurtigt men med formen intakt, 20 sek pause — fokus: hoved nede og stille, tør nakke\n- Kick-sæt: 4×50m, fokus benspark/kropsposition, 20 sek pause\n- Udsvømning 400m rolig\n\n1500m i alt. Ét fokuspunkt ad gangen — roterer uge for uge (catch → hoved → hofte).",
-                "workout_doc": {
-                  "steps": [
-                    {
-                      "text": "Opvarmning rolig, blandet",
-                      "duration": 900
-                    },
-                    {
-                      "text": "8×25m Catch-up drill (én arm i ro fremme til den anden er helt fremme før næste tag)",
-                      "duration": 900
-                    },
-                    {
-                      "text": "Main set 8×50m hurtigt, form intakt — hoved nede og stille, tør nakke",
-                      "duration": 900
-                    },
-                    {
-                      "text": "Kick-sæt 4×50m — benspark/kropsposition",
-                      "duration": 600
-                    },
-                    {
-                      "text": "Udsvømning rolig",
-                      "duration": 300
-                    }
-                  ]
-                }
-              },
-              "note": "Svøm 2×/uge fra uge 3 — teknikpas (Kildeskovshallen), fokus hoved",
-              "id": "f5880c5c"
+              "note": "AEROB PROBE måned 2 — løb",
+              "id": "62c155e7"
             }
           ]
         },
         {
           "date": "2026-10-22",
           "entries": [
+            {
+              "workout": {
+                "name": "FaF 1 Z2 - Grundtur 80",
+                "type": "Ride",
+                "moving_time": 4800,
+                "description": "- Varm-op 10m ramp 45-62% FTP\n- Zone 2 25m 66% FTP\n- Kadence 100 5m 70% FTP @ 100 rpm\n- Zone 2 25m 66% FTP\n- Kadence 100 5m 70% FTP @ 100 rpm\n- Cool-down 10m ramp 62-40% FTP\n\nFORMÅL: Ren zone 2. Skal føles kedeligt. Fundamentet under alt andet — og den enkeltfaktor der bedst forudsiger hvor lidt VO2max falder med alderen.",
+                "workout_doc": {
+                  "steps": [
+                    {
+                      "ramp": true,
+                      "power": {
+                        "start": 45,
+                        "end": 62,
+                        "units": "%ftp"
+                      },
+                      "duration": 600,
+                      "warmup": true,
+                      "text": "Varm-op"
+                    },
+                    {
+                      "power": {
+                        "start": 66,
+                        "end": 66,
+                        "units": "%ftp"
+                      },
+                      "duration": 1500,
+                      "text": "Zone 2 66% FTP"
+                    },
+                    {
+                      "power": {
+                        "start": 70,
+                        "end": 70,
+                        "units": "%ftp"
+                      },
+                      "duration": 300,
+                      "text": "Kadence 100 70% FTP",
+                      "cadence": {
+                        "start": 100,
+                        "end": 100,
+                        "units": "rpm"
+                      }
+                    },
+                    {
+                      "power": {
+                        "start": 66,
+                        "end": 66,
+                        "units": "%ftp"
+                      },
+                      "duration": 1500,
+                      "text": "Zone 2 66% FTP"
+                    },
+                    {
+                      "power": {
+                        "start": 70,
+                        "end": 70,
+                        "units": "%ftp"
+                      },
+                      "duration": 300,
+                      "text": "Kadence 100 70% FTP",
+                      "cadence": {
+                        "start": 100,
+                        "end": 100,
+                        "units": "rpm"
+                      }
+                    },
+                    {
+                      "ramp": true,
+                      "power": {
+                        "start": 62,
+                        "end": 40,
+                        "units": "%ftp"
+                      },
+                      "duration": 600,
+                      "cooldown": true,
+                      "text": "Cool-down"
+                    }
+                  ]
+                }
+              },
+              "note": "Z2 grundtur — kælder, før styrke",
+              "libraryId": "z2_grundtur_80",
+              "id": "e3d5b2da"
+            },
             {
               "workout": {
                 "name": "Styrke Unilateral B 3 sæt",
@@ -7598,7 +8878,7 @@
                 }
               },
               "note": "Styrke Unilateral B",
-              "id": "e1166224"
+              "id": "c55a0c46"
             }
           ]
         },
@@ -7607,89 +8887,37 @@
           "entries": [
             {
               "workout": {
-                "name": "Cykel Z2+Z3 120 min",
-                "type": "Ride",
-                "moving_time": 7200,
-                "description": "- Varm-op 15m ramp 45-68% FTP\n- Aerob base 30m 56-76% FTP\n- Sweet spot-blok 60m 76-91% FTP\n- Cool-down 15m ramp 76-45% FTP",
-                "workout_doc": {
-                  "steps": [
-                    {
-                      "ramp": true,
-                      "power": {
-                        "start": 45,
-                        "end": 68,
-                        "units": "%ftp"
-                      },
-                      "duration": 900,
-                      "warmup": true
-                    },
-                    {
-                      "text": "Aerob base 56-76% FTP",
-                      "power": {
-                        "start": 56,
-                        "end": 76,
-                        "units": "%ftp"
-                      },
-                      "duration": 1800
-                    },
-                    {
-                      "text": "Sweet spot-blok 76-91% FTP",
-                      "power": {
-                        "start": 76,
-                        "end": 91,
-                        "units": "%ftp"
-                      },
-                      "duration": 3600
-                    },
-                    {
-                      "ramp": true,
-                      "power": {
-                        "start": 76,
-                        "end": 45,
-                        "units": "%ftp"
-                      },
-                      "duration": 900,
-                      "cooldown": true
-                    }
-                  ]
-                }
-              },
-              "note": "Cykel Z2+Z3",
-              "id": "a245d99b"
-            },
-            {
-              "workout": {
-                "name": "Svøm almindelig 2500m",
+                "name": "Svøm teknik 1500m (fokus: hoved)",
                 "type": "Swim",
-                "moving_time": 4800,
-                "description": "- Opvarmning 400m rolig\n- Hovedsæt: 8×100m i jævnt tempo, 15-20 sek pause (800m)\n- 4×100m lidt hurtigere, 20 sek pause (400m)\n- Frit — distance/intervaller efter form, ingen drills (500m)\n- Udsvømning 400m rolig\n\n2500m i alt. Formål: teste om ugens teknikfokus fra onsdag sidder uden bevidst tanke, under normal belastning.",
+                "moving_time": 3600,
+                "description": "- Opvarmning 300m rolig, blandet\n- Drill-sæt: 8×25m Catch-up drill (én arm i ro fremme til den anden er helt fremme før næste tag), 15-20 sek pause\n- Main set: 8×50m hurtigt men med formen intakt, 20 sek pause — fokus: hoved nede og stille, tør nakke\n- Kick-sæt: 4×50m, fokus benspark/kropsposition, 20 sek pause\n- Udsvømning 400m rolig\n\n1500m i alt. Ét fokuspunkt ad gangen — roterer uge for uge (catch → hoved → hofte).",
                 "workout_doc": {
                   "steps": [
                     {
-                      "text": "Opvarmning rolig",
+                      "text": "Opvarmning rolig, blandet",
+                      "duration": 900
+                    },
+                    {
+                      "text": "8×25m Catch-up drill (én arm i ro fremme til den anden er helt fremme før næste tag)",
+                      "duration": 900
+                    },
+                    {
+                      "text": "Main set 8×50m hurtigt, form intakt — hoved nede og stille, tør nakke",
+                      "duration": 900
+                    },
+                    {
+                      "text": "Kick-sæt 4×50m — benspark/kropsposition",
                       "duration": 600
-                    },
-                    {
-                      "text": "8×100m jævnt tempo",
-                      "duration": 1500
-                    },
-                    {
-                      "text": "4×100m lidt hurtigere",
-                      "duration": 900
-                    },
-                    {
-                      "text": "Frit — distance/intervaller efter form",
-                      "duration": 900
                     },
                     {
                       "text": "Udsvømning rolig",
-                      "duration": 600
+                      "duration": 300
                     }
                   ]
                 }
               },
-              "note": "Svøm 2×/uge fra uge 3 — almindeligt pas (Kildeskovshallen)",
-              "id": "517463a3"
+              "note": "Svøm teknik (Kildeskovshallen) — fokus hoved",
+              "id": "2d996a29"
             }
           ]
         },
@@ -7698,46 +8926,91 @@
           "entries": [
             {
               "workout": {
-                "name": "Cykel Z2 185 min",
+                "name": "FaF 2 Dur - Kvalitet sent 3 x 8",
                 "type": "Ride",
-                "moving_time": 11100,
-                "description": "- Varm-op 10m ramp 45-68% FTP\n- Aerob base 170m 56-76% FTP\n- Cool-down 5m ramp 68-45% FTP",
+                "moving_time": 11340,
+                "description": "- Varm-op 15m ramp 45-65% FTP\n- Z2 45m 68% FTP\n- Z2 45m 70% FTP\n- Z2 30m 70% FTP\n\n3x 3 x 8 min @ 95% — nu tæller det\n- Tærskel på trætte ben 8m 95% FTP\n- Pause 6m 55% FTP\n\n- Cool-down 12m ramp 60-40% FTP\n\nFORMÅL: Tærskelarbejde efter to timer i benene. Durability er den faktiske limiter for en 13-timers dag — evnen til at holde effekt uden drift, ikke motorens størrelse.\n\nDet vigtigste pas i biblioteket. Watt i intervallerne skal matche et frisk 3x8 — falder de mere end 5%, var Z2-delen for hård eller du spiste for lidt.",
                 "workout_doc": {
                   "steps": [
                     {
                       "ramp": true,
                       "power": {
                         "start": 45,
+                        "end": 65,
+                        "units": "%ftp"
+                      },
+                      "duration": 900,
+                      "warmup": true,
+                      "text": "Varm-op"
+                    },
+                    {
+                      "power": {
+                        "start": 68,
                         "end": 68,
                         "units": "%ftp"
                       },
-                      "duration": 600,
-                      "warmup": true
+                      "duration": 2700,
+                      "text": "Z2 68% FTP"
                     },
                     {
-                      "text": "Aerob base 56-76% FTP",
                       "power": {
-                        "start": 56,
-                        "end": 76,
+                        "start": 70,
+                        "end": 70,
                         "units": "%ftp"
                       },
-                      "duration": 10200
+                      "duration": 2700,
+                      "text": "Z2 70% FTP"
+                    },
+                    {
+                      "power": {
+                        "start": 70,
+                        "end": 70,
+                        "units": "%ftp"
+                      },
+                      "duration": 1800,
+                      "text": "Z2 70% FTP"
+                    },
+                    {
+                      "reps": 3,
+                      "text": "3 x 8 min @ 95% — nu tæller det",
+                      "steps": [
+                        {
+                          "power": {
+                            "start": 95,
+                            "end": 95,
+                            "units": "%ftp"
+                          },
+                          "duration": 480,
+                          "text": "Tærskel på trætte ben 95% FTP"
+                        },
+                        {
+                          "power": {
+                            "start": 55,
+                            "end": 55,
+                            "units": "%ftp"
+                          },
+                          "duration": 360,
+                          "text": "Pause 55% FTP"
+                        }
+                      ]
                     },
                     {
                       "ramp": true,
                       "power": {
-                        "start": 68,
-                        "end": 45,
+                        "start": 60,
+                        "end": 40,
                         "units": "%ftp"
                       },
-                      "duration": 300,
-                      "cooldown": true
+                      "duration": 720,
+                      "cooldown": true,
+                      "text": "Cool-down"
                     }
                   ]
                 }
               },
-              "note": "Lang cykel Z2 — ugens nøgletur",
-              "id": "fd95e5b7"
+              "note": "96 t efter tirsdag — EF måles her",
+              "libraryId": "dur_sent_i_turen",
+              "id": "3e088ec7"
             }
           ]
         },
@@ -7746,10 +9019,10 @@
           "entries": [
             {
               "workout": {
-                "name": "Lang løb Z2 60 min",
+                "name": "Løb Z2 40 min",
                 "type": "Run",
-                "moving_time": 3600,
-                "description": "- Varm-op 10m >5:39/km Pace\n- Lang base 45m 5:00-5:38/km Pace\n- Cool-down 5m >5:39/km Pace",
+                "moving_time": 2400,
+                "description": "- Varm-op 10m >5:39/km Pace\n- Base 25m 5:00-5:38/km Pace\n- Cool-down 5m >5:39/km Pace",
                 "workout_doc": {
                   "steps": [
                     {
@@ -7762,13 +9035,13 @@
                       "duration": 600
                     },
                     {
-                      "text": "Lang base 5:00-5:38/km",
+                      "text": "Base 5:00-5:38/km",
                       "pace": {
                         "start": 78,
                         "end": 88,
                         "units": "%pace"
                       },
-                      "duration": 2700
+                      "duration": 1500
                     },
                     {
                       "text": "Cool-down >5:39/km",
@@ -7782,8 +9055,8 @@
                   ]
                 }
               },
-              "note": "Løb Z2",
-              "id": "3d3f047e"
+              "note": "Løb Z2 let — efter lørdagens nøglepas",
+              "id": "7d53f958"
             }
           ]
         },
@@ -7827,8 +9100,8 @@
                   ]
                 }
               },
-              "note": "Styrke recovery",
-              "id": "9201e6df"
+              "note": "Recovery-uge — styrke 2 sæt let",
+              "id": "304f1b55"
             }
           ]
         },
@@ -7837,46 +9110,78 @@
           "entries": [
             {
               "workout": {
-                "name": "Cykel Z2 75 min",
+                "name": "FaF 1 Z2 - Åbnere 60",
                 "type": "Ride",
-                "moving_time": 4500,
-                "description": "- Varm-op 10m ramp 45-68% FTP\n- Aerob base 60m 56-76% FTP\n- Cool-down 5m ramp 68-45% FTP",
+                "moving_time": 3600,
+                "description": "- Varm-op 10m ramp 45-62% FTP\n- Zone 2 20m 62% FTP\n\n4x \n- Åbner 95+ rpm 2m 85% FTP @ 95 rpm\n- Let 3m 48% FTP\n\n- Cool-down 10m ramp 62-40% FTP\n\nFORMÅL: Race-uge og stille uger. Zone 2 med fire korte åbnere i høj kadence, så benene vågner uden at der bygges træthed. Bygget 2/9-2026 to dage før Médoc.\n\nBenene skal føles lette bagefter — ellers var det for hårdt. Ikke et træningspas.",
                 "workout_doc": {
                   "steps": [
                     {
                       "ramp": true,
                       "power": {
                         "start": 45,
-                        "end": 68,
+                        "end": 62,
                         "units": "%ftp"
                       },
                       "duration": 600,
-                      "warmup": true
+                      "warmup": true,
+                      "text": "Varm-op"
                     },
                     {
-                      "text": "Aerob base 56-76% FTP",
                       "power": {
-                        "start": 56,
-                        "end": 76,
+                        "start": 62,
+                        "end": 62,
                         "units": "%ftp"
                       },
-                      "duration": 3600
+                      "duration": 1200,
+                      "text": "Zone 2 62% FTP"
+                    },
+                    {
+                      "reps": 4,
+                      "text": "4x",
+                      "steps": [
+                        {
+                          "power": {
+                            "start": 85,
+                            "end": 85,
+                            "units": "%ftp"
+                          },
+                          "duration": 120,
+                          "text": "Åbner 95+ rpm 85% FTP",
+                          "cadence": {
+                            "start": 95,
+                            "end": 95,
+                            "units": "rpm"
+                          }
+                        },
+                        {
+                          "power": {
+                            "start": 48,
+                            "end": 48,
+                            "units": "%ftp"
+                          },
+                          "duration": 180,
+                          "text": "Let 48% FTP"
+                        }
+                      ]
                     },
                     {
                       "ramp": true,
                       "power": {
-                        "start": 68,
-                        "end": 45,
+                        "start": 62,
+                        "end": 40,
                         "units": "%ftp"
                       },
-                      "duration": 300,
-                      "cooldown": true
+                      "duration": 600,
+                      "cooldown": true,
+                      "text": "Cool-down"
                     }
                   ]
                 }
               },
-              "note": "Cykel Z2",
-              "id": "7260158f"
+              "note": "Z2 åbnere — let, recovery-uge",
+              "libraryId": "z2_aabnere_60",
+              "id": "e02e310d"
             }
           ]
         },
@@ -7885,10 +9190,10 @@
           "entries": [
             {
               "workout": {
-                "name": "Løb Z2 45 min",
+                "name": "Løb Z2 40 min",
                 "type": "Run",
-                "moving_time": 2700,
-                "description": "- Varm-op 10m >5:39/km Pace\n- Base 30m 5:00-5:38/km Pace\n- Cool-down 5m >5:39/km Pace",
+                "moving_time": 2400,
+                "description": "- Varm-op 10m >5:39/km Pace\n- Base 25m 5:00-5:38/km Pace\n- Cool-down 5m >5:39/km Pace",
                 "workout_doc": {
                   "steps": [
                     {
@@ -7907,7 +9212,7 @@
                         "end": 88,
                         "units": "%pace"
                       },
-                      "duration": 1800
+                      "duration": 1500
                     },
                     {
                       "text": "Cool-down >5:39/km",
@@ -7921,42 +9226,8 @@
                   ]
                 }
               },
-              "note": "Løb Z2",
-              "id": "61a02f1b"
-            },
-            {
-              "workout": {
-                "name": "Svøm teknik 1500m (fokus: hofte)",
-                "type": "Swim",
-                "moving_time": 3600,
-                "description": "- Opvarmning 300m rolig, blandet\n- Drill-sæt: 8×25m Enarmscrawl m/finner (passiv arm langs siden, rotér fra hoften for at holde fart), 15-20 sek pause\n- Main set: 8×50m hurtigt men med formen intakt, 20 sek pause — fokus: rotation og skub fra hoften, ikke skuldrene\n- Kick-sæt: 4×50m, fokus benspark/kropsposition, 20 sek pause\n- Udsvømning 400m rolig\n\n1500m i alt. Ét fokuspunkt ad gangen — roterer uge for uge (catch → hoved → hofte).",
-                "workout_doc": {
-                  "steps": [
-                    {
-                      "text": "Opvarmning rolig, blandet",
-                      "duration": 900
-                    },
-                    {
-                      "text": "8×25m Enarmscrawl m/finner (passiv arm langs siden, rotér fra hoften for at holde fart)",
-                      "duration": 900
-                    },
-                    {
-                      "text": "Main set 8×50m hurtigt, form intakt — rotation og skub fra hoften, ikke skuldrene",
-                      "duration": 900
-                    },
-                    {
-                      "text": "Kick-sæt 4×50m — benspark/kropsposition",
-                      "duration": 600
-                    },
-                    {
-                      "text": "Udsvømning rolig",
-                      "duration": 300
-                    }
-                  ]
-                }
-              },
-              "note": "Svøm 2×/uge fra uge 3 — teknikpas (Kildeskovshallen), fokus hofte",
-              "id": "c06cd121"
+              "note": "Løb Z2 let — recovery",
+              "id": "09324ca3"
             }
           ]
         },
@@ -8000,8 +9271,8 @@
                   ]
                 }
               },
-              "note": "Styrke recovery — Stelvio couples-tilmelding deadline i dag (med Eva)",
-              "id": "d780e834"
+              "note": "Recovery-uge — styrke 2 sæt let. Stelvio couples-tilmelding deadline i dag",
+              "id": "18c9df73"
             }
           ]
         },
@@ -8009,43 +9280,38 @@
           "date": "2026-10-30",
           "entries": [
             {
-              "workout": null,
-              "note": "Hvile — recovery-uge",
-              "id": "45538945"
-            },
-            {
               "workout": {
-                "name": "Svøm almindelig 2500m",
+                "name": "Svøm teknik 1500m (fokus: hofte)",
                 "type": "Swim",
-                "moving_time": 4800,
-                "description": "- Opvarmning 400m rolig\n- Hovedsæt: 8×100m i jævnt tempo, 15-20 sek pause (800m)\n- 4×100m lidt hurtigere, 20 sek pause (400m)\n- Frit — distance/intervaller efter form, ingen drills (500m)\n- Udsvømning 400m rolig\n\n2500m i alt. Formål: teste om ugens teknikfokus fra onsdag sidder uden bevidst tanke, under normal belastning.",
+                "moving_time": 3600,
+                "description": "- Opvarmning 300m rolig, blandet\n- Drill-sæt: 8×25m Enarmscrawl m/finner (passiv arm langs siden, rotér fra hoften for at holde fart), 15-20 sek pause\n- Main set: 8×50m hurtigt men med formen intakt, 20 sek pause — fokus: rotation og skub fra hoften, ikke skuldrene\n- Kick-sæt: 4×50m, fokus benspark/kropsposition, 20 sek pause\n- Udsvømning 400m rolig\n\n1500m i alt. Ét fokuspunkt ad gangen — roterer uge for uge (catch → hoved → hofte).",
                 "workout_doc": {
                   "steps": [
                     {
-                      "text": "Opvarmning rolig",
+                      "text": "Opvarmning rolig, blandet",
+                      "duration": 900
+                    },
+                    {
+                      "text": "8×25m Enarmscrawl m/finner (passiv arm langs siden, rotér fra hoften for at holde fart)",
+                      "duration": 900
+                    },
+                    {
+                      "text": "Main set 8×50m hurtigt, form intakt — rotation og skub fra hoften, ikke skuldrene",
+                      "duration": 900
+                    },
+                    {
+                      "text": "Kick-sæt 4×50m — benspark/kropsposition",
                       "duration": 600
-                    },
-                    {
-                      "text": "8×100m jævnt tempo",
-                      "duration": 1500
-                    },
-                    {
-                      "text": "4×100m lidt hurtigere",
-                      "duration": 900
-                    },
-                    {
-                      "text": "Frit — distance/intervaller efter form",
-                      "duration": 900
                     },
                     {
                       "text": "Udsvømning rolig",
-                      "duration": 600
+                      "duration": 300
                     }
                   ]
                 }
               },
-              "note": "Svøm 2×/uge fra uge 3 — almindeligt pas (Kildeskovshallen). Tilføjet trods recovery-uge, cykel/løb-hvile bevaret.",
-              "id": "907bb31e"
+              "note": "Svøm teknik (Kildeskovshallen) — fokus hofte",
+              "id": "68e5da28"
             }
           ]
         },
@@ -8054,46 +9320,94 @@
           "entries": [
             {
               "workout": {
-                "name": "Cykel Z2 160 min",
+                "name": "FaF 1 Z2 - Depottur 2 t",
                 "type": "Ride",
-                "moving_time": 9600,
-                "description": "- Varm-op 10m ramp 45-68% FTP\n- Aerob base 145m 56-76% FTP\n- Cool-down 5m ramp 68-45% FTP",
+                "moving_time": 7800,
+                "description": "- Varm-op 10m ramp 45-62% FTP\n- Z2 20m 66% FTP\n- Z2 20m 70% FTP\n- Z2 20m 66% FTP\n- Z2 let op 20m 72% FTP\n- Z2 20m 66% FTP\n- Sidste 10 10m 70% FTP\n- Cool-down 10m ramp 62-40% FTP\n\nFORMÅL: To timer Z2 med fast energiplan. Lige så meget mavetræning som bentræning. Race-evalueringerne siger det samme i ni år: energiplanen er det der knækker dig.\n\nMål: 80-100 g kulhydrat i timen. Notér bagefter hvad du spiste og hvordan maven lå.",
                 "workout_doc": {
                   "steps": [
                     {
                       "ramp": true,
                       "power": {
                         "start": 45,
-                        "end": 68,
+                        "end": 62,
                         "units": "%ftp"
                       },
                       "duration": 600,
-                      "warmup": true
+                      "warmup": true,
+                      "text": "Varm-op"
                     },
                     {
-                      "text": "Aerob base 56-76% FTP",
                       "power": {
-                        "start": 56,
-                        "end": 76,
+                        "start": 66,
+                        "end": 66,
                         "units": "%ftp"
                       },
-                      "duration": 8700
+                      "duration": 1200,
+                      "text": "Z2 66% FTP"
+                    },
+                    {
+                      "power": {
+                        "start": 70,
+                        "end": 70,
+                        "units": "%ftp"
+                      },
+                      "duration": 1200,
+                      "text": "Z2 70% FTP"
+                    },
+                    {
+                      "power": {
+                        "start": 66,
+                        "end": 66,
+                        "units": "%ftp"
+                      },
+                      "duration": 1200,
+                      "text": "Z2 66% FTP"
+                    },
+                    {
+                      "power": {
+                        "start": 72,
+                        "end": 72,
+                        "units": "%ftp"
+                      },
+                      "duration": 1200,
+                      "text": "Z2 let op 72% FTP"
+                    },
+                    {
+                      "power": {
+                        "start": 66,
+                        "end": 66,
+                        "units": "%ftp"
+                      },
+                      "duration": 1200,
+                      "text": "Z2 66% FTP"
+                    },
+                    {
+                      "power": {
+                        "start": 70,
+                        "end": 70,
+                        "units": "%ftp"
+                      },
+                      "duration": 600,
+                      "text": "Sidste 10 70% FTP"
                     },
                     {
                       "ramp": true,
                       "power": {
-                        "start": 68,
-                        "end": 45,
+                        "start": 62,
+                        "end": 40,
                         "units": "%ftp"
                       },
-                      "duration": 300,
-                      "cooldown": true
+                      "duration": 600,
+                      "cooldown": true,
+                      "text": "Cool-down"
                     }
                   ]
                 }
               },
-              "note": "Lang cykel Z2",
-              "id": "e32e2079"
+              "note": "Ude hvis tørt og >8 °C, ren Z2 samme varighed; ellers kælder",
+              "libraryId": "z2_depottur_2t",
+              "id": "37e8e66e"
             }
           ]
         },
@@ -8102,44 +9416,26 @@
           "entries": [
             {
               "workout": {
-                "name": "Løb Z2 30 min",
+                "name": "Løb let Z1 30 min",
                 "type": "Run",
                 "moving_time": 1800,
-                "description": "- Varm-op 10m >5:39/km Pace\n- Base 15m 5:00-5:38/km Pace\n- Cool-down 5m >5:39/km Pace",
+                "description": "- Let løb 30m >5:39/km Pace",
                 "workout_doc": {
                   "steps": [
                     {
-                      "text": "Varm-op >5:39/km",
+                      "text": "Let løb >5:39/km",
                       "pace": {
                         "start": 65,
                         "end": 78,
                         "units": "%pace"
                       },
-                      "duration": 600
-                    },
-                    {
-                      "text": "Base 5:00-5:38/km",
-                      "pace": {
-                        "start": 78,
-                        "end": 88,
-                        "units": "%pace"
-                      },
-                      "duration": 900
-                    },
-                    {
-                      "text": "Cool-down >5:39/km",
-                      "pace": {
-                        "start": 65,
-                        "end": 78,
-                        "units": "%pace"
-                      },
-                      "duration": 300
+                      "duration": 1800
                     }
                   ]
                 }
               },
-              "note": "Løb Z2 let",
-              "id": "f26f7f17"
+              "note": "Let løb — recovery-ugen slutter",
+              "id": "e65aff4b"
             }
           ]
         }
@@ -8824,6 +10120,16 @@
           "kennet",
           "eva"
         ]
+      },
+      "tds-2027": {
+        "id": "tds-2027",
+        "name": "Tour des Stations 2027",
+        "raceDay": "2027-08-28",
+        "phase": "planned",
+        "athletes": [
+          "kennet"
+        ],
+        "note": "Aktivt program vælges efter dato (programs.<id>.start/end) — phase er kun information."
       }
     },
     "archive": [
@@ -8937,24 +10243,34 @@
         "start": "2026-09-07",
         "phase": "TRANSITION",
         "blockType": "RECOVERY",
-        "ctlTarget": 50,
+        "ctlTarget": 47,
         "ftpTarget": 278,
-        "tssTarget": 120,
+        "tssTarget": 150,
         "location": "Gentofte",
-        "note": "Post-Médoc. Intet struktureret. Gå, spis, sov.",
-        "wkgTarget": 3.97
+        "note": "Restitution efter Marathon du Médoc. Intet løb før tidligst lør 12/9 — 42 km excentrisk belastning kræver 10-14 dage. Cykel bærer den aerobe base.",
+        "wkgTarget": 3.97,
+        "purpose": "Restitution efter Médoc — gang, svøm og let cykel; første korte løb tidligst lør 12/9.",
+        "quota": {
+          "haard": 0,
+          "moderat": 0
+        }
       },
       {
         "week": 2,
         "start": "2026-09-14",
         "phase": "TRANSITION",
-        "blockType": "RECOVERY",
-        "ctlTarget": 46,
+        "blockType": "RACE",
+        "ctlTarget": 45,
         "ftpTarget": 278,
-        "tssTarget": 180,
-        "location": "Gentofte",
-        "note": "Fri leg. Svøm afvikles permanent efter denne uge.",
-        "wkgTarget": 3.97
+        "tssTarget": 250,
+        "location": "Gentofte. RACE søn",
+        "note": "CPH Half søn 20/9 — B-løb. Mål sub 1:30 med beslutningsregel ved 5 km. Cut starter IKKE før mandag 21/9.",
+        "wkgTarget": 3.97,
+        "purpose": "Race-uge: én målpace-åbner, let cykel/svøm, CPH Half som B-løb.",
+        "quota": {
+          "haard": 0,
+          "moderat": 0
+        }
       },
       {
         "week": 3,
@@ -8965,8 +10281,13 @@
         "ftpTarget": 278,
         "tssTarget": 380,
         "location": "Gentofte",
-        "note": "Cykel bliver primær. Styrke 2x starter — unilateralt.",
-        "wkgTarget": 3.97
+        "note": "Cut starter. Kælder starter med FTP-test tor 24/9. Styrke unilateralt 2× starter.",
+        "wkgTarget": 3.97,
+        "purpose": "Base 1/2: cut og kælder starter — aerobe prober (cykel + løb) som EF-baseline, FTP-test tor 24/9.",
+        "quota": {
+          "haard": 1,
+          "moderat": 0
+        }
       },
       {
         "week": 4,
@@ -8977,7 +10298,12 @@
         "ftpTarget": 278,
         "tssTarget": 400,
         "location": "Gentofte",
-        "wkgTarget": 3.97
+        "wkgTarget": 3.97,
+        "purpose": "Base 2/2: ren Z2 på cykel, første durability-pas (negativ split) lørdag, løb Z2 2×.",
+        "quota": {
+          "haard": 0,
+          "moderat": 1
+        }
       },
       {
         "week": 5,
@@ -8988,8 +10314,13 @@
         "ftpTarget": 278,
         "tssTarget": 250,
         "location": "Gentofte",
-        "note": "FTP-test. Baseline for 2027-sporet — forventet ~278 W (4,0 W/kg). Watt beskyttes under cut, ikke jages.",
-        "wkgTarget": 3.97
+        "note": "Recovery. Ingen test (kørt 24/9).",
+        "wkgTarget": 3.97,
+        "purpose": "Recovery: styrke 2 sæt let, korte Z2-pas, ingen test.",
+        "quota": {
+          "haard": 0,
+          "moderat": 0
+        }
       },
       {
         "week": 6,
@@ -9000,7 +10331,12 @@
         "ftpTarget": 278,
         "tssTarget": 420,
         "location": "Gentofte",
-        "wkgTarget": 3.97
+        "wkgTarget": 3.97,
+        "purpose": "Base 1/2: sweet spot + over-unders i kælderen, lang bjergtur lørdag, løb Z2 2×.",
+        "quota": {
+          "haard": 1,
+          "moderat": 2
+        }
       },
       {
         "week": 7,
@@ -9011,7 +10347,12 @@
         "ftpTarget": 278,
         "tssTarget": 440,
         "location": "Gentofte",
-        "wkgTarget": 3.97
+        "wkgTarget": 3.97,
+        "purpose": "Base 2/2: tærskel 3×12 tirsdag og kvalitet sent i turen lørdag (96 t imellem) — aerob probe måned 2 på løb.",
+        "quota": {
+          "haard": 2,
+          "moderat": 0
+        }
       },
       {
         "week": 8,
@@ -9023,7 +10364,12 @@
         "tssTarget": 260,
         "location": "Gentofte",
         "note": "Stelvio couples-tilmelding deadline 29/10 (med Eva).",
-        "wkgTarget": 3.97
+        "wkgTarget": 3.97,
+        "purpose": "Recovery: lette Z2-pas, styrke 2 sæt, Stelvio couples-tilmelding tor 29/10.",
+        "quota": {
+          "haard": 0,
+          "moderat": 0
+        }
       },
       {
         "week": 9,

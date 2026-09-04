@@ -21,12 +21,11 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 # ── Moduler ──────────────────────────────────────────────────────────────────
 from modules.config   import (API_KEY, ATHLETE_ID, GH_TOKEN, ANTHROPIC_KEY,
                                REPO, BASE, AUTH, CTL_PLAN, BLOCK_TYPES,
-                               PLAN_START, TOTAL_WEEKS, RACES,
+                               PLAN, ACTIVE_PROGRAM, PROGRAM_ID, TOTAL_WEEKS,
                                DK_DAYS, DAY_SHORT, DK_MONTHS,
-                               CTL_START, CTL_GOAL, AF_GOAL, SLEEP_GOAL_HOURS,
-                               SWIM_GOAL_M, RUN_KM_GOAL, RUN_KM_GOAL_WEEK, GOALS,
-                               NEXT_RACES,
+                               CTL_START, CTL_GOAL, AF_GOAL, SLEEP_GOAL_HOURS, GOALS,
                                api_get, ctl_plan_for_week, fix_enc, fmt, color_for)
+from modules import programs as _programs
 from modules.fitness  import get_fitness, get_wellness_7d, get_history, get_ctl_curve
 from modules.aerobic  import get_ef_history
 from modules import decoupling
@@ -69,14 +68,55 @@ def _sync_repo():
         print(f"  ⚠️ Git sync exception (fortsætter): {e}")
 
 
+def sleep_kpi(sleep_history, fallback_avg=None, goal=None):
+    """Søvn-KPI: (sidste nat, 7d-snit, sub-tekst, farve).
+
+    sleep_history = [{date, v, real}, ...] (fitness.get_history). Værdien er
+    seneste punkt med en værdi; snittet er de seneste 7 punkter med værdi.
+    Farve måles på snittet: >=7,0 grøn, 6,5-7,0 orange, <6,5 rød.
+    """
+    goal = SLEEP_GOAL_HOURS if goal is None else goal
+    vals = [float(r['v']) for r in (sleep_history or [])
+            if isinstance(r, dict) and r.get('v') is not None]
+    last = vals[-1] if vals else fallback_avg
+    avg7 = round(sum(vals[-7:]) / len(vals[-7:]), 1) if vals else fallback_avg
+    if avg7 is None:
+        return last, None, f'Snit 7d — · mål {goal}t', '#7A6A58'
+    color = '#27AE60' if avg7 >= 7.0 else ('#E67E22' if avg7 >= 6.5 else '#C0392B')
+    return last, avg7, f'Snit 7d {fmt(avg7, 1)}t · mål {goal}t', color
+
+
+def af_kpi(week_done, streak, af_history, goal):
+    """AF DAGE-KPI: (sub-tekst, farve).
+
+    sub = "af 6 denne uge · snit 4 uger X,X · streak N". 4-ugers snittet er
+    de seneste 4 afsluttede uger (total == 7) i af_history; er der ingen
+    afsluttede uger endnu, bruges det der findes.
+    """
+    hist = [w for w in (af_history or []) if isinstance(w, dict) and w.get('total')]
+    full = [w for w in hist if w.get('total') == 7] or hist
+    last4 = full[-4:]
+    avg4 = round(sum(w['done'] for w in last4) / len(last4), 1) if last4 else None
+    sub = f'af {goal} denne uge'
+    if avg4 is not None:
+        sub += f' · snit 4 uger {fmt(avg4, 1)}'
+    if streak:
+        sub += f' · streak {streak}'
+    color = '#27AE60' if (week_done or 0) >= goal else '#59182A'
+    return sub, color
+
+
 def main():
     _sync_repo()
     today     = date.today()
     weekday   = today.weekday()
-    week1     = PLAN_START
-    week_num  = min(max((today - week1).days // 7 + 1, 1), TOTAL_WEEKS)
+    # Uge/dag kommer fra det aktive program (programs.py) — ingen lokal clamp.
+    week_num  = _programs.week_no(ACTIVE_PROGRAM, today)
+    week_meta = _programs.week_meta(ACTIVE_PROGRAM, week_num)
+    days_total = _programs.days_total(ACTIVE_PROGRAM)
 
-    print(f"=== KPI opdatering {today} (uge {week_num}) ===")
+    print(f"=== KPI opdatering {today} — {PROGRAM_ID} uge {week_num}/{TOTAL_WEEKS} "
+          f"({week_meta.get('blockType', '?')}) ===")
 
     fitness    = get_fitness()
     wellness   = get_wellness_7d()
@@ -138,17 +178,33 @@ def main():
     data['meta']['updated']              = now_cph.strftime("%Y-%m-%d %H:%M")
     data['meta']['dayName']              = DK_DAYS[weekday]
     data['meta']['date']                 = f"{today.day}. {DK_MONTHS[today.month-1]}"
-    _race_dates = {r['name']: date.fromisoformat(r['date']) for r in RACES}
-    data['meta']['daysToMedoc']          = ((_race_dates.get('Marathon du Médoc') or date(2026, 9, 5)) - today).days
-    data['meta']['daysToChristiansborg'] = ((_race_dates.get('Christiansborg Rundt') or date(2026, 8, 29)) - today).days
+    # Program + næste løb (på tværs af programmer) — erstatter daysToMedoc/
+    # daysToChristiansborg, som var bundet til ét bestemt program.
+    _upcoming = _programs.upcoming_races(PLAN, 'kennet', today)
+    _next = _upcoming[0] if _upcoming else None
+    data['meta'].pop('daysToMedoc', None)
+    data['meta'].pop('daysToChristiansborg', None)
+    data['meta']['nextRace']             = ({'name': _next.get('name'), 'date': _next.get('date'),
+                                             'daysTo': _next.get('daysTo'),
+                                             'priority': _next.get('priority', '')}
+                                            if _next else None)
+    data['meta']['programId']            = PROGRAM_ID
+    data['meta']['programName']          = ACTIVE_PROGRAM.get('name')
+    data['meta']['phase']                = week_meta.get('phase')
+    data['meta']['blockType']            = week_meta.get('blockType')
     data['meta']['week']                 = week_num
     data['meta']['totalWeeks']           = TOTAL_WEEKS
+    data['meta']['programDay']           = _programs.program_day(ACTIVE_PROGRAM, today)
+    data['meta']['programDays']          = days_total
+    data['blockType']                    = week_meta.get('blockType') or 'BUILD'  # læses af coach-speech + index.html
     try:
         from modules.fitness import RHR_FIELD_SEEN
         data['meta']['rhrField'] = RHR_FIELD_SEEN.get('field')
     except Exception:
         data['meta']['rhrField'] = None
     data['ctlPlan']                      = CTL_PLAN
+    data['blockTypes']                   = {str(k): v for k, v in BLOCK_TYPES.items()}   # periodisering i index.html
+    data['goals']                        = GOALS                                           # programmets mål (svøm/løb-KPI'er)
 
     # --- Zoner: plan.json er master, dashboardet laeser dem herfra (28/7-2026) ---
     # index.html havde hardcodede fallbacks (260 sek/km, 270 W) og fulgte aldrig
@@ -164,20 +220,20 @@ def main():
         print(f"  Zoner kunne ikke laeses fra plan.json (ikke-blokerende): {_e}")
 
     # --- Mål (sættes FØR KPI-blokken bygges, da den læser disse felter) ---
-    # --- Kommende sæson: løb med nedtælling til dashboardet ---
-    #     Kilden er plan.json -> nextSeason.races. Hardkod dem aldrig i index.html.
-    _today = date.today()
+    # --- Kommende løb med nedtælling til dashboardet ---
+    #     Kilden er plan.json -> programs.*.races (aktivt + senere programmer).
+    #     Hardkod dem aldrig i index.html.
     data['racesUpcoming'] = [
         {
             'name': r.get('name'),
             'date': r.get('date'),
-            'days': (date.fromisoformat(r['date']) - _today).days,
+            'days': r.get('daysTo'),
             'priority': r.get('priority', ''),
             'distance': r.get('distance', ''),
             'registered': r.get('registered'),
+            'programId': r.get('programId'),
         }
-        for r in NEXT_RACES
-        if r.get('date') and date.fromisoformat(r['date']) >= _today
+        for r in _upcoming
     ]
 
     data['weightGoal']   = GOALS.get('weightKg', 68)
@@ -329,21 +385,50 @@ def main():
     print(f"  Vægt-sub: {weight_sub} (måling i dag: {weight_is_today})")
 
     tss_color = color_for(compliance, 85, lower=False) if compliance else '#7A6A58'
+
+    # Løb-km og svøm: mål findes KUN hvis det aktive program har dem i goals
+    # (medoc-2026: runKmPerWeek/swimMeters; tds-2027: ingen -> neutral visning).
+    # Farven måles mod SAMME tal som teksten viser — ikke et andet, skjult tal.
+    _run_goal  = GOALS.get('runKmPerWeek')
+    _swim_goal = GOALS.get('swimMeters')
+    if _run_goal:
+        _run_sub   = f'Mål {_run_goal}+ km/uge'
+        _run_color = color_for(km_week, _run_goal, lower=False) if km_week else '#7A6A58'
+    else:
+        _run_sub   = 'Løb denne uge'
+        _run_color = '#7A6A58'
+    if _swim_goal:
+        _swim_sub   = f'Svøm denne uge · mål {_swim_goal}m'
+        _swim_color = color_for(swim_m, _swim_goal, lower=False) if swim_m else '#7A6A58'
+    else:
+        _swim_sub   = 'Svøm denne uge'
+        _swim_color = '#7A6A58'
+    # Søvn: værdi = sidste nats søvn (seneste sleepHistory-punkt med værdi),
+    # sub = ægte 7-dages snit beregnet fra sleepHistory. Farve på snittet.
+    sleep_last, sleep_avg7, _sleep_sub, _sleep_color = sleep_kpi(
+        (history or {}).get('sleepHistory'), fallback_avg=sleep)
+    print(f"  Søvn: sidste nat {sleep_last} · snit 7d {sleep_avg7}")
+
+    # AF DAGE: værdi = AF-dage denne uge, sub = mål + 4-ugers snit fra
+    # af_history, streak som lille hale. Hentes her (før kpis) — bruges igen nedenfor.
+    af_history = get_af_history()
+    _af_sub, _af_color = af_kpi(af_days, af_streak, af_history, AF_GOAL)
+
     data['kpis'] = {
         'weight':     {'value': fmt(weight),          'unit': 'kg', 'sub': weight_sub, 'color': color_for(weight, data['weightGoal'], lower=True)  if weight     else '#7A6A58'},
         'fat':        {'value': fmt(fat),              'unit': '%',  'sub': f"Mål <{data['bodyFatGoal']}%",                       'color': color_for(fat, data['bodyFatGoal'], lower=True)     if fat        else '#7A6A58'},
-        'ctl':        {'value': fmt(ctl, 1),           'unit': '',   'sub': f'Uge {week_num}-mål {ctl_plan_for_week(week_num)} · Slutmål {CTL_GOAL} (uge {len(CTL_PLAN)})', 'color': color_for(ctl, CTL_GOAL, lower=False)    if ctl        else '#7A6A58'},
+        'ctl':        {'value': fmt(ctl, 1),           'unit': '',   'sub': f"Uge {week_num}-mål {ctl_plan_for_week(week_num)} · {week_meta.get('blockType', '')}".rstrip(' ·'), 'color': color_for(ctl, ctl_plan_for_week(week_num), lower=False) if ctl else '#7A6A58'},
         'tsb':        {'value': fmt(tsb, 1),           'unit': '',   'sub': ('Hård blok · CTL−ATL, frisk >0' if tsb and tsb < -10 else 'Form · CTL−ATL, frisk >0'), 'color': '#E67E22' if tsb and tsb < -10 else '#27AE60'},
-        'sleep':      {'value': fmt(sleep, 1),         'unit': 't',  'sub': f'Snit 7,5t · mål {SLEEP_GOAL_HOURS}t',            'color': '#2874A6'},
-        'runKm':      {'value': fmt(km_week, 1),       'unit': 'km', 'sub': f'Mål {RUN_KM_GOAL}+ km uge {RUN_KM_GOAL_WEEK}',             'color': color_for(km_week, 20, lower=False) if km_week   else '#7A6A58'},
+        'sleep':      {'value': fmt(sleep_last, 1) if sleep_last else '—', 'unit': 't', 'sub': _sleep_sub, 'color': _sleep_color},
+        'runKm':      {'value': fmt(km_week, 1),       'unit': 'km', 'sub': _run_sub,                                   'color': _run_color},
         'hrv':        {'value': fmt(hrv, 1),           'unit': 'ms', 'sub': 'Snit 7d',                       'color': '#7A6A58'},
         'rhr':        {'value': fmt(rhr_avg, 0) if rhr_avg else '—', 'unit': 'slag', 'sub': 'Hvilepuls · snit 7d', 'color': '#7A6A58'},
         'tssComp':    {'value': fmt(tss_act, 0) if tss_act else '0', 'unit': 'TSS',
                        'sub': f'{int(tss_act or 0)} af {int(planned)} planlagt TSS',
                        'color': tss_color},
         'bikeKm':     {'value': fmt(bike_km, 1),       'unit': 'km', 'sub': 'Cykel denne uge',                  'color': color_for(bike_km, 50, lower=False) if bike_km else '#7A6A58'},
-        'swimM':      {'value': fmt(swim_m, 0) if swim_m else '0',    'unit': 'm',  'sub': f'Svøm denne uge · mål {SWIM_GOAL_M}m (Christiansborg)',  'color': color_for(swim_m, SWIM_GOAL_M, lower=False) if swim_m else '#7A6A58'},
-        'afStreak':   {'value': str(af_streak),        'unit': '',   'sub': f'Dage i træk · mål {AF_GOAL}/uge',           'color': '#59182A'},
+        'swimM':      {'value': fmt(swim_m, 0) if swim_m else '0',    'unit': 'm',  'sub': _swim_sub,                                  'color': _swim_color},
+        'afStreak':   {'value': str(af_days),          'unit': '',   'sub': _af_sub,                                    'color': _af_color},
     }
 
     # --- TSB / HRV advarsler (sendes til dashboard for visning) ---
@@ -443,8 +528,7 @@ def main():
             data['warnings'] = warnings
             print(f"  ⚠️  Alkohol-klynge: {cluster}")
 
-    # --- AF historik: uge-for-uge siden projektstart ---
-    af_history = get_af_history()
+    # --- AF historik: uge-for-uge siden projektstart (hentet ovenfor til AF-KPI'en) ---
     if af_history:
         data['af_history'] = af_history
 
@@ -500,7 +584,7 @@ def main():
 
     # --- Historisk faktisk TSS pr. uge (backfill til Excel + ugesummer) ---
     try:
-        _wk_tss = get_weekly_tss_actual(PLAN_START, TOTAL_WEEKS)
+        _wk_tss = get_weekly_tss_actual(date.fromisoformat(ACTIVE_PROGRAM['start']), TOTAL_WEEKS)
         if _wk_tss:
             data['weekTssActual'] = {str(k): v for k, v in sorted(_wk_tss.items())}
             print(f"  weekTssActual -> {len(_wk_tss)} uger")
@@ -551,24 +635,8 @@ def main():
                 print(f"  weekFocus cached (uge {week_num}) -- springer AI-kald over")
                 dynamic_focus = _focus_cached_text
             else:
-                # Hent Master Plan-note for denne uge
-                _master_notes = {
-                    1: 'Etableringsuge — TSB endte -8',
-                    2: 'Mallorca uge. TSS synkroniseringsfejl.',
-                    3: 'Mallorca-camp gennemført.',
-                    4: 'Recovery uge. Fuldt AF 7/7.',
-                    5: 'Tilbage til hverdagsrytme.',
-                    6: 'Rejseuge — let cykel/løb, vedligehold.',
-                    7: 'Stor cykel-uge #2.',
-                    8: 'Restitution + rejsedag hjem.',
-                    9: 'Musik i Gentofte i ugen efter (31/7–2/8) – planlæg let.',
-                    10: 'Svømme-fokus øges mod Christiansborg Rundt.',
-                    11: 'Peak TSS-uge.',
-                    12: 'Svømme-specifik uge, nedtrapning starter.',
-                    13: f'Race week: {SWIM_GOAL_M} m svøm 29/8. Taper ind, kort løb.',
-                    14: 'Marathon Médoc 5/9.',
-                }
-                _week_note = _master_notes.get(week_num)
+                # Ugens note fra programmet i plan.json (programs.<id>.weeks[].note)
+                _week_note = week_meta.get('note')
                 dynamic_focus = generate_week_focus_ai(
                     week_num, this_week.get('sessions', []),
                     BLOCK_TYPES.get(week_num, 'BUILD'),
@@ -750,9 +818,9 @@ def main():
         ai_text = fix_enc(ai_text)  # AI-svar kan komme tilbage Latin-1-mis-decoded -- ret ved kilden
     if ai_text:
         # Konverter til simpel HTML (samme logik som dashboardet)
-        # Tilføj korrekt header hardcodet (forhindrer AI i at skrive forkert "Dag X af 14 uger")
-        program_day = (date.today() - PLAN_START).days + 1
-        header_str = f"Dag {program_day} af 98 · {DK_DAYS[weekday]} · Uge {week_num}"
+        # Tilføj korrekt header hardcodet (forhindrer AI i at skrive forkert "Dag X af N uger")
+        program_day = _programs.program_day(ACTIVE_PROGRAM, date.today())
+        header_str = f"Dag {program_day} af {days_total} · {DK_DAYS[weekday]} · Uge {week_num}"
         header_html = f'<p style="margin:0 0 8px;font-family:\'Hanken Grotesk\',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)"><strong>{header_str}</strong></p>'
         html_lines = [header_html]
         for line in ai_text.split('\n'):
@@ -903,28 +971,8 @@ def main():
     except Exception as _e:
         print(f"  ⚠️ plan_view fejlede (ikke-blokerende): {_e}")
 
-    # --- Opdater kpis[] i index.html ---
-    sha_html, html = gh_get('index.html')
-    if html:
-        lines = ['kpis:[']
-        kpis_list = [
-            ('VÆGT',      data['kpis']['weight']),
-            ('FEDT%',     data['kpis']['fat']),
-            ('CTL',       data['kpis']['ctl']),
-            ('TSS COMP.', {'value': fmt(compliance,0) if compliance else '—', 'unit': '%' if compliance else '', 'sub': f"Planlagt {int(planned)} TSS", 'color': color_for(compliance, 85, lower=False) if compliance else '#7A6A58'}),
-            ('HRV',       data['kpis']['hrv']),
-            ('LØB KM',    data['kpis']['runKm']),
-        ]
-        for label, k in kpis_list:
-            lines.append(f'    {{label:"{label}", value:"{k["value"]}", unit:"{k["unit"]}", sub:"{k["sub"]}", color:"{k["color"]}"}},')
-        lines.append('  ]')
-        kpis_block = '\n'.join(lines)
-        import re as _re
-        html = _re.sub(r'kpis:\[[\s\S]*?\]', kpis_block, html, count=1)
-        # Bump version
-        now = datetime.now().strftime("%Y%m%d-%H%M")
-        html = _re.sub(r'<!-- v[\d\-]+ -->', f'<!-- v{now} -->', html)
-        gh_put('index.html', sha_html, html, f'KPI kpis[] opdateret {today}')
+    # index.html's D.kpis er kun fallback — applyRemote() læser kpis fra data.json.
+    # Den gamle regex-erstatning af kpis:[...] + push af index.html er fjernet 3/9-2026.
 
     print("=== Done ===")
 

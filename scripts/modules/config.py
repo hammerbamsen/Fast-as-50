@@ -11,9 +11,13 @@ AUTH          = ('API_KEY', API_KEY)
 
 # ── Goal Engine: al plan-data læses fra data/plan.json ─────────
 # plan.json er den ENESTE kilde til CTL-plan, blok-typer, racedatoer,
-# programstart og mål. Hardcodede fallbacks bruges kun hvis filen mangler.
+# programstart og mål. Det AKTIVE program vælges efter dagens dato via
+# modules/programs.py (start <= i dag <= end, ellers seneste startede) —
+# der er ingen hardkodet programlængde nogen steder i koden.
+# Hardcodede fallbacks bruges kun hvis filen mangler.
 import json as _json
-from datetime import date as _date
+from datetime import date as _date, timedelta as _timedelta
+from . import programs as _programs
 
 _PLAN_PATH = os.path.join(os.path.dirname(__file__), '..', '..', 'data', 'plan.json')
 
@@ -26,18 +30,24 @@ def _load_plan():
         return None
 
 PLAN = _load_plan()
+ACTIVE_PROGRAM = _programs.active_program(PLAN, "kennet") if PLAN else None
 
-if PLAN:
-    _weeks      = sorted(PLAN['weeks'], key=lambda w: w['week'])
-    CTL_PLAN    = [w['ctlTarget'] for w in _weeks]
-    BLOCK_TYPES = {w['week']: w['blockType'] for w in _weeks}
-    TOTAL_WEEKS = PLAN['program']['totalWeeks']
-    PLAN_START  = _date.fromisoformat(PLAN['program']['start'])
-    RACES       = PLAN.get('races', [])
-    NEXT_RACES  = (PLAN.get('nextSeason') or {}).get('races', [])
-    GOALS       = PLAN.get('goals', {})
+if ACTIVE_PROGRAM:
+    PROGRAM_ID  = ACTIVE_PROGRAM['id']
+    CTL_PLAN    = _programs.ctl_plan(ACTIVE_PROGRAM)
+    BLOCK_TYPES = _programs.block_types(ACTIVE_PROGRAM)
+    TOTAL_WEEKS = ACTIVE_PROGRAM['totalWeeks']
+    PLAN_START  = _date.fromisoformat(ACTIVE_PROGRAM['start'])
+    RACES       = ACTIVE_PROGRAM.get('races', [])
+    GOALS       = ACTIVE_PROGRAM.get('goals', {})
+    # Løb i SENERE programmer (til nedtælling på dashboardet). Kommende løb
+    # på tværs af alle programmer: programs.upcoming_races(PLAN, "kennet").
+    NEXT_RACES  = [r for p in _programs.programs_for(PLAN, "kennet")
+                   if p['start'] > ACTIVE_PROGRAM['start']
+                   for r in p.get('races', [])]
 else:
     # Fallback (bør aldrig rammes i drift)
+    PROGRAM_ID  = 'fallback'
     CTL_PLAN    = [34, 36, 38, 41, 48, 50, 54, 60, 56, 61, 67, 63, 59, 56]
     BLOCK_TYPES = {1:'BUILD',2:'BUILD+',3:'BUILD+',4:'RECOVERY',5:'BUILD',6:'BUILD',
                    7:'BUILD',8:'BUILD+',9:'RECOVERY',10:'BUILD',11:'BUILD+',12:'TAPER',
@@ -48,6 +58,20 @@ else:
                    {"name": "Marathon du Médoc", "date": "2026-09-05"}]
     NEXT_RACES  = []
     GOALS       = {"weightKg": 68, "bodyFatPct": 16, "afDaysPerWeek": 5}
+    ACTIVE_PROGRAM = {
+        'id': PROGRAM_ID, 'name': 'Fast as Fifty', 'athletes': ['kennet'],
+        'start': PLAN_START.isoformat(), 'totalWeeks': TOTAL_WEEKS,
+        'end': (PLAN_START + _timedelta(days=TOTAL_WEEKS * 7 - 1)).isoformat(),
+        'philosophy': 'capacity', 'description': '',
+        'weeks': [{'week': w, 'blockType': BLOCK_TYPES[w], 'ctlTarget': CTL_PLAN[w - 1]}
+                  for w in range(1, TOTAL_WEEKS + 1)],
+        'races': RACES, 'goals': GOALS,
+    }
+
+# Projektstart = første programs start (AF-log og andre "siden projektstart"-
+# serier spænder over ALLE programmer, ikke kun det aktive).
+PROJECT_START = min((_date.fromisoformat(p['start']) for p in _programs.programs_for(PLAN, 'kennet')),
+                    default=PLAN_START) if PLAN else PLAN_START
 
 # Faste programmål -- én kilde, brugt i både dashboard-KPI'er og coach-tekst.
 # CTL-start/slutmål udledes ALTID af CTL_PLAN, så de aldrig kan komme ud af sync med planen.
@@ -55,9 +79,17 @@ CTL_START = CTL_PLAN[0]
 CTL_GOAL = CTL_PLAN[-1]
 AF_GOAL = GOALS.get("afDaysPerWeek", 5)
 SLEEP_GOAL_HOURS = 7
-SWIM_GOAL_M = 2000
-RUN_KM_GOAL = 40
-RUN_KM_GOAL_WEEK = 10
+# Svøm-/løbemål er PROGRAM-specifikke og findes kun i programmets goals
+# (medoc-2026: swimMeters/runKmPerWeek; tds-2027: ingen -> KPI'en vises uden mål).
+# Brug GOALS.get('swimMeters') / GOALS.get('runKmPerWeek') direkte.
+
+def athlete_age(today=None, athlete='kennet'):
+    """Alder beregnet ved kørsel fra athletes.<a>.birthYear i plan.json.
+    None hvis feltet mangler — prompter udelader så alderen frem for at gætte."""
+    today = today or _date.today()
+    by = ((PLAN or {}).get('athletes', {}).get(athlete) or {}).get('birthYear')
+    return (today.year - int(by)) if by else None
+
 
 DK_DAYS    = ["Mandag","Tirsdag","Onsdag","Torsdag","Fredag","Lørdag","Søndag"]
 DAY_SHORT  = ["Man","Tir","Ons","Tor","Fre","Lør","Søn"]

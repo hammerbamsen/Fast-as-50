@@ -196,6 +196,25 @@ def test_hike_genuinely_short_still_minimal():
     assert status == "minimal"
 
 
+def test_strength_uses_duration_not_tss():
+    """3/9-2026: styrke 42 af 45 min men 6 af 40 TSS -> skal være done, ikke minimal."""
+    status, pct = sessions.calc_completion(
+        actual_tss=6, planned_tss=40, actual_mins=42, planned_mins=45,
+        disc="strength",
+    )
+    assert status == "done"
+    assert pct == 93
+
+
+def test_strength_short_is_still_partial():
+    status, pct = sessions.calc_completion(
+        actual_tss=3, planned_tss=40, actual_mins=25, planned_mins=45,
+        disc="strength",
+    )
+    assert status == "partial"
+    assert pct == 56
+
+
 def test_hike_without_duration_data_falls_back_to_tss():
     status, pct = sessions.calc_completion(
         actual_tss=70, planned_tss=76, actual_mins=None, planned_mins=None,

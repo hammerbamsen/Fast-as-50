@@ -1,9 +1,19 @@
 """Coach-tekst, AI-assessment og QA-logik."""
 import os, re, json, urllib.request as _urllib_req
 from datetime import date, timedelta
-from .config import (TOTAL_WEEKS, BASE, AUTH, api_get, fix_enc, fmt, ctl_plan_for_week, ANTHROPIC_KEY,
+from .config import (PLAN, ACTIVE_PROGRAM, GOALS, TOTAL_WEEKS, BASE, AUTH, api_get, fix_enc, fmt, ctl_plan_for_week, ANTHROPIC_KEY,
                       DK_DAYS, DK_MONTHS, DAY_SHORT,
-                      CTL_START, CTL_GOAL, AF_GOAL, SLEEP_GOAL_HOURS, SWIM_GOAL_M)
+                      CTL_START, CTL_GOAL, AF_GOAL, SLEEP_GOAL_HOURS, athlete_age)
+from . import programs as _programs
+
+
+def weeks_to_next_race(today=None):
+    """Hele uger til næste løb på tværs af programmerne (None hvis intet løb forude)."""
+    today = today or date.today()
+    up = _programs.upcoming_races(PLAN, "kennet", today) if PLAN else []
+    if not up:
+        return None, None
+    return max(0, round(up[0]["daysTo"] / 7)), up[0]
 
 QUOTES_TRAINING = [
     "\"Det er ikke om at have tid. Det er om at tage den.\"",
@@ -11,7 +21,7 @@ QUOTES_TRAINING = [
     "\"Konsistens slår intensitet, hver gang.\"",
     "\"Hvil er ikke det modsatte af fremskridt — det er en del af det.\"",
     "\"Formen bygges i kedsomheden — ikke i begejstringen.\"",
-    "\"14 uger er lang tid. Men hver dag er kort.\"",
+    "\"Et program er lang tid. Men hver dag er kort.\"",
     "\"Den bedste træning er den, du faktisk gennemfører.\"",
     "\"Recovery er ikke pause — det er produktion.\"",
     "\"Du har gjort det 16 gange før. Kroppen kender vejen.\"",
@@ -230,7 +240,15 @@ def build_trajectory_note(week_num, ctl, weight, weight_history):
     return " ".join(parts) if parts else None
 
 
-def qa_coach_speech(speech, week_sessions, ctl, tsb, weight, af_this_week, tss_act, planned, weight_goal=72):
+def _goal(value, key, fallback):
+    """Mål fra det aktive programs goals (plan.json) når kalderen ikke giver et."""
+    if value is not None:
+        return value
+    return (GOALS or {}).get(key, fallback)
+
+
+def qa_coach_speech(speech, week_sessions, ctl, tsb, weight, af_this_week, tss_act, planned, weight_goal=None):
+    weight_goal = _goal(weight_goal, 'weightKg', 68)
     """QA-tjek: returner liste af fejl hvis coach-teksten modsiger de faktiske data.
     Bruges til at stoppe en forkert tekst fra at gå live.
 
@@ -333,17 +351,18 @@ def dk_day(iso):
 def generate_coach_speech(week_num, weekday, streak, af_this_week, today_session, block_type, week_focus,
                            ctl=None, tsb=None, weight=None, sleep=None, compliance=None,
                            tss_act=None, planned=None, remaining_sessions=None, week_sessions=None,
-                           travel_note=None, trajectory_note=None, days_completed=None, weight_goal=72,
+                           travel_note=None, trajectory_note=None, days_completed=None, weight_goal=None,
                            decoupling_note=None,
                            weight_date=None):
     """Genererer daglig coach-tekst: dagsintro + session + Friel/Martin-vurdering (godt/fokus).
 
-    Coaching-princip: hold Kennet på sporet mod Christiansborg (29/8) og Médoc (5/9).
+    Coaching-princip: hold Kennet på sporet mod det aktive programs løb (programs.py).
     - Peg ALTID fremad: hvad er næste konkrete handling
     - Nævn ALDRIG manglende sessions der faktisk er done=True
     - Vær direkte og præcis — ikke generisk motivation
     - Brug masterplanen som kontekst — TSS=0 mandag morgen er normalt, ikke et rødt flag
     """
+    weight_goal = _goal(weight_goal, 'weightKg', 68)
 
     # Brug week_sessions (live fra Intervals) som kilden til dagens og resten af ugens plan
     # Dette er altid opdateret og matcher hvad der faktisk er i Intervals.icu
@@ -478,7 +497,8 @@ def generate_coach_speech(week_num, weekday, streak, af_this_week, today_session
             # kan modsige den faktiske retning.
             weight_aside = f"Vægt på {fmt(weight)} kg{_wsuf} — {travel_note}"
         else:
-            focus.append(f"Vægt på {fmt(weight)} kg{_wsuf} — hold protein højt og undgå lette kulhydrater om aftenen.")
+            focus.append(f"Vægt på {fmt(weight)} kg{_wsuf} — protein ved hvert måltid, alkohol som bevidst valg, "
+                         f"søvn 7-8 t. Vægt/fedt vurderes på 7d-snit mod planen, ikke på én vejning.")
 
     if sleep is not None:
         if sleep >= SLEEP_GOAL_HOURS:
@@ -532,9 +552,11 @@ def generate_coach_speech(week_num, weekday, streak, af_this_week, today_session
         parts.append("Alt kører efter planen — bare fortsæt.")
 
     # Fremadrettet linje: hvad er næste skridt mod målet?
-    weeks_to_christiansborg = max(0, round((date(2026, 8, 29) - date.today()).days / 7, 0))
-    if all_done and len(focus) == 0:
-        closing = f"Stærk uge. {int(weeks_to_christiansborg)} uger til Christiansborg — hold sporet."
+    _wks, _race = weeks_to_next_race()
+    if all_done and len(focus) == 0 and _race:
+        closing = f"Stærk uge. {int(_wks)} uger til {_race.get('name')} — hold sporet."
+    elif all_done and len(focus) == 0:
+        closing = "Stærk uge. Hold sporet."
     elif all_done:
         closing = f"Alle sessioner i hus. Juster de små ting, og resten følger."
     elif len(focus) >= 3:
@@ -590,12 +612,14 @@ def _redact(msg):
 
 def generate_ai_assessment(week_num, weekday, day_name, ctl, tsb, weight, af_this_week, af_streak,
                              week_sessions, week_focus, today_session, tss_act, planned, travel_note=None,
-                             trajectory_note=None, days_completed=None, compliance_summary=None, weight_goal=72,
+                             trajectory_note=None, days_completed=None, compliance_summary=None, weight_goal=None,
                              decoupling_note=None,
-                             fat=None, fat_goal=20, fat_trend_note=None,
+                             fat=None, fat_goal=None, fat_trend_note=None,
                              weight_date=None, fat_date=None,
                              weight_avg7=None, fat_avg7=None):
     """Kalder Anthropic API server-side og returnerer HTML-formateret coach-vurdering."""
+    weight_goal = _goal(weight_goal, 'weightKg', 68)
+    fat_goal = _goal(fat_goal, 'bodyFatPct', 16)
     global LAST_AI_ERROR
     LAST_AI_ERROR = None
     if not ANTHROPIC_KEY:
@@ -760,11 +784,18 @@ def generate_ai_assessment(week_num, weekday, day_name, ctl, tsb, weight, af_thi
 
     bike_library_line = build_bike_library_line(weekday)
 
+    _age = athlete_age()
+    _age_txt = f"{_age} år, " if _age else ""
+    _prog_txt = _programs.describe(ACTIVE_PROGRAM)
+    _phil = (ACTIVE_PROGRAM.get("philosophy") or "").lower()
+    _phil_txt = {"capacity": "capacity-mode, ikke performance-mode",
+                 "durability": "durability — holdbarhed og jævn CTL-opbygning frem for peak-form"
+                 }.get(_phil, _phil or "kapacitet")
     prompt = (
-        f"Du er Joel Friel-inspireret træningscoach for Kennet Hammerby, 51 år, erfaren Ironman-atlet "
-        f"i et 14-ugers reset-år mod to mål: Christiansborg Rundt ({SWIM_GOAL_M}m svøm, 29. aug) og Marathon Médoc (5. sep).\n\n"
-        f"Kennet er i uge {week_num} af {TOTAL_WEEKS}, dag {weekday + 1} af 7 ({day_name}). Filosofi: capacity-mode, ikke performance-mode. "
-        f"Mål: bygge CTL fra {CTL_START} til {CTL_GOAL} (uge 14), tabe sig til under {weight_goal} kg, {AF_GOAL} AF-dage/uge.\n\n"
+        f"Du er Joel Friel-inspireret træningscoach for Kennet Hammerby, {_age_txt}erfaren Ironman-atlet. "
+        f"Program: {_prog_txt}.\n\n"
+        f"Kennet er i uge {week_num} af {TOTAL_WEEKS}, dag {weekday + 1} af 7 ({day_name}). Filosofi: {_phil_txt}. "
+        f"Mål: bygge CTL fra {CTL_START} til {CTL_GOAL} (uge {TOTAL_WEEKS}), tabe sig til under {weight_goal} kg, {AF_GOAL} AF-dage/uge.\n\n"
         f"Friel-regler:\n- TSB ikke under -30\n- CTL-stigning max 5-8/uge\n"
         f"- Recovery-uge efter hård blok\n- Max 3 løbeture/uge\n\n"
         f"Aktuelle data:\n- {kpis_str}\n- {af_note}\n- Ugefokus: {week_focus[:200]}\n"

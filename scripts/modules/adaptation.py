@@ -24,6 +24,7 @@ aktiviteter hentet i update_kpi, og on-demand via apply_edit-action
 from datetime import date, timedelta
 
 from . import friel
+from . import programs as _programs
 
 # Tærskler (jf. designbeslutning 7/7-2026)
 MISSED_7D_TRIGGER = 2    # >= 2 missede pas på 7 dage
@@ -162,12 +163,13 @@ def suggest(plan, missed, today, readiness=None):
     if not triggered:
         return out
 
-    # Fase-guard: intet forslag i recovery/taper/race-uger
-    weeks_meta = {w["week"]: w for w in plan.get("weeks", [])}
+    # Fase-guard: intet forslag i recovery/taper/race-uger (aktivt program pr. today)
+    program = _programs.active_program(plan, "kennet", today)
+    weeks_meta = _programs.weeks_meta(program) if program else {}
     try:
-        ps = date.fromisoformat(plan["program"]["start"])
-        cw = (today - ps).days // 7 + 1
-    except (KeyError, ValueError):
+        ps = date.fromisoformat(program["start"])
+        cw = _programs.week_no_raw(program, today)
+    except (KeyError, ValueError, TypeError):
         cw = None
     phase = friel._phase(weeks_meta, cw) if cw else ""
     if phase in ("RECOVERY", "TAPER", "RACE"):

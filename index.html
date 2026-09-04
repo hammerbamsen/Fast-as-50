@@ -418,30 +418,24 @@ async function saveZonesToPlan(sec, w){
 const DISC_LABEL = { run:"LØB", bike:"CYKEL", swim:"SVØM", strength:"STYRKE", free:"FRI", walk:"GÅ", hike:"HIKE", commute:"PENDL", openwater:"OW" };
 
 const STATIC = {
-  periodization:[
-    {w:1,t:"build",l:"B1"},{w:2,t:"build",l:"B2"},{w:3,t:"build",l:"B3"},{w:4,t:"recovery",l:"R"},
-    {w:5,t:"build",l:"B4"},{w:6,t:"build",l:"B5"},{w:7,t:"build",l:"B6"},{w:8,t:"recovery",l:"R"},
-    {w:9,t:"build",l:"B7"},{w:10,t:"build",l:"B8"},{w:11,t:"build",l:"B9"},{w:12,t:"recovery",l:"R"},
-    {w:13,t:"race",l:"CB"},{w:14,t:"race",l:"MD"},
-  ],
+  // Periodisering og CTL-mål kommer fra data.json (ctlPlan/blockTypes — kilde:
+  // plan.json -> programs.<aktivt>). Intet program hardkodes her.
   strength:["Dumbbell Thruster","Renegade Row","Push-Up","KB Swing","One-Arm KB Row","Romanian Deadlift","Bulgarian Split Squat"],
+  // Kennets 7 principper ("Fast as 50") — kilde: projektbeskrivelsen.
   rules:[
-    {n:"01",title:"Protein prioritet",body:"≥ 150 g protein/dag. Prioritér ved hvert måltid."},
-    {n:"02",title:"Intentionel alkohol",body:"5 AF-dage/uge minimum. Undtagelser er valg, ikke vaner."},
-    {n:"03",title:"Grønt fundament",body:"Grøntsager ved hvert hovedmåltid. Farve = næring."},
-    {n:"04",title:"Hverdagsdisciplin",body:"Strukturerede hverdage. Weekend som belønning, ikke flugt."},
-    {n:"05",title:"Søvn som træning",body:"≥ 7 timers søvn. Det er recovery, ikke luksus."},
-    {n:"06",title:"Styrke 2×/uge",body:"Functional Strength 2 protokol. Konsistens > intensitet."},
-    {n:"07",title:"Daglig bevægelse",body:"Min. 20 min aktiv bevægelse hver dag."},
-    {n:"08",title:"System over vilje",body:"Byg systemer der fungerer når motivationen svigter."},
-    {n:"09",title:"Mental skarphed",body:"Læs, reflektér, skriv. Hjernen er også en muskel."},
-    {n:"10",title:"Kapacitet over performance",body:"Mål: kapacitet ved 50+. Ikke podium — holdbarhed."},
+    {n:"01",title:"Protein først — altid",body:"≥ 150 g protein/dag, protein ved hvert måltid. Det eneste makronæringsstof der beskytter muskelmasse over 50."},
+    {n:"02",title:"Alkohol er et bevidst valg — ikke en vane",body:"6 AF-dage/uge. Hvis jeg drikker, er det fordi jeg aktivt har valgt det."},
+    {n:"03",title:"Bevæg dig hver dag — men ikke altid hårdt",body:"Z2, gang, cykel, svømning tæller. Hvile er strategi, ikke svaghed."},
+    {n:"04",title:"Søvn er ikke luksus",body:"7-8 timer. Ikke forhandleligt. Alt andet kollapser uden det."},
+    {n:"05",title:"Styrketræning 2× om ugen — resten af livet",body:"Muskelmasse, knogletæthed og balance afgør om man er funktionel som 70-årig."},
+    {n:"06",title:"Mental skarphed er også træning",body:"Læs. Tænk langsomt. Brug stilheden."},
+    {n:"07",title:"Fleksibilitet over rigiditet",body:"Et system der holder — ikke et der kræver perfekt udførelse hver dag."},
   ],
   // start = programmets baseline (juni-26). goal er KUN fallback — det rigtige mål
   // kommer fra data.json (weightGoal/bodyFatGoal, kilde: plan.json goals).
   weight:{ start:74.5, goal:68 },
   bodyFat:{ start:23, goal:16 },
-  ctlGoal:68, ctlStart:34,
+  ctlStart:34,
 };
 
 // ── Dynamic data (fra data.json) ──────────────────────────────
@@ -449,16 +443,19 @@ let D = {
   zones: null,   // sat fra data.json (kilde: data/plan.json)
   weightGoal: null, bodyFatGoal: null,   // fra data.json — aldrig hardkodet her
   week:1, totalWeeks:14, blockType:"BUILD",
-  daysToMedoc:93, daysToChristiansborg:86,
+  programId:null, programName:"", phase:null,
+  nextRace:null,            // {name, date, daysTo, priority} fra data.json meta.nextRace
+  blockTypes:null,          // {uge: blockType} fra data.json (kilde: plan.json programs)
+  goals:null,               // programmets goals fra data.json (swimMeters, runKmPerWeek, ...)
   racesUpcoming: [],
   dayName:"", date:"",
   afDays:{ weekDone:0, target:6, streak:0 },
   afHistory: [],
   af_log: null,
   train_mins: {run:0, bike:0, swim:0, strength:0},
-  coachSpeech:"Du starter fra CTL 34 — lavere end din Ironman-baggrund tilsiger, men ærligt. {HL} Uge 1: etabler rytmen. 5 AF-dage, protein ved hvert måltid.",
+  coachSpeech:"Du starter fra CTL 34 — lavere end din Ironman-baggrund tilsiger, men ærligt. {HL} Uge 1: etabler rytmen. 6 AF-dage, protein ved hvert måltid.",
   coachHighlight:"14 uger konsistens løfter dig til CTL 60.",
-  weekFocus:"Aktivér systemet. Første build-uge — hold igen på intensitet, byg volumen gradvist. Fokus: protein ≥ 150 g/dag, søvn ≥ 7 t, 5 AF-dage.",
+  weekFocus:"Aktivér systemet. Første build-uge — hold igen på intensitet, byg volumen gradvist. Fokus: protein ≥ 150 g/dag, søvn ≥ 7 t, 6 AF-dage.",
   coachAssessment: null,
   coachAssessmentHtml: '',
   coachAssessmentTs: '',
@@ -622,7 +619,12 @@ function ctlGraph() {
     ? rawActual.map((v,i)=>v!==null&&v!==undefined?v:CTL_PLAN[i])
     : CTL_PLAN.slice(0,D.week);
   const plan=CTL_PLAN, W=500, H=140, pad={t:18,r:24,b:30,l:30};
-  const iW=W-pad.l-pad.r, iH=H-pad.t-pad.b, mn=30, mx=65;
+  const iW=W-pad.l-pad.r, iH=H-pad.t-pad.b;
+  // Y-akse dynamisk: min/max af plan + faktisk ±5 (afrundet til 5)
+  const allV=[...plan,...actual].filter(v=>v!=null&&!isNaN(v));
+  const mn=Math.floor((Math.min(...allV)-5)/5)*5, mx=Math.ceil((Math.max(...allV)+5)/5)*5;
+  const gridVals=[1,2,3].map(k=>Math.round(mn+(mx-mn)*k/4));
+  const labelStep=Math.max(1, Math.ceil(plan.length/14));   // max ~14 uge-labels på x-aksen
   const x=i=>pad.l+(i/(plan.length-1))*iW;
   const y=v=>pad.t+iH-((v-mn)/(mx-mn))*iH;
   const wk=D.week;
@@ -648,26 +650,43 @@ function ctlGraph() {
       <stop offset="0%" stop-color="var(--gold)" stop-opacity=".35"/>
       <stop offset="100%" stop-color="var(--gold)" stop-opacity=".03"/>
     </linearGradient></defs>
-    ${[35,45,55].map(v=>`<line x1="${pad.l}" x2="${W-pad.r}" y1="${y(v)}" y2="${y(v)}" stroke="var(--cream-d)" stroke-width="1"/>
+    ${gridVals.map(v=>`<line x1="${pad.l}" x2="${W-pad.r}" y1="${y(v)}" y2="${y(v)}" stroke="var(--cream-d)" stroke-width="1"/>
       <text x="${pad.l-4}" y="${y(v)+4}" text-anchor="end" fill="var(--muted)" font-size="9" font-family="'Space Mono',monospace">${v}</text>`).join("")}
-    <line x1="${pad.l}" x2="${W-pad.r}" y1="${y(60)}" y2="${y(60)}" stroke="var(--wine)" stroke-width="1.2" stroke-dasharray="4,4" opacity=".6"/>
-    <text x="${W-pad.r}" y="${y(60)-5}" text-anchor="end" fill="var(--wine)" font-size="9" font-weight="700" font-family="'Space Mono',monospace">MÅL 60</text>
     <path d="${planPath}" fill="none" stroke="var(--muted)" stroke-width="1.5" stroke-dasharray="3,4" opacity=".5"/>
     <path d="${actualArea}" fill="url(#g)"/>
     <path d="${actualPath}" fill="none" stroke="var(--gold)" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"/>
     <circle cx="${x(actual.length-1)}" cy="${y(cur)}" r="5" fill="var(--gold)" stroke="var(--wine)" stroke-width="2"/>
     <text x="${x(actual.length-1)}" y="${y(cur)-12}" text-anchor="middle" fill="var(--wine)" font-size="11" font-weight="700" font-family="'Space Mono',monospace">${cur.toFixed(1)}</text>
-    ${labels.map((l,i)=>`<text x="${x(i)}" y="${H-4}" text-anchor="middle"
+    ${labels.map((l,i)=>(i===wk-1 || i%labelStep===0) ? `<text x="${x(i)}" y="${H-4}" text-anchor="middle"
       fill="${i===wk-1?"var(--wine)":"var(--muted)"}" font-size="8" font-family="'Space Mono',monospace"
-      font-weight="${i===wk-1?700:400}">${l||(i+1)}</text>`).join("")}
+      font-weight="${i===wk-1?700:400}">${l||(i+1)}</text>` : "").join("")}
   </svg>`;
 }
 
+// Bloktype -> kategori/kort label. Kilde: data.json blockTypes (plan.json programs).
+function periodCells(){
+  const bt = D.blockTypes || {};
+  const n = D.totalWeeks || CTL_PLAN.length;
+  const cat = b => { b=(b||"").toUpperCase();
+    if (b==="RECOVERY") return "recovery";
+    if (b==="RACE"||b==="TAPER") return "race";
+    if (b.startsWith("BASE")||b==="TRANSITION") return "base";
+    return "build"; };
+  const short = b => { b=(b||"").toUpperCase();
+    return ({RECOVERY:"R",RACE:"RC",TAPER:"T",TRANSITION:"TR",CAMP:"C",STELVIO:"ST",PEAK:"P"})[b]
+      || (b.startsWith("SPECIFIK") ? "S"+(b.endsWith("+")?"+":"") : b.startsWith("BASE") ? "BA"+(b.endsWith("+")?"+":"") : "B"+(b.endsWith("+")?"+":"")); };
+  const cells=[];
+  for(let w=1; w<=n; w++){
+    const b = bt[w] ?? bt[String(w)] ?? (CTL_PLAN[w-1] != null && CTL_PLAN[w-2] != null && CTL_PLAN[w-1] < CTL_PLAN[w-2] ? "RECOVERY" : "BUILD");
+    cells.push({w, t:cat(b), l:short(b)});
+  }
+  return cells;
+}
 function periodTimeline() {
-  const tc={build:"var(--wine)",recovery:"var(--swim)",race:"var(--gold)"};
+  const tc={build:"var(--wine)",recovery:"var(--swim)",race:"var(--gold)",base:"#2E86AB"};
   const wk=D.week;
   return `<div class="period-scroll"><div class="period-row">
-    ${STATIC.periodization.map(p=>{
+    ${periodCells().map(p=>{
       const col=tc[p.t];
       const active=p.w===wk;
       return `<div class="period-cell" style="background:${active?col:col+'22'};border-color:${col}">
@@ -677,7 +696,7 @@ function periodTimeline() {
     }).join("")}
   </div>
   <div class="period-legend">
-    ${[["build","var(--wine)","BUILD"],["recovery","var(--swim)","RECOVERY"],["race","var(--gold)","RACE"]].map(([k,c,l])=>
+    ${[["base","#2E86AB","BASE"],["build","var(--wine)","BUILD"],["recovery","var(--swim)","RECOVERY"],["race","var(--gold)","RACE/TAPER"]].map(([k,c,l])=>
       `<div style="display:flex;align-items:center;gap:5px"><div class="legend-dot" style="background:${c}"></div><span style="font-family:'Space Mono',monospace;font-size:9px;color:var(--muted)">${l}</span></div>`
     ).join("")}
   </div></div>`;
@@ -819,7 +838,7 @@ function renderToday() {
         <div class="sticky-bar-item"><div class="sticky-bar-label">CTL</div><div class="sticky-bar-value" style="color:${ctlColorBar}">${ctlVal}<span style="font-size:11px;color:rgba(255,255,255,.45)">/${ctlGoalBar}</span></div></div>
         <div class="sticky-bar-item"><div class="sticky-bar-label">FORM</div><div class="sticky-bar-value" style="color:${tsbColor}">${tsbVal >= 0 ? '+' : ''}${tsbVal.toFixed ? tsbVal.toFixed(0) : tsbVal}</div></div>
         <div class="sticky-bar-item"><div class="sticky-bar-label">AF DAGE</div><div class="sticky-bar-value">${D.afDays.weekDone}/${D.afDays.target}</div></div>
-        <div class="sticky-bar-item"><div class="sticky-bar-label">MÉDOC</div><div class="sticky-bar-value">${D.daysToMedoc}d</div></div>
+        ${D.nextRace ? `<div class="sticky-bar-item"><div class="sticky-bar-label">${(D.nextRace.name||"RACE").split(" ")[0].toUpperCase().slice(0,10)}</div><div class="sticky-bar-value">${D.nextRace.daysTo}d</div></div>` : ""}
       `;
     })()}
   </div>
@@ -840,7 +859,7 @@ function renderToday() {
   ${kpiGrid()}
 
   <div class="card"><div class="label">Ugefokus</div>${renderFocus(D.weekFocus)}</div>
-  <div style="text-align:center;padding:8px 0 16px;font-family:'Space Mono',monospace;font-size:9px;color:var(--muted);letter-spacing:.06em">SIDST OPDATERET <span id='last-updated'></span> · <span id="live-time"></span></div>
+  <div style="text-align:center;padding:8px 0 16px;font-family:'Space Mono',monospace;font-size:9px;color:var(--muted);letter-spacing:.06em">SIDST OPDATERET <span id='last-updated'>${D.lastUpdated || '—'}</span> · <span id="live-time"></span></div>
   `;
   setTimeout(()=>{const el=document.getElementById('live-time');if(el)el.textContent=new Date().toLocaleTimeString('da-DK',{hour:'2-digit',minute:'2-digit'});},50);
 }
@@ -919,7 +938,7 @@ function renderWeek() {
       </div>
       <div style="width:1px;height:36px;background:rgba(255,255,255,.1)"></div>
       <div style="text-align:center">
-        <div style="font-family:'Newsreader',serif;font-size:32px;color:var(--gold);line-height:1">${D.afDays.weekDone}/7</div>
+        <div style="font-family:'Newsreader',serif;font-size:32px;color:var(--gold);line-height:1">${D.afDays.weekDone}/${D.afDays.target}</div>
         <div style="font-family:'Space Mono',monospace;font-size:9px;color:rgba(255,255,255,.5);letter-spacing:.08em">DENNE UGE</div>
       </div>
     </div>` : ''}
@@ -1202,7 +1221,8 @@ function kpiGrid() {
 }
 
 function upcomingRacesCard(){
-  // Sæson 2027 — kilde er plan.json -> nextSeason.races via data.json.racesUpcoming
+  // Kommende løb på tværs af programmer — kilde er plan.json -> programs.*.races
+  // via data.json.racesUpcoming (update_kpi.py). Aldrig hardkodet her.
   const rs = D.racesUpcoming || [];
   if (!rs.length) return "";
   const MON = ["jan","feb","mar","apr","maj","jun","jul","aug","sep","okt","nov","dec"];
@@ -1215,7 +1235,7 @@ function upcomingRacesCard(){
     const meta = [when, tag, r.distance, reg].filter(Boolean).join(" · ");
     return `<div class="event-card">${icon("flag",20,"var(--gold)")}<div style="flex:1"><div style="font-family:'Hanken Grotesk',sans-serif;font-size:14px;font-weight:600">${r.name}</div><div style="font-family:'Space Mono',monospace;font-size:11px;color:var(--muted)">${meta}</div></div><div style="text-align:right"><div class="event-days">${r.days}</div><div class="event-days-sub">dage</div></div></div>`;
   }).join("");
-  return `<div class="card"><div class="label">Sæson 2027 — mål</div>${rows}</div>`;
+  return `<div class="card"><div class="label">Kommende løb</div>${rows}</div>`;
 }
 
 function renderOverview() {
@@ -1223,15 +1243,10 @@ function renderOverview() {
   <div class="hero-card">
     <div class="hero-eyebrow">SÆSON 2026</div>
     <div class="hero-title">Træning</div>
-    <div class="hero-sub">14-ugers periodeplan + events</div>
-  </div>
-  <div class="card">
-    <div class="label">Race-nedtælling</div>
-    <div class="event-card">${icon("flag",20,"var(--gold)")}<div style="flex:1"><div style="font-family:'Hanken Grotesk',sans-serif;font-size:14px;font-weight:600">Christiansborg Rundt</div><div style="font-family:'Space Mono',monospace;font-size:11px;color:var(--muted)">29. aug</div></div><div style="text-align:right"><div class="event-days">${D.daysToChristiansborg}</div><div class="event-days-sub">dage</div></div></div>
-    <div class="event-card">${icon("flag",20,"var(--gold)")}<div style="flex:1"><div style="font-family:'Hanken Grotesk',sans-serif;font-size:14px;font-weight:600">Médoc Marathon</div><div style="font-family:'Space Mono',monospace;font-size:11px;color:var(--muted)">5. sep</div></div><div style="text-align:right"><div class="event-days">${D.daysToMedoc}</div><div class="event-days-sub">dage</div></div></div>
+    <div class="hero-sub">${D.programName ? D.programName + " · " : ""}${D.totalWeeks}-ugers periodeplan + events</div>
   </div>
   ${upcomingRacesCard()}
-  <div class="card"><div class="label">14-ugers periodeplan</div>${periodTimeline()}</div>
+  <div class="card"><div class="label">${D.totalWeeks}-ugers periodeplan</div>${periodTimeline()}</div>
   <div class="card">
     <div class="label" style="margin-bottom:12px">Træningsfordeling — uge ${D.week}</div>
     ${trainingDonut()}
@@ -1239,18 +1254,18 @@ function renderOverview() {
   <div class="card">
     <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:14px">
       <div class="label" style="margin-bottom:0">CTL-progression</div>
-      <span style="font-family:'Space Mono',monospace;font-size:10px;color:var(--gold)">MÅL: ${STATIC.ctlGoal}</span>
+      <span style="font-family:'Space Mono',monospace;font-size:10px;color:var(--gold)">MÅL: ${CTL_PLAN[CTL_PLAN.length-1]} (uge ${CTL_PLAN.length})</span>
     </div>
     ${ctlGraph()}
   </div>
   ${efCard()}
-  <div class="card">
-    <div class="label" style="margin-bottom:12px">Svøm — Christiansborg Rundt 29. aug</div>
+  ${(D.goals && !D.goals.swimMeters) ? "" : `<div class="card">
+    <div class="label" style="margin-bottom:12px">Svøm — mål ${(D.goals && D.goals.swimMeters) || 2000} m</div>
     ${(() => {
       const sh = D.swimHistory || [];
       const swimThisWeek = (D.kpis.find(k=>k.label==='SVØM UGE')||{}).value || '0';
       const cumulative = sh.length ? sh[sh.length-1].cumulative : 0;
-      const goal = 2000; // 2000m single distance goal
+      const goal = (D.goals && D.goals.swimMeters) || 2000; // programmets svømmemål (plan.json goals)
       const cumulGoal = D.week * 300; // ~300m/uge kumulativt mål
       const pct = Math.min(cumulative / cumulGoal * 100, 100);
       const barColor = pct >= 90 ? 'var(--swim)' : pct >= 60 ? '#E67E22' : 'var(--run)';
@@ -1275,11 +1290,11 @@ function renderOverview() {
         <div style="display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:10px">
           <div>
             <div style="font-family:'Newsreader',serif;font-size:28px;color:var(--swim);line-height:1">${swimThisWeekKm}<span style="font-size:14px;color:var(--muted);margin-left:4px">km uge</span></div>
-            <div style="font-family:Space Mono,monospace;font-size:10px;color:var(--muted);margin-top:4px">KUMULATIVT ${cumulativeKm} km · MÅL RACE 2 km</div>
+            <div style="font-family:Space Mono,monospace;font-size:10px;color:var(--muted);margin-top:4px">KUMULATIVT ${cumulativeKm} km · MÅL RACE ${(goal/1000).toFixed(1)} km</div>
           </div>
           <div style="text-align:right">
-            <div style="font-family:'Newsreader',serif;font-size:22px;color:var(--gold)">${D.daysToChristiansborg}</div>
-            <div style="font-family:Space Mono,monospace;font-size:8px;color:var(--muted)">DAGE TIL RACE</div>
+            <div style="font-family:'Newsreader',serif;font-size:22px;color:var(--gold)">${D.nextRace ? D.nextRace.daysTo : "—"}</div>
+            <div style="font-family:Space Mono,monospace;font-size:8px;color:var(--muted)">DAGE TIL ${D.nextRace ? D.nextRace.name.split(" ")[0].toUpperCase() : "RACE"}</div>
           </div>
         </div>
         <div style="background:rgba(255,255,255,.07);border-radius:6px;height:8px;margin-bottom:24px;overflow:hidden">
@@ -1290,7 +1305,7 @@ function renderOverview() {
         </div>
       `;
     })()}
-  </div>
+  </div>`}
   <div class="card">
     ${(()=>{
       const ctlVal = parseFloat((D.kpis.find(k=>k.label==='CTL')||{}).value) || 0;
@@ -2289,17 +2304,22 @@ function checkReadiness(readiness) { const existing = document.getElementById('r
 // Begge kaldere bruger nu denne funktion, så de ikke kan drifte fra hinanden.
 function applyRemote(remote) {
       const m = remote.meta || {};
+      D.meta = m;   // sticky-bar/CTL-mål læser D.meta.week — blev aldrig sat før 3/9-26
       if (m.updated)                    D.lastUpdated            = m.updated;
-      const luEl = document.getElementById('last-updated');
-      if (luEl) luEl.textContent = m.updated || D.lastUpdated || '—';
+      // "SIDST OPDATERET" renderes fra D.lastUpdated i templaten (efter navigate()) —
+      // et textContent sat her blev overskrevet af re-renderingen nedenfor.
       checkStaleness(m.updated); fetch("https://raw.githubusercontent.com/hammerbamsen/fast-as-50/main/data/plan_view.json?t=" + Date.now()).then(rv=>rv.ok?rv.json():null).then(view=>checkReadiness(view&&view.kennet&&view.kennet.readiness)).catch(()=>{});
       if (remote.zones)                 D.zones                  = remote.zones;
       if (m.week)                       D.week                   = m.week;
       if (m.totalWeeks)                 D.totalWeeks             = m.totalWeeks;
       if (Array.isArray(remote.ctlPlan) && remote.ctlPlan.length) CTL_PLAN = remote.ctlPlan;
       if (m.blockType)                  D.blockType              = m.blockType;
-      if (m.daysToMedoc != null)        D.daysToMedoc            = m.daysToMedoc;
-      if (m.daysToChristiansborg!=null) D.daysToChristiansborg   = m.daysToChristiansborg;
+      if (m.nextRace !== undefined)     D.nextRace               = m.nextRace;
+      if (m.programId)                  D.programId              = m.programId;
+      if (m.programName)                D.programName            = m.programName;
+      if (m.phase !== undefined)        D.phase                  = m.phase;
+      if (remote.blockTypes)            D.blockTypes             = remote.blockTypes;
+      if (remote.goals)                 D.goals                  = remote.goals;
       if (Array.isArray(remote.racesUpcoming)) D.racesUpcoming   = remote.racesUpcoming;
       if (m.dayName)                    D.dayName                = m.dayName;
       if (m.date)                       D.date                   = m.date;
@@ -2313,18 +2333,20 @@ function applyRemote(remote) {
         const km = remote.kpis;
         D.kpis = [
           // Træning
-          {cat:"Træning", label:"CTL",       value:km.ctl?.value    ||"—", unit:"",    sub:km.ctl?.sub    ||"Mål 60 (uge 14)",   color:"#C0392B"},
-          {cat:"Træning", label:"FORM",       value:km.tsb?.value    ||"—", unit:"",    sub:km.tsb?.sub    ||"Bygger",             color:km.tsb?.color||"#F39C12"},
-          {cat:"Træning", label:"LØB KM",     value:km.runKm?.value  ||"—", unit:"km",  sub:km.runKm?.sub  ||"Mål 40+ km",         color:"#C0392B"},
-          {cat:"Træning", label:"CYKEL KM",   value:km.bikeKm?.value ||"—", unit:"km",  sub:km.bikeKm?.sub ||"Cykel denne uge",    color:"var(--bike)"},
+          // Farver kommer fra data.json (update_kpi.py måler dem mod målet) —
+          // ingen hardkodede farver her; neutral grå kun hvis feltet mangler.
+          {cat:"Træning", label:"CTL",       value:km.ctl?.value    ||"—", unit:"",    sub:km.ctl?.sub    ||"Ugens mål",          color:km.ctl?.color    ||"#7A6A58"},
+          {cat:"Træning", label:"FORM",       value:km.tsb?.value    ||"—", unit:"",    sub:km.tsb?.sub    ||"Bygger",             color:km.tsb?.color    ||"#7A6A58"},
+          {cat:"Træning", label:"LØB KM",     value:km.runKm?.value  ||"—", unit:"km",  sub:km.runKm?.sub  ||"Løb denne uge",      color:km.runKm?.color  ||"#7A6A58"},
+          {cat:"Træning", label:"CYKEL KM",   value:km.bikeKm?.value ||"—", unit:"km",  sub:km.bikeKm?.sub ||"Cykel denne uge",    color:km.bikeKm?.color ||"var(--bike)"},
           {cat:"Træning", label:"TSS UGE",    value:km.tssComp?.value||"0", unit:km.tssComp?.unit||"TSS", sub:km.tssComp?.sub||"Mål denne uge", color:km.tssComp?.color||"#7A6A58"},
           // Krop
-          {cat:"Krop",    label:"VÆGT",       value:km.weight?.value ||"—", unit:"kg",  sub:km.weight?.sub ||"Mål <68 kg",         color:"#27AE60"},
-          {cat:"Krop",    label:"FEDT%",      value:km.fat?.value    ||"—", unit:"%",   sub:km.fat?.sub    ||"Mål <16%",           color:"#F39C12"},
-          {cat:"Krop",    label:"AF STREAK",  value:km.afStreak?.value||"—", unit:"",   sub:km.afStreak?.sub||"Dage i træk",        color:"#59182A"},
-          {cat:"Krop",    label:"SØVN",       value:km.sleep?.value  ||"—", unit:"t",   sub:km.sleep?.sub  ||"Mål 7t",             color:"#2874A6"},
-          {cat:"Krop",    label:"HRV",        value:km.hrv?.value    ||"—", unit:"ms",  sub:km.hrv?.sub    ||"Stabil",             color:"#7A6A58"},
-          {cat:"Svøm",    label:"SVØM UGE",   value:km.swimM?.value  ||"0",  unit:"m",   sub:km.swimM?.sub  ||"Mål 2000m (Christiansborg)", color:"var(--swim)"},
+          {cat:"Krop",    label:"VÆGT",       value:km.weight?.value ||"—", unit:"kg",  sub:km.weight?.sub ||"Mål",                color:km.weight?.color ||"#7A6A58"},
+          {cat:"Krop",    label:"FEDT%",      value:km.fat?.value    ||"—", unit:"%",   sub:km.fat?.sub    ||"Mål",                color:km.fat?.color    ||"#7A6A58"},
+          {cat:"Krop",    label:"AF DAGE",    value:km.afStreak?.value||"—", unit:"",   sub:km.afStreak?.sub||`af ${D.afDays.target} denne uge`, color:km.afStreak?.color||"#59182A"},
+          {cat:"Krop",    label:"SØVN",       value:km.sleep?.value  ||"—", unit:"t",   sub:km.sleep?.sub  ||"Snit 7d · mål 7t",   color:km.sleep?.color  ||"#7A6A58"},
+          {cat:"Krop",    label:"HRV",        value:km.hrv?.value    ||"—", unit:"ms",  sub:km.hrv?.sub    ||"Snit 7d",            color:km.hrv?.color    ||"#7A6A58"},
+          {cat:"Svøm",    label:"SVØM UGE",   value:km.swimM?.value  ||"0",  unit:"m",   sub:km.swimM?.sub  ||"Svøm denne uge",     color:km.swimM?.color  ||"var(--swim)"},
         ];
       }
       if (remote.weightGoal  !== undefined) D.weightGoal  = remote.weightGoal;

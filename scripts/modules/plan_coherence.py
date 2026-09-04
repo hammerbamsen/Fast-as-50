@@ -19,6 +19,8 @@ er givet.
 """
 from datetime import date
 
+from . import programs as _programs
+
 MIN_ACTIVITY_SECONDS = 600  # 10 min — filtrerer gps-test/stop-glemt-pings fra
 
 TYPE_MAP = {
@@ -39,7 +41,7 @@ def _week_no(d_iso, plan_start):
     return (date.fromisoformat(d_iso) - plan_start).days // 7 + 1
 
 
-def coherence_flags(plan, activities, athlete="kennet"):
+def coherence_flags(plan, activities, athlete="kennet", today=None):
     """Returnerer flags i samme format som friel.py: {week, rule, level, msg}.
 
     Regel 'plan_actual_mismatch' (WARN): en disciplin optræder blandt de
@@ -50,13 +52,16 @@ def coherence_flags(plan, activities, athlete="kennet"):
     flags = []
     if not activities:
         return flags
+    program = _programs.active_program(plan, athlete, today)
+    if not program:
+        return flags
     try:
-        plan_start = date.fromisoformat(plan["program"]["start"])
-        total_weeks = plan["program"]["totalWeeks"]
+        plan_start = date.fromisoformat(program["start"])
+        total_weeks = program["totalWeeks"]
     except (KeyError, ValueError):
         return flags
 
-    actuals_through = plan.get("athletes", {}).get(athlete, {}).get("actualsThroughWeek", 0)
+    actuals_through = _programs.actuals_through_week(plan, athlete, program)
     days = plan.get("athletes", {}).get(athlete, {}).get("days", [])
 
     planned_disc_by_week = {}
