@@ -393,9 +393,6 @@ details.fold[open] > summary::after { content:"▴"; }
   <div class="q"><span class="lab">Energi?</span>
     <div class="opts c3"><button class="opt bad" data-q="en" data-v="1">Lav</button><button class="opt" data-q="en" data-v="3">Ok</button><button class="opt" data-q="en" data-v="5">Høj</button></div>
   </div>
-  <div class="q"><span class="lab">Sulten om aftenen?</span>
-    <div class="opts c3"><button class="opt" data-q="sult" data-v="0">Nej</button><button class="opt" data-q="sult" data-v="1">Lidt</button><button class="opt bad" data-q="sult" data-v="2">Ja</button></div>
-  </div>
 
   <span class="q lab" style="display:block;font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin:4px 0 6px">Sidste 7 dage</span>
   <div class="dots" id="log-dots"></div>
@@ -927,8 +924,8 @@ function updateDataAge(){
 
 function logStateText(){
   const e = logCurrent();
-  const n = ['alkohol','protein','energi','sult'].filter(k => e[k] != null).length;
-  return n ? `${n} af 4 registreret` : 'AF · protein · energi · sult';
+  const n = ['alkohol','protein','energi'].filter(k => e[k] != null).length;
+  return n ? `${n} af 3 registreret` : 'AF · protein · energi';
 }
 
 function renderToday() {
@@ -2438,7 +2435,7 @@ function logPick(q, v){
 async function logSend(){
   const e = logCurrent();
   const payload = { date: e.date };
-  ['alkohol','protein','energi','sult'].forEach(k => { if (e[k] != null) payload[k] = e[k]; });
+  ['alkohol','protein','energi'].forEach(k => { if (e[k] != null) payload[k] = e[k]; });
   if (Object.keys(payload).length === 1) { logSay(''); return; }   // alt fravalgt — intet at sende
   try {
     await dispatchViaWorker('/checkin', payload);
