@@ -443,6 +443,7 @@ let D = {
   zones: null,   // sat fra data.json (kilde: data/plan.json)
   weightGoal: null, bodyFatGoal: null,   // fra data.json — aldrig hardkodet her
   week:1, totalWeeks:14, blockType:"BUILD",
+  dataLoaded:false,         // false = data.json ikke hentet -> fejlbjælke i stedet for tomme kort
   programId:null, programName:"", phase:null,
   nextRace:null,            // {name, date, daysTo, priority} fra data.json meta.nextRace
   blockTypes:null,          // {uge: blockType} fra data.json (kilde: plan.json programs)
@@ -453,9 +454,12 @@ let D = {
   afHistory: [],
   af_log: null,
   train_mins: {run:0, bike:0, swim:0, strength:0},
-  coachSpeech:"Du starter fra CTL 34 — lavere end din Ironman-baggrund tilsiger, men ærligt. {HL} Uge 1: etabler rytmen. 6 AF-dage, protein ved hvert måltid.",
-  coachHighlight:"14 uger konsistens løfter dig til CTL 60.",
-  weekFocus:"Aktivér systemet. Første build-uge — hold igen på intensitet, byg volumen gradvist. Fokus: protein ≥ 150 g/dag, søvn ≥ 7 t, 6 AF-dage.",
+  // Ingen tekst fra uge 1 i kode. Kan data.json ikke hentes, står felterne
+  // tomme og fejlbjælken siger det — i stedet for at servere juni-tekst som
+  // om den var dagens.
+  coachSpeech:"",
+  coachHighlight:"",
+  weekFocus:"",
   coachAssessment: null,
   coachAssessmentHtml: '',
   coachAssessmentTs: '',
@@ -464,25 +468,12 @@ let D = {
   credentials: null,
   event_structure_warnings: [],
   credentialsCheckedTs: null,
-  kpis:[
-    {label:"VÆGT", value:"72,3", unit:"kg", sub:"Sidst målt 3/9 · Mål <68 kg · snit 72,5 kg", color:"#E67E22"},
-    {label:"FEDT%", value:"21,9", unit:"%", sub:"Mål <16%", color:"#C0392B"},
-    {label:"CTL", value:"48,5", unit:"", sub:"Uge 14-mål 43 · Slutmål 41 (uge 16)", color:"#27AE60"},
-    {label:"TSS COMP.", value:"114", unit:"%", sub:"Planlagt 132 TSS", color:"#27AE60"},
-    {label:"HRV", value:"60,9", unit:"ms", sub:"Snit 7d", color:"#7A6A58"},
-    {label:"LØB KM", value:"6,6", unit:"km", sub:"Mål 40+ km uge 10", color:"#C0392B"},
-  ],
+  // Ingen KPI-tal, ingen uge fra Malmø, ingen CTL-kurve i kode. data.json er
+  // eneste kilde (applyRemote skriver dem alle). Tomt betyder "ikke hentet".
+  kpis:[],
   // today: (sættes fra data.json)
-  week_sessions:[
-    {day:"Man", disc:"bike",     label:"Hometrainer + Styrke", done:true},
-    {day:"Tir", disc:"run",      label:"Løb easy (Malmø)",     done:true},
-    {day:"Ons", disc:"run",      label:"Løb easy (Malmø)",     done:true},
-    {day:"Tor", disc:"strength", label:"Styrke + walk",        done:true},
-    {day:"Fre", disc:"bike",     label:"Cykling 5×3 Z3",       done:true},
-    {day:"Lør", disc:"strength", label:"Styrke + Lang løb Z2", done:true},
-    {day:"Søn", disc:"swim",     label:"Svøm 2000m + cykel",   done:false, today:true},
-  ],
-  ctlCurve:[34,36,38,41,44,43,41,45,49,53,57,55,58,60],
+  week_sessions:[],
+  ctlCurve:[],
   weightHistory: [],
   fatHistory: [],
   hrvHistory: [],
@@ -494,7 +485,7 @@ let D = {
   efHistory: { run: [], bike: [] },  // aerob effektivitet pr. kvalificeret pas
   efTrend:   { run: null, bike: null },
   aerobicFlag: null,                       // seneste pas vurderet mod egen EF-median
-  today:{ discipline:"swim", title:"Svøm 2000m + cykel", duration:"90 min", zone:"Z1-Z2", desc:"Aktiv restitution. Luk uge 1 af.", completed:false },
+  today:null,
 };
 
 let sessionDoneList = [];
@@ -853,7 +844,7 @@ function renderToday() {
 
   <div class="card card-wine" style="padding:20px 18px">
     <div class="label label-gold" style="margin-bottom:10px">TRÆNER + DIÆTIST · UGE ${D.week}</div>
-    <div style="font-family:'Hanken Grotesk',sans-serif;font-size:14px;color:#FDFAF6;line-height:1.65;position:relative">${parts[0]}<span style="color:var(--gold);font-weight:700">${D.coachHighlight}</span>${parts[1]}</div>
+    <div style="font-family:'Hanken Grotesk',sans-serif;font-size:14px;color:#FDFAF6;line-height:1.65;position:relative">${parts[0]||""}<span style="color:var(--gold);font-weight:700">${D.coachHighlight||""}</span>${parts[1]||""}</div>
   </div>
 
   ${kpiGrid()}
@@ -2286,6 +2277,21 @@ function checkStaleness(updatedStr) {
   document.body.prepend(b);
 }
 
+// Fejlbjælke når data.json ikke kunne hentes. Samme mønster som
+// readiness-bjælken, men i rødt og øverst.
+function showDataError(show) {
+  const existing = document.getElementById('data-error-banner');
+  if (!show) { if (existing) existing.remove(); return; }
+  const css = "position:relative;z-index:9999;background:#C0392B;color:#FDFAF6;font-family:'Space Mono',monospace;font-size:11px;padding:8px 14px;text-align:center;line-height:1.4";
+  const html = 'Kunne ikke hente data — skærmen er ikke opdateret.';
+  if (existing) { existing.innerHTML = html; return; }
+  const b = document.createElement('div');
+  b.id = 'data-error-banner';
+  b.style.cssText = css;
+  b.innerHTML = html;
+  document.body.prepend(b);
+}
+
 function checkReadiness(readiness) { const existing = document.getElementById('readiness-banner'); if (readiness !== 'LOW') { if (existing) existing.remove(); return; } const html = 'Lav readiness i dag (HRV/søvn) — overvej at tage det roligt.'; const css = 'position:relative;z-index:9999;background:#EDE6D8;color:#7A6A58;font-family:\'Space Mono\',monospace;font-size:11px;padding:8px 14px;text-align:center;line-height:1.4'; if (existing) { existing.innerHTML = html; existing.style.cssText = css; return; } const b = document.createElement('div'); b.id = 'readiness-banner'; b.style.cssText = css; b.innerHTML = html; document.body.prepend(b); } function updateMeta() {
   document.getElementById("sf-week").textContent = `UGE ${D.week}/${D.totalWeeks}`;
   document.getElementById("sf-block").textContent = `${D.blockType} BLOCK`;
@@ -2305,6 +2311,7 @@ function checkReadiness(readiness) { const existing = document.getElementById('r
 function applyRemote(remote) {
       const m = remote.meta || {};
       D.meta = m;   // sticky-bar/CTL-mål læser D.meta.week — blev aldrig sat før 3/9-26
+      D.dataLoaded = true;
       if (m.updated)                    D.lastUpdated            = m.updated;
       // "SIDST OPDATERET" renderes fra D.lastUpdated i templaten (efter navigate()) —
       // et textContent sat her blev overskrevet af re-renderingen nedenfor.
@@ -2433,8 +2440,10 @@ async function init() {
       applyRemote(remote);
     }
   } catch(e) {
-    console.log("data.json ikke tilgængelig, bruger defaults");
+    console.log("data.json ikke tilgængelig");
   }
+  // Der er ingen defaults at falde tilbage på — så siges det højt.
+  showDataError(!D.dataLoaded);
 }
 
 init();
@@ -2451,6 +2460,7 @@ init();
       lastDataJson = txt;
       const remote = JSON.parse(txt);
       applyRemote(remote);
+      showDataError(false);
     } catch(e) {}
   }
   setInterval(pollData, 10000);
