@@ -49,7 +49,7 @@
   --gold: #D3A24A; --gold-l: #E8BC6A;
   --bg: #EEF2F5; --bg-2: #DFE6EC; --card: #FBFCFD; --line: #CCD6DF;
   --ink: #12202E; --muted: #5C6B7A;
-  --hero: #16324F; --hero-ink: #F4F7FA; --hero-muted: #B8C7D6;
+  --hero: #16324F; --hero-ink: #F4F7FA; --hero-muted: #B8C7D6; --num: #16324F;
   --ok: #2E8B57; --watch: #D3A24A; --act: #C0392B;
   --cream: var(--bg); --cream-d: var(--line); --white: var(--card);
   --run: #C0392B; --bike: #3A8FD1; --swim: #1A7A5E; --strength: #7D3C98; --free: #6B7A88; --walk: #2E8B57; --hike: #8B6914; --commute: #1A6B8A; --openwater: #0B5394; --race: #BE863A;
@@ -58,12 +58,12 @@
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
     --bg: #0F1A25; --bg-2: #16232F; --card: #1B2A38; --ink: #E6EDF3; --muted: #9FB0C0; --line: #2C3D4D;
-    --hero: #1E3F63; --hero-ink: #F4F7FA; --hero-muted: #B8C7D6; --gold: #E8BC6A; --ok: #4FAE7B; --watch: #E8BC6A; --act: #E0564A;
+    --hero: #1E3F63; --hero-ink: #F4F7FA; --hero-muted: #B8C7D6; --num: #E6EDF3; --gold: #E8BC6A; --ok: #4FAE7B; --watch: #E8BC6A; --act: #E0564A;
   }
 }
 :root[data-theme="dark"] {
   --bg: #0F1A25; --bg-2: #16232F; --card: #1B2A38; --ink: #E6EDF3; --muted: #9FB0C0; --line: #2C3D4D;
-  --hero: #1E3F63; --hero-ink: #F4F7FA; --hero-muted: #B8C7D6; --gold: #E8BC6A; --ok: #4FAE7B; --watch: #E8BC6A; --act: #E0564A;
+  --hero: #1E3F63; --hero-ink: #F4F7FA; --hero-muted: #B8C7D6; --num: #E6EDF3; --gold: #E8BC6A; --ok: #4FAE7B; --watch: #E8BC6A; --act: #E0564A;
 }
 *,*::before,*::after { box-sizing: border-box; margin:0; padding:0; }
 html,body { height:100%; background:var(--bg); font-family:'Hanken Grotesk',sans-serif; color:var(--ink); }
@@ -130,10 +130,16 @@ html,body { height:100%; background:var(--bg); font-family:'Hanken Grotesk',sans
 .page-title { font-family:'Newsreader',serif; font-size:28px; color:var(--ink); line-height:1; }
 .page-sub { font-family:'Space Mono',monospace; font-size:11px; color:var(--muted); margin-top:2px; }
 .page-meta { font-family:'Space Mono',monospace; font-size:10px; color:var(--muted); text-align:right; }
-.page-meta-week { color:var(--wine); font-weight:700; }
+.page-meta-week { color:var(--num); font-weight:700; }
 
 /* Cards */
 .card { background:var(--white); border-radius:var(--r); padding:18px 16px; border:1px solid var(--cream-d); margin-bottom:14px; }
+
+.kpi4 { display:grid; grid-template-columns:repeat(4,1fr); gap:6px; margin-top:12px; }
+.kpi4-t { background:var(--card); border:1px solid var(--line); border-radius:10px; padding:10px 6px 8px; text-align:center; min-width:0; }
+.kpi4-t .lab { font-size:9px; }
+.kpi4-v { font-family:'Newsreader',serif; font-size:24px; line-height:1.1; color:var(--num); margin:4px 0 2px; font-variant-numeric:tabular-nums; white-space:nowrap; }
+.kpi4-s { font-family:'Space Mono',monospace; font-size:9px; color:var(--muted); line-height:1.3; overflow:hidden; text-overflow:ellipsis; }
 .card-wine { background:var(--hero); border-color:transparent; position:relative; overflow:hidden; }
 .card-wine::before { content:''; position:absolute; top:-20px; right:-20px; width:120px; height:120px; border-radius:50%; background:var(--wine-l); opacity:.4; }
 .label { font-family:'Space Mono',monospace; font-size:10px; color:var(--muted); letter-spacing:.08em; text-transform:uppercase; margin-bottom:12px; }
@@ -147,7 +153,7 @@ html,body { height:100%; background:var(--bg); font-family:'Hanken Grotesk',sans
 .status-row { display:grid; grid-template-columns:1fr 1fr 1fr auto; gap:10px; margin-bottom:14px; }
 .stat-card { background:var(--white); border-radius:10px; padding:14px 10px; border:1px solid var(--cream-d); text-align:center; }
 .stat-label { font-family:'Space Mono',monospace; font-size:9px; color:var(--muted); letter-spacing:.08em; margin-bottom:4px; }
-.stat-value { font-family:'Newsreader',serif; font-size:26px; color:var(--wine); line-height:1; }
+.stat-value { font-family:'Newsreader',serif; font-size:26px; color:var(--num); line-height:1; }
 
 .stat-sub { font-family:'Space Mono',monospace; font-size:9px; color:var(--muted); margin-top:2px; }
 
@@ -205,13 +211,13 @@ html,body { height:100%; background:var(--bg); font-family:'Hanken Grotesk',sans
 
 /* Event cards */
 .event-card { display:flex; align-items:center; gap:12px; padding:12px; background:var(--cream); border-radius:8px; margin-bottom:10px; }
-.event-days { font-family:'Newsreader',serif; font-size:28px; color:var(--wine); line-height:1; }
+.event-days { font-family:'Newsreader',serif; font-size:28px; color:var(--num); line-height:1; }
 .event-days-sub { font-family:'Space Mono',monospace; font-size:9px; color:var(--muted); }
 
 /* Rules */
 .rule-row { display:flex; gap:12px; align-items:flex-start; padding:14px; background:var(--white); border:1px solid var(--cream-d); border-radius:10px; margin-bottom:8px; }
 .rule-num { font-family:'Space Mono',monospace; font-size:10px; color:var(--gold); font-weight:700; flex-shrink:0; margin-top:2px; }
-.rule-title { font-family:'Newsreader',serif; font-size:15px; font-weight:600; color:var(--wine); margin-bottom:4px; }
+.rule-title { font-family:'Newsreader',serif; font-size:15px; font-weight:600; color:var(--num); margin-bottom:4px; }
 .rule-body { font-family:'Hanken Grotesk',sans-serif; font-size:13px; color:var(--muted); line-height:1.5; }
 
 /* Strength */
@@ -626,7 +632,7 @@ function progressMetric(label, startVal, nowVal, goalVal, unit, color) {
       <div style="font-family:'Space Mono',monospace;font-size:10px;color:var(--muted)">start: ${startVal}${unit}</div>
     </div>
     <div style="flex:1;text-align:center">
-      <div style="font-family:'Newsreader',serif;font-size:38px;color:var(--wine);line-height:1">${nowVal}</div>
+      <div style="font-family:'Newsreader',serif;font-size:38px;color:var(--num);line-height:1">${nowVal}</div>
       <div style="font-family:'Space Mono',monospace;font-size:11px;color:var(--muted)">${unit}</div>
     </div>
     <div style="min-width:80px;flex-shrink:1;text-align:right">
@@ -928,6 +934,30 @@ function logStateText(){
   return n ? `${n} af 3 registreret` : 'AF · protein · energi';
 }
 
+
+// ── I dag: fire nøgletal + coachens stemme ───────────────────
+// CTL · vægt (7d-snit) · fedt (7d-snit) · AF-dage. Alt fra data.json.
+function _last(arr){ const a=(arr||[]).filter(x=>x&&x.v!=null); return a.length? a[a.length-1].v : null; }
+function _fmt1(v){ return v==null ? '—' : String(Math.round(v*10)/10).replace('.', ','); }
+function kpiStripV2() {
+  const find = l => (Array.isArray(D.kpis) ? D.kpis.find(k => k.label === l) : null) || {};
+  const ctl = find('CTL'), wt = find('VÆGT'), ft = find('FEDT%');
+  const w7 = _last(D.weightMovingAvg7) ?? round1(avg7Of(D.weightHistory));
+  const f7 = _last(D.fatMovingAvg7)    ?? round1(avg7Of(D.fatHistory));
+  const tiles = [
+    { l:'CTL',     v: ctl.value || '—',                  s: ctl.sub || '',                              c: ctl.color },
+    { l:'VÆGT',    v: w7!=null ? _fmt1(w7) : (wt.value||'—'), s:`7d-snit · mål ${D.weightGoal??68} kg`, c: wt.color },
+    { l:'FEDT',    v: f7!=null ? _fmt1(f7)+' %' : (ft.value? ft.value+' %':'—'), s:`7d-snit · mål ${D.bodyFatGoal??16} %`, c: ft.color },
+    { l:'AF-DAGE', v:`${D.afDays?.weekDone ?? '—'}/${D.afDays?.target || 6}`, s:'denne uge', c: find('AF DAGE').color },
+  ];
+  return `<div class="kpi4">` + tiles.map(t => `<div class="kpi4-t"><div class="lab">${t.l}</div><div class="kpi4-v">${t.v}</div><div class="kpi4-s">${esc(t.s||'')}</div></div>`).join('') + `</div>`;
+}
+function coachVoiceCard() {
+  if (!D.coachSpeech) return '';
+  const parts = String(D.coachSpeech).split('{HL}');
+  return `<div class="card card-wine" style="padding:14px 16px;margin:12px 0 0"><div class="label label-gold" style="margin-bottom:6px">TRÆNER + DIÆTIST</div><div class="coach-text">${parts[0]||''}<span class="coach-hl">${D.coachHighlight||''}</span>${parts[1]||''}</div></div>`;
+}
+
 function renderToday() {
   // Reset completed-flags hvis det er en ny dag
   const todayStr = todayIso();
@@ -965,6 +995,8 @@ function renderToday() {
   </div>
   ${weekStripV2()}
   ${oneThing(r)}
+  ${kpiStripV2()}
+  ${coachVoiceCard()}
   <button class="logbtn" onclick="showLogSheet(true)"><span>Registrér i dag</span><span class="small" id="log-state">${logStateText()}</span></button>
   <div style="text-align:center;padding:4px 0 16px;font-family:'Space Mono',monospace;font-size:9px;color:var(--muted);letter-spacing:.06em">SIDST OPDATERET <span id='last-updated'>${D.lastUpdated || '—'}</span> · <span id="live-time"></span></div>
   `;
@@ -1507,7 +1539,7 @@ function renderBody() {
     ${sparkline(D.hrvHistory, 'var(--swim)', 'HRV', 'ms', null, null, true)}
     <div style="height:14px"></div>
     ${(D.rhrHistory||[]).filter(p=>p&&p.v!=null).length >= 2
-        ? sparkline(D.rhrHistory, 'var(--wine)', 'HVILEPULS', 'slag', null, null, true) + '<div style="height:14px"></div>'
+        ? sparkline(D.rhrHistory, 'var(--num)', 'HVILEPULS', 'slag', null, null, true) + '<div style="height:14px"></div>'
         : ''}
     ${sparkline(D.sleepHistory, 'var(--bike)', 'SØVN', 't', null, null, true)}
   </div>
@@ -2169,7 +2201,7 @@ function afHistoryViz(history) {
   const stats = '<div style="display:flex;justify-content:space-between;gap:6px;margin-bottom:10px">' +
     [['SNIT', avg + '/7'], ['SENESTE 4', avg4 + '/7'], ['PÅ MÅL', onTgt + '/' + n]].map(function(s){
       return '<div style="text-align:center;flex:1">' +
-        '<div style="font-family:Space Mono,monospace;font-size:12px;font-weight:700;color:var(--wine)">' + s[1] + '</div>' +
+        '<div style="font-family:Space Mono,monospace;font-size:12px;font-weight:700;color:var(--num)">' + s[1] + '</div>' +
         '<div style="font-family:Space Mono,monospace;font-size:8px;color:var(--muted);letter-spacing:.06em;margin-top:2px">' + s[0] + '</div>' +
         '</div>';
     }).join('') + '</div>';
@@ -2228,7 +2260,7 @@ function afStreakViz(done, target, streak) {
   const s = streak || 0;
   const streakHtml = s > 0
     ? '<div style="display:flex;align-items:center;justify-content:center;gap:6px;margin-top:10px">' +
-      '<span style="font-family:Newsreader,serif;font-size:28px;color:var(--wine);font-weight:600;line-height:1">' + s + '</span>' +
+      '<span style="font-family:Newsreader,serif;font-size:28px;color:var(--num);font-weight:600;line-height:1">' + s + '</span>' +
       '<span style="font-family:Space Mono,monospace;font-size:9px;color:var(--muted);letter-spacing:.07em;text-transform:uppercase">DAGE I TRÆK</span>' +
       '</div>'
     : '';
@@ -2617,6 +2649,8 @@ function applyRemote(remote) {
       if (remote.bodyFatGoal !== undefined) D.bodyFatGoal = remote.bodyFatGoal;
       if (remote.ctlCurve)       D.ctlCurve       = remote.ctlCurve;
       if (remote.weightHistory)  D.weightHistory  = remote.weightHistory;
+      if (Array.isArray(remote.weightMovingAvg7)) D.weightMovingAvg7 = remote.weightMovingAvg7;
+      if (Array.isArray(remote.fatMovingAvg7))    D.fatMovingAvg7    = remote.fatMovingAvg7;
       if (remote.hrvHistory)     D.hrvHistory     = remote.hrvHistory;
       // rhrHistory manglede her: update_kpi.py har skrevet 90/90 dage til
       // data.json, men feltet blev aldrig kopieret ind i D, så HVILEPULS-grafen
