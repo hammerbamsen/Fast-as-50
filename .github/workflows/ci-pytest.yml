@@ -1,16 +1,22 @@
 name: CI — pytest
 
-# Kører modultests ved ændringer i Python-koden. Path-filteret sikrer at den
-# hyppige data.json-push (KPI-bot hvert 10. min) IKKE trigger CI.
+# Kører modultests ved ændringer i kode OG i plan-data. Path-filteret sikrer
+# at den hyppige data.json-push (KPI-bot hvert 10. min) IKKE trigger CI —
+# men plan.json er en kontrakt testene håndhæver (programmer, uger, zoner),
+# så den skal med.
 on:
   push:
     branches: [main]
     paths:
       - 'scripts/**'
+      - 'data/plan.json'
+      - 'data/bike_library.json'
       - '.github/workflows/ci-pytest.yml'
   pull_request:
     paths:
       - 'scripts/**'
+      - 'data/plan.json'
+      - 'data/bike_library.json'
       - '.github/workflows/ci-pytest.yml'
 
 permissions:

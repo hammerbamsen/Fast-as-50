@@ -35,7 +35,9 @@ def _rhr(row):
 
 
 def get_wellness_7d():
-    oldest = str(date.today() - timedelta(days=7))
+    # 7 dage = i dag + 6 bagud. Var timedelta(days=7) = 8 kalenderdage, så
+    # snittet der vises som "7d" ikke matchede Krop-sidens 7-dages vindue.
+    oldest = str(date.today() - timedelta(days=6))
     newest = str(date.today())
     r = api_get(f'{BASE}/wellness', auth=AUTH, params={'oldest': oldest, 'newest': newest})
     if r and r.status_code == 200:

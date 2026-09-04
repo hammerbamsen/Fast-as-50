@@ -1,4 +1,7 @@
 
+# Ugentlig søndags-påmindelse: opdatér dashboard + send status til Martin.
+# endDate følger cuttet (season2027.weightPlan.targetDate), ikke Médoc:
+# påmindelsen sluttede 6/9-2026 — præcis den uge cuttet starter.
 import requests, os, json
 
 CLIENT_ID     = os.environ["AZURE_CLIENT_ID"]
@@ -35,7 +38,7 @@ event = {
         "range": {
             "type": "endDate",
             "startDate": "2026-06-14",
-            "endDate": "2026-09-06"
+            "endDate": "2027-01-31"
         }
     }
 }
