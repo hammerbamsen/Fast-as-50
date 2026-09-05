@@ -194,6 +194,7 @@ def main():
     data['meta']['phase']                = week_meta.get('phase')
     data['meta']['blockType']            = week_meta.get('blockType')
     data['meta']['week']                 = week_num
+    data['meta']['isoWeek']              = today.isocalendar()[1]
     data['meta']['totalWeeks']           = TOTAL_WEEKS
     data['meta']['programDay']           = _programs.program_day(ACTIVE_PROGRAM, today)
     data['meta']['programDays']          = days_total
