@@ -1545,7 +1545,7 @@ function renderBody() {
   </div>
 
   <div class="card">
-    <div class="label" style="margin-bottom:12px">AF-dage — uge ${D.week}</div>
+    <div class="label" style="margin-bottom:12px">AF-dage — uge ${D.isoWeek ?? D.week}</div>
     ${afStreakViz(D.afDays.weekDone, D.afDays.target, D.afDays.streak)}
     <div style="border-top:1px solid var(--cream-d);margin-top:14px;padding-top:12px">
       <div style="font-family:Space Mono,monospace;font-size:9px;color:var(--muted);letter-spacing:.08em;margin-bottom:10px">HISTORIK</div>
@@ -2215,7 +2215,7 @@ function afHistoryViz(history) {
     const showLbl  = (i % step === 0) || i === n - 1;
     return '<div onclick="afToggleBar(' + w.week + ')" style="flex:1;min-width:0;display:flex;flex-direction:column;align-items:center;gap:3px;cursor:pointer">' +
       '<div class="af-bar-col" data-week="' + w.week + '" style="width:100%;height:' + h + 'px;background:' + _afColorFor(w.done, target) + ';border-radius:2px 2px 0 0"></div>' +
-      '<span style="font-family:Space Mono,monospace;font-size:7px;color:var(--muted);height:8px">' + (showLbl ? w.week : '') + '</span>' +
+      '<span style="font-family:Space Mono,monospace;font-size:7px;color:var(--muted);height:8px">' + (showLbl ? (w.iso ?? w.week) : '') + '</span>' +
       '</div>';
   }).join('');
 
@@ -2607,6 +2607,7 @@ function applyRemote(remote) {
       checkStaleness(m.updated); fetch("https://raw.githubusercontent.com/hammerbamsen/fast-as-50/main/data/plan_view.json?t=" + Date.now()).then(rv=>rv.ok?rv.json():null).then(view=>checkReadiness(view&&view.kennet&&view.kennet.readiness)).catch(()=>{});
       if (remote.zones)                 D.zones                  = remote.zones;
       if (m.week)                       D.week                   = m.week;
+      if (m.isoWeek)                    D.isoWeek                = m.isoWeek;
       if (m.totalWeeks)                 D.totalWeeks             = m.totalWeeks;
       if (Array.isArray(remote.ctlPlan) && remote.ctlPlan.length) CTL_PLAN = remote.ctlPlan;
       if (m.blockType)                  D.blockType              = m.blockType;
