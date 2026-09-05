@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-09-05 20:50",
+    "updated": "2026-09-05 20:52",
     "week": 14,
     "totalWeeks": 14,
     "blockType": "RACE",
@@ -87,9 +87,9 @@
       "color": "#7A6A58"
     },
     "afStreak": {
-      "value": "4",
+      "value": "3",
       "unit": "",
-      "sub": "af 6 denne uge · snit 4 uger 5,5 · streak 1",
+      "sub": "af 6 denne uge · snit 4 uger 5,5",
       "color": "#59182A"
     },
     "protein": {
@@ -100,11 +100,11 @@
     }
   },
   "af": {
-    "weekDone": 4,
+    "weekDone": 3,
     "target": 6,
-    "streak": 1
+    "streak": 0
   },
-  "coachSpeech": "Lørdag — uge 14 af 14. {HL} Godt: Søvn på 7,3 timer er solid. Fokus: Vægt på 72,3 kg (målt 3/9) — protein ved hvert måltid, alkohol som bevidst valg, søvn 7-8 t. Vægt/fedt vurderes på 7d-snit mod planen, ikke på én vejning. 4 AF-dage i 6 afsluttede dage — 2 mangler i 1 dage tilbage. Alle sessioner i hus. Juster de små ting, og resten følger. ❤️ Aerobt: VIGTIGT: Løbeturen 5/9 (snitpuls 127) kostede 26,5 % mere puls pr. meter end medianen af de seneste 4 sammenlignelige pas (EF 0,994 mod 1,352). Forbehold, som IKKE er trukket fra tallet: det var 29,7 °C. Konkluder ikke overtræning ud fra ét pas — sig hvad passet kostede, og at det enten var varmen eller for højt tempo.  \"Du har magt over dit sind — ikke over yderomstændigheder. Indse det, og du finder styrke.\" — Marcus Aurelius",
+  "coachSpeech": "Lørdag — uge 14 af 14. {HL} Godt: Søvn på 7,3 timer er solid. Fokus: Vægt på 72,3 kg (målt 3/9) — protein ved hvert måltid, alkohol som bevidst valg, søvn 7-8 t. Vægt/fedt vurderes på 7d-snit mod planen, ikke på én vejning. 3 AF-dage i 6 afsluttede dage — 3 mangler i 1 dage tilbage. Alle sessioner i hus. Juster de små ting, og resten følger. ❤️ Aerobt: VIGTIGT: Løbeturen 5/9 (snitpuls 127) kostede 26,5 % mere puls pr. meter end medianen af de seneste 4 sammenlignelige pas (EF 0,994 mod 1,352). Forbehold, som IKKE er trukket fra tallet: det var 29,7 °C. Konkluder ikke overtræning ud fra ét pas — sig hvad passet kostede, og at det enten var varmen eller for højt tempo.  \"Du har magt over dit sind — ikke over yderomstændigheder. Indse det, og du finder styrke.\" — Marcus Aurelius",
   "coachHighlight": "264 procent af ugens TSS er i hus",
   "weekFocus": "Taper færdig — hold kroppen klar til Médoc-lørdagen",
   "today": [
@@ -2049,7 +2049,7 @@
     "2026-09-02": 1,
     "2026-09-03": 0,
     "2026-09-04": 1,
-    "2026-09-05": 0
+    "2026-09-05": 1
   },
   "all_weeks": {
     "12": {
@@ -2377,7 +2377,7 @@
     },
     {
       "week": 14,
-      "done": 4,
+      "done": 3,
       "total": 6,
       "label": "Uge 14"
     }
@@ -2726,10 +2726,16 @@
     null,
     null
   ],
-  "coachAssessmentHtml": "<p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\"><strong>Dag 97 af 98 · Lørdag · Uge 14</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">💪 <strong>Træning & load</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Løbeturen i Pauillac kostede 26,5 % mere puls pr. meter end medianen af dine seneste 4 sammenlignelige pas — EF 0,994 mod normalt 1,352. Det forklares enten af de 29,7 °C eller et tempo der lå for højt; overtræning afgøres af CTL og TSB, ikke af ét pas. CTL er 51,6 og TSB -7,3 — du er langt over ugemålet på 43, og kroppen er belastet men ikke i farezonen. Ugen har gjort sin rolle: du har bygget kapacitet og ankommer til Médoc med motor i.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">⚖️ <strong>Krop & kost</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Seneste vejning 3/9 viste 72,3 kg og 21,9 % fedt — henholdsvis 4,3 kg og 5,9 procentpoint fra målene. 7-dages snittet på fedtprocent er 21,7 % og er gået op 0,4 point over de seneste 7 dage — det er den reelle retning, og den går den forkerte vej. Vægtsnittet på 72,6 kg fortæller det samme: kroppen holder fast. Protein-tracking viser 0 ud af 3 dage — det er her du har den nemmeste gevinst at hente.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">🎯 <strong>AF-status & fokus for resten af ugen</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Du har 4 AF-dage ud af 6 dage gået i ugen — det er acceptabelt men ikke i mål. Der er én dag tilbage; én mere AF-dag i morgen lukker ugen på 5/7, og det er dit bedste mulige resultat nu. Fokus for resten af weekenden er simpelt: spis nok protein, sov, og hold nervesystemet roligt til lørdagens Médoc.</p>",
-  "coachAssessmentTs": "18:35",
+  "coachAssessmentHtml": "<p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\"><strong>Dag 97 af 98 · Lørdag · Uge 14</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">💪 <strong>Træning & load</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Dagens løb i Pauillac blev gennemført: 43,2 km på 342 min med 176 TSS — et stort pas. CTL er nu 51,6, hvilket er markant over ugemålet på 43, og TSB er -7,3, så kroppen er belastet men ikke i farezonen. En enkelt note fra passet: snitpuls 127 gav en EF på 0,994 mod en median på 1,352 på sammenlignelige løb — det er 26,5 % mere puls pr. meter end normalt, og det skyldtes sandsynligvis de 29,7 °C eller et for højt tempo, ikke overtræning. Én løbetur afgør ingenting om form — CTL og TSB ser fornuftige ud ind i Médoc.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">⚖️ <strong>Krop & kost</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Vægten var 72,3 kg ved seneste vejning 3/9, og 7-dages snittet ligger på 72,6 kg — det er 4,6 kg fra målet under 68 kg. Fedtprocenten var 21,9 % ved seneste måling 3/9, og 7-dages snittet på fedtprocent er steget 0,4 procentpoint de seneste 7 dage — det er den reelle retning, og den går den forkerte vej. Protein er registreret 0 ud af 3 dage, og aftensult er ikke mærket — det er et mønster der ikke peger mod ægte kropsomkomposition. Fedt og muskelmasse måles i måneder, men fundamentet lægges hver dag.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">🎯 <strong>AF-status & fokus for resten af ugen</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Du har 3 AF-dage ud af 6 dage gået i ugen — det er præcis halvdelen, og målet er 6/7. Søndag er den eneste dag tilbage, og den løber ikke alene det tal op. Energi-snittet på 1,0 og nul proteindage i tre dage fortæller, at fokus på kost og restitution ikke sidder fast endnu — og det er præcis nu, natten før Médoc, det betyder mest.</p>",
+  "coachAssessmentTs": "18:52",
   "commute_pairing_warnings": [],
-  "warnings": [],
+  "warnings": [
+    {
+      "type": "alcohol_cluster",
+      "level": "warn",
+      "message": "2 drikkedage i træk 4/9–5/9 — klynger rammer HRV hårdere end spredte dage."
+    }
+  ],
   "tsb": -7.3,
   "swimHistory": [
     {
@@ -3036,10 +3042,10 @@
       "note": "Nøgle virker"
     }
   },
-  "credentialsCheckedTs": "2026-09-05T18:50:20.206544",
-  "coachAssessmentTsFull": "2026-09-05T18:35:58.570026",
+  "credentialsCheckedTs": "2026-09-05T18:52:32.623908",
+  "coachAssessmentTsFull": "2026-09-05T18:52:32.623894",
   "coachAssessmentWeightAtGen": 72.3,
-  "coachAssessmentAfAtGen": 4,
+  "coachAssessmentAfAtGen": 3,
   "event_structure_warnings": [],
   "coachAssessmentFatAtGen": 21.9,
   "zones": {
@@ -4097,7 +4103,7 @@
     },
     {
       "date": "2026-09-05",
-      "alkohol": 0,
+      "alkohol": 1,
       "protein": 0,
       "energi": 1,
       "sult": null
@@ -4111,6 +4117,7 @@
     "2026-08-16": "drak",
     "2026-08-29": "drak",
     "2026-09-02": "drak",
-    "2026-09-04": "valgt"
+    "2026-09-04": "valgt",
+    "2026-09-05": "valgt"
   }
 }
