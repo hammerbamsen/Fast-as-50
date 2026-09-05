@@ -1,4 +1,4 @@
-tid_utc: 2026-09-05T18:51:55
+tid_utc: 2026-09-05T18:52:01
 dato: 2026-09-05
 http: 200
 svar: {"id":"2026-09-05","ctl":51.64001,"atl":58.940285,"rampRate":1.3418274,"ctlLoad":176.0,"atlLoad":176.0,"sportInfo":[{"type":"Ride","eftp":272.81042,"wPrime":23313.602,"pMax":575.81805}],"updated":"2026-09-05T18:51:55.043+00:00","weight":72.339,"restingHR":45,"hrv":54.0,"hrvSDNN":null,"menstrualPhase":null,"menstrualPhasePredicted":null,"kcalConsumed":null,"sleepSecs":14920,"sleepScore":45.0,"sleep
