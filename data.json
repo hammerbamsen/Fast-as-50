@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-09-05 09:49",
+    "updated": "2026-09-05 13:41",
     "week": 14,
     "totalWeeks": 14,
     "blockType": "RACE",
@@ -2703,8 +2703,8 @@
     null,
     null
   ],
-  "coachAssessmentHtml": "<p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\"><strong>Dag 97 af 98 · Lørdag · Uge 14</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">💪 <strong>Træning & load</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">CTL er 47,5 — over ugemålet på 43 og godt over udgangspunktet på 34. TSB er 12,0, så kroppen er frisk og klar. Taper-ugen har gjort sit arbejde: løbepasene holdt zonen (Z1-passet på 2,0 km/13 min var præcist), og cykelpassene ramte effekt-zonerne. Eneste note at tage med fremad: løb-Z2-passet onsdag viste 51,4 % i pace-zone med 42,6 % hurtigere end target — næste gang du løber Z2, sæt tempoet roligt fra start og lad HR stige naturligt ind i zonen.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">⚖️ <strong>Krop & kost</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Vægten var 72,3 kg ved seneste vejning 3/9 — 4,3 kg fra mål. Fedtprocenten var 21,9 % samme dag — 5,9 procentpoint fra mål på under 16 %. Det afgørende tal er 7-dages snittet: fedtprocenten er steget 0,4 point over de seneste 7 dage, og det er den retning der tæller. Protein er registreret 0 ud af 3 dage, energisnit er 1,0 — det er for lidt opmærksomhed på det grundlag der skal flytte fedtprocenten på den anden side af Médoc.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">🎯 <strong>AF-status & fokus for resten af ugen</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">3 AF-dage ud af 6 dage gået i ugen — det er præcis halv kurs mod ugemålet på 6. I dag er hviledag og stadig i gang — en AF-dag i aften er inden for rækkevidde og tæller direkte. Médoc er i morgen: kroppen er frisk, belastningen er styret, og der er intet tilbage at bevise i træningen. Hold hovedet koldt og nyd løbet.</p>",
-  "coachAssessmentTs": "03:18",
+  "coachAssessmentHtml": "<p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\"><strong>Dag 97 af 98 · Lørdag · Uge 14</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">💪 <strong>Træning & load</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">CTL er 47,5 — over ugemålet på 43 og med TSB på 12,0 er du velrestitueret og klar til Médoc. Taperen har virket præcis som den skulle. Løb Z2 onsdag viste at du løb for hurtigt — pace lå over target-zonen, og HR nåede aldrig at følge med. Tag den læring med til din næste Z2-løbetur og sænk tempoet aktivt fra start. Resten af ugen er hvile — det er ikke dovenskab, det er strategi.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">⚖️ <strong>Krop & kost</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Vægten var 72,3 kg ved seneste vejning 3/9, og fedtprocenten var 21,9 % samme dag. Det er 4,3 kg fra vægtmålet og 5,9 procentpoint fra fedtprocentmålet på under 16 %. 7-dages snittet for fedtprocenten er steget 0,4 point de seneste 7 dage — det er den reelle retning, og den peger den forkerte vej. Proteinscore er 0 ud af 3 dage, og der er ingen registrerede aftensultdage — det er signaler om at kosten ikke understøtter kropssammensætningen. Energisnit på 1,0 er lavt dagen op til et A-løb — prioritér at spise nok til at præstere lørdag.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">🎯 <strong>AF-status & fokus for resten af ugen</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Du er på 3 AF-dage ud af 6 dage gået i ugen — 3/6. Der er én dag tilbage, og ugemålet er 6. I dag tæller. Fokus er simpelt: spis godt, sov meget, og kom til start lørdag med fulde ben.</p>",
+  "coachAssessmentTs": "11:41",
   "commute_pairing_warnings": [],
   "warnings": [],
   "tsb": 12.0,
@@ -3013,8 +3013,8 @@
       "note": "Nøgle virker"
     }
   },
-  "credentialsCheckedTs": "2026-09-05T07:49:09.092332",
-  "coachAssessmentTsFull": "2026-09-05T03:18:29.801680",
+  "credentialsCheckedTs": "2026-09-05T11:41:28.159818",
+  "coachAssessmentTsFull": "2026-09-05T11:41:28.159802",
   "coachAssessmentWeightAtGen": 72.3,
   "coachAssessmentAfAtGen": 3,
   "event_structure_warnings": [],
