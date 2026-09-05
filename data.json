@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-09-05 16:42",
+    "updated": "2026-09-05 17:51",
     "week": 14,
     "totalWeeks": 14,
     "blockType": "RACE",
@@ -33,13 +33,13 @@
       "color": "#C0392B"
     },
     "ctl": {
-      "value": "47,5",
+      "value": "51,6",
       "unit": "",
       "sub": "Uge 14-mål 43 · RACE",
       "color": "#27AE60"
     },
     "tsb": {
-      "value": "12,0",
+      "value": "-7,3",
       "unit": "",
       "sub": "Form · CTL−ATL, frisk >0",
       "color": "#27AE60"
@@ -51,10 +51,10 @@
       "color": "#27AE60"
     },
     "runKm": {
-      "value": "8,6",
+      "value": "51,8",
       "unit": "km",
       "sub": "Mål 40+ km/uge",
-      "color": "#C0392B"
+      "color": "#27AE60"
     },
     "hrv": {
       "value": "58,6",
@@ -69,9 +69,9 @@
       "color": "#7A6A58"
     },
     "tssComp": {
-      "value": "172",
+      "value": "348",
       "unit": "TSS",
-      "sub": "172 af 132 planlagt TSS",
+      "sub": "348 af 132 planlagt TSS",
       "color": "#27AE60"
     },
     "bikeKm": {
@@ -104,17 +104,17 @@
     "target": 6,
     "streak": 0
   },
-  "coachSpeech": "Lørdag — uge 14 af 14. {HL} Godt: Søvn på 7,3 timer er solid. Fokus: Vægt på 72,3 kg (målt 3/9) — protein ved hvert måltid, alkohol som bevidst valg, søvn 7-8 t. Vægt/fedt vurderes på 7d-snit mod planen, ikke på én vejning. 3 AF-dage i 6 afsluttede dage — 3 mangler i 1 dage tilbage. Alle sessioner i hus. Juster de små ting, og resten følger.  \"Du har magt over dit sind — ikke over yderomstændigheder. Indse det, og du finder styrke.\" — Marcus Aurelius",
-  "coachHighlight": "130 procent af ugens TSS er i hus",
+  "coachSpeech": "Lørdag — uge 14 af 14. {HL} Godt: Søvn på 7,3 timer er solid. Fokus: Vægt på 72,3 kg (målt 3/9) — protein ved hvert måltid, alkohol som bevidst valg, søvn 7-8 t. Vægt/fedt vurderes på 7d-snit mod planen, ikke på én vejning. 3 AF-dage i 6 afsluttede dage — 3 mangler i 1 dage tilbage. Alle sessioner i hus. Juster de små ting, og resten følger. ❤️ Aerobt: VIGTIGT: Løbeturen 5/9 (snitpuls 127) kostede 26,5 % mere puls pr. meter end medianen af de seneste 4 sammenlignelige pas (EF 0,994 mod 1,352). Forbehold, som IKKE er trukket fra tallet: det var 29,7 °C. Konkluder ikke overtræning ud fra ét pas — sig hvad passet kostede, og at det enten var varmen eller for højt tempo.  \"Du har magt over dit sind — ikke over yderomstændigheder. Indse det, og du finder styrke.\" — Marcus Aurelius",
+  "coachHighlight": "264 procent af ugens TSS er i hus",
   "weekFocus": "Taper færdig — hold kroppen klar til Médoc-lørdagen",
   "today": [
     {
-      "discipline": "rest",
-      "title": "Hviledag",
+      "discipline": "run",
+      "title": "Pauillac Løb",
       "duration": "",
       "zone": "–",
-      "desc": "Ingen planlagt træning i dag.",
-      "completed": false
+      "desc": "",
+      "completed": true
     }
   ],
   "week_sessions": [
@@ -231,6 +231,17 @@
       "actual_tss": 11,
       "actual_mins": 89,
       "actual_distance_m": 6703.15
+    },
+    {
+      "day": "Lør",
+      "disc": "run",
+      "label": "Pauillac Løb",
+      "done": true,
+      "extra": true,
+      "actual_tss": 176,
+      "actual_mins": 342,
+      "actual_distance_m": 43242.22,
+      "today": true
     }
   ],
   "ctlCurve": [
@@ -247,7 +258,7 @@
     52.9,
     52.4,
     50.7,
-    47.5
+    51.6
   ],
   "weightHistory": [
     {
@@ -1937,7 +1948,7 @@
     },
     {
       "date": "2026-09-05",
-      "v": 12.0,
+      "v": -7.3,
       "real": true
     }
   ],
@@ -2267,6 +2278,17 @@
           "actual_tss": 11,
           "actual_mins": 89,
           "actual_distance_m": 6703.15
+        },
+        {
+          "day": "Lør",
+          "disc": "run",
+          "label": "Pauillac Løb",
+          "done": true,
+          "extra": true,
+          "actual_tss": 176,
+          "actual_mins": 342,
+          "actual_distance_m": 43242.22,
+          "today": true
         }
       ],
       "blockType": "RACE",
@@ -2360,12 +2382,12 @@
     }
   ],
   "train_mins": {
+    "run": 388.0,
     "walk": 190.0,
-    "run": 46.0,
     "bike": 105.0,
     "strength": 40.0,
     "planned": 175.0,
-    "actual_total": 381.0
+    "actual_total": 723.0
   },
   "fatHistory": [
     {
@@ -2703,11 +2725,11 @@
     null,
     null
   ],
-  "coachAssessmentHtml": "<p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\"><strong>Dag 97 af 98 · Lørdag · Uge 14</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">💪 <strong>Træning & load</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">CTL er 47,5 — over ugemålet på 43 og med TSB på 12,0 er du velrestitueret og klar til Médoc. Taperen har virket præcis som den skulle. Løb Z2 onsdag viste at du løb for hurtigt — pace lå over target-zonen, og HR nåede aldrig at følge med. Tag den læring med til din næste Z2-løbetur og sænk tempoet aktivt fra start. Resten af ugen er hvile — det er ikke dovenskab, det er strategi.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">⚖️ <strong>Krop & kost</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Vægten var 72,3 kg ved seneste vejning 3/9, og fedtprocenten var 21,9 % samme dag. Det er 4,3 kg fra vægtmålet og 5,9 procentpoint fra fedtprocentmålet på under 16 %. 7-dages snittet for fedtprocenten er steget 0,4 point de seneste 7 dage — det er den reelle retning, og den peger den forkerte vej. Proteinscore er 0 ud af 3 dage, og der er ingen registrerede aftensultdage — det er signaler om at kosten ikke understøtter kropssammensætningen. Energisnit på 1,0 er lavt dagen op til et A-løb — prioritér at spise nok til at præstere lørdag.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">🎯 <strong>AF-status & fokus for resten af ugen</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Du er på 3 AF-dage ud af 6 dage gået i ugen — 3/6. Der er én dag tilbage, og ugemålet er 6. I dag tæller. Fokus er simpelt: spis godt, sov meget, og kom til start lørdag med fulde ben.</p>",
-  "coachAssessmentTs": "11:41",
+  "coachAssessmentHtml": "<p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\"><strong>Dag 97 af 98 · Lørdag · Uge 14</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">💪 <strong>Træning & load</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Løbeturen i Pauillac i dag kostede 26,5 % mere puls pr. meter end medianen af de seneste 4 sammenlignelige pas — EF 0,994 mod 1,352. Det er enten varmen på 29,7 °C eller et for højt tempo, ikke et tegn på overtræning. CTL er nået op på 51,6 og TSB på -7,3, som er tæt på neutralt — kroppen er klar. Onsdag-løbet kørte du for hurtigt i forhold til pace-zonen; næste lignende Z2-løbetur skal tempoet skrues ned, så over halvdelen af tiden faktisk lander i Z2-pace.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">⚖️ <strong>Krop & kost</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Vægten var 72,3 kg ved seneste vejning 3/9, og 7-dages snittet ligger på 72,6 kg — afstanden til målet under 68 kg er stadig over 4 kg. Fedtprocenten var 21,9 % den 3/9, og 7-dages snittet for fedtprocent er steget 0,4 procentpoint de seneste 7 dage — det er den reelle retning ifølge snittet, og den er gal. Protein er ikke logget en eneste af de seneste 3 dage, og energisnittet på 1,0 er lavt — det er ikke en kombination der understøtter kropssammensætning. Prioritér proteinindtag igennem Médoc-weekenden, selv om det er festløb.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">🎯 <strong>AF-status & fokus for resten af ugen</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Du har 3 AF-dage ud af 6 dage gået i ugen — det er præcis 50 %, og ugemålet er 6 ud af 7. Der er én dag tilbage til at lade kroppen falde helt til ro inden Médoc. Brug søndagen på restitution og sørg for at den tæller som AF-dag.</p>",
+  "coachAssessmentTs": "15:51",
   "commute_pairing_warnings": [],
   "warnings": [],
-  "tsb": 12.0,
+  "tsb": -7.3,
   "swimHistory": [
     {
       "week": 1,
@@ -2794,9 +2816,9 @@
       "cumulative": 29362.0
     }
   ],
-  "coachAssessmentLastActId": "i183279947",
+  "coachAssessmentLastActId": "i183629392",
   "weekFocusWeek": 14,
-  "coachAssessmentPlanAtGen": "",
+  "coachAssessmentPlanAtGen": "Pauillac Løb",
   "weightGoal": 68,
   "bodyFatGoal": 16,
   "weightMovingAvg7": [
@@ -3013,8 +3035,8 @@
       "note": "Nøgle virker"
     }
   },
-  "credentialsCheckedTs": "2026-09-05T14:43:00.749401",
-  "coachAssessmentTsFull": "2026-09-05T11:41:28.159802",
+  "credentialsCheckedTs": "2026-09-05T15:51:28.855092",
+  "coachAssessmentTsFull": "2026-09-05T15:51:28.855076",
   "coachAssessmentWeightAtGen": 72.3,
   "coachAssessmentAfAtGen": 3,
   "event_structure_warnings": [],
@@ -3114,7 +3136,7 @@
     "11": 374,
     "12": 367,
     "13": 320,
-    "14": 172
+    "14": 348
   },
   "racesUpcoming": [
     {
@@ -3281,6 +3303,15 @@
         "hr": 145,
         "name": "Gentofte - Lang løb Z2 26 km (140 min)",
         "id": "i177040193"
+      },
+      {
+        "date": "2026-09-05",
+        "v": 0.994,
+        "real": true,
+        "mins": 342,
+        "hr": 127,
+        "name": "Pauillac Løb",
+        "id": "i183629392"
       }
     ],
     "bike": [
@@ -3360,10 +3391,10 @@
   },
   "efTrend": {
     "run": {
-      "current": 1.349,
+      "current": 1.334,
       "previous": 1.34,
-      "pct": 0.7,
-      "n": 3,
+      "pct": -0.4,
+      "n": 4,
       "n_prev": 4,
       "window": 42,
       "thin": false
@@ -3831,22 +3862,22 @@
     }
   ],
   "aerobicFlag": {
-    "date": "2026-09-03",
-    "discipline": "bike",
-    "name": "Race-uge åbner T-2",
-    "id": "i182722657",
-    "ef": 1.424,
-    "baseline": 1.496,
-    "pct": -4.8,
-    "n_baseline": 6,
-    "level": "ok",
-    "flagged": false,
-    "avg_hr": 125,
-    "start_hour": 6,
-    "temp_c": null,
+    "date": "2026-09-05",
+    "discipline": "run",
+    "name": "Pauillac Løb",
+    "id": "i183629392",
+    "ef": 0.994,
+    "baseline": 1.352,
+    "pct": -26.5,
+    "n_baseline": 4,
+    "level": "strong",
+    "flagged": true,
+    "avg_hr": 127,
+    "start_hour": 9,
+    "temp_c": 29.7,
     "afternoon": false,
-    "warm": false,
-    "time_of_day_comparable": false
+    "warm": true,
+    "time_of_day_comparable": true
   },
   "blockType": "RACE",
   "blockTypes": {
