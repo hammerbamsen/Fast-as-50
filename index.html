@@ -2446,8 +2446,12 @@ function logPick(q, v){
   const cur = logCurrent(); const local = logLocal();
   const same = (a,b) => a != null && String(a) === String(b);
   if (q === 'af') {
-    if (v === 'nej') local.alkohol = same(cur.alkohol, 0) ? null : 0;
-    else             local.alkohol = (cur.alkohol != null && cur.alkohol !== 0) ? null : 1;   // Ja = valgt indtil andet vælges
+    // 5/9-26: Ingen toggle-off på alkohol. Før: tryk på "Ja" mens Ja allerede
+    // stod (fx fra et tidligere tryk i dag) satte værdien til null, payload
+    // sendtes uden alkohol, og Intervals beholdt den gamle værdi (0 = AF) —
+    // så en drikkedag blev vist som AF. Nej/Ja sætter nu altid værdien.
+    if (v === 'nej') local.alkohol = 0;
+    else             local.alkohol = (cur.alkohol === 1 || cur.alkohol === 2) ? cur.alkohol : 1;   // Ja = valgt indtil andet vælges
   } else if (q === 'afv') {
     local.alkohol = v === 'skete' ? 2 : 1;
   } else if (q === 'pro') {
