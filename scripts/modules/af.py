@@ -85,11 +85,16 @@ def get_af_history():
             days_passed += 1
             current += timedelta(days=1)
         
+        # 5/9-26: label og iso = rigtigt ISO-ugenummer (uge 36 osv.), ikke
+        # programtælleren. `week` (1..N) beholdes — frontend bruger den til
+        # datoberegning i _afValFor og som nøgle i AF_BAR_DETAIL.
+        iso_week = week_start.isocalendar()[1]
         history.append({
             "week": week_num,
+            "iso": iso_week,
             "done": count,
             "total": days_passed,
-            "label": f"Uge {week_num}"
+            "label": f"Uge {iso_week}"
         })
         
         week_start += timedelta(days=7)
