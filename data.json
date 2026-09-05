@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-09-05 05:18",
+    "updated": "2026-09-05 09:49",
     "week": 14,
     "totalWeeks": 14,
     "blockType": "RACE",
@@ -45,9 +45,9 @@
       "color": "#27AE60"
     },
     "sleep": {
-      "value": "6,6",
+      "value": "4,1",
       "unit": "t",
-      "sub": "Snit 7d 7,8t · mål 7t",
+      "sub": "Snit 7d 7,3t · mål 7t",
       "color": "#27AE60"
     },
     "runKm": {
@@ -57,7 +57,7 @@
       "color": "#C0392B"
     },
     "hrv": {
-      "value": "59,3",
+      "value": "58,6",
       "unit": "ms",
       "sub": "Snit 7d",
       "color": "#7A6A58"
@@ -104,7 +104,7 @@
     "target": 6,
     "streak": 0
   },
-  "coachSpeech": "Lørdag — uge 14 af 14. {HL} Godt: Søvn på 7,9 timer er solid. Fokus: Vægt på 72,3 kg (målt 3/9) — protein ved hvert måltid, alkohol som bevidst valg, søvn 7-8 t. Vægt/fedt vurderes på 7d-snit mod planen, ikke på én vejning. 3 AF-dage i 6 afsluttede dage — 3 mangler i 1 dage tilbage. Alle sessioner i hus. Juster de små ting, og resten følger.  \"Du har magt over dit sind — ikke over yderomstændigheder. Indse det, og du finder styrke.\" — Marcus Aurelius",
+  "coachSpeech": "Lørdag — uge 14 af 14. {HL} Godt: Søvn på 7,3 timer er solid. Fokus: Vægt på 72,3 kg (målt 3/9) — protein ved hvert måltid, alkohol som bevidst valg, søvn 7-8 t. Vægt/fedt vurderes på 7d-snit mod planen, ikke på én vejning. 3 AF-dage i 6 afsluttede dage — 3 mangler i 1 dage tilbage. Alle sessioner i hus. Juster de små ting, og resten følger.  \"Du har magt over dit sind — ikke over yderomstændigheder. Indse det, og du finder styrke.\" — Marcus Aurelius",
   "coachHighlight": "130 procent af ugens TSS er i hus",
   "weekFocus": "Taper færdig — hold kroppen klar til Médoc-lørdagen",
   "today": [
@@ -1031,7 +1031,11 @@
       "v": 59.0,
       "real": true
     },
-    null
+    {
+      "date": "2026-09-05",
+      "v": 54.0,
+      "real": true
+    }
   ],
   "sleepHistory": [
     {
@@ -1479,7 +1483,11 @@
       "v": 6.6,
       "real": true
     },
-    null
+    {
+      "date": "2026-09-05",
+      "v": 4.1,
+      "real": true
+    }
   ],
   "tsbHistory": [
     {
@@ -3005,7 +3013,7 @@
       "note": "Nøgle virker"
     }
   },
-  "credentialsCheckedTs": "2026-09-05T03:18:29.801713",
+  "credentialsCheckedTs": "2026-09-05T07:49:09.092332",
   "coachAssessmentTsFull": "2026-09-05T03:18:29.801680",
   "coachAssessmentWeightAtGen": 72.3,
   "coachAssessmentAfAtGen": 3,
@@ -3818,7 +3826,7 @@
     },
     {
       "date": "2026-09-05",
-      "v": 47,
+      "v": 45,
       "real": true
     }
   ],
