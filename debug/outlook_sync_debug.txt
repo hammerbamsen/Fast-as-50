@@ -4,7 +4,7 @@ Uge 1: 2026-09-07 til 2026-09-13
 8 workouts fra Intervals
 timeOverrides: 10 dato(er) fra data/plan.json
   Slettet: 🥾 Gang let 45 min
-  Slettet: 🏃 Løb let Z1 30 min
+  Slettet: 🥾 Gang let 60 min
   Slettet: 🥾 Gang let 60 min
   Slettet: 🚴 Cykel Z2 60 min
   Slettet: 🏊 Svøm 2000m teknisk
