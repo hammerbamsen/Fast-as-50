@@ -1,5 +1,5 @@
 {
- "generated": "2026-09-06T03:18:19Z",
+ "generated": "2026-09-06T08:03:21Z",
  "kennet": {
   "programId": "medoc-2026",
   "seed": {
@@ -123,7 +123,15 @@
     "week": 14,
     "projEndCtl": null,
     "deviation": null,
-    "flags": []
+    "flags": [
+     {
+      "week": 14,
+      "rule": "low_readiness",
+      "level": "WARN",
+      "msg": "Lav readiness i dag (HRV/søvn) — overvej at reducere dagens/ugens belastning",
+      "historic": false
+     }
+    ]
    }
   ],
   "flags": [
@@ -154,6 +162,13 @@
     "level": "WARN",
     "msg": "Ingen VO2-stimulus i build-uge 12",
     "historic": false
+   },
+   {
+    "week": 14,
+    "rule": "low_readiness",
+    "level": "WARN",
+    "msg": "Lav readiness i dag (HRV/søvn) — overvej at reducere dagens/ugens belastning",
+    "historic": false
    }
   ],
   "adaptation": {
@@ -164,7 +179,7 @@
    "suggestion": null,
    "phase_guard": null
   },
-  "readiness": "NORMAL"
+  "readiness": "LOW"
  },
- "inputsHash": "89a169fe5ae2259c"
+ "inputsHash": "d0d66d8820873ddd"
 }
