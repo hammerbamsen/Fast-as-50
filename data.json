@@ -1,22 +1,22 @@
 {
   "meta": {
-    "updated": "2026-09-06 01:35",
+    "updated": "2026-09-06 05:17",
     "week": 14,
     "totalWeeks": 14,
     "blockType": "RACE",
-    "dayName": "Lørdag",
-    "date": "5. sep",
+    "dayName": "Søndag",
+    "date": "6. sep",
     "rhrField": "restingHR",
     "nextRace": {
-      "name": "Marathon du Médoc",
-      "date": "2026-09-05",
-      "daysTo": 0,
-      "priority": "A"
+      "name": "CPH Half",
+      "date": "2026-09-20",
+      "daysTo": 14,
+      "priority": "B"
     },
     "programId": "medoc-2026",
     "programName": "Fast as Fifty — Christiansborg + Médoc 2026",
     "phase": null,
-    "programDay": 97,
+    "programDay": 98,
     "programDays": 98,
     "isoWeek": 36
   },
@@ -24,7 +24,7 @@
     "weight": {
       "value": "72,3",
       "unit": "kg",
-      "sub": "Sidst målt 3/9 · Mål <68 kg · snit 72,6 kg",
+      "sub": "Sidst målt 3/9 · Mål <68 kg · snit 72,5 kg",
       "color": "#E67E22"
     },
     "fat": {
@@ -34,13 +34,13 @@
       "color": "#C0392B"
     },
     "ctl": {
-      "value": "51,6",
+      "value": "50,4",
       "unit": "",
       "sub": "Uge 14-mål 43 · RACE",
       "color": "#27AE60"
     },
     "tsb": {
-      "value": "-7,3",
+      "value": "-0,7",
       "unit": "",
       "sub": "Form · CTL−ATL, frisk >0",
       "color": "#27AE60"
@@ -58,7 +58,7 @@
       "color": "#27AE60"
     },
     "hrv": {
-      "value": "58,6",
+      "value": "59,8",
       "unit": "ms",
       "sub": "Snit 7d",
       "color": "#7A6A58"
@@ -90,7 +90,7 @@
     "afStreak": {
       "value": "3",
       "unit": "",
-      "sub": "af 6 denne uge · snit 4 uger 5,5",
+      "sub": "af 6 denne uge · snit 4 uger 4,8",
       "color": "#59182A"
     },
     "protein": {
@@ -105,17 +105,17 @@
     "target": 6,
     "streak": 0
   },
-  "coachSpeech": "Lørdag — uge 14 af 14. {HL} Godt: Søvn på 7,3 timer er solid. Fokus: Vægt på 72,3 kg (målt 3/9) — protein ved hvert måltid, alkohol som bevidst valg, søvn 7-8 t. Vægt/fedt vurderes på 7d-snit mod planen, ikke på én vejning. 3 AF-dage i 6 afsluttede dage — 3 mangler i 1 dage tilbage. Alle sessioner i hus. Juster de små ting, og resten følger. ❤️ Aerobt: VIGTIGT: Løbeturen 5/9 (snitpuls 127) kostede 26,5 % mere puls pr. meter end medianen af de seneste 4 sammenlignelige pas (EF 0,994 mod 1,352). Forbehold, som IKKE er trukket fra tallet: det var 29,7 °C. Konkluder ikke overtræning ud fra ét pas — sig hvad passet kostede, og at det enten var varmen eller for højt tempo.  \"Du har magt over dit sind — ikke over yderomstændigheder. Indse det, og du finder styrke.\" — Marcus Aurelius",
+  "coachSpeech": "Søndag — afslut uge 14 stærkt. {HL} Godt: Søvn på 7,1 timer er solid. Fokus: Vægt på 72,3 kg (målt 3/9) — protein ved hvert måltid, alkohol som bevidst valg, søvn 7-8 t. Vægt/fedt vurderes på 7d-snit mod planen, ikke på én vejning. 3 AF-dage i 7 afsluttede dage — 3 mangler i 0 dage tilbage. Alle sessioner i hus. Juster de små ting, og resten følger. ❤️ Aerobt: VIGTIGT: Løbeturen 5/9 (snitpuls 127) kostede 26,5 % mere puls pr. meter end medianen af de seneste 4 sammenlignelige pas (EF 0,994 mod 1,352). Forbehold, som IKKE er trukket fra tallet: det var 29,7 °C. Konkluder ikke overtræning ud fra ét pas — sig hvad passet kostede, og at det enten var varmen eller for højt tempo. 📊 Store billede: CTL 50,4 er 7.4 point FORAN ugeplanen (planmål uge 14: 43). Vægten har tabt 2.4 kg over de seneste 89 dage (74,7 → 72,3 kg).  \"Den bedste træning er den, du faktisk gennemfører.\"",
   "coachHighlight": "264 procent af ugens TSS er i hus",
   "weekFocus": "Taper færdig — hold kroppen klar til Médoc-lørdagen",
   "today": [
     {
-      "discipline": "run",
-      "title": "Pauillac Løb",
+      "discipline": "rest",
+      "title": "Hviledag",
       "duration": "",
       "zone": "–",
-      "desc": "",
-      "completed": true
+      "desc": "Ingen planlagt træning i dag.",
+      "completed": false
     }
   ],
   "week_sessions": [
@@ -241,8 +241,7 @@
       "extra": true,
       "actual_tss": 176,
       "actual_mins": 342,
-      "actual_distance_m": 43242.22,
-      "today": true
+      "actual_distance_m": 43242.22
     }
   ],
   "ctlCurve": [
@@ -259,14 +258,9 @@
     52.9,
     52.4,
     50.7,
-    51.6
+    50.4
   ],
   "weightHistory": [
-    {
-      "date": "2026-06-08",
-      "v": 74.1,
-      "real": true
-    },
     {
       "date": "2026-06-09",
       "v": 74.7,
@@ -595,14 +589,10 @@
       "real": true
     },
     null,
+    null,
     null
   ],
   "hrvHistory": [
-    {
-      "date": "2026-06-08",
-      "v": 65.0,
-      "real": true
-    },
     {
       "date": "2026-06-09",
       "v": 59.0,
@@ -1047,14 +1037,10 @@
       "date": "2026-09-05",
       "v": 54.0,
       "real": true
-    }
+    },
+    null
   ],
   "sleepHistory": [
-    {
-      "date": "2026-06-08",
-      "v": 8.2,
-      "real": true
-    },
     {
       "date": "2026-06-09",
       "v": 7.7,
@@ -1499,14 +1485,10 @@
       "date": "2026-09-05",
       "v": 4.1,
       "real": true
-    }
+    },
+    null
   ],
   "tsbHistory": [
-    {
-      "date": "2026-06-08",
-      "v": -10.3,
-      "real": true
-    },
     {
       "date": "2026-06-09",
       "v": -13.7,
@@ -1951,6 +1933,11 @@
       "date": "2026-09-05",
       "v": -7.3,
       "real": true
+    },
+    {
+      "date": "2026-09-06",
+      "v": -0.7,
+      "real": true
     }
   ],
   "af_log": {
@@ -2289,8 +2276,7 @@
           "extra": true,
           "actual_tss": 176,
           "actual_mins": 342,
-          "actual_distance_m": 43242.22,
-          "today": true
+          "actual_distance_m": 43242.22
         }
       ],
       "blockType": "RACE",
@@ -2393,7 +2379,7 @@
       "week": 14,
       "iso": 36,
       "done": 3,
-      "total": 6,
+      "total": 7,
       "label": "Uge 36"
     }
   ],
@@ -2406,11 +2392,6 @@
     "actual_total": 723.0
   },
   "fatHistory": [
-    {
-      "date": "2026-06-08",
-      "v": 22.4,
-      "real": true
-    },
     {
       "date": "2026-06-09",
       "v": 22.3,
@@ -2739,10 +2720,11 @@
       "real": true
     },
     null,
+    null,
     null
   ],
-  "coachAssessmentHtml": "<p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\"><strong>Dag 97 af 98 · Lørdag · Uge 14</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">💪 <strong>Træning & load</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Dagens løb i Pauillac blev gennemført: 43,2 km på 342 min med 176 TSS — et stort pas. CTL er nu 51,6, hvilket er markant over ugemålet på 43, og TSB er -7,3, så kroppen er belastet men ikke i farezonen. En enkelt note fra passet: snitpuls 127 gav en EF på 0,994 mod en median på 1,352 på sammenlignelige løb — det er 26,5 % mere puls pr. meter end normalt, og det skyldtes sandsynligvis de 29,7 °C eller et for højt tempo, ikke overtræning. Én løbetur afgør ingenting om form — CTL og TSB ser fornuftige ud ind i Médoc.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">⚖️ <strong>Krop & kost</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Vægten var 72,3 kg ved seneste vejning 3/9, og 7-dages snittet ligger på 72,6 kg — det er 4,6 kg fra målet under 68 kg. Fedtprocenten var 21,9 % ved seneste måling 3/9, og 7-dages snittet på fedtprocent er steget 0,4 procentpoint de seneste 7 dage — det er den reelle retning, og den går den forkerte vej. Protein er registreret 0 ud af 3 dage, og aftensult er ikke mærket — det er et mønster der ikke peger mod ægte kropsomkomposition. Fedt og muskelmasse måles i måneder, men fundamentet lægges hver dag.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">🎯 <strong>AF-status & fokus for resten af ugen</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Du har 3 AF-dage ud af 6 dage gået i ugen — det er præcis halvdelen, og målet er 6/7. Søndag er den eneste dag tilbage, og den løber ikke alene det tal op. Energi-snittet på 1,0 og nul proteindage i tre dage fortæller, at fokus på kost og restitution ikke sidder fast endnu — og det er præcis nu, natten før Médoc, det betyder mest.</p>",
-  "coachAssessmentTs": "18:52",
+  "coachAssessmentHtml": "<p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\"><strong>Dag 98 af 98 · Søndag · Uge 14</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">💪 <strong>Træning & load</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Médoc er i kassen — 43,2 km på 342 minutter med 176 TSS. Det er en stor dag, og kroppen har leveret. Én ting at notere: løbeturen 5/9 kostede 26,5 % mere puls pr. meter end dine seneste sammenlignelige pas (EF 0,994 mod median 1,352) — det er formentlig de 29,7 °C, men det kan også have været et for højt starttempo. Ét pas er ikke nok til at konkludere noget om form, men hold øje med det til næste løb i varme. CTL er nu 50,4 og TSB -0,7 — kroppen er belastet men langt fra rød zone, og du har en hviledag i dag til at lukke ugen af.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">⚖️ <strong>Krop & kost</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Vægten var 72,3 kg ved vejningen 3/9 — 4,3 kg fra målet på under 68 kg. 7-dages snittet på fedtprocenten er 21,6 % og er steget 0,2 procentpoint over de seneste 7 dage — det er den reelle retning, og den går den forkerte vej lige nu. Protein er registreret 0 af 3 dage, og energi-snittet er 1,0 — det er den direkte forklaring på at fedtprocenten ikke bevæger sig nedad. To A-løb er nu overstået; det er herfra kostdisciplinen skal sidde, hvis kropssammensætningen skal rykke sig.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">🎯 <strong>AF-status & fokus for resten af ugen</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">3 AF-dage ud af 7 dage gået i ugen — det er under målet om 6, og en Médoc-lørdag giver sjældent en AF-dag. I dag er hviledag og den naturlige landing efter en stor indsats — brug den til at nulstille og slutte ugen roligt. Der er ingen planlagte pas tilbage, så fokus er simpelt: ro, søvn og en god afslutning på ugen.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">📊 <strong>Store billede</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">CTL er 50,4 — det er 7,4 point foran ugeplanen, som lød på 43 for uge 14. Du har bygget mere kapacitet end planlagt, og det er et godt udgangspunkt for det der kommer efter Médoc. Vægten er faldet 2,4 kg over de seneste 89 dage, fra 74,7 til 72,3 kg — det er en stabil og reel bevægelse i den rigtige retning. Nu skal retningen på fedtprocenten vende — og det sker i køkkenet, ikke på løbestien.</p>",
+  "coachAssessmentTs": "03:18",
   "commute_pairing_warnings": [],
   "warnings": [
     {
@@ -2751,7 +2733,7 @@
       "message": "2 drikkedage i træk 4/9–5/9 — klynger rammer HRV hårdere end spredte dage."
     }
   ],
-  "tsb": -7.3,
+  "tsb": -0.7,
   "swimHistory": [
     {
       "week": 1,
@@ -2840,17 +2822,16 @@
   ],
   "coachAssessmentLastActId": "i183629392",
   "weekFocusWeek": 14,
-  "coachAssessmentPlanAtGen": "Pauillac Løb",
+  "coachAssessmentPlanAtGen": "",
   "weightGoal": 68,
   "bodyFatGoal": 16,
   "weightMovingAvg7": [
     null,
     null,
-    74.33,
-    74.33,
-    74.33,
-    74.33,
-    74.33,
+    null,
+    null,
+    null,
+    null,
     null,
     null,
     null,
@@ -2933,16 +2914,16 @@
     72.43,
     72.53,
     72.57,
-    72.58
+    72.58,
+    72.48
   ],
   "fatMovingAvg7": [
     null,
     null,
-    22.47,
-    22.47,
-    22.47,
-    22.47,
-    22.47,
+    null,
+    null,
+    null,
+    null,
     null,
     null,
     null,
@@ -3025,7 +3006,8 @@
     21.51,
     21.59,
     21.72,
-    21.74
+    21.74,
+    21.65
   ],
   "weightToGoal": 4.3,
   "bodyFatToGoal": 5.9,
@@ -3057,8 +3039,8 @@
       "note": "Nøgle virker"
     }
   },
-  "credentialsCheckedTs": "2026-09-05T23:35:21.699652",
-  "coachAssessmentTsFull": "2026-09-05T18:52:32.623894",
+  "credentialsCheckedTs": "2026-09-06T03:18:17.402439",
+  "coachAssessmentTsFull": "2026-09-06T03:18:17.402421",
   "coachAssessmentWeightAtGen": 72.3,
   "coachAssessmentAfAtGen": 3,
   "event_structure_warnings": [],
@@ -3162,18 +3144,9 @@
   },
   "racesUpcoming": [
     {
-      "name": "Marathon du Médoc",
-      "date": "2026-09-05",
-      "days": 0,
-      "priority": "A",
-      "distance": "42.2km",
-      "registered": null,
-      "programId": "medoc-2026"
-    },
-    {
       "name": "CPH Half",
       "date": "2026-09-20",
-      "days": 15,
+      "days": 14,
       "priority": "B",
       "distance": "21.1km",
       "registered": null,
@@ -3182,7 +3155,7 @@
     {
       "name": "Santini Stelvio Gran Fondo (lang rute)",
       "date": "2027-06-06",
-      "days": 274,
+      "days": 273,
       "priority": "B",
       "distance": "130km / 4500hm",
       "registered": true,
@@ -3191,7 +3164,7 @@
     {
       "name": "Tour des Stations Ultrafondo",
       "date": "2027-08-28",
-      "days": 357,
+      "days": 356,
       "priority": "A",
       "distance": "242km / 8848hm",
       "registered": false,
@@ -3422,21 +3395,16 @@
       "thin": false
     },
     "bike": {
-      "current": 1.492,
+      "current": 1.486,
       "previous": null,
       "pct": null,
-      "n": 7,
-      "n_prev": 0,
+      "n": 6,
+      "n_prev": 1,
       "window": 42,
       "thin": false
     }
   },
   "rhrHistory": [
-    {
-      "date": "2026-06-08",
-      "v": 41,
-      "real": true
-    },
     {
       "date": "2026-06-09",
       "v": 40,
@@ -3881,6 +3849,11 @@
       "date": "2026-09-05",
       "v": 45,
       "real": true
+    },
+    {
+      "date": "2026-09-06",
+      "v": 47,
+      "real": true
     }
   ],
   "aerobicFlag": {
@@ -3927,13 +3900,6 @@
     "runKmPerWeek": 40
   },
   "checkinLog": [
-    {
-      "date": "2026-08-09",
-      "alkohol": 0,
-      "protein": null,
-      "energi": null,
-      "sult": null
-    },
     {
       "date": "2026-08-10",
       "alkohol": 0,
@@ -4121,6 +4087,13 @@
       "alkohol": 1,
       "protein": 0,
       "energi": 1,
+      "sult": null
+    },
+    {
+      "date": "2026-09-06",
+      "alkohol": null,
+      "protein": null,
+      "energi": null,
       "sult": null
     }
   ],
