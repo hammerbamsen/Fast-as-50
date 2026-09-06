@@ -351,6 +351,25 @@ def _body_ctx(data, program, today, weight, fat, weight_date, fat_date, goals):
     w7_prev = _avg_at(w_avg_series, 28)
     f7_prev = _avg_at(f_avg_series, 28)
     wp = (program or {}).get('weightPlan') or {}
+    cut = cut_status(wp, today, w7)
+    # Blok 6: data.body (modules/body.py) bærer glidepath-status, korridor,
+    # fedtfri masse og cut-tjek. Lægges på cut når det findes, så coachen
+    # kan sige "foran/bagud" med samme tal som Krop-fanen.
+    b = data.get('body') if isinstance(data.get('body'), dict) else None
+    if b:
+        g = b.get('glidepath') or {}
+        m = b.get('ffm') or {}
+        c = b.get('cutCheck') or {}
+        cut = dict(cut)
+        cut.update(_compact({
+            'phase': g.get('phase'), 'status': g.get('status'),
+            'expectedKg': _num(g.get('expectedKg')) if g.get('expectedKg') is not None else cut.get('expectedKg'),
+            'corridorKg': _num(g.get('corridorKg')), 'actualRatePerWeek4w': _num(g.get('actualRate4w'), 2),
+            'ffmKg': _num(m.get('now')), 'ffmChange28d': _num(m.get('change28d')), 'ffmTargetKg': _num(m.get('target')),
+            'fatAvg14': _num((b.get('fat') or {}).get('avg14')), 'fatExpected': _num((b.get('fat') or {}).get('expected')),
+            'checkLevel': c.get('level') if c.get('active') else None,
+            'checkText': c.get('text') if c.get('active') else None,
+        }))
     return {
         'weight': _num(weight), 'weightDate': weight_date, 'weightAvg7': _num(w7),
         'weightAvg7Change28d': _num(w7 - w7_prev) if (w7 is not None and w7_prev is not None) else None,
@@ -358,7 +377,7 @@ def _body_ctx(data, program, today, weight, fat, weight_date, fat_date, goals):
         'fatAvg7Change28d': _num(f7 - f7_prev) if (f7 is not None and f7_prev is not None) else None,
         'weightGoal': _num(goals.get('weightKg')), 'fatGoal': _num(goals.get('bodyFatPct')),
         'weightToGoal': _num(w7 - float(goals['weightKg'])) if (w7 is not None and goals.get('weightKg') is not None) else None,
-        'cut': cut_status(wp, today, w7),
+        'cut': cut,
     }
 
 

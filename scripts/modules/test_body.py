@@ -1,0 +1,329 @@
+# -*- coding: utf-8 -*-
+"""Tests for body.py — glidepath, korridor + 2-mandags-regel, fedt/FFM, cut-tjek, KPI'er."""
+import json
+import os
+from datetime import date, timedelta
+
+from modules import body
+
+_ROOT = os.path.normpath(os.path.join(os.path.dirname(__file__), "..", ".."))
+
+WP = {"startKg": 72.2, "targetKg": 68, "targetDate": "2027-01-31", "cutStartsFrom": "2026-09-21",
+      "bodyFatPctStart": 21.8, "bodyFatPctTarget": 16, "holdFromMonth": "2027-02", "maxLossPerWeekKg": 0.25}
+
+
+def _plan():
+    with open(os.path.join(_ROOT, "data", "plan.json"), encoding="utf-8") as fh:
+        return json.load(fh)
+
+
+def series(end, days, fn, skip=()):
+    """[{date, v, real}] for `days` dage t.o.m. end; fn(i) hvor i=0 er ældst."""
+    end = date.fromisoformat(end) if isinstance(end, str) else end
+    out = []
+    for i in range(days):
+        d = end - timedelta(days=days - 1 - i)
+        if d.isoformat() in skip:
+            out.append(None)
+        else:
+            out.append({"date": d.isoformat(), "v": round(fn(i), 2), "real": True})
+    return out
+
+
+def flat(end, days, v):
+    return series(end, days, lambda i: v)
+
+
+def on_glidepath(end, days, offset=0.0):
+    """Serie der ligger præcis på glidepath + offset (før cut: startKg + offset)."""
+    end = date.fromisoformat(end) if isinstance(end, str) else end
+
+    def fn(i):
+        d = end - timedelta(days=days - 1 - i)
+        e = body.expected_kg(WP, d)
+        return (e if e is not None else WP["startKg"]) + offset
+    return series(end, days, fn)
+
+
+# ── Faser og datoer ─────────────────────────────────────────────────────────
+
+def test_phase_pre_cut_hold():
+    assert body.phase_for(WP, date(2026, 9, 6)) == "pre"
+    assert body.phase_for(WP, date(2026, 9, 21)) == "cut"
+    assert body.phase_for(WP, date(2027, 1, 31)) == "cut"
+    assert body.phase_for(WP, date(2027, 2, 1)) == "hold"
+    assert body.phase_for({}, date(2026, 9, 6)) is None
+
+
+def test_glidepath_dates_and_rate():
+    g = body.glidepath(WP, date(2026, 9, 6), [])
+    assert g["phase"] == "pre"
+    assert g["cutWeeks"] == 19
+    assert g["ratePerWeek"] == -0.22            # 4,2 kg / 18,86 uger
+    assert g["cutStartIsoWeek"] == 39 and g["isoWeek"] == 36
+    assert g["note"] == "cut starter uge 39 (21/9)"
+    assert g["expectedKg"] is None and g["status"] is None
+    assert g["series"][0] == {"date": "2026-09-21", "expected": 72.2}
+    assert g["series"][-1] == {"date": "2027-01-31", "expected": 68.0}
+    assert all(g["series"][i]["expected"] > g["series"][i + 1]["expected"] for i in range(len(g["series"]) - 1))
+
+
+def test_expected_kg_linear():
+    assert body.expected_kg(WP, "2026-09-21") == 72.2
+    assert body.expected_kg(WP, "2027-01-31") == 68.0
+    mid = date(2026, 9, 21) + timedelta(days=66)
+    assert abs(body.expected_kg(WP, mid) - 70.1) < 0.05
+    assert body.expected_kg(WP, "2026-09-20") is None
+    assert body.expected_kg(WP, "2027-03-01") == 68.0
+
+
+def test_cut_week_and_iso_week():
+    g = body.glidepath(WP, date(2026, 10, 12), on_glidepath("2026-10-12", 60))
+    assert g["phase"] == "cut" and g["cutWeek"] == 4 and g["cutWeeks"] == 19
+    assert g["isoWeek"] == 42
+    assert g["avg7"] is not None and g["status"] == "plan" and abs(g["delta"]) <= 0.05
+
+
+# ── Korridor + 2-mandags-regel ──────────────────────────────────────────────
+
+def test_status_inside_corridor_is_plan():
+    g = body.glidepath(WP, date(2026, 10, 12), on_glidepath("2026-10-12", 60, offset=0.3))
+    assert g["status"] == "plan" and g["note"] is None
+
+
+def test_status_foran_requires_two_mondays():
+    # 0,8 kg under hele vejen -> begge mandage under -> foran
+    g = body.glidepath(WP, date(2026, 10, 14), on_glidepath("2026-10-14", 60, offset=-0.8))
+    assert g["status"] == "foran"
+    assert [m["status"] for m in g["mondays"]] == ["foran", "foran"]
+    # kun de sidste 4 dage under -> forrige mandag var på plan -> 'plan' med note
+    end = date(2026, 10, 14)
+    s = series(end, 60, lambda i: (body.expected_kg(WP, end - timedelta(days=59 - i)) or 72.2)
+               + (-1.5 if i >= 56 else 0.0))
+    g2 = body.glidepath(WP, end, s)
+    assert g2["delta"] < -0.5
+    assert g2["status"] == "plan"
+    assert "efter to mandage" in g2["note"]
+
+
+def test_status_bagud_two_mondays():
+    g = body.glidepath(WP, date(2026, 10, 12), on_glidepath("2026-10-12", 60, offset=0.9))
+    assert g["status"] == "bagud" and g["delta"] == 0.9
+
+
+def test_hold_phase_corridor():
+    g = body.glidepath(WP, date(2027, 2, 15), flat("2027-02-15", 60, 68.7))
+    assert g["phase"] == "hold" and g["expectedKg"] == 68.0 and g["corridorKg"] == 1.0
+    assert g["status"] == "plan"
+    g2 = body.glidepath(WP, date(2027, 2, 15), flat("2027-02-15", 60, 69.4))
+    assert g2["status"] == "bagud"
+
+
+def test_no_recent_weighins():
+    g = body.glidepath(WP, date(2026, 10, 12), flat("2026-09-20", 30, 72.0))
+    assert g["phase"] == "cut" and g["avg7"] is None and g["status"] is None
+    assert "ingen vejninger" in g["note"]
+
+
+def test_actual_rate_4w():
+    s = series("2026-10-12", 60, lambda i: 74.0 - 0.05 * i)   # −0,35 kg/uge
+    g = body.glidepath(WP, date(2026, 10, 12), s)
+    assert abs(g["actualRate4w"] - (-0.35)) < 0.02
+
+
+# ── Fedt / FFM ──────────────────────────────────────────────────────────────
+
+def test_fat_status_and_expected():
+    f = body.fat_status(WP, date(2026, 9, 6), flat("2026-09-06", 30, 21.9))
+    assert f["avg14"] == 21.9 and f["expected"] is None and f["status"] is None
+    f2 = body.fat_status(WP, date(2026, 10, 12), flat("2026-10-12", 30, 21.0))
+    assert abs(f2["expected"] - 21.1) < 0.1 and f2["status"] == "plan"
+    f3 = body.fat_status(WP, date(2026, 10, 12), flat("2026-10-12", 30, 22.0))
+    assert f3["status"] == "bagud"
+
+
+def test_ffm_and_status():
+    m = body.ffm_status(WP, date(2026, 10, 12), flat("2026-10-12", 60, 72.0), flat("2026-10-12", 60, 21.0))
+    assert m["now"] == 56.9 and m["change28d"] == 0.0 and m["status"] == "ok"
+    assert m["target"] == 57.1
+    # 1 kg FFM tabt på 4 uger (vægt ned, fedt uændret) -> warn
+    w = series("2026-10-12", 60, lambda i: 73.0 - (1.3 if i >= 46 else 0.0))
+    m2 = body.ffm_status(WP, date(2026, 10, 12), w, flat("2026-10-12", 60, 21.0))
+    assert m2["change28d"] is not None and m2["change28d"] < -0.5 and m2["status"] == "warn"
+    m3 = body.ffm_status(WP, date(2026, 10, 12), [], [])
+    assert m3["now"] is None and m3["status"] is None
+
+
+# ── Styrke ──────────────────────────────────────────────────────────────────
+
+def test_strength_week_counts_done_only():
+    ws = [{"day": "Man", "disc": "strength", "done": True}, {"day": "Tor", "disc": "strength", "done": False},
+          {"day": "Tir", "disc": "bike", "done": True}]
+    assert body.strength_week(ws, {"strengthPerWeek": 2}) == {"done": 1, "target": 2}
+    assert body.strength_week(None, {}) == {"done": 0, "target": 2}
+    assert body.next_strength_day(ws, date(2026, 10, 13)) == "torsdag"   # tirsdag
+    assert body.next_strength_day(ws, date(2026, 10, 16)) is None         # fredag: ingen tilbage
+
+
+def test_strength_log_and_by_week():
+    acts = [{"type": "WeightTraining", "start_date_local": "2026-09-29T07:00:00", "name": "Styrke"},
+            {"type": "WeightTraining", "start_date_local": "2026-09-29T18:00:00", "name": "Styrke 2"},  # samme dag
+            {"type": "Ride", "start_date_local": "2026-09-30T07:00:00"},
+            {"type": "Workout", "start_date_local": "2026-10-02T07:00:00"},
+            {"type": "Strength", "start_date_local": "2026-10-06T07:00:00"}]
+    log = body.strength_log_from_activities(acts, date(2026, 9, 14), date(2026, 10, 12))
+    assert [e["date"] for e in log["sessions"]] == ["2026-09-29", "2026-10-02", "2026-10-06"]
+    weeks = body.strength_by_week(log, date(2026, 10, 12))
+    assert weeks == {"2026-09-14": 0, "2026-09-21": 0, "2026-09-28": 2, "2026-10-05": 1}
+    assert body.strength_by_week(None, date(2026, 10, 12)) == {}
+    # loggen dækker kun 10 dage -> kun uger helt inden for vinduet
+    short = body.strength_log_from_activities(acts, date(2026, 10, 3), date(2026, 10, 12))
+    assert list(body.strength_by_week(short, date(2026, 10, 12))) == ["2026-10-05"]
+
+
+# ── Cut-tjek ────────────────────────────────────────────────────────────────
+
+def _glide(today="2026-10-12", offset=0.0, weight=None):
+    w = weight if weight is not None else on_glidepath(today, 60, offset)
+    return body.glidepath(WP, date.fromisoformat(today), w), w
+
+
+def _check(today="2026-10-12", weight=None, ffm=None, weeks=None, rhr=None, hrv=None, next_strength=None):
+    g, w = _glide(today, weight=weight)
+    return body.cut_check(g, ffm or {"change28d": 0.0}, weeks if weeks is not None else {"a": 2, "b": 2}, 2,
+                          rhr, hrv, w, date.fromisoformat(today), next_strength=next_strength)
+
+
+def test_cutcheck_inactive_in_pre_and_hold():
+    g = body.glidepath(WP, date(2026, 9, 6), [])
+    c = body.cut_check(g, {}, {}, 2, None, None, [], date(2026, 9, 6))
+    assert c["active"] is False and c["level"] is None and c["text"] == "Aktiveres uge 39 (21/9)"
+    g2 = body.glidepath(WP, date(2027, 3, 1), flat("2027-03-01", 30, 68.0))
+    c2 = body.cut_check(g2, {}, {}, 2, None, None, [], date(2027, 3, 1))
+    assert c2["active"] is False and "vedligehold" in c2["text"]
+
+
+def test_cutcheck_on_plan():
+    c = _check(rhr=flat("2026-10-12", 30, 44), hrv=flat("2026-10-12", 30, 60))
+    assert c["active"] and c["level"] is None and c["text"] == "På plan — fortsæt"
+    assert set(c["signals"]) == {"rate", "ffm", "strength", "recovery", "plateau"}
+    assert all(s["level"] is None for s in c["signals"].values())
+
+
+def test_cutcheck_missing_series_show_no_data():
+    c = _check(weeks={}, ffm={"change28d": None})
+    assert c["signals"]["recovery"]["text"] == "ingen data"
+    assert c["signals"]["ffm"]["text"] == "ingen data"
+    assert "ingen data" in c["signals"]["strength"]["text"]
+    assert c["level"] is None and c["text"] == "På plan — fortsæt"
+
+
+def test_cutcheck_rate_warn_and_act():
+    w = series("2026-10-12", 60, lambda i: 73.0 - 0.07 * i)     # −0,49 kg/uge
+    c = _check(weight=w)
+    assert c["signals"]["rate"]["level"] == "warn" and c["level"] == "warn"
+    assert "over 0,4 kg/uge" in c["text"]
+    w2 = series("2026-10-12", 60, lambda i: 74.0 - 0.1 * i)     # −0,7 kg/uge
+    c2 = _check(weight=w2, next_strength="torsdag")
+    assert c2["signals"]["rate"]["level"] == "act" and c2["level"] == "act"
+    assert "vedligehold i 3-4 dage" in c2["text"] and "styrke torsdag" in c2["text"]
+
+
+def test_cutcheck_ffm_act_wins():
+    w = series("2026-10-12", 60, lambda i: 74.0 - 0.1 * i)
+    c = _check(weight=w, ffm={"change28d": -0.8})
+    assert c["signals"]["ffm"]["level"] == "act" and c["level"] == "act"
+    assert c["text"].startswith("Fedtfri masse −0,8 kg")
+
+
+def test_cutcheck_strength_warn():
+    c = _check(weeks={"2026-09-28": 1, "2026-10-05": 0})
+    assert c["signals"]["strength"]["level"] == "warn" and c["level"] == "warn"
+    assert "styrkepas to uger i træk" in c["text"]
+    c2 = _check(weeks={"2026-09-28": 1, "2026-10-05": 2})
+    assert c2["signals"]["strength"]["level"] is None
+
+
+def test_cutcheck_recovery_warn():
+    w = series("2026-10-12", 60, lambda i: 73.0 - 0.03 * i)     # falder
+    rhr = series("2026-10-12", 30, lambda i: 42 if i < 16 else 45)
+    hrv = series("2026-10-12", 30, lambda i: 60 if i < 16 else 54)
+    c = _check(weight=w, rhr=rhr, hrv=hrv)
+    assert c["signals"]["recovery"]["level"] == "warn"
+    assert c["signals"]["recovery"]["value"]["rhr"] == 3.0
+    assert "Hvilepuls op og HRV ned" in c["text"]
+    # samme signaler men vægt stabil -> ingen advarsel
+    c2 = _check(weight=flat("2026-10-12", 60, 72.0), rhr=rhr, hrv=hrv)
+    assert c2["signals"]["recovery"]["level"] is None
+
+
+def test_cutcheck_plateau_info():
+    c = _check(weight=flat("2026-10-19", 60, 71.5), today="2026-10-19")
+    assert c["signals"]["plateau"]["level"] == "info" and c["level"] == "info"
+    assert c["text"].startswith("Plateau")
+
+
+# ── KPI'er + advarsel ───────────────────────────────────────────────────────
+
+def test_weight_fat_kpi_pre():
+    b = {"glidepath": body.glidepath(WP, date(2026, 9, 6), flat("2026-09-06", 20, 72.5)),
+         "fat": body.fat_status(WP, date(2026, 9, 6), flat("2026-09-06", 20, 21.9))}
+    k = body.weight_kpi(b)
+    assert k == {"value": "72,5", "unit": "kg", "sub": "cut starter uge 39", "color": body.COLOR_NEUTRAL}
+    f = body.fat_kpi(b)
+    assert f["value"] == "21,9" and f["sub"] == "14d-snit · cut starter uge 39" and f["color"] == body.COLOR_NEUTRAL
+
+
+def test_weight_kpi_cut_colors():
+    g_ahead = body.glidepath(WP, date(2026, 10, 12), on_glidepath("2026-10-12", 60, -0.8))
+    k = body.weight_kpi({"glidepath": g_ahead})
+    assert k["color"] == body.COLOR_OK and k["sub"].startswith("forventet 71,6 · foran 0,8")
+    g_behind = body.glidepath(WP, date(2026, 10, 12), on_glidepath("2026-10-12", 60, 0.9))
+    assert body.weight_kpi({"glidepath": g_behind})["color"] == body.COLOR_WARN
+    g_plan = body.glidepath(WP, date(2026, 10, 12), on_glidepath("2026-10-12", 60, 0.2))
+    k3 = body.weight_kpi({"glidepath": g_plan})
+    assert k3["color"] == body.COLOR_OK and k3["sub"] == "forventet 71,6 · på plan"
+
+
+def test_cut_warning_levels():
+    assert body.cut_warning({"cutCheck": {"active": False, "level": None}}) is None
+    assert body.cut_warning({"cutCheck": {"active": True, "level": "info", "text": "x"}}) is None
+    w = body.cut_warning({"cutCheck": {"active": True, "level": "warn", "text": "Tabet er stort"}})
+    assert w == {"type": "cut", "level": "warn", "message": "Cut-tjek: Tabet er stort"}
+    assert body.cut_warning({"cutCheck": {"active": True, "level": "act", "text": "x"}})["level"] == "critical"
+
+
+# ── Hele build_body mod rigtig plan.json ────────────────────────────────────
+
+def test_build_body_real_plan_pre_and_cut():
+    plan = _plan()
+    wp, goals, prog = body.find_weight_plan(plan, "kennet", date(2026, 9, 6))
+    assert prog["id"] == "tds-2027" and wp["cutStartsFrom"] == "2026-09-21" and goals["strengthPerWeek"] == 2
+    data = {"weightHistory": flat("2026-09-06", 30, 72.5), "fatHistory": flat("2026-09-06", 30, 21.8),
+            "week_sessions": [{"day": "Man", "disc": "strength", "done": True}]}
+    b = body.build_body(plan, data, date(2026, 9, 6))
+    assert b["glidepath"]["phase"] == "pre" and b["cutCheck"]["active"] is False
+    assert b["strengthWeek"] == {"done": 1, "target": 2}
+    json.dumps(b)   # serialiserbar
+    data2 = {"weightHistory": on_glidepath("2026-10-12", 60, -0.4), "fatHistory": flat("2026-10-12", 60, 21.0),
+             "rhrHistory": flat("2026-10-12", 30, 44), "hrvHistory": flat("2026-10-12", 30, 60), "week_sessions": []}
+    b2 = body.build_body(plan, data2, date(2026, 10, 12))
+    assert b2["glidepath"]["phase"] == "cut" and b2["glidepath"]["status"] == "plan"   # −0,4 inden for ±0,5
+    assert b2["cutCheck"]["active"] and b2["cutCheck"]["signals"]["strength"]["text"].startswith("ingen data")
+    json.dumps(b2)
+
+
+def test_coach_context_picks_up_body():
+    from modules import coach_context as cc
+    plan = _plan()
+    data = {"weightHistory": on_glidepath("2026-10-12", 60, -0.8), "fatHistory": flat("2026-10-12", 60, 21.0),
+            "week_sessions": []}
+    data["body"] = body.build_body(plan, data, date(2026, 10, 12))
+    ctx = cc.build_context(plan, data, date(2026, 10, 12))
+    cut = ctx["body"]["cut"]
+    assert cut["active"] is True and cut["status"] == "foran" and cut["phase"] == "cut"
+    assert cut["ffmKg"] == data["body"]["ffm"]["now"] and cut["checkText"]
+    json.dumps(ctx)
+    # uden data.body: uændret adfærd
+    ctx2 = cc.build_context(plan, {"weightHistory": data["weightHistory"]}, date(2026, 10, 12))
+    assert "status" not in ctx2["body"]["cut"]
