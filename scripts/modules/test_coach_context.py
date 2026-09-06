@@ -64,7 +64,7 @@ WP = {"startKg": 72.2, "targetKg": 68, "targetDate": "2027-01-31", "cutStartsFro
 def test_cut_inactive_before_cut_starts_from():
     c = cc.cut_status(WP, date(2026, 9, 10), 72.5)
     assert c["active"] is False
-    assert c["expectedKg"] is None and c["deltaVsPlan"] is None
+    assert c.get("expectedKg") is None and c.get("deltaVsPlan") is None
     assert c["daysToStart"] == 11
     assert c["ratePerWeek"] == 0.22
 
@@ -72,7 +72,7 @@ def test_cut_inactive_before_cut_starts_from():
 def test_cut_inactive_without_cut_starts_from():
     wp = dict(WP); wp.pop("cutStartsFrom")
     c = cc.cut_status(wp, date(2026, 10, 10), 72.0)
-    assert c["active"] is False and c["weekOf"] is None
+    assert c["active"] is False and c.get("weekOf") is None
 
 
 def test_cut_expected_kg_linear():

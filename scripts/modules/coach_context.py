@@ -196,9 +196,12 @@ def _week_ctx(today, week_sessions, plan_tab, planned_tss, tss_actual):
 
     def _row(s):
         r = _entry_from_week_session(s)
+        r.pop('extra', None)            # listen siger det allerede
+        if not r.get('isKey'):
+            r.pop('isKey', None)
         r['day'] = s.get('day')
         r['plannedTss'] = _int(s.get('planned_tss'))
-        return r
+        return _compact(r)
 
     planned = [s for s in (week_sessions or []) if not s.get('extra')]
     completed = [_row(s) for s in planned if s.get('done') and not s.get('today')]
@@ -216,9 +219,9 @@ def _week_ctx(today, week_sessions, plan_tab, planned_tss, tss_actual):
                 if today.isoformat() <= day.get('date', '') <= horizon:
                     for e in day.get('entries', []):
                         if e.get('id') and not e.get('extra'):
-                            upcoming.append({'id': e['id'], 'date': day['date'], 'name': e.get('zwiftName') or e.get('name'),
-                                             'disc': e.get('disc'), 'load': e.get('load'), 'mins': _int(e.get('mins')),
-                                             'libraryId': e.get('libraryId'), 'done': bool(e.get('done'))})
+                            upcoming.append(_compact({'id': e['id'], 'date': day['date'], 'name': e.get('zwiftName') or e.get('name'),
+                                                      'disc': e.get('disc'), 'load': e.get('load'), 'mins': _int(e.get('mins')),
+                                                      'libraryId': e.get('libraryId'), 'done': bool(e.get('done'))}))
         lo = (today - timedelta(days=7)).isoformat()
         for p in plan_tab.get('hardSpacing', []):
             if lo <= p.get('toDate', '') <= horizon:
@@ -309,7 +312,7 @@ def cut_status(weight_plan, today, weight_avg7):
            'deltaVsPlan': None, 'ratePerWeek': None, 'startKg': _num(wp.get('startKg')),
            'targetKg': _num(wp.get('targetKg')), 'targetDate': wp.get('targetDate')}
     if not start:
-        return out
+        return _compact(out)
     try:
         d0 = _to_date(start)
         d1 = _to_date(wp.get('targetDate')) if wp.get('targetDate') else None
@@ -321,9 +324,10 @@ def cut_status(weight_plan, today, weight_avg7):
         out['ratePerWeek'] = round((float(start_kg) - float(target_kg)) / weeks, 2)
     if today < d0:
         out['daysToStart'] = (d0 - today).days
-        return out
+        return _compact(out)
     if d1 and today > d1:
-        return out  # cut er slut (vedligehold) — ikke aktivt
+        out['ended'] = True
+        return _compact(out)  # cut er slut (vedligehold) — ikke aktivt
     out['active'] = True
     out['weekOf'] = (today - d0).days // 7 + 1
     if d1 and start_kg is not None and target_kg is not None:
@@ -411,7 +415,7 @@ def _rules_ctx(lib, program, goals):
     except Exception:
         r = {}
     wp = (program or {}).get('weightPlan') or {}
-    return {
+    return _compact({
         'maxHaard': _int(r.get('maxHaardPerWeek')), 'maxModerat': _int(r.get('maxModeratPerWeek')),
         'minHoursBetweenHaard': _int(r.get('minHoursBetweenHaard', _plan_tab.MIN_HOURS_HARD)),
         'tsbFloor': _friel.TSB_FLOOR, 'rampSoft': _friel.RAMP_SOFT, 'rampHard': _friel.RAMP_HARD,
@@ -421,7 +425,7 @@ def _rules_ctx(lib, program, goals):
         'afTarget': _int(goals.get('afDaysPerWeek')),
         'sleepH': _num(goals.get('sleepHours')), 'sleepHMax': SLEEP_H_MAX,
         'strengthPerWeek': _int(goals.get('strengthPerWeek')),
-    }
+    })
 
 
 def _next_week_ctx(plan_tab, program):
