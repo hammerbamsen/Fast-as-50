@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-09-06 17:38",
+    "updated": "2026-09-06 20:04",
     "week": 14,
     "totalWeeks": 14,
     "blockType": "RACE",
@@ -2048,7 +2048,8 @@
     "2026-09-02": 1,
     "2026-09-03": 0,
     "2026-09-04": 1,
-    "2026-09-05": 1
+    "2026-09-05": 1,
+    "2026-09-06": 1
   },
   "all_weeks": {
     "12": {
@@ -2737,8 +2738,8 @@
     null,
     null
   ],
-  "coachAssessmentHtml": "<p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\"><strong>Dag 98 af 98 · Søndag · Uge 14</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">💪 <strong>Træning & load</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Médoc-løbet lørdag kostede 176 TSS og 342 min — det var dagens store post, og det satte sine spor: snitpulsen på 127 gav en EF på 0,994 mod en median på 1,352 på sammenlignelige pas — 26,5 % mere puls pr. meter. Det skyldtes sandsynligvis de 29,7 °C, men kan også være et tegn på for højt tempo undervejs. Konkluder ikke overtræning på ét pas — CTL på 50,8 og TSB på -2,2 er sunde tal, og kroppen er der, den skal være. Søndagens gåtur i Saint-Julien-Beychevelle (10,3 km · 137 min · 14 TSS) var præcis det rigtige afsluttende pas: roligt, langt og uden belastning.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">⚖️ <strong>Krop & kost</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Vægten var 72,3 kg ved seneste vejning 3/9 — det er 4,3 kg fra målet. Fedtprocenten var 21,9 % samme dag, og 7-dages snittet for fedtprocent er gået 0,2 point op over de seneste 7 dage — det er den retning, der tæller, og den peger den forkerte vej lige nu. Protein er registreret 0 ud af 3 mulige dage i perioden, og energi-snittet er 1,0 — det hænger sandsynligvis sammen. Prioritér proteinet i restitutionsdagene efter Médoc: du skal passe på muskelmassen, ikke kun vægten.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">🎯 <strong>AF-status & fokus for resten af ugen</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">3 AF-dage ud af 7 dage gået i ugen — det er under målet om 6/uge. Der er ingen planlagte pas tilbage i dag, så fokus nu er restitution og mad. Kroppen har fået et hårdt løb i varmen, og den har brug for ro, væske og kalorier — ikke kalorieunderskud. Médoc er kørt; lad kroppen lande.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">📊 <strong>Store billede</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">CTL er 50,8 — det er 7,8 point foran ugeplanens mål på 43 for uge 14. Det er en solid overdosis af god arbejde i et 14-ugers forløb. Vægten er gået fra 74,7 kg til 72,3 kg over de seneste 89 dage — et reelt tab på 2,4 kg. Nu er begge A-løb gennemført: det er tid til at trække vejret og planlægge næste fase.</p>",
-  "coachAssessmentTs": "10:41",
+  "coachAssessmentHtml": "<p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\"><strong>Dag 98 af 98 · Søndag · Uge 14</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">💪 <strong>Træning & load</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Løbeturen lørdag i Pauillac kostede 26,5 % mere puls pr. meter end medianen af de seneste 4 sammenlignelige pas (EF 0,994 mod 1,352) — det skyldtes enten de 29,7 °C eller at tempoet lå for højt, og sandsynligvis begge dele. CTL er 50,8 og TSB er -2,2: kroppen er belastet af en hård lørdagstur, men du er ikke i minus på en måde der kræver alarm. Ugens walk i Saint-Julien-Beychevelle blev 10,3 km på 137 min til 14 TSS — et fint, roligt slut på taperugen. Der er ikke mere træning planlagt, og det er præcis rigtigt.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">⚖️ <strong>Krop & kost</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Vægten var 72,3 kg ved seneste vejning 3/9, og 7-dages snittet ligger på 72,5 kg — 4,3 kg fra målet under 68 kg. Fedtprocenten var 21,9 % den 3/9, og 7-dages snittet er gået op 0,2 procentpoint over de seneste 7 dage og ligger på 21,6 % — det er snittet der viser retningen, og den peger aktuelt den forkerte vej på fedtprocenten. Du har 0 proteindage registreret de seneste 3 ud af 3, 0 aftensulte og energisnit på 1,0 — der er ikke bygget den platform endnu.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">🎯 <strong>AF-status & fokus for resten af ugen</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Du har 3 AF-dage ud af 7 dage i ugen — det er 3/7. Médoc er lørdag, og det er et festløb med vin undervejs, så strategien for resten af ugen er enkel: hold kroppen klar, sov godt, og prioriter de AF-dage du stadig kan nå i dag. Ingen ny belastning.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">📊 <strong>Store billede</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">CTL på 50,8 er 7,8 point foran ugeplanen, der havde sat mål på 43 for uge 14 — du har bygget mere fitness end planlagt, og det er et godt udgangspunkt til Médoc. Over de seneste 89 dage er vægten gået fra 74,7 kg til 72,3 kg, altså 2,4 kg ned — retningen er rigtig, men arbejdet med kropssammensætning og protokol-disciplin starter for alvor efter Médoc.</p>",
+  "coachAssessmentTs": "18:04",
   "commute_pairing_warnings": [],
   "warnings": [
     {
@@ -2748,8 +2749,8 @@
     },
     {
       "type": "alcohol_cluster",
-      "level": "warn",
-      "message": "2 drikkedage i træk 4/9–5/9 — klynger rammer HRV hårdere end spredte dage."
+      "level": "critical",
+      "message": "3 drikkedage i træk 4/9–6/9 — klynger rammer HRV hårdere end spredte dage."
     }
   ],
   "tsb": -2.2,
@@ -3058,8 +3059,8 @@
       "note": "Nøgle virker"
     }
   },
-  "credentialsCheckedTs": "2026-09-06T15:38:47.088853",
-  "coachAssessmentTsFull": "2026-09-06T10:41:28.780670",
+  "credentialsCheckedTs": "2026-09-06T18:04:22.501204",
+  "coachAssessmentTsFull": "2026-09-06T18:04:22.501188",
   "coachAssessmentWeightAtGen": 72.3,
   "coachAssessmentAfAtGen": 3,
   "event_structure_warnings": [],
@@ -4110,9 +4111,9 @@
     },
     {
       "date": "2026-09-06",
-      "alkohol": null,
-      "protein": null,
-      "energi": null,
+      "alkohol": 1,
+      "protein": 0,
+      "energi": 1,
       "sult": null
     }
   ],
@@ -4125,6 +4126,7 @@
     "2026-08-29": "drak",
     "2026-09-02": "drak",
     "2026-09-04": "valgt",
-    "2026-09-05": "valgt"
+    "2026-09-05": "valgt",
+    "2026-09-06": "valgt"
   }
 }
