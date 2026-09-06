@@ -428,6 +428,14 @@ details.fold[open] > summary::after { content:"▴"; }
 .pt-legend span::before { content:""; display:inline-block; width:14px; height:2px; margin-right:5px; vertical-align:middle; background:var(--lc); }
 .pt-legend span.dash::before { background:repeating-linear-gradient(90deg, var(--lc) 0 4px, transparent 4px 7px); }
 .pt-legend span.dot::before { width:7px; height:7px; border-radius:50%; }
+.pt-bar { display:flex; justify-content:space-between; align-items:center; margin:0 0 8px; }
+.pt-bar .lab { font-family:'Space Mono',monospace; font-size:10px; letter-spacing:.08em; color:var(--muted); text-transform:uppercase; }
+.pt-today { font-family:'Space Mono',monospace; font-size:10px; letter-spacing:.06em; padding:5px 10px; border-radius:8px; border:1px solid var(--line); background:var(--card); color:var(--num); cursor:pointer; }
+.pt-nav { display:flex; align-items:center; gap:8px; }
+.pt-nav button { width:34px; height:34px; border-radius:10px; border:1px solid var(--line); background:var(--card); color:var(--num); font-size:18px; line-height:1; cursor:pointer; flex-shrink:0; }
+.pt-nav button:disabled { opacity:.35; cursor:default; }
+.pt-nav .t { flex:1; min-width:0; }
+.pt-empty { margin:10px 0 14px; padding:14px 14px; border:1px dashed var(--line); border-radius:12px; font-size:13.5px; color:var(--muted); line-height:1.45; }
 .pt-link { display:block; text-align:center; font-family:'Space Mono',monospace; font-size:10px; letter-spacing:.06em; color:var(--muted); text-decoration:none; padding:6px 0 14px; }
 /* ⋯-ark */
 .pt-menu { display:grid; gap:8px; margin:8px 0 4px; }
@@ -1346,6 +1354,17 @@ function ptMins(m){ if (m == null) return ''; return m >= 90 && m % 30 === 0 ? `
 function ptDays(a, b){ return Math.round((new Date(b+"T12:00:00") - new Date(a+"T12:00:00"))/864e5); }
 function ptWeeks(){ return (D.planTab && D.planTab.weeks) || []; }
 function ptSessions(){ return (D.planTab && D.planTab.sessions) || []; }
+// sessions findes kun for uger med dage i plan.json — slå op på start, ikke indeks
+function ptSessionFor(w){ return w ? (ptSessions().find(s => s.start === w.start) || null) : null; }
+function ptCurIdx(){ const i = ptWeeks().findIndex(w=>w.isCurrent); return i < 0 ? 0 : i; }
+function ptScrollToSel(behavior){
+  const strip = document.getElementById('pt-strip'); if (!strip) return;
+  const card = strip.children[ptSelIdx()]; if (!card) return;
+  const left = card.offsetLeft - (strip.clientWidth - card.offsetWidth) / 2;
+  if (strip.scrollTo) strip.scrollTo({ left: Math.max(0, left), behavior: behavior || 'auto' }); else strip.scrollLeft = Math.max(0, left);
+}
+function ptGoToday(){ ptSelectWeek(ptCurIdx()); }
+function ptStep(d){ const i = ptSelIdx() + d; if (i < 0 || i >= ptWeeks().length) return; ptSelectWeek(i); }
 function ptSelIdx(){ const ws = ptWeeks(); if (PT.sel != null && ws[PT.sel]) return PT.sel; const i = ws.findIndex(w=>w.isCurrent); return i < 0 ? 0 : i; }
 function ptFindEntry(id){
   for (const wk of ptSessions()) for (const day of wk.days) for (const e of day.entries) if (e.id === id) return { e, day, wk };
@@ -1370,7 +1389,10 @@ function ptFlagsHtml(w, withOk){
 // Lag 1: blokstribe
 function ptStrip(){
   const sel = ptSelIdx();
-  return `<div class="pt-strip" id="pt-strip">${ptWeeks().map((w,i)=>`
+  const ws = ptWeeks();
+  const yr = iso => `${_dkShort(iso)}-${String(iso).slice(2,4)}`;
+  const bar = `<div class="pt-bar"><span class="lab">${ws.length} uger · ${ws[0]?yr(ws[0].start):'–'} – ${ws.length?yr(ws[ws.length-1].end):'–'}</span><button class="pt-today" onclick="ptGoToday()">I DAG · UGE ${isoWeekOf(new Date())}</button></div>`;
+  return bar + `<div class="pt-strip" id="pt-strip">${ptWeeks().map((w,i)=>`
     <button class="pt-wk${w.isCurrent?' cur':''}${i===sel?' sel':''}${w.isPast?' past':''}" onclick="ptSelectWeek(${i})" aria-pressed="${i===sel}">
       <span class="wn"><b>Uge ${w.start ? isoWeekOf(w.start) : (w.week ?? '–')}</b><span>${esc(ptRange(w.start, w.end))}</span></span>
       <span>${ptBlockChip(w.blockType, w.mesoWeek)}${w.races&&w.races.length?' 🏆':''}${w.travel?' ✈':''}</span>
@@ -1384,7 +1406,7 @@ function ptSelectWeek(i){
   const strip = document.getElementById('pt-strip');
   if (strip) [...strip.children].forEach((c,j)=>{ c.classList.toggle('sel', j===i); c.setAttribute('aria-pressed', j===i); });
   const det = document.getElementById('pt-detail'); if (det) det.innerHTML = ptWeekDetail(i);
-  const card = strip && strip.children[i]; if (card && card.scrollIntoView) card.scrollIntoView({ block:'nearest', inline:'center', behavior:'smooth' });
+  ptScrollToSel('smooth');
 }
 
 // CTL-graf: 12 uger historik (fuld linje) + vindue frem (projektion stiplet i rav,
@@ -1396,7 +1418,10 @@ function ptCtlChart(){
   const ws = ptWeeks();
   if (!hist.length && !targets.length) return '';
   const wkEnd = s => { const d = new Date(s+"T12:00:00"); d.setDate(d.getDate()+6); return isoOf(d); };
-  const x0 = (c.history && c.history[0] && c.history[0].start) || (ws[0] && ws[0].start), x1 = ws.length ? ws[ws.length-1].end : wkEnd(hist[hist.length-1].start);
+  // Grafens vindue kommer fra planTab.ctl.window (−12..+7 uger) — striben dækker nu hele programmet
+  const win = c.window || {};
+  const x0 = win.from || (c.history && c.history[0] && c.history[0].start) || (ws[0] && ws[0].start);
+  const x1 = win.to || (ws.length ? ws[Math.min(ws.length-1, ptCurIdx()+7)].end : wkEnd(hist[hist.length-1].start));
   const W = 340, H = 150, pad = { l:26, r:8, t:14, b:22 };
   const iW = W-pad.l-pad.r, iH = H-pad.t-pad.b;
   const span = Math.max(1, ptDays(x0, x1));
@@ -1425,9 +1450,12 @@ function ptCtlChart(){
   if (ftp) marks += `<line x1="${x(ftp.date).toFixed(1)}" x2="${x(ftp.date).toFixed(1)}" y1="${pad.t}" y2="${H-pad.b}" stroke="var(--act)" stroke-width="1" stroke-dasharray="2,3"/><text x="${x(ftp.date).toFixed(1)}" y="${H-pad.b+9}" text-anchor="middle" font-size="7" font-family="'Space Mono',monospace" fill="var(--act)">FTP</text>`;
   marks += `<line x1="${x(tIso).toFixed(1)}" x2="${x(tIso).toFixed(1)}" y1="${pad.t}" y2="${H-pad.b}" stroke="var(--ink)" stroke-width="1" opacity=".35"/>`;
   // Uge-labels: hver vindues-uge (udtyndet hvis mange), plus måneder i historikken
-  const xl = ws.filter((w,i)=>i%2===0).map(w => `<text x="${x(w.start).toFixed(1)}" y="${H-3}" font-size="7.5" font-family="'Space Mono',monospace" fill="var(--muted)">U${w.week ?? ''}</text>`).join('');
+  // x-labels i kalenderuger, kun inden for grafens vindue (hver 2. uge)
+  const wsIn = ws.filter(w => w.start >= x0 && w.start <= x1);
+  const xl = wsIn.filter((w,i)=>i%2===0).map(w => `<text x="${x(w.start).toFixed(1)}" y="${H-3}" font-size="7.5" font-family="'Space Mono',monospace" fill="var(--muted)">u${isoWeekOf(w.start)}</text>`).join('');
+  const weeksAhead = Math.max(0, Math.round(ptDays(todayIso(), x1)/7));
   const lastPt = last ? `<circle cx="${x(last.d).toFixed(1)}" cy="${y(last.v).toFixed(1)}" r="3.2" fill="var(--num)"/><text x="${(x(last.d)+5).toFixed(1)}" y="${(y(last.v)-5).toFixed(1)}" font-size="9" font-weight="700" font-family="'Space Mono',monospace" fill="var(--num)">${last.v}</text>` : '';
-  return `<div class="pt-ctl"><div class="label">CTL · 12 uger tilbage, ${ws.length-1} frem</div>
+  return `<div class="pt-ctl"><div class="label">CTL · 12 uger tilbage, ${weeksAhead} frem</div>
     <svg viewBox="0 0 ${W} ${H}" role="img" aria-label="CTL faktisk, projektion og pejlemærke">
       ${bands}${grid}${marks}
       ${tp.length?`<path d="${path(tp,p=>p.v)}" fill="none" stroke="var(--muted)" stroke-width="1" stroke-dasharray="3,3"/>`:''}
@@ -1462,18 +1490,24 @@ function ptSessionCard(e, day){
     ${more}${det}</div>`;
 }
 function ptWeekDetail(i){
-  const w = ptWeeks()[i], s = ptSessions()[i];
-  if (!w || !s) return '';
+  const w = ptWeeks()[i], s = ptSessionFor(w);
+  if (!w) return '';
   const tIso = todayIso();
   const spacing = (D.planTab.hardSpacing||[]);
   const minH = (D.planTab.minHoursHard || 72);
   const purpose = w.purpose || w.note || '';
+  const nW = ptWeeks().length;
   const head = `<div class="pt-head">
-    <div class="t">Uge ${w.start ? isoWeekOf(w.start) : (w.week ?? '–')} ${ptBlockChip(w.blockType, w.mesoWeek)}${w.travel?`<span class="pt-erg">✈ ${esc(w.travel)}</span>`:''}</div>
+    <div class="pt-nav"><button onclick="ptStep(-1)" ${i<=0?'disabled':''} aria-label="Forrige uge">‹</button>
+      <div class="t">Uge ${w.start ? isoWeekOf(w.start) : (w.week ?? '–')} <span style="font-family:'Space Mono',monospace;font-size:11px;font-weight:400;color:var(--muted)">${esc(ptRange(w.start, w.end))}</span> ${ptBlockChip(w.blockType, w.mesoWeek)}${w.travel?`<span class="pt-erg">✈ ${esc(w.travel)}</span>`:''}</div>
+      <button onclick="ptStep(1)" ${i>=nW-1?'disabled':''} aria-label="Næste uge">›</button></div>
     ${purpose?`<div class="p">${esc(purpose)}</div>`:''}
     <div class="p" style="font-family:'Space Mono',monospace;font-size:10.5px">CTL-mål ${w.ctlTarget ?? '–'} · TSS ${w.tssActual!=null?`${w.tssActual} / `:''}${w.tssTarget ?? '–'}${w.keySessions&&w.keySessions.length?` · nøgle: ${esc(w.keySessions.join(', '))}`:''}</div>
-    <div class="fl">${ptFlagsHtml(w, true)}</div>
+    <div class="fl">${ptFlagsHtml(w, !!s)}</div>
   </div>`;
+  if (!s) {
+    return head + `<div class="pt-empty">Ingen pas lagt endnu — planlægges ved søndags-check-in.${w.programId ? ` <span style="font-family:'Space Mono',monospace;font-size:10px">(${esc(w.programId)} · program-uge ${w.week ?? '–'})</span>` : ''}</div>`;
+  }
   const days = s.days.map(day => {
     const race = (w.races||[]).find(r=>r.date===day.date);
     const gapIn = spacing.find(p => p.toDate === day.date && p.fromDate < s.start);
@@ -1494,9 +1528,9 @@ function renderPlan() {
       ${renderWeek()}`;
   }
   const sel = ptSelIdx();
+  setTimeout(() => ptScrollToSel('auto'), 0);   // aktuel/valgt uge centreret ved åbning
   return `${ptStrip()}${ptCtlChart()}<div id="pt-detail">${ptWeekDetail(sel)}</div>
-    ${coachFoldedCard()}
-    <a class="pt-link" href="plan.html">FULD PLAN (PLAN.HTML) →</a>`;
+    ${coachFoldedCard()}`;
 }
 
 // Lag 3: ⋯-ark. Portet fra plan.html (openSheet/renderSheet/submitEdit):
