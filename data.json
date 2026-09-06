@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-09-06 05:17",
+    "updated": "2026-09-06 10:03",
     "week": 14,
     "totalWeeks": 14,
     "blockType": "RACE",
@@ -46,7 +46,7 @@
       "color": "#27AE60"
     },
     "sleep": {
-      "value": "4,1",
+      "value": "8,0",
       "unit": "t",
       "sub": "Snit 7d 7,3t · mål 7t",
       "color": "#27AE60"
@@ -58,7 +58,7 @@
       "color": "#27AE60"
     },
     "hrv": {
-      "value": "59,8",
+      "value": "56,3",
       "unit": "ms",
       "sub": "Snit 7d",
       "color": "#7A6A58"
@@ -105,7 +105,7 @@
     "target": 6,
     "streak": 0
   },
-  "coachSpeech": "Søndag — afslut uge 14 stærkt. {HL} Godt: Søvn på 7,1 timer er solid. Fokus: Vægt på 72,3 kg (målt 3/9) — protein ved hvert måltid, alkohol som bevidst valg, søvn 7-8 t. Vægt/fedt vurderes på 7d-snit mod planen, ikke på én vejning. 3 AF-dage i 7 afsluttede dage — 3 mangler i 0 dage tilbage. Alle sessioner i hus. Juster de små ting, og resten følger. ❤️ Aerobt: VIGTIGT: Løbeturen 5/9 (snitpuls 127) kostede 26,5 % mere puls pr. meter end medianen af de seneste 4 sammenlignelige pas (EF 0,994 mod 1,352). Forbehold, som IKKE er trukket fra tallet: det var 29,7 °C. Konkluder ikke overtræning ud fra ét pas — sig hvad passet kostede, og at det enten var varmen eller for højt tempo. 📊 Store billede: CTL 50,4 er 7.4 point FORAN ugeplanen (planmål uge 14: 43). Vægten har tabt 2.4 kg over de seneste 89 dage (74,7 → 72,3 kg).  \"Den bedste træning er den, du faktisk gennemfører.\"",
+  "coachSpeech": "Søndag — afslut uge 14 stærkt. {HL} Godt: Søvn på 7,2 timer er solid. Fokus: Vægt på 72,3 kg (målt 3/9) — protein ved hvert måltid, alkohol som bevidst valg, søvn 7-8 t. Vægt/fedt vurderes på 7d-snit mod planen, ikke på én vejning. 3 AF-dage i 7 afsluttede dage — 3 mangler i 0 dage tilbage. Alle sessioner i hus. Juster de små ting, og resten følger. ❤️ Aerobt: VIGTIGT: Løbeturen 5/9 (snitpuls 127) kostede 26,5 % mere puls pr. meter end medianen af de seneste 4 sammenlignelige pas (EF 0,994 mod 1,352). Forbehold, som IKKE er trukket fra tallet: det var 29,7 °C. Konkluder ikke overtræning ud fra ét pas — sig hvad passet kostede, og at det enten var varmen eller for højt tempo. 📊 Store billede: CTL 50,4 er 7.4 point FORAN ugeplanen (planmål uge 14: 43). Vægten har tabt 2.4 kg over de seneste 89 dage (74,7 → 72,3 kg).  \"Den bedste træning er den, du faktisk gennemfører.\"",
   "coachHighlight": "264 procent af ugens TSS er i hus",
   "weekFocus": "Taper færdig — hold kroppen klar til Médoc-lørdagen",
   "today": [
@@ -1038,7 +1038,11 @@
       "v": 54.0,
       "real": true
     },
-    null
+    {
+      "date": "2026-09-06",
+      "v": 35.0,
+      "real": true
+    }
   ],
   "sleepHistory": [
     {
@@ -1486,7 +1490,11 @@
       "v": 4.1,
       "real": true
     },
-    null
+    {
+      "date": "2026-09-06",
+      "v": 8.0,
+      "real": true
+    }
   ],
   "tsbHistory": [
     {
@@ -2728,6 +2736,11 @@
   "commute_pairing_warnings": [],
   "warnings": [
     {
+      "type": "hrv",
+      "level": "warn",
+      "message": "HRV 35,0 ms — 38% under 7d-snit (56,3 ms). Kroppen er presset."
+    },
+    {
       "type": "alcohol_cluster",
       "level": "warn",
       "message": "2 drikkedage i træk 4/9–5/9 — klynger rammer HRV hårdere end spredte dage."
@@ -3039,7 +3052,7 @@
       "note": "Nøgle virker"
     }
   },
-  "credentialsCheckedTs": "2026-09-06T03:18:17.402439",
+  "credentialsCheckedTs": "2026-09-06T08:03:19.112105",
   "coachAssessmentTsFull": "2026-09-06T03:18:17.402421",
   "coachAssessmentWeightAtGen": 72.3,
   "coachAssessmentAfAtGen": 3,
