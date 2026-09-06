@@ -681,6 +681,27 @@ def main():
                 ))
         data['all_weeks'] = {str(k): v for k, v in planned_weeks.items()}
 
+    # --- Plan-fanen (blok 4): data.planTab — uge −1..+7, pas pr. dag, CTL, hårde pas ---
+    # Ikke-blokerende: fejler den, beholdes den eksisterende planTab i data.json.
+    try:
+        from modules.plan_tab import build_plan_tab
+        from modules.fitness import get_ctl_daily
+        _pv_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'data', 'plan_view.json')
+        try:
+            with open(_pv_path, encoding='utf-8') as _fh:
+                _plan_view = json.load(_fh)
+        except Exception:
+            _plan_view = None
+        _ctl_daily = get_ctl_daily() or {}
+        data['planTab'] = build_plan_tab(
+            PLAN, _plan_view, data.get('week_sessions', []), data.get('all_weeks', {}), today,
+            week_tss_actual=data.get('weekTssActual'), ctl_daily=_ctl_daily)
+        print(f"  planTab -> {len(data['planTab']['weeks'])} uger, "
+              f"{sum(len(d['entries']) for s in data['planTab']['sessions'] for d in s['days'])} pas, "
+              f"{len(data['planTab']['hardSpacing'])} hårde par")
+    except Exception as _e:
+        print(f"  planTab fejlede (ikke-blokerende): {_e}")
+
     # --- Today session(s) ---
     # NB: der kan være flere sessioner samme dag (fx styrke + løb) — tag dem ALLE, ikke kun den første.
     today_sessions_all = [s for s in data['week_sessions'] if s.get('today')]

@@ -291,3 +291,22 @@ def test_set_zones_rejects_nonsense(params):
     plan = _plan_copy()
     with pytest.raises(ValueError):
         edit_apply.apply_edit(json.dumps(plan), "set_zones", "zones", params)
+
+
+def test_swap_template_from_bike_library_sets_library_id():
+    plan = _plan_copy()
+    _, e = _future_run_entry(plan)
+    result = edit_apply.apply_edit(json.dumps(plan), "swap_template",
+                                    e["id"], {"template_id": "ss_3x15"})
+    assert result["status"] == "ok"
+    new_plan = json.loads(result["new_plan_raw"])
+    _, new_e = _entry_by_id(new_plan, e["id"])
+    assert new_e["libraryId"] == "ss_3x15"
+    assert new_e["workout"]["type"] == "Ride"
+    assert new_e["workout"]["name"] == "FaF 3 SS - 3 x 15"
+    assert new_e["workout"]["workout_doc"]["steps"]
+    # Skift tilbage til workout_library fjerner libraryId igen
+    result2 = edit_apply.apply_edit(result["new_plan_raw"], "swap_template",
+                                     e["id"], {"template_id": "lob-z2-45"})
+    _, e2 = _entry_by_id(json.loads(result2["new_plan_raw"]), e["id"])
+    assert "libraryId" not in e2
