@@ -30,6 +30,7 @@ from modules.fitness  import get_fitness, get_wellness_7d, get_history, get_ctl_
 from modules.aerobic  import get_ef_history
 from modules import decoupling
 from modules import checkin as _checkin
+from modules import body as _body
 from modules.af       import (get_af_this_week, get_af_history, get_full_af_log,
                                get_af_streak, monday_this_week,
                                detect_alcohol_cluster)
@@ -388,6 +389,41 @@ def main():
                       if _lw_date else _w_goal_txt + _w_avg_txt)
     print(f"  Vægt-sub: {weight_sub} (måling i dag: {weight_is_today})")
 
+    # --- Krop (blok 6, 6/9-2026): glidepath, fedt/FFM, cut-tjek -> data.body ---
+    # Ren beregning i modules/body.py mod historikken + programmets weightPlan.
+    # Styrke-loggen (28 dage) hentes her, så "styrke < 2 i to uger i træk" kan
+    # tælles — all_weeks bærer ikke done-status for tidligere uger.
+    _strength_log = data.get('strengthLog')
+    try:
+        _sl_oldest = today - timedelta(days=28)
+        _r_sl = api_get(f'{BASE}/activities', auth=AUTH,
+                        params={'oldest': str(_sl_oldest), 'newest': str(today)})
+        if _r_sl is not None and _r_sl.status_code == 200:
+            _strength_log = _body.strength_log_from_activities(_r_sl.json(), _sl_oldest, today)
+            data['strengthLog'] = _strength_log
+    except Exception as _e:
+        print(f"  Styrke-log fejlede (ikke-blokerende, bruger cached): {_e}")
+    body = None
+    try:
+        _body_in = {
+            'weightHistory': (history or {}).get('weightHistory') or data.get('weightHistory'),
+            'fatHistory':    (history or {}).get('fatHistory')    or data.get('fatHistory'),
+            'rhrHistory':    (history or {}).get('rhrHistory')    or data.get('rhrHistory'),
+            'hrvHistory':    (history or {}).get('hrvHistory')    or data.get('hrvHistory'),
+            'week_sessions': build_week_sessions(done_map, planned_weeks.get(week_num, {}).get('sessions', data.get('week_sessions', []))),
+        }
+        body = _body.build_body(PLAN, _body_in, today, strength_log=_strength_log)
+        data['body'] = body
+        _g = body['glidepath']
+        print(f"  Krop: fase {_g['phase']} · 7d {_g['avg7']} · forventet {_g['expectedKg']} · "
+              f"status {_g['status']} · FFM {body['ffm']['now']} ({body['ffm']['change28d']:+} kg/28d)"
+              if body['ffm']['change28d'] is not None else
+              f"  Krop: fase {_g['phase']} · 7d {_g['avg7']} · forventet {_g['expectedKg']} · status {_g['status']}")
+        print(f"  Cut-tjek: {body['cutCheck']['level']} — {body['cutCheck']['text']}")
+    except Exception as _e:
+        import traceback; traceback.print_exc()
+        print(f"  Krop-modul fejlede (ikke-blokerende): {_e}")
+
     tss_color = color_for(compliance, 85, lower=False) if compliance else '#7A6A58'
 
     # Løb-km og svøm: mål findes KUN hvis det aktive program har dem i goals
@@ -419,8 +455,12 @@ def main():
     _af_sub, _af_color = af_kpi(af_days, af_streak, af_history, AF_GOAL)
 
     data['kpis'] = {
-        'weight':     {'value': fmt(weight),          'unit': 'kg', 'sub': weight_sub, 'color': color_for(weight, data['weightGoal'], lower=True)  if weight     else '#7A6A58'},
-        'fat':        {'value': fmt(fat),              'unit': '%',  'sub': f"Mål <{data['bodyFatGoal']}%",                       'color': color_for(fat, data['bodyFatGoal'], lower=True)     if fat        else '#7A6A58'},
+        # Vægt/fedt: 7d-/14d-snit, sub + farve fra glidepath-status (body.py) —
+        # ikke color_for mod slutmålet (det var rødt i fire måneder uanset retning).
+        'weight':     (_body.weight_kpi(body) if body else
+                       {'value': fmt(weight), 'unit': 'kg', 'sub': weight_sub, 'color': '#7A6A58'}),
+        'fat':        (_body.fat_kpi(body) if body else
+                       {'value': fmt(fat), 'unit': '%', 'sub': '14d-snit', 'color': '#7A6A58'}),
         'ctl':        {'value': fmt(ctl, 1),           'unit': '',   'sub': f"Uge {week_num}-mål {ctl_plan_for_week(week_num)} · {week_meta.get('blockType', '')}".rstrip(' ·'), 'color': color_for(ctl, ctl_plan_for_week(week_num), lower=False) if ctl else '#7A6A58'},
         'tsb':        {'value': fmt(tsb, 1),           'unit': '',   'sub': ('Hård blok · CTL−ATL, frisk >0' if tsb and tsb < -10 else 'Form · CTL−ATL, frisk >0'), 'color': '#E67E22' if tsb and tsb < -10 else '#27AE60'},
         'sleep':      {'value': fmt(sleep_last, 1) if sleep_last else '—', 'unit': 't', 'sub': _sleep_sub, 'color': _sleep_color},
@@ -464,38 +504,11 @@ def main():
                     'message': f'HRV {fmt(hrv_today,1)} ms — {round(hrv_drop_pct)}% under 7d-snit ({fmt(hrv_avg7,1)} ms). Kroppen er presset.',
                 })
 
-    # --- Cut-alarm: æder underskuddet motoren? --------------------------------
-    # Under et kalorieunderskud reagerer aerob effektivitet for langsomt (under
-    # ét kvalificeret Z2-pas om ugen). Hvilepuls og HRV måles dagligt og vender
-    # 2-3 uger før EF gør. Alarmen kræver at BEGGE peger samme vej samtidig med
-    # at vægten falder -- enkeltsignaler er for støjende til at handle på.
-    def _avg(series, lo, hi):
-        vals = [p['v'] for p in (series or [])[lo:hi] if p and p.get('v') is not None]
-        return sum(vals) / len(vals) if len(vals) >= 4 else None
-
-    _h = history or {}
-    rhr_now,  rhr_prev  = _avg(_h.get('rhrHistory'), -14, None),    _avg(_h.get('rhrHistory'), -28, -14)
-    hrv_now,  hrv_prev  = _avg(_h.get('hrvHistory'), -14, None),    _avg(_h.get('hrvHistory'), -28, -14)
-    wgt_now,  wgt_prev  = _avg(_h.get('weightHistory'), -14, None), _avg(_h.get('weightHistory'), -28, -14)
-
-    if all(v is not None for v in (rhr_now, rhr_prev, hrv_now, hrv_prev, wgt_now, wgt_prev)):
-        rhr_up   = rhr_now - rhr_prev
-        hrv_down = (hrv_prev - hrv_now) / hrv_prev * 100 if hrv_prev else 0
-        losing   = wgt_now < wgt_prev
-        if losing and rhr_up >= 2 and hrv_down >= 5:
-            warnings.append({
-                'type':    'cut',
-                'level':   'critical',
-                'message': (f'Hvilepuls +{rhr_up:.0f} slag og HRV −{hrv_down:.0f}% over 14 dage, '
-                            f'mens vægten falder. Underskuddet er for stort — skru op for maden.'),
-            })
-        elif losing and (rhr_up >= 2 or hrv_down >= 5):
-            warnings.append({
-                'type':    'cut',
-                'level':   'warn',
-                'message': (f'Ét af to restitutionssignaler peger nedad under vægttab '
-                            f'(hvilepuls {rhr_up:+.0f} slag, HRV {-hrv_down:+.0f}%). Hold øje.'),
-            })
+    # --- Cut-tjek (blok 6): erstatter den gamle RHR/HRV-cut-alarm. Én advarsel
+    # (type 'cut') når body.cutCheck er warn/act — kun aktiv i fase 'cut'. ---
+    _cut_w = _body.cut_warning(body) if body else None
+    if _cut_w:
+        warnings.append(_cut_w)
 
     data['warnings'] = warnings
     if warnings:
@@ -592,11 +605,10 @@ def main():
         """Seneste ikke-None værdi i en 7-dages snit-serie (None hvis serien er tom)."""
         return next((v for v in reversed(series or []) if v is not None), None)
 
-    # --- Afstand til mål ---
-    _latest_w = next((v['v'] if isinstance(v, dict) else v for v in reversed(_wh) if v is not None and (v.get('v') if isinstance(v, dict) else v) is not None), None)
-    _latest_f = next((v['v'] if isinstance(v, dict) else v for v in reversed(_fh) if v is not None and (v.get('v') if isinstance(v, dict) else v) is not None), None)
-    data['weightToGoal']   = round(_latest_w - data['weightGoal'], 2) if _latest_w else None
-    data['bodyFatToGoal']  = round(_latest_f - data['bodyFatGoal'], 1) if _latest_f else None
+    # weightToGoal/bodyFatToGoal (afstand til slutmålet) er fjernet 6/9-2026 —
+    # Krop-fanen måler mod glidepath'en (data.body), ikke mod 68 kg.
+    data.pop('weightToGoal', None)
+    data.pop('bodyFatToGoal', None)
     if ctl_curve:
         data['ctlCurve'] = ctl_curve
 

@@ -228,7 +228,7 @@ def _match_actuals(day_entries, day_short, remote_sessions, used):
 
 def build_plan_tab(plan, plan_view, week_sessions, all_weeks, today, *,
                    lib=None, week_tss_actual=None, ctl_daily=None, travel=None,
-                   weeks_back=1, weeks_ahead=7, history_weeks=12, athlete="kennet"):
+                   weeks_back=4, weeks_ahead=None, history_weeks=12, chart_weeks_ahead=7, athlete="kennet"):
     """Byg data.planTab. Kan køres offline.
 
     plan            data/plan.json (dict)
@@ -240,6 +240,14 @@ def build_plan_tab(plan, plan_view, week_sessions, all_weeks, today, *,
     week_tss_actual data.weekTssActual {str(uge): tss} for det aktive program
     ctl_daily       {iso-dato: ctl} — seneste kendte CTL pr. dag (Intervals wellness)
     travel          liste af {label, start, end} — default plan.travel
+    weeks_back      uger bagud (på tværs af programmer), default 4
+    weeks_ahead     uger frem; None = til det aktive programs slutning (alle 51 uger for tds-2027)
+    chart_weeks_ahead  CTL-grafens vindue frem (ctl.window/targets/phases) — grafen skal ikke
+                    strækkes over hele programmet
+
+    `weeks` dækker hele vinduet; `sessions` kun uger der har dage i plan.json (eller
+    aktuelle/remote pas) — UI'et slår op på `start`, ikke på indeks. Tomme uger viser
+    ugemetadata + "Ingen pas lagt endnu".
     """
     today = _to_date(today)
     lib = lib or _bike.load()
@@ -303,6 +311,13 @@ def build_plan_tab(plan, plan_view, week_sessions, all_weeks, today, *,
             "note": e.get("note"), "isKey": is_key, "optional": bool(e.get("optional")),
         }
 
+    if weeks_ahead is None:
+        # Til slutningen af det aktive program — eller af det program der starter i
+        # næste uge (6/9: medoc slutter i dag, tds-2027 starter 7/9 => 51 uger frem).
+        ends = [_to_date(p["end"]) for p in _programs.programs_for(plan, athlete)
+                if _to_date(p["start"]) <= cur_monday + timedelta(weeks=1)]
+        last_end = max(ends) if ends else _to_date(active["end"])
+        weeks_ahead = max(0, (_monday(last_end) - cur_monday).days // 7)
     weeks_out, sessions_out = [], []
     for off in range(-weeks_back, weeks_ahead + 1):
         monday = cur_monday + timedelta(weeks=off)
@@ -334,7 +349,9 @@ def build_plan_tab(plan, plan_view, week_sessions, all_weeks, today, *,
             all_entries.extend(entries)
             days.append({"date": d_iso, "weekday": DAY_SHORT[i], "entries": entries + extras,
                          "restNote": rest_note, "restId": rest_id, "isToday": d == today})
-        sessions_out.append({"week": wk, "programId": p["id"] if p else None, "start": monday.isoformat(), "days": days})
+        has_days = any(days_by_date.get((monday + timedelta(days=i)).isoformat(), {}).get("entries") for i in range(7))
+        if has_days or off == 0 or remote:
+            sessions_out.append({"week": wk, "programId": p["id"] if p else None, "start": monday.isoformat(), "days": days})
 
         # Uge-metadata
         raw_entries = [e for i in range(7) for e in days_by_date.get((monday + timedelta(days=i)).isoformat(), {}).get("entries", [])]
@@ -362,7 +379,7 @@ def build_plan_tab(plan, plan_view, week_sessions, all_weeks, today, *,
             "quotaUsed": quota_used(raw_entries, lib),
             "keySessions": key_sessions(all_entries),
             "flags": flags, "races": races, "travel": trav,
-            "isCurrent": off == 0, "isPast": sunday < today,
+            "isCurrent": off == 0, "isPast": sunday < today, "hasDays": has_days,
         })
 
     # CTL: historik 12 uger (på tværs af programmer), projektion, pejlemærker, faser
@@ -382,13 +399,16 @@ def build_plan_tab(plan, plan_view, week_sessions, all_weeks, today, *,
     projection = []
     pv = (plan_view or {}).get(athlete) or {}
     if pv.get("projection") and (not pv.get("programId") or pv.get("programId") == active["id"]):
-        end = (cur_monday + timedelta(weeks=weeks_ahead, days=6)).isoformat()
+        end = (cur_monday + timedelta(weeks=chart_weeks_ahead, days=6)).isoformat()
         for pt in pv["projection"]:
             if pt.get("d") and pt["d"] <= end and pt.get("ctl") is not None:
                 projection.append({"d": pt["d"], "ctl": round(float(pt["ctl"]), 1)})
-    targets = [{"week": w["week"], "start": w["start"], "ctlTarget": w["ctlTarget"]} for w in weeks_out if w.get("ctlTarget") is not None]
+    chart_from = (cur_monday - timedelta(weeks=history_weeks - 1)).isoformat()
+    chart_to = (cur_monday + timedelta(weeks=chart_weeks_ahead, days=6)).isoformat()
+    chart_weeks = [w for w in weeks_out if w["end"] <= chart_to]
+    targets = [{"week": w["week"], "start": w["start"], "ctlTarget": w["ctlTarget"]} for w in chart_weeks if w.get("ctlTarget") is not None]
     phases = []
-    for w in weeks_out:
+    for w in chart_weeks:
         name = w.get("blockType") or "—"
         if phases and phases[-1]["name"] == name:
             phases[-1]["to"] = w["end"]
@@ -401,6 +421,7 @@ def build_plan_tab(plan, plan_view, week_sessions, all_weeks, today, *,
         "minHoursHard": min_hours,
         "rules": (lambda r: {"maxHaard": r.get("maxHaardPerWeek"), "maxModerat": r.get("maxModeratPerWeek")})(_bike.meta(lib).get("rules", {})),
         "weeks": weeks_out, "sessions": sessions_out,
-        "ctl": {"history": history, "projection": projection, "targets": targets, "phases": phases},
+        "ctl": {"history": history, "projection": projection, "targets": targets, "phases": phases,
+                "window": {"from": chart_from, "to": chart_to}},
         "hardSpacing": hard_spacing(sessions_out, min_hours),
     }

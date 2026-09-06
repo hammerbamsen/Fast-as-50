@@ -126,9 +126,19 @@ def test_build_plan_tab_window_spans_program_switch():
     plan = _plan()
     t = plan_tab.build_plan_tab(plan, None, [], {}, date(2026, 9, 6))
     assert t["programId"] == "medoc-2026"
-    assert [(w["programId"], w["week"]) for w in t["weeks"][:3]] == [
+    assert [(w["programId"], w["week"]) for w in t["weeks"][3:6]] == [
         ("medoc-2026", 13), ("medoc-2026", 14), ("tds-2027", 1)]
-    assert len(t["weeks"]) == 9 and len(t["sessions"]) == 9
+    # -4 uger bagud + hele tds-2027 (starter 7/9, 51 uger): 4 + 1 + 51 = 56 uger
+    assert len(t["weeks"]) == 56
+    assert t["weeks"][-1]["programId"] == "tds-2027" and t["weeks"][-1]["week"] == 51
+    # sessions kun for uger med dage i plan.json (dage t.o.m. 1/11) — opslag på start
+    assert len(t["sessions"]) < len(t["weeks"])
+    assert all(any(w["start"] == s["start"] for w in t["weeks"]) for s in t["sessions"])
+    empty = next(w for w in t["weeks"] if w["programId"] == "tds-2027" and w["week"] == 30)
+    assert empty["hasDays"] is False and empty["blockType"]
+    assert not any(s["start"] == empty["start"] for s in t["sessions"])
+    assert all(len(s["days"]) == 7 for s in t["sessions"])
+    assert t["ctl"]["window"]["to"] == "2026-10-25"
     cur = [w for w in t["weeks"] if w["isCurrent"]]
     assert len(cur) == 1 and cur[0]["week"] == 14
     w3 = next(w for w in t["weeks"] if w["programId"] == "tds-2027" and w["week"] == 3)
@@ -143,7 +153,7 @@ def test_build_plan_tab_window_spans_program_switch():
     w2 = next(w for w in t["weeks"] if w["programId"] == "tds-2027" and w["week"] == 2)
     assert w2["races"][0]["name"] == "CPH Half"
     assert len(t["ctl"]["history"]) == 12
-    assert t["ctl"]["phases"][0]["name"] == "TAPER"
+    assert [p["name"] for p in t["ctl"]["phases"]][3:5] == ["TAPER", "RACE"]
 
 
 def test_build_plan_tab_actuals_and_tss_from_intervals():

@@ -140,6 +140,34 @@ html,body { height:100%; background:var(--bg); font-family:'Hanken Grotesk',sans
 .kpi4-t .lab { font-size:9px; }
 .kpi4-v { font-family:'Newsreader',serif; font-size:24px; line-height:1.1; color:var(--num); margin:4px 0 2px; font-variant-numeric:tabular-nums; white-space:nowrap; }
 .kpi4-s { font-family:'Space Mono',monospace; font-size:9px; color:var(--muted); line-height:1.3; overflow:hidden; text-overflow:ellipsis; }
+/* ── Krop (blok 6, 6/9-26): glidepath-hero, tre tiles, cut-tjek ── */
+.gp-hero { background:var(--hero); color:var(--hero-ink); border-radius:14px; padding:16px 16px 14px; margin-bottom:12px; position:relative; overflow:hidden; }
+.gp-eyebrow { font-family:'Space Mono',monospace; font-size:10px; color:var(--gold); letter-spacing:.1em; }
+.gp-status { font-family:'Newsreader',serif; font-weight:600; font-size:34px; line-height:1.1; margin:8px 0 6px; }
+.gp-status.plan, .gp-status.foran { color:#7ED8A4; }
+.gp-status.bagud { color:#F3B562; }
+.gp-status.none { color:var(--hero-ink); font-size:26px; }
+.gp-line { font-family:'Space Mono',monospace; font-size:11px; color:var(--hero-muted); line-height:1.6; }
+.gp-line b { color:var(--hero-ink); font-weight:700; }
+.gp-note { font-size:12px; color:var(--hero-muted); margin-top:6px; line-height:1.45; }
+.kpi3 { display:grid; grid-template-columns:repeat(3,1fr); gap:8px; margin-bottom:14px; }
+.kpi3 .kpi4-v { font-size:26px; }
+.kpi3 .kpi4-t { padding:12px 8px 10px; }
+.cutcheck { border-left:4px solid var(--line); }
+.cutcheck.warn { border-left-color:var(--watch); }
+.cutcheck.act  { border-left-color:var(--act); }
+.cutcheck.ok   { border-left-color:var(--ok); }
+.cutcheck.info { border-left-color:var(--bike); }
+.cutcheck .cc-text { font-family:'Hanken Grotesk',sans-serif; font-size:15px; font-weight:600; color:var(--ink); line-height:1.45; }
+.cutcheck details { margin-top:10px; }
+.cutcheck summary { cursor:pointer; list-style:none; font-family:'Space Mono',monospace; font-size:10px; letter-spacing:.06em; color:var(--gold); padding:4px 0; }
+.cutcheck summary::-webkit-details-marker { display:none; }
+.cc-sig { display:flex; justify-content:space-between; gap:10px; padding:7px 0; border-top:1px solid var(--line); font-size:12px; }
+.cc-sig .n { font-family:'Space Mono',monospace; font-size:10px; letter-spacing:.06em; color:var(--muted); display:flex; align-items:center; gap:7px; }
+.cc-sig .n i { width:8px; height:8px; border-radius:50%; background:var(--line); display:inline-block; flex-shrink:0; }
+.cc-sig .n i.warn { background:var(--watch); } .cc-sig .n i.act { background:var(--act); } .cc-sig .n i.info { background:var(--bike); } .cc-sig .n i.ok { background:var(--ok); }
+.cc-sig .v { font-family:'Space Mono',monospace; font-size:11px; color:var(--ink); text-align:right; }
+.cc-sig .v.nd { color:var(--muted); }
 .card-wine { background:var(--hero); border-color:transparent; position:relative; overflow:hidden; }
 .card-wine::before { content:''; position:absolute; top:-20px; right:-20px; width:120px; height:120px; border-radius:50%; background:var(--wine-l); opacity:.4; }
 .label { font-family:'Space Mono',monospace; font-size:10px; color:var(--muted); letter-spacing:.08em; text-transform:uppercase; margin-bottom:12px; }
@@ -400,6 +428,14 @@ details.fold[open] > summary::after { content:"▴"; }
 .pt-legend span::before { content:""; display:inline-block; width:14px; height:2px; margin-right:5px; vertical-align:middle; background:var(--lc); }
 .pt-legend span.dash::before { background:repeating-linear-gradient(90deg, var(--lc) 0 4px, transparent 4px 7px); }
 .pt-legend span.dot::before { width:7px; height:7px; border-radius:50%; }
+.pt-bar { display:flex; justify-content:space-between; align-items:center; margin:0 0 8px; }
+.pt-bar .lab { font-family:'Space Mono',monospace; font-size:10px; letter-spacing:.08em; color:var(--muted); text-transform:uppercase; }
+.pt-today { font-family:'Space Mono',monospace; font-size:10px; letter-spacing:.06em; padding:5px 10px; border-radius:8px; border:1px solid var(--line); background:var(--card); color:var(--num); cursor:pointer; }
+.pt-nav { display:flex; align-items:center; gap:8px; }
+.pt-nav button { width:34px; height:34px; border-radius:10px; border:1px solid var(--line); background:var(--card); color:var(--num); font-size:18px; line-height:1; cursor:pointer; flex-shrink:0; }
+.pt-nav button:disabled { opacity:.35; cursor:default; }
+.pt-nav .t { flex:1; min-width:0; }
+.pt-empty { margin:10px 0 14px; padding:14px 14px; border:1px dashed var(--line); border-radius:12px; font-size:13.5px; color:var(--muted); line-height:1.45; }
 .pt-link { display:block; text-align:center; font-family:'Space Mono',monospace; font-size:10px; letter-spacing:.06em; color:var(--muted); text-decoration:none; padding:6px 0 14px; }
 /* ⋯-ark */
 .pt-menu { display:grid; gap:8px; margin:8px 0 4px; }
@@ -637,10 +673,8 @@ const STATIC = {
     {n:"06",title:"Mental skarphed er også træning",body:"Læs. Tænk langsomt. Brug stilheden."},
     {n:"07",title:"Fleksibilitet over rigiditet",body:"Et system der holder — ikke et der kræver perfekt udførelse hver dag."},
   ],
-  // start = programmets baseline (juni-26). goal er KUN fallback — det rigtige mål
-  // kommer fra data.json (weightGoal/bodyFatGoal, kilde: plan.json goals).
-  weight:{ start:74.5, goal:68 },
-  bodyFat:{ start:23, goal:16 },
+  // Vægt/fedt-baseline og -mål ligger IKKE her længere (6/9-26): Krop-fanen
+  // måler mod glidepath'en i data.json body (kilde: plan.json weightPlan).
   ctlStart:34,
 };
 
@@ -698,6 +732,7 @@ let D = {
   energy7: null,
   readinessRemote: null,
   planTab: null,    // data.json planTab (scripts/modules/plan_tab.py) — Plan-fanen
+  body: null,       // data.json body (scripts/modules/body.py): glidepath, fat, ffm, cutCheck, strengthWeek
 };
 
 let sessionDoneList = [];
@@ -737,27 +772,6 @@ function discTag(disc, small=false) {
 }
 
 // ── Helpers ───────────────────────────────────────────────────
-function progressMetric(label, startVal, nowVal, goalVal, unit, color) {
-  const isInverse = startVal > goalVal;
-  const diff = Math.round(Math.abs(nowVal - goalVal) * 10) / 10;
-  const arrow = isInverse ? "↓" : "↑";
-  const diffText = `${arrow} ${diff}${unit} til mål`;
-
-  return `<div style="display:flex;align-items:center;padding:14px 0;border-bottom:1px solid var(--cream-d)">
-    <div style="width:120px;flex-shrink:0">
-      <div style="font-family:'Space Mono',monospace;font-size:10px;color:var(--muted);letter-spacing:.06em;margin-bottom:4px">${label}</div>
-      <div style="font-family:'Space Mono',monospace;font-size:10px;color:var(--muted)">start: ${startVal}${unit}</div>
-    </div>
-    <div style="flex:1;text-align:center">
-      <div style="font-family:'Newsreader',serif;font-size:38px;color:var(--num);line-height:1">${nowVal}</div>
-      <div style="font-family:'Space Mono',monospace;font-size:11px;color:var(--muted)">${unit}</div>
-    </div>
-    <div style="min-width:80px;flex-shrink:1;text-align:right">
-      <div style="font-family:'Space Mono',monospace;font-size:10px;color:${color};font-weight:700;margin-bottom:4px;white-space:nowrap">${diffText}</div>
-      <div style="font-family:'Space Mono',monospace;font-size:10px;color:var(--muted)">mål: ${goalVal}${unit}</div>
-    </div>
-  </div>`;
-}
 // ── Pages ─────────────────────────────────────────────────────
 // CTL-plan læses fra data.json (genereret fra data/plan.json — Goal Engine).
 // Array-literal herunder er KUN fallback hvis data endnu ikke har ctlPlan.
@@ -913,6 +927,7 @@ const esc = t => String(t == null ? '' : t).replace(/[<>&"]/g, c => ({'<':'&lt;'
 const fmtDa = (v, d=1) => (v == null || isNaN(v)) ? '—' : Number(v).toFixed(d).replace('.', ',');
 function isoOf(dt){ return dt.getFullYear() + '-' + String(dt.getMonth()+1).padStart(2,'0') + '-' + String(dt.getDate()).padStart(2,'0'); }
 function todayIso(){ return isoOf(new Date()); }
+function isoWeekOf(d){ const dt = (d instanceof Date) ? new Date(d) : new Date(String(d).slice(0,10)+'T12:00:00'); dt.setHours(12,0,0,0); dt.setDate(dt.getDate() + 3 - ((dt.getDay()+6)%7)); const w1 = new Date(dt.getFullYear(),0,4); return 1 + Math.round(((dt - w1)/86400000 - 3 + ((w1.getDay()+6)%7))/7); }
 function mondayOf(dt){ const m = new Date(dt); m.setHours(0,0,0,0); m.setDate(m.getDate() - ((m.getDay()+6)%7)); return m; }
 function lastVal(series){ for (const p of [...(series||[])].reverse()) if (p && p.v != null && !isNaN(p.v)) return p; return null; }
 function meanOf(vals){ return vals.length ? vals.reduce((a,b)=>a+b,0)/vals.length : null; }
@@ -1088,13 +1103,32 @@ function kpiStripV2() {
   const ctl = find('CTL'), wt = find('VÆGT'), ft = find('FEDT%');
   const w7 = _last(D.weightMovingAvg7) ?? round1(avg7Of(D.weightHistory));
   const f7 = _last(D.fatMovingAvg7)    ?? round1(avg7Of(D.fatHistory));
+  // Vægt/fedt: status mod glidepath'en (data.body) — plan/foran grøn, bagud
+  // orange, før cut neutral. Sub "forventet 71,0" / "cut starter uge 39".
+  const g = (D.body && D.body.glidepath) || null;
+  const fb = (D.body && D.body.fat) || null;
+  const stCol = st => (st==='plan'||st==='foran') ? 'var(--ok)' : (st==='bagud' ? '#E67E22' : 'var(--muted)');
+  let wSub = `7d-snit · mål ${D.weightGoal??68} kg`, wCol = wt.color, wVal = w7!=null ? _fmt1(w7) : (wt.value||'—');
+  let fSub = `7d-snit · mål ${D.bodyFatGoal??16} %`, fCol = ft.color, fVal = f7!=null ? _fmt1(f7)+' %' : (ft.value? ft.value+' %':'—');
+  if (g) {
+    if (g.avg7 != null) wVal = _fmt1(g.avg7);
+    if (g.phase === 'pre')       { wSub = `cut starter uge ${g.cutStartIsoWeek}`; wCol = 'var(--muted)'; }
+    else if (g.phase === 'cut')  { wSub = g.expectedKg != null ? `forventet ${_fmt1(g.expectedKg)}` : '7d-snit'; wCol = stCol(g.status); }
+    else if (g.phase === 'hold') { wSub = `vedligehold ${_fmt1(g.targetKg)} ±${_fmt1(g.corridorKg)}`; wCol = stCol(g.status); }
+  }
+  if (fb) {
+    if (fb.avg14 != null) fVal = _fmt1(fb.avg14)+' %';
+    if (g && g.phase === 'pre')  { fSub = `cut starter uge ${g.cutStartIsoWeek}`; fCol = 'var(--muted)'; }
+    else if (fb.expected != null) { fSub = `forventet ${_fmt1(fb.expected)}`; fCol = stCol(fb.status); }
+    else fSub = '14d-snit';
+  }
   const tiles = [
     { l:'CTL',     v: ctl.value || '—',                  s: ctl.sub || '',                              c: ctl.color },
-    { l:'VÆGT',    v: w7!=null ? _fmt1(w7) : (wt.value||'—'), s:`7d-snit · mål ${D.weightGoal??68} kg`, c: wt.color },
-    { l:'FEDT',    v: f7!=null ? _fmt1(f7)+' %' : (ft.value? ft.value+' %':'—'), s:`7d-snit · mål ${D.bodyFatGoal??16} %`, c: ft.color },
+    { l:'VÆGT',    v: wVal, s: wSub, c: wCol },
+    { l:'FEDT',    v: fVal, s: fSub, c: fCol },
     { l:'AF-DAGE', v:`${D.afDays?.weekDone ?? '—'}/${D.afDays?.target || 6}`, s:'denne uge', c: find('AF DAGE').color },
   ];
-  return `<div class="kpi4">` + tiles.map(t => `<div class="kpi4-t"><div class="lab">${t.l}</div><div class="kpi4-v">${t.v}</div><div class="kpi4-s">${esc(t.s||'')}</div></div>`).join('') + `</div>`;
+  return `<div class="kpi4">` + tiles.map(t => `<div class="kpi4-t"><div class="lab">${t.l}</div><div class="kpi4-v"${(t.l==='VÆGT'||t.l==='FEDT') && t.c ? ` style="color:${t.c}"` : ''}>${t.v}</div><div class="kpi4-s">${esc(t.s||'')}</div></div>`).join('') + `</div>`;
 }
 function shortText(t, max){ t = String(t||'').trim(); if (t.length <= max) return t; let out=''; for (const sent of t.split(/(?<=[.!?])\s+/)) { if ((out+' '+sent).trim().length > max) break; out = (out+' '+sent).trim(); } return out || t.slice(0, max).replace(/\s\S*$/, '') + '…'; }
 function coachVoiceCard() {
@@ -1320,6 +1354,17 @@ function ptMins(m){ if (m == null) return ''; return m >= 90 && m % 30 === 0 ? `
 function ptDays(a, b){ return Math.round((new Date(b+"T12:00:00") - new Date(a+"T12:00:00"))/864e5); }
 function ptWeeks(){ return (D.planTab && D.planTab.weeks) || []; }
 function ptSessions(){ return (D.planTab && D.planTab.sessions) || []; }
+// sessions findes kun for uger med dage i plan.json — slå op på start, ikke indeks
+function ptSessionFor(w){ return w ? (ptSessions().find(s => s.start === w.start) || null) : null; }
+function ptCurIdx(){ const i = ptWeeks().findIndex(w=>w.isCurrent); return i < 0 ? 0 : i; }
+function ptScrollToSel(behavior){
+  const strip = document.getElementById('pt-strip'); if (!strip) return;
+  const card = strip.children[ptSelIdx()]; if (!card) return;
+  const left = card.offsetLeft - (strip.clientWidth - card.offsetWidth) / 2;
+  if (strip.scrollTo) strip.scrollTo({ left: Math.max(0, left), behavior: behavior || 'auto' }); else strip.scrollLeft = Math.max(0, left);
+}
+function ptGoToday(){ ptSelectWeek(ptCurIdx()); }
+function ptStep(d){ const i = ptSelIdx() + d; if (i < 0 || i >= ptWeeks().length) return; ptSelectWeek(i); }
 function ptSelIdx(){ const ws = ptWeeks(); if (PT.sel != null && ws[PT.sel]) return PT.sel; const i = ws.findIndex(w=>w.isCurrent); return i < 0 ? 0 : i; }
 function ptFindEntry(id){
   for (const wk of ptSessions()) for (const day of wk.days) for (const e of day.entries) if (e.id === id) return { e, day, wk };
@@ -1344,9 +1389,12 @@ function ptFlagsHtml(w, withOk){
 // Lag 1: blokstribe
 function ptStrip(){
   const sel = ptSelIdx();
-  return `<div class="pt-strip" id="pt-strip">${ptWeeks().map((w,i)=>`
+  const ws = ptWeeks();
+  const yr = iso => `${_dkShort(iso)}-${String(iso).slice(2,4)}`;
+  const bar = `<div class="pt-bar"><span class="lab">${ws.length} uger · ${ws[0]?yr(ws[0].start):'–'} – ${ws.length?yr(ws[ws.length-1].end):'–'}</span><button class="pt-today" onclick="ptGoToday()">I DAG · UGE ${isoWeekOf(new Date())}</button></div>`;
+  return bar + `<div class="pt-strip" id="pt-strip">${ptWeeks().map((w,i)=>`
     <button class="pt-wk${w.isCurrent?' cur':''}${i===sel?' sel':''}${w.isPast?' past':''}" onclick="ptSelectWeek(${i})" aria-pressed="${i===sel}">
-      <span class="wn"><b>Uge ${w.week ?? '–'}</b><span>${esc(ptRange(w.start, w.end))}</span></span>
+      <span class="wn"><b>Uge ${w.start ? isoWeekOf(w.start) : (w.week ?? '–')}</b><span>${esc(ptRange(w.start, w.end))}</span></span>
       <span>${ptBlockChip(w.blockType, w.mesoWeek)}${w.races&&w.races.length?' 🏆':''}${w.travel?' ✈':''}</span>
       <div class="nums">CTL <span>→</span> ${w.ctlTarget ?? '–'}<br>TSS ${w.tssActual != null ? `${w.tssActual}<span>/${w.tssTarget ?? '–'}</span>` : `<span>mål</span> ${w.tssTarget ?? '–'}`}</div>
       ${ptDots(w)}
@@ -1358,7 +1406,7 @@ function ptSelectWeek(i){
   const strip = document.getElementById('pt-strip');
   if (strip) [...strip.children].forEach((c,j)=>{ c.classList.toggle('sel', j===i); c.setAttribute('aria-pressed', j===i); });
   const det = document.getElementById('pt-detail'); if (det) det.innerHTML = ptWeekDetail(i);
-  const card = strip && strip.children[i]; if (card && card.scrollIntoView) card.scrollIntoView({ block:'nearest', inline:'center', behavior:'smooth' });
+  ptScrollToSel('smooth');
 }
 
 // CTL-graf: 12 uger historik (fuld linje) + vindue frem (projektion stiplet i rav,
@@ -1370,7 +1418,10 @@ function ptCtlChart(){
   const ws = ptWeeks();
   if (!hist.length && !targets.length) return '';
   const wkEnd = s => { const d = new Date(s+"T12:00:00"); d.setDate(d.getDate()+6); return isoOf(d); };
-  const x0 = (c.history && c.history[0] && c.history[0].start) || (ws[0] && ws[0].start), x1 = ws.length ? ws[ws.length-1].end : wkEnd(hist[hist.length-1].start);
+  // Grafens vindue kommer fra planTab.ctl.window (−12..+7 uger) — striben dækker nu hele programmet
+  const win = c.window || {};
+  const x0 = win.from || (c.history && c.history[0] && c.history[0].start) || (ws[0] && ws[0].start);
+  const x1 = win.to || (ws.length ? ws[Math.min(ws.length-1, ptCurIdx()+7)].end : wkEnd(hist[hist.length-1].start));
   const W = 340, H = 150, pad = { l:26, r:8, t:14, b:22 };
   const iW = W-pad.l-pad.r, iH = H-pad.t-pad.b;
   const span = Math.max(1, ptDays(x0, x1));
@@ -1399,9 +1450,12 @@ function ptCtlChart(){
   if (ftp) marks += `<line x1="${x(ftp.date).toFixed(1)}" x2="${x(ftp.date).toFixed(1)}" y1="${pad.t}" y2="${H-pad.b}" stroke="var(--act)" stroke-width="1" stroke-dasharray="2,3"/><text x="${x(ftp.date).toFixed(1)}" y="${H-pad.b+9}" text-anchor="middle" font-size="7" font-family="'Space Mono',monospace" fill="var(--act)">FTP</text>`;
   marks += `<line x1="${x(tIso).toFixed(1)}" x2="${x(tIso).toFixed(1)}" y1="${pad.t}" y2="${H-pad.b}" stroke="var(--ink)" stroke-width="1" opacity=".35"/>`;
   // Uge-labels: hver vindues-uge (udtyndet hvis mange), plus måneder i historikken
-  const xl = ws.filter((w,i)=>i%2===0).map(w => `<text x="${x(w.start).toFixed(1)}" y="${H-3}" font-size="7.5" font-family="'Space Mono',monospace" fill="var(--muted)">U${w.week ?? ''}</text>`).join('');
+  // x-labels i kalenderuger, kun inden for grafens vindue (hver 2. uge)
+  const wsIn = ws.filter(w => w.start >= x0 && w.start <= x1);
+  const xl = wsIn.filter((w,i)=>i%2===0).map(w => `<text x="${x(w.start).toFixed(1)}" y="${H-3}" font-size="7.5" font-family="'Space Mono',monospace" fill="var(--muted)">u${isoWeekOf(w.start)}</text>`).join('');
+  const weeksAhead = Math.max(0, Math.round(ptDays(todayIso(), x1)/7));
   const lastPt = last ? `<circle cx="${x(last.d).toFixed(1)}" cy="${y(last.v).toFixed(1)}" r="3.2" fill="var(--num)"/><text x="${(x(last.d)+5).toFixed(1)}" y="${(y(last.v)-5).toFixed(1)}" font-size="9" font-weight="700" font-family="'Space Mono',monospace" fill="var(--num)">${last.v}</text>` : '';
-  return `<div class="pt-ctl"><div class="label">CTL · 12 uger tilbage, ${ws.length-1} frem</div>
+  return `<div class="pt-ctl"><div class="label">CTL · 12 uger tilbage, ${weeksAhead} frem</div>
     <svg viewBox="0 0 ${W} ${H}" role="img" aria-label="CTL faktisk, projektion og pejlemærke">
       ${bands}${grid}${marks}
       ${tp.length?`<path d="${path(tp,p=>p.v)}" fill="none" stroke="var(--muted)" stroke-width="1" stroke-dasharray="3,3"/>`:''}
@@ -1436,18 +1490,24 @@ function ptSessionCard(e, day){
     ${more}${det}</div>`;
 }
 function ptWeekDetail(i){
-  const w = ptWeeks()[i], s = ptSessions()[i];
-  if (!w || !s) return '';
+  const w = ptWeeks()[i], s = ptSessionFor(w);
+  if (!w) return '';
   const tIso = todayIso();
   const spacing = (D.planTab.hardSpacing||[]);
   const minH = (D.planTab.minHoursHard || 72);
   const purpose = w.purpose || w.note || '';
+  const nW = ptWeeks().length;
   const head = `<div class="pt-head">
-    <div class="t">Uge ${w.week ?? '–'} ${ptBlockChip(w.blockType, w.mesoWeek)}${w.travel?`<span class="pt-erg">✈ ${esc(w.travel)}</span>`:''}</div>
+    <div class="pt-nav"><button onclick="ptStep(-1)" ${i<=0?'disabled':''} aria-label="Forrige uge">‹</button>
+      <div class="t">Uge ${w.start ? isoWeekOf(w.start) : (w.week ?? '–')} <span style="font-family:'Space Mono',monospace;font-size:11px;font-weight:400;color:var(--muted)">${esc(ptRange(w.start, w.end))}</span> ${ptBlockChip(w.blockType, w.mesoWeek)}${w.travel?`<span class="pt-erg">✈ ${esc(w.travel)}</span>`:''}</div>
+      <button onclick="ptStep(1)" ${i>=nW-1?'disabled':''} aria-label="Næste uge">›</button></div>
     ${purpose?`<div class="p">${esc(purpose)}</div>`:''}
     <div class="p" style="font-family:'Space Mono',monospace;font-size:10.5px">CTL-mål ${w.ctlTarget ?? '–'} · TSS ${w.tssActual!=null?`${w.tssActual} / `:''}${w.tssTarget ?? '–'}${w.keySessions&&w.keySessions.length?` · nøgle: ${esc(w.keySessions.join(', '))}`:''}</div>
-    <div class="fl">${ptFlagsHtml(w, true)}</div>
+    <div class="fl">${ptFlagsHtml(w, !!s)}</div>
   </div>`;
+  if (!s) {
+    return head + `<div class="pt-empty">Ingen pas lagt endnu — planlægges ved søndags-check-in.${w.programId ? ` <span style="font-family:'Space Mono',monospace;font-size:10px">(${esc(w.programId)} · program-uge ${w.week ?? '–'})</span>` : ''}</div>`;
+  }
   const days = s.days.map(day => {
     const race = (w.races||[]).find(r=>r.date===day.date);
     const gapIn = spacing.find(p => p.toDate === day.date && p.fromDate < s.start);
@@ -1468,9 +1528,9 @@ function renderPlan() {
       ${renderWeek()}`;
   }
   const sel = ptSelIdx();
+  setTimeout(() => ptScrollToSel('auto'), 0);   // aktuel/valgt uge centreret ved åbning
   return `${ptStrip()}${ptCtlChart()}<div id="pt-detail">${ptWeekDetail(sel)}</div>
-    ${coachFoldedCard()}
-    <a class="pt-link" href="plan.html">FULD PLAN (PLAN.HTML) →</a>`;
+    ${coachFoldedCard()}`;
 }
 
 // Lag 3: ⋯-ark. Portet fra plan.html (openSheet/renderSheet/submitEdit):
@@ -2057,31 +2117,23 @@ function renderOverview() {
 }
 
 function renderBody() {
-  const ctlNow = parseFloat((D.kpis.find(k=>k.label==="CTL FITNESS"||k.label==="CTL")||{}).value) || STATIC.ctlStart;
-  // Topkortet viste dagens bioimpedansmåling (fx 20,8) mens grafen nedenfor
-  // viste 7-dages snittet (21,4). To svar på samme spørgsmål på ét skærmbillede.
-  // Snittet vinder: dagstallet er støj på vægt og fedt. Falder tilbage til
-  // KPI-værdien hvis der er under tre målinger.
-  const wNow   = round1(avg7Of(D.weightHistory)) ?? (parseFloat((D.kpis.find(k=>k.label==="VÆGT")||{}).value?.replace(",",".")) || STATIC.weight.start);
-  const fNow   = round1(avg7Of(D.fatHistory))    ?? (parseFloat((D.kpis.find(k=>k.label==="FEDT%")||{}).value?.replace(",",".")) || STATIC.bodyFat.start);
+  const b = D.body || null;
+  const g = (b && b.glidepath) || null;
   return `
-  <div class="hero-card"><div class="hero-eyebrow">BASELINE → MÅL</div><div class="hero-title">Krop</div></div>
+  ${bodyHero(g)}
   <div class="card">
-    <div class="label">Kropskomposition</div>
-    ${progressMetric("Vægt", STATIC.weight.start, wNow, D.weightGoal ?? STATIC.weight.goal, " kg", "var(--gold)")}
-    ${progressMetric("Fedt %", STATIC.bodyFat.start, fNow, D.bodyFatGoal ?? STATIC.bodyFat.goal, "%", "var(--run)")}
+    <div class="label" style="margin-bottom:8px">${g && g.phase !== 'pre' ? 'Vægt mod glidepath — 7d-snit' : 'Vægt — 7d-snit, seneste 90 dage'}</div>
+    ${glidepathGraph(g)}
   </div>
+  ${bodyTiles(b)}
+  ${cutCheckCard(b)}
   <div class="card">
-    <div class="label" style="margin-bottom:12px">Tendenser — seneste ${(D.weightHistory||D.fatHistory||D.hrvHistory||D.sleepHistory||[]).length} dage</div>
-    ${sparkline(D.weightHistory, 'var(--gold)', 'VÆGT', 'kg', null, null, true, D.weightGoal ?? STATIC.weight.goal, true)}
-    <div style="height:14px"></div>
+    <div class="label" style="margin-bottom:12px">Tendenser — seneste ${(D.fatHistory||D.hrvHistory||D.sleepHistory||[]).length} dage</div>
     ${D.fatHistory && D.fatHistory.filter(p=>p && p.real).length >= 2
-        ? sparkline(D.fatHistory, 'var(--run)', 'FEDT%', '%', null, null, true, D.bodyFatGoal ?? STATIC.bodyFat.goal, true)
+        ? sparkline(D.fatHistory, 'var(--run)', 'FEDT%', '%', null, null, true, null, true, {avgDays:14, subLabel:'14d-snit ±0,5'})
         : `<div style="display:flex;align-items:center;justify-content:space-between;padding:6px 4px 2px">
              <span style="font-family:Space Mono,monospace;font-size:9px;letter-spacing:.08em;color:var(--muted)">FEDT%</span>
-             <span style="font-family:Space Mono,monospace;font-size:11px;color:var(--muted)">
-               ${D.kpis && D.kpis.fat ? D.kpis.fat.value + ' % (seneste måling)' : 'Ingen målinger endnu'}
-             </span>
+             <span style="font-family:Space Mono,monospace;font-size:11px;color:var(--muted)">Ingen målinger endnu</span>
            </div>`
     }
     <div style="height:14px"></div>
@@ -2094,7 +2146,7 @@ function renderBody() {
   </div>
 
   <div class="card">
-    <div class="label" style="margin-bottom:12px">AF-dage — uge ${D.isoWeek ?? D.week}</div>
+    <div class="label" style="margin-bottom:12px">AF-dage — uge ${isoWeekOf(new Date())}</div>
     ${afStreakViz(D.afDays.weekDone, D.afDays.target, D.afDays.streak)}
     <div style="border-top:1px solid var(--cream-d);margin-top:14px;padding-top:12px">
       <div style="font-family:Space Mono,monospace;font-size:9px;color:var(--muted);letter-spacing:.08em;margin-bottom:10px">HISTORIK</div>
@@ -2103,6 +2155,184 @@ function renderBody() {
   </div>
   ${proteinCard()}
 `;
+}
+
+// ── Krop: hero med cut-status ────────────────────────────────
+const GP_WORD = { plan:'På plan', foran:'Foran', bagud:'Bagud' };
+function _dkShort(iso){ if (!iso) return ''; const d = new Date(String(iso).slice(0,10)+'T12:00:00'); return `${d.getDate()}/${d.getMonth()+1}`; }
+function _signed(v, d=1){ if (v == null || isNaN(v)) return '—'; const a = Math.abs(v).toFixed(d).replace('.', ','); return (v < 0 ? '−' : (v > 0 ? '+' : '')) + a; }
+function bodyHero(g) {
+  const iso = isoWeekOf(new Date());
+  if (!g) {
+    return `<div class="gp-hero"><div class="gp-eyebrow">KROP · UGE ${iso}</div>
+      <div class="gp-status none">Krop</div>
+      <div class="gp-note">Cut-status kommer fra data.json (body) — findes efter næste kørsel.</div></div>`;
+  }
+  if (g.phase === 'pre') {
+    return `<div class="gp-hero"><div class="gp-eyebrow">KROP · UGE ${iso}</div>
+      <div class="gp-status none">Cut starter uge ${g.cutStartIsoWeek} · ${_dkShort(g.cutStartsFrom)}</div>
+      <div class="gp-line">nu: <b>vedligehold</b>${g.avg7 != null ? ` · 7d-snit <b>${fmtDa(g.avg7)}</b> kg` : ''}${g.actualRate4w != null ? ` · ${_signed(g.actualRate4w, 2)} kg/uge (4 uger)` : ''}</div>
+      <div class="gp-note">Plan: ${fmtDa(g.startKg)} → ${fmtDa(g.targetKg)} kg over ${g.cutWeeks} uger, ${_signed(g.ratePerWeek, 2)} kg/uge. Intet underskud før ${_dkShort(g.cutStartsFrom)}.</div></div>`;
+  }
+  const eyebrow = g.phase === 'hold'
+    ? `VEDLIGEHOLD · UGE ${iso}`
+    : `CUT UGE ${g.cutWeek ?? '–'} AF ${g.cutWeeks ?? '–'} · UGE ${iso}`;
+  const word = g.status ? GP_WORD[g.status] : 'Ingen vejninger';
+  const cls = g.status || 'none';
+  const line1 = g.avg7 != null
+    ? `7d-snit <b>${fmtDa(g.avg7)}</b> · forventet <b>${fmtDa(g.expectedKg)}</b> · <b>${_signed(g.delta)} kg</b>`
+    : `ingen vejninger de seneste 7 dage · forventet <b>${fmtDa(g.expectedKg)}</b>`;
+  const line2 = g.phase === 'hold'
+    ? `korridor ${fmtDa(g.targetKg)} ±${fmtDa(g.corridorKg)} kg${g.actualRate4w != null ? ` · ${_signed(g.actualRate4w, 2)} kg/uge faktisk (4 uger)` : ''}`
+    : `${_signed(g.ratePerWeek, 2)} kg/uge planlagt · ${g.actualRate4w != null ? _signed(g.actualRate4w, 2) : '—'} faktisk (4 uger)`;
+  return `<div class="gp-hero"><div class="gp-eyebrow">${eyebrow}</div>
+    <div class="gp-status ${cls}">${word}</div>
+    <div class="gp-line">${line1}</div>
+    <div class="gp-line">${line2}</div>
+    ${g.note ? `<div class="gp-note">${esc(g.note)}</div>` : ''}</div>`;
+}
+
+// ── Krop: tre tal-tiles (fedt 14d · fedtfri masse · styrke) ──
+function bodyTiles(b) {
+  const f = (b && b.fat) || {}, m = (b && b.ffm) || {}, sw = (b && b.strengthWeek) || null;
+  const g = (b && b.glidepath) || {};
+  const stCol = st => (st==='plan'||st==='foran'||st==='ok') ? 'var(--ok)' : (st==='bagud'||st==='warn' ? '#E67E22' : 'var(--num)');
+  const fatSub = g.phase === 'pre' ? 'cut starter uge ' + g.cutStartIsoWeek
+               : (f.expected != null ? `forventet ${fmtDa(f.expected)}` : '14d-snit ±0,5');
+  const ffmSub = [m.change28d != null ? `${_signed(m.change28d)} kg / 28 d` : 'Δ28d —', m.target != null ? `mål ${fmtDa(m.target)}` : ''].filter(Boolean).join(' · ');
+  const swVal = sw ? `${sw.done}<span style="font-size:14px;color:var(--muted)">/${sw.target}</span>` : '—';
+  const swCol = sw ? (sw.done >= sw.target ? 'var(--ok)' : 'var(--num)') : 'var(--num)';
+  const tile = (l, v, sub, col, extra='') => `<div class="kpi4-t"><div class="lab">${l}</div><div class="kpi4-v" style="color:${col}">${v}</div><div class="kpi4-s">${esc(sub)}</div>${extra}</div>`;
+  return `<div class="kpi3">
+    ${tile('FEDT 14D', f.avg14 != null ? fmtDa(f.avg14)+'<span style="font-size:13px;color:var(--muted)"> %</span>' : '—', fatSub, g.phase === 'pre' ? 'var(--num)' : stCol(f.status))}
+    ${tile('FEDTFRI', m.now != null ? fmtDa(m.now) : '—', ffmSub, stCol(m.status))}
+    ${tile('STYRKE', swVal, `pas · uge ${isoWeekOf(new Date())}`, swCol)}
+  </div>`;
+}
+
+// ── Krop: cut-tjek ───────────────────────────────────────────
+const CC_NAMES = { rate:'TEMPO', ffm:'FEDTFRI MASSE', strength:'STYRKE', recovery:'RESTITUTION', plateau:'PLATEAU' };
+function cutCheckCard(b) {
+  const c = (b && b.cutCheck) || null;
+  if (!c) return '';
+  if (!c.active) {
+    return `<div class="card cutcheck"><div class="label" style="margin-bottom:6px">Cut-tjek</div>
+      <div class="cc-text" style="color:var(--muted);font-weight:500">${esc(c.text || 'Aktiveres når cuttet starter')}</div>
+      <div style="font-size:11px;color:var(--muted);margin-top:6px;line-height:1.45">Fem signaler under cuttet: tempo, fedtfri masse, styrke, restitution, plateau — én handling ad gangen.</div></div>`;
+  }
+  const lvl = c.level || 'ok';
+  const order = ['rate','ffm','strength','recovery','plateau'];
+  const rows = order.filter(k => c.signals && c.signals[k]).map(k => {
+    const sg = c.signals[k];
+    const nd = sg.level == null && (sg.value == null);
+    return `<div class="cc-sig"><span class="n"><i class="${sg.level || (nd ? '' : 'ok')}"></i>${CC_NAMES[k] || k.toUpperCase()}</span><span class="v${nd ? ' nd' : ''}">${esc(sg.text || 'ingen data')}</span></div>`;
+  }).join('');
+  const flagged = order.filter(k => c.signals && c.signals[k] && c.signals[k].level).length;
+  return `<div class="card cutcheck ${lvl}">
+    <div class="label" style="margin-bottom:6px">Cut-tjek · ${lvl === 'act' ? 'handl nu' : lvl === 'warn' ? 'hold øje' : lvl === 'info' ? 'bemærk' : 'ok'}</div>
+    <div class="cc-text">${esc(c.text)}</div>
+    <details><summary>${flagged ? `${flagged} AF 5 SIGNALER SLÅR UD` : 'ALLE 5 SIGNALER'} ▾</summary>${rows}</details>
+  </div>`;
+}
+
+// ── Krop: glidepath-graf (SVG, samme mekanik som sparklines) ──
+// Cut/hold: forventet linje (stiplet) fra cutStartsFrom til targetDate med
+// korridor-bånd ±0,5, 7d-snit (fuld) frem til i dag, punkt i dag, x i
+// kalenderuger. Før cut: 90 dages 7d-snit + startpunktet 21/9 markeret.
+function glidepathGraph(g) {
+  const chartId = `spk${++sparklineSeq}`;
+  SPARKLINE_DATA[chartId] = { builder: 'glide', g };
+  return buildGlidepathSVG(chartId, 280);
+}
+function _dayNum(iso){ return Math.round(new Date(String(iso).slice(0,10)+'T00:00:00').getTime()/86400000); }
+function buildGlidepathSVG(chartId, W) {
+  const cfg = SPARKLINE_DATA[chartId]; if (!cfg) return '';
+  const g = cfg.g || {};
+  const clean = (D.weightHistory||[]).filter(p=>p && p.v!=null && !isNaN(p.v));
+  const dn = dayNumsOf(clean.map(p=>p.date));
+  const sm = clean.length >= 3 && dn ? movingAvg7(clean.map(p=>p.v), dn) : [];
+  const actual = sm.map((v,i)=>v==null?null:{d:dn[i], v}).filter(Boolean);
+  const todayD = _dayNum(todayIso());
+  const pre = !g || g.phase === 'pre' || !g.series || !g.series.length;
+  const series = (g && g.series) || [];
+  const corridor = (g && g.corridorKg) || 0.5;
+  const H = 160, pad = {l:8, r:34, t:14, b:26};
+  const iW = W-pad.l-pad.r, iH = H-pad.t-pad.b;
+  if (!actual.length && pre) return '<div style="height:60px;display:flex;align-items:center;justify-content:center;font-family:Space Mono,monospace;font-size:10px;color:var(--muted)">Ingen vejninger endnu</div>';
+
+  let x0, x1, exp = [];
+  if (pre) {
+    x0 = actual.length ? actual[0].d : todayD - 90;
+    const startD = g && g.cutStartsFrom ? _dayNum(g.cutStartsFrom) : null;
+    x1 = Math.max(todayD, startD || todayD) + 3;
+    if (startD != null && g.startKg != null) exp = [{d:startD, v:g.startKg}];
+    if (actual.length) x0 = Math.min(x0, x1 - 30);
+  } else {
+    exp = series.map(p=>({d:_dayNum(p.date), v:p.expected}));
+    x0 = exp[0].d; x1 = exp[exp.length-1].d;
+  }
+  const actIn = actual.filter(p => p.d >= x0 && p.d <= x1);
+  const ys = [...exp.map(p=>p.v+corridor), ...exp.map(p=>p.v-corridor), ...actIn.map(p=>p.v)];
+  if (!ys.length) ys.push(70, 72);
+  let mn = Math.min(...ys), mx = Math.max(...ys);
+  const padY = Math.max(0.4, (mx-mn)*0.15); mn -= padY; mx += padY;
+  const x = d => pad.l + ((d-x0)/((x1-x0)||1))*iW;
+  const y = v => pad.t + iH - ((v-mn)/((mx-mn)||1))*iH;
+  const color = 'var(--gold)';
+  let out = '';
+  // korridor-bånd + forventet linje
+  if (!pre && exp.length > 1) {
+    const up = exp.map(p=>`${x(p.d)},${y(p.v+corridor)}`).join(' ');
+    const dnp = [...exp].reverse().map(p=>`${x(p.d)},${y(p.v-corridor)}`).join(' ');
+    out += `<polygon points="${up} ${dnp}" fill="var(--muted)" opacity="0.13"/>`;
+    out += `<polyline points="${exp.map(p=>`${x(p.d)},${y(p.v)}`).join(' ')}" fill="none" stroke="var(--muted)" stroke-width="1.5" stroke-dasharray="5,4" opacity="0.9"/>`;
+    out += `<text x="${x(exp[exp.length-1].d)+4}" y="${y(exp[exp.length-1].v)+3}" fill="var(--muted)" font-size="8" font-family="'Space Mono',monospace">${fmtDa(exp[exp.length-1].v)}</text>`;
+    if (todayD >= x0 && todayD <= x1) out += `<line x1="${x(todayD)}" x2="${x(todayD)}" y1="${pad.t}" y2="${H-pad.b}" stroke="var(--line)" stroke-width="1"/>`;
+  }
+  // 7d-snit
+  if (actIn.length > 1) {
+    let path = '';
+    for (let i=1;i<actIn.length;i++) {
+      const dash = actIn[i].d - actIn[i-1].d >= 3 ? ' stroke-dasharray="5,4"' : '';
+      path += `<line x1="${x(actIn[i-1].d)}" y1="${y(actIn[i-1].v)}" x2="${x(actIn[i].d)}" y2="${y(actIn[i].v)}" stroke="${color}" stroke-width="2.4" stroke-linecap="round"${dash}/>`;
+    }
+    out += path;
+  }
+  if (actIn.length) {
+    const l = actIn[actIn.length-1];
+    out += `<circle cx="${x(l.d)}" cy="${y(l.v)}" r="4" fill="${color}" stroke="var(--card)" stroke-width="1.5"/>`;
+    // Label under punktet når snittet ligger under forventningen (ellers over) —
+    // så tallet ikke lander oven i den stiplede plan-linje.
+    const expAt = (!pre && exp.length > 1) ? (() => { const i = exp.findIndex(p => p.d >= l.d); if (i <= 0) return exp[Math.max(0,i)].v; const a = exp[i-1], b2 = exp[i]; return a.v + (b2.v-a.v)*((l.d-a.d)/((b2.d-a.d)||1)); })() : null;
+    const below = expAt != null && l.v <= expAt;
+    out += `<text x="${x(l.d)}" y="${below ? y(l.v)+15 : y(l.v)-8}" fill="${color}" font-size="9" font-weight="700" font-family="'Space Mono',monospace" text-anchor="${x(l.d) > W*0.8 ? 'end' : (x(l.d) < W*0.15 ? 'start' : 'middle')}">${fmtDa(l.v)}</text>`;
+  }
+  // startpunkt før cut
+  if (pre && exp.length) {
+    const p = exp[0];
+    out += `<line x1="${x(p.d)}" x2="${x(p.d)}" y1="${pad.t}" y2="${H-pad.b}" stroke="var(--muted)" stroke-width="1" stroke-dasharray="3,3" opacity="0.7"/>`;
+    out += `<circle cx="${x(p.d)}" cy="${y(p.v)}" r="3.5" fill="none" stroke="var(--muted)" stroke-width="1.5"/>`;
+    out += `<text x="${x(p.d)-4}" y="${pad.t+8}" text-anchor="end" fill="var(--muted)" font-size="8" font-family="'Space Mono',monospace">start ${fmtDa(p.v)} · uge ${isoWeekOf(g.cutStartsFrom)}</text>`;
+  }
+  // akser
+  const ax = `<line x1="${pad.l}" x2="${W-pad.r}" y1="${y(mx)}" y2="${y(mx)}" stroke="var(--cream-d)" stroke-width="1" stroke-dasharray="2,3"/>
+    <line x1="${pad.l}" x2="${W-pad.r}" y1="${y(mn)}" y2="${y(mn)}" stroke="var(--cream-d)" stroke-width="1" stroke-dasharray="2,3"/>
+    <text x="${W-pad.r+4}" y="${y(mx)+3}" fill="var(--muted)" font-size="8" font-family="'Space Mono',monospace">${fmtDa(mx)}</text>
+    <text x="${W-pad.r+4}" y="${y(mn)+3}" fill="var(--muted)" font-size="8" font-family="'Space Mono',monospace">${fmtDa(mn)}</text>`;
+  // x-labels i kalenderuger
+  let xl = '';
+  const labelAt = (d, txt, anchor='middle', strong=false) => `<text x="${x(d)}" y="${H-pad.b+14}" text-anchor="${anchor}" fill="${strong ? color : 'var(--muted)'}" font-size="8" font-weight="${strong?'700':'400'}" font-family="'Space Mono',monospace">${txt}</text>`;
+  if (!pre) {
+    const n = exp.length, step = Math.max(1, Math.round((n-1)/4));
+    const idxs = new Set([0, n-1]); for (let i=step;i<n-1;i+=step) if (n-1-i >= step/2) idxs.add(i);
+    [...idxs].sort((a,b)=>a-b).forEach((i,k,arr) => xl += labelAt(exp[i].d, `uge ${isoWeekOf(series[i].date)}`, k===0?'start':(k===arr.length-1?'end':'middle')));
+    if (todayD > x0 && todayD < x1) xl += `<text x="${x(todayD)}" y="${pad.t-4}" text-anchor="middle" fill="var(--muted)" font-size="8" font-family="'Space Mono',monospace">i dag</text>`;
+  } else {
+    const span = x1-x0; const ks = [0,0.25,0.5,0.75];
+    ks.forEach((f,k) => { const d = Math.round(x0+span*f); const dt = new Date(d*86400000); xl += labelAt(d, `${dt.getDate()}/${dt.getMonth()+1}`, k===0?'start':'middle'); });
+    if (exp.length) xl += labelAt(exp[0].d, `uge ${isoWeekOf(g.cutStartsFrom)}`, 'end', true);
+  }
+  return `<svg data-spk="${chartId}" viewBox="0 0 ${W} ${H}" style="width:${W}px;height:${H}px;overflow:visible;display:block">${ax}${out}${xl}</svg>`;
 }
 
 // Protein-kort (fra data.checkinLog + kpis.protein): 7 prikker + tekstlinje + energi-snit.
@@ -2147,13 +2377,15 @@ function renderRules() {
 // 7-dages trailing snit. Samme tærskel som _moving_avg_7 i update_kpi.py:
 // mindst 3 punkter i vinduet, ellers null. Bruges til at tegne signalet i stedet
 // for savtakken -- HRV svinger typisk 8 ms fra dag til dag mod et reelt spænd på ~33.
-function movingAvg7(vals, dayNums){
+function movingAvg7(vals, dayNums, winDays=7){
   const out=[];
+  const span = winDays - 1;
   for(let i=0;i<vals.length;i++){
     // Med dayNums er vinduet SYV DAGE. Uden var det syv MÅLINGER, og på vægt/fedt
     // med 30 huller ud af 90 dage betød "7d" i praksis ca. ti kalenderdage.
-    const lo = dayNums ? (()=>{ let j=i; while(j>0 && dayNums[i]-dayNums[j-1] <= 6) j--; return j; })()
-                       : Math.max(0,i-6);
+    // winDays=14 giver fedtens 14-dages snit (blok 6).
+    const lo = dayNums ? (()=>{ let j=i; while(j>0 && dayNums[i]-dayNums[j-1] <= span) j--; return j; })()
+                       : Math.max(0,i-span);
     const w=vals.slice(lo,i+1).filter(v=>v!==null&&v!==undefined&&!isNaN(v));
     out.push(w.length>=3 ? w.reduce((a,b)=>a+b,0)/w.length : null);
   }
@@ -2196,8 +2428,8 @@ function percentileOf(sorted,p){
 
 // Retning ud fra 7-dages snittet mod snittet en uge tilbage (ikke sidste-mod-næstsidste,
 // som var ren støj). Falder tilbage til rå sidste-mod-næstsidste for korte serier.
-function trendFromAvg(vals, dayNums){
-  const sm=movingAvg7(vals, dayNums);
+function trendFromAvg(vals, dayNums, winDays=7){
+  const sm=movingAvg7(vals, dayNums, winDays);
   const idx=sm.map((v,i)=>v===null?-1:i).filter(i=>i>=0);
   if(idx.length>=2){
     const i=idx[idx.length-1];
@@ -2212,7 +2444,9 @@ function trendFromAvg(vals, dayNums){
 function buildSparklineSVG(chartId, W) {
   const cfg = SPARKLINE_DATA[chartId];
   if (!cfg) return '';
+  if (cfg.builder === 'glide') return buildGlidepathSVG(chartId, W);
   const { data, color, minV, maxV, smooth } = cfg;
+  const winDays = cfg.avgDays || 7;
   // EF ligger i 1,29-1,48. Med fast 1 decimal ville aksen vise "1,3" og "1,5"
   // og hele signalet forsvinde i afrundingen. Default 1 => uændret for alle andre.
   const dec = cfg.decimals ?? 1;
@@ -2235,7 +2469,7 @@ function buildSparklineSVG(chartId, W) {
   // Med rådata-percentiler brugte fedtlinjen 18 af 74 px, fordi aksen dækkede en
   // spredning man ikke kunne se. Snitserien er smallere og får derfor mere luft
   // (25 % mod 12 %), så kurven ikke rører kanterne.
-  const axisSrc = cfg.hideRaw ? movingAvg7(vals, dayNums).filter(v=>v!==null) : vals;
+  const axisSrc = cfg.hideRaw ? movingAvg7(vals, dayNums, winDays).filter(v=>v!==null) : vals;
   const sortedVals = [...(axisSrc.length>=2 ? axisSrc : vals)].sort((a,b)=>a-b);
   const p05 = percentileOf(sortedVals,0.05), p95 = percentileOf(sortedVals,0.95);
   const robust = (p95-p05) || (dataMax-dataMin) || 1;
@@ -2259,7 +2493,7 @@ function buildSparklineSVG(chartId, W) {
 
   // Område til fyld (bruger samme punkter, lige linjer)
   const baseline = (mn < 0 && mx > 0) ? y(0) : (H-pad.b);
-  const _areaSrc = cfg.smooth ? movingAvg7(vals, dayNums) : null;
+  const _areaSrc = cfg.smooth ? movingAvg7(vals, dayNums, winDays) : null;
   const _aIdx = _areaSrc ? _areaSrc.map((v,i)=>v===null?-1:i).filter(i=>i>=0) : null;
   let areaPath;
   if (_aIdx && _aIdx.length>1) {
@@ -2284,7 +2518,7 @@ function buildSparklineSVG(chartId, W) {
   // B: på støjende serier (HRV, søvn) er 7-dages snittet hovedlinjen og rådata
   // baggrund. Søvnens reelle signal spænder 1,4 t -- dag-til-dag-udsvinget er 1,3 t.
   let smoothLine = '', smoothDot = '';
-  const smVals = smooth ? movingAvg7(vals, dayNums) : null;
+  const smVals = smooth ? movingAvg7(vals, dayNums, winDays) : null;
   if (smooth && smVals) {
     let last = null;
     for (let i=0;i<n;i++){
@@ -2555,20 +2789,21 @@ function efCard() {
   </div>`;
 }
 
-function sparkline(data, color, label, unit, minV, maxV, smooth, goal, hideRaw) {
+function sparkline(data, color, label, unit, minV, maxV, smooth, goal, hideRaw, opts) {
+  const winDays = (opts && opts.avgDays) || 7;
   // Filtrer nulls/undefined ud — vis fallback hvis ingen reelle data
   const cleaned=(data||[]).filter(d=>d!==null&&d!==undefined).filter(d=>{const v=typeof d==='object'?d.v:d;return v!==null&&v!==undefined&&!isNaN(v);});
   if (!cleaned || cleaned.length < 2) return '<div style="height:60px;display:flex;align-items:center;justify-content:center;font-family:Space Mono,monospace;font-size:10px;color:var(--muted)">Ingen data endnu</div>';
   const chartId = `spk${++sparklineSeq}`;
   SPARKLINE_DATA[chartId] = { data: cleaned, color, label, unit, minV, maxV, smooth: !!smooth,
-                              hideRaw: !!hideRaw,
+                              hideRaw: !!hideRaw, avgDays: winDays, subLabel: (opts && opts.subLabel) || '',
                               goal: (goal !== undefined && goal !== null && isFinite(goal)) ? Number(goal) : null };
   const vals = cleaned.map(d=>typeof d==='object'?d.v:d);
   const last = vals[vals.length-1];
   // E: retningen kommer fra 7-dages snittet mod en uge tilbage. Tidligere blev
   // sidste punkt sammenlignet med det næstsidste -- "8,7 t ↑" betød kun at i går
   // var lavere. Dødzone på 1 % så et fladt snit ikke vises som en bevægelse.
-  const tr = trendFromAvg(vals, dayNumsOf(cleaned.map(d=>typeof d==='object'&&d.date?d.date:null)));
+  const tr = trendFromAvg(vals, dayNumsOf(cleaned.map(d=>typeof d==='object'&&d.date?d.date:null)), winDays);
   let trend = '→';
   if (tr) {
     const d = tr.now - tr.then;
@@ -2598,8 +2833,8 @@ function sparkline(data, color, label, unit, minV, maxV, smooth, goal, hideRaw) 
   // om det går jævnt eller i ryk -- men tallet står her, så det ikke skal
   // aflæses af en kurve.
   let takeaway = '';
-  if (hideRaw && tr && tr.smoothed && cfgGoal !== null) {
-    const sm = movingAvg7(vals, dnums);
+  if (hideRaw && tr && tr.smoothed) {
+    const sm = movingAvg7(vals, dnums, winDays);
     const firstI = sm.findIndex(v=>v!==null);
     const parts = [];
     if (firstI >= 0 && dnums) {
@@ -2609,13 +2844,12 @@ function sparkline(data, color, label, unit, minV, maxV, smooth, goal, hideRaw) 
       if (Math.abs(chg) >= 0.05) parts.push(`${chg<0?'−':'+'}${Math.abs(chg).toFixed(1)} ${unit} siden ${dd}`);
       else parts.push(`uændret siden ${dd}`);
     }
-    parts.push(`${Math.abs(tr.now-cfgGoal).toFixed(1)} ${unit} til mål`);
     takeaway = `<div style="font-family:'Space Mono',monospace;font-size:10px;color:var(--muted);margin-top:2px;letter-spacing:.02em">${parts.join(' · ')}</div>`;
   }
 
   return `<div style="position:relative">
     <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:6px">
-      <span style="font-family:'Space Mono',monospace;font-size:9px;color:var(--muted);letter-spacing:.08em">${label}</span>
+      <span style="font-family:'Space Mono',monospace;font-size:9px;color:var(--muted);letter-spacing:.08em">${label}${(opts&&opts.subLabel)?` <span style="letter-spacing:0;opacity:.8">· ${opts.subLabel}</span>`:''}</span>
       <span>${headVal}</span>
     </div>
     ${buildSparklineSVG(chartId, 280)}
@@ -3076,7 +3310,8 @@ function pageSubText(pageId) {
   const now2 = new Date();
   const dk2 = ["Søndag","Mandag","Tirsdag","Onsdag","Torsdag","Fredag","Lørdag"];
   const dateTxt = `${dk2[now2.getDay()]} ${now2.getDate()}. ${DK_MON_SHORT[now2.getMonth()]}`;
-  const weekTxt = D.week ? `Uge ${D.week} af ${D.totalWeeks}` : '';
+  // Kalenderuge (ISO) — programmets interne ugetal vises kun i sidebaren i småt.
+  const weekTxt = `Uge ${isoWeekOf(now2)}`;
   const parts = pageId === "today" ? [dateTxt, weekTxt, D.blockType] : [weekTxt, D.blockType];
   return parts.filter(Boolean).join(' · ');
 }
@@ -3132,7 +3367,7 @@ window.addEventListener('online',  updateDataAge);
 window.addEventListener('offline', updateDataAge);
 
 function updateMeta() {
-  document.getElementById("sf-week").textContent = `UGE ${D.week}/${D.totalWeeks}`;
+  document.getElementById("sf-week").textContent = `UGE ${isoWeekOf(new Date())} · program-uge ${D.week}/${D.totalWeeks}`;
   document.getElementById("sf-block").textContent = `${D.blockType} BLOCK`;
   document.getElementById("page-sub").textContent = pageSubText(activePage);
   updateDataAge();
@@ -3205,6 +3440,7 @@ function applyRemote(remote) {
       if (remote.weightHistory)  D.weightHistory  = remote.weightHistory;
       if (Array.isArray(remote.weightMovingAvg7)) D.weightMovingAvg7 = remote.weightMovingAvg7;
       if (Array.isArray(remote.fatMovingAvg7))    D.fatMovingAvg7    = remote.fatMovingAvg7;
+      if (remote.body && typeof remote.body === 'object') D.body = remote.body;
       if (remote.hrvHistory)     D.hrvHistory     = remote.hrvHistory;
       // rhrHistory manglede her: update_kpi.py har skrevet 90/90 dage til
       // data.json, men feltet blev aldrig kopieret ind i D, så HVILEPULS-grafen
