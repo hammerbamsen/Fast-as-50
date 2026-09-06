@@ -1,6 +1,6 @@
 # Ændringer 6/9-2026 — blok 6: Krop-fanen svarer på "går cuttet og vanerne den rigtige vej?"
 
-Branch `claude/0906-krop-fase1` (oven på origin/main 6/9). Tre commits: pipeline, index.html, ændringslog. Ingen push.
+Branch `claude/0906-krop-fase1` (oven på origin/main 6/9). Fire commits: pipeline, index.html, ændringslog, Plan-bladring (`ba268779`). Ingen push.
 Tests: `python3 -m pytest scripts/modules -q` → **538 passed, 1 skipped** (før: 511; +27 i `test_body.py`).
 
 ## A. Pipeline
@@ -22,6 +22,12 @@ Tests: `python3 -m pytest scripts/modules -q` → **538 passed, 1 skipped** (fø
 - **I dag** `kpiStripV2`: VÆGT = `body.glidepath.avg7`, FEDT = `body.fat.avg14`; farve på tallet fra status (plan/foran `--ok`, bagud orange, pre muted); sub "forventet 71,6" / "cut starter uge 39" / "vedligehold 68,0 ±1,0". Ingen nye tiles.
 - **Kalenderuge**: statuslinjen "Søndag 6. sep · Uge 36 · RACE" (`isoWeekOf`, ISO 8601, beregnet client-side); sidebar "UGE 36 · program-uge 1/51". Plan-fanens blokstribe og uge-overskrift viser `isoWeekOf(w.start)` ("UGE 39 · 21.–27. SEP") — kun label. Mere-fanen uændret.
 
+## B2. Plan-fanen: bladring i hele programmet (Kennets tilføjelse)
+
+- `scripts/modules/plan_tab.py`: `build_plan_tab(..., weeks_back=4, weeks_ahead=None, chart_weeks_ahead=7)`. `weeks` dækker nu −4 uger (på tværs af programmer) + hele det aktive program — eller det program der starter i næste uge (6/9: medoc slutter i dag, tds-2027 starter 7/9 → **56 uger**, sidste = tds-2027 uge 51). `sessions` skrives KUN for uger der har dage i plan.json (eller er aktuel/har remote pas); UI'et slår op på `start`, ikke indeks. Nyt `weeks[].hasDays`. CTL-grafen får sit eget vindue `ctl.window {from, to}` (−12..+7 uger) og `targets`/`phases` klippes dertil, så grafen ikke strækkes over 51 uger. Entry-felter uændrede (ingen description/workout_doc). planTab mod rigtige data: 43 kB → 80 kB (56 uge-rækker à ~600 B; sessions 13 uger). Tests opdateret (`test_plan_tab.py`: 56 uger, tom uge 30 uden session, `ctl.window.to`).
+- `index.html` Plan: bjælke "56 UGER · 3/8-26 – 29/8-27" + knap "I DAG · UGE 36" (`ptGoToday` → vælger og centrerer aktuel uge). Striben scroller gennem alle uger; `ptScrollToSel` centrerer valgt uge (ved åbning via `setTimeout` i `renderPlan`, ved valg smooth). Ugeoverskriften har ‹ › (`ptStep(±1)`, deaktiveret i enderne) og viser kalenderuge + datointerval. Uger uden dage (`ptSessionFor(w) == null`): ugemetadata (blok, formål, CTL-mål, TSS) + "Ingen pas lagt endnu — planlægges ved søndags-check-in. (tds-2027 · program-uge 30)"; "✓ Friel OK" vises ikke for tomme uger. CTL-graf: x-akse i kalenderuger (u32 … u42) inden for `ctl.window`, titel "12 uger tilbage, 7 frem". Linket "FULD PLAN (PLAN.HTML) →" fjernet (plan.html-filen beholdt; ⋯-arket og "Byt / aflys" på I dag peger stadig derhen).
+- Playwright (`shoot_body.py`, pre-scenariet 6/9 med planTab bygget offline af den nye `build_plan_tab`): `plan-pre-fold-*.png` (åbning, uge 36 centreret), `plan-pre-plus4-*.png` (› fire gange → uge 40, striben fulgt med), `plan-pre-tom-*.png` (tds-2027 uge 30 = kalenderuge 13, 2027: metadata + "Ingen pas lagt endnu"), `plan-pre-idag-*.png` (I dag-knappen tilbage til uge 36). Ingen JS-fejl. Rettet efter første runde: bjælkens "uge 32 – uge 34" (to årstal) → datoer med år; grafen sagde "55 frem" og brugte programugetal → vindue + kalenderuger; "Friel OK" på tomme uger.
+
 ## C. Verifikation
 
 - `screens-v3/shoot_body.py` (Playwright, Chromium fra `/opt/pw-browsers`, `python3 -m http.server 8765`): rigtig data.json + `data.body` beregnet offline via body.py mod plan.json. Scenarie **pre** = 6/9; scenarie **cut** = 2026-10-12 (browser-uret sat med `page.clock.set_fixed_time`), syntetisk vægt **0,7 kg under** glidepath fra 21/9 — spec'en sagde 0,4, men det ligger inden for korridoren ±0,5 og giver 'plan'; 0,7 giver 'foran'. Fedt flad 21,0, styrke 2/uge, RHR/HRV flade. iPhone 390×844 @2x, lys + mørk. **Ingen JS-fejl.**
@@ -36,4 +42,5 @@ Tests: `python3 -m pytest scripts/modules -q` → **538 passed, 1 skipped** (fø
 - Styrke-loggen kræver ét ekstra Intervals-kald (28 dage aktiviteter); fejler det, bruges den cachede `strengthLog` fra data.json (evt. ingen → 'ingen data' i signalet).
 - Kalenderugen i statuslinjen beregnes af browserens ur, ikke af data.json — hvis data er fra i går, kan "Uge 37 · RECOVERY" vise ny uge med gammel blok. Blokken kommer stadig fra data.
 - `coach_context.body.weightToGoal` (coachens afledte tal til validatoren) er bevaret — kun data.json-felterne er fjernet.
+- planTab vokser til ~80 kB i data.json (56 uger). Uger uden dage i plan.json har ingen `sessions`-række — ⋯-arket (flyt til en anden uge) kan derfor kun flytte inden for uger med dage, som før.
 - Screenshots og `shoot_body.py` er ikke committet (utracked i `screens-v3/`, som de tidligere blokke).
