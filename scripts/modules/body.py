@@ -65,6 +65,16 @@ def fmt_da(v, nd=1):
     return f"{float(v):.{nd}f}".replace('.', ',').replace('-', '−')
 
 
+def _signed(v, nd=1):
+    """+1,2 / −0,8 / 0 — dansk komma, ægte minustegn, aldrig '-0'."""
+    if v is None:
+        return '—'
+    r = round(float(v), nd)
+    if r == 0:
+        return '0' if nd == 0 else fmt_da(0.0, nd)
+    return ('+' if r > 0 else '−') + fmt_da(abs(r), nd)
+
+
 def _points(series):
     """[{date, v}|None] -> {date: float} (kun punkter med værdi)."""
     out = {}
@@ -466,7 +476,7 @@ def cut_check(glide, ffm, strength_weeks, strength_target, rhr_history, hrv_hist
         losing = a_now is not None and a_14 is not None and a_now < a_14
         lvl = 'warn' if (losing and rhr_up >= 2 and hrv_down >= 5) else None
         signals['recovery'] = _sig(lvl, {'rhr': _r(rhr_up), 'hrvPct': _r(-hrv_down)},
-                                   f"hvilepuls {rhr_up:+.0f} · HRV {-hrv_down:+.0f} % (14 dage)".replace('.', ','))
+                                   f"hvilepuls {_signed(rhr_up, 0)} · HRV {_signed(-hrv_down, 0)} % (14 dage)")
 
     # plateau: < 0,2 kg over 3 uger
     a_21 = avg_at(wpts, today - timedelta(days=21), 7)
