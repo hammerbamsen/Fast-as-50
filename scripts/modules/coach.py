@@ -597,6 +597,9 @@ def generate_coach_speech(week_num, weekday, streak, af_this_week, today_session
 # så en tavs fejl bliver synlig i stedet for at efterlade gammel tekst.
 LAST_AI_ERROR = None
 
+# generate_ai_assessment (den 130-linjers f-string-prompt med 20+ prosa-regler)
+# er fjernet 6/9-2026 — se generate_coach_v2 nederst + prompts/*.md.
+
 
 def _redact(msg):
     """data.json er PUBLIC. Fejltekster kan indeholde selve API-nøglen
@@ -610,294 +613,257 @@ def _redact(msg):
     return msg
 
 
-def generate_ai_assessment(week_num, weekday, day_name, ctl, tsb, weight, af_this_week, af_streak,
-                             week_sessions, week_focus, today_session, tss_act, planned, travel_note=None,
-                             trajectory_note=None, days_completed=None, compliance_summary=None, weight_goal=None,
-                             decoupling_note=None,
-                             fat=None, fat_goal=None, fat_trend_note=None,
-                             weight_date=None, fat_date=None,
-                             weight_avg7=None, fat_avg7=None, checkin_line=None):
-    """Kalder Anthropic API server-side og returnerer HTML-formateret coach-vurdering.
+# ═══════════════════════════════════════════════════════════════════════════
+# Coach v2 (6/9-2026): kontekst som data (coach_context), regler som fil
+# (prompts/*.md), struktureret svar via tool-use, mekanisk validering
+# (coach_validate). Erstatter den 130-linjers f-string-prompt ovenfor og det
+# separate ugefokus-kald i sessions.py.
+# ═══════════════════════════════════════════════════════════════════════════
 
-    checkin_line: én linje fra checkin.coach_line() ("Protein 3/3-dage sidste 7: n ·
-    aftensult-dage: m · energi-snit: x") — kun med i prompten når data findes.
+PROMPTS_DIR = os.path.normpath(os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', '..', 'prompts'))
+COACH_MODEL = "claude-sonnet-4-6"
+COACH_MAX_TOKENS = 1600
+COACH_RETRIES = 2          # antal forsøg i alt ved netværks-/5xx-fejl
+COACH_TIMEOUT = 45
+
+COACH_TOOL = {
+    "name": "coach_output",
+    "description": "Dagens coach-vurdering til Kennet som struktureret data. Alle tal skal findes i konteksten.",
+    "input_schema": {
+        "type": "object",
+        "additionalProperties": False,
+        "properties": {
+            "oneThing": {
+                "type": "object",
+                "properties": {
+                    "action": {"type": "string", "description": "Én konkret handling for i dag. Max 140 tegn. Ingen status-resuméer."},
+                    "why": {"type": "string", "description": "Begrundelsen i én sætning. Max 160 tegn."},
+                },
+                "required": ["action", "why"],
+            },
+            "training": {
+                "type": "object",
+                "properties": {
+                    "text": {"type": "string", "description": "Træning & load, 2-4 sætninger."},
+                    "refs": {"type": "array", "items": {"type": "number"}, "description": "Tal brugt i teksten."},
+                },
+                "required": ["text", "refs"],
+            },
+            "body": {
+                "type": "object",
+                "properties": {
+                    "text": {"type": "string", "description": "Krop & kost (7-dages snit mod plan), 2-4 sætninger."},
+                    "refs": {"type": "array", "items": {"type": "number"}},
+                },
+                "required": ["text", "refs"],
+            },
+            "habits": {
+                "type": "object",
+                "properties": {
+                    "text": {"type": "string", "description": "Vaner: AF, protein, søvn, energi. 2-3 sætninger."},
+                    "refs": {"type": "array", "items": {"type": "number"}},
+                },
+                "required": ["text", "refs"],
+            },
+            "bigPicture": {"type": "string", "description": "1-2 sætninger: hvor i programmet, og hvorfor ugen ser sådan ud."},
+            "weekFocus": {"type": ["string", "null"], "description": "Kun søndag/mandag: ét ugefokus, max 12 ord. Ellers null."},
+            "warnings": {
+                "type": "array",
+                "maxItems": 3,
+                "items": {
+                    "type": "object",
+                    "properties": {
+                        "type": {"type": "string", "description": "fx spacing, quota, tsb, readiness, cut"},
+                        "level": {"type": "string", "enum": ["info", "warn", "act"]},
+                        "message": {"type": "string"},
+                        "action": {
+                            "type": ["object", "null"],
+                            "properties": {
+                                "label": {"type": "string", "description": "Knaptekst, fx 'Flyt til torsdag'"},
+                                "edit": {
+                                    "type": "object",
+                                    "properties": {
+                                        "action": {"type": "string", "enum": ["move", "cancel", "swap_template"]},
+                                        "entryId": {"type": "string", "description": "id fra konteksten"},
+                                        "date": {"type": "string"},
+                                        "toDate": {"type": "string", "description": "ISO-dato ved move"},
+                                        "templateId": {"type": "string", "description": "id fra catalog ved swap_template"},
+                                    },
+                                    "required": ["action", "entryId"],
+                                },
+                            },
+                            "required": ["label", "edit"],
+                        },
+                    },
+                    "required": ["type", "level", "message", "action"],
+                },
+            },
+        },
+        "required": ["oneThing", "training", "body", "habits", "bigPicture", "weekFocus", "warnings"],
+    },
+}
+
+
+def load_prompt(name, prompts_dir=None):
+    """Læs prompts/<name>.md. Fejler højt hvis filen mangler — det er en deploy-fejl."""
+    path = os.path.join(prompts_dir or PROMPTS_DIR, f"{name}.md")
+    with open(path, encoding='utf-8') as fh:
+        return fh.read()
+
+
+def coach_mode(weekday):
+    """'sunday' på søndage (uge-gennemgang + næste uges fokus), ellers 'daily'."""
+    return 'sunday' if weekday == 6 else 'daily'
+
+
+def week_focus_required(weekday):
+    return weekday in (6, 0)
+
+
+def build_messages(ctx, mode=None, prompts_dir=None):
+    """(system, user) — prompten som sendes. Konteksten serialiseres som JSON
+    uden pynt: tal er tal, ingen dansk formatering."""
+    weekday = (ctx.get('today') or {}).get('weekday', 0)
+    mode = mode or coach_mode(weekday)
+    system = load_prompt('coach_system', prompts_dir)
+    tpl = load_prompt('coach_sunday' if mode == 'sunday' else 'coach_daily', prompts_dir)
+    ctx_json = json.dumps(ctx, ensure_ascii=False, separators=(',', ':'), sort_keys=True)
+    if week_focus_required(weekday):
+        wf = ("ÉN sætning, max 12 ord, for den uge der starter mandag. Ingen punktum til sidst, ingen emoji."
+              if weekday == 0 else "ÉN sætning, max 12 ord, for NÆSTE uge. Ingen punktum til sidst.")
+    else:
+        wf = "null (ikke søndag/mandag)."
+    user = (tpl.replace('{context}', ctx_json)
+               .replace('{date}', str((ctx.get('today') or {}).get('date', '')))
+               .replace('{weekdayName}', str((ctx.get('today') or {}).get('weekdayName', '')))
+               .replace('{weekFocusInstruction}', wf))
+    return system, user
+
+
+def _call_anthropic(system, user, api_key, timeout=COACH_TIMEOUT):
+    payload = json.dumps({
+        "model": COACH_MODEL,
+        "max_tokens": COACH_MAX_TOKENS,
+        "system": system,
+        "tools": [COACH_TOOL],
+        "tool_choice": {"type": "tool", "name": "coach_output"},
+        "messages": [{"role": "user", "content": user}],
+    }).encode('utf-8')
+    req = _urllib_req.Request(
+        "https://api.anthropic.com/v1/messages", data=payload, method="POST",
+        headers={"Content-Type": "application/json", "x-api-key": api_key,
+                 "anthropic-version": "2023-06-01"})
+    with _urllib_req.urlopen(req, timeout=timeout) as r:
+        return json.loads(r.read())
+
+
+def parse_tool_result(result):
+    """tool_use-blokken fra et Messages-svar -> dict. ValueError hvis den mangler."""
+    if result.get("stop_reason") == "max_tokens":
+        raise ValueError("trunkeret (stop_reason=max_tokens)")
+    for block in result.get("content") or []:
+        if block.get("type") == "tool_use" and block.get("name") == COACH_TOOL["name"]:
+            inp = block.get("input")
+            if isinstance(inp, dict):
+                return inp
+    raise ValueError("intet tool_use-svar fra modellen")
+
+
+def generate_coach_v2(ctx, api_key=None, mode=None, prompts_dir=None):
+    """Kald modellen med konteksten og returnér det VALIDEREDE svar (dict) —
+    eller None. Fejl (netværk, trunkering, validering) lander i LAST_AI_ERROR
+    (redacted) så update_kpi kan skrive den til data.coach.error/validationError.
+
+    Returnerer (answer, info) hvor info = {'model', 'validationError', 'notes'}.
     """
-    weight_goal = _goal(weight_goal, 'weightKg', 68)
-    fat_goal = _goal(fat_goal, 'bodyFatPct', 16)
     global LAST_AI_ERROR
     LAST_AI_ERROR = None
-    if not ANTHROPIC_KEY:
-        print("  ⚠️  ANTHROPIC_API_KEY ikke sat — springer AI-vurdering over")
+    api_key = api_key if api_key is not None else ANTHROPIC_KEY
+    info = {'model': COACH_MODEL, 'validationError': None, 'notes': None}
+    if not api_key:
         LAST_AI_ERROR = "ANTHROPIC_API_KEY ikke sat i miljøet"
-        return None
+        print(f"  ⚠️  {LAST_AI_ERROR} — springer coach v2 over")
+        return None, info
+    from . import coach_validate as _val
+    weekday = (ctx.get('today') or {}).get('weekday', 0)
+    system, user = build_messages(ctx, mode, prompts_dir)
 
-    ctl_target = ctl_plan_for_week(week_num)
-    kpis_str = f"CTL: {ctl} (uge {week_num}-mål ifølge planen: {ctl_target}), TSB: {tsb}"
-    # weight/fat kan være seneste måling inden for 7 dage. weight_date/fat_date er
-    # KUN sat når målingen IKKE er fra i dag -- så datoen skal med hele vejen.
-    _w_dk = dk_day(weight_date)
-    _f_dk = dk_day(fat_date)
-    if weight:
-        kpis_str += f", Vægt: {weight} kg" + (f" (målt {_w_dk})" if _w_dk else "")
-    if fat:
-        kpis_str += f", Fedtprocent: {fat} %" + (f" (målt {_f_dk})" if _f_dk else "")
-    if days_completed is None:
-        days_completed = weekday  # fallback hvis ikke angivet -- afsluttede dage FØR i dag
-    af_note = (
-        f"AF denne uge: {af_this_week} AF-dage ud af {days_completed} kalenderdage gået (mandag t.o.m. i dag) "
-        f"(mål: {AF_GOAL} AF-dage/uge), streak: {af_streak} dage. "
-        f"VIGTIGT: I dag ({day_name}) er STADIG I GANG — skriv aldrig at 'dag {days_completed} er afsluttet' "
-        f"eller at det er 'dag X af Y' som om ugen er overstået. "
-        f"Vurder AF-status RELATIVT til hvor mange dage der er gået i ugen — ikke absolut ift. 7. "
-        f"Hvis Kennet har {af_this_week} AF-dage ud af {days_completed} dage gået i ugen, er det {af_this_week}/{max(days_completed,1)}. "
-        f"AF-dage handler UDELUKKENDE om alkohol — IKKE om hvilken type træning der er planlagt. "
-        f"Skriv ALDRIG at en specifik træningstype 'tæller' eller 'ikke tæller' som AF-dag."
-    )
-    today_label = today_session.get('label', 'hviledag') if today_session else 'hviledag'
-    today_done = today_session.get('done', False) if today_session else False
-    today_status = "✅ GENNEMFØRT" if today_done else "⏳ IKKE FORSØGT ENDNU"
-
-    # Grounding: byg eksplicitte lister fra week_sessions, så modellen taler ud fra
-    # hvad der FAKTISK er gjort — ikke gætter en årsag til en CTL-afvigelse.
-    # Resten splittes i fremtidige (endnu ikke forfaldne) vs missede (dag passeret,
-    # ikke done) — præcis som generate_coach_speech gør — så et gennemført eller
-    # passeret pas aldrig fejlagtigt lander i "resten af ugen" eller kaldes "manglende".
-    def _sess_is_past(s):
-        d = s.get('day')
-        if d in DAY_SHORT:
-            return DAY_SHORT.index(d) < weekday
-        return False
-    completed = [s for s in week_sessions if s.get('done') and not s.get('today')]
-
-    def _fact(s):
-        """Label er PLANEN — den må aldrig stå alene på et gennemført pas.
-        Rettet 8/8-2026: uden faktiske tal her citerede modellen plantallet i
-        label'en som om det var udført (28,2 km løbet blev til "29 km", fordi
-        label'en hed 'Lang løb Z2 29 km'). Faktisk distance og tid skrives derfor
-        eksplicit ud, med planens tal til sammenligning."""
-        bits = []
-        dist = s.get('actual_distance_m')
-        if dist:
-            # Svøm måles i meter — '1,4 km' skjuler netop den præcision der
-            # afgør om en 2500 m generalprøve blev gennemført.
-            if s.get('disc') in ('swim', 'openwater'):
-                bits.append(f"{int(round(dist))} m")
-            else:
-                bits.append(f"{fmt(dist / 1000)} km")
-        mins = s.get('actual_mins')
-        if mins:
-            bits.append(f"{int(mins)} min")
-        tss = s.get('actual_tss')
-        if tss:
-            bits.append(f"{int(tss)} TSS")
-        day = s.get('day', '?')
-        label = s.get('label', 'pas')
-        if not bits:
-            return f"{day}: {label}"
-        return f"{day}: {label} [planlagt] → FAKTISK: {' · '.join(bits)}"
-
-    completed_str = ", ".join(_fact(s) for s in completed) or "ingen endnu"
-    # Dagens pas går IKKE gennem completed-listen (det filtreres på 'today'), så
-    # uden denne linje beholdt netop dagens session sit rene plan-label — og det
-    # var præcis dét pas coachen citerede med plantal.
-    today_line = (_fact(today_session).split(': ', 1)[-1]
-                  if (today_session and today_done) else today_label)
-    future_remaining = [s for s in week_sessions if not s.get('done') and not s.get('today') and not _sess_is_past(s)]
-    missed = [s for s in week_sessions if not s.get('done') and not s.get('today') and _sess_is_past(s)]
-    remaining = ", ".join(f"{s['day']}: {s['label']}" for s in future_remaining) or "ingen planlagte"
-    missed_str = ", ".join(f"{s['day']}: {s['label']}" for s in missed)
-    _w_ctx = f"målt {_w_dk}, ikke i dag" if _w_dk else "målt i dag"
-    _f_ctx = f"målt {_f_dk}, ikke i dag" if _f_dk else "målt i dag"
-    _w_avg = f" · 7-dages snit: {fmt(weight_avg7)} kg" if weight_avg7 else ""
-    _f_avg = f" · 7-dages snit: {fmt(fat_avg7)} %" if fat_avg7 else ""
-    weight_line = f"\n- Vægt: {weight} kg ({_w_ctx}){_w_avg}" if weight else ""
-    fat_line = (
-        (f"\n- Fedtprocent: {fat} % ({_f_ctx}, mål <{fat_goal} %){_f_avg}"
-         + (f" {fat_trend_note}" if fat_trend_note else ""))
-        if fat else ""
-    )
-    # SNIT-PRIORITET: dagstallet fra en bioimpedansvægt svinger flere hundrede gram
-    # og flere tiendedele procentpoint fra dag til dag. Uden denne instruktion
-    # konkluderer modellen på støj ("fedtprocenten er steget 0,2 point siden i går").
-    avg_line = (
-        "\n- SNIT-PRIORITET (ufravigelig): 7-dages snittet er det AUTORITATIVE tal for RETNING "
-        "og udvikling på vægt og fedtprocent. Dagstallet er kun et øjebliksbillede. "
-        "Konkludér ALDRIG om en tendens ('er steget', 'er faldet', 'går den forkerte vej', "
-        "'ikke en god kombination') ud fra ét døgns ændring i dagstallet — den ændring er "
-        "væskebalance og målestøj, ikke fedt. Vurder retning KUN ud fra 7-dages snittet, og "
-        "nævn snittet eksplicit når du kommenterer udviklingen. Dagstallet må nævnes som "
-        "dagens status og som afstand til målet, aldrig som bevis på en tendens."
-        if (weight_avg7 or fat_avg7) else ""
-    )
-
-    # Distance-kontekst for dagens session (rettet 7/8-2026, se calc_completion i
-    # sessions.py) — sendes altid med tal når planen har et meter-mål og distance
-    # er rapporteret, uanset udfald, så AI'en har korrekt grundlag begge veje.
-    distance_line = build_distance_prompt_line(today_session)
-    compliance_line = (
-        f"\n\nZone-compliance denne uge (Friel-analyse):\n{compliance_summary}\n"
-        f"VIGTIGT: Vurder BÅDE om workouts er gennemført (tid/TSS) OG om de rigtige zoner er ramt. "
-        f"'Steps: X%' = Intervals' compliance-score for workout-steps. "
-        f"Zone-% viser faktisk tid i target-zone. Lav zone-% kan skyldes HR-drift (varme), "
-        f"terræn, bevidst lavere intensitet, eller at intensiteten faktisk var for lav. "
-        f"Løb Z2 med høj HR-Z1 (>95%) og lav pace-Z2 (<30%) i varme er acceptabelt — nævn det som kontekst. "
-        f"Cykel Z2 med >50% Z1 og ingen power-struktur tyder på commute, ikke struktureret Z2. "
-        f"TERMINOLOGI (altid): for LØB tales der KUN om pace-zone — brug aldrig 'watt' eller 'effekt' om løb. "
-        f"For CYKEL tales der KUN om watt-zone/effekt — brug aldrig 'pace' om cykling. Bland aldrig de to. "
-        f"RETNING: noten fra compliance-listen siger allerede eksplicit om en afvigelse var for HURTIGT/HÅRDT "
-        f"(over target-zonen) eller for ROLIGT/LET (under target-zonen) — brug den retning PRÆCIS som angivet, "
-        f"og gæt eller modsig den ALDRIG ud fra HR alene. Lav HR ved en for hurtig pace/watt betyder IKKE at "
-        f"intensiteten var for lav — det betyder typisk bare at HR ikke nåede at indhente en for høj pace/watt. "
-        f"VERDIKT-PRIORITET: Hver note starter med enten '— on target' eller '— under X%-målet'. Det ER den "
-        f"autoritative vurdering. Hvis en note siger 'on target', må din konklusion ALDRIG blive 'for lav effekt' "
-        f"eller en instruktion om at 'skrue op/ned' — detaljer der følger efter 'on target' er kun kontekst, "
-        f"aldrig en modsigelse af verdikten. Brug KUN korrigerende/kritisk sprog ('for hårdt', 'for lavt', "
-        f"'skru op/ned') når noten selv siger 'under X%-målet'. Nævner noten coasting/frihjul eller NP som mere "
-        f"retvisende mål, brug DEN vurdering — ikke den rå tid-i-zone-procent alene. "
-        f"INTERVALPAS: står der en 'reps'-linje med 'rep 1:', 'rep 2:' osv., så er DET grundlaget "
-        f"for din vurdering af passet. Vurder konsistensen rep for rep: blev de første reps kørt "
-        f"for hårdt, faldt de sidste fra, eller var de jævne? Et sessionsgennemsnit eller en "
-        f"'Steps: X%'-score må ALDRIG bruges til at kalde et intervalpas veludført hvis "
-        f"enkelt-reps ligger uden for target — reps hurtigere/hårdere end target er OVERPACING "
-        f"og skal påtales, ikke roses. Nævn konkrete rep-tal når du kommenterer."
-        if compliance_summary else ""
-    )
-    travel_line = (
-        f"\n- VIGTIG KONTEKST om vægt: {travel_note} Brug PRÆCIS denne forklaring/retning i "
-        f"'Krop & kost'-linjen i dag — gæt eller modsig den ikke. Bebrejd ALDRIG manglende "
-        f"disciplin når denne kontekst er givet."
-        if travel_note else ""
-    )
-    trajectory_line = (
-        f"\n- UGENTLIGT STORE BILLEDE (kun søndage): {trajectory_note}"
-        if trajectory_note else ""
-    )
-    checkin_prompt_line = f"\n- Check-in (Kennets egne registreringer): {checkin_line}" if checkin_line else ""
-
-    # Aerobt flag: ét pas hvor EF lå markant under egen median. Kommer fra
-    # decoupling.py, som allerede har hængt forbeholdene (varme, tidspunkt) på.
-    # Sætningen skal bruges ordret — modellen må ikke regne EF om eller opgradere
-    # ét dyrt pas til en formdiagnose.
-    decoupling_line = (
-        f"\n- AEROBT FLAG PÅ SENESTE PAS: {decoupling_note}"
-        if decoupling_note else ""
-    )
-    fourth_line_instruction = (
-        "\n4. 📊 Store billede — brug PRÆCIS tallene fra 'UGENTLIGT STORE BILLEDE' ovenfor "
-        "(CTL vs. planmål, vægtudvikling over flere uger). Gæt eller genberegn intet selv."
-        if trajectory_note else ""
-    )
-
-    bike_library_line = build_bike_library_line(weekday)
-
-    _age = athlete_age()
-    _age_txt = f"{_age} år, " if _age else ""
-    _prog_txt = _programs.describe(ACTIVE_PROGRAM)
-    _phil = (ACTIVE_PROGRAM.get("philosophy") or "").lower()
-    _phil_txt = {"capacity": "capacity-mode, ikke performance-mode",
-                 "durability": "durability — holdbarhed og jævn CTL-opbygning frem for peak-form"
-                 }.get(_phil, _phil or "kapacitet")
-    prompt = (
-        f"Du er Joel Friel-inspireret træningscoach for Kennet Hammerby, {_age_txt}erfaren Ironman-atlet. "
-        f"Program: {_prog_txt}.\n\n"
-        f"Kennet er i uge {week_num} af {TOTAL_WEEKS}, dag {weekday + 1} af 7 ({day_name}). Filosofi: {_phil_txt}. "
-        f"Mål: bygge CTL fra {CTL_START} til {CTL_GOAL} (uge {TOTAL_WEEKS}), tabe sig til under {weight_goal} kg, {AF_GOAL} AF-dage/uge.\n\n"
-        f"Friel-regler:\n- TSB ikke under -30\n- CTL-stigning max 5-8/uge\n"
-        f"- Recovery-uge efter hård blok\n- Max 3 løbeture/uge\n\n"
-        f"Aktuelle data:\n- {kpis_str}\n- {af_note}\n- Ugefokus: {week_focus[:200]}\n"
-        f"- I dag: {today_line} [{today_status}]\n"
-        f"- GENNEMFØRT denne uge (fuldførte kendsgerninger): {completed_str}\n"
-        + (f"- MISSET denne uge (dag passeret, ikke gennemført): {missed_str}\n" if missed_str else "")
-        + f"- Resten af ugen (KUN fremtidige, endnu ikke forfaldne pas): {remaining}{weight_line}{fat_line}{avg_line}{distance_line}{travel_line}{decoupling_line}{trajectory_line}{checkin_prompt_line}{compliance_line}{bike_library_line}\n\n"
-        f"VIGTIGT:\n"
-        + ("- KAELDERPAS (ufravigelig, naar KAELDER-KATALOG staar ovenfor): naar du "
-           "foreslaar indendoers cykeltraening, SKAL du bruge et workout-id fra kataloget "
-           "og skrive id'et med. Opfind aldrig et nyt pas og aendr aldrig watt-tallene i et "
-           "eksisterende. Overtraed aldrig reglerne for haarde/moderate pas.\n"
-           if bike_library_line else "")
-        +         f"- TALPRÆCISION (ufravigelig): Gengiv ALLE tal PRÆCIS som de står i data ovenfor. "
-        f"Rund aldrig af, glat aldrig ud, og skriv aldrig et 'pænere' nabotal — det gælder "
-        f"distance, tid, TSS, vægt, fedtprocent, CTL, TSB, pace og watt. 28,2 km er 28,2 km, "
-        f"aldrig 28 og aldrig 29. Har du ikke tallet, så undlad det frem for at gætte.\n"
-        f"- PLAN ≠ FAKTISK (ufravigelig): Et pas' navn/label ER PLANEN, ikke hvad der blev udført. "
-        f"Tal markeret '[planlagt]' må ALDRIG omtales som noget der er gennemført. Står der "
-        f"'FAKTISK:' efter et pas, er DET de eneste tal du må bruge om udførelsen. Ligger faktisk "
-        f"og planlagt tæt, så nævn blot det faktiske tal; afviger de mærkbart, så nævn begge "
-        f"eksplicit (fx '28,2 km mod planlagte 29'). Udled ALDRIG et udført tal fra label'en.\n"
-        + (f"- AEROBT FLAG (ufravigelig, når linjen findes ovenfor): Nævn det i linje 1 "
-           f"(💪 Træning & load). Brug tallene og forbeholdene PRÆCIS som de står — regn "
-           f"ingenting om, og træk aldrig selv varme eller tidspunkt fra. Sig hvad passet "
-           f"kostede, og at forklaringen enten er varmen eller for højt tempo. Konkludér "
-           f"ALDRIG overtræning, overbelastning eller behov for hvile ud fra ét pas — "
-           f"det afgøres af CTL, TSB og wellness, ikke af én løbetur.\n"
-           if decoupling_note else "")
-        + f"- GROUNDING (ufravigelig): Pas i 'GENNEMFØRT denne uge' ER fuldført. Omtal dem ALDRIG som "
-        f"manglende, glemt, sprunget over, udestående eller noget der 'skal'/'mangler' at ske. Et pas må "
-        f"KUN kaldes manglende/misset hvis det står eksplicit i 'MISSET denne uge'. Hvis CTL ligger under "
-        f"ugemålet, forklar det ud fra ugens KARAKTER (fx en let rejse-/restitutionsuge hvor gåture og "
-        f"vandringer giver lav TSS) — ALDRIG ved at pege på et pas der står i GENNEMFØRT-listen.\n"
-        f"- Hvis dagens session er GENNEMFØRT: Den er en afsluttet kendsgerning. Skriv UDELUKKENDE i DATID om den. "
-        f"Skriv ALDRIG sætninger der fremstiller den som noget der 'starter', 'skal' eller 'mangler' at ske — "
-        f"fx 'det starter med dagens cykeltur' eller 'hold wattene oppe i dagens tur' er FORBUDT sprog for en "
-        f"gennemført session. Ethvert forbedringspunkt fra dagens session skal formuleres som læring til NÆSTE "
-        f"lignende session (nævn evt. hvilken kommende dag) — aldrig som en handling for 'i dag'.\n"
-        f"- Hvis IKKE gennemført: her ER 'i dag'/'dagens'-sprog korrekt — giv konkrete, fremadrettede råd.\n"
-        f"- Nævn KUN vægt og fedtprocent hvis tallene står i data ovenfor. Står de der, er de "
-        f"målt inden for de seneste 7 dage og skal behandles som gyldige. Skriv ALDRIG at der "
-        f"'ingen aktuel måling' er, når et tal er oplyst.\n"
-        f"- Er en måling IKKE fra i dag (markeret 'målt DD/MM, ikke i dag'), så skriv datoen med — "
-        f"fx 'vægten var 72,1 kg ved seneste vejning 5/8' — og præsentér den aldrig som dagens tal.\n"
-        f"- KROP & KOST: fedtprocent vægtes MINDST på niveau med vægt. Vægten alene siger lidt — det er "
-        f"kropssammensætningen der afgør om et vægttab er reelt fremskridt. Tolk de to SAMMEN: falder vægten "
-        f"uden at fedtprocenten følger med, er der tabt muskelmasse, og det er et advarselstegn i et "
-        f"capacity-år — ikke en sejr. Falder fedtprocenten mens vægten står stille, er det ægte fremgang. "
-        f"Nævn afstanden til BEGGE mål når begge er målt.\n\n"
-        f"SPROG: Skriv klart, naturligt dansk som en rigtig træner ville tale. Hver sætning skal kunne "
-        f"forstås i første gennemlæsning. Undgå tvetydige eller kluntede formuleringer — fx aldrig "
-        f"'frem for' når du mener 'i løbet af' eller 'de næste'. Brug korte, konkrete sætninger. "
-        f"Ingen kancellisprog.\n\n"
-        f"Giv en KORT coach-vurdering (max 4 sætninger pr. linje) opdelt i linjer med emoji-header:\n"
-        f"1. 💪 Træning & load (CTL={ctl}, TSB={tsb})\n"
-        f"2. ⚖️ Krop & kost (vægt OG fedtprocent — behandl begge)\n"
-        f"3. 🎯 AF-status & fokus for resten af ugen"
-        f"{fourth_line_instruction}\n\n"
-        f"Skriv direkte til Kennet på dansk. Vær præcis — ingen tom ros.\n"
-        f"Start IKKE med en header-linje som 'Dag X af Y uger' — den tilføjes automatisk."
-    )
-
-    try:
-        payload = json.dumps({
-            "model": "claude-sonnet-4-6",
-            "max_tokens": 800,
-            "messages": [{"role": "user", "content": prompt}]
-        }).encode()
-
-        req = _urllib_req.Request(
-            "https://api.anthropic.com/v1/messages",
-            data=payload,
-            method="POST",
-            headers={
-                "Content-Type": "application/json",
-                "x-api-key": ANTHROPIC_KEY,
-                "anthropic-version": "2023-06-01"
-            }
-        )
-        with _urllib_req.urlopen(req, timeout=30) as r:
-            result = json.loads(r.read())
-            if result.get("stop_reason") == "max_tokens":
-                print("  ⚠️  AI-vurdering trunkeret (max_tokens) — kasseres, beholder forrige")
-                LAST_AI_ERROR = "trunkeret (stop_reason=max_tokens)"
-                return None
-            text = fix_enc(result["content"][0]["text"])
-            print(f"  ✅ AI-vurdering genereret ({len(text)} tegn)")
-            return text
-    except Exception as e:
-        _body = ""
+    raw, last_err = None, None
+    for attempt in range(1, COACH_RETRIES + 1):
         try:
-            _body = e.read().decode("utf-8", "replace")[:400]
-        except Exception:
-            pass
-        LAST_AI_ERROR = _redact(f"{type(e).__name__}: {e}" + (f" | body: {_body}" if _body else ""))
-        print(f"  ⚠️  AI-vurdering fejlede: {LAST_AI_ERROR}")
-        return None
+            raw = parse_tool_result(_call_anthropic(system, user, api_key))
+            break
+        except Exception as e:  # netværk/5xx/429/format — prøv igen én gang
+            body = ""
+            try:
+                body = e.read().decode("utf-8", "replace")[:300]
+            except Exception:
+                pass
+            last_err = _redact(f"{type(e).__name__}: {e}" + (f" | body: {body}" if body else ""))
+            code = getattr(e, 'code', None)
+            retry = attempt < COACH_RETRIES and (code is None or code >= 500 or code == 429)
+            print(f"  ⚠️  coach v2 forsøg {attempt} fejlede: {last_err}" + (" — prøver igen" if retry else ""))
+            if not retry:
+                break
+    if raw is None:
+        LAST_AI_ERROR = last_err or "ukendt fejl"
+        return None, info
 
+    for k in ('oneThing', 'training', 'body', 'habits'):
+        if isinstance(raw.get(k), dict):
+            for kk, vv in list(raw[k].items()):
+                if isinstance(vv, str):
+                    raw[k][kk] = fix_enc(vv)
+    for k in ('bigPicture', 'weekFocus'):
+        if isinstance(raw.get(k), str):
+            raw[k] = fix_enc(raw[k])
+    ok, errors, cleaned = _val.validate(raw, ctx, require_week_focus=week_focus_required(weekday))
+    if not ok:
+        info['validationError'] = "; ".join(errors)[:400]
+        LAST_AI_ERROR = "validering: " + info['validationError']
+        print(f"  ⚠️  coach v2 kasseret af validering: {info['validationError']}")
+        return None, info
+    info['notes'] = cleaned.pop('validationNotes', None)
+    print(f"  ✅ coach v2 genereret (oneThing: {cleaned['oneThing']['action'][:60]!r})")
+    return cleaned, info
+
+
+# ── Rendering til de gamle data.json-felter ────────────────────────────────
+
+def _esc(s):
+    return (str(s).replace('&', '&amp;').replace('<', '&lt;').replace('>', '&gt;'))
+
+
+def render_assessment_html(answer, header):
+    """coachAssessmentHtml fra de tre sektioner — klasser, ingen inline font-styles."""
+    parts = [f'<p class="coach-head"><strong>{_esc(header)}</strong></p>']
+    if answer.get('bigPicture'):
+        parts.append(f'<p class="coach-sec coach-big">{_esc(answer["bigPicture"])}</p>')
+    for key, label in (('training', 'Træning & load'), ('body', 'Krop & kost'), ('habits', 'Vaner')):
+        txt = (answer.get(key) or {}).get('text')
+        if txt:
+            parts.append(f'<p class="coach-sec"><span class="coach-sec-h">{_esc(label)}</span>{_esc(txt)}</p>')
+    return ''.join(parts)
+
+
+def short_text(text, max_chars=220):
+    """De første sætninger af en tekst, højst max_chars — til coachSpeech."""
+    text = (text or '').strip()
+    if len(text) <= max_chars:
+        return text
+    out = ''
+    for sent in re.split(r'(?<=[.!?])\s+', text):
+        if len(out) + len(sent) + 1 > max_chars:
+            break
+        out = (out + ' ' + sent).strip()
+    return out or text[:max_chars].rsplit(' ', 1)[0] + '…'
+
+
+def legacy_fields(answer):
+    """coachSpeech/coachHighlight fra v2-svaret. index.html splitter coachSpeech
+    på {HL} og lægger coachHighlight imellem."""
+    big = (answer.get('bigPicture') or '').strip()
+    train = short_text((answer.get('training') or {}).get('text'))
+    action = (answer.get('oneThing') or {}).get('action') or ''
+    speech = f"{big} {{HL}} {train}".strip()
+    return speech, action

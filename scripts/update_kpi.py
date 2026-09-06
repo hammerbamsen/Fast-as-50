@@ -37,13 +37,15 @@ from modules.sessions import (get_activities_week, get_workout_compliance_this_w
                                format_compliance_for_prompt, get_planned_mins_this_week,
                                planned_tss_this_week, parse_planned_mins, calc_completion,
                                build_week_sessions, get_planned_weeks, generate_week_focus,
-                               generate_week_focus_ai, get_swim_history,
+                               get_swim_history,
                                get_weekly_tss_actual)
 import modules.coach as _coach_mod
 from modules.coach    import (get_travel_label, weight_delta_vs_recent,
                                build_weight_context_note, build_trajectory_note,
-                               qa_coach_speech, generate_coach_speech, generate_ai_assessment,
+                               qa_coach_speech, generate_coach_speech,
                                last_real_within)
+from modules import coach_context as _coach_ctx
+from modules import coach_validate as _coach_val
 from modules.github   import gh_get, gh_put
 
 
@@ -647,20 +649,22 @@ def main():
             this_week['sessions'] = build_week_sessions(done_map, this_week['sessions'])
             _focus_cached_week = data.get('weekFocusWeek')
             _focus_cached_text = data.get('weekFocus', '')
+            _focus_next = data.get('weekFocusNext') or {}
             if _focus_cached_week == week_num and _focus_cached_text:
-                print(f"  weekFocus cached (uge {week_num}) -- springer AI-kald over")
+                print(f"  weekFocus cached (uge {week_num})")
                 dynamic_focus = _focus_cached_text
-            else:
-                # Ugens note fra programmet i plan.json (programs.<id>.weeks[].note)
-                _week_note = week_meta.get('note')
-                dynamic_focus = generate_week_focus_ai(
-                    week_num, this_week.get('sessions', []),
-                    BLOCK_TYPES.get(week_num, 'BUILD'),
-                    ctl=ctl, tsb=tsb,
-                    week_note=_week_note,
-                    anthropic_key=ANTHROPIC_KEY
-                )
+            elif (_focus_next.get('week') == week_num and _focus_next.get('programId') == PROGRAM_ID
+                  and _focus_next.get('text')):
+                # Søndagens coach v2-kørsel lagde fokus for denne uge
+                dynamic_focus = _focus_next['text']
                 data['weekFocusWeek'] = week_num
+                print(f"  weekFocus fra søndagens gennemgang: {dynamic_focus}")
+            else:
+                # Regelbaseret indtil coach v2 (mandag) leverer ugefokus — det
+                # separate AI-kald (generate_week_focus_ai) er fjernet 6/9-2026.
+                dynamic_focus = generate_week_focus(
+                    week_num, this_week.get('sessions', []),
+                    BLOCK_TYPES.get(week_num, 'BUILD'))
             dynamic_focus = fix_enc(dynamic_focus)
             this_week['focus'] = dynamic_focus
             data['weekFocus'] = dynamic_focus
@@ -818,9 +822,37 @@ def main():
     _plan_at_gen = data.get('coachAssessmentPlanAtGen', '')
     _plan_changed = _today_label != _plan_at_gen
 
-    if not CACHE_FORCE and _cache_age_h is not None and _cache_age_h < CACHE_HOURS and not _weight_changed and not _fat_changed and not _af_changed and not _activity_changed and not _plan_changed:
-        print(f"  Coach-vurdering cached ({_cache_age_h:.1f}t gammel) -- springer AI-kald over")
-        ai_text = None
+    # --- Coach v2 (6/9-2026): kontekst som data, regler i prompts/*.md,
+    #     struktureret svar via tool-use, mekanisk validering. Ét kald pr.
+    #     generering — ugefokus (søndag/mandag) kommer med i samme svar.
+    _coach_prev = data.get('coach') if isinstance(data.get('coach'), dict) else {}
+    _ctx = None
+    _ctx_hash = None
+    try:
+        _ctx = _coach_ctx.build_context(
+            PLAN, data, today,
+            ctl=ctl, atl=atl, tsb=tsb, wellness=wellness,
+            weight=weight_coach, fat=fat_coach, weight_date=weight_coach_date, fat_date=fat_coach_date,
+            planned_tss=planned, tss_actual=tss_act, af_streak=af_streak,
+            travel_label=travel_label)
+        _ctx_hash = _coach_ctx.inputs_hash(_ctx)
+    except Exception as _e:
+        import traceback; traceback.print_exc()
+        print(f"  ⚠️  coach-kontekst fejlede: {_e}")
+
+    # Mandag uden ugefokus for denne uge -> generér uanset cache
+    _focus_missing = (weekday == 0 and data.get('weekFocusWeek') != week_num)
+    _hash_same = (_ctx_hash is not None and _coach_prev.get('inputsHash') == _ctx_hash)
+
+    _cache_fresh = (_cache_age_h is not None and _cache_age_h < CACHE_HOURS
+                    and not _weight_changed and not _fat_changed and not _af_changed
+                    and not _activity_changed and not _plan_changed and not _focus_missing)
+    ai_answer, ai_info = None, {}
+    if _ctx is None:
+        pass
+    elif not CACHE_FORCE and (_cache_fresh or _hash_same) and _coach_prev.get('oneThing'):
+        _why = "uændret kontekst" if _hash_same else f"{_cache_age_h:.1f}t gammel"
+        print(f"  Coach-vurdering cached ({_why}) -- springer AI-kald over")
     else:
         if CACHE_FORCE:
             _age_txt = f"{_cache_age_h:.1f}t" if _cache_age_h is not None else "ukendt"
@@ -833,58 +865,82 @@ def main():
             print(f"  AF-status ændret ({_af_at_gen} -> {af_this_week}) -- bryder cache tidligt")
         if _activity_changed:
             print(f"  Ny aktivitet ({_last_act_id_at_gen} -> {_latest_act_id}) -- bryder cache tidligt")
-        ai_text = generate_ai_assessment(
-            week_num, weekday, DK_DAYS[weekday],
-            ctl, tsb,
-            weight_coach,
-            af_this_week, af_streak,
-            data['week_sessions'], week_focus,
-            today_session, tss_act, planned,
-            travel_note=context_note, trajectory_note=trajectory_note, days_completed=days_completed,
-        decoupling_note=decoupling_note,
-            compliance_summary=compliance_summary,
-            weight_goal=data['weightGoal'],
-            fat=fat_coach,
-            fat_goal=data['bodyFatGoal'],
-            fat_trend_note=_avg7_trend_note(data.get('fatMovingAvg7'), unit="point"),
-            weight_date=weight_coach_date,
-            fat_date=fat_coach_date,
-            weight_avg7=_latest_avg(data.get('weightMovingAvg7')),
-            fat_avg7=_latest_avg(data.get('fatMovingAvg7')),
-            checkin_line=checkin_line
-        )
-        ai_text = fix_enc(ai_text)  # AI-svar kan komme tilbage Latin-1-mis-decoded -- ret ved kilden
-    if ai_text:
-        # Konverter til simpel HTML (samme logik som dashboardet)
-        # Tilføj korrekt header hardcodet (forhindrer AI i at skrive forkert "Dag X af N uger")
+        if _focus_missing:
+            print("  Mandag uden ugefokus -- bryder cache")
+        ai_answer, ai_info = _coach_mod.generate_coach_v2(_ctx, ANTHROPIC_KEY)
+
+    if ai_answer:
         program_day = _programs.program_day(ACTIVE_PROGRAM, date.today())
         header_str = f"Dag {program_day} af {days_total} · {DK_DAYS[weekday]} · Uge {week_num}"
-        header_html = f'<p style="margin:0 0 8px;font-family:\'Hanken Grotesk\',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)"><strong>{header_str}</strong></p>'
-        html_lines = [header_html]
-        for line in ai_text.split('\n'):
-            line = line.strip()
-            if not line:
-                continue
-            line = re.sub(r'\*\*(.+?)\*\*', r'<strong>\1</strong>', line)
-            html_lines.append(f'<p style="margin:0 0 8px;font-family:\'Hanken Grotesk\',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)">{line}</p>')
-        from datetime import datetime as _dt
-        data['coachAssessmentHtml']        = fix_enc(''.join(html_lines))
-        data['coachAssessmentTs']          = _dt.now().strftime('%H:%M')
-        data['coachAssessmentTsFull']      = datetime.utcnow().isoformat()
+        _now_utc = datetime.utcnow().replace(microsecond=0)
+        _merged = _coach_val.merge_warnings(warnings, ai_answer.get('warnings'))
+        data['coach'] = {
+            'generatedAt': _now_utc.isoformat() + 'Z',
+            'inputsHash': _ctx_hash,
+            'model': ai_info.get('model'),
+            'mode': _coach_mod.coach_mode(weekday),
+            'oneThing': ai_answer['oneThing'],
+            'training': ai_answer['training'],
+            'body': ai_answer['body'],
+            'habits': ai_answer['habits'],
+            'bigPicture': ai_answer['bigPicture'],
+            'weekFocus': ai_answer.get('weekFocus'),
+            'weekFocusFor': (week_num + 1 if weekday == 6 else week_num) if ai_answer.get('weekFocus') else None,
+            'warnings': _merged,
+            'error': None,
+            'validationError': None,
+            'notes': ai_info.get('notes'),
+            'stale': False,
+        }
+        # Gamle felter udfyldes fra det nye svar, så index.html/plan.html ikke knækker
+        coach_speech, coach_highlight = _coach_mod.legacy_fields(ai_answer)
+        data['coachSpeech']    = coach_speech
+        data['coachHighlight'] = coach_highlight
+        data['coachAssessmentHtml']        = _coach_mod.render_assessment_html(ai_answer, header_str)
+        data['coachAssessmentTs']          = now_cph.strftime('%H:%M')
+        data['coachAssessmentTsFull']      = _now_utc.isoformat()
         data['coachAssessmentWeightAtGen'] = weight if weight is not None else _weight_at_gen
         data['coachAssessmentFatAtGen']    = fat if fat is not None else _fat_at_gen
         data['coachAssessmentAfAtGen']     = af_this_week
         data['coachAssessmentLastActId']   = _latest_act_id
         data['coachAssessmentPlanAtGen']   = _today_label
         data['coachAssessmentError'] = None
+        # Legacy warnings: regel-advarsler + AI-advarsler (act -> critical)
+        _lvl_legacy = {'act': 'critical', 'warn': 'warn', 'info': 'info'}
+        data['warnings'] = [dict(w, level=_lvl_legacy.get(w['level'], w['level'])) for w in _merged]
+        # Ugefokus fra samme kald: mandag = denne uge, søndag = næste uge
+        _wf = ai_answer.get('weekFocus')
+        if _wf and weekday == 0:
+            data['weekFocus'] = _wf
+            data['weekFocusWeek'] = week_num
+            if str(week_num) in data.get('all_weeks', {}):
+                data['all_weeks'][str(week_num)]['focus'] = _wf
+        elif _wf and weekday == 6:
+            _next_wk = week_num + 1
+            _next_pid = PROGRAM_ID
+            _np = _programs.active_program(PLAN, 'kennet', today + timedelta(days=1))
+            if _np and _np.get('id') != PROGRAM_ID:
+                _next_pid, _next_wk = _np['id'], _programs.week_no(_np, today + timedelta(days=1))
+            data['weekFocusNext'] = {'week': _next_wk, 'programId': _next_pid, 'text': _wf}
+            if _next_pid == PROGRAM_ID and str(_next_wk) in data.get('all_weeks', {}):
+                data['all_weeks'][str(_next_wk)]['focus'] = _wf
     else:
-        # Behold eksisterende (cache stadig frisk, eller API fejlede)
+        # Behold eksisterende (cache stadig frisk, eller API/validering fejlede)
         if not data.get('coachAssessmentHtml'):
             data['coachAssessmentHtml'] = ''
             data['coachAssessmentTs']   = ''
-        # Fejlede AI-kaldet (i modsætning til: cachen var bare frisk)? Gør det synligt.
         _ai_err = getattr(_coach_mod, 'LAST_AI_ERROR', None)
         data['coachAssessmentError'] = _ai_err
+        if _coach_prev:
+            data['coach'] = dict(_coach_prev)
+            data['coach']['error'] = _ai_err
+            data['coach']['validationError'] = ai_info.get('validationError')
+            data['coach']['stale'] = bool(_ctx_hash and _coach_prev.get('inputsHash') != _ctx_hash)
+        else:
+            data['coach'] = {'generatedAt': None, 'inputsHash': None, 'model': None, 'oneThing': None,
+                             'training': None, 'body': None, 'habits': None, 'bigPicture': None,
+                             'weekFocus': None, 'warnings': _coach_val.merge_warnings(warnings, None),
+                             'error': _ai_err, 'validationError': ai_info.get('validationError'), 'stale': True}
         if _ai_err:
             print(f"  ❌ Coach-vurdering IKKE opdateret: {_ai_err}")
 
