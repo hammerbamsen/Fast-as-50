@@ -148,6 +148,13 @@ html,body { height:100%; background:var(--bg); font-family:'Hanken Grotesk',sans
 /* Coach speech */
 .coach-text { font-family:'Hanken Grotesk',sans-serif; font-size:14px; color:var(--hero-ink); line-height:1.65; position:relative; }
 .coach-hl { color:var(--gold); font-weight:700; }
+/* Coach v2: vurdering renderet fra sektioner — klasser, ingen inline font-styles */
+.coach-head { margin:0 0 8px; font-size:14px; line-height:1.6; color:var(--ink); }
+.coach-sec  { margin:0 0 10px; font-family:'Hanken Grotesk',sans-serif; font-size:14px; line-height:1.6; color:var(--ink); }
+.coach-sec-h { display:block; font-family:'Space Mono',monospace; font-size:10px; letter-spacing:.06em; text-transform:uppercase; color:var(--muted); margin-bottom:2px; }
+.coach-big { color:var(--muted); }
+.coach-voice-big { display:block; color:var(--hero-muted); font-size:13px; margin-bottom:6px; }
+.banner .act-btn { margin-top:6px; display:inline-block; background:var(--card); color:var(--ink); border:1px solid var(--line); border-radius:8px; padding:5px 10px; font-family:'Space Mono',monospace; font-size:11px; cursor:pointer; }
 
 /* Status row */
 .status-row { display:grid; grid-template-columns:1fr 1fr 1fr auto; gap:10px; margin-bottom:14px; }
@@ -660,6 +667,7 @@ let D = {
   coachHighlight:"",
   weekFocus:"",
   coachAssessment: null,
+  coach: null,            // coach v2 (6/9-26): {oneThing, training, body, habits, bigPicture, weekFocus, warnings, ...}
   coachAssessmentHtml: '',
   coachAssessmentTs: '',
   coachAssessmentStale: false,
@@ -983,23 +991,48 @@ function toggleDayInfo(i){
   info.innerHTML = `<span class="lab">${day.d} ${day.dateLabel}${day.today?' · i dag':''}</span><ul>${items.join('')}</ul>`;
 }
 
-// "Én ting i dag": højeste advarsel > coachHighlight > weekFocus. Begrundelse
-// = de næste relevante fakta (søvn under 7, HRV-drop, næste løb om N dage).
+// "Én ting i dag": coach v2's oneThing (action + why) når den findes — ellers
+// højeste advarsel > coachHighlight > weekFocus. Begrundelse = why, ellers de
+// næste relevante fakta (søvn under 7, HRV-drop, næste løb om N dage).
+function coachV2(){ const c = D.coach; return (c && typeof c === 'object' && c.oneThing && c.oneThing.action) ? c : null; }
 function oneThing(r){
-  const rank = { critical:0, warn:1 };
+  const c = coachV2();
+  const rank = { critical:0, act:0, warn:1 };
   const warns = (D.warnings||[]).filter(w=>w&&w.message).sort((a,b)=>(rank[a.level]??2)-(rank[b.level]??2));
-  let main = warns.length ? warns[0].message : (D.coachHighlight || D.weekFocus || '');
+  let main = c ? c.oneThing.action : (warns.length ? warns[0].message : (D.coachHighlight || D.weekFocus || ''));
   if (!main) main = D.dataLoaded ? 'Ingen særlig besked i dag.' : '—';
   main = capFirst(String(main).trim());
   if (main && !/[.!?…]$/.test(main)) main += '.';
   const why = [];
-  if (r.sleep!=null && r.sleep < 7) why.push(`Søvn ${fmtDa(r.sleep)} t i nat — under 7.`);
-  if (r.pct!=null && r.pct <= -10) why.push(`HRV ${Math.abs(r.pct)} % under 7d-snit.`);
-  if (D.nextRace && D.nextRace.name) {
-    const n = D.nextRace.daysTo;
-    why.push(n===0 ? `${D.nextRace.name} er i dag.` : n===1 ? `I morgen: ${D.nextRace.name}.` : `Næste løb: ${D.nextRace.name} om ${n} dage.`);
+  if (c && c.oneThing.why) why.push(capFirst(String(c.oneThing.why).trim()));
+  else {
+    if (r.sleep!=null && r.sleep < 7) why.push(`Søvn ${fmtDa(r.sleep)} t i nat — under 7.`);
+    if (r.pct!=null && r.pct <= -10) why.push(`HRV ${Math.abs(r.pct)} % under 7d-snit.`);
+    if (D.nextRace && D.nextRace.name) {
+      const n = D.nextRace.daysTo;
+      why.push(n===0 ? `${D.nextRace.name} er i dag.` : n===1 ? `I morgen: ${D.nextRace.name}.` : `Næste løb: ${D.nextRace.name} om ${n} dage.`);
+    }
   }
-  return `<div class="action"><span class="lab">Én ting i dag</span><p>${esc(main)}</p>${why.length?`<p>${esc(why.slice(0,2).join(' '))}</p>`:''}</div>`;
+  const stale = c && c.stale ? `<p class="small" style="color:var(--muted);font-size:11px">Coachen er ikke opdateret med de nyeste data.</p>` : '';
+  return `<div class="action"><span class="lab">Én ting i dag</span><p>${esc(main)}</p>${why.length?`<p>${esc(why.slice(0,2).join(' '))}</p>`:''}${stale}</div>`;
+}
+
+// Coach-advarsel med handling -> åbn Plan-fanens ⋯-ark med handlingen forudvalgt.
+function coachActionWarning(){
+  const c = coachV2(); if (!c || !Array.isArray(c.warnings)) return null;
+  return c.warnings.find(w => w && w.action && w.action.edit && w.action.edit.entryId && ptFindEntry(w.action.edit.entryId)) || null;
+}
+function coachOpenAction(idx){
+  const c = coachV2(); const w = c && c.warnings && c.warnings[idx]; if (!w || !w.action || !w.action.edit) return;
+  const ed = w.action.edit;
+  navigate('plan');
+  setTimeout(() => {
+    if (!ptFindEntry(ed.entryId)) return;
+    ptOpenSheet(ed.entryId);
+    if (ed.action === 'move') { ptSheetMove(); if (ed.toDate) { const b = [...document.querySelectorAll('#pt-move-pick button')].find(x => x.getAttribute('onclick').includes(`'${ed.toDate}'`)); if (b) ptPickMove(ed.toDate, b); } }
+    else if (ed.action === 'cancel') ptSheetCancel();
+    else if (ed.action === 'swap_template') { Promise.resolve(ptSheetSwap()).then(() => { if (ed.templateId) { const b = [...document.querySelectorAll('#pt-tpl-pick button')].find(x => x.getAttribute('onclick').includes(`'${ed.templateId}'`)); if (b) ptPickTemplate(ed.templateId, b); } }); }
+  }, 80);
 }
 
 // Ét banner-slot: data-fejl > stale > nøgler > kritisk advarsel > readiness.
@@ -1010,7 +1043,9 @@ function bannerSlotHtml(){
   const c = D.credentials || {};
   const bad = Object.keys(c).filter(k => c[k] && !c[k].ok);
   if (bad.length) return `<div class="banner act"><span>⛔</span><span><b>Nøgle-problem</b>${bad.map(k=>`<span class="row"><b>${esc(k)}</b> — ${esc(c[k].note)}</span>`).join('')}</span></div>`;
-  const crit = (D.warnings||[]).find(w => w && w.level==='critical' && w.message);
+  const aw = coachActionWarning();
+  if (aw) { const i = coachV2().warnings.indexOf(aw); return `<div class="banner ${aw.level==='act'?'act':'warn'}"><span>${WARN_ICONS[aw.type]||'⚠️'}</span><span>${esc(aw.message)}<br><button class="act-btn" onclick="coachOpenAction(${i})">${esc(aw.action.label||'Åbn i planen')} →</button></span></div>`; }
+  const crit = (D.warnings||[]).find(w => w && (w.level==='critical' || w.level==='act') && w.message);
   if (crit) return `<div class="banner act"><span>${WARN_ICONS[crit.type]||'⚠️'}</span><span>${esc(crit.message)}</span></div>`;
   if (st && st.hours > 6) return `<div class="banner info"><span>ⓘ</span><span>Data er ${st.hours} timer gamle — opdateres automatisk.</span></div>`;
   if (D.readinessRemote === 'LOW' || readinessInfo().level === 'act') return '<div class="banner warn"><span>💜</span><span>Lav readiness i dag (HRV/søvn) — overvej at tage det roligt.</span></div>';
@@ -1061,7 +1096,13 @@ function kpiStripV2() {
   ];
   return `<div class="kpi4">` + tiles.map(t => `<div class="kpi4-t"><div class="lab">${t.l}</div><div class="kpi4-v">${t.v}</div><div class="kpi4-s">${esc(t.s||'')}</div></div>`).join('') + `</div>`;
 }
+function shortText(t, max){ t = String(t||'').trim(); if (t.length <= max) return t; let out=''; for (const sent of t.split(/(?<=[.!?])\s+/)) { if ((out+' '+sent).trim().length > max) break; out = (out+' '+sent).trim(); } return out || t.slice(0, max).replace(/\s\S*$/, '') + '…'; }
 function coachVoiceCard() {
+  const c = coachV2();
+  if (c && (c.bigPicture || (c.training && c.training.text))) {
+    const t = shortText(c.training && c.training.text, 260);
+    return `<div class="card card-wine" style="padding:14px 16px;margin:12px 0 0"><div class="label label-gold" style="margin-bottom:6px">TRÆNER + DIÆTIST</div><div class="coach-text">${c.bigPicture?`<span class="coach-voice-big">${esc(c.bigPicture)}</span>`:''}${esc(t)}</div></div>`;
+  }
   if (!D.coachSpeech) return '';
   const parts = String(D.coachSpeech).split('{HL}');
   return `<div class="card card-wine" style="padding:14px 16px;margin:12px 0 0"><div class="label label-gold" style="margin-bottom:6px">TRÆNER + DIÆTIST</div><div class="coach-text">${parts[0]||''}<span class="coach-hl">${D.coachHighlight||''}</span>${parts[1]||''}</div></div>`;
@@ -1236,7 +1277,9 @@ function renderWeek() {
 // Coach-tale + AI-vurdering — kun her, og foldet. I dag-fanen viser dem ikke.
 function coachFoldedCard() {
   const parts = (D.coachSpeech || '').split("{HL}");
-  const speech = D.coachSpeech
+  // Coach v2: bigPicture + de tre afsnit renderes i loadCoachAssessment — den
+  // gamle coachSpeech-boks ville bare gentage dem.
+  const speech = (D.coachSpeech && !coachV2())
     ? `<div class="card card-wine" style="padding:16px 18px;margin:12px 0 10px"><div class="label label-gold" style="margin-bottom:8px">TRÆNER + DIÆTIST · UGE ${D.week}</div><div class="coach-text">${parts[0]||""}<span class="coach-hl">${D.coachHighlight||""}</span>${parts[1]||""}</div></div>`
     : '';
   return `
@@ -1729,6 +1772,17 @@ async function loadCoachAssessment(force) {
   const tsEl = document.getElementById('coach-assessment-ts');
   if (!box) return;
 
+  // Coach v2: tre afsnit med små overskrifter fra D.coach (ingen inline styles)
+  const c = coachV2();
+  if (c && c.training && c.body && c.habits) {
+    const sec = (h, t) => t ? `<p class="coach-sec"><span class="coach-sec-h">${h}</span>${esc(t)}</p>` : '';
+    box.innerHTML = credBanner() + structureBanner() + staleBanner()
+      + (c.bigPicture ? `<p class="coach-sec coach-big">${esc(c.bigPicture)}</p>` : '')
+      + sec('Træning &amp; load', c.training.text) + sec('Krop &amp; kost', c.body.text) + sec('Vaner', c.habits.text)
+      + (c.weekFocus ? sec('Ugefokus', c.weekFocus) : '');
+    if (tsEl) tsEl.textContent = 'Opdateret: ' + (D.coachAssessmentTs || (c.generatedAt ? String(c.generatedAt).slice(11,16) + ' UTC' : '')) + (c.model ? ' · ' + c.model : '') + (c.stale ? ' · ikke opdateret med nyeste data' : '');
+    return;
+  }
   // Læs fra data.json (genereret server-side af update_kpi.py — ingen proxy nødvendig)
   if (D.coachAssessmentHtml) {
     box.innerHTML = credBanner() + structureBanner() + staleBanner() + D.coachAssessmentHtml;
@@ -1776,6 +1830,7 @@ function _coachAgeH(tsFull) {
 
 function _applyCoach(d) {
   if (!d) return;
+  if ('coach' in d) D.coach = (d.coach && typeof d.coach === 'object') ? d.coach : null;
   if (d.coachAssessmentHtml) D.coachAssessmentHtml = d.coachAssessmentHtml;
   if (d.coachAssessmentTs)   D.coachAssessmentTs   = d.coachAssessmentTs;
   if ('coachAssessmentStale' in d) D.coachAssessmentStale = d.coachAssessmentStale;
@@ -3158,6 +3213,7 @@ function applyRemote(remote) {
       if (remote.sleepHistory)   D.sleepHistory   = remote.sleepHistory;
       if (remote.fatHistory)     D.fatHistory     = remote.fatHistory;
       if (remote.tsbHistory)     D.tsbHistory     = remote.tsbHistory;
+      if ('coach' in remote)           D.coach                = (remote.coach && typeof remote.coach === 'object') ? remote.coach : null;
       if (remote.coachSpeech)          D.coachSpeech          = remote.coachSpeech;
       if (remote.coachHighlight)       D.coachHighlight       = remote.coachHighlight;
       if (remote.coachAssessmentHtml)  D.coachAssessmentHtml  = remote.coachAssessmentHtml;
