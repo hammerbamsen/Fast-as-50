@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-09-06 10:03",
+    "updated": "2026-09-06 12:41",
     "week": 14,
     "totalWeeks": 14,
     "blockType": "RACE",
@@ -34,13 +34,13 @@
       "color": "#C0392B"
     },
     "ctl": {
-      "value": "50,4",
+      "value": "50,8",
       "unit": "",
       "sub": "Uge 14-mål 43 · RACE",
       "color": "#27AE60"
     },
     "tsb": {
-      "value": "-0,7",
+      "value": "-2,2",
       "unit": "",
       "sub": "Form · CTL−ATL, frisk >0",
       "color": "#27AE60"
@@ -70,9 +70,9 @@
       "color": "#7A6A58"
     },
     "tssComp": {
-      "value": "348",
+      "value": "362",
       "unit": "TSS",
-      "sub": "348 af 132 planlagt TSS",
+      "sub": "362 af 93 planlagt TSS",
       "color": "#27AE60"
     },
     "bikeKm": {
@@ -105,17 +105,17 @@
     "target": 6,
     "streak": 0
   },
-  "coachSpeech": "Søndag — afslut uge 14 stærkt. {HL} Godt: Søvn på 7,2 timer er solid. Fokus: Vægt på 72,3 kg (målt 3/9) — protein ved hvert måltid, alkohol som bevidst valg, søvn 7-8 t. Vægt/fedt vurderes på 7d-snit mod planen, ikke på én vejning. 3 AF-dage i 7 afsluttede dage — 3 mangler i 0 dage tilbage. Alle sessioner i hus. Juster de små ting, og resten følger. ❤️ Aerobt: VIGTIGT: Løbeturen 5/9 (snitpuls 127) kostede 26,5 % mere puls pr. meter end medianen af de seneste 4 sammenlignelige pas (EF 0,994 mod 1,352). Forbehold, som IKKE er trukket fra tallet: det var 29,7 °C. Konkluder ikke overtræning ud fra ét pas — sig hvad passet kostede, og at det enten var varmen eller for højt tempo. 📊 Store billede: CTL 50,4 er 7.4 point FORAN ugeplanen (planmål uge 14: 43). Vægten har tabt 2.4 kg over de seneste 89 dage (74,7 → 72,3 kg).  \"Den bedste træning er den, du faktisk gennemfører.\"",
-  "coachHighlight": "264 procent af ugens TSS er i hus",
+  "coachSpeech": "Søndag — afslut uge 14 stærkt. {HL} Godt: Søvn på 7,2 timer er solid. Fokus: Vægt på 72,3 kg (målt 3/9) — protein ved hvert måltid, alkohol som bevidst valg, søvn 7-8 t. Vægt/fedt vurderes på 7d-snit mod planen, ikke på én vejning. 3 AF-dage i 7 afsluttede dage — 3 mangler i 0 dage tilbage. Alle sessioner i hus. Juster de små ting, og resten følger. ❤️ Aerobt: VIGTIGT: Løbeturen 5/9 (snitpuls 127) kostede 26,5 % mere puls pr. meter end medianen af de seneste 4 sammenlignelige pas (EF 0,994 mod 1,352). Forbehold, som IKKE er trukket fra tallet: det var 29,7 °C. Konkluder ikke overtræning ud fra ét pas — sig hvad passet kostede, og at det enten var varmen eller for højt tempo. 📊 Store billede: CTL 50,8 er 7.8 point FORAN ugeplanen (planmål uge 14: 43). Vægten har tabt 2.4 kg over de seneste 89 dage (74,7 → 72,3 kg).  \"Den bedste træning er den, du faktisk gennemfører.\"",
+  "coachHighlight": "389 procent af ugens TSS er i hus",
   "weekFocus": "Taper færdig — hold kroppen klar til Médoc-lørdagen",
   "today": [
     {
-      "discipline": "rest",
-      "title": "Hviledag",
+      "discipline": "walk",
+      "title": "Saint-Julien-Beychevelle Gang",
       "duration": "",
       "zone": "–",
-      "desc": "Ingen planlagt træning i dag.",
-      "completed": false
+      "desc": "",
+      "completed": true
     }
   ],
   "week_sessions": [
@@ -155,8 +155,7 @@
       "completion_pct": 91,
       "actual_tss": 31,
       "actual_mins": 45,
-      "actual_distance_m": 23912.19,
-      "intervals_compliance": 91.2
+      "actual_distance_m": 23912.19
     },
     {
       "day": "Tir",
@@ -190,23 +189,17 @@
       "completion_pct": 150,
       "actual_tss": 42,
       "actual_mins": 33,
-      "actual_distance_m": 6588.52,
-      "intervals_compliance": 150.0
+      "actual_distance_m": 6588.52
     },
     {
       "day": "Tor",
       "disc": "bike",
-      "label": "Cykel indendørs 60 min race-uge åbnere",
+      "label": "Race-uge åbner T-2",
       "done": true,
-      "planned_tss": 39,
-      "planned_mins": 60,
-      "planned_distance_m": null,
-      "completion": "done",
-      "completion_pct": 105,
+      "extra": true,
       "actual_tss": 41,
       "actual_mins": 60,
-      "actual_distance_m": 31181.66,
-      "intervals_compliance": 105.1
+      "actual_distance_m": 31181.66
     },
     {
       "day": "Fre",
@@ -220,8 +213,7 @@
       "completion_pct": 71,
       "actual_tss": 10,
       "actual_mins": 13,
-      "actual_distance_m": 2015.24,
-      "intervals_compliance": 71.4
+      "actual_distance_m": 2015.24
     },
     {
       "day": "Fre",
@@ -242,6 +234,17 @@
       "actual_tss": 176,
       "actual_mins": 342,
       "actual_distance_m": 43242.22
+    },
+    {
+      "day": "Søn",
+      "disc": "walk",
+      "label": "Saint-Julien-Beychevelle Gang",
+      "done": true,
+      "extra": true,
+      "actual_tss": 14,
+      "actual_mins": 137,
+      "actual_distance_m": 10257.66,
+      "today": true
     }
   ],
   "ctlCurve": [
@@ -258,7 +261,7 @@
     52.9,
     52.4,
     50.7,
-    50.4
+    50.8
   ],
   "weightHistory": [
     {
@@ -1944,7 +1947,7 @@
     },
     {
       "date": "2026-09-06",
-      "v": -0.7,
+      "v": -2.2,
       "real": true
     }
   ],
@@ -2198,8 +2201,7 @@
           "completion_pct": 91,
           "actual_tss": 31,
           "actual_mins": 45,
-          "actual_distance_m": 23912.19,
-          "intervals_compliance": 91.2
+          "actual_distance_m": 23912.19
         },
         {
           "day": "Tir",
@@ -2233,23 +2235,17 @@
           "completion_pct": 150,
           "actual_tss": 42,
           "actual_mins": 33,
-          "actual_distance_m": 6588.52,
-          "intervals_compliance": 150.0
+          "actual_distance_m": 6588.52
         },
         {
           "day": "Tor",
           "disc": "bike",
-          "label": "Cykel indendørs 60 min race-uge åbnere",
+          "label": "Race-uge åbner T-2",
           "done": true,
-          "planned_tss": 39,
-          "planned_mins": 60,
-          "planned_distance_m": null,
-          "completion": "done",
-          "completion_pct": 105,
+          "extra": true,
           "actual_tss": 41,
           "actual_mins": 60,
-          "actual_distance_m": 31181.66,
-          "intervals_compliance": 105.1
+          "actual_distance_m": 31181.66
         },
         {
           "day": "Fre",
@@ -2263,8 +2259,7 @@
           "completion_pct": 71,
           "actual_tss": 10,
           "actual_mins": 13,
-          "actual_distance_m": 2015.24,
-          "intervals_compliance": 71.4
+          "actual_distance_m": 2015.24
         },
         {
           "day": "Fre",
@@ -2285,6 +2280,17 @@
           "actual_tss": 176,
           "actual_mins": 342,
           "actual_distance_m": 43242.22
+        },
+        {
+          "day": "Søn",
+          "disc": "walk",
+          "label": "Saint-Julien-Beychevelle Gang",
+          "done": true,
+          "extra": true,
+          "actual_tss": 14,
+          "actual_mins": 137,
+          "actual_distance_m": 10257.66,
+          "today": true
         }
       ],
       "blockType": "RACE",
@@ -2392,12 +2398,12 @@
     }
   ],
   "train_mins": {
+    "walk": 327.0,
     "run": 388.0,
-    "walk": 190.0,
     "bike": 105.0,
     "strength": 40.0,
-    "planned": 175.0,
-    "actual_total": 723.0
+    "planned": 115.0,
+    "actual_total": 860.0
   },
   "fatHistory": [
     {
@@ -2731,8 +2737,8 @@
     null,
     null
   ],
-  "coachAssessmentHtml": "<p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\"><strong>Dag 98 af 98 · Søndag · Uge 14</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">💪 <strong>Træning & load</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Médoc er i kassen — 43,2 km på 342 minutter med 176 TSS. Det er en stor dag, og kroppen har leveret. Én ting at notere: løbeturen 5/9 kostede 26,5 % mere puls pr. meter end dine seneste sammenlignelige pas (EF 0,994 mod median 1,352) — det er formentlig de 29,7 °C, men det kan også have været et for højt starttempo. Ét pas er ikke nok til at konkludere noget om form, men hold øje med det til næste løb i varme. CTL er nu 50,4 og TSB -0,7 — kroppen er belastet men langt fra rød zone, og du har en hviledag i dag til at lukke ugen af.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">⚖️ <strong>Krop & kost</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Vægten var 72,3 kg ved vejningen 3/9 — 4,3 kg fra målet på under 68 kg. 7-dages snittet på fedtprocenten er 21,6 % og er steget 0,2 procentpoint over de seneste 7 dage — det er den reelle retning, og den går den forkerte vej lige nu. Protein er registreret 0 af 3 dage, og energi-snittet er 1,0 — det er den direkte forklaring på at fedtprocenten ikke bevæger sig nedad. To A-løb er nu overstået; det er herfra kostdisciplinen skal sidde, hvis kropssammensætningen skal rykke sig.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">🎯 <strong>AF-status & fokus for resten af ugen</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">3 AF-dage ud af 7 dage gået i ugen — det er under målet om 6, og en Médoc-lørdag giver sjældent en AF-dag. I dag er hviledag og den naturlige landing efter en stor indsats — brug den til at nulstille og slutte ugen roligt. Der er ingen planlagte pas tilbage, så fokus er simpelt: ro, søvn og en god afslutning på ugen.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">📊 <strong>Store billede</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">CTL er 50,4 — det er 7,4 point foran ugeplanen, som lød på 43 for uge 14. Du har bygget mere kapacitet end planlagt, og det er et godt udgangspunkt for det der kommer efter Médoc. Vægten er faldet 2,4 kg over de seneste 89 dage, fra 74,7 til 72,3 kg — det er en stabil og reel bevægelse i den rigtige retning. Nu skal retningen på fedtprocenten vende — og det sker i køkkenet, ikke på løbestien.</p>",
-  "coachAssessmentTs": "03:18",
+  "coachAssessmentHtml": "<p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\"><strong>Dag 98 af 98 · Søndag · Uge 14</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">💪 <strong>Træning & load</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Médoc-løbet lørdag kostede 176 TSS og 342 min — det var dagens store post, og det satte sine spor: snitpulsen på 127 gav en EF på 0,994 mod en median på 1,352 på sammenlignelige pas — 26,5 % mere puls pr. meter. Det skyldtes sandsynligvis de 29,7 °C, men kan også være et tegn på for højt tempo undervejs. Konkluder ikke overtræning på ét pas — CTL på 50,8 og TSB på -2,2 er sunde tal, og kroppen er der, den skal være. Søndagens gåtur i Saint-Julien-Beychevelle (10,3 km · 137 min · 14 TSS) var præcis det rigtige afsluttende pas: roligt, langt og uden belastning.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">⚖️ <strong>Krop & kost</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">Vægten var 72,3 kg ved seneste vejning 3/9 — det er 4,3 kg fra målet. Fedtprocenten var 21,9 % samme dag, og 7-dages snittet for fedtprocent er gået 0,2 point op over de seneste 7 dage — det er den retning, der tæller, og den peger den forkerte vej lige nu. Protein er registreret 0 ud af 3 mulige dage i perioden, og energi-snittet er 1,0 — det hænger sandsynligvis sammen. Prioritér proteinet i restitutionsdagene efter Médoc: du skal passe på muskelmassen, ikke kun vægten.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">🎯 <strong>AF-status & fokus for resten af ugen</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">3 AF-dage ud af 7 dage gået i ugen — det er under målet om 6/uge. Der er ingen planlagte pas tilbage i dag, så fokus nu er restitution og mad. Kroppen har fået et hårdt løb i varmen, og den har brug for ro, væske og kalorier — ikke kalorieunderskud. Médoc er kørt; lad kroppen lande.</p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">📊 <strong>Store billede</strong></p><p style=\"margin:0 0 8px;font-family:'Hanken Grotesk',sans-serif;font-size:14px;line-height:1.6;color:var(--ink)\">CTL er 50,8 — det er 7,8 point foran ugeplanens mål på 43 for uge 14. Det er en solid overdosis af god arbejde i et 14-ugers forløb. Vægten er gået fra 74,7 kg til 72,3 kg over de seneste 89 dage — et reelt tab på 2,4 kg. Nu er begge A-løb gennemført: det er tid til at trække vejret og planlægge næste fase.</p>",
+  "coachAssessmentTs": "10:41",
   "commute_pairing_warnings": [],
   "warnings": [
     {
@@ -2746,7 +2752,7 @@
       "message": "2 drikkedage i træk 4/9–5/9 — klynger rammer HRV hårdere end spredte dage."
     }
   ],
-  "tsb": -0.7,
+  "tsb": -2.2,
   "swimHistory": [
     {
       "week": 1,
@@ -2833,9 +2839,9 @@
       "cumulative": 29362.0
     }
   ],
-  "coachAssessmentLastActId": "i183629392",
+  "coachAssessmentLastActId": "i183862220",
   "weekFocusWeek": 14,
-  "coachAssessmentPlanAtGen": "",
+  "coachAssessmentPlanAtGen": "Saint-Julien-Beychevelle Gang",
   "weightGoal": 68,
   "bodyFatGoal": 16,
   "weightMovingAvg7": [
@@ -3052,8 +3058,8 @@
       "note": "Nøgle virker"
     }
   },
-  "credentialsCheckedTs": "2026-09-06T08:03:19.112105",
-  "coachAssessmentTsFull": "2026-09-06T03:18:17.402421",
+  "credentialsCheckedTs": "2026-09-06T10:41:28.780689",
+  "coachAssessmentTsFull": "2026-09-06T10:41:28.780670",
   "coachAssessmentWeightAtGen": 72.3,
   "coachAssessmentAfAtGen": 3,
   "event_structure_warnings": [],
@@ -3153,7 +3159,7 @@
     "11": 374,
     "12": 367,
     "13": 320,
-    "14": 348
+    "14": 362
   },
   "racesUpcoming": [
     {
