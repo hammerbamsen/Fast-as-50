@@ -180,3 +180,19 @@ def get_ctl_curve():
         curve.append(val)
         w += timedelta(weeks=1)
     return curve
+
+
+def get_ctl_daily(days=91):
+    """{iso-dato: ctl} for de sidste `days` dage — på tværs af programmer.
+    Bruges af plan_tab (CTL-historik 12 uger). None ved API-fejl."""
+    today  = date.today()
+    oldest = str(today - timedelta(days=days - 1))
+    r = api_get(f'{BASE}/wellness', auth=AUTH, params={'oldest': oldest, 'newest': str(today)})
+    if not r or r.status_code != 200:
+        return None
+    out = {}
+    for d in r.json():
+        k = (d.get('id') or d.get('date') or '')[:10]
+        if k and d.get('ctl') is not None:
+            out[k] = round(d['ctl'], 1)
+    return out

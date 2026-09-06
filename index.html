@@ -148,6 +148,13 @@ html,body { height:100%; background:var(--bg); font-family:'Hanken Grotesk',sans
 /* Coach speech */
 .coach-text { font-family:'Hanken Grotesk',sans-serif; font-size:14px; color:var(--hero-ink); line-height:1.65; position:relative; }
 .coach-hl { color:var(--gold); font-weight:700; }
+/* Coach v2: vurdering renderet fra sektioner — klasser, ingen inline font-styles */
+.coach-head { margin:0 0 8px; font-size:14px; line-height:1.6; color:var(--ink); }
+.coach-sec  { margin:0 0 10px; font-family:'Hanken Grotesk',sans-serif; font-size:14px; line-height:1.6; color:var(--ink); }
+.coach-sec-h { display:block; font-family:'Space Mono',monospace; font-size:10px; letter-spacing:.06em; text-transform:uppercase; color:var(--muted); margin-bottom:2px; }
+.coach-big { color:var(--muted); }
+.coach-voice-big { display:block; color:var(--hero-muted); font-size:13px; margin-bottom:6px; }
+.banner .act-btn { margin-top:6px; display:inline-block; background:var(--card); color:var(--ink); border:1px solid var(--line); border-radius:8px; padding:5px 10px; font-family:'Space Mono',monospace; font-size:11px; cursor:pointer; }
 
 /* Status row */
 .status-row { display:grid; grid-template-columns:1fr 1fr 1fr auto; gap:10px; margin-bottom:14px; }
@@ -318,6 +325,107 @@ details.fold[open] > summary::after { content:"▴"; }
 .legend { font-size:11px; color:var(--muted); margin-top:8px; }
 .close { margin-top:12px; width:100%; background:var(--bg-2); border:0; border-radius:10px; padding:12px; font:600 14px 'Hanken Grotesk',sans-serif; color:var(--ink); cursor:pointer; }
 
+/* ── Plan-fanen (blok 4, 6/9-26): blokstribe + CTL + valgt uge + ⋯-ark ── */
+.pt-strip { display:flex; gap:8px; overflow-x:auto; scroll-snap-type:x mandatory; padding:2px 2px 8px; margin:0 -2px 6px; -webkit-overflow-scrolling:touch; scrollbar-width:none; }
+.pt-strip::-webkit-scrollbar { display:none; }
+.pt-wk { flex:0 0 152px; scroll-snap-align:center; background:var(--card); border:1.5px solid var(--line); border-radius:12px; padding:10px 10px 9px; cursor:pointer; text-align:left; font-family:'Hanken Grotesk',sans-serif; color:var(--ink); display:flex; flex-direction:column; gap:4px; min-height:132px; }
+.pt-wk.cur { border-color:var(--wine); }
+.pt-wk.sel { background:var(--bg-2); box-shadow:inset 0 0 0 1.5px var(--wine); }
+.pt-wk.past { opacity:.72; }
+.pt-wk .wn { font-family:'Space Mono',monospace; font-size:10px; letter-spacing:.06em; text-transform:uppercase; color:var(--muted); white-space:nowrap; line-height:1.35; }
+.pt-wk .wn b { color:var(--num); font-size:11px; display:block; }
+.pt-wk .nums { font-family:'Space Mono',monospace; font-size:10.5px; color:var(--ink); line-height:1.5; }
+.pt-wk .nums span { color:var(--muted); }
+.pt-wk .pur { font-size:11.5px; color:var(--muted); line-height:1.3; overflow:hidden; text-overflow:ellipsis; display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; margin-top:auto; }
+.pt-blk { display:inline-flex; align-items:center; gap:5px; font-family:'Space Mono',monospace; font-size:9.5px; font-weight:700; letter-spacing:.06em; padding:2px 7px; border-radius:6px; background:var(--bk-bg,var(--bg-2)); color:var(--bk-fg,var(--muted)); white-space:nowrap; }
+.pt-blk.RECOVERY { --bk-bg:rgba(107,138,122,.18); --bk-fg:#4E7A63; }
+.pt-blk.BASE     { --bk-bg:rgba(22,50,79,.14);   --bk-fg:#24507A; }
+.pt-blk.BUILD    { --bk-bg:rgba(211,162,74,.22); --bk-fg:#9A6B1E; }
+.pt-blk.RACE     { --bk-bg:rgba(190,134,58,.25); --bk-fg:#8C5A12; }
+.pt-blk.TAPER    { --bk-bg:rgba(58,143,209,.16); --bk-fg:#2A6FA8; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .pt-blk.RECOVERY { --bk-fg:#9CC4AE; } :root:not([data-theme="light"]) .pt-blk.BASE { --bk-bg:rgba(184,199,214,.16); --bk-fg:#B8C7D6; } :root:not([data-theme="light"]) .pt-blk.BUILD { --bk-fg:#E8BC6A; } :root:not([data-theme="light"]) .pt-blk.RACE { --bk-fg:#F0C878; } :root:not([data-theme="light"]) .pt-blk.TAPER { --bk-fg:#8FC1EC; } }
+:root[data-theme="dark"] .pt-blk.RECOVERY { --bk-fg:#9CC4AE; } :root[data-theme="dark"] .pt-blk.BASE { --bk-bg:rgba(184,199,214,.16); --bk-fg:#B8C7D6; } :root[data-theme="dark"] .pt-blk.BUILD { --bk-fg:#E8BC6A; } :root[data-theme="dark"] .pt-blk.RACE { --bk-fg:#F0C878; } :root[data-theme="dark"] .pt-blk.TAPER { --bk-fg:#8FC1EC; }
+.pt-dots { font-family:'Space Mono',monospace; font-size:10px; letter-spacing:.04em; color:var(--muted); display:flex; gap:8px; }
+.pt-dots i { font-style:normal; letter-spacing:1px; }
+.pt-dots i.h { color:var(--act); } .pt-dots i.m { color:var(--watch); }
+.pt-dots i.over { text-decoration:underline; }
+.pt-flag { display:inline-flex; align-items:center; gap:4px; font-family:'Space Mono',monospace; font-size:9.5px; font-weight:700; padding:2px 7px; border-radius:999px; border:1px solid; letter-spacing:.03em; }
+.pt-flag.WARN { color:#9A6B1E; border-color:rgba(211,162,74,.5); background:rgba(211,162,74,.12); }
+.pt-flag.HARD { color:var(--act); border-color:rgba(192,57,43,.45); background:rgba(192,57,43,.1); }
+.pt-flag.OK { color:var(--ok); border-color:rgba(46,139,87,.4); background:rgba(46,139,87,.1); }
+.pt-flag.hist { opacity:.5; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .pt-flag.WARN { color:#E8BC6A; } }
+:root[data-theme="dark"] .pt-flag.WARN { color:#E8BC6A; }
+.pt-head { margin:14px 0 8px; }
+.pt-head .t { font-family:'Newsreader',serif; font-size:22px; font-weight:600; color:var(--ink); line-height:1.15; display:flex; align-items:center; gap:8px; flex-wrap:wrap; }
+.pt-head .p { font-size:13.5px; color:var(--muted); margin-top:3px; line-height:1.4; }
+.pt-head .fl { display:flex; gap:6px; flex-wrap:wrap; margin-top:7px; }
+.pt-day { display:grid; grid-template-columns:52px 1fr; gap:8px; margin-bottom:8px; }
+.pt-day.today .dn b { color:var(--wine); }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .pt-day.today .dn b { color:var(--gold); } }
+:root[data-theme="dark"] .pt-day.today .dn b { color:var(--gold); }
+.pt-day .dn { padding-top:12px; font-family:'Space Mono',monospace; font-size:10px; letter-spacing:.06em; text-transform:uppercase; color:var(--muted); line-height:1.4; }
+.pt-day .dn b { display:block; font-size:12px; color:var(--ink); }
+.pt-day .dn.race::after { content:"🏆"; display:block; font-size:13px; margin-top:2px; }
+.pt-sess { background:var(--card); border:1.5px solid var(--line); border-radius:12px; padding:10px 10px 9px 12px; margin-bottom:6px; display:grid; grid-template-columns:auto 1fr auto; gap:10px; align-items:start; cursor:pointer; }
+.pt-sess.key { border-left:3px solid var(--gold); }
+.pt-sess.extra { border-style:dashed; opacity:.8; }
+.pt-sess.done { background:var(--bg-2); }
+.pt-sess .ic { width:32px; height:32px; border-radius:8px; display:flex; align-items:center; justify-content:center; background:color-mix(in srgb, var(--dc) 15%, transparent); margin-top:1px; }
+.pt-sess .nm { font-size:14.5px; font-weight:600; color:var(--ink); line-height:1.25; }
+.pt-sess .mt { font-family:'Space Mono',monospace; font-size:10px; color:var(--muted); margin-top:3px; display:flex; gap:6px; flex-wrap:wrap; align-items:center; line-height:1.6; }
+.pt-sess .mt .ok { color:var(--ok); font-weight:700; }
+.pt-sess .more { appearance:none; border:1px solid var(--line); background:var(--bg); color:var(--ink); border-radius:8px; width:34px; height:34px; font-size:18px; line-height:1; cursor:pointer; font-family:'Hanken Grotesk',sans-serif; padding:0; }
+.pt-sess .more:focus-visible { outline:2px solid var(--gold); }
+.pt-sess .det { grid-column:1 / -1; display:none; font-size:13px; color:var(--ink); line-height:1.5; border-top:1px solid var(--line); padding-top:8px; margin-top:2px; }
+.pt-sess.open .det { display:block; }
+.pt-sess .det .lab { display:block; font-family:'Space Mono',monospace; font-size:9px; letter-spacing:.06em; text-transform:uppercase; color:var(--muted); margin:6px 0 2px; }
+.pt-load { display:inline-block; font-family:'Space Mono',monospace; font-size:9px; font-weight:700; letter-spacing:.05em; text-transform:uppercase; padding:1px 6px; border-radius:5px; }
+.pt-load.let { background:rgba(46,139,87,.14); color:var(--ok); }
+.pt-load.moderat { background:rgba(211,162,74,.2); color:#9A6B1E; }
+.pt-load.haard { background:rgba(192,57,43,.14); color:var(--act); }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .pt-load.moderat { color:#E8BC6A; } }
+:root[data-theme="dark"] .pt-load.moderat { color:#E8BC6A; }
+.pt-erg { display:inline-block; font-family:'Space Mono',monospace; font-size:9px; letter-spacing:.05em; padding:1px 6px; border-radius:5px; border:1px solid var(--line); color:var(--muted); }
+.pt-erg.no { border-color:rgba(192,57,43,.45); color:var(--act); font-weight:700; }
+.pt-key { font-family:'Space Mono',monospace; font-size:9px; letter-spacing:.05em; color:var(--gold); font-weight:700; text-transform:uppercase; }
+.pt-free { padding:11px 12px; border:1.5px dashed var(--line); border-radius:12px; color:var(--muted); font-size:13px; margin-bottom:6px; }
+.pt-gap { grid-column:2; display:flex; align-items:center; gap:8px; font-family:'Space Mono',monospace; font-size:10px; color:var(--ok); margin:-2px 0 8px; }
+.pt-gap::before, .pt-gap::after { content:""; flex:1; height:1px; background:currentColor; opacity:.5; }
+.pt-gap.bad { color:var(--act); }
+.pt-ctl { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:12px 10px 8px; margin-bottom:6px; }
+.pt-ctl .lab { margin-bottom:6px; }
+.pt-ctl svg { width:100%; height:auto; display:block; }
+.pt-legend { display:flex; gap:12px; flex-wrap:wrap; font-family:'Space Mono',monospace; font-size:9px; color:var(--muted); margin-top:6px; }
+.pt-legend span::before { content:""; display:inline-block; width:14px; height:2px; margin-right:5px; vertical-align:middle; background:var(--lc); }
+.pt-legend span.dash::before { background:repeating-linear-gradient(90deg, var(--lc) 0 4px, transparent 4px 7px); }
+.pt-legend span.dot::before { width:7px; height:7px; border-radius:50%; }
+.pt-link { display:block; text-align:center; font-family:'Space Mono',monospace; font-size:10px; letter-spacing:.06em; color:var(--muted); text-decoration:none; padding:6px 0 14px; }
+/* ⋯-ark */
+.pt-menu { display:grid; gap:8px; margin:8px 0 4px; }
+.pt-menu button, .pt-pick button { appearance:none; text-align:left; border:1.5px solid var(--line); background:var(--bg); color:var(--ink); border-radius:12px; padding:12px 14px; font:600 14px 'Hanken Grotesk',sans-serif; cursor:pointer; display:flex; align-items:center; gap:10px; }
+.pt-menu button small, .pt-pick button small { display:block; font-weight:400; font-size:11.5px; color:var(--muted); margin-top:1px; }
+.pt-menu button.danger { color:var(--act); }
+.pt-pick { display:grid; gap:6px; max-height:52vh; overflow-y:auto; margin:6px 0; }
+.pt-pick button { padding:10px 12px; }
+.pt-pick button.sel { border-color:var(--wine); box-shadow:inset 0 0 0 1px var(--wine); }
+.pt-pick button > span:first-child { flex:1; min-width:0; }
+.pt-pick .cat { font-family:'Space Mono',monospace; font-size:9.5px; letter-spacing:.08em; text-transform:uppercase; color:var(--muted); margin:8px 0 2px; }
+.pt-cons { border-radius:10px; padding:10px 12px; font-size:13px; line-height:1.5; margin:8px 0; background:var(--bg-2); color:var(--ink); }
+.pt-cons.warn { background:rgba(211,162,74,.16); }
+.pt-cons.bad { background:rgba(192,57,43,.12); }
+.pt-cons.ok { background:rgba(46,139,87,.12); }
+.pt-cons b { font-family:'Space Mono',monospace; font-size:12px; }
+.pt-msg { min-height:18px; font-size:13px; line-height:1.5; margin:6px 0; }
+.pt-msg .flags { display:flex; gap:6px; flex-wrap:wrap; margin:4px 0 6px; }
+.pt-btns { display:flex; gap:8px; margin-top:10px; }
+.pt-btns button { flex:1; border:0; border-radius:10px; padding:12px; font:600 14px 'Hanken Grotesk',sans-serif; cursor:pointer; }
+.pt-btns .pri { background:var(--wine); color:#fff; }
+.pt-btns .pri.danger { background:var(--act); }
+.pt-btns .sec { background:var(--bg-2); color:var(--ink); }
+.pt-btns button:disabled { opacity:.5; cursor:default; }
+.sheet textarea.pt-note { width:100%; min-height:80px; border:1.5px solid var(--line); border-radius:10px; background:var(--bg); color:var(--ink); padding:10px 12px; font:14px 'Hanken Grotesk',sans-serif; resize:vertical; }
+
 /* Page sections */
 .page { display:none; }
 .page.active { display:block; }
@@ -404,6 +512,13 @@ details.fold[open] > summary::after { content:"▴"; }
   <div class="dots" id="log-dots"></div>
   <div class="legend">Øverste række: AF-dag (grøn) · valgt (gul) · bare skete / før 4/9 (rød). Nederste: protein 3/3 · 2/3 · ≤1.</div>
   <button class="close" onclick="showLogSheet(false)">Luk</button>
+</div>
+
+<!-- PLAN-ARK (⋯ pr. pas): Flyt / Aflys / Skift pas / Note → Worker /plan-edit -->
+<div class="scrim" id="plan-scrim" onclick="ptCloseSheet()"></div>
+<div class="sheet" id="plan-sheet" role="dialog" aria-label="Redigér pas" aria-hidden="true">
+  <div class="handle"></div>
+  <div id="plan-sheet-body"></div>
 </div>
 
 <script>
@@ -552,6 +667,7 @@ let D = {
   coachHighlight:"",
   weekFocus:"",
   coachAssessment: null,
+  coach: null,            // coach v2 (6/9-26): {oneThing, training, body, habits, bigPicture, weekFocus, warnings, ...}
   coachAssessmentHtml: '',
   coachAssessmentTs: '',
   coachAssessmentStale: false,
@@ -581,6 +697,7 @@ let D = {
   kpiProtein: null, // data.json kpis.protein
   energy7: null,
   readinessRemote: null,
+  planTab: null,    // data.json planTab (scripts/modules/plan_tab.py) — Plan-fanen
 };
 
 let sessionDoneList = [];
@@ -874,23 +991,48 @@ function toggleDayInfo(i){
   info.innerHTML = `<span class="lab">${day.d} ${day.dateLabel}${day.today?' · i dag':''}</span><ul>${items.join('')}</ul>`;
 }
 
-// "Én ting i dag": højeste advarsel > coachHighlight > weekFocus. Begrundelse
-// = de næste relevante fakta (søvn under 7, HRV-drop, næste løb om N dage).
+// "Én ting i dag": coach v2's oneThing (action + why) når den findes — ellers
+// højeste advarsel > coachHighlight > weekFocus. Begrundelse = why, ellers de
+// næste relevante fakta (søvn under 7, HRV-drop, næste løb om N dage).
+function coachV2(){ const c = D.coach; return (c && typeof c === 'object' && c.oneThing && c.oneThing.action) ? c : null; }
 function oneThing(r){
-  const rank = { critical:0, warn:1 };
+  const c = coachV2();
+  const rank = { critical:0, act:0, warn:1 };
   const warns = (D.warnings||[]).filter(w=>w&&w.message).sort((a,b)=>(rank[a.level]??2)-(rank[b.level]??2));
-  let main = warns.length ? warns[0].message : (D.coachHighlight || D.weekFocus || '');
+  let main = c ? c.oneThing.action : (warns.length ? warns[0].message : (D.coachHighlight || D.weekFocus || ''));
   if (!main) main = D.dataLoaded ? 'Ingen særlig besked i dag.' : '—';
   main = capFirst(String(main).trim());
   if (main && !/[.!?…]$/.test(main)) main += '.';
   const why = [];
-  if (r.sleep!=null && r.sleep < 7) why.push(`Søvn ${fmtDa(r.sleep)} t i nat — under 7.`);
-  if (r.pct!=null && r.pct <= -10) why.push(`HRV ${Math.abs(r.pct)} % under 7d-snit.`);
-  if (D.nextRace && D.nextRace.name) {
-    const n = D.nextRace.daysTo;
-    why.push(n===0 ? `${D.nextRace.name} er i dag.` : n===1 ? `I morgen: ${D.nextRace.name}.` : `Næste løb: ${D.nextRace.name} om ${n} dage.`);
+  if (c && c.oneThing.why) why.push(capFirst(String(c.oneThing.why).trim()));
+  else {
+    if (r.sleep!=null && r.sleep < 7) why.push(`Søvn ${fmtDa(r.sleep)} t i nat — under 7.`);
+    if (r.pct!=null && r.pct <= -10) why.push(`HRV ${Math.abs(r.pct)} % under 7d-snit.`);
+    if (D.nextRace && D.nextRace.name) {
+      const n = D.nextRace.daysTo;
+      why.push(n===0 ? `${D.nextRace.name} er i dag.` : n===1 ? `I morgen: ${D.nextRace.name}.` : `Næste løb: ${D.nextRace.name} om ${n} dage.`);
+    }
   }
-  return `<div class="action"><span class="lab">Én ting i dag</span><p>${esc(main)}</p>${why.length?`<p>${esc(why.slice(0,2).join(' '))}</p>`:''}</div>`;
+  const stale = c && c.stale ? `<p class="small" style="color:var(--muted);font-size:11px">Coachen er ikke opdateret med de nyeste data.</p>` : '';
+  return `<div class="action"><span class="lab">Én ting i dag</span><p>${esc(main)}</p>${why.length?`<p>${esc(why.slice(0,2).join(' '))}</p>`:''}${stale}</div>`;
+}
+
+// Coach-advarsel med handling -> åbn Plan-fanens ⋯-ark med handlingen forudvalgt.
+function coachActionWarning(){
+  const c = coachV2(); if (!c || !Array.isArray(c.warnings)) return null;
+  return c.warnings.find(w => w && w.action && w.action.edit && w.action.edit.entryId && ptFindEntry(w.action.edit.entryId)) || null;
+}
+function coachOpenAction(idx){
+  const c = coachV2(); const w = c && c.warnings && c.warnings[idx]; if (!w || !w.action || !w.action.edit) return;
+  const ed = w.action.edit;
+  navigate('plan');
+  setTimeout(() => {
+    if (!ptFindEntry(ed.entryId)) return;
+    ptOpenSheet(ed.entryId);
+    if (ed.action === 'move') { ptSheetMove(); if (ed.toDate) { const b = [...document.querySelectorAll('#pt-move-pick button')].find(x => x.getAttribute('onclick').includes(`'${ed.toDate}'`)); if (b) ptPickMove(ed.toDate, b); } }
+    else if (ed.action === 'cancel') ptSheetCancel();
+    else if (ed.action === 'swap_template') { Promise.resolve(ptSheetSwap()).then(() => { if (ed.templateId) { const b = [...document.querySelectorAll('#pt-tpl-pick button')].find(x => x.getAttribute('onclick').includes(`'${ed.templateId}'`)); if (b) ptPickTemplate(ed.templateId, b); } }); }
+  }, 80);
 }
 
 // Ét banner-slot: data-fejl > stale > nøgler > kritisk advarsel > readiness.
@@ -901,7 +1043,9 @@ function bannerSlotHtml(){
   const c = D.credentials || {};
   const bad = Object.keys(c).filter(k => c[k] && !c[k].ok);
   if (bad.length) return `<div class="banner act"><span>⛔</span><span><b>Nøgle-problem</b>${bad.map(k=>`<span class="row"><b>${esc(k)}</b> — ${esc(c[k].note)}</span>`).join('')}</span></div>`;
-  const crit = (D.warnings||[]).find(w => w && w.level==='critical' && w.message);
+  const aw = coachActionWarning();
+  if (aw) { const i = coachV2().warnings.indexOf(aw); return `<div class="banner ${aw.level==='act'?'act':'warn'}"><span>${WARN_ICONS[aw.type]||'⚠️'}</span><span>${esc(aw.message)}<br><button class="act-btn" onclick="coachOpenAction(${i})">${esc(aw.action.label||'Åbn i planen')} →</button></span></div>`; }
+  const crit = (D.warnings||[]).find(w => w && (w.level==='critical' || w.level==='act') && w.message);
   if (crit) return `<div class="banner act"><span>${WARN_ICONS[crit.type]||'⚠️'}</span><span>${esc(crit.message)}</span></div>`;
   if (st && st.hours > 6) return `<div class="banner info"><span>ⓘ</span><span>Data er ${st.hours} timer gamle — opdateres automatisk.</span></div>`;
   if (D.readinessRemote === 'LOW' || readinessInfo().level === 'act') return '<div class="banner warn"><span>💜</span><span>Lav readiness i dag (HRV/søvn) — overvej at tage det roligt.</span></div>';
@@ -952,7 +1096,13 @@ function kpiStripV2() {
   ];
   return `<div class="kpi4">` + tiles.map(t => `<div class="kpi4-t"><div class="lab">${t.l}</div><div class="kpi4-v">${t.v}</div><div class="kpi4-s">${esc(t.s||'')}</div></div>`).join('') + `</div>`;
 }
+function shortText(t, max){ t = String(t||'').trim(); if (t.length <= max) return t; let out=''; for (const sent of t.split(/(?<=[.!?])\s+/)) { if ((out+' '+sent).trim().length > max) break; out = (out+' '+sent).trim(); } return out || t.slice(0, max).replace(/\s\S*$/, '') + '…'; }
 function coachVoiceCard() {
+  const c = coachV2();
+  if (c && (c.bigPicture || (c.training && c.training.text))) {
+    const t = shortText(c.training && c.training.text, 260);
+    return `<div class="card card-wine" style="padding:14px 16px;margin:12px 0 0"><div class="label label-gold" style="margin-bottom:6px">TRÆNER + DIÆTIST</div><div class="coach-text">${c.bigPicture?`<span class="coach-voice-big">${esc(c.bigPicture)}</span>`:''}${esc(t)}</div></div>`;
+  }
   if (!D.coachSpeech) return '';
   const parts = String(D.coachSpeech).split('{HL}');
   return `<div class="card card-wine" style="padding:14px 16px;margin:12px 0 0"><div class="label label-gold" style="margin-bottom:6px">TRÆNER + DIÆTIST</div><div class="coach-text">${parts[0]||''}<span class="coach-hl">${D.coachHighlight||''}</span>${parts[1]||''}</div></div>`;
@@ -1127,7 +1277,9 @@ function renderWeek() {
 // Coach-tale + AI-vurdering — kun her, og foldet. I dag-fanen viser dem ikke.
 function coachFoldedCard() {
   const parts = (D.coachSpeech || '').split("{HL}");
-  const speech = D.coachSpeech
+  // Coach v2: bigPicture + de tre afsnit renderes i loadCoachAssessment — den
+  // gamle coachSpeech-boks ville bare gentage dem.
+  const speech = (D.coachSpeech && !coachV2())
     ? `<div class="card card-wine" style="padding:16px 18px;margin:12px 0 10px"><div class="label label-gold" style="margin-bottom:8px">TRÆNER + DIÆTIST · UGE ${D.week}</div><div class="coach-text">${parts[0]||""}<span class="coach-hl">${D.coachHighlight||""}</span>${parts[1]||""}</div></div>`
     : '';
   return `
@@ -1147,12 +1299,397 @@ function coachFoldedCard() {
   </details>`;
 }
 
-// Plan-fanen (midlertidig indtil blok 4): ugeindhold + knap til plan.html.
-function renderPlan() {
-  return `
-  <a class="plan-open" href="plan.html"><span>Åbn planlægning (flyt / aflys / skift pas)</span><span>→</span></a>
-  ${renderWeek()}`;
+// ═══ Plan-fanen (blok 4, 6/9-26) ═══════════════════════════════════════════
+// Tre lag: blokstribe + CTL-graf (hvor er jeg), valgt uge (hvorfor) og ⋯-ark
+// pr. pas (hvad kan jeg flytte). Alt læses fra data.json -> planTab (regnet i
+// scripts/modules/plan_tab.py). Redigering går som i plan.html gennem Worker'ens
+// /plan-edit (Friel-gate i Python) og polles fra data/edit_result.json.
+// Mangler planTab (pipelinen har ikke kørt endnu) vises den gamle ugevisning.
+const PT = { sel: null, sheet: null, bikeLib: null, woLib: null };
+const PT_RULE_DA = { max_runs:"For mange løbedage", consecutive_runs:"Fortløbende løb", vo2_missing:"VO2 mangler",
+  vo2_excess:"Ekstra VO2", missing_recovery:"Recovery mangler", tsb_floor:"TSB under gulv", ctl_ramp:"CTL-ramp",
+  low_readiness:"Lav readiness", race_tsb:"Race-TSB", taper_ctl_rising:"Taper: CTL stiger", plan_actual_mismatch:"Plan ≠ faktisk" };
+const PT_LOAD_DA = { let:"let", moderat:"moderat", haard:"hård" };
+const PT_CAT_DA = { test:"Test", z2:"Zone 2", durability:"Durability", sweetspot:"Sweet spot", taerskel:"Tærskel", vo2:"VO2max", bjerg:"Bjerg / TdS" };
+
+function ptDate(iso){ const d = new Date(iso+"T12:00:00"); return `${d.getDate()}. ${DK_MON_SHORT[d.getMonth()]}`; }
+function ptDayLabel(iso){ const d = new Date(iso+"T12:00:00"); return `${DK_DAY_SHORT[(d.getDay()+6)%7]} ${d.getDate()}. ${DK_MON_SHORT[d.getMonth()]}`; }
+function ptRange(a, b){ const da = new Date(a+"T12:00:00"), db = new Date(b+"T12:00:00");
+  return da.getMonth()===db.getMonth() ? `${da.getDate()}.–${db.getDate()}. ${DK_MON_SHORT[db.getMonth()]}` : `${ptDate(a)} – ${ptDate(b)}`; }
+function ptMins(m){ if (m == null) return ''; return m >= 90 && m % 30 === 0 ? `${Math.floor(m/60)} t${m%60?` ${m%60}`:''}` : `${m} min`; }
+function ptDays(a, b){ return Math.round((new Date(b+"T12:00:00") - new Date(a+"T12:00:00"))/864e5); }
+function ptWeeks(){ return (D.planTab && D.planTab.weeks) || []; }
+function ptSessions(){ return (D.planTab && D.planTab.sessions) || []; }
+function ptSelIdx(){ const ws = ptWeeks(); if (PT.sel != null && ws[PT.sel]) return PT.sel; const i = ws.findIndex(w=>w.isCurrent); return i < 0 ? 0 : i; }
+function ptFindEntry(id){
+  for (const wk of ptSessions()) for (const day of wk.days) for (const e of day.entries) if (e.id === id) return { e, day, wk };
+  return null;
 }
+function ptBlockChip(bt, meso){ const b = (bt||'—').toUpperCase(); return `<span class="pt-blk ${esc(b)}">${esc(b)}${meso?` <span style="opacity:.8">${esc(meso)}</span>`:''}</span>`; }
+function ptDots(w){
+  const rules = (D.planTab && D.planTab.rules) || {};
+  const row = (used, max, cls) => { const n = Math.max(max||0, used||0, 0); if (!n && !max) return '';
+    let s=''; for (let i=0;i<n;i++) s += i < (used||0) ? '●' : '○'; return `<i class="${cls}${(used||0)>(max||0)?' over':''}" title="${cls==='h'?'hårde':'moderate'} ${used||0} af ${max||0}">${s}</i>`; };
+  const q = w.quota||{}, u = w.quotaUsed||{};
+  const h = row(u.haard, q.haard, 'h'), m = row(u.moderat, q.moderat, 'm');
+  if (!h && !m) return `<div class="pt-dots"><span>ingen kælderkvote</span></div>`;
+  return `<div class="pt-dots">${h}${m}</div>`;
+}
+function ptFlagsHtml(w, withOk){
+  const fl = (w.flags||[]);
+  if (!fl.length) return withOk && !w.isPast ? `<span class="pt-flag OK">✓ Friel OK</span>` : '';
+  return fl.map(f => `<span class="pt-flag ${f.level==='HARD'?'HARD':'WARN'}${f.historic?' hist':''}" title="${esc(f.text)}">${f.level==='HARD'?'⚠':'!'} ${esc(PT_RULE_DA[f.rule]||f.rule)}</span>`).join('');
+}
+
+// Lag 1: blokstribe
+function ptStrip(){
+  const sel = ptSelIdx();
+  return `<div class="pt-strip" id="pt-strip">${ptWeeks().map((w,i)=>`
+    <button class="pt-wk${w.isCurrent?' cur':''}${i===sel?' sel':''}${w.isPast?' past':''}" onclick="ptSelectWeek(${i})" aria-pressed="${i===sel}">
+      <span class="wn"><b>Uge ${w.week ?? '–'}</b><span>${esc(ptRange(w.start, w.end))}</span></span>
+      <span>${ptBlockChip(w.blockType, w.mesoWeek)}${w.races&&w.races.length?' 🏆':''}${w.travel?' ✈':''}</span>
+      <div class="nums">CTL <span>→</span> ${w.ctlTarget ?? '–'}<br>TSS ${w.tssActual != null ? `${w.tssActual}<span>/${w.tssTarget ?? '–'}</span>` : `<span>mål</span> ${w.tssTarget ?? '–'}`}</div>
+      ${ptDots(w)}
+      <div class="pur">${esc(w.purpose || w.note || (w.races&&w.races[0]&&w.races[0].name) || '')}</div>
+    </button>`).join('')}</div>`;
+}
+function ptSelectWeek(i){
+  PT.sel = i;
+  const strip = document.getElementById('pt-strip');
+  if (strip) [...strip.children].forEach((c,j)=>{ c.classList.toggle('sel', j===i); c.setAttribute('aria-pressed', j===i); });
+  const det = document.getElementById('pt-detail'); if (det) det.innerHTML = ptWeekDetail(i);
+  const card = strip && strip.children[i]; if (card && card.scrollIntoView) card.scrollIntoView({ block:'nearest', inline:'center', behavior:'smooth' });
+}
+
+// CTL-graf: 12 uger historik (fuld linje) + vindue frem (projektion stiplet i rav,
+// pejlemærker som punkter), fase-bånd bag, markører for næste løb + FTP-test.
+function ptCtlChart(){
+  const c = (D.planTab && D.planTab.ctl) || {};
+  const hist = (c.history||[]).filter(h=>h.ctl!=null);
+  const targets = c.targets||[], proj = c.projection||[], phases = c.phases||[];
+  const ws = ptWeeks();
+  if (!hist.length && !targets.length) return '';
+  const wkEnd = s => { const d = new Date(s+"T12:00:00"); d.setDate(d.getDate()+6); return isoOf(d); };
+  const x0 = (c.history && c.history[0] && c.history[0].start) || (ws[0] && ws[0].start), x1 = ws.length ? ws[ws.length-1].end : wkEnd(hist[hist.length-1].start);
+  const W = 340, H = 150, pad = { l:26, r:8, t:14, b:22 };
+  const iW = W-pad.l-pad.r, iH = H-pad.t-pad.b;
+  const span = Math.max(1, ptDays(x0, x1));
+  const x = iso => pad.l + (ptDays(x0, iso)/span)*iW;
+  const vals = [...hist.map(h=>h.ctl), ...targets.map(t=>t.ctlTarget), ...proj.map(p=>p.ctl)].filter(v=>v!=null);
+  const mn = Math.floor((Math.min(...vals)-5)/5)*5, mx = Math.ceil((Math.max(...vals)+5)/5)*5;
+  const y = v => pad.t + iH - ((v-mn)/(mx-mn))*iH;
+  const tIso = todayIso();
+  const bands = phases.map(p => { const a = Math.max(x(p.from), pad.l), b = Math.min(x(p.to), W-pad.r);
+    const col = { RECOVERY:'rgba(107,138,122,.16)', BASE:'rgba(58,143,209,.12)', BUILD:'rgba(211,162,74,.18)', RACE:'rgba(190,134,58,.22)', TAPER:'rgba(58,143,209,.08)' }[p.name] || 'transparent';
+    const lab = (b-a) >= 5.2*p.name.length ? `<text x="${((a+b)/2).toFixed(1)}" y="${pad.t+9}" text-anchor="middle" font-size="7" font-family="'Space Mono',monospace" fill="var(--muted)">${esc(p.name)}</text>` : '';
+    return `<rect x="${a.toFixed(1)}" y="${pad.t}" width="${Math.max(0,b-a).toFixed(1)}" height="${iH}" fill="${col}"/>${lab}`; }).join('');
+  const grid = [mn, Math.round((mn+mx)/2), mx].map(v => `<line x1="${pad.l}" x2="${W-pad.r}" y1="${y(v)}" y2="${y(v)}" stroke="var(--line)" stroke-width="1"/><text x="${pad.l-4}" y="${y(v)+3}" text-anchor="end" font-size="8" font-family="'Space Mono',monospace" fill="var(--muted)">${v}</text>`).join('');
+  // Historik: punkt ved ugens slut (eller i dag for den aktuelle uge)
+  const hp = hist.map(h => ({ d: wkEnd(h.start) > tIso ? tIso : wkEnd(h.start), v: h.ctl }));
+  const path = (pts, get) => pts.map((p,i)=>`${i?'L':'M'}${x(p.d).toFixed(1)},${y(get(p)).toFixed(1)}`).join(' ');
+  const tp = targets.map(t => ({ d: wkEnd(t.start), v: t.ctlTarget }));
+  const projPts = proj.filter(p => p.d >= tIso);
+  const last = hp[hp.length-1];
+  const projPath = projPts.length ? path(last ? [{d:last.d, ctl:last.v}, ...projPts] : projPts, p=>p.ctl) : '';
+  // Markører: næste løb + FTP-test (libraryId der starter med "test_")
+  let marks = '';
+  const nr = (ws.flatMap(w=>w.races||[]).filter(r=>r.date>=tIso).sort((a,b)=>a.date.localeCompare(b.date)))[0];
+  if (nr) marks += `<line x1="${x(nr.date).toFixed(1)}" x2="${x(nr.date).toFixed(1)}" y1="${pad.t}" y2="${H-pad.b}" stroke="var(--gold)" stroke-width="1" stroke-dasharray="2,3"/><text x="${x(nr.date).toFixed(1)}" y="${H-pad.b+9}" text-anchor="middle" font-size="9">🏆</text>`;
+  const ftp = ptSessions().flatMap(w=>w.days).flatMap(d=>d.entries.map(e=>({...e, date:d.date}))).find(e=>e.libraryId && /^test_/.test(e.libraryId) && e.date>=tIso);
+  if (ftp) marks += `<line x1="${x(ftp.date).toFixed(1)}" x2="${x(ftp.date).toFixed(1)}" y1="${pad.t}" y2="${H-pad.b}" stroke="var(--act)" stroke-width="1" stroke-dasharray="2,3"/><text x="${x(ftp.date).toFixed(1)}" y="${H-pad.b+9}" text-anchor="middle" font-size="7" font-family="'Space Mono',monospace" fill="var(--act)">FTP</text>`;
+  marks += `<line x1="${x(tIso).toFixed(1)}" x2="${x(tIso).toFixed(1)}" y1="${pad.t}" y2="${H-pad.b}" stroke="var(--ink)" stroke-width="1" opacity=".35"/>`;
+  // Uge-labels: hver vindues-uge (udtyndet hvis mange), plus måneder i historikken
+  const xl = ws.filter((w,i)=>i%2===0).map(w => `<text x="${x(w.start).toFixed(1)}" y="${H-3}" font-size="7.5" font-family="'Space Mono',monospace" fill="var(--muted)">U${w.week ?? ''}</text>`).join('');
+  const lastPt = last ? `<circle cx="${x(last.d).toFixed(1)}" cy="${y(last.v).toFixed(1)}" r="3.2" fill="var(--num)"/><text x="${(x(last.d)+5).toFixed(1)}" y="${(y(last.v)-5).toFixed(1)}" font-size="9" font-weight="700" font-family="'Space Mono',monospace" fill="var(--num)">${last.v}</text>` : '';
+  return `<div class="pt-ctl"><div class="label">CTL · 12 uger tilbage, ${ws.length-1} frem</div>
+    <svg viewBox="0 0 ${W} ${H}" role="img" aria-label="CTL faktisk, projektion og pejlemærke">
+      ${bands}${grid}${marks}
+      ${tp.length?`<path d="${path(tp,p=>p.v)}" fill="none" stroke="var(--muted)" stroke-width="1" stroke-dasharray="3,3"/>`:''}
+      ${tp.map(p=>`<circle cx="${x(p.d).toFixed(1)}" cy="${y(p.v).toFixed(1)}" r="2.6" fill="var(--card)" stroke="var(--muted)" stroke-width="1.2"/>`).join('')}
+      ${projPath?`<path d="${projPath}" fill="none" stroke="var(--gold)" stroke-width="2" stroke-dasharray="5,4"/>`:''}
+      ${hp.length>1?`<path d="${path(hp,p=>p.v)}" fill="none" stroke="var(--num)" stroke-width="2"/>`:''}
+      ${lastPt}${xl}
+    </svg>
+    <div class="pt-legend"><span style="--lc:var(--num)">Faktisk</span><span class="dash" style="--lc:var(--gold)">Projektion</span><span class="dot" style="--lc:var(--muted)">Pejlemærke</span>${nr?`<span style="--lc:transparent">🏆 ${esc(nr.name)}</span>`:''}${ftp?`<span style="--lc:var(--act)">FTP-test ${ptDate(ftp.date)}</span>`:''}</div>
+  </div>`;
+}
+
+// Lag 2: valgt uge
+function ptSessionCard(e, day){
+  const dc = C[e.disc] || C.free;
+  const name = e.zwiftName || e.name || '—';
+  const meta = [];
+  if (e.mins) meta.push(`<span>${ptMins(e.mins)}</span>`);
+  if (e.load) meta.push(`<span class="pt-load ${esc(e.load)}">${PT_LOAD_DA[e.load]||e.load}</span>`);
+  if (e.libraryId && e.erg != null) meta.push(`<span class="pt-erg${e.erg?'':' no'}">${e.erg ? 'ERG' : 'IKKE ERG — styr selv'}</span>`);
+  if (e.done) meta.push(`<span class="ok">✓${e.actualMins!=null?` ${Math.round(e.actualMins)} min`:''}${e.actualTss!=null?` · ${Math.round(e.actualTss)} TSS`:''}</span>`);
+  else if (e.completion === 'missed') meta.push(`<span style="color:var(--act)">ikke kørt</span>`);
+  if (e.isKey && !e.extra) meta.push(`<span class="pt-key">nøglepas</span>`);
+  if (e.extra) meta.push(`<span>ekstra</span>`);
+  if (e.optional) meta.push(`<span>valgfri</span>`);
+  const det = (e.purpose || e.note || (e.name && e.zwiftName && e.name !== e.zwiftName))
+    ? `<div class="det">${e.purpose?`<span class="lab">Formål</span>${esc(e.purpose)}`:''}${e.note?`<span class="lab">Note</span>${esc(e.note)}`:''}${e.name&&e.zwiftName&&e.name!==e.zwiftName?`<span class="lab">I Intervals</span>${esc(e.name)}`:''}</div>` : '';
+  const more = e.id ? `<button class="more" aria-label="Handlinger for ${esc(name)}" onclick="event.stopPropagation(); ptOpenSheet('${esc(e.id)}')">⋯</button>` : '<span></span>';
+  return `<div class="pt-sess${e.isKey&&!e.extra?' key':''}${e.extra?' extra':''}${e.done?' done':''}" style="--dc:${dc}" onclick="this.classList.toggle('open')" data-id="${esc(e.id||'')}">
+    <div class="ic">${icon(e.disc, 17, dc)}</div>
+    <div><div class="nm">${esc(name)}</div><div class="mt">${meta.join('')}</div></div>
+    ${more}${det}</div>`;
+}
+function ptWeekDetail(i){
+  const w = ptWeeks()[i], s = ptSessions()[i];
+  if (!w || !s) return '';
+  const tIso = todayIso();
+  const spacing = (D.planTab.hardSpacing||[]);
+  const minH = (D.planTab.minHoursHard || 72);
+  const purpose = w.purpose || w.note || '';
+  const head = `<div class="pt-head">
+    <div class="t">Uge ${w.week ?? '–'} ${ptBlockChip(w.blockType, w.mesoWeek)}${w.travel?`<span class="pt-erg">✈ ${esc(w.travel)}</span>`:''}</div>
+    ${purpose?`<div class="p">${esc(purpose)}</div>`:''}
+    <div class="p" style="font-family:'Space Mono',monospace;font-size:10.5px">CTL-mål ${w.ctlTarget ?? '–'} · TSS ${w.tssActual!=null?`${w.tssActual} / `:''}${w.tssTarget ?? '–'}${w.keySessions&&w.keySessions.length?` · nøgle: ${esc(w.keySessions.join(', '))}`:''}</div>
+    <div class="fl">${ptFlagsHtml(w, true)}</div>
+  </div>`;
+  const days = s.days.map(day => {
+    const race = (w.races||[]).find(r=>r.date===day.date);
+    const gapIn = spacing.find(p => p.toDate === day.date && p.fromDate < s.start);
+    const gapOut = spacing.find(p => p.fromDate === day.date && p.toDate <= s.days[6].date);
+    const body = day.entries.length ? day.entries.map(e => ptSessionCard(e, day)).join('')
+      : `<div class="pt-free">${esc(day.restNote || 'Fri')}${race?` · 🏆 ${esc(race.name)}`:''}</div>`;
+    return `${gapIn?`<div class="pt-day" style="margin-bottom:0"><span></span><div class="pt-gap${gapIn.ok?'':' bad'}">${gapIn.hours} t siden ${esc(gapIn.fromName)} ${gapIn.ok?'✓':'✗'}</div></div>`:''}
+      <div class="pt-day${day.isToday||day.date===tIso?' today':''}"><div class="dn${race?' race':''}"><b>${day.weekday}</b>${ptDate(day.date)}</div><div>${body}</div></div>
+      ${gapOut?`<div class="pt-day" style="margin-bottom:0"><span></span><div class="pt-gap${gapOut.ok?'':' bad'}">${gapOut.hours} t til næste hårde ${gapOut.ok?'✓':'✗'}${gapOut.ok?'':` (min ${minH} t)`}</div></div>`:''}`;
+  }).join('');
+  return head + days;
+}
+
+function renderPlan() {
+  if (!D.planTab || !ptWeeks().length) {
+    return `<a class="plan-open" href="plan.html"><span>Åbn planlægning (flyt / aflys / skift pas)</span><span>→</span></a>
+      <div class="banner info"><span>ℹ️</span><span>Plan-fanens nye visning kommer når pipelinen har skrevet planTab til data.json.</span></div>
+      ${renderWeek()}`;
+  }
+  const sel = ptSelIdx();
+  return `${ptStrip()}${ptCtlChart()}<div id="pt-detail">${ptWeekDetail(sel)}</div>
+    ${coachFoldedCard()}
+    <a class="pt-link" href="plan.html">FULD PLAN (PLAN.HTML) →</a>`;
+}
+
+// Lag 3: ⋯-ark. Portet fra plan.html (openSheet/renderSheet/submitEdit):
+// samme payload {requestId, action, entryId, params, confirmedWarn}, samme
+// Worker-endpoint (/plan-edit) og samme polling af edit_result.json.
+function ptSheetEl(){ return document.getElementById('plan-sheet-body'); }
+function ptShowSheet(on){
+  const sheet = document.getElementById('plan-sheet'), scrim = document.getElementById('plan-scrim');
+  if (!sheet) return;
+  sheet.classList.toggle('show', on); scrim.classList.toggle('show', on);
+  sheet.setAttribute('aria-hidden', on ? 'false' : 'true');
+  if (!on) PT.sheet = null;
+}
+function ptCloseSheet(){ ptShowSheet(false); }
+function ptOpenSheet(entryId){
+  const f = ptFindEntry(entryId); if (!f) return;
+  PT.sheet = { entryId, date: f.day.date, wkIdx: ptSessions().indexOf(f.wk), confirmedWarn:false, action:null, params:{} };
+  ptRenderMenu();
+  ptShowSheet(true);
+}
+function ptSheetHead(title){
+  const f = ptFindEntry(PT.sheet.entryId); const e = f ? f.e : {};
+  return `<h2>${esc(title)}</h2><p class="sub">${esc(ptDayLabel(PT.sheet.date))} · ${esc(e.zwiftName||e.name||'')}${e.load?` · <span class="pt-load ${esc(e.load)}">${PT_LOAD_DA[e.load]}</span>`:''}</p>`;
+}
+function ptRenderMenu(){
+  const f = ptFindEntry(PT.sheet.entryId); if (!f) return;
+  const isBike = f.e.disc === 'bike';
+  ptSheetEl().innerHTML = ptSheetHead('Hvad vil du?') + `<div class="pt-menu">
+    <button onclick="ptSheetMove()">${icon('week',18,'currentColor')}<span>Flyt<small>vælg en anden dag i ugen — dagene byttes</small></span></button>
+    <button onclick="ptSheetSwap()">${icon('plan',18,'currentColor')}<span>Skift pas<small>${isBike?'vælg et andet kælderpas fra biblioteket':'vælg en skabelon'}</small></span></button>
+    <button onclick="ptSheetNote()">${icon('rules',18,'currentColor')}<span>Note<small>${f.e.note?esc(f.e.note):'skriv en note til passet'}</small></span></button>
+    <button class="danger" onclick="ptSheetCancel()">${icon('rest',18,'currentColor')}<span>Aflys<small>dagen bliver hviledag i Intervals og Outlook</small></span></button>
+  </div><button class="close" onclick="ptCloseSheet()">Luk</button>`;
+}
+
+// Konsekvens FØR bekræftelse: timer til nærmeste andet hårde pas + kvote i målugen.
+function ptMoveConsequence(entryId, targetIso){
+  const f = ptFindEntry(entryId); if (!f) return '';
+  const e = f.e, minH = D.planTab.minHoursHard || 72, rules = D.planTab.rules || {};
+  const out = [];
+  let level = 'ok';
+  if (e.load === 'haard') {
+    const others = ptSessions().flatMap(w=>w.days).flatMap(d=>d.entries.filter(x=>x.id && x.id!==entryId && x.load==='haard' && !x.extra).map(x=>({...x, date:d.date})));
+    let best = null;
+    for (const o of others) { const h = Math.abs(ptDays(o.date, targetIso))*24; if (!best || h < best.h) best = { h, o }; }
+    if (best) { const ok = best.h >= minH; if (!ok) level = 'bad';
+      out.push(`<div><b>${best.h} t</b> til nærmeste andet hårde pas (${esc(best.o.zwiftName||best.o.name)}, ${ptDayLabel(best.o.date)}) ${ok?'✓':`✗ — under ${minH} t`}</div>`); }
+    else out.push(`<div>Ingen andre hårde pas i vinduet ✓</div>`);
+  }
+  const tw = ptWeeks().find(w => w.start <= targetIso && targetIso <= w.end);
+  const sw = ptWeeks().find(w => w.start <= f.day.date && f.day.date <= w.end);
+  if (tw && e.libraryId && (e.load==='haard' || e.load==='moderat')) {
+    const key = e.load, used = { ...(tw.quotaUsed||{}) }, q = tw.quota||{};
+    if (!sw || sw !== tw) used[key] = (used[key]||0) + 1;
+    const max = q[key] ?? 0, lim = key==='haard' ? rules.maxHaard : rules.maxModerat;
+    const over = used[key] > max, hardOver = lim != null && used[key] > lim;
+    if (hardOver) level = 'bad'; else if (over && level !== 'bad') level = 'warn';
+    out.push(`<div>Kvote uge ${tw.week}: <b>${used[key]}/${max}</b> ${PT_LOAD_DA[key]}${hardOver?` ✗ — over bibliotekets max ${lim}`:over?' — over ugens kvote':' ✓'}</div>`);
+  }
+  const td = ptSessions().flatMap(w=>w.days).find(d=>d.date===targetIso);
+  const swapNames = td ? td.entries.filter(x=>x.id && !x.extra).map(x=>x.zwiftName||x.name) : [];
+  out.push(`<div style="color:var(--muted)">${swapNames.length?`Byttes med: ${esc(swapNames.join(', '))}`:'Måldagen er fri'}${sw && sw !== tw ? ' · flytter til en anden uge' : ''}</div>`);
+  return `<div class="pt-cons ${level}">${out.join('')}</div>`;
+}
+function ptSheetMove(){
+  const s = PT.sheet, f = ptFindEntry(s.entryId); if (!f) return;
+  const wk = ptSessions()[s.wkIdx] || f.wk;
+  const days = wk.days.filter(d => d.date !== s.date);
+  ptSheetEl().innerHTML = ptSheetHead('Flyt pas') + `<div class="pt-pick" id="pt-move-pick">${days.map(d => {
+      const names = d.entries.filter(x=>x.id&&!x.extra).map(x=>x.zwiftName||x.name);
+      return `<button onclick="ptPickMove('${d.date}', this)"><span><b>${esc(ptDayLabel(d.date))}</b><small>${names.length?esc(names.join(' · ')):'fri'}</small></span></button>`; }).join('')}</div>
+    <div id="pt-cons"></div><div class="pt-msg" id="pt-msg"></div>
+    <div class="pt-btns"><button class="sec" onclick="ptRenderMenu()">Tilbage</button><button class="pri" id="pt-go" disabled onclick="ptSubmit()">Flyt</button></div>`;
+}
+function ptPickMove(iso, btn){
+  PT.sheet.action = 'move'; PT.sheet.params = { target_date: iso, mode: 'swap' };
+  document.querySelectorAll('#pt-move-pick button').forEach(b => b.classList.toggle('sel', b === btn));
+  document.getElementById('pt-cons').innerHTML = ptMoveConsequence(PT.sheet.entryId, iso);
+  const go = document.getElementById('pt-go'); go.disabled = false; go.textContent = `Flyt til ${ptDayLabel(iso)}`;
+}
+async function ptLoadBikeLib(){ if (!PT.bikeLib) { try { const r = await fetch(`data/bike_library.json?t=${Date.now()}`, {cache:'no-store'}); PT.bikeLib = r.ok ? await r.json() : null; } catch(e) { PT.bikeLib = null; } } return PT.bikeLib; }
+async function ptLoadWoLib(){ if (!PT.woLib) { try { const r = await fetch(`data/workout_library.json?t=${Date.now()}`, {cache:'no-store'}); PT.woLib = r.ok ? await r.json() : null; } catch(e) { PT.woLib = null; } } return PT.woLib; }
+async function ptSheetSwap(){
+  const s = PT.sheet, f = ptFindEntry(s.entryId); if (!f) return;
+  const el = ptSheetEl();
+  el.innerHTML = ptSheetHead('Skift pas') + `<div class="pt-msg">Henter bibliotek…</div>`;
+  let list = '';
+  if (f.e.disc === 'bike') {
+    const lib = await ptLoadBikeLib();
+    if (!lib) { el.innerHTML = ptSheetHead('Skift pas') + `<div class="pt-msg" style="color:var(--act)">Kunne ikke hente bike_library.json.</div><button class="close" onclick="ptRenderMenu()">Tilbage</button>`; return; }
+    const cats = Object.keys(lib.meta && lib.meta.categories || {});
+    const order = cats.length ? cats : [...new Set(lib.workouts.map(w=>w.category))];
+    list = order.map(cat => { const ws = lib.workouts.filter(w=>w.category===cat); if (!ws.length) return '';
+      return `<div class="cat">${esc(PT_CAT_DA[cat] || (lib.meta.categories||{})[cat] || cat)}</div>` + ws.map(w => `<button onclick="ptPickTemplate('${esc(w.id)}', this)"${w.id===f.e.libraryId?' class="sel"':''}>
+        <span><b>${esc(w.name)}</b><small>${w.est_min?`${ptMins(w.est_min)} · `:''}${esc((w.purpose||'').split('.')[0])}</small></span>
+        <span style="display:flex;flex-direction:column;gap:3px;align-items:flex-end"><span class="pt-load ${esc(w.load)}">${PT_LOAD_DA[w.load]||w.load}</span>${w.erg===false?'<span class="pt-erg no">IKKE ERG</span>':''}</span></button>`).join(''); }).join('');
+  } else {
+    const lib = await ptLoadWoLib();
+    if (!lib) { el.innerHTML = ptSheetHead('Skift pas') + `<div class="pt-msg" style="color:var(--act)">Kunne ikke hente workout_library.json.</div><button class="close" onclick="ptRenderMenu()">Tilbage</button>`; return; }
+    const tpls = (lib.templates||[]).filter(t => !/^eva-/.test(t.id));
+    list = tpls.map(t => `<button onclick="ptPickTemplate('${esc(t.id)}', this)"><span><b>${esc(t.name)}</b><small>${t.type ? DISC_LABEL[({Run:'run',Ride:'bike',Swim:'swim',OpenWaterSwim:'openwater',WeightTraining:'strength',Hike:'hike',Walk:'walk'})[t.type]] || t.type : 'hvile'}${t.moving_time?` · ${Math.round(t.moving_time/60)} min`:''}</small></span></button>`).join('');
+  }
+  el.innerHTML = ptSheetHead('Skift pas') + `<div class="pt-pick" id="pt-tpl-pick">${list}</div><div class="pt-msg" id="pt-msg"></div>
+    <div class="pt-btns"><button class="sec" onclick="ptRenderMenu()">Tilbage</button><button class="pri" id="pt-go" disabled onclick="ptSubmit()">Skift</button></div>`;
+}
+function ptPickTemplate(id, btn){
+  PT.sheet.action = 'swap_template'; PT.sheet.params = { template_id: id };
+  document.querySelectorAll('#pt-tpl-pick button').forEach(b => b.classList.toggle('sel', b === btn));
+  const go = document.getElementById('pt-go'); go.disabled = false; go.textContent = 'Skift pas';
+  const lib = PT.bikeLib, w = lib && lib.workouts.find(x=>x.id===id);
+  const f = ptFindEntry(PT.sheet.entryId);
+  if (w && f) { // konsekvens for kvoten når belastningen ændres
+    const wk = ptWeeks().find(x => x.start <= f.day.date && f.day.date <= x.end);
+    if (wk && w.load !== f.e.load && (w.load==='haard'||w.load==='moderat')) {
+      const used = (wk.quotaUsed||{})[w.load]||0, max = (wk.quota||{})[w.load]||0, n = used + 1;
+      document.getElementById('pt-msg').innerHTML = `<div class="pt-cons ${n>max?'warn':'ok'}">Kvote uge ${wk.week}: <b>${n}/${max}</b> ${PT_LOAD_DA[w.load]}${n>max?' — over ugens kvote':' ✓'}</div>`;
+    } else document.getElementById('pt-msg').innerHTML = '';
+  }
+}
+function ptSheetNote(){
+  const f = ptFindEntry(PT.sheet.entryId); if (!f) return;
+  PT.sheet.action = 'adjust';
+  ptSheetEl().innerHTML = ptSheetHead('Note') + `<textarea class="pt-note" id="pt-note" placeholder="Fx: kørt ude, eller: byt til Z2 hvis benene er tunge">${esc(f.e.note||'')}</textarea>
+    <div class="pt-msg" id="pt-msg"></div>
+    <div class="pt-btns"><button class="sec" onclick="ptRenderMenu()">Tilbage</button><button class="pri" id="pt-go" onclick="PT.sheet.params={note:document.getElementById('pt-note').value}; ptSubmit()">Gem note</button></div>`;
+}
+function ptSheetCancel(){
+  const f = ptFindEntry(PT.sheet.entryId); if (!f) return;
+  PT.sheet.action = 'cancel'; PT.sheet.params = { note: 'Aflyst — hviledag' };
+  const cons = f.e.isKey ? `<div class="pt-cons warn">Det er et nøglepas i ugen${f.e.load==='haard'?' (hårdt)':''}. Overvej Flyt i stedet.</div>` : '';
+  ptSheetEl().innerHTML = ptSheetHead('Aflys pas') + `<p style="font-size:14px;margin:8px 0">Dagen bliver hviledag i Intervals og Outlook. Kan altid ændres tilbage.</p>${cons}
+    <div class="pt-msg" id="pt-msg"></div>
+    <div class="pt-btns"><button class="sec" onclick="ptRenderMenu()">Tilbage</button><button class="pri danger" id="pt-go" onclick="ptSubmit()">Aflys</button></div>`;
+}
+
+function ptGateFlags(gate){
+  const fl = (gate && gate.flags) || [];
+  if (!fl.length) return '';
+  return `<div class="flags">${fl.map(f=>`<span class="pt-flag ${f.level==='HARD'?'HARD':'WARN'}" title="${esc(f.msg)}">${f.level==='HARD'?'⚠':'!'} ${esc(PT_RULE_DA[f.rule]||f.rule)}</span>`).join('')}</div>`;
+}
+async function ptSubmit(){
+  const s = PT.sheet; if (!s || !s.action) return;
+  const msg = document.getElementById('pt-msg'), go = document.getElementById('pt-go');
+  if (go) go.disabled = true;
+  const requestId = "r" + Date.now().toString(36) + Math.random().toString(36).slice(2,6);
+  const payload = { requestId, action: s.action, entryId: s.entryId, params: s.params || {}, confirmedWarn: !!s.confirmedWarn };
+  msg.innerHTML = `<span style="color:var(--muted)">Sender ændring…</span>`;
+  try {
+    await dispatchViaWorker('/plan-edit', payload);
+  } catch(err) {
+    if (err.code === 'NO_SECRET' || err.status === 401 || err.status === 403) {
+      const val = (window.prompt(err.code === 'NO_SECRET'
+        ? 'App-koden mangler på denne enhed.\n\nIndsæt den samme kode som i AF-appen:'
+        : 'App-koden blev afvist af Worker\'en.\n\nIndsæt den rigtige kode:') || '').trim();
+      if (val) { setSecret(val); if (go) go.disabled = false; return ptSubmit(); }
+      msg.innerHTML = `<span style="color:var(--act)">Ikke sendt — app-kode mangler.</span>`;
+    } else {
+      msg.innerHTML = `<span style="color:var(--act)">Ikke sendt — ${esc(err.code === 'NO_URL' ? 'Worker-URL mangler' : err.status ? 'Worker svarede ' + err.status : 'netværksfejl')}.</span>`;
+    }
+    if (go) go.disabled = false;
+    return;
+  }
+  msg.innerHTML = `<span style="color:var(--muted)">Friel-gate kører… (op til et par minutter)</span>`;
+  for (let i = 0; i < 60; i++) {
+    await new Promise(r => setTimeout(r, 3000));
+    if (!PT.sheet) return;   // arket er lukket imens
+    try {
+      const res = await fetch(`https://raw.githubusercontent.com/hammerbamsen/fast-as-50/main/data/edit_result.json?t=${Date.now()}`);
+      if (!res.ok) continue;
+      const r = (await res.json())[requestId];
+      if (!r) continue;
+      if (r.status === 'reject') {
+        msg.innerHTML = `${ptGateFlags(r.gate)}<span style="color:var(--act)"><b>Afvist:</b> ${esc(r.gate && r.gate.msg || '')}</span>`;
+        if (go) go.disabled = false;
+        return;
+      }
+      if (r.status === 'warn') {
+        msg.innerHTML = `${ptGateFlags(r.gate)}<span>${esc(r.gate && r.gate.msg || 'Advarsel')}</span>
+          <div class="pt-btns" style="margin-top:8px"><button class="sec" onclick="ptCloseSheet()">Fortryd</button><button class="pri" onclick="PT.sheet.confirmedWarn=true; ptSubmit()">Fortsæt alligevel</button></div>`;
+        return;
+      }
+      const sync = r.sync_errors && r.sync_errors.length ? `${r.sync_errors.length} sync-fejl — næste auto-sync retter.` : 'Intervals + Outlook synkroniseret.';
+      msg.innerHTML = `<span style="color:var(--ok)">✓ Opdateret. ${esc(sync)}</span>`;
+      ptApplyLocal(s.action, s.entryId, s.params);
+      setTimeout(() => { ptCloseSheet(); if (typeof forceDataRefresh === 'function') forceDataRefresh(); }, 1500);
+      return;
+    } catch(e) { /* fortsæt polling */ }
+  }
+  msg.innerHTML = `<span style="color:var(--muted)">Det tager længere end normalt. Ændringen er sandsynligvis gennemført — luk og træk ned for at genindlæse.</span>`;
+  if (go) go.disabled = false;
+}
+
+// Lokal opdatering af planTab efter succes, så skærmen svarer til planen
+// indtil data.json er regenereret (forceDataRefresh henter den bagefter).
+function ptApplyLocal(action, entryId, params){
+  const f = ptFindEntry(entryId); if (!f) return;
+  const allDays = ptSessions().flatMap(w=>w.days);
+  if (action === 'move') {
+    const td = allDays.find(d => d.date === params.target_date); if (!td) return;
+    const src = f.day;
+    const srcPlanned = src.entries.filter(x=>x.id && !x.extra), tPlanned = td.entries.filter(x=>x.id && !x.extra);
+    if (srcPlanned.length === 1) { // swap af hele dagenes indhold (som edit_apply)
+      src.entries = src.entries.filter(x=>!x.id || x.extra).concat(tPlanned);
+      td.entries = td.entries.filter(x=>!x.id || x.extra).concat(srcPlanned);
+    } else { src.entries = src.entries.filter(x=>x!==f.e); td.entries.push(f.e); }
+  } else if (action === 'cancel') {
+    f.day.entries = f.day.entries.filter(x=>x!==f.e); f.day.restNote = params.note || 'Aflyst — hviledag'; f.day.restId = entryId;
+  } else if (action === 'adjust') {
+    if ('note' in params) f.e.note = params.note;
+  } else if (action === 'swap_template') {
+    const w = PT.bikeLib && PT.bikeLib.workouts.find(x=>x.id===params.template_id);
+    if (w) Object.assign(f.e, { name:w.name, zwiftName:w.name, libraryId:w.id, load:w.load, erg:w.erg!==false, purpose:w.purpose, mins:w.est_min||f.e.mins, disc:'bike', isKey: w.load==='haard' || (w.est_min||0)>=120 });
+    else { const t = PT.woLib && PT.woLib.templates.find(x=>x.id===params.template_id);
+      if (t && t.type) Object.assign(f.e, { name:t.name, zwiftName:null, libraryId:null, erg:null, purpose:null, mins:Math.round((t.moving_time||0)/60) });
+      else if (t) { f.day.entries = f.day.entries.filter(x=>x!==f.e); f.day.restNote = 'Hviledag'; } }
+  }
+  if (activePage === 'plan') { const det = document.getElementById('pt-detail'); if (det) det.innerHTML = ptWeekDetail(ptSelIdx()); }
+}
+document.addEventListener('keydown', ev => { if (ev.key === 'Escape') ptCloseSheet(); });
 
 // Mere-fanen: Træning (gammel side) + Regler + System.
 function renderMore() {
@@ -1235,6 +1772,17 @@ async function loadCoachAssessment(force) {
   const tsEl = document.getElementById('coach-assessment-ts');
   if (!box) return;
 
+  // Coach v2: tre afsnit med små overskrifter fra D.coach (ingen inline styles)
+  const c = coachV2();
+  if (c && c.training && c.body && c.habits) {
+    const sec = (h, t) => t ? `<p class="coach-sec"><span class="coach-sec-h">${h}</span>${esc(t)}</p>` : '';
+    box.innerHTML = credBanner() + structureBanner() + staleBanner()
+      + (c.bigPicture ? `<p class="coach-sec coach-big">${esc(c.bigPicture)}</p>` : '')
+      + sec('Træning &amp; load', c.training.text) + sec('Krop &amp; kost', c.body.text) + sec('Vaner', c.habits.text)
+      + (c.weekFocus ? sec('Ugefokus', c.weekFocus) : '');
+    if (tsEl) tsEl.textContent = 'Opdateret: ' + (D.coachAssessmentTs || (c.generatedAt ? String(c.generatedAt).slice(11,16) + ' UTC' : '')) + (c.model ? ' · ' + c.model : '') + (c.stale ? ' · ikke opdateret med nyeste data' : '');
+    return;
+  }
   // Læs fra data.json (genereret server-side af update_kpi.py — ingen proxy nødvendig)
   if (D.coachAssessmentHtml) {
     box.innerHTML = credBanner() + structureBanner() + staleBanner() + D.coachAssessmentHtml;
@@ -1282,6 +1830,7 @@ function _coachAgeH(tsFull) {
 
 function _applyCoach(d) {
   if (!d) return;
+  if ('coach' in d) D.coach = (d.coach && typeof d.coach === 'object') ? d.coach : null;
   if (d.coachAssessmentHtml) D.coachAssessmentHtml = d.coachAssessmentHtml;
   if (d.coachAssessmentTs)   D.coachAssessmentTs   = d.coachAssessmentTs;
   if ('coachAssessmentStale' in d) D.coachAssessmentStale = d.coachAssessmentStale;
@@ -2664,6 +3213,7 @@ function applyRemote(remote) {
       if (remote.sleepHistory)   D.sleepHistory   = remote.sleepHistory;
       if (remote.fatHistory)     D.fatHistory     = remote.fatHistory;
       if (remote.tsbHistory)     D.tsbHistory     = remote.tsbHistory;
+      if ('coach' in remote)           D.coach                = (remote.coach && typeof remote.coach === 'object') ? remote.coach : null;
       if (remote.coachSpeech)          D.coachSpeech          = remote.coachSpeech;
       if (remote.coachHighlight)       D.coachHighlight       = remote.coachHighlight;
       if (remote.coachAssessmentHtml)  D.coachAssessmentHtml  = remote.coachAssessmentHtml;
@@ -2676,6 +3226,7 @@ function applyRemote(remote) {
       if (remote.weekFocus)      D.weekFocus      = remote.weekFocus;
       if (remote.week_sessions)  D.week_sessions  = remote.week_sessions;
       if (remote.all_weeks)      D.all_weeks      = remote.all_weeks;
+      if (remote.planTab && typeof remote.planTab === 'object') D.planTab = remote.planTab;
       if (remote.warnings)       D.warnings       = remote.warnings || [];
       if (remote.tsb !== undefined) D.tsb = remote.tsb;
       if (remote.warnings)       D.warnings = remote.warnings || [];
@@ -2762,6 +3313,9 @@ init();
     } catch(e) {}
   }
   setInterval(pollData, 10000);
+  // Plan-fanen kalder denne efter en gennemført redigering: tving en frisk
+  // hentning uanset om teksten er uændret (planTab regenereres af pipelinen).
+  window.forceDataRefresh = function(){ lastDataJson = null; return pollData(); };
 
   // iOS fryser setInterval når appen er i baggrunden — og genoptager en PWA
   // fra hjemmeskærmen uden at loade forfra. Hent derfor friske data straks

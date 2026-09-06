@@ -114,16 +114,25 @@ def _simulate_mutation(plan: dict, action: str, entry_id: str,
             src_entry["optional"] = True
 
     elif action == "swap_template":
-        # params: {template_id, note?}
+        # params: {template_id, note?}. template_id kan være et id fra
+        # workout_library.json ELLER et kælderpas-id fra bike_library.json
+        # (Plan-fanens "Skift pas" for cykelpas, 6/9-2026).
         tpl = _find_template(params["template_id"])
         if tpl["type"] is None:
             src_entry["workout"] = None
+            src_entry.pop("libraryId", None)
         else:
             src_entry["workout"] = {
                 "name": tpl["name"], "type": tpl["type"],
                 "moving_time": tpl["moving_time"],
                 "description": tpl["description"],
             }
+            if tpl.get("workout_doc"):
+                src_entry["workout"]["workout_doc"] = tpl["workout_doc"]
+            if tpl.get("libraryId"):
+                src_entry["libraryId"] = tpl["libraryId"]
+            else:
+                src_entry.pop("libraryId", None)
         if "note" in params:
             src_entry["note"] = params["note"]
 
@@ -167,14 +176,22 @@ def _simulate_mutation(plan: dict, action: str, entry_id: str,
 
 
 def _find_template(tid: str) -> dict:
-    """Slå template op i data/workout_library.json (lokal på Actions checkout)."""
+    """Slå template op i data/workout_library.json (lokal på Actions checkout).
+    Findes id'et ikke der, prøves data/bike_library.json (kælderpas) — så
+    Plan-fanen kan skifte et cykelpas til et andet fra biblioteket. Resultatet
+    bærer da `libraryId` + `workout_doc` (bike_library.to_intervals)."""
     from pathlib import Path
     lib_path = Path(__file__).resolve().parent.parent.parent / "data" / "workout_library.json"
     lib = json.loads(lib_path.read_text(encoding="utf-8"))
     for t in lib["templates"]:
         if t["id"] == tid:
             return t
-    raise ValueError(f"Template-id {tid!r} findes ikke i workout_library.json")
+    try:
+        from . import bike_library
+        wo = bike_library.to_intervals(tid)
+    except KeyError:
+        raise ValueError(f"Template-id {tid!r} findes ikke i workout_library.json eller bike_library.json")
+    return {"id": tid, "libraryId": tid, **wo}
 
 
 def gate_check(plan: dict, sim_plan: dict, confirmed_warn: bool = False,
