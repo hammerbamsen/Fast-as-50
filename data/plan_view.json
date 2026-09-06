@@ -1,11 +1,11 @@
 {
- "generated": "2026-09-06T08:03:21Z",
+ "generated": "2026-09-06T10:41:30Z",
  "kennet": {
   "programId": "medoc-2026",
   "seed": {
    "date": "2026-09-06",
-   "ctl": 50.4,
-   "atl": 51.1
+   "ctl": 50.8,
+   "atl": 53.0
   },
   "projection": [],
   "weeks": [
@@ -181,5 +181,5 @@
   },
   "readiness": "LOW"
  },
- "inputsHash": "d0d66d8820873ddd"
+ "inputsHash": "17c0bc6e21873360"
 }
