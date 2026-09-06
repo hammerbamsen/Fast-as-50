@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-09-06 21:17",
+    "updated": "2026-09-06 22:03",
     "week": 14,
     "totalWeeks": 14,
     "blockType": "RACE",
@@ -22,16 +22,16 @@
   },
   "kpis": {
     "weight": {
-      "value": "72,3",
+      "value": "72,5",
       "unit": "kg",
-      "sub": "Sidst målt 3/9 · Mål <68 kg · snit 72,5 kg",
-      "color": "#E67E22"
+      "sub": "cut starter uge 39",
+      "color": "#7A6A58"
     },
     "fat": {
-      "value": "21,9",
+      "value": "21,5",
       "unit": "%",
-      "sub": "Mål <16%",
-      "color": "#C0392B"
+      "sub": "14d-snit · cut starter uge 39",
+      "color": "#7A6A58"
     },
     "ctl": {
       "value": "50,8",
@@ -105,8 +105,8 @@
     "target": 6,
     "streak": 0
   },
-  "coachSpeech": "Du har netop afsluttet den sidste uge i Médoc-2026-blokken med et marathon i benene. Næste uge starter TdS-2027-programmet med en fuld restitutionsuge — kroppen skal tilbage til at kunne præstere ved CPH Half den 20. september, 14 dage herfra. {HL} Ugen var en RACE-uge (uge 14/14 i Médoc-blokken) med et TSS-mål på 93. Du endte på 362 — 389% af planen, drevet af Marathon du Médoc lørdag med 176 TSS og 342 minutter.",
-  "coachHighlight": "Drik kun vand i dag og læg dig senest kl. 22 — alkohol tre dage i træk har presset HRV til 35 ms.",
+  "coachSpeech": "Søndag — afslut uge 14 stærkt. {HL} Godt: Søvn på 7,2 timer er solid. Fokus: Vægt på 72,3 kg (målt 3/9) — protein ved hvert måltid, alkohol som bevidst valg, søvn 7-8 t. Vægt/fedt vurderes på 7d-snit mod planen, ikke på én vejning. 3 AF-dage i 7 afsluttede dage — 3 mangler i 0 dage tilbage. Alle sessioner i hus. Juster de små ting, og resten følger. ❤️ Aerobt: VIGTIGT: Løbeturen 5/9 (snitpuls 127) kostede 26,5 % mere puls pr. meter end medianen af de seneste 4 sammenlignelige pas (EF 0,994 mod 1,352). Forbehold, som IKKE er trukket fra tallet: det var 29,7 °C. Konkluder ikke overtræning ud fra ét pas — sig hvad passet kostede, og at det enten var varmen eller for højt tempo. 📊 Store billede: CTL 50,8 er 7.8 point FORAN ugeplanen (planmål uge 14: 43). Vægten har tabt 2.4 kg over de seneste 89 dage (74,7 → 72,3 kg).  \"Den bedste træning er den, du faktisk gennemfører.\"",
+  "coachHighlight": "389 procent af ugens TSS er i hus",
   "weekFocus": "Taper færdig — hold kroppen klar til Médoc-lørdagen",
   "today": [
     {
@@ -2743,25 +2743,14 @@
   "commute_pairing_warnings": [],
   "warnings": [
     {
-      "type": "alcohol_cluster",
-      "level": "critical",
-      "message": "3 drikkedage i træk 4/9–6/9 — klynger rammer HRV hårdere end spredte dage.",
-      "action": null,
-      "source": "rule"
-    },
-    {
       "type": "hrv",
       "level": "warn",
-      "message": "HRV 35,0 ms — 38% under 7d-snit (56,3 ms). Kroppen er presset.",
-      "action": null,
-      "source": "rule"
+      "message": "HRV 35,0 ms — 38% under 7d-snit (56,3 ms). Kroppen er presset."
     },
     {
-      "type": "spacing",
-      "level": "info",
-      "message": "Løb målpace 15/9 og CPH Half 20/9 har 120 timers mellemrum — det er OK og over 72-timers-kravet.",
-      "action": null,
-      "source": "ai"
+      "type": "alcohol_cluster",
+      "level": "critical",
+      "message": "3 drikkedage i træk 4/9–6/9 — klynger rammer HRV hårdere end spredte dage."
     }
   ],
   "tsb": -2.2,
@@ -3040,8 +3029,6 @@
     21.74,
     21.65
   ],
-  "weightToGoal": 4.3,
-  "bodyFatToGoal": 5.9,
   "ctlPlan": [
     34,
     36,
@@ -3070,7 +3057,7 @@
       "note": "Nøgle virker"
     }
   },
-  "credentialsCheckedTs": "2026-09-06T19:18:06.713681",
+  "credentialsCheckedTs": "2026-09-06T20:03:57.106826",
   "coachAssessmentTsFull": "2026-09-06T19:18:06",
   "coachAssessmentWeightAtGen": 72.3,
   "coachAssessmentAfAtGen": 3,
@@ -4152,6 +4139,109 @@
     },
     "weeks": [
       {
+        "week": 10,
+        "programId": "medoc-2026",
+        "start": "2026-08-03",
+        "end": "2026-08-09",
+        "phase": null,
+        "blockType": "BUILD",
+        "mesoWeek": "1/1",
+        "ctlTarget": 50,
+        "tssTarget": 420,
+        "tssActual": 471,
+        "purpose": null,
+        "note": "Langtur 28-30 km. Open water-svøm starter.",
+        "quota": {
+          "haard": 0,
+          "moderat": 0
+        },
+        "quotaUsed": {
+          "haard": 0,
+          "moderat": 0
+        },
+        "keySessions": [
+          "Hometrainer 3×15 min Z3 90 min",
+          "Løb VO2 4×5 min Z4-Z5"
+        ],
+        "flags": [],
+        "races": [],
+        "travel": "Mallorca camp #2",
+        "isCurrent": false,
+        "isPast": true,
+        "hasDays": true
+      },
+      {
+        "week": 11,
+        "programId": "medoc-2026",
+        "start": "2026-08-10",
+        "end": "2026-08-16",
+        "phase": null,
+        "blockType": "BUILD+",
+        "mesoWeek": "1/1",
+        "ctlTarget": 53,
+        "tssTarget": 500,
+        "tssActual": 374,
+        "purpose": null,
+        "note": "Camp #2. TSB-gulv -35 overvåges dagligt.",
+        "quota": {
+          "haard": 0,
+          "moderat": 0
+        },
+        "quotaUsed": {
+          "haard": 0,
+          "moderat": 0
+        },
+        "keySessions": [
+          "Sa Calobra TEST via Puig Major",
+          "Hike 3 timer Z1-Z2"
+        ],
+        "flags": [],
+        "races": [],
+        "travel": "Mallorca camp #2",
+        "isCurrent": false,
+        "isPast": true,
+        "hasDays": true
+      },
+      {
+        "week": 12,
+        "programId": "medoc-2026",
+        "start": "2026-08-17",
+        "end": "2026-08-23",
+        "phase": null,
+        "blockType": "BUILD",
+        "mesoWeek": "1/1",
+        "ctlTarget": 51,
+        "tssTarget": 300,
+        "tssActual": 367,
+        "purpose": null,
+        "note": "Sidste langtur 32 km tirsdag. OW-svøm x2.",
+        "quota": {
+          "haard": 0,
+          "moderat": 0
+        },
+        "quotaUsed": {
+          "haard": 0,
+          "moderat": 0
+        },
+        "keySessions": [
+          "OW-svøm Race-simulation 2000 m",
+          "Lang løb Z2 26 km (140 min)"
+        ],
+        "flags": [
+          {
+            "level": "WARN",
+            "rule": "vo2_missing",
+            "text": "Ingen VO2-stimulus i build-uge 12",
+            "historic": false
+          }
+        ],
+        "races": [],
+        "travel": "Norge-tur",
+        "isCurrent": false,
+        "isPast": true,
+        "hasDays": true
+      },
+      {
         "week": 13,
         "programId": "medoc-2026",
         "start": "2026-08-24",
@@ -4183,7 +4273,8 @@
         ],
         "travel": null,
         "isCurrent": false,
-        "isPast": true
+        "isPast": true,
+        "hasDays": true
       },
       {
         "week": 14,
@@ -4224,7 +4315,8 @@
         ],
         "travel": "Bordeaux / Médoc",
         "isCurrent": true,
-        "isPast": false
+        "isPast": false,
+        "hasDays": true
       },
       {
         "week": 1,
@@ -4252,7 +4344,8 @@
         "races": [],
         "travel": null,
         "isCurrent": false,
-        "isPast": false
+        "isPast": false,
+        "hasDays": true
       },
       {
         "week": 2,
@@ -4289,7 +4382,8 @@
         ],
         "travel": null,
         "isCurrent": false,
-        "isPast": false
+        "isPast": false,
+        "hasDays": true
       },
       {
         "week": 3,
@@ -4320,7 +4414,8 @@
         "races": [],
         "travel": null,
         "isCurrent": false,
-        "isPast": false
+        "isPast": false,
+        "hasDays": true
       },
       {
         "week": 4,
@@ -4350,7 +4445,8 @@
         "races": [],
         "travel": null,
         "isCurrent": false,
-        "isPast": false
+        "isPast": false,
+        "hasDays": true
       },
       {
         "week": 5,
@@ -4378,7 +4474,8 @@
         "races": [],
         "travel": null,
         "isCurrent": false,
-        "isPast": false
+        "isPast": false,
+        "hasDays": true
       },
       {
         "week": 6,
@@ -4409,7 +4506,8 @@
         "races": [],
         "travel": null,
         "isCurrent": false,
-        "isPast": false
+        "isPast": false,
+        "hasDays": true
       },
       {
         "week": 7,
@@ -4440,10 +4538,1887 @@
         "races": [],
         "travel": null,
         "isCurrent": false,
-        "isPast": false
+        "isPast": false,
+        "hasDays": true
+      },
+      {
+        "week": 8,
+        "programId": "tds-2027",
+        "start": "2026-10-26",
+        "end": "2026-11-01",
+        "phase": "TRANSITION",
+        "blockType": "RECOVERY",
+        "mesoWeek": "R",
+        "ctlTarget": 55,
+        "tssTarget": 260,
+        "tssActual": null,
+        "purpose": "Recovery: lette Z2-pas, styrke 2 sæt, Stelvio couples-tilmelding tor 29/10.",
+        "note": "Stelvio couples-tilmelding deadline 29/10 (med Eva).",
+        "quota": {
+          "haard": 0,
+          "moderat": 0
+        },
+        "quotaUsed": {
+          "haard": 0,
+          "moderat": 0
+        },
+        "keySessions": [
+          "FaF 1 Z2 - Depottur 2 t"
+        ],
+        "flags": [],
+        "races": [],
+        "travel": null,
+        "isCurrent": false,
+        "isPast": false,
+        "hasDays": true
+      },
+      {
+        "week": 9,
+        "programId": "tds-2027",
+        "start": "2026-11-02",
+        "end": "2026-11-08",
+        "phase": "BASE",
+        "blockType": "BASE",
+        "mesoWeek": "1/2",
+        "ctlTarget": 57,
+        "tssTarget": 440,
+        "tssActual": null,
+        "purpose": null,
+        "note": "Vinterblok. Sweet spot. Løb 3× holdes.",
+        "quota": {
+          "haard": 0,
+          "moderat": 0
+        },
+        "quotaUsed": {
+          "haard": 0,
+          "moderat": 0
+        },
+        "keySessions": [],
+        "flags": [],
+        "races": [],
+        "travel": null,
+        "isCurrent": false,
+        "isPast": false,
+        "hasDays": false
+      },
+      {
+        "week": 10,
+        "programId": "tds-2027",
+        "start": "2026-11-09",
+        "end": "2026-11-15",
+        "phase": "BASE",
+        "blockType": "BASE",
+        "mesoWeek": "2/2",
+        "ctlTarget": 59,
+        "tssTarget": 460,
+        "tssActual": null,
+        "purpose": null,
+        "note": null,
+        "quota": {
+          "haard": 0,
+          "moderat": 0
+        },
+        "quotaUsed": {
+          "haard": 0,
+          "moderat": 0
+        },
+        "keySessions": [],
+        "flags": [],
+        "races": [],
+        "travel": null,
+        "isCurrent": false,
+        "isPast": false,
+        "hasDays": false
+      },
+      {
+        "week": 11,
+        "programId": "tds-2027",
+        "start": "2026-11-16",
+        "end": "2026-11-22",
+        "phase": "BASE",
+        "blockType": "BASE+",
+        "mesoWeek": "1/1",
+        "ctlTarget": 62,
+        "tssTarget": 490,
+        "tssActual": null,
+        "purpose": null,
+        "note": null,
+        "quota": {
+          "haard": 0,
+          "moderat": 0
+        },
+        "quotaUsed": {
+          "haard": 0,
+          "moderat": 0
+        },
+        "keySessions": [],
+        "flags": [],
+        "races": [],
+        "travel": null,
+        "isCurrent": false,
+        "isPast": false,
+        "hasDays": false
+      },
+      {
+        "week": 12,
+        "programId": "tds-2027",
+        "start": "2026-11-23",
+        "end": "2026-11-29",
+        "phase": "BASE",
+        "blockType": "RECOVERY",
+        "mesoWeek": "R",
+        "ctlTarget": 60,
+        "tssTarget": 270,
+        "tssActual": null,
+        "purpose": null,
+        "note": null,
+        "quota": {
+          "haard": 0,
+          "moderat": 0
+        },
+        "quotaUsed": {
+          "haard": 0,
+          "moderat": 0
+        },
+        "keySessions": [],
+        "flags": [],
+        "races": [],
+        "travel": null,
+        "isCurrent": false,
+        "isPast": false,
+        "hasDays": false
+      },
+      {
+        "week": 13,
+        "programId": "tds-2027",
+        "start": "2026-11-30",
+        "end": "2026-12-06",
+        "phase": "BASE",
+        "blockType": "BASE",
+        "mesoWeek": "1/2",
+        "ctlTarget": 62,
+        "tssTarget": 460,
+        "tssActual": null,
+        "purpose": null,
+        "note": null,
+        "quota": {
+          "haard": 0,
+          "moderat": 0
+        },
+        "quotaUsed": {
+          "haard": 0,
+          "moderat": 0
+        },
+        "keySessions": [],
+        "flags": [],
+        "races": [],
+        "travel": null,
+        "isCurrent": false,
+        "isPast": false,
+        "hasDays": false
+      },
+      {
+        "week": 14,
+        "programId": "tds-2027",
+        "start": "2026-12-07",
+        "end": "2026-12-13",
+        "phase": "BASE",
+        "blockType": "BASE",
+        "mesoWeek": "2/2",
+        "ctlTarget": 64,
+        "tssTarget": 480,
+        "tssActual": null,
+        "purpose": null,
+        "note": null,
+        "quota": {
+          "haard": 0,
+          "moderat": 0
+        },
+        "quotaUsed": {
+          "haard": 0,
+          "moderat": 0
+        },
+        "keySessions": [],
+        "flags": [],
+        "races": [],
+        "travel": null,
+        "isCurrent": false,
+        "isPast": false,
+        "hasDays": false
+      },
+      {
+        "week": 15,
+        "programId": "tds-2027",
+        "start": "2026-12-14",
+        "end": "2026-12-20",
+        "phase": "BASE",
+        "blockType": "BASE+",
+        "mesoWeek": "1/1",
+        "ctlTarget": 66,
+        "tssTarget": 500,
+        "tssActual": null,
+        "purpose": null,
+        "note": null,
+        "quota": {
+          "haard": 0,
+          "moderat": 0
+        },
+        "quotaUsed": {
+          "haard": 0,
+          "moderat": 0
+        },
+        "keySessions": [],
+        "flags": [],
+        "races": [],
+        "travel": null,
+        "isCurrent": false,
+        "isPast": false,
+        "hasDays": false
+      },
+      {
+        "week": 16,
+        "programId": "tds-2027",
+        "start": "2026-12-21",
+        "end": "2026-12-27",
+        "phase": "BASE",
+        "blockType": "RECOVERY",
+        "mesoWeek": "R",
+        "ctlTarget": 63,
+        "tssTarget": 260,
+        "tssActual": null,
+        "purpose": null,
+        "note": "Jul. Planlagt lav — ikke en fiasko.",
+        "quota": {
+          "haard": 0,
+          "moderat": 0
+        },
+        "quotaUsed": {
+          "haard": 0,
+          "moderat": 0
+        },
+        "keySessions": [],
+        "flags": [],
+        "races": [],
+        "travel": null,
+        "isCurrent": false,
+        "isPast": false,
+        "hasDays": false
+      },
+      {
+        "week": 17,
+        "programId": "tds-2027",
+        "start": "2026-12-28",
+        "end": "2027-01-03",
+        "phase": "BASE",
+        "blockType": "RECOVERY",
+        "mesoWeek": "R",
+        "ctlTarget": 61,
+        "tssTarget": 240,
+        "tssActual": null,
+        "purpose": null,
+        "note": "Nytår.",
+        "quota": {
+          "haard": 0,
+          "moderat": 0
+        },
+        "quotaUsed": {
+          "haard": 0,
+          "moderat": 0
+        },
+        "keySessions": [],
+        "flags": [],
+        "races": [],
+        "travel": null,
+        "isCurrent": false,
+        "isPast": false,
+        "hasDays": false
+      },
+      {
+        "week": 18,
+        "programId": "tds-2027",
+        "start": "2027-01-04",
+        "end": "2027-01-10",
+        "phase": "BASE",
+        "blockType": "BASE",
+        "mesoWeek": "1/2",
+        "ctlTarget": 63,
+        "tssTarget": 460,
+        "tssActual": null,
+        "purpose": null,
+        "note": null,
+        "quota": {
+          "haard": 0,
+          "moderat": 0
+        },
+        "quotaUsed": {
+          "haard": 0,
+          "moderat": 0
+        },
+        "keySessions": [],
+        "flags": [],
+        "races": [],
+        "travel": null,
+        "isCurrent": false,
+        "isPast": false,
+        "hasDays": false
+      },
+      {
+        "week": 19,
+        "programId": "tds-2027",
+        "start": "2027-01-11",
+        "end": "2027-01-17",
+        "phase": "BASE",
+        "blockType": "BASE",
+        "mesoWeek": "2/2",
+        "ctlTarget": 65,
+        "tssTarget": 480,
+        "tssActual": null,
+        "purpose": null,
+        "note": null,
+        "quota": {
+          "haard": 0,
+          "moderat": 0
+        },
+        "quotaUsed": {
+          "haard": 0,
+          "moderat": 0
+        },
+        "keySessions": [],
+        "flags": [],
+        "races": [],
+        "travel": null,
+        "isCurrent": false,
+        "isPast": false,
+        "hasDays": false
+      },
+      {
+        "week": 20,
+        "programId": "tds-2027",
+        "start": "2027-01-18",
+        "end": "2027-01-24",
+        "phase": "BASE",
+        "blockType": "BASE+",
+        "mesoWeek": "1/1",
+        "ctlTarget": 68,
+        "tssTarget": 510,
+        "tssActual": null,
+        "purpose": null,
+        "note": null,
+        "quota": {
+          "haard": 0,
+          "moderat": 0
+        },
+        "quotaUsed": {
+          "haard": 0,
+          "moderat": 0
+        },
+        "keySessions": [],
+        "flags": [],
+        "races": [],
+        "travel": null,
+        "isCurrent": false,
+        "isPast": false,
+        "hasDays": false
+      },
+      {
+        "week": 21,
+        "programId": "tds-2027",
+        "start": "2027-01-25",
+        "end": "2027-01-31",
+        "phase": "BASE",
+        "blockType": "RECOVERY",
+        "mesoWeek": "R",
+        "ctlTarget": 66,
+        "tssTarget": 280,
+        "tssActual": null,
+        "purpose": null,
+        "note": "FTP-test. Forventet ~292 W ved 68 kg = 4,3 W/kg. Vaegtmaal skal vaere naaet her.",
+        "quota": {
+          "haard": 0,
+          "moderat": 0
+        },
+        "quotaUsed": {
+          "haard": 0,
+          "moderat": 0
+        },
+        "keySessions": [],
+        "flags": [],
+        "races": [],
+        "travel": null,
+        "isCurrent": false,
+        "isPast": false,
+        "hasDays": false
+      },
+      {
+        "week": 22,
+        "programId": "tds-2027",
+        "start": "2027-02-01",
+        "end": "2027-02-07",
+        "phase": "BASE",
+        "blockType": "BASE",
+        "mesoWeek": "1/1",
+        "ctlTarget": 68,
+        "tssTarget": 480,
+        "tssActual": null,
+        "purpose": null,
+        "note": null,
+        "quota": {
+          "haard": 0,
+          "moderat": 0
+        },
+        "quotaUsed": {
+          "haard": 0,
+          "moderat": 0
+        },
+        "keySessions": [],
+        "flags": [],
+        "races": [],
+        "travel": null,
+        "isCurrent": false,
+        "isPast": false,
+        "hasDays": false
+      },
+      {
+        "week": 23,
+        "programId": "tds-2027",
+        "start": "2027-02-08",
+        "end": "2027-02-14",
+        "phase": "BUILD",
+        "blockType": "BUILD",
+        "mesoWeek": "1/2",
+        "ctlTarget": 70,
+        "tssTarget": 500,
+        "tssActual": null,
+        "purpose": null,
+        "note": "Tærskelarbejde ind. 2 kvalitetspas/uge.",
+        "quota": {
+          "haard": 0,
+          "moderat": 0
+        },
+        "quotaUsed": {
+          "haard": 0,
+          "moderat": 0
+        },
+        "keySessions": [],
+        "flags": [],
+        "races": [],
+        "travel": null,
+        "isCurrent": false,
+        "isPast": false,
+        "hasDays": false
+      },
+      {
+        "week": 24,
+        "programId": "tds-2027",
+        "start": "2027-02-15",
+        "end": "2027-02-21",
+        "phase": "BUILD",
+        "blockType": "BUILD",
+        "mesoWeek": "2/2",
+        "ctlTarget": 72,
+        "tssTarget": 520,
+        "tssActual": null,
+        "purpose": null,
+        "note": null,
+        "quota": {
+          "haard": 0,
+          "moderat": 0
+        },
+        "quotaUsed": {
+          "haard": 0,
+          "moderat": 0
+        },
+        "keySessions": [],
+        "flags": [],
+        "races": [],
+        "travel": null,
+        "isCurrent": false,
+        "isPast": false,
+        "hasDays": false
+      },
+      {
+        "week": 25,
+        "programId": "tds-2027",
+        "start": "2027-02-22",
+        "end": "2027-02-28",
+        "phase": "BUILD",
+        "blockType": "RECOVERY",
+        "mesoWeek": "R",
+        "ctlTarget": 70,
+        "tssTarget": 290,
+        "tssActual": null,
+        "purpose": null,
+        "note": null,
+        "quota": {
+          "haard": 0,
+          "moderat": 0
+        },
+        "quotaUsed": {
+          "haard": 0,
+          "moderat": 0
+        },
+        "keySessions": [],
+        "flags": [],
+        "races": [],
+        "travel": null,
+        "isCurrent": false,
+        "isPast": false,
+        "hasDays": false
+      },
+      {
+        "week": 26,
+        "programId": "tds-2027",
+        "start": "2027-03-01",
+        "end": "2027-03-07",
+        "phase": "BUILD",
+        "blockType": "BUILD",
+        "mesoWeek": "1/2",
+        "ctlTarget": 72,
+        "tssTarget": 510,
+        "tssActual": null,
+        "purpose": null,
+        "note": null,
+        "quota": {
+          "haard": 0,
+          "moderat": 0
+        },
+        "quotaUsed": {
+          "haard": 0,
+          "moderat": 0
+        },
+        "keySessions": [],
+        "flags": [],
+        "races": [],
+        "travel": null,
+        "isCurrent": false,
+        "isPast": false,
+        "hasDays": false
+      },
+      {
+        "week": 27,
+        "programId": "tds-2027",
+        "start": "2027-03-08",
+        "end": "2027-03-14",
+        "phase": "BUILD",
+        "blockType": "BUILD",
+        "mesoWeek": "2/2",
+        "ctlTarget": 74,
+        "tssTarget": 530,
+        "tssActual": null,
+        "purpose": null,
+        "note": null,
+        "quota": {
+          "haard": 0,
+          "moderat": 0
+        },
+        "quotaUsed": {
+          "haard": 0,
+          "moderat": 0
+        },
+        "keySessions": [],
+        "flags": [],
+        "races": [],
+        "travel": null,
+        "isCurrent": false,
+        "isPast": false,
+        "hasDays": false
+      },
+      {
+        "week": 28,
+        "programId": "tds-2027",
+        "start": "2027-03-15",
+        "end": "2027-03-21",
+        "phase": "BUILD",
+        "blockType": "BUILD+",
+        "mesoWeek": "1/1",
+        "ctlTarget": 77,
+        "tssTarget": 560,
+        "tssActual": null,
+        "purpose": null,
+        "note": null,
+        "quota": {
+          "haard": 0,
+          "moderat": 0
+        },
+        "quotaUsed": {
+          "haard": 0,
+          "moderat": 0
+        },
+        "keySessions": [],
+        "flags": [],
+        "races": [],
+        "travel": null,
+        "isCurrent": false,
+        "isPast": false,
+        "hasDays": false
+      },
+      {
+        "week": 29,
+        "programId": "tds-2027",
+        "start": "2027-03-22",
+        "end": "2027-03-28",
+        "phase": "BUILD",
+        "blockType": "RECOVERY",
+        "mesoWeek": "R",
+        "ctlTarget": 74,
+        "tssTarget": 300,
+        "tssActual": null,
+        "purpose": null,
+        "note": "Forlejr-aflastning.",
+        "quota": {
+          "haard": 0,
+          "moderat": 0
+        },
+        "quotaUsed": {
+          "haard": 0,
+          "moderat": 0
+        },
+        "keySessions": [],
+        "flags": [],
+        "races": [],
+        "travel": null,
+        "isCurrent": false,
+        "isPast": false,
+        "hasDays": false
+      },
+      {
+        "week": 30,
+        "programId": "tds-2027",
+        "start": "2027-03-29",
+        "end": "2027-04-04",
+        "phase": "BUILD",
+        "blockType": "CAMP",
+        "mesoWeek": "1/1",
+        "ctlTarget": 80,
+        "tssTarget": 750,
+        "tssActual": null,
+        "purpose": null,
+        "note": "LEJR #1 Mallorca. 20-25 t. Her bygges CTL — ikke i Gentofte. SA CALOBRA PR-FORSOEG: 9,45 km / 627 hm. PR at slaa er 35:18 sat paa 275 W. Koer den tidligt i lejren paa friske ben, ikke til sidst.",
+        "quota": {
+          "haard": 0,
+          "moderat": 0
+        },
+        "quotaUsed": {
+          "haard": 0,
+          "moderat": 0
+        },
+        "keySessions": [],
+        "flags": [],
+        "races": [],
+        "travel": null,
+        "isCurrent": false,
+        "isPast": false,
+        "hasDays": false
+      },
+      {
+        "week": 31,
+        "programId": "tds-2027",
+        "start": "2027-04-05",
+        "end": "2027-04-11",
+        "phase": "BUILD",
+        "blockType": "RECOVERY",
+        "mesoWeek": "R",
+        "ctlTarget": 77,
+        "tssTarget": 280,
+        "tssActual": null,
+        "purpose": null,
+        "note": "Fuld aflastning efter lejr. TSB-gulv -30.",
+        "quota": {
+          "haard": 0,
+          "moderat": 0
+        },
+        "quotaUsed": {
+          "haard": 0,
+          "moderat": 0
+        },
+        "keySessions": [],
+        "flags": [],
+        "races": [],
+        "travel": null,
+        "isCurrent": false,
+        "isPast": false,
+        "hasDays": false
+      },
+      {
+        "week": 32,
+        "programId": "tds-2027",
+        "start": "2027-04-12",
+        "end": "2027-04-18",
+        "phase": "BUILD",
+        "blockType": "BUILD",
+        "mesoWeek": "1/2",
+        "ctlTarget": 78,
+        "tssTarget": 530,
+        "tssActual": null,
+        "purpose": null,
+        "note": null,
+        "quota": {
+          "haard": 0,
+          "moderat": 0
+        },
+        "quotaUsed": {
+          "haard": 0,
+          "moderat": 0
+        },
+        "keySessions": [],
+        "flags": [],
+        "races": [],
+        "travel": null,
+        "isCurrent": false,
+        "isPast": false,
+        "hasDays": false
+      },
+      {
+        "week": 33,
+        "programId": "tds-2027",
+        "start": "2027-04-19",
+        "end": "2027-04-25",
+        "phase": "BUILD",
+        "blockType": "BUILD",
+        "mesoWeek": "2/2",
+        "ctlTarget": 80,
+        "tssTarget": 550,
+        "tssActual": null,
+        "purpose": null,
+        "note": null,
+        "quota": {
+          "haard": 0,
+          "moderat": 0
+        },
+        "quotaUsed": {
+          "haard": 0,
+          "moderat": 0
+        },
+        "keySessions": [],
+        "flags": [],
+        "races": [],
+        "travel": null,
+        "isCurrent": false,
+        "isPast": false,
+        "hasDays": false
+      },
+      {
+        "week": 34,
+        "programId": "tds-2027",
+        "start": "2027-04-26",
+        "end": "2027-05-02",
+        "phase": "BUILD",
+        "blockType": "RECOVERY",
+        "mesoWeek": "R",
+        "ctlTarget": 77,
+        "tssTarget": 300,
+        "tssActual": null,
+        "purpose": null,
+        "note": null,
+        "quota": {
+          "haard": 0,
+          "moderat": 0
+        },
+        "quotaUsed": {
+          "haard": 0,
+          "moderat": 0
+        },
+        "keySessions": [],
+        "flags": [],
+        "races": [],
+        "travel": null,
+        "isCurrent": false,
+        "isPast": false,
+        "hasDays": false
+      },
+      {
+        "week": 35,
+        "programId": "tds-2027",
+        "start": "2027-05-03",
+        "end": "2027-05-09",
+        "phase": "BUILD",
+        "blockType": "BUILD",
+        "mesoWeek": "1/2",
+        "ctlTarget": 79,
+        "tssTarget": 520,
+        "tssActual": null,
+        "purpose": null,
+        "note": null,
+        "quota": {
+          "haard": 0,
+          "moderat": 0
+        },
+        "quotaUsed": {
+          "haard": 0,
+          "moderat": 0
+        },
+        "keySessions": [],
+        "flags": [],
+        "races": [],
+        "travel": null,
+        "isCurrent": false,
+        "isPast": false,
+        "hasDays": false
+      },
+      {
+        "week": 36,
+        "programId": "tds-2027",
+        "start": "2027-05-10",
+        "end": "2027-05-16",
+        "phase": "STELVIO",
+        "blockType": "BUILD",
+        "mesoWeek": "2/2",
+        "ctlTarget": 81,
+        "tssTarget": 540,
+        "tssActual": null,
+        "purpose": null,
+        "note": null,
+        "quota": {
+          "haard": 0,
+          "moderat": 0
+        },
+        "quotaUsed": {
+          "haard": 0,
+          "moderat": 0
+        },
+        "keySessions": [],
+        "flags": [],
+        "races": [],
+        "travel": null,
+        "isCurrent": false,
+        "isPast": false,
+        "hasDays": false
+      },
+      {
+        "week": 37,
+        "programId": "tds-2027",
+        "start": "2027-05-17",
+        "end": "2027-05-23",
+        "phase": "STELVIO",
+        "blockType": "BUILD+",
+        "mesoWeek": "1/1",
+        "ctlTarget": 83,
+        "tssTarget": 560,
+        "tssActual": null,
+        "purpose": null,
+        "note": "FTP-test. Forventet ~305 W = 4,5 W/kg. Sidste port foer Stelvio.",
+        "quota": {
+          "haard": 0,
+          "moderat": 0
+        },
+        "quotaUsed": {
+          "haard": 0,
+          "moderat": 0
+        },
+        "keySessions": [],
+        "flags": [],
+        "races": [],
+        "travel": null,
+        "isCurrent": false,
+        "isPast": false,
+        "hasDays": false
+      },
+      {
+        "week": 38,
+        "programId": "tds-2027",
+        "start": "2027-05-24",
+        "end": "2027-05-30",
+        "phase": "STELVIO",
+        "blockType": "RECOVERY",
+        "mesoWeek": "R",
+        "ctlTarget": 80,
+        "tssTarget": 300,
+        "tssActual": null,
+        "purpose": null,
+        "note": "Taper mod Stelvio.",
+        "quota": {
+          "haard": 0,
+          "moderat": 0
+        },
+        "quotaUsed": {
+          "haard": 0,
+          "moderat": 0
+        },
+        "keySessions": [],
+        "flags": [],
+        "races": [],
+        "travel": null,
+        "isCurrent": false,
+        "isPast": false,
+        "hasDays": false
+      },
+      {
+        "week": 39,
+        "programId": "tds-2027",
+        "start": "2027-05-31",
+        "end": "2027-06-06",
+        "phase": "STELVIO",
+        "blockType": "RACE",
+        "mesoWeek": "1/1",
+        "ctlTarget": 78,
+        "tssTarget": 350,
+        "tssActual": null,
+        "purpose": null,
+        "note": "LA STELVIO SANTINI (Santini Stelvio Gran Fondo, lang rute) søn 6/6 — 130 km / 4.500 hm. B-løb, tilmeldt 16/7-2026 sammen med Eva. Form-check mod TdS: kør den som hårdt træningspas, ikke som A-løb.",
+        "quota": {
+          "haard": 0,
+          "moderat": 0
+        },
+        "quotaUsed": {
+          "haard": 0,
+          "moderat": 0
+        },
+        "keySessions": [],
+        "flags": [],
+        "races": [
+          {
+            "name": "Santini Stelvio Gran Fondo (lang rute)",
+            "date": "2027-06-06",
+            "priority": "B"
+          }
+        ],
+        "travel": null,
+        "isCurrent": false,
+        "isPast": false,
+        "hasDays": false
+      },
+      {
+        "week": 40,
+        "programId": "tds-2027",
+        "start": "2027-06-07",
+        "end": "2027-06-13",
+        "phase": "SPECIFIK",
+        "blockType": "RECOVERY",
+        "mesoWeek": "R",
+        "ctlTarget": 76,
+        "tssTarget": 280,
+        "tssActual": null,
+        "purpose": null,
+        "note": "Post-Stelvio. Evaluer mod TdS-model.",
+        "quota": {
+          "haard": 0,
+          "moderat": 0
+        },
+        "quotaUsed": {
+          "haard": 0,
+          "moderat": 0
+        },
+        "keySessions": [],
+        "flags": [],
+        "races": [],
+        "travel": null,
+        "isCurrent": false,
+        "isPast": false,
+        "hasDays": false
+      },
+      {
+        "week": 41,
+        "programId": "tds-2027",
+        "start": "2027-06-14",
+        "end": "2027-06-20",
+        "phase": "SPECIFIK",
+        "blockType": "SPECIFIK",
+        "mesoWeek": "1/2",
+        "ctlTarget": 78,
+        "tssTarget": 540,
+        "tssActual": null,
+        "purpose": null,
+        "note": "Langtur vokser: 6 t+. Fueling øves hver gang.",
+        "quota": {
+          "haard": 0,
+          "moderat": 0
+        },
+        "quotaUsed": {
+          "haard": 0,
+          "moderat": 0
+        },
+        "keySessions": [],
+        "flags": [],
+        "races": [],
+        "travel": null,
+        "isCurrent": false,
+        "isPast": false,
+        "hasDays": false
+      },
+      {
+        "week": 42,
+        "programId": "tds-2027",
+        "start": "2027-06-21",
+        "end": "2027-06-27",
+        "phase": "SPECIFIK",
+        "blockType": "SPECIFIK",
+        "mesoWeek": "2/2",
+        "ctlTarget": 80,
+        "tssTarget": 570,
+        "tssActual": null,
+        "purpose": null,
+        "note": null,
+        "quota": {
+          "haard": 0,
+          "moderat": 0
+        },
+        "quotaUsed": {
+          "haard": 0,
+          "moderat": 0
+        },
+        "keySessions": [],
+        "flags": [],
+        "races": [],
+        "travel": null,
+        "isCurrent": false,
+        "isPast": false,
+        "hasDays": false
+      },
+      {
+        "week": 43,
+        "programId": "tds-2027",
+        "start": "2027-06-28",
+        "end": "2027-07-04",
+        "phase": "SPECIFIK",
+        "blockType": "RECOVERY",
+        "mesoWeek": "R",
+        "ctlTarget": 78,
+        "tssTarget": 300,
+        "tssActual": null,
+        "purpose": null,
+        "note": null,
+        "quota": {
+          "haard": 0,
+          "moderat": 0
+        },
+        "quotaUsed": {
+          "haard": 0,
+          "moderat": 0
+        },
+        "keySessions": [],
+        "flags": [],
+        "races": [],
+        "travel": null,
+        "isCurrent": false,
+        "isPast": false,
+        "hasDays": false
+      },
+      {
+        "week": 44,
+        "programId": "tds-2027",
+        "start": "2027-07-05",
+        "end": "2027-07-11",
+        "phase": "SPECIFIK",
+        "blockType": "SPECIFIK",
+        "mesoWeek": "1/1",
+        "ctlTarget": 80,
+        "tssTarget": 560,
+        "tssActual": null,
+        "purpose": null,
+        "note": "Løb ned til 1-2 rolige. Cyklen har forkørselsret.",
+        "quota": {
+          "haard": 0,
+          "moderat": 0
+        },
+        "quotaUsed": {
+          "haard": 0,
+          "moderat": 0
+        },
+        "keySessions": [],
+        "flags": [],
+        "races": [],
+        "travel": null,
+        "isCurrent": false,
+        "isPast": false,
+        "hasDays": false
+      },
+      {
+        "week": 45,
+        "programId": "tds-2027",
+        "start": "2027-07-12",
+        "end": "2027-07-18",
+        "phase": "SPECIFIK",
+        "blockType": "SPECIFIK+",
+        "mesoWeek": "1/1",
+        "ctlTarget": 83,
+        "tssTarget": 590,
+        "tssActual": null,
+        "purpose": null,
+        "note": null,
+        "quota": {
+          "haard": 0,
+          "moderat": 0
+        },
+        "quotaUsed": {
+          "haard": 0,
+          "moderat": 0
+        },
+        "keySessions": [],
+        "flags": [],
+        "races": [],
+        "travel": null,
+        "isCurrent": false,
+        "isPast": false,
+        "hasDays": false
+      },
+      {
+        "week": 46,
+        "programId": "tds-2027",
+        "start": "2027-07-19",
+        "end": "2027-07-25",
+        "phase": "SPECIFIK",
+        "blockType": "CAMP",
+        "mesoWeek": "1/1",
+        "ctlTarget": 88,
+        "tssTarget": 780,
+        "tssActual": null,
+        "purpose": null,
+        "note": "LEJR #2 Alperne. Back-to-back bjergdage. CTL-peak. Gearing testes. FTP-test i lejren — porten mod 320 W (4,7 W/kg).",
+        "quota": {
+          "haard": 0,
+          "moderat": 0
+        },
+        "quotaUsed": {
+          "haard": 0,
+          "moderat": 0
+        },
+        "keySessions": [],
+        "flags": [],
+        "races": [],
+        "travel": null,
+        "isCurrent": false,
+        "isPast": false,
+        "hasDays": false
+      },
+      {
+        "week": 47,
+        "programId": "tds-2027",
+        "start": "2027-07-26",
+        "end": "2027-08-01",
+        "phase": "SPECIFIK",
+        "blockType": "RECOVERY",
+        "mesoWeek": "R",
+        "ctlTarget": 84,
+        "tssTarget": 300,
+        "tssActual": null,
+        "purpose": null,
+        "note": null,
+        "quota": {
+          "haard": 0,
+          "moderat": 0
+        },
+        "quotaUsed": {
+          "haard": 0,
+          "moderat": 0
+        },
+        "keySessions": [],
+        "flags": [],
+        "races": [],
+        "travel": null,
+        "isCurrent": false,
+        "isPast": false,
+        "hasDays": false
+      },
+      {
+        "week": 48,
+        "programId": "tds-2027",
+        "start": "2027-08-02",
+        "end": "2027-08-08",
+        "phase": "SPECIFIK",
+        "blockType": "SPECIFIK",
+        "mesoWeek": "1/2",
+        "ctlTarget": 86,
+        "tssTarget": 580,
+        "tssActual": null,
+        "purpose": null,
+        "note": null,
+        "quota": {
+          "haard": 0,
+          "moderat": 0
+        },
+        "quotaUsed": {
+          "haard": 0,
+          "moderat": 0
+        },
+        "keySessions": [],
+        "flags": [],
+        "races": [],
+        "travel": null,
+        "isCurrent": false,
+        "isPast": false,
+        "hasDays": false
+      },
+      {
+        "week": 49,
+        "programId": "tds-2027",
+        "start": "2027-08-09",
+        "end": "2027-08-15",
+        "phase": "SPECIFIK",
+        "blockType": "SPECIFIK",
+        "mesoWeek": "2/2",
+        "ctlTarget": 87,
+        "tssTarget": 560,
+        "tssActual": null,
+        "purpose": null,
+        "note": "Sidste større uge.",
+        "quota": {
+          "haard": 0,
+          "moderat": 0
+        },
+        "quotaUsed": {
+          "haard": 0,
+          "moderat": 0
+        },
+        "keySessions": [],
+        "flags": [],
+        "races": [],
+        "travel": null,
+        "isCurrent": false,
+        "isPast": false,
+        "hasDays": false
+      },
+      {
+        "week": 50,
+        "programId": "tds-2027",
+        "start": "2027-08-16",
+        "end": "2027-08-22",
+        "phase": "TAPER",
+        "blockType": "TAPER",
+        "mesoWeek": "1/1",
+        "ctlTarget": 85,
+        "tssTarget": 350,
+        "tssActual": null,
+        "purpose": null,
+        "note": "Intensitet holdes, volumen falder.",
+        "quota": {
+          "haard": 0,
+          "moderat": 0
+        },
+        "quotaUsed": {
+          "haard": 0,
+          "moderat": 0
+        },
+        "keySessions": [],
+        "flags": [],
+        "races": [],
+        "travel": null,
+        "isCurrent": false,
+        "isPast": false,
+        "hasDays": false
+      },
+      {
+        "week": 51,
+        "programId": "tds-2027",
+        "start": "2027-08-23",
+        "end": "2027-08-29",
+        "phase": "TAPER",
+        "blockType": "RACE",
+        "mesoWeek": "1/1",
+        "ctlTarget": 82,
+        "tssTarget": 180,
+        "tssActual": null,
+        "purpose": null,
+        "note": "TOUR DES STATIONS ULTRAFONDO lør 28/8 — A-løb. Start 02:30.",
+        "quota": {
+          "haard": 0,
+          "moderat": 0
+        },
+        "quotaUsed": {
+          "haard": 0,
+          "moderat": 0
+        },
+        "keySessions": [],
+        "flags": [],
+        "races": [
+          {
+            "name": "Tour des Stations Ultrafondo",
+            "date": "2027-08-28",
+            "priority": "A"
+          }
+        ],
+        "travel": null,
+        "isCurrent": false,
+        "isPast": false,
+        "hasDays": false
       }
     ],
     "sessions": [
+      {
+        "week": 10,
+        "programId": "medoc-2026",
+        "start": "2026-08-03",
+        "days": [
+          {
+            "date": "2026-08-03",
+            "weekday": "Man",
+            "entries": [
+              {
+                "id": "8f8a5800",
+                "name": "Hometrainer 3×15 min Z3 90 min",
+                "type": "Ride",
+                "disc": "bike",
+                "mins": 90,
+                "libraryId": null,
+                "load": "haard",
+                "erg": null,
+                "purpose": null,
+                "zwiftName": null,
+                "done": false,
+                "actualMins": null,
+                "actualTss": null,
+                "note": "Hometrainer 3×15 Z3 — byttet med mandagens svøm (2/8). Kør lav Z3 (205-220W) hvis HRV stadig er lav. Gang 30 min om aftenen.",
+                "isKey": true,
+                "optional": false
+              }
+            ],
+            "restNote": null,
+            "restId": null,
+            "isToday": false
+          },
+          {
+            "date": "2026-08-04",
+            "weekday": "Tir",
+            "entries": [
+              {
+                "id": "cbf5dfd1",
+                "name": "Løb Z1 30 min let",
+                "type": "Run",
+                "disc": "run",
+                "mins": 30,
+                "libraryId": null,
+                "load": "let",
+                "erg": null,
+                "purpose": null,
+                "zwiftName": null,
+                "done": false,
+                "actualMins": null,
+                "actualTss": null,
+                "note": "Ekstra let Z1-løb 30 min — VO2 flyttet til torsdag (HRV-restitution)",
+                "isKey": false,
+                "optional": false
+              }
+            ],
+            "restNote": null,
+            "restId": null,
+            "isToday": false
+          },
+          {
+            "date": "2026-08-05",
+            "weekday": "Ons",
+            "entries": [
+              {
+                "id": "925bfcc2",
+                "name": "Svøm 1500m teknisk",
+                "type": "Swim",
+                "disc": "swim",
+                "mins": 40,
+                "libraryId": null,
+                "load": "let",
+                "erg": null,
+                "purpose": null,
+                "zwiftName": null,
+                "done": false,
+                "actualMins": null,
+                "actualTss": null,
+                "note": "Svøm 1500m teknisk — byttet fra mandag. Let onsdag før VO2-løb torsdag 07:00.",
+                "isKey": false,
+                "optional": false
+              },
+              {
+                "id": "b3f1a7d2",
+                "name": "Styrke A Functional Strength 2 sæt",
+                "type": "WeightTraining",
+                "disc": "strength",
+                "mins": 45,
+                "libraryId": null,
+                "load": "let",
+                "erg": null,
+                "purpose": null,
+                "zwiftName": null,
+                "done": false,
+                "actualMins": null,
+                "actualTss": null,
+                "note": "Styrke A 2 sæt — flyttet fra mandag. Kontrolleret, lette vægte (VO2-løb torsdag 07:00)",
+                "isKey": false,
+                "optional": false
+              }
+            ],
+            "restNote": null,
+            "restId": null,
+            "isToday": false
+          },
+          {
+            "date": "2026-08-06",
+            "weekday": "Tor",
+            "entries": [
+              {
+                "id": "034518a1",
+                "name": "Løb VO2 4×5 min Z4-Z5",
+                "type": "Run",
+                "disc": "run",
+                "mins": 70,
+                "libraryId": null,
+                "load": "haard",
+                "erg": null,
+                "purpose": null,
+                "zwiftName": null,
+                "done": false,
+                "actualMins": null,
+                "actualTss": null,
+                "note": "Løb VO2 4×5 Z4-Z5 — flyttet fra tirsdag. Cykel Z2 udgår (dækket tirsdag/Mallorca)",
+                "isKey": true,
+                "optional": false
+              }
+            ],
+            "restNote": null,
+            "restId": null,
+            "isToday": false
+          },
+          {
+            "date": "2026-08-07",
+            "weekday": "Fre",
+            "entries": [
+              {
+                "id": "cc084f1c",
+                "name": "OW-svøm 2500m SAMMENHÆNGENDE (Christiansborg-generalprøve)",
+                "type": "OpenWaterSwim",
+                "disc": "openwater",
+                "mins": 50,
+                "libraryId": null,
+                "load": "let",
+                "erg": null,
+                "purpose": null,
+                "zwiftName": null,
+                "done": false,
+                "actualMins": null,
+                "actualTss": null,
+                "note": "OW-svøm 2500m i ét stræk — generalprøve til Christiansborg 29/8 (flyttet til fredag morgen)",
+                "isKey": false,
+                "optional": false
+              }
+            ],
+            "restNote": null,
+            "restId": null,
+            "isToday": false
+          },
+          {
+            "date": "2026-08-08",
+            "weekday": "Lør",
+            "entries": [
+              {
+                "id": "d2fe291e",
+                "name": "Lang løb Z2 29 km (155 min)",
+                "type": "Run",
+                "disc": "run",
+                "mins": 155,
+                "libraryId": null,
+                "load": "let",
+                "erg": null,
+                "purpose": null,
+                "zwiftName": null,
+                "done": false,
+                "actualMins": null,
+                "actualTss": null,
+                "note": "Lang løb 28-30 km — marathon-ladder",
+                "isKey": true,
+                "optional": false
+              }
+            ],
+            "restNote": null,
+            "restId": null,
+            "isToday": false
+          },
+          {
+            "date": "2026-08-09",
+            "weekday": "Søn",
+            "entries": [],
+            "restNote": "Fly → Mallorca #2 (søn 9. aug)",
+            "restId": "985a90bd",
+            "isToday": false
+          }
+        ]
+      },
+      {
+        "week": 11,
+        "programId": "medoc-2026",
+        "start": "2026-08-10",
+        "days": [
+          {
+            "date": "2026-08-10",
+            "weekday": "Man",
+            "entries": [
+              {
+                "id": "0b13ed2d",
+                "name": "Løb Puerto de Sóller – Far des Cap Gros t/r 16 km",
+                "type": "Run",
+                "disc": "run",
+                "mins": 95,
+                "libraryId": null,
+                "load": "let",
+                "erg": null,
+                "purpose": null,
+                "zwiftName": null,
+                "done": false,
+                "actualMins": null,
+                "actualTss": null,
+                "note": "Reduceret fra 21,3 km loop — Sa Calobra-testen ligger tirsdag, excentrisk belastning fra 500 hm nedløb skal ikke koste watt på testen. Afgang 06:00, hjemme ca. 07:35 før håndværkermøde kl 09:00",
+                "isKey": false,
+                "optional": false
+              }
+            ],
+            "restNote": null,
+            "restId": null,
+            "isToday": false
+          },
+          {
+            "date": "2026-08-11",
+            "weekday": "Tir",
+            "entries": [
+              {
+                "id": "022d0b30",
+                "name": "Sa Calobra TEST via Puig Major",
+                "type": "Ride",
+                "disc": "bike",
+                "mins": 265,
+                "libraryId": null,
+                "load": "haard",
+                "erg": null,
+                "purpose": null,
+                "zwiftName": null,
+                "done": false,
+                "actualMins": null,
+                "actualTss": null,
+                "note": "Sa Calobra formtest — flyttet fra mandag pga. håndværkermøde kl 09:00. Tidlig afgang 06:00, ved havnen kl 08:00 før turistbusserne",
+                "isKey": true,
+                "optional": false
+              }
+            ],
+            "restNote": null,
+            "restId": null,
+            "isToday": false
+          },
+          {
+            "date": "2026-08-12",
+            "weekday": "Ons",
+            "entries": [
+              {
+                "id": "4d3bc880",
+                "name": "OW-svøm 800-1500m",
+                "type": "OpenWaterSwim",
+                "disc": "openwater",
+                "mins": 30,
+                "libraryId": null,
+                "load": "let",
+                "erg": null,
+                "purpose": null,
+                "zwiftName": null,
+                "done": false,
+                "actualMins": null,
+                "actualTss": null,
+                "note": "OW-svøm 800-1500m — inden gæsterne kommer",
+                "isKey": false,
+                "optional": false
+              },
+              {
+                "id": "f869a41d",
+                "name": "Hike 3 timer Z1-Z2",
+                "type": "Hike",
+                "disc": "hike",
+                "mins": 180,
+                "libraryId": null,
+                "load": "let",
+                "erg": null,
+                "purpose": null,
+                "zwiftName": null,
+                "done": false,
+                "actualMins": null,
+                "actualTss": null,
+                "note": "Hike 3 timer om aftenen med gæsterne — aktiv restitution, ikke træning",
+                "isKey": true,
+                "optional": false
+              }
+            ],
+            "restNote": null,
+            "restId": null,
+            "isToday": false
+          },
+          {
+            "date": "2026-08-13",
+            "weekday": "Tor",
+            "entries": [
+              {
+                "id": "2bb43fd8",
+                "name": "Hike 2 timer Z1-Z2",
+                "type": "Hike",
+                "disc": "hike",
+                "mins": 120,
+                "libraryId": null,
+                "load": "let",
+                "erg": null,
+                "purpose": null,
+                "zwiftName": null,
+                "done": false,
+                "actualMins": null,
+                "actualTss": null,
+                "note": "Hike 2 timer roligt — erstatter cykel 75 min. Hold Z1, 3 t hike dagen før.",
+                "isKey": true,
+                "optional": false
+              }
+            ],
+            "restNote": null,
+            "restId": null,
+            "isToday": false
+          },
+          {
+            "date": "2026-08-14",
+            "weekday": "Fre",
+            "entries": [
+              {
+                "id": "7cd4c2e7",
+                "name": "Løb Z2 40 min let",
+                "type": "Run",
+                "disc": "run",
+                "mins": 40,
+                "libraryId": null,
+                "load": "let",
+                "erg": null,
+                "purpose": null,
+                "zwiftName": null,
+                "done": false,
+                "actualMins": null,
+                "actualTss": null,
+                "note": "Let løb 40 min tidligt — langturen er rykket til tirsdag",
+                "isKey": false,
+                "optional": false
+              }
+            ],
+            "restNote": null,
+            "restId": null,
+            "isToday": false
+          },
+          {
+            "date": "2026-08-15",
+            "weekday": "Lør",
+            "entries": [
+              {
+                "id": "a8e1c48d",
+                "name": "Cykel Z2 90 min Mallorca",
+                "type": "Ride",
+                "disc": "bike",
+                "mins": 90,
+                "libraryId": null,
+                "load": "let",
+                "erg": null,
+                "purpose": null,
+                "zwiftName": null,
+                "done": false,
+                "actualMins": null,
+                "actualTss": null,
+                "note": "Cykel Z2 90 min tidligt — skåret fra 2,5t (ugen er tung, The Corrs om eftermiddagen)",
+                "isKey": false,
+                "optional": false
+              }
+            ],
+            "restNote": null,
+            "restId": null,
+            "isToday": false
+          },
+          {
+            "date": "2026-08-16",
+            "weekday": "Søn",
+            "entries": [],
+            "restNote": "Hjemrejse Mallorca (søn 16. aug)",
+            "restId": "d3834860",
+            "isToday": false
+          }
+        ]
+      },
+      {
+        "week": 12,
+        "programId": "medoc-2026",
+        "start": "2026-08-17",
+        "days": [
+          {
+            "date": "2026-08-17",
+            "weekday": "Man",
+            "entries": [
+              {
+                "id": "a03ba610",
+                "name": "Styrke A Functional Strength 2 sæt",
+                "type": "WeightTraining",
+                "disc": "strength",
+                "mins": 40,
+                "libraryId": null,
+                "load": "let",
+                "erg": null,
+                "purpose": null,
+                "zwiftName": null,
+                "done": false,
+                "actualMins": null,
+                "actualTss": null,
+                "note": "OW-svøm 45 min — 1500-2000 m kontinuerligt, Christiansborg-prep",
+                "isKey": false,
+                "optional": false
+              }
+            ],
+            "restNote": null,
+            "restId": null,
+            "isToday": false
+          },
+          {
+            "date": "2026-08-18",
+            "weekday": "Tir",
+            "entries": [
+              {
+                "id": "224598a9",
+                "name": "Lang løb Z2 26 km (140 min)",
+                "type": "Run",
+                "disc": "run",
+                "mins": 140,
+                "libraryId": null,
+                "load": "let",
+                "erg": null,
+                "purpose": null,
+                "zwiftName": null,
+                "done": false,
+                "actualMins": null,
+                "actualTss": null,
+                "note": "Lang løb 26 km — SIDSTE langtur før Médoc (reduceret fra 32 km, skadesbegrænsning)",
+                "isKey": true,
+                "optional": false
+              }
+            ],
+            "restNote": null,
+            "restId": null,
+            "isToday": false
+          },
+          {
+            "date": "2026-08-19",
+            "weekday": "Ons",
+            "entries": [
+              {
+                "id": "968ca1ce",
+                "name": "Cykel Z2 50 min",
+                "type": "Ride",
+                "disc": "bike",
+                "mins": 50,
+                "libraryId": null,
+                "load": "let",
+                "erg": null,
+                "purpose": null,
+                "zwiftName": null,
+                "done": false,
+                "actualMins": null,
+                "actualTss": null,
+                "note": "Hometrainer Z2 50 min let",
+                "isKey": false,
+                "optional": false
+              }
+            ],
+            "restNote": null,
+            "restId": null,
+            "isToday": false
+          },
+          {
+            "date": "2026-08-20",
+            "weekday": "Tor",
+            "entries": [
+              {
+                "id": "33bd15e7",
+                "name": "Shakeout løb + strides",
+                "type": "Run",
+                "disc": "run",
+                "mins": 19,
+                "libraryId": null,
+                "load": "let",
+                "erg": null,
+                "purpose": null,
+                "zwiftName": null,
+                "done": false,
+                "actualMins": null,
+                "actualTss": null,
+                "note": "Shakeout løb + strides",
+                "isKey": false,
+                "optional": false
+              }
+            ],
+            "restNote": null,
+            "restId": null,
+            "isToday": false
+          },
+          {
+            "date": "2026-08-21",
+            "weekday": "Fre",
+            "entries": [
+              {
+                "id": "6b33d5e7",
+                "name": "OW-svøm Race-simulation 2000 m",
+                "type": "OpenWaterSwim",
+                "disc": "openwater",
+                "mins": 65,
+                "libraryId": null,
+                "load": "haard",
+                "erg": null,
+                "purpose": null,
+                "zwiftName": null,
+                "done": false,
+                "actualMins": null,
+                "actualTss": null,
+                "note": "OW-svøm 2000 m race-simulation på tid — generalprøve Christiansborg",
+                "isKey": true,
+                "optional": false
+              }
+            ],
+            "restNote": null,
+            "restId": null,
+            "isToday": false
+          },
+          {
+            "date": "2026-08-22",
+            "weekday": "Lør",
+            "entries": [
+              {
+                "id": "857f6470",
+                "name": "Cykel Z2 45 min (kælder)",
+                "type": "Ride",
+                "disc": "bike",
+                "mins": 45,
+                "libraryId": null,
+                "load": "let",
+                "erg": null,
+                "purpose": null,
+                "zwiftName": null,
+                "done": false,
+                "actualMins": null,
+                "actualTss": null,
+                "note": "Hometrainer Z2 45 min i kælderen før afgang til Norge (lør 22. aug)",
+                "isKey": false,
+                "optional": false
+              }
+            ],
+            "restNote": null,
+            "restId": null,
+            "isToday": false
+          },
+          {
+            "date": "2026-08-23",
+            "weekday": "Søn",
+            "entries": [
+              {
+                "id": "8610221d",
+                "name": "Løb Z2 50 min",
+                "type": "Run",
+                "disc": "run",
+                "mins": 50,
+                "libraryId": null,
+                "load": "let",
+                "erg": null,
+                "purpose": null,
+                "zwiftName": null,
+                "done": false,
+                "actualMins": null,
+                "actualTss": null,
+                "note": "Løb Z2 50 min Norge — hjemrejse søn 23. aug",
+                "isKey": false,
+                "optional": false
+              }
+            ],
+            "restNote": null,
+            "restId": null,
+            "isToday": false
+          }
+        ]
+      },
       {
         "week": 13,
         "programId": "medoc-2026",
@@ -6315,6 +8290,202 @@
             "isToday": false
           }
         ]
+      },
+      {
+        "week": 8,
+        "programId": "tds-2027",
+        "start": "2026-10-26",
+        "days": [
+          {
+            "date": "2026-10-26",
+            "weekday": "Man",
+            "entries": [
+              {
+                "id": "304f1b55",
+                "name": "Styrke Unilateral recovery 2 sæt",
+                "type": "WeightTraining",
+                "disc": "strength",
+                "mins": 35,
+                "libraryId": null,
+                "load": "let",
+                "erg": null,
+                "purpose": null,
+                "zwiftName": null,
+                "done": false,
+                "actualMins": null,
+                "actualTss": null,
+                "note": "Recovery-uge — styrke 2 sæt let",
+                "isKey": false,
+                "optional": false
+              }
+            ],
+            "restNote": null,
+            "restId": null,
+            "isToday": false
+          },
+          {
+            "date": "2026-10-27",
+            "weekday": "Tir",
+            "entries": [
+              {
+                "id": "e02e310d",
+                "name": "FaF 1 Z2 - Åbnere 60",
+                "type": "Ride",
+                "disc": "bike",
+                "mins": 60,
+                "libraryId": "z2_aabnere_60",
+                "load": "let",
+                "erg": true,
+                "purpose": "Race-uge og stille uger. Zone 2 med fire korte åbnere i høj kadence, så benene vågner uden at der bygges træthed. Bygget 2/9-2026 to dage før Médoc.",
+                "zwiftName": "FaF 1 Z2 - Åbnere 60",
+                "done": false,
+                "actualMins": null,
+                "actualTss": null,
+                "note": "Z2 åbnere — let, recovery-uge",
+                "isKey": false,
+                "optional": false
+              }
+            ],
+            "restNote": null,
+            "restId": null,
+            "isToday": false
+          },
+          {
+            "date": "2026-10-28",
+            "weekday": "Ons",
+            "entries": [
+              {
+                "id": "09324ca3",
+                "name": "Løb Z2 40 min",
+                "type": "Run",
+                "disc": "run",
+                "mins": 40,
+                "libraryId": null,
+                "load": "let",
+                "erg": null,
+                "purpose": null,
+                "zwiftName": null,
+                "done": false,
+                "actualMins": null,
+                "actualTss": null,
+                "note": "Løb Z2 let — recovery",
+                "isKey": false,
+                "optional": false
+              }
+            ],
+            "restNote": null,
+            "restId": null,
+            "isToday": false
+          },
+          {
+            "date": "2026-10-29",
+            "weekday": "Tor",
+            "entries": [
+              {
+                "id": "18c9df73",
+                "name": "Styrke Unilateral recovery 2 sæt",
+                "type": "WeightTraining",
+                "disc": "strength",
+                "mins": 35,
+                "libraryId": null,
+                "load": "let",
+                "erg": null,
+                "purpose": null,
+                "zwiftName": null,
+                "done": false,
+                "actualMins": null,
+                "actualTss": null,
+                "note": "Recovery-uge — styrke 2 sæt let. Stelvio couples-tilmelding deadline i dag",
+                "isKey": false,
+                "optional": false
+              }
+            ],
+            "restNote": null,
+            "restId": null,
+            "isToday": false
+          },
+          {
+            "date": "2026-10-30",
+            "weekday": "Fre",
+            "entries": [
+              {
+                "id": "68e5da28",
+                "name": "Svøm teknik 1500m (fokus: hofte)",
+                "type": "Swim",
+                "disc": "swim",
+                "mins": 60,
+                "libraryId": null,
+                "load": "let",
+                "erg": null,
+                "purpose": null,
+                "zwiftName": null,
+                "done": false,
+                "actualMins": null,
+                "actualTss": null,
+                "note": "Svøm teknik (Kildeskovshallen) — fokus hofte",
+                "isKey": false,
+                "optional": false
+              }
+            ],
+            "restNote": null,
+            "restId": null,
+            "isToday": false
+          },
+          {
+            "date": "2026-10-31",
+            "weekday": "Lør",
+            "entries": [
+              {
+                "id": "37e8e66e",
+                "name": "FaF 1 Z2 - Depottur 2 t",
+                "type": "Ride",
+                "disc": "bike",
+                "mins": 130,
+                "libraryId": "z2_depottur_2t",
+                "load": "let",
+                "erg": true,
+                "purpose": "To timer Z2 med fast energiplan. Lige så meget mavetræning som bentræning. Race-evalueringerne siger det samme i ni år: energiplanen er det der knækker dig.",
+                "zwiftName": "FaF 1 Z2 - Depottur 2 t",
+                "done": false,
+                "actualMins": null,
+                "actualTss": null,
+                "note": "Ude hvis tørt og >8 °C, ren Z2 samme varighed; ellers kælder",
+                "isKey": true,
+                "optional": false
+              }
+            ],
+            "restNote": null,
+            "restId": null,
+            "isToday": false
+          },
+          {
+            "date": "2026-11-01",
+            "weekday": "Søn",
+            "entries": [
+              {
+                "id": "e65aff4b",
+                "name": "Løb let Z1 30 min",
+                "type": "Run",
+                "disc": "run",
+                "mins": 30,
+                "libraryId": null,
+                "load": "let",
+                "erg": null,
+                "purpose": null,
+                "zwiftName": null,
+                "done": false,
+                "actualMins": null,
+                "actualTss": null,
+                "note": "Let løb — recovery-ugen slutter",
+                "isKey": false,
+                "optional": false
+              }
+            ],
+            "restNote": null,
+            "restId": null,
+            "isToday": false
+          }
+        ]
       }
     ],
     "ctl": {
@@ -6395,6 +8566,21 @@
       "projection": [],
       "targets": [
         {
+          "week": 10,
+          "start": "2026-08-03",
+          "ctlTarget": 50
+        },
+        {
+          "week": 11,
+          "start": "2026-08-10",
+          "ctlTarget": 53
+        },
+        {
+          "week": 12,
+          "start": "2026-08-17",
+          "ctlTarget": 51
+        },
+        {
           "week": 13,
           "start": "2026-08-24",
           "ctlTarget": 47
@@ -6442,6 +8628,21 @@
       ],
       "phases": [
         {
+          "from": "2026-08-03",
+          "to": "2026-08-09",
+          "name": "BUILD"
+        },
+        {
+          "from": "2026-08-10",
+          "to": "2026-08-16",
+          "name": "BUILD+"
+        },
+        {
+          "from": "2026-08-17",
+          "to": "2026-08-23",
+          "name": "BUILD"
+        },
+        {
           "from": "2026-08-24",
           "to": "2026-08-30",
           "name": "TAPER"
@@ -6476,9 +8677,61 @@
           "to": "2026-10-25",
           "name": "BASE"
         }
-      ]
+      ],
+      "window": {
+        "from": "2026-06-15",
+        "to": "2026-10-25"
+      }
     },
     "hardSpacing": [
+      {
+        "fromId": "8f8a5800",
+        "fromName": "Hometrainer 3×15 min Z3 90 min",
+        "fromDate": "2026-08-03",
+        "fromDisc": "bike",
+        "toId": "034518a1",
+        "toName": "Løb VO2 4×5 min Z4-Z5",
+        "toDate": "2026-08-06",
+        "toDisc": "run",
+        "hours": 72,
+        "ok": true
+      },
+      {
+        "fromId": "034518a1",
+        "fromName": "Løb VO2 4×5 min Z4-Z5",
+        "fromDate": "2026-08-06",
+        "fromDisc": "run",
+        "toId": "022d0b30",
+        "toName": "Sa Calobra TEST via Puig Major",
+        "toDate": "2026-08-11",
+        "toDisc": "bike",
+        "hours": 120,
+        "ok": true
+      },
+      {
+        "fromId": "022d0b30",
+        "fromName": "Sa Calobra TEST via Puig Major",
+        "fromDate": "2026-08-11",
+        "fromDisc": "bike",
+        "toId": "6b33d5e7",
+        "toName": "OW-svøm Race-simulation 2000 m",
+        "toDate": "2026-08-21",
+        "toDisc": "openwater",
+        "hours": 240,
+        "ok": true
+      },
+      {
+        "fromId": "6b33d5e7",
+        "fromName": "OW-svøm Race-simulation 2000 m",
+        "fromDate": "2026-08-21",
+        "fromDisc": "openwater",
+        "toId": "86a116af",
+        "toName": "Løb målpace 4×3 min (1:30-tempo)",
+        "toDate": "2026-09-15",
+        "toDisc": "run",
+        "hours": 600,
+        "ok": true
+      },
       {
         "fromId": "86a116af",
         "fromName": "Løb målpace 4×3 min (1:30-tempo)",
@@ -6619,11 +8872,184 @@
     "error": null,
     "validationError": null,
     "notes": null,
-    "stale": false
+    "stale": true
   },
   "weekFocusNext": {
     "week": 1,
     "programId": "tds-2027",
     "text": "Restitution og protein — cykel og gang bærer basen til CPH Half"
+  },
+  "strengthLog": {
+    "from": "2026-08-09",
+    "to": "2026-09-06",
+    "sessions": [
+      {
+        "date": "2026-08-17",
+        "name": "Styrketræning"
+      },
+      {
+        "date": "2026-08-19",
+        "name": "Styrketræning"
+      },
+      {
+        "date": "2026-08-24",
+        "name": "Styrketræning"
+      },
+      {
+        "date": "2026-08-25",
+        "name": "Styrketræning"
+      },
+      {
+        "date": "2026-08-28",
+        "name": "Styrketræning"
+      },
+      {
+        "date": "2026-08-30",
+        "name": "Styrketræning"
+      },
+      {
+        "date": "2026-08-31",
+        "name": "Styrketræning"
+      },
+      {
+        "date": "2026-09-01",
+        "name": "Styrketræning"
+      }
+    ]
+  },
+  "body": {
+    "asOf": "2026-09-06",
+    "glidepath": {
+      "phase": "pre",
+      "cutWeek": null,
+      "cutWeeks": 19,
+      "isoWeek": 36,
+      "cutStartsFrom": "2026-09-21",
+      "targetDate": "2027-01-31",
+      "cutStartIsoWeek": 39,
+      "startKg": 72.2,
+      "targetKg": 68.0,
+      "expectedKg": null,
+      "corridorKg": 0.5,
+      "avg7": 72.5,
+      "avg7Date": "2026-09-03",
+      "delta": null,
+      "status": null,
+      "note": "cut starter uge 39 (21/9)",
+      "ratePerWeek": -0.22,
+      "actualRate4w": 0.03,
+      "series": [
+        {
+          "date": "2026-09-21",
+          "expected": 72.2
+        },
+        {
+          "date": "2026-09-28",
+          "expected": 71.98
+        },
+        {
+          "date": "2026-10-05",
+          "expected": 71.75
+        },
+        {
+          "date": "2026-10-12",
+          "expected": 71.53
+        },
+        {
+          "date": "2026-10-19",
+          "expected": 71.31
+        },
+        {
+          "date": "2026-10-26",
+          "expected": 71.09
+        },
+        {
+          "date": "2026-11-02",
+          "expected": 70.86
+        },
+        {
+          "date": "2026-11-09",
+          "expected": 70.64
+        },
+        {
+          "date": "2026-11-16",
+          "expected": 70.42
+        },
+        {
+          "date": "2026-11-23",
+          "expected": 70.2
+        },
+        {
+          "date": "2026-11-30",
+          "expected": 69.97
+        },
+        {
+          "date": "2026-12-07",
+          "expected": 69.75
+        },
+        {
+          "date": "2026-12-14",
+          "expected": 69.53
+        },
+        {
+          "date": "2026-12-21",
+          "expected": 69.3
+        },
+        {
+          "date": "2026-12-28",
+          "expected": 69.08
+        },
+        {
+          "date": "2027-01-04",
+          "expected": 68.86
+        },
+        {
+          "date": "2027-01-11",
+          "expected": 68.64
+        },
+        {
+          "date": "2027-01-18",
+          "expected": 68.41
+        },
+        {
+          "date": "2027-01-25",
+          "expected": 68.19
+        },
+        {
+          "date": "2027-01-31",
+          "expected": 68.0
+        }
+      ]
+    },
+    "fat": {
+      "avg14": 21.5,
+      "avg14Change28d": -0.1,
+      "expected": null,
+      "target": 16.0,
+      "corridorPp": 0.5,
+      "status": null,
+      "note": "±0,5 pp er måleusikkerhed"
+    },
+    "ffm": {
+      "now": 56.6,
+      "change28d": -0.1,
+      "target": 57.1,
+      "status": "ok"
+    },
+    "strengthWeek": {
+      "done": 2,
+      "target": 2
+    },
+    "strengthWeeks": {
+      "2026-08-10": 0,
+      "2026-08-17": 2,
+      "2026-08-24": 4
+    },
+    "cutCheck": {
+      "active": false,
+      "level": null,
+      "text": "Aktiveres uge 39 (21/9)",
+      "signals": {}
+    }
   }
 }
