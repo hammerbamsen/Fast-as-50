@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-07T19:19:18Z",
+  "generatedAt": "2026-09-07T19:27:18Z",
   "workflows": {
     "CI — pytest": {
       "lastRun": "2026-09-07T19:18:51Z",
@@ -44,6 +44,14 @@
       "event": "repository_dispatch",
       "runUrl": "https://github.com/hammerbamsen/fast-as-50/actions/runs/34124773190",
       "durationS": 10
+    },
+    "Byg workouts i Intervals.icu": {
+      "lastRun": "2026-09-07T19:27:06Z",
+      "conclusion": "success",
+      "event": "workflow_dispatch",
+      "runUrl": "https://github.com/hammerbamsen/fast-as-50/actions/runs/34155483617",
+      "durationS": 131,
+      "expectedEveryMin": 10080
     }
   },
   "secrets": {
