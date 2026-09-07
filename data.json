@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-09-07 20:57",
+    "updated": "2026-09-07 22:43",
     "week": 1,
     "totalWeeks": 51,
     "blockType": "RECOVERY",
@@ -105,8 +105,8 @@
     "target": 6,
     "streak": 1
   },
-  "coachSpeech": "Ny uge starter — uge 1 af 51. Restituitionsuge. {HL} Godt: 1 AF-dage i 1 gennemførte dage — på rette spor. 5 mere og ugens mål er i hus. Fokus: 18 af 255 TSS er i hus — 7 sessioner tilbage, heriblandt Gang let 60 min, Gang let 60 min. Vægt på 72,3 kg (målt 3/9) — protein ved hvert måltid, alkohol som bevidst valg, søvn 7-8 t. Vægt/fedt vurderes på 7d-snit mod planen, ikke på én vejning. Keep moving forward. ❤️ Aerobt: VIGTIGT: Løbeturen 5/9 (snitpuls 127) kostede 26,5 % mere puls pr. meter end medianen af de seneste 4 sammenlignelige pas (EF 0,994 mod 1,352). Forbehold, som IKKE er trukket fra tallet: det var 29,7 °C. Konkluder ikke overtræning ud fra ét pas — sig hvad passet kostede, og at det enten var varmen eller for højt tempo.  \"Kroppen tror, hvad sindet siger.\"",
-  "coachHighlight": "Søvn på 7,3 timer er solid",
+  "coachSpeech": "Ny uge starter — uge 1 af 51. Restitutionsuge. {HL} Godt: Søvn på 7,3 timer er solid. 1 AF-dage i 1 gennemførte dage — på rette spor. 5 mere og ugens mål er i hus. Fokus: Vægt på 72,3 kg (målt 3/9) — protein ved hvert måltid, alkohol som bevidst valg, søvn 7-8 t. Vægt/fedt vurderes på 7d-snit mod planen, ikke på én vejning. Keep moving forward. ❤️ Aerobt: VIGTIGT: Løbeturen 5/9 (snitpuls 127) kostede 26,5 % mere puls pr. meter end medianen af de seneste 4 sammenlignelige pas (EF 0,994 mod 1,352). Forbehold, som IKKE er trukket fra tallet: det var 29,7 °C. Konkluder ikke overtræning ud fra ét pas — sig hvad passet kostede, og at det enten var varmen eller for højt tempo.  \"Kroppen tror, hvad sindet siger.\"",
+  "coachHighlight": "Lavere belastning er meningen i en restitutionsuge — der er ingen ugeprocent at jagte",
   "weekFocus": "Bevæg dig hver dag — ingen ambitioner, fuld restitution",
   "today": [
     {
@@ -2099,7 +2099,7 @@
           "label": "Løb 4×3 min halvmaraton-tempo (4:35-4:45) efter fornemmelse",
           "done": false,
           "today": false,
-          "planned_tss": 38,
+          "planned_tss": 41,
           "planned_mins": 45,
           "planned_distance_m": null
         },
@@ -2150,7 +2150,7 @@
           "done": false,
           "today": false,
           "planned_tss": 82,
-          "planned_mins": 98,
+          "planned_mins": 90,
           "planned_distance_m": 21100
         }
       ],
@@ -2162,11 +2162,11 @@
         {
           "day": "Man",
           "disc": "strength",
-          "label": "Styrke Unilateral A 3 sæt",
+          "label": "Styrke A · Functional 4 · 2 runder",
           "done": false,
           "today": false,
-          "planned_tss": 30,
-          "planned_mins": 45,
+          "planned_tss": 17,
+          "planned_mins": 25,
           "planned_distance_m": null
         },
         {
@@ -2202,22 +2202,12 @@
         {
           "day": "Fre",
           "disc": "strength",
-          "label": "Styrke Unilateral B 3 sæt",
+          "label": "Styrke B · Functional 4 · 2 runder",
           "done": false,
           "today": false,
-          "planned_tss": 30,
-          "planned_mins": 45,
+          "planned_tss": 17,
+          "planned_mins": 25,
           "planned_distance_m": null
-        },
-        {
-          "day": "Fre",
-          "disc": "swim",
-          "label": "Svøm teknik 1500m (fokus: catch)",
-          "done": false,
-          "today": false,
-          "planned_tss": 50,
-          "planned_mins": 60,
-          "planned_distance_m": 1500
         },
         {
           "day": "Lør",
@@ -2248,11 +2238,11 @@
         {
           "day": "Man",
           "disc": "strength",
-          "label": "Styrke Unilateral A 3 sæt",
+          "label": "Styrke A · Functional 4 · 2 runder",
           "done": false,
           "today": false,
-          "planned_tss": 30,
-          "planned_mins": 45,
+          "planned_tss": 17,
+          "planned_mins": 25,
           "planned_distance_m": null
         },
         {
@@ -2288,22 +2278,12 @@
         {
           "day": "Tor",
           "disc": "strength",
-          "label": "Styrke Unilateral B 3 sæt",
+          "label": "Styrke B · Functional 4 · 2 runder",
           "done": false,
           "today": false,
-          "planned_tss": 30,
-          "planned_mins": 45,
+          "planned_tss": 17,
+          "planned_mins": 25,
           "planned_distance_m": null
-        },
-        {
-          "day": "Fre",
-          "disc": "swim",
-          "label": "Svøm teknik 1500m (fokus: hoved)",
-          "done": false,
-          "today": false,
-          "planned_tss": 50,
-          "planned_mins": 60,
-          "planned_distance_m": 1500
         },
         {
           "day": "Lør",
@@ -2334,11 +2314,11 @@
         {
           "day": "Man",
           "disc": "strength",
-          "label": "Styrke Unilateral recovery 2 sæt",
+          "label": "Styrke A · Functional 4 · 2 runder",
           "done": false,
           "today": false,
-          "planned_tss": 23,
-          "planned_mins": 35,
+          "planned_tss": 17,
+          "planned_mins": 25,
           "planned_distance_m": null
         },
         {
@@ -2364,22 +2344,12 @@
         {
           "day": "Tor",
           "disc": "strength",
-          "label": "Styrke Unilateral recovery 2 sæt",
+          "label": "Styrke B · Functional 4 · 2 runder",
           "done": false,
           "today": false,
-          "planned_tss": 23,
-          "planned_mins": 35,
+          "planned_tss": 17,
+          "planned_mins": 25,
           "planned_distance_m": null
-        },
-        {
-          "day": "Fre",
-          "disc": "swim",
-          "label": "Svøm teknik 1500m (fokus: hofte)",
-          "done": false,
-          "today": false,
-          "planned_tss": 50,
-          "planned_mins": 60,
-          "planned_distance_m": 1500
         },
         {
           "day": "Lør",
@@ -2410,11 +2380,11 @@
         {
           "day": "Man",
           "disc": "strength",
-          "label": "Styrke Unilateral A 3 sæt",
+          "label": "Styrke A · Functional 4 · 2 runder",
           "done": false,
           "today": false,
-          "planned_tss": 30,
-          "planned_mins": 45,
+          "planned_tss": 17,
+          "planned_mins": 25,
           "planned_distance_m": null
         },
         {
@@ -2450,22 +2420,12 @@
         {
           "day": "Fre",
           "disc": "strength",
-          "label": "Styrke Unilateral B 3 sæt",
+          "label": "Styrke B · Functional 4 · 2 runder",
           "done": false,
           "today": false,
-          "planned_tss": 30,
-          "planned_mins": 45,
+          "planned_tss": 17,
+          "planned_mins": 25,
           "planned_distance_m": null
-        },
-        {
-          "day": "Fre",
-          "disc": "swim",
-          "label": "Svøm teknik 1500m (fokus: catch)",
-          "done": false,
-          "today": false,
-          "planned_tss": 50,
-          "planned_mins": 60,
-          "planned_distance_m": 1500
         },
         {
           "day": "Lør",
@@ -2496,11 +2456,11 @@
         {
           "day": "Man",
           "disc": "strength",
-          "label": "Styrke Unilateral A 3 sæt",
+          "label": "Styrke A · Functional 4 · 2 runder",
           "done": false,
           "today": false,
-          "planned_tss": 30,
-          "planned_mins": 45,
+          "planned_tss": 17,
+          "planned_mins": 25,
           "planned_distance_m": null
         },
         {
@@ -2536,22 +2496,12 @@
         {
           "day": "Tor",
           "disc": "strength",
-          "label": "Styrke Unilateral B 3 sæt",
+          "label": "Styrke B · Functional 4 · 2 runder",
           "done": false,
           "today": false,
-          "planned_tss": 30,
-          "planned_mins": 45,
+          "planned_tss": 17,
+          "planned_mins": 25,
           "planned_distance_m": null
-        },
-        {
-          "day": "Fre",
-          "disc": "swim",
-          "label": "Svøm teknik 1500m (fokus: hoved)",
-          "done": false,
-          "today": false,
-          "planned_tss": 50,
-          "planned_mins": 60,
-          "planned_distance_m": 1500
         },
         {
           "day": "Lør",
@@ -3193,43 +3143,16 @@
       "note": "Nøgle virker"
     }
   },
-  "credentialsCheckedTs": "2026-09-07T18:57:23.641630",
+  "credentialsCheckedTs": "2026-09-07T20:43:07.419106",
   "coachAssessmentTsFull": "2026-09-07T16:49:43",
   "coachAssessmentWeightAtGen": 72.3,
   "coachAssessmentAfAtGen": 1,
   "event_structure_warnings": [
     {
-      "date": "2026-09-15",
-      "name": "Løb 4×3 min halvmaraton-tempo (4:35-4:45) efter fornemmelse",
-      "type": "Run",
-      "event_id": 134171886,
-      "level": "error",
-      "code": "PROSA_BESKRIVELSE",
-      "text": "Beskrivelsen har ingen workout-syntaks (linjer med \"- \"). Intervals kan ikke bygge trin — uret får en tom traening."
-    },
-    {
-      "date": "2026-09-15",
-      "name": "Løb 4×3 min halvmaraton-tempo (4:35-4:45) efter fornemmelse",
-      "type": "Run",
-      "event_id": 134171886,
-      "level": "error",
-      "code": "INGEN_TRIN",
-      "text": "workout_doc har ingen trin."
-    },
-    {
-      "date": "2026-09-20",
-      "name": "CPH HALF — 21,1 km, B-løb kontrolleret 4:35-4:45/km",
-      "type": "Run",
-      "event_id": 134171902,
-      "level": "error",
-      "code": "PROSA_BESKRIVELSE",
-      "text": "Beskrivelsen har ingen workout-syntaks (linjer med \"- \"). Intervals kan ikke bygge trin — uret får en tom traening."
-    },
-    {
-      "date": "2026-09-20",
-      "name": "CPH HALF — 21,1 km, B-løb kontrolleret 4:35-4:45/km",
-      "type": "Run",
-      "event_id": 134171902,
+      "date": "2026-09-21",
+      "name": "Styrke A · Functional 4 · 2 runder",
+      "type": "WeightTraining",
+      "event_id": 134619555,
       "level": "error",
       "code": "INGEN_TRIN",
       "text": "workout_doc har ingen trin."
@@ -4547,7 +4470,7 @@
         "tssTarget": 380,
         "tssActual": null,
         "purpose": "Base 1/2: cut og kælder starter — aerobe prober (cykel + løb) som EF-baseline, FTP-test tor 24/9.",
-        "note": "Cut starter. Kælder starter med FTP-test tor 24/9. Styrke unilateralt 2× starter.",
+        "note": "Cut starter. Kælder starter med FTP-test tor 24/9. Styrke Functional 4 A/B 2×/uge starter (2 runder). Svøm droppet til foråret.",
         "quota": {
           "haard": 1,
           "moderat": 0
@@ -4609,7 +4532,7 @@
         "ctlTarget": 50,
         "tssTarget": 250,
         "tssActual": null,
-        "purpose": "Recovery: styrke 2 sæt let, korte Z2-pas, ingen test.",
+        "purpose": "Recovery: styrke 2 runder uden progression, korte Z2-pas, ingen test.",
         "note": "Recovery. Ingen test (kørt 24/9).",
         "quota": {
           "haard": 0,
@@ -4702,7 +4625,7 @@
         "ctlTarget": 55,
         "tssTarget": 260,
         "tssActual": null,
-        "purpose": "Recovery: lette Z2-pas, styrke 2 sæt, Stelvio couples-tilmelding tor 29/10.",
+        "purpose": "Recovery: lette Z2-pas, styrke 2 runder uden progression, Stelvio couples-tilmelding tor 29/10.",
         "note": "Stelvio couples-tilmelding deadline 29/10 (med Eva).",
         "quota": {
           "haard": 0,
@@ -7086,11 +7009,11 @@
             "weekday": "Man",
             "entries": [
               {
-                "id": "f3618294",
-                "name": "Styrke Unilateral A 3 sæt",
+                "id": "e0cdecb2",
+                "name": "Styrke A · Functional 4 · 2 runder",
                 "type": "WeightTraining",
                 "disc": "strength",
-                "mins": 45,
+                "mins": 25,
                 "libraryId": null,
                 "load": "let",
                 "erg": null,
@@ -7099,7 +7022,7 @@
                 "done": false,
                 "actualMins": null,
                 "actualTss": null,
-                "note": "Cut starter. Styrke 2×/uge unilateralt starter",
+                "note": "Cut starter. Styrke Functional 4 A/B 2×/uge starter — 2 runder",
                 "isKey": false,
                 "optional": false
               }
@@ -7194,11 +7117,11 @@
             "weekday": "Fre",
             "entries": [
               {
-                "id": "451fd3ed",
-                "name": "Styrke Unilateral B 3 sæt",
+                "id": "6d73b30d",
+                "name": "Styrke B · Functional 4 · 2 runder",
                 "type": "WeightTraining",
                 "disc": "strength",
-                "mins": 45,
+                "mins": 25,
                 "libraryId": null,
                 "load": "let",
                 "erg": null,
@@ -7207,25 +7130,7 @@
                 "done": false,
                 "actualMins": null,
                 "actualTss": null,
-                "note": "Styrke Unilateral B",
-                "isKey": false,
-                "optional": false
-              },
-              {
-                "id": "5776410d",
-                "name": "Svøm teknik 1500m (fokus: catch)",
-                "type": "Swim",
-                "disc": "swim",
-                "mins": 60,
-                "libraryId": null,
-                "load": "let",
-                "erg": null,
-                "purpose": null,
-                "zwiftName": null,
-                "done": false,
-                "actualMins": null,
-                "actualTss": null,
-                "note": "Svøm teknik let (Kildeskovshallen) — fokus catch",
+                "note": "Styrke B · Functional 4",
                 "isKey": false,
                 "optional": false
               }
@@ -7252,7 +7157,7 @@
                 "done": false,
                 "actualMins": null,
                 "actualTss": null,
-                "note": "Ude hvis tørt og >8 °C, ren Z2 samme varighed; ellers kælder",
+                "note": "Ude som ren Z2 hvis vejret tillader — samme varighed",
                 "isKey": true,
                 "optional": false
               }
@@ -7300,11 +7205,11 @@
             "weekday": "Man",
             "entries": [
               {
-                "id": "61704615",
-                "name": "Styrke Unilateral A 3 sæt",
+                "id": "20b61500",
+                "name": "Styrke A · Functional 4 · 2 runder",
                 "type": "WeightTraining",
                 "disc": "strength",
-                "mins": 45,
+                "mins": 25,
                 "libraryId": null,
                 "load": "let",
                 "erg": null,
@@ -7313,7 +7218,7 @@
                 "done": false,
                 "actualMins": null,
                 "actualTss": null,
-                "note": "Styrke Unilateral A",
+                "note": "Styrke A · Functional 4",
                 "isKey": false,
                 "optional": false
               }
@@ -7399,11 +7304,11 @@
                 "optional": false
               },
               {
-                "id": "b65a88a8",
-                "name": "Styrke Unilateral B 3 sæt",
+                "id": "db969ea9",
+                "name": "Styrke B · Functional 4 · 2 runder",
                 "type": "WeightTraining",
                 "disc": "strength",
-                "mins": 45,
+                "mins": 25,
                 "libraryId": null,
                 "load": "let",
                 "erg": null,
@@ -7412,7 +7317,7 @@
                 "done": false,
                 "actualMins": null,
                 "actualTss": null,
-                "note": "Styrke Unilateral B",
+                "note": "Styrke B · Functional 4 — efter åbnerne",
                 "isKey": false,
                 "optional": false
               }
@@ -7424,26 +7329,7 @@
           {
             "date": "2026-10-02",
             "weekday": "Fre",
-            "entries": [
-              {
-                "id": "65d9d9ef",
-                "name": "Svøm teknik 1500m (fokus: hoved)",
-                "type": "Swim",
-                "disc": "swim",
-                "mins": 60,
-                "libraryId": null,
-                "load": "let",
-                "erg": null,
-                "purpose": null,
-                "zwiftName": null,
-                "done": false,
-                "actualMins": null,
-                "actualTss": null,
-                "note": "Svøm teknik let (Kildeskovshallen) — fokus hoved",
-                "isKey": false,
-                "optional": false
-              }
-            ],
+            "entries": [],
             "restNote": null,
             "restId": null,
             "isToday": false
@@ -7466,7 +7352,7 @@
                 "done": false,
                 "actualMins": null,
                 "actualTss": null,
-                "note": "Ude hvis tørt og >8 °C, ren Z2 samme varighed; ellers kælder",
+                "note": "Ude som ren Z2 hvis vejret tillader — samme varighed",
                 "isKey": true,
                 "optional": false
               }
@@ -7514,11 +7400,11 @@
             "weekday": "Man",
             "entries": [
               {
-                "id": "aaa159ce",
-                "name": "Styrke Unilateral recovery 2 sæt",
+                "id": "4673c4e3",
+                "name": "Styrke A · Functional 4 · 2 runder",
                 "type": "WeightTraining",
                 "disc": "strength",
-                "mins": 35,
+                "mins": 25,
                 "libraryId": null,
                 "load": "let",
                 "erg": null,
@@ -7527,7 +7413,7 @@
                 "done": false,
                 "actualMins": null,
                 "actualTss": null,
-                "note": "Recovery-uge — styrke 2 sæt let",
+                "note": "recovery: 2 runder, ingen progression",
                 "isKey": false,
                 "optional": false
               }
@@ -7595,11 +7481,11 @@
             "weekday": "Tor",
             "entries": [
               {
-                "id": "0e612c15",
-                "name": "Styrke Unilateral recovery 2 sæt",
+                "id": "ce7e8bcf",
+                "name": "Styrke B · Functional 4 · 2 runder",
                 "type": "WeightTraining",
                 "disc": "strength",
-                "mins": 35,
+                "mins": 25,
                 "libraryId": null,
                 "load": "let",
                 "erg": null,
@@ -7608,7 +7494,7 @@
                 "done": false,
                 "actualMins": null,
                 "actualTss": null,
-                "note": "Recovery-uge — styrke 2 sæt let",
+                "note": "recovery: 2 runder, ingen progression",
                 "isKey": false,
                 "optional": false
               }
@@ -7620,26 +7506,7 @@
           {
             "date": "2026-10-09",
             "weekday": "Fre",
-            "entries": [
-              {
-                "id": "4109401a",
-                "name": "Svøm teknik 1500m (fokus: hofte)",
-                "type": "Swim",
-                "disc": "swim",
-                "mins": 60,
-                "libraryId": null,
-                "load": "let",
-                "erg": null,
-                "purpose": null,
-                "zwiftName": null,
-                "done": false,
-                "actualMins": null,
-                "actualTss": null,
-                "note": "Svøm teknik let (Kildeskovshallen) — fokus hofte",
-                "isKey": false,
-                "optional": false
-              }
-            ],
+            "entries": [],
             "restNote": null,
             "restId": null,
             "isToday": false
@@ -7662,7 +7529,7 @@
                 "done": false,
                 "actualMins": null,
                 "actualTss": null,
-                "note": "Ude hvis tørt og >8 °C, ren Z2 samme varighed; ellers kælder",
+                "note": "Ude som ren Z2 hvis vejret tillader — samme varighed",
                 "isKey": false,
                 "optional": false
               }
@@ -7710,11 +7577,11 @@
             "weekday": "Man",
             "entries": [
               {
-                "id": "fd380a6b",
-                "name": "Styrke Unilateral A 3 sæt",
+                "id": "427a348e",
+                "name": "Styrke A · Functional 4 · 2 runder",
                 "type": "WeightTraining",
                 "disc": "strength",
-                "mins": 45,
+                "mins": 25,
                 "libraryId": null,
                 "load": "let",
                 "erg": null,
@@ -7723,7 +7590,7 @@
                 "done": false,
                 "actualMins": null,
                 "actualTss": null,
-                "note": "Styrke Unilateral A",
+                "note": "Styrke A · Functional 4",
                 "isKey": false,
                 "optional": false
               }
@@ -7818,11 +7685,11 @@
             "weekday": "Fre",
             "entries": [
               {
-                "id": "371cb833",
-                "name": "Styrke Unilateral B 3 sæt",
+                "id": "868c1f5e",
+                "name": "Styrke B · Functional 4 · 2 runder",
                 "type": "WeightTraining",
                 "disc": "strength",
-                "mins": 45,
+                "mins": 25,
                 "libraryId": null,
                 "load": "let",
                 "erg": null,
@@ -7831,25 +7698,7 @@
                 "done": false,
                 "actualMins": null,
                 "actualTss": null,
-                "note": "Styrke Unilateral B",
-                "isKey": false,
-                "optional": false
-              },
-              {
-                "id": "98bea106",
-                "name": "Svøm teknik 1500m (fokus: catch)",
-                "type": "Swim",
-                "disc": "swim",
-                "mins": 60,
-                "libraryId": null,
-                "load": "let",
-                "erg": null,
-                "purpose": null,
-                "zwiftName": null,
-                "done": false,
-                "actualMins": null,
-                "actualTss": null,
-                "note": "Svøm teknik (Kildeskovshallen) — fokus catch",
+                "note": "Styrke B · Functional 4",
                 "isKey": false,
                 "optional": false
               }
@@ -7924,11 +7773,11 @@
             "weekday": "Man",
             "entries": [
               {
-                "id": "12acfc68",
-                "name": "Styrke Unilateral A 3 sæt",
+                "id": "06faed5a",
+                "name": "Styrke A · Functional 4 · 2 runder",
                 "type": "WeightTraining",
                 "disc": "strength",
-                "mins": 45,
+                "mins": 25,
                 "libraryId": null,
                 "load": "let",
                 "erg": null,
@@ -7937,7 +7786,7 @@
                 "done": false,
                 "actualMins": null,
                 "actualTss": null,
-                "note": "Styrke Unilateral A",
+                "note": "Styrke A · Functional 4",
                 "isKey": false,
                 "optional": false
               }
@@ -8023,11 +7872,11 @@
                 "optional": false
               },
               {
-                "id": "c55a0c46",
-                "name": "Styrke Unilateral B 3 sæt",
+                "id": "51a6d528",
+                "name": "Styrke B · Functional 4 · 2 runder",
                 "type": "WeightTraining",
                 "disc": "strength",
-                "mins": 45,
+                "mins": 25,
                 "libraryId": null,
                 "load": "let",
                 "erg": null,
@@ -8036,7 +7885,7 @@
                 "done": false,
                 "actualMins": null,
                 "actualTss": null,
-                "note": "Styrke Unilateral B",
+                "note": "Styrke B · Functional 4 — efter grundturen",
                 "isKey": false,
                 "optional": false
               }
@@ -8048,26 +7897,7 @@
           {
             "date": "2026-10-23",
             "weekday": "Fre",
-            "entries": [
-              {
-                "id": "2d996a29",
-                "name": "Svøm teknik 1500m (fokus: hoved)",
-                "type": "Swim",
-                "disc": "swim",
-                "mins": 60,
-                "libraryId": null,
-                "load": "let",
-                "erg": null,
-                "purpose": null,
-                "zwiftName": null,
-                "done": false,
-                "actualMins": null,
-                "actualTss": null,
-                "note": "Svøm teknik (Kildeskovshallen) — fokus hoved",
-                "isKey": false,
-                "optional": false
-              }
-            ],
+            "entries": [],
             "restNote": null,
             "restId": null,
             "isToday": false
@@ -8138,11 +7968,11 @@
             "weekday": "Man",
             "entries": [
               {
-                "id": "304f1b55",
-                "name": "Styrke Unilateral recovery 2 sæt",
+                "id": "ddbc2985",
+                "name": "Styrke A · Functional 4 · 2 runder",
                 "type": "WeightTraining",
                 "disc": "strength",
-                "mins": 35,
+                "mins": 25,
                 "libraryId": null,
                 "load": "let",
                 "erg": null,
@@ -8151,7 +7981,7 @@
                 "done": false,
                 "actualMins": null,
                 "actualTss": null,
-                "note": "Recovery-uge — styrke 2 sæt let",
+                "note": "recovery: 2 runder, ingen progression",
                 "isKey": false,
                 "optional": false
               }
@@ -8219,11 +8049,11 @@
             "weekday": "Tor",
             "entries": [
               {
-                "id": "18c9df73",
-                "name": "Styrke Unilateral recovery 2 sæt",
+                "id": "d808c4b2",
+                "name": "Styrke B · Functional 4 · 2 runder",
                 "type": "WeightTraining",
                 "disc": "strength",
-                "mins": 35,
+                "mins": 25,
                 "libraryId": null,
                 "load": "let",
                 "erg": null,
@@ -8232,7 +8062,7 @@
                 "done": false,
                 "actualMins": null,
                 "actualTss": null,
-                "note": "Recovery-uge — styrke 2 sæt let. Stelvio couples-tilmelding deadline i dag",
+                "note": "recovery: 2 runder, ingen progression. Stelvio couples-tilmelding deadline i dag",
                 "isKey": false,
                 "optional": false
               }
@@ -8244,26 +8074,7 @@
           {
             "date": "2026-10-30",
             "weekday": "Fre",
-            "entries": [
-              {
-                "id": "68e5da28",
-                "name": "Svøm teknik 1500m (fokus: hofte)",
-                "type": "Swim",
-                "disc": "swim",
-                "mins": 60,
-                "libraryId": null,
-                "load": "let",
-                "erg": null,
-                "purpose": null,
-                "zwiftName": null,
-                "done": false,
-                "actualMins": null,
-                "actualTss": null,
-                "note": "Svøm teknik (Kildeskovshallen) — fokus hofte",
-                "isKey": false,
-                "optional": false
-              }
-            ],
+            "entries": [],
             "restNote": null,
             "restId": null,
             "isToday": false
@@ -8286,7 +8097,7 @@
                 "done": false,
                 "actualMins": null,
                 "actualTss": null,
-                "note": "Ude hvis tørt og >8 °C, ren Z2 samme varighed; ellers kælder",
+                "note": "Kælder — ren Z2, recovery-uge",
                 "isKey": true,
                 "optional": false
               }
@@ -9295,8 +9106,8 @@
       "templateId": "styrke-fs4-a-2r",
       "name": "Styrke A · Functional 4 · 2 runder",
       "rounds": 2,
-      "date": null,
-      "reasoning": "Ingen styrke A/B i plan eller log endnu — start med A"
+      "date": "2026-09-21",
+      "reasoning": "Planlagt 21/9: Styrke A · Functional 4 · 2 runder"
     },
     "last4": [
       {
@@ -9350,6 +9161,7 @@
       "Næste uge (38, RACE): TSS-mål 250 · hårde/lange dage: tir 15/9 Løb 4×3 min halvmaraton-tempo (4:35-4:45) efter fornemmelse 45 min, søn 20/9 CPH HALF — 21,1 km, B-løb kontrolleret 4:35-4:45/km 90 min",
       "Planændringer siden sidst: 1 — se martin_signals.md"
     ],
-    "generatedAt": "2026-09-07T18:57:23Z"
-  }
+    "generatedAt": "2026-09-07T20:43:07Z"
+  },
+  "proposals": []
 }
