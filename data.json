@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-09-07 18:49",
+    "updated": "2026-09-07 18:57",
     "week": 1,
     "totalWeeks": 51,
     "blockType": "RECOVERY",
@@ -105,8 +105,8 @@
     "target": 6,
     "streak": 1
   },
-  "coachSpeech": "Uge 1 af 51 i Tour des Stations 2027-programmet — første uge i TRANSITION/RECOVERY efter Médoc. Cykel bærer den aerobe base, løb tidligst lørdag 12/9, og CPH Half 20/9 er 13 dage væk. {HL} Du er i uge 1 af en RECOVERY-blok efter Marathon du Médoc — ingen hårde eller moderate pas denne uge. I dag er planen Gang let 45 min (ikke gennemført endnu).",
-  "coachHighlight": "Gå Gang let 45 min i dag — roligt tempo, ingen puls-ambitioner.",
+  "coachSpeech": "Ny uge starter — uge 1 af 51. Restituitionsuge. {HL} Godt: 1 AF-dage i 1 gennemførte dage — på rette spor. 5 mere og ugens mål er i hus. Fokus: 18 af 255 TSS er i hus — 8 sessioner tilbage, heriblandt Gang let 45 min, Gang let 60 min. Vægt på 72,3 kg (målt 3/9) — protein ved hvert måltid, alkohol som bevidst valg, søvn 7-8 t. Vægt/fedt vurderes på 7d-snit mod planen, ikke på én vejning. Keep moving forward. ❤️ Aerobt: VIGTIGT: Løbeturen 5/9 (snitpuls 127) kostede 26,5 % mere puls pr. meter end medianen af de seneste 4 sammenlignelige pas (EF 0,994 mod 1,352). Forbehold, som IKKE er trukket fra tallet: det var 29,7 °C. Konkluder ikke overtræning ud fra ét pas — sig hvad passet kostede, og at det enten var varmen eller for højt tempo.  \"Kroppen tror, hvad sindet siger.\"",
+  "coachHighlight": "Søvn på 7,3 timer er solid",
   "weekFocus": "Bevæg dig hver dag — ingen ambitioner, fuld restitution",
   "today": [
     {
@@ -2947,9 +2947,7 @@
     {
       "type": "alcohol_cluster",
       "level": "critical",
-      "message": "3 drikkedage i træk 4/9–6/9 — klynger rammer HRV hårdere end spredte dage.",
-      "action": null,
-      "source": "rule"
+      "message": "3 drikkedage i træk 4/9–6/9 — klynger rammer HRV hårdere end spredte dage."
     }
   ],
   "tsb": 0.1,
@@ -3215,7 +3213,7 @@
       "note": "Nøgle virker"
     }
   },
-  "credentialsCheckedTs": "2026-09-07T16:49:43.778767",
+  "credentialsCheckedTs": "2026-09-07T16:57:53.221722",
   "coachAssessmentTsFull": "2026-09-07T16:49:43",
   "coachAssessmentWeightAtGen": 72.3,
   "coachAssessmentAfAtGen": 1,
@@ -8442,223 +8440,223 @@
       "projection": [
         {
           "d": "2026-09-08",
-          "ctl": 49.2
+          "ctl": 49.6
         },
         {
           "d": "2026-09-09",
-          "ctl": 48.6
+          "ctl": 48.9
         },
         {
           "d": "2026-09-10",
-          "ctl": 47.9
+          "ctl": 48.3
         },
         {
           "d": "2026-09-11",
-          "ctl": 47.3
+          "ctl": 47.6
         },
         {
           "d": "2026-09-12",
-          "ctl": 46.7
-        },
-        {
-          "d": "2026-09-13",
-          "ctl": 46.1
-        },
-        {
-          "d": "2026-09-14",
-          "ctl": 45.8
-        },
-        {
-          "d": "2026-09-15",
-          "ctl": 45.6
-        },
-        {
-          "d": "2026-09-16",
-          "ctl": 45.3
-        },
-        {
-          "d": "2026-09-17",
-          "ctl": 45.1
-        },
-        {
-          "d": "2026-09-18",
-          "ctl": 44.9
-        },
-        {
-          "d": "2026-09-19",
-          "ctl": 44.7
-        },
-        {
-          "d": "2026-09-20",
-          "ctl": 44.5
-        },
-        {
-          "d": "2026-09-21",
-          "ctl": 44.7
-        },
-        {
-          "d": "2026-09-22",
-          "ctl": 44.9
-        },
-        {
-          "d": "2026-09-23",
-          "ctl": 45.1
-        },
-        {
-          "d": "2026-09-24",
-          "ctl": 45.4
-        },
-        {
-          "d": "2026-09-25",
-          "ctl": 45.6
-        },
-        {
-          "d": "2026-09-26",
-          "ctl": 45.8
-        },
-        {
-          "d": "2026-09-27",
-          "ctl": 46.0
-        },
-        {
-          "d": "2026-09-28",
-          "ctl": 46.3
-        },
-        {
-          "d": "2026-09-29",
-          "ctl": 46.5
-        },
-        {
-          "d": "2026-09-30",
-          "ctl": 46.8
-        },
-        {
-          "d": "2026-10-01",
           "ctl": 47.0
         },
         {
-          "d": "2026-10-02",
-          "ctl": 47.3
-        },
-        {
-          "d": "2026-10-03",
-          "ctl": 47.5
-        },
-        {
-          "d": "2026-10-04",
-          "ctl": 47.7
-        },
-        {
-          "d": "2026-10-05",
-          "ctl": 47.4
-        },
-        {
-          "d": "2026-10-06",
-          "ctl": 47.2
-        },
-        {
-          "d": "2026-10-07",
-          "ctl": 46.9
-        },
-        {
-          "d": "2026-10-08",
-          "ctl": 46.6
-        },
-        {
-          "d": "2026-10-09",
+          "d": "2026-09-13",
           "ctl": 46.4
         },
         {
-          "d": "2026-10-10",
-          "ctl": 46.1
-        },
-        {
-          "d": "2026-10-11",
-          "ctl": 45.9
-        },
-        {
-          "d": "2026-10-12",
+          "d": "2026-09-14",
           "ctl": 46.2
         },
         {
-          "d": "2026-10-13",
+          "d": "2026-09-15",
+          "ctl": 45.9
+        },
+        {
+          "d": "2026-09-16",
+          "ctl": 45.7
+        },
+        {
+          "d": "2026-09-17",
+          "ctl": 45.4
+        },
+        {
+          "d": "2026-09-18",
+          "ctl": 45.2
+        },
+        {
+          "d": "2026-09-19",
+          "ctl": 45.0
+        },
+        {
+          "d": "2026-09-20",
+          "ctl": 44.8
+        },
+        {
+          "d": "2026-09-21",
+          "ctl": 45.0
+        },
+        {
+          "d": "2026-09-22",
+          "ctl": 45.2
+        },
+        {
+          "d": "2026-09-23",
+          "ctl": 45.4
+        },
+        {
+          "d": "2026-09-24",
+          "ctl": 45.6
+        },
+        {
+          "d": "2026-09-25",
+          "ctl": 45.8
+        },
+        {
+          "d": "2026-09-26",
+          "ctl": 46.0
+        },
+        {
+          "d": "2026-09-27",
+          "ctl": 46.2
+        },
+        {
+          "d": "2026-09-28",
           "ctl": 46.5
         },
         {
-          "d": "2026-10-14",
-          "ctl": 46.8
+          "d": "2026-09-29",
+          "ctl": 46.7
         },
         {
-          "d": "2026-10-15",
+          "d": "2026-09-30",
+          "ctl": 47.0
+        },
+        {
+          "d": "2026-10-01",
           "ctl": 47.2
         },
         {
-          "d": "2026-10-16",
+          "d": "2026-10-02",
           "ctl": 47.5
         },
         {
+          "d": "2026-10-03",
+          "ctl": 47.7
+        },
+        {
+          "d": "2026-10-04",
+          "ctl": 47.9
+        },
+        {
+          "d": "2026-10-05",
+          "ctl": 47.6
+        },
+        {
+          "d": "2026-10-06",
+          "ctl": 47.4
+        },
+        {
+          "d": "2026-10-07",
+          "ctl": 47.1
+        },
+        {
+          "d": "2026-10-08",
+          "ctl": 46.8
+        },
+        {
+          "d": "2026-10-09",
+          "ctl": 46.5
+        },
+        {
+          "d": "2026-10-10",
+          "ctl": 46.3
+        },
+        {
+          "d": "2026-10-11",
+          "ctl": 46.0
+        },
+        {
+          "d": "2026-10-12",
+          "ctl": 46.4
+        },
+        {
+          "d": "2026-10-13",
+          "ctl": 46.7
+        },
+        {
+          "d": "2026-10-14",
+          "ctl": 47.0
+        },
+        {
+          "d": "2026-10-15",
+          "ctl": 47.3
+        },
+        {
+          "d": "2026-10-16",
+          "ctl": 47.6
+        },
+        {
           "d": "2026-10-17",
-          "ctl": 47.8
+          "ctl": 47.9
         },
         {
           "d": "2026-10-18",
-          "ctl": 48.0
+          "ctl": 48.2
         },
         {
           "d": "2026-10-19",
-          "ctl": 48.4
+          "ctl": 48.5
         },
         {
           "d": "2026-10-20",
-          "ctl": 48.7
+          "ctl": 48.9
         },
         {
           "d": "2026-10-21",
-          "ctl": 49.1
+          "ctl": 49.2
         },
         {
           "d": "2026-10-22",
-          "ctl": 49.4
+          "ctl": 49.5
         },
         {
           "d": "2026-10-23",
-          "ctl": 49.7
+          "ctl": 49.9
         },
         {
           "d": "2026-10-24",
-          "ctl": 50.0
+          "ctl": 50.2
         },
         {
           "d": "2026-10-25",
-          "ctl": 50.3
+          "ctl": 50.5
         },
         {
           "d": "2026-10-26",
-          "ctl": 50.0
+          "ctl": 50.2
         },
         {
           "d": "2026-10-27",
-          "ctl": 49.7
+          "ctl": 49.8
         },
         {
           "d": "2026-10-28",
-          "ctl": 49.4
+          "ctl": 49.5
         },
         {
           "d": "2026-10-29",
-          "ctl": 49.1
+          "ctl": 49.2
         },
         {
           "d": "2026-10-30",
-          "ctl": 48.8
+          "ctl": 49.0
         },
         {
           "d": "2026-10-31",
-          "ctl": 48.6
+          "ctl": 48.7
         },
         {
           "d": "2026-11-01",
-          "ctl": 48.3
+          "ctl": 48.4
         }
       ],
       "targets": [
@@ -9389,6 +9387,6 @@
       "Næste uge (38, RACE): TSS-mål 250 · hårde/lange dage: tir 15/9 Løb 4×3 min halvmaraton-tempo (4:35-4:45) efter fornemmelse 45 min, søn 20/9 CPH HALF — 21,1 km, B-løb kontrolleret 4:35-4:45/km 90 min",
       "Planændringer siden sidst: 1 — se martin_signals.md"
     ],
-    "generatedAt": "2026-09-07T16:49:18Z"
+    "generatedAt": "2026-09-07T16:57:53Z"
   }
 }
