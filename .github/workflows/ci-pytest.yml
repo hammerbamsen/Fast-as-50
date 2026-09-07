@@ -32,7 +32,7 @@ jobs:
         run: pip install pytest requests pywebpush jsonschema
 
       - name: (a) pytest
-        run: python3 -m pytest scripts/modules/ scripts/test_health_report.py -q
+        run: python3 -m pytest scripts/modules/ scripts/test_*.py -q
 
       - name: (b) JSON-skemaer (plan.json, bike_library.json, data.json)
         run: python3 schemas/validate.py
