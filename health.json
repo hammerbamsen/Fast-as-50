@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-07T20:01:58Z",
+  "generatedAt": "2026-09-07T20:09:32Z",
   "workflows": {
     "CI — pytest": {
       "lastRun": "2026-09-07T20:01:47Z",
@@ -31,11 +31,11 @@
       "durationS": 23
     },
     "Send daglig push-påmindelse": {
-      "lastRun": "2026-09-07T09:56:44Z",
+      "lastRun": "2026-09-07T20:09:14Z",
       "conclusion": "success",
-      "event": "schedule",
-      "runUrl": "https://github.com/hammerbamsen/fast-as-50/actions/runs/34108783501",
-      "durationS": 16,
+      "event": "workflow_dispatch",
+      "runUrl": "https://github.com/hammerbamsen/fast-as-50/actions/runs/34158283925",
+      "durationS": 20,
       "expectedEveryMin": 1500
     },
     "Check-in registrering": {
@@ -55,14 +55,13 @@
     }
   },
   "secrets": {
-    "PRIVATE_REPO_TOKEN": {
-      "expires": "2026-10-15",
+    "GitHub App (privat repo)": {
       "usedBy": [
         "Send daglig push-påmindelse",
         "Modtag push-subscription",
         "Workflow-sundhed"
       ],
-      "note": "Fine-grained PAT til det private repo (push-subscriptions). Erstattes af GitHub App-token — se docs/PAT_RENEWAL.md."
+      "note": "Installations-token mintes pr. kørsel — udløber ikke. App 4259031, samme som Cloudflare Worker'en."
     }
   }
 }
