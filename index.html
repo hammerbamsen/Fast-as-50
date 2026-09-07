@@ -125,6 +125,56 @@ html,body { height:100%; background:var(--bg); font-family:'Hanken Grotesk',sans
 .bottom-btn span { font-family:'Hanken Grotesk',sans-serif; font-size:10px; font-weight:400; }
 .bottom-btn.active span { font-weight:700; }
 
+/* Ny version-bjælke (blok 7) — smal, øverst, over sidebar og indhold */
+.sw-bar { position:fixed; top:0; left:0; right:0; z-index:300; display:flex; align-items:center; justify-content:center; gap:12px;
+  padding:7px 12px calc(7px + env(safe-area-inset-top,0px)); padding-top:calc(7px + env(safe-area-inset-top,0px));
+  background:var(--wine); color:var(--hero-ink); font-family:'Space Mono',monospace; font-size:11px; letter-spacing:.06em;
+  border-bottom:1px solid var(--wine-l); box-shadow:0 2px 10px rgba(0,0,0,.18); }
+.sw-bar[hidden] { display:none; }   /* .sw-bar's display:flex ville ellers slå UA-reglen for [hidden] */
+.sw-bar span::before { content:'⟳'; margin-right:6px; color:var(--gold); }
+.sw-bar button { appearance:none; border:1px solid var(--gold); background:var(--gold); color:var(--wine-d); font:700 11px 'Space Mono',monospace;
+  letter-spacing:.06em; padding:4px 10px; border-radius:7px; cursor:pointer; }
+.sw-bar button:active { opacity:.85; }
+body.sw-update .sidebar { top:34px; height:calc(100vh - 34px); }
+body.sw-update .main { padding-top:62px !important; }
+@media(max-width:768px) { body.sw-update .main { padding-top:50px !important; } }
+
+/* Statuslinje: data-alder + offline-badge (blok 7). Titel-blokken må krympe,
+   så ↻-knappen bliver stående til højre og statuslinjen i stedet ombrydes. */
+.page-header > div:first-child { flex:1 1 200px; min-width:0; }
+.page-sub .dage { white-space:nowrap; display:inline-block; }
+.page-meta { flex:none; }
+#data-age[hidden] { display:none; }
+.age.off { color:var(--act); }
+.age.off i { background:var(--act); }
+#data-age.age { text-transform:none; }
+.age .spin { display:inline-block; animation:sw-spin 1.2s linear infinite; }
+@keyframes sw-spin { to { transform:rotate(360deg); } }
+
+/* System-kort i Mere (blok 7) */
+.sys-head { display:flex; justify-content:space-between; align-items:center; gap:10px; margin-bottom:10px; }
+.sys-btn { appearance:none; border:1px solid var(--gold); background:transparent; color:var(--gold); font-family:'Space Mono',monospace; font-size:10px; letter-spacing:.06em; padding:5px 10px; border-radius:7px; cursor:pointer; white-space:nowrap; }
+.sys-btn:active { background:rgba(211,162,74,.15); }
+.sys-row { display:flex; justify-content:space-between; gap:10px; font-size:13px; margin-top:4px; align-items:baseline; }
+.sys-row > span:first-child { flex:none; }
+.sys-row > span:last-child { text-align:right; overflow-wrap:anywhere; }
+.sys-sep { border-top:1px solid var(--line); margin:10px 0 6px; }
+.sys-note { font-size:12px; color:var(--muted); margin-top:4px; line-height:1.45; }
+.sys-dot { width:8px; height:8px; border-radius:50%; display:inline-block; flex:none; margin-right:7px; vertical-align:middle; }
+.sys-fold summary { cursor:pointer; list-style:none; font-family:'Space Mono',monospace; font-size:10px; letter-spacing:.06em; color:var(--gold); padding:4px 0; display:flex; align-items:center; flex-wrap:wrap; }
+.sys-fold summary::-webkit-details-marker { display:none; }
+.sys-fold summary::after { content:'▾'; margin-left:auto; color:var(--muted); font-size:12px; }
+.sys-fold[open] summary::after { content:'▴'; }
+.sys-fold .sys-gen { color:var(--muted); font-weight:400; margin-left:8px; letter-spacing:0; text-transform:none; }
+.sys-wf, .sys-sec { padding:7px 0; border-top:1px solid var(--line); }
+.sys-wf:first-of-type { border-top:none; }
+.sys-wf-h { display:flex; align-items:center; gap:0; font-size:13px; }
+.sys-wf-n { flex:1; min-width:0; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+.sys-wf-t { font-family:'Space Mono',monospace; font-size:10px; color:var(--muted); flex:none; margin-left:8px; }
+.sys-wf-s { font-family:'Space Mono',monospace; font-size:10px; color:var(--muted); margin:2px 0 0 15px; line-height:1.5; }
+.sys-wf-s a { color:var(--gold); text-decoration:none; }
+.sys-sub { font-size:11.5px; color:var(--muted); margin:2px 0 0 15px; line-height:1.4; }
+
 /* Page header */
 .page-header { display:flex; justify-content:space-between; align-items:center; margin-bottom:20px; flex-wrap:wrap; gap:8px; }
 .page-title { font-family:'Newsreader',serif; font-size:28px; color:var(--ink); line-height:1; }
@@ -473,6 +523,12 @@ details.fold[open] > summary::after { content:"▴"; }
 </style>
 </head>
 <body>
+<!-- Ny version-bjælke (blok 7): vises når SW'en har hentet en nyere index.html
+     eller en ny sw.js har overtaget. Skjult som standard. -->
+<div id="sw-update-bar" class="sw-bar" hidden role="status">
+  <span>Ny version klar</span>
+  <button type="button" onclick="location.reload()">Genindlæs</button>
+</div>
 <div class="app">
 
 <!-- SIDEBAR -->
@@ -1076,15 +1132,38 @@ function staleInfo(updatedStr){
   return { min, hours: Math.round(min/60), time: String(updatedStr).slice(11,16) };
 }
 
-// Data-alder-prik i headeren: grøn <6 t, gul 6-12 t, rød >12 t.
+// Data-alder (blok 7): grøn < 60 min, gul 60-180 min, rød > 180 min.
+function dataAgeColor(st){ return !st ? 'var(--muted)' : st.min < 60 ? 'var(--ok)' : st.min <= 180 ? 'var(--watch)' : 'var(--act)'; }
+function isOffline(){ return (typeof navigator !== 'undefined' && navigator.onLine === false) || D.dataFromCache === true; }
+
+// Statuslinjen under titlen: "Mandag 7. sep · Uge 37 · RECOVERY · data kl. 02:43"
+// — data-alderen farves efter reglen ovenfor, uafhængigt af offline.
+function renderPageSub(){
+  const el = document.getElementById('page-sub'); if (!el) return;
+  const st = staleInfo(D.lastUpdated);
+  // Separatoren ligger inde i span'en, så en ombrydning aldrig efterlader et "·" sidst på linjen.
+  const age = st ? ` <span class="dage"><span style="color:var(--muted)">· </span><span style="color:${dataAgeColor(st)}">data kl. ${esc(st.time)}</span></span>` : '';
+  el.innerHTML = esc(pageSubText(activePage)) + age;
+}
+
+// Badge øverst til højre: kun når vi er offline / viser cachet data ("Offline ·
+// data kl. HH:MM") eller mens auto-opdateringen kører ("opdaterer…"). Ellers skjult.
 function updateDataAge(){
+  renderPageSub();
   const el = document.getElementById('data-age'); if (!el) return;
   const st = staleInfo(D.lastUpdated);
-  const offline = (typeof navigator !== 'undefined' && navigator.onLine === false);
-  let col = 'var(--line)', txt = 'Data —';
-  if (st) { col = st.hours > 12 ? 'var(--act)' : st.hours > 6 ? 'var(--watch)' : 'var(--ok)'; txt = (offline ? 'Offline — viser data fra ' : 'Data ') + st.time; }
-  else if (offline) { txt = 'Offline'; col = 'var(--act)'; }
-  el.innerHTML = `<i style="background:${col}"></i><span>${txt}</span>`;
+  const off = isOffline();
+  el.classList.toggle('off', off);
+  if (off) {
+    el.hidden = false;
+    el.innerHTML = `<i></i><span>Offline${st ? ' · data kl. ' + esc(st.time) : ''}</span>`;
+  } else if (D.autoRefreshing) {
+    el.hidden = false;
+    el.innerHTML = `<i style="background:var(--watch)"></i><span><span class="spin">↻</span> opdaterer…</span>`;
+  } else {
+    el.hidden = true; el.innerHTML = '';
+  }
+  if (typeof renderSystemCard === 'function') renderSystemCard();
 }
 
 function logStateText(){
@@ -1753,26 +1832,168 @@ document.addEventListener('keydown', ev => { if (ev.key === 'Escape') ptCloseShe
 
 // Mere-fanen: Træning (gammel side) + Regler + System.
 function renderMore() {
-  const c = D.credentials || {};
-  const credRows = Object.keys(c).length
-    ? Object.keys(c).map(k => `<div style="display:flex;justify-content:space-between;gap:10px;font-size:13px;margin-top:4px"><span>${esc(k)}</span><span style="color:${c[k] && c[k].ok ? 'var(--ok)' : 'var(--act)'};font-family:'Space Mono',monospace;font-size:11px">${c[k] && c[k].ok ? '✓ ' : '✕ '}${esc((c[k]||{}).note||'')}</span></div>`).join('')
-    : '<div style="font-size:12px;color:var(--muted);margin-top:4px">Ingen nøgle-status i data.json</div>';
   return `
   <h2 class="section-h">Træning</h2>
   ${renderOverview()}
   <h2 class="section-h">Regler</h2>
   ${renderRules()}
   <h2 class="section-h">System</h2>
+  <div id="system-card">${systemCardHtml()}</div>
   <div class="card">
-    <div class="label">Status</div>
-    <div style="display:flex;justify-content:space-between;font-size:13px"><span>Sidst opdateret</span><span style="font-family:'Space Mono',monospace;font-size:11px">${esc(D.lastUpdated||'—')}</span></div>
-    <div style="display:flex;justify-content:space-between;font-size:13px;margin-top:4px"><span>Coach-vurdering</span><span style="font-family:'Space Mono',monospace;font-size:11px">${esc(D.coachAssessmentTs||'—')}${D.coachAssessmentStale?' · forældet':''}</span></div>
-    <div style="border-top:1px solid var(--line);margin:10px 0 6px"></div>
-    <div class="label" style="margin-bottom:4px">Nøgler${D.credentialsCheckedTs ? ' · tjekket ' + esc(D.credentialsCheckedTs) : ''}</div>
-    ${credRows}
-    <div style="border-top:1px solid var(--line);margin:10px 0 6px"></div>
     <div class="label" style="margin-bottom:6px">Påmindelser</div>
     <div id="push-toggle-main"></div>
+  </div>`;
+}
+
+// ── System-kort (blok 7) ──────────────────────────────────────
+// Læser health.json (skrevet af health-workflowet) + data.json's nøgle-status
+// + SW-tilstand. Kortet gentegnes i sig selv (renderSystemCard) når health.json
+// eller SW-versionen kommer, så resten af Mere-fanen ikke rører sig.
+const HEALTH_URL = 'health.json';
+async function loadHealth(force) {
+  if (D.health && !force) return D.health;
+  if (D._healthLoading) return D.health;
+  D._healthLoading = true;
+  try {
+    const r = await fetch(HEALTH_URL + '?t=' + Date.now(), { cache: 'no-store' });
+    if (r.status === 404) D.health = { missing: true };
+    else if (!r.ok) D.health = { error: 'HTTP ' + r.status };
+    else {
+      const j = await r.json();
+      D.health = (j && typeof j === 'object') ? j : { error: 'ugyldig health.json' };
+      let fc = false; try { fc = r.headers.get('X-From-Cache') === '1'; } catch (_) {}
+      D.health.fromCache = fc;
+    }
+  } catch (e) {
+    D.health = D.health && !D.health.error && !D.health.missing ? D.health : { error: 'kunne ikke hentes' };
+  } finally {
+    D._healthLoading = false;
+  }
+  renderSystemCard();
+  return D.health;
+}
+function renderSystemCard() {
+  const el = document.getElementById('system-card');
+  if (!el) return;
+  // Bevar åbne <details> hen over en gentegning.
+  const open = Array.from(el.querySelectorAll('details[data-k]')).filter(d => d.open).map(d => d.dataset.k);
+  el.innerHTML = systemCardHtml();
+  open.forEach(k => { const d = el.querySelector(`details[data-k="${k}"]`); if (d) d.open = true; });
+}
+
+// "for 23 min siden" / "for 3 t siden" / "for 2 d siden" / "lige nu"
+function relTime(iso) {
+  if (!iso) return null;
+  const t = new Date(iso).getTime();
+  if (isNaN(t)) return null;
+  const min = Math.round((Date.now() - t) / 60000);
+  if (min < 1) return 'lige nu';
+  if (min < 60) return `for ${min} min siden`;
+  const h = Math.round(min / 60);
+  if (h < 48) return `for ${h} t siden`;
+  return `for ${Math.round(h / 24)} d siden`;
+}
+function ageMin(iso) { const t = new Date(iso || '').getTime(); return isNaN(t) ? null : (Date.now() - t) / 60000; }
+function dmy(isoDate) { const m = String(isoDate || '').match(/^(\d{4})-(\d{2})-(\d{2})/); return m ? `${+m[3]}/${+m[2]}` : String(isoDate || '—'); }
+
+const WF_CONCLUSION = { success: 'ok', failure: 'fejlede', cancelled: 'afbrudt', timed_out: 'timeout', skipped: 'sprunget over' };
+// Farveregel (spec): grøn = success og ikke forældet; rød = failure/timed_out;
+// gul = cancelled eller forældet (lastRun > 2× expectedEveryMin); grå = aldrig kørt.
+function wfState(w) {
+  if (!w || !w.lastRun) return { col: 'var(--line)', txt: 'aldrig kørt', stale: false };
+  const a = ageMin(w.lastRun);
+  const stale = !!(w.expectedEveryMin && a != null && a > 2 * w.expectedEveryMin);
+  const c = w.conclusion;
+  let col = 'var(--line)';
+  if (c === 'failure' || c === 'timed_out') col = 'var(--act)';
+  else if (c === 'cancelled' || stale) col = 'var(--watch)';
+  else if (c === 'success') col = 'var(--ok)';
+  let txt = WF_CONCLUSION[c] || (c ? String(c) : 'kører');
+  if (stale) txt += ' · forældet';
+  return { col, txt, stale };
+}
+// Secret-udløb (spec): grøn > 21 d; gul ≤ 21 d; rød ≤ 7 d eller udløbet.
+function secretState(sec) {
+  if (!sec || !sec.expires) return { col: 'var(--muted)', txt: 'ingen udløbsdato', days: null };
+  const t = new Date(String(sec.expires).slice(0, 10) + 'T23:59:59').getTime();
+  if (isNaN(t)) return { col: 'var(--muted)', txt: String(sec.expires), days: null };
+  const days = Math.ceil((t - Date.now()) / 86400000);
+  const col = days <= 7 ? 'var(--act)' : days <= 21 ? 'var(--watch)' : 'var(--ok)';
+  const txt = days < 0 ? `udløb ${dmy(sec.expires)} · for ${-days} d siden`
+            : days === 0 ? `udløber i dag (${dmy(sec.expires)})`
+            : `udløber ${dmy(sec.expires)} · om ${days} ${days === 1 ? 'dag' : 'dage'}`;
+  return { col, txt, days };
+}
+
+function systemCardHtml() {
+  const mono = "font-family:'Space Mono',monospace;font-size:11px";
+  const row = (k, v, extra = '') => `<div class="sys-row"${extra}><span>${k}</span><span style="${mono}">${v}</span></div>`;
+  const dot = col => `<i class="sys-dot" style="background:${col}"></i>`;
+
+  // (d) data-alder
+  const st = staleInfo(D.lastUpdated);
+  const off = isOffline();
+  const dataTxt = st ? `<span style="color:${dataAgeColor(st)}">${esc(D.lastUpdated)} · ${st.min < 60 ? `${st.min} min` : st.min <= 180 ? `${Math.round(st.min/60*10)/10}`.replace('.', ',') + ' t' : `${st.hours} t`}</span>${off ? ' <span style="color:var(--act)">· offline</span>' : ''}${D.autoRefreshing ? ' <span style="color:var(--watch)">· opdaterer…</span>' : ''}` : '—';
+
+  // (a) workflows
+  const h = D.health;
+  let wfHtml = '';
+  if (!h) wfHtml = `<div class="sys-note">Henter health.json…</div>`;
+  else if (h.missing) wfHtml = `<div class="sys-note">Ingen health.json endnu — kommer ved næste workflow-kørsel.</div>`;
+  else if (h.error) wfHtml = `<div class="sys-note">health.json: ${esc(h.error)}.</div>`;
+  else {
+    const wfs = h.workflows || {};
+    const names = Object.keys(wfs);
+    const states = names.map(n => ({ n, w: wfs[n], s: wfState(wfs[n]) }));
+    const bad = states.filter(x => x.s.col === 'var(--act)').length;
+    const warn = states.filter(x => x.s.col === 'var(--watch)').length;
+    const sumTxt = !names.length ? 'INGEN WORKFLOWS' : bad ? `${bad} FEJLET` + (warn ? ` · ${warn} HOLD ØJE` : '') : warn ? `${warn} HOLD ØJE` : `${names.length} OK`;
+    const sumCol = bad ? 'var(--act)' : warn ? 'var(--watch)' : 'var(--ok)';
+    const list = states.map(({ n, w, s }) => `
+      <div class="sys-wf">
+        <div class="sys-wf-h">${dot(s.col)}<span class="sys-wf-n">${esc(n)}</span><span class="sys-wf-t">${esc(relTime(w.lastRun) || 'aldrig kørt')}</span></div>
+        <div class="sys-wf-s">${esc(s.txt)}${w.event ? ' · ' + esc(w.event) : ''}${w.durationS != null ? ' · ' + Math.round(w.durationS) + ' s' : ''}${w.expectedEveryMin ? ' · hver ' + esc(w.expectedEveryMin) + ' min' : ''}${w.runUrl ? ` · <a href="${esc(w.runUrl)}" target="_blank" rel="noopener">kørsel →</a>` : ''}</div>
+      </div>`).join('');
+    wfHtml = `<details class="sys-fold" data-k="wf"><summary>${dot(sumCol)}WORKFLOWS · ${sumTxt}<span class="sys-gen">${h.generatedAt ? esc(relTime(h.generatedAt) || '') : ''}${h.fromCache ? ' · cachet' : ''}</span></summary>${list || '<div class="sys-note">Ingen workflows i health.json.</div>'}</details>`;
+
+    // (b) secrets
+    const secs = h.secrets || {};
+    const secHtml = Object.keys(secs).map(k => {
+      const ss = secretState(secs[k]);
+      const used = Array.isArray(secs[k].usedBy) && secs[k].usedBy.length ? `<div class="sys-sub">bruges af ${esc(secs[k].usedBy.join(', '))}</div>` : '';
+      const note = secs[k].note ? `<div class="sys-sub">${esc(secs[k].note)}</div>` : '';
+      return `<div class="sys-sec"><div class="sys-wf-h">${dot(ss.col)}<span class="sys-wf-n">${esc(k)}</span></div><div class="sys-wf-s" style="color:${ss.col}">${esc(ss.txt)}</div>${used}${note}</div>`;
+    }).join('');
+    if (secHtml) wfHtml += `<div class="label" style="margin:12px 0 4px">Nøgler med udløb</div>${secHtml}`;
+  }
+
+  // (c) credentials fra data.json
+  const c = D.credentials || {};
+  const credRows = Object.keys(c).length
+    ? Object.keys(c).map(k => `<div class="sys-row"><span>${esc(k)}</span><span style="color:${c[k] && c[k].ok ? 'var(--ok)' : 'var(--act)'};${mono}">${c[k] && c[k].ok ? '✓ ' : '✕ '}${esc((c[k]||{}).note||'')}</span></div>`).join('')
+    : '<div class="sys-note">Ingen nøgle-status i data.json</div>';
+
+  // (e) SW + installeret/online
+  const swTxt = SW_STATE.version ? esc(SW_STATE.version) : (SW_STATE.controlled ? 'aktiv' : 'ingen');
+  const installed = (typeof _isStandalone === 'function' && _isStandalone()) ? 'installeret' : 'i browser';
+  const online = (typeof navigator !== 'undefined' && navigator.onLine === false) ? '<span style="color:var(--act)">offline</span>' : 'online';
+  const swRow = row('Service worker', `${swTxt}${SW_STATE.updateReady ? ' <span style="color:var(--watch)">· ny klar</span>' : ''}`);
+  const appRow = row('App', `${installed} · ${online}`);
+
+  return `<div class="card sys-card">
+    <div class="sys-head">
+      <div class="label" style="margin-bottom:0">Status</div>
+      <button class="sys-btn" type="button" onclick="triggerRefresh()">↻ Opdatér nu</button>
+    </div>
+    ${row('Data', dataTxt)}
+    ${row('Coach-vurdering', esc(D.coachAssessmentTs||'—') + (D.coachAssessmentStale ? ' · forældet' : ''))}
+    ${swRow}
+    ${appRow}
+    <div class="sys-sep"></div>
+    ${wfHtml}
+    <div class="sys-sep"></div>
+    <div class="label" style="margin-bottom:4px">Nøgler${D.credentialsCheckedTs ? ' · tjekket ' + esc(String(D.credentialsCheckedTs).replace('T', ' ').slice(0, 16)) : ''}</div>
+    ${credRows}
   </div>`;
 }
 
@@ -2211,27 +2432,28 @@ function bodyTiles(b) {
 }
 
 // ── Krop: cut-tjek ───────────────────────────────────────────
-const CC_NAMES = { rate:'TEMPO', ffm:'FEDTFRI MASSE', strength:'STYRKE', recovery:'RESTITUTION', plateau:'PLATEAU' };
+const CC_NAMES = { rate:'TEMPO', ffm:'FEDTFRI MASSE', strength:'STYRKE', recovery:'RESTITUTION', plateau:'PLATEAU', alcohol:'ALKOHOL' };
 function cutCheckCard(b) {
   const c = (b && b.cutCheck) || null;
   if (!c) return '';
   if (!c.active) {
     return `<div class="card cutcheck"><div class="label" style="margin-bottom:6px">Cut-tjek</div>
       <div class="cc-text" style="color:var(--muted);font-weight:500">${esc(c.text || 'Aktiveres når cuttet starter')}</div>
-      <div style="font-size:11px;color:var(--muted);margin-top:6px;line-height:1.45">Fem signaler under cuttet: tempo, fedtfri masse, styrke, restitution, plateau — én handling ad gangen.</div></div>`;
+      <div style="font-size:11px;color:var(--muted);margin-top:6px;line-height:1.45">Signaler under cuttet: tempo, fedtfri masse, styrke, restitution, plateau og alkohol — én handling ad gangen.</div></div>`;
   }
   const lvl = c.level || 'ok';
-  const order = ['rate','ffm','strength','recovery','plateau'];
+  const order = ['rate','ffm','strength','recovery','plateau','alcohol'];   // alkohol (blok 7) vises kun når pipelinen sender signalet
   const rows = order.filter(k => c.signals && c.signals[k]).map(k => {
     const sg = c.signals[k];
     const nd = sg.level == null && (sg.value == null);
     return `<div class="cc-sig"><span class="n"><i class="${sg.level || (nd ? '' : 'ok')}"></i>${CC_NAMES[k] || k.toUpperCase()}</span><span class="v${nd ? ' nd' : ''}">${esc(sg.text || 'ingen data')}</span></div>`;
   }).join('');
+  const present = order.filter(k => c.signals && c.signals[k]).length;
   const flagged = order.filter(k => c.signals && c.signals[k] && c.signals[k].level).length;
   return `<div class="card cutcheck ${lvl}">
     <div class="label" style="margin-bottom:6px">Cut-tjek · ${lvl === 'act' ? 'handl nu' : lvl === 'warn' ? 'hold øje' : lvl === 'info' ? 'bemærk' : 'ok'}</div>
     <div class="cc-text">${esc(c.text)}</div>
-    <details><summary>${flagged ? `${flagged} AF 5 SIGNALER SLÅR UD` : 'ALLE 5 SIGNALER'} ▾</summary>${rows}</details>
+    <details><summary>${flagged ? `${flagged} AF ${present} SIGNALER SLÅR UD` : `ALLE ${present} SIGNALER`} ▾</summary>${rows}</details>
   </div>`;
 }
 
@@ -3321,7 +3543,7 @@ function navigate(pageId) {
   activePage = pageId;
   const page = PAGES.find(p=>p.id===pageId);
   document.getElementById("page-title").textContent = page.label;
-  document.getElementById("page-sub").textContent = pageSubText(pageId);
+  renderPageSub();
 
   PAGES.forEach(p=>{ const el=document.getElementById(`page-${p.id}`); if(el) el.classList.remove("active"); });
   document.getElementById(`page-${pageId}`).classList.add("active");
@@ -3336,6 +3558,7 @@ function navigate(pageId) {
     if (pageId === 'more' && typeof renderPushToggle === 'function') {
       setTimeout(function(){ renderPushToggle('push-toggle-main'); }, 0);
     }
+    if (pageId === 'more') { loadHealth(false); askSwVersion(); }
     if (pageId === 'today') {
       setTimeout(()=>{const el=document.getElementById('live-time');if(el)el.textContent=new Date().toLocaleTimeString('da-DK',{hour:'2-digit',minute:'2-digit'});},50);
     }
@@ -3369,8 +3592,7 @@ window.addEventListener('offline', updateDataAge);
 function updateMeta() {
   document.getElementById("sf-week").textContent = `UGE ${isoWeekOf(new Date())} · program-uge ${D.week}/${D.totalWeeks}`;
   document.getElementById("sf-block").textContent = `${D.blockType} BLOCK`;
-  document.getElementById("page-sub").textContent = pageSubText(activePage);
-  updateDataAge();
+  updateDataAge();   // tegner også statuslinjen (renderPageSub)
 }
 
 // ── Fetch data.json og render ─────────────────────────────────
@@ -3484,6 +3706,52 @@ function applyRemote(remote) {
   updateMeta();
   pageCache = {};
   navigate(activePage);
+  maybeAutoRefresh();
+}
+
+// Kom data.json fra SW-cachen (nettet fejlede)? Worker'en sætter X-From-Cache: 1.
+function noteDataSource(r) {
+  try { D.dataFromCache = !!(r && r.headers && r.headers.get('X-From-Cache') === '1'); } catch (_) { D.dataFromCache = false; }
+}
+
+// ── Auto-opdatering (blok 7) ──────────────────────────────────
+// Online, data ældre end 90 min, app-koden findes på enheden → bed Worker'en
+// om en frisk kørsel (samme /refresh som ↻-knappen) én gang pr. app-åbning.
+// Ingen prompt, ingen knaptekst — kun badgen "opdaterer…". Fejler dispatchen,
+// sker der stille ingenting (knappen kan stadig bruges manuelt).
+const AUTO_REFRESH_MIN = 90;
+const AUTO_REFRESH_FLAG = 'fast50_autorefresh';
+function maybeAutoRefresh() {
+  try {
+    if (D.autoRefreshing || isOffline()) return;
+    if (typeof getSecret !== 'function' || !getSecret()) return;
+    const st = staleInfo(D.lastUpdated);
+    if (!st || st.min <= AUTO_REFRESH_MIN) return;
+    if (sessionStorage.getItem(AUTO_REFRESH_FLAG)) return;
+    sessionStorage.setItem(AUTO_REFRESH_FLAG, String(Date.now()));
+  } catch (_) { return; }
+  autoRefreshData();
+}
+async function autoRefreshData() {
+  D.autoRefreshing = true; updateDataAge();
+  try {
+    const before = await _dataStamp();
+    await dispatchViaWorker('/refresh', {});
+    // Poll til data.json faktisk har flyttet sig (max 90 s), ellers vent blindt 45 s.
+    if (!before) { await new Promise(r => setTimeout(r, 45000)); }
+    else {
+      for (let i = 0; i < 18; i++) {
+        await new Promise(r => setTimeout(r, 5000));
+        const now = await _dataStamp();
+        if (now && now !== before) break;
+      }
+    }
+    if (typeof window.forceDataRefresh === 'function') await window.forceDataRefresh();
+  } catch (_) {
+    // stille — badgen forsvinder bare igen
+  } finally {
+    D.autoRefreshing = false; updateDataAge();
+  }
 }
 
 async function init() {
@@ -3521,6 +3789,7 @@ async function init() {
   try {
     const r = await fetch("https://raw.githubusercontent.com/hammerbamsen/fast-as-50/main/data.json?t=" + Date.now());
     if (r.ok) {
+      noteDataSource(r);
       const remote = await r.json();
       applyRemote(remote);
     }
@@ -3541,7 +3810,9 @@ init();
       const r = await fetch('https://raw.githubusercontent.com/hammerbamsen/fast-as-50/main/data.json?t=' + Date.now());
       if (!r.ok) return;
       const txt = await r.text();
-      if (txt === lastDataJson) return; // ingen ændring
+      const wasCached = D.dataFromCache;
+      noteDataSource(r);
+      if (txt === lastDataJson) { if (wasCached !== D.dataFromCache) updateDataAge(); return; } // ingen ændring
       lastDataJson = txt;
       const remote = JSON.parse(txt);
       applyRemote(remote);
@@ -3756,12 +4027,48 @@ async function _dataStamp() {
 
 </script>
 <script>
-// Service Worker: network-first — henter altid ny version
+// Service Worker (blok 7, 7/9-26): app-shell stale-while-revalidate, data
+// network-first med cache-fallback. Worker'en siger til når index.html er ny
+// ({type:'sw-new-version'}); en ny sw.js giver controllerchange. Begge viser
+// bjælken "Ny version klar · Genindlæs" — men KUN hvis siden allerede var
+// styret af en worker, ellers ville allerførste besøg også få bjælken.
 const PUSH_ATHLETE_ID = "kennet";
+const SW_STATE = { version: null, controlled: false, updateReady: false };
+function showSwUpdateBar(version) {
+  console.log('[sw] ny version klar', version || '(controllerchange)');
+  if (SW_STATE.updateReady) return;
+  SW_STATE.updateReady = true;
+  if (version) SW_STATE.newVersion = version;
+  const bar = document.getElementById('sw-update-bar');
+  if (bar) { bar.hidden = false; document.body.classList.add('sw-update'); }
+  if (typeof renderSystemCard === 'function') renderSystemCard();
+}
 if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('/fast-as-50/sw.js').then(reg => {
-    reg.update(); // Tjek for opdatering ved hver sidevisning
+  SW_STATE.controlled = !!navigator.serviceWorker.controller;
+  navigator.serviceWorker.addEventListener('message', (e) => {
+    const d = e.data || {};
+    if (d.type === 'sw-new-version') showSwUpdateBar(d.version);
+    if (d.type === 'sw-version') {
+      SW_STATE.version = d.version;
+      if (d.newVersion) showSwUpdateBar(d.newVersion);   // ny index.html fundet før siden kunne lytte
+      else if (typeof renderSystemCard === 'function') renderSystemCard();
+    }
   });
+  navigator.serviceWorker.addEventListener('controllerchange', () => {
+    if (SW_STATE.controlled) showSwUpdateBar();
+    SW_STATE.controlled = true;
+    askSwVersion();
+  });
+  navigator.serviceWorker.register('/fast-as-50/sw.js').then(reg => {
+    reg.update().catch(() => {}); // Tjek for opdatering ved hver sidevisning (fejler stille offline)
+    // updatefound → (skipWaiting + claim i sw.js) → controllerchange ovenfor.
+    // Her noteres kun at en ny worker er på vej, til System-kortet.
+    reg.addEventListener('updatefound', () => { SW_STATE.updateFound = true; });
+  }).catch(() => {});
+  askSwVersion();
+}
+function askSwVersion() {
+  try { const c = navigator.serviceWorker && navigator.serviceWorker.controller; if (c) c.postMessage({ type: 'sw-get-version' }); } catch (_) {}
 }
 // -- U2: Web Push opt-in (fælles for index.html + eva.html) --------
 // VAPID public key (offentlig per design — privat nøgle ligger server-side).
