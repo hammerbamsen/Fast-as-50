@@ -86,15 +86,6 @@ jobs:
         run: |
           set -o pipefail
           if [ -z "$WEEK" ]; then echo "FEJL: week mangler efter beregning — afbryder"; exit 1; fi
-          python3 .github/workflows/scripts/sync_outlook.py 2>&1 | tee /tmp/sync_out.txt
-      - name: Gem debug-log
-        if: always()
-        run: |
-          git config user.name "fast50-debug"
-          git config user.email "debug@fast50.local"
-          mkdir -p debug
-          cp /tmp/sync_out.txt debug/outlook_sync_debug.txt 2>/dev/null || echo "ingen output" > debug/outlook_sync_debug.txt
-          git add debug/outlook_sync_debug.txt
-          git commit -m "debug: outlook sync log" || true
-          git pull --rebase origin main || true
-          git push || true
+          # 7/9-2026 (blok 7): debug/outlook_sync_debug.txt committes ikke længere —
+          # output står i run-loggen, og health.yml registrerer udfaldet i health.json.
+          python3 .github/workflows/scripts/sync_outlook.py

@@ -369,6 +369,7 @@ def _body_ctx(data, program, today, weight, fat, weight_date, fat_date, goals):
             'fatAvg14': _num((b.get('fat') or {}).get('avg14')), 'fatExpected': _num((b.get('fat') or {}).get('expected')),
             'checkLevel': c.get('level') if c.get('active') else None,
             'checkText': c.get('text') if c.get('active') else None,
+            'alcohol7d': ((c.get('signals') or {}).get('alcohol') or {}).get('value') if c.get('active') else None,
         }))
     return {
         'weight': _num(weight), 'weightDate': weight_date, 'weightAvg7': _num(w7),

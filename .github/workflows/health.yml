@@ -1,0 +1,67 @@
+name: Workflow-sundhed
+
+# Blok 7 (7/9-2026): Kører efter HVER afsluttet kørsel af de øvrige workflows
+# og skriver udfaldet til health.json i repo-roden (via Contents API), som
+# dashboardets System-kort (Mere-fanen) læser. Fejler en kørsel, sendes én
+# push-alert til Kennet (scripts/send_push.py --alert).
+#
+# Navnene nedenfor SKAL matche `name:` i de respektive workflows præcis.
+# workflow_run fyrer kun når denne fil ligger på default-branchen (main).
+# Sig selv står bevidst ikke i listen (ingen rekursion). Commits lavet med
+# GITHUB_TOKEN (health.json) udløser ikke nye workflow-kørsler.
+on:
+  workflow_run:
+    workflows:
+      - "Check-in registrering"
+      - "Byg workouts i Intervals.icu"
+      - "CI — pytest"
+      - "Sync workouts til Outlook kalender"
+      - "Slet Outlook event"
+      - "Plan-redigering (fase 3a)"
+      - "Modtag push-subscription"
+      - "Regenerér Word-master fra plan.json"
+      - "Send daglig push-påmindelse"
+      - "Sæt zoner i Intervals.icu (fra plan.json)"
+      - "Daglig dashboard-opdatering"
+      - "Intervals Webhook Receiver"
+    types: [completed]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+# Én skriver ad gangen til health.json; kørsler må ikke aflyses (hver bærer
+# ét resultat), så de står i kø — gh_put henter frisk SHA ved 409/422.
+concurrency:
+  group: health
+  cancel-in-progress: false
+
+jobs:
+  report:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: pip install requests pywebpush
+      - name: Opdatér health.json (+ push ved fejl)
+        env:
+          RUN_NAME:        ${{ github.event.workflow_run.name }}
+          RUN_CONCLUSION:  ${{ github.event.workflow_run.conclusion }}
+          RUN_EVENT:       ${{ github.event.workflow_run.event }}
+          RUN_URL:         ${{ github.event.workflow_run.html_url }}
+          RUN_STARTED_AT:  ${{ github.event.workflow_run.run_started_at }}
+          RUN_UPDATED_AT:  ${{ github.event.workflow_run.updated_at }}
+          # Skrivning af health.json (modules/github.gh_get/gh_put)
+          GH_TOKEN:        ${{ secrets.GITHUB_TOKEN }}
+          # Push-alert (scripts/send_push.py --alert) — kun brugt hvis conclusion != success
+          GITHUB_TOKEN:       ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_REPOSITORY:  ${{ github.repository }}
+          PRIVATE_REPO:       ${{ secrets.PRIVATE_REPO }}
+          PRIVATE_REPO_TOKEN: ${{ secrets.PRIVATE_REPO_TOKEN }}
+          VAPID_PRIVATE:      ${{ secrets.VAPID_PRIVATE }}
+          VAPID_SUBJECT:      ${{ secrets.VAPID_SUBJECT }}
+          ALERT_URL:          "./#more"
+        run: python3 scripts/health_report.py

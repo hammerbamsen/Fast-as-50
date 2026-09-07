@@ -188,10 +188,10 @@ def _glide(today="2026-10-12", offset=0.0, weight=None):
     return body.glidepath(WP, date.fromisoformat(today), w), w
 
 
-def _check(today="2026-10-12", weight=None, ffm=None, weeks=None, rhr=None, hrv=None, next_strength=None):
+def _check(today="2026-10-12", weight=None, ffm=None, weeks=None, rhr=None, hrv=None, next_strength=None, af_log=None):
     g, w = _glide(today, weight=weight)
     return body.cut_check(g, ffm or {"change28d": 0.0}, weeks if weeks is not None else {"a": 2, "b": 2}, 2,
-                          rhr, hrv, w, date.fromisoformat(today), next_strength=next_strength)
+                          rhr, hrv, w, date.fromisoformat(today), next_strength=next_strength, af_log=af_log)
 
 
 def test_cutcheck_inactive_in_pre_and_hold():
@@ -206,7 +206,7 @@ def test_cutcheck_inactive_in_pre_and_hold():
 def test_cutcheck_on_plan():
     c = _check(rhr=flat("2026-10-12", 30, 44), hrv=flat("2026-10-12", 30, 60))
     assert c["active"] and c["level"] is None and c["text"] == "På plan — fortsæt"
-    assert set(c["signals"]) == {"rate", "ffm", "strength", "recovery", "plateau"}
+    assert set(c["signals"]) == {"rate", "ffm", "strength", "recovery", "plateau", "alcohol"}
     assert all(s["level"] is None for s in c["signals"].values())
 
 
@@ -327,3 +327,60 @@ def test_coach_context_picks_up_body():
     # uden data.body: uændret adfærd
     ctx2 = cc.build_context(plan, {"weightHistory": data["weightHistory"]}, date(2026, 10, 12))
     assert "status" not in ctx2["body"]["cut"]
+
+
+# ── Alkohol-signal (blok 7) ────────────────────────────────────────────────
+
+def _aflog(today, pattern):
+    """pattern: str af 7 tegn ældst->i dag, '0' AF, '1' drik, '-' uregistreret."""
+    t = date.fromisoformat(today)
+    out = {}
+    for i, ch in enumerate(pattern):
+        if ch != '-':
+            out[(t - timedelta(days=6 - i)).isoformat()] = int(ch)
+    return out
+
+
+def test_alcohol_signal_none_and_no_data():
+    assert body.alcohol_signal(None, "2026-10-12")["level"] is None
+    assert body.alcohol_signal({}, "2026-10-12")["text"] == "ingen registrering"
+    s = body.alcohol_signal({"2026-09-01": 1}, "2026-10-12")
+    assert s["level"] is None and "ingen registrering" in s["text"]
+
+
+def test_alcohol_signal_ok_and_warn():
+    ok = body.alcohol_signal(_aflog("2026-10-12", "0001000"), "2026-10-12")
+    assert ok["level"] is None and ok["value"] == {"days7": 1, "run": 1} and ok["text"] == "1 drikkedag på 7 dage"
+    spread = body.alcohol_signal(_aflog("2026-10-12", "1010100"), "2026-10-12")
+    assert spread["level"] == "warn" and spread["value"]["days7"] == 3
+    cluster = body.alcohol_signal(_aflog("2026-10-12", "0001100"), "2026-10-12")
+    assert cluster["level"] == "warn" and cluster["value"] == {"days7": 2, "run": 2}
+    assert cluster["text"] == "2 drikkedage på 7 dage · 2 i træk"
+    # uregistreret dag bryder rækken
+    broken = body.alcohol_signal(_aflog("2026-10-12", "0001-10"), "2026-10-12")
+    assert broken["level"] is None and broken["value"] == {"days7": 2, "run": 1}
+
+
+def test_cutcheck_alcohol_warn_text_and_priority():
+    log = _aflog("2026-10-12", "0011100")
+    c = _check(af_log=log)
+    assert c["signals"]["alcohol"]["level"] == "warn" and c["level"] == "warn"
+    assert c["text"] == "3 drikkedage på 7 dage · 3 i træk under cuttet — AF resten af ugen før du skærer mere"
+    # restitution vinder over alkohol
+    w = series("2026-10-12", 60, lambda i: 73.0 - 0.03 * i)
+    rhr = series("2026-10-12", 30, lambda i: 42 if i < 16 else 45)
+    hrv = series("2026-10-12", 30, lambda i: 60 if i < 16 else 54)
+    c2 = _check(weight=w, rhr=rhr, hrv=hrv, af_log=log)
+    assert c2["text"].startswith("Hvilepuls op og HRV ned")
+    # uden log: signalet findes stadig, uden data
+    c3 = _check()
+    assert c3["signals"]["alcohol"]["level"] is None and "ingen registrering" in c3["signals"]["alcohol"]["text"]
+
+
+def test_build_body_passes_af_log():
+    from datetime import date as _d
+    d = {"weightHistory": flat("2026-10-12", 60, 71.5), "fatHistory": flat("2026-10-12", 60, 21.0),
+         "rhrHistory": flat("2026-10-12", 30, 42), "hrvHistory": flat("2026-10-12", 30, 60),
+         "week_sessions": [], "af_log": _aflog("2026-10-12", "1110000")}
+    b = body.build_body(_plan(), d, _d(2026, 10, 12))
+    assert b["cutCheck"]["signals"]["alcohol"]["value"] == {"days7": 3, "run": 3}

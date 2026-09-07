@@ -18,7 +18,14 @@ Miljø (Actions secrets):
   VAPID_SUBJECT         - "mailto:kennet@hammerby.com"
 
 Idempotent og ikke-blokerende: fejl mod én subscription stopper ikke de andre.
+
+Alert-mode (blok 7, 7/9-2026), kaldt af .github/workflows/health.yml når et
+workflow fejler:
+  python3 scripts/send_push.py --alert "Titel" "Brødtekst" [--url ./#more]
+Sender ÉN notifikation til Kennets subscriptions med tag `fast50-alert` og
+renotify, uafhængigt af plan.json og af daglig-/aften-logikken.
 """
+import argparse
 import base64
 import json
 import os
@@ -65,6 +72,24 @@ AF_EVENING_MSG = {
     "url": "index.html#log",
     "athlete": "kennet",
 }
+
+# Alert (--alert): eget tag så den hverken erstatter eller erstattes af de
+# daglige beskeder; renotify så en ny fejl vibrerer igen selv om den forrige
+# alert stadig ligger i notifikationscenteret.
+ALERT_TAG = "fast50-alert"
+ALERT_DEFAULT_URL = "./#more"   # Mere-fanen (System-kortet) — hash-routing i index.html
+
+
+def build_alert_message(title, body, url=ALERT_DEFAULT_URL):
+    """Payload til én alert-notifikation (ren funktion, ingen netværk)."""
+    return {
+        "title": title,
+        "body": body,
+        "tag": ALERT_TAG,
+        "renotify": True,
+        "url": url or ALERT_DEFAULT_URL,
+        "athlete": "kennet",
+    }
 
 
 def _gh_get_raw(repo, path, token):
@@ -137,15 +162,13 @@ def run_send(plan, subs, today, sender):
     return sent, dead, pruned
 
 
-def run_send_evening(subs, sender):
-    """Aften-gren: fast AF-check-in-påmindelse, kun til Kennet.
-
-    Samme død-håndtering/prune-kontrakt som run_send, men uafhængig af plan.json
-    (beskeden er statisk). Returnerer (sent, dead, pruned_or_None).
-    """
+def _send_to_kennet(subs, sender, msg, label):
+    """Fælles kerne for de statiske beskeder (aften-nudge, alert): send ÉN
+    payload til alle Kennets subscriptions. Samme død-håndtering/prune-
+    kontrakt som run_send. Returnerer (sent, dead, pruned_or_None)."""
     dead = set()
     sent = 0
-    payload = json.dumps(AF_EVENING_MSG, ensure_ascii=False)
+    payload = json.dumps(msg, ensure_ascii=False)
     for s in push_send.subs_for_athlete(subs, "kennet"):
         res = sender(s, payload)
         if res is True:
@@ -156,8 +179,22 @@ def run_send_evening(subs, sender):
         else:
             print(f"  kennet: push-fejl (ikke-blokerende): {res}")
     pruned = push_send.prune_subscriptions(subs, dead) if dead else None
-    print(f"Aften-reminder sendt: {sent} · døde: {len(dead)}")
+    print(f"{label} sendt: {sent} · døde: {len(dead)}")
     return sent, dead, pruned
+
+
+def run_send_evening(subs, sender):
+    """Aften-gren: fast AF-check-in-påmindelse, kun til Kennet.
+
+    Uafhængig af plan.json (beskeden er statisk). Returnerer (sent, dead, pruned_or_None).
+    """
+    return _send_to_kennet(subs, sender, AF_EVENING_MSG, "Aften-reminder")
+
+
+def run_send_alert(subs, sender, title, body, url=ALERT_DEFAULT_URL):
+    """Alert-gren (--alert): én notifikation om et fejlet workflow, kun til Kennet.
+    Returnerer (sent, dead, pruned_or_None)."""
+    return _send_to_kennet(subs, sender, build_alert_message(title, body, url), "Alert")
 
 
 def _webpush_sender(s, payload):
@@ -195,13 +232,24 @@ def _webpush_sender(s, payload):
         return "dead"
 
 
-def main():
+def _parse_args(argv):
+    ap = argparse.ArgumentParser(description="Fast as Fifty push (daglig via PUSH_MODE, eller --alert)")
+    ap.add_argument("--alert", nargs=2, metavar=("TITEL", "BRØDTEKST"),
+                    help="send én alert-notifikation til Kennet i stedet for den daglige")
+    ap.add_argument("--url", default=ALERT_DEFAULT_URL,
+                    help=f"link når alerten trykkes (default {ALERT_DEFAULT_URL})")
+    return ap.parse_args(argv)
+
+
+def main(argv=None):
+    args = _parse_args(sys.argv[1:] if argv is None else argv)
+
     if webpush is None:
         print("pywebpush ikke installeret — afbryder."); return 1
     if not VAPID_PRIVATE:
         print("VAPID_PRIVATE mangler — afbryder."); return 1
 
-    mode = os.environ.get("PUSH_MODE", "daily").strip().lower()
+    mode = "alert" if args.alert else os.environ.get("PUSH_MODE", "daily").strip().lower()
 
     subs_sha, subs = _load_subscriptions()
     if not subs:
@@ -209,7 +257,10 @@ def main():
 
     today = str(date.today())
 
-    if mode == "evening":
+    if mode == "alert":
+        print(f"Mode: alert ({args.alert[0]})")
+        _sent, dead, pruned = run_send_alert(subs, _webpush_sender, args.alert[0], args.alert[1], args.url)
+    elif mode == "evening":
         print("Mode: evening (AF-check-in)")
         _sent, dead, pruned = run_send_evening(subs, _webpush_sender)
     else:

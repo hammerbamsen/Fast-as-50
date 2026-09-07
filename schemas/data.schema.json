@@ -1,0 +1,186 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "fast-as-50/data.schema.json",
+  "title": "data.json — dashboardets datafil (kontrakt)",
+  "description": "Skrives af scripts/update_kpi.py via Contents API, læses af index.html (applyRemote). Kræver kun de felter dashboardet reelt afhænger af: meta, kpis, today, week_sessions.",
+  "type": "object",
+  "required": [
+    "meta",
+    "kpis",
+    "today",
+    "week_sessions"
+  ],
+  "additionalProperties": true,
+  "properties": {
+    "meta": {
+      "type": "object",
+      "required": [
+        "updated",
+        "week",
+        "date"
+      ],
+      "additionalProperties": true,
+      "properties": {
+        "updated": {
+          "type": "string",
+          "pattern": "^\\d{4}-\\d{2}-\\d{2} \\d{2}:\\d{2}$",
+          "description": "Lokal tid 'YYYY-MM-DD HH:MM' — System-kortets data-alder regnes herfra"
+        },
+        "week": {
+          "type": "integer"
+        },
+        "totalWeeks": {
+          "type": "integer"
+        },
+        "isoWeek": {
+          "type": "integer"
+        },
+        "blockType": {
+          "type": "string"
+        },
+        "date": {
+          "type": "string",
+          "description": "Vist dato, fx '7. sep' (ikke ISO)"
+        },
+        "dayName": {
+          "type": "string"
+        },
+        "programId": {
+          "type": "string"
+        },
+        "programName": {
+          "type": "string"
+        },
+        "phase": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "nextRace": {
+          "type": [
+            "object",
+            "null"
+          ]
+        }
+      }
+    },
+    "kpis": {
+      "type": "object",
+      "description": "label -> {value, unit?, sub?, color?}. Værdier er præformaterede strenge/tal.",
+      "additionalProperties": {
+        "type": "object",
+        "additionalProperties": true,
+        "properties": {
+          "value": {
+            "type": [
+              "string",
+              "number",
+              "null"
+            ]
+          },
+          "unit": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "sub": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "color": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        }
+      }
+    },
+    "today": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "title"
+        ],
+        "additionalProperties": true,
+        "properties": {
+          "discipline": {
+            "type": "string"
+          },
+          "title": {
+            "type": "string"
+          },
+          "completed": {
+            "type": "boolean"
+          }
+        }
+      }
+    },
+    "week_sessions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "day",
+          "disc",
+          "label",
+          "done"
+        ],
+        "additionalProperties": true,
+        "properties": {
+          "day": {
+            "type": "string"
+          },
+          "disc": {
+            "type": "string"
+          },
+          "label": {
+            "type": "string"
+          },
+          "done": {
+            "type": "boolean"
+          },
+          "today": {
+            "type": "boolean"
+          }
+        }
+      }
+    },
+    "ctlPlan": {
+      "type": "array",
+      "items": {
+        "type": "number"
+      }
+    },
+    "all_weeks": {
+      "type": [
+        "object",
+        "array"
+      ],
+      "description": "programuge -> {sessions,...}"
+    },
+    "warnings": {
+      "type": "array"
+    },
+    "af": {
+      "type": "object"
+    },
+    "body": {
+      "type": [
+        "object",
+        "null"
+      ]
+    },
+    "planTab": {
+      "type": [
+        "object",
+        "null"
+      ]
+    }
+  }
+}
