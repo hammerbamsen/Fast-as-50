@@ -403,6 +403,21 @@ def main():
             data['strengthLog'] = _strength_log
     except Exception as _e:
         print(f"  Styrke-log fejlede (ikke-blokerende, bruger cached): {_e}")
+    # Blok 8: de 3 felter efter pas (rpe/complete/note/template) ligger i
+    # plan.athletes.kennet.strengthLog (skrevet af plan-edit strength_log).
+    # Flettes på dato; loggede dage uden aktivitet bliver session source 'log'.
+    try:
+        _plan_slog = (PLAN.get('athletes') or {}).get('kennet', {}).get('strengthLog') or {}
+        if _strength_log:
+            _strength_log = _body.merge_strength_log(_strength_log, _plan_slog)
+            data['strengthLog'] = _strength_log
+        data['strength'] = _body.build_strength(PLAN, _strength_log, today,
+                                                templates=_body.load_workout_library(),
+                                                target=int(GOALS.get('strengthPerWeek') or 2))
+        _nx = data['strength']['next']
+        print(f"  Styrke: {len(_plan_slog)} loggede pas · næste {_nx['ab'].upper()} {_nx['templateId']} ({_nx['reasoning']})")
+    except Exception as _e:
+        print(f"  Styrke-templates fejlede (ikke-blokerende): {_e}")
     # af_log hentes her (ét kald) så cut-tjekkets alkohol-signal ser dagens
     # registrering — genbruges i AF-log-afsnittet nedenfor.
     full_af_log = get_full_af_log()
@@ -519,6 +534,7 @@ def main():
         print(f"  ⚠️  Advarsler: {[w['message'] for w in warnings]}")
 
     data['tsb'] = tsb  # direkte TSB-tal til brug i frontend advarsler
+    data['weekTss'] = {'actual': tss_act, 'planned': planned}   # ugens TSS som tal (Martin-mail, blok 8)
     # --- AF-dage (man–søn denne uge) ---
     data['af'] = {
         'weekDone': af_days if af_days is not None else data.get('af', {}).get('weekDone', 0),
@@ -721,6 +737,27 @@ def main():
               f"{len(data['planTab']['hardSpacing'])} hårde par")
     except Exception as _e:
         print(f"  planTab fejlede (ikke-blokerende): {_e}")
+
+    # --- Martin-mail (blok 8): de 8 linjer til søndagsmailen -> data.martinMail
+    # hver kørsel. Om søndagen appendes afsnittet "### Signaler uge {iso}" til
+    # data/martin_signals.md én gang (gh_get/gh_put, ikke-blokerende).
+    try:
+        from modules import martin_signals as _ms
+        _ms_sha, _ms_raw = gh_get('data/martin_signals.md')
+        data['martinMail'] = _ms.build_weekly(data, PLAN, today, signals_md=_ms_raw)
+        print(f"  Martin-mail uge {data['martinMail']['isoWeek']}: {data['martinMail']['lines'][0]}")
+        if weekday == 6:
+            _iso = data['martinMail']['isoWeek']
+            if _ms_raw is None:
+                print("  Martin-signaler: martin_signals.md kunne ikke hentes — intet appendet")
+            elif _ms.has_weekly(_ms_raw, _iso):
+                print(f"  Martin-signaler uge {_iso} står allerede i martin_signals.md")
+            else:
+                gh_put('data/martin_signals.md', _ms_sha,
+                       _ms.append_signal(_ms_raw or '', _ms.format_weekly(data['martinMail'])),
+                       f"martin: signaler uge {_iso}")
+    except Exception as _e:
+        print(f"  Martin-mail fejlede (ikke-blokerende): {_e}")
 
     # --- Today session(s) ---
     # NB: der kan være flere sessioner samme dag (fx styrke + løb) — tag dem ALLE, ikke kun den første.

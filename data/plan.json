@@ -200,7 +200,7 @@
           "ftpTarget": 278,
           "tssTarget": 250,
           "location": "Gentofte. RACE søn",
-          "note": "CPH Half søn 20/9 — B-løb. Mål sub 1:30 med beslutningsregel ved 5 km. Cut starter IKKE før mandag 21/9.",
+          "note": "CPH Half søn 20/9 — B-løb. B-løb kontrolleret 1:37-1:40 (4:35-4:45/km). Cut starter IKKE før mandag 21/9.",
           "wkgTarget": 3.97,
           "purpose": "Race-uge: én målpace-åbner, let cykel/svøm, CPH Half som B-løb.",
           "quota": {
@@ -1080,7 +1080,7 @@
       "ctlTarget": 45,
       "tssTarget": 336,
       "location": "Gentofte. RACE søn",
-      "note": "CPH Half søn 20/9 — B-løb, mål sub 1:30 (4:16/km). Max 3 løb, ingen løb to dage i streg. Cut starter man 21/9, ikke før."
+      "note": "CPH Half søn 20/9 — B-løb, B-løb kontrolleret 1:37-1:40 (4:35-4:45/km). Max 3 løb, ingen løb to dage i streg. Cut starter man 21/9, ikke før."
     }
   ],
   "travel": [
@@ -6225,10 +6225,10 @@
           "entries": [
             {
               "workout": {
-                "name": "Løb målpace 4×3 min (1:30-tempo)",
+                "name": "Løb 4×3 min halvmaraton-tempo (4:35-4:45) efter fornemmelse",
                 "type": "Run",
                 "moving_time": 2700,
-                "description": "- Varm-op 15m >5:39/km Pace\n\n4x\n- Målpace-interval 3m 4:12-4:21/km Pace\n- Pause 2m >5:39/km Pace\n\n- Cool-down 10m >5:39/km Pace\n\nMålpace 1:30 = 4:16/km. Kør efter fornemmelse — det skal føles kontrolleret, ikke hårdt. 4 reps, ikke 5 — 10 dage efter maraton. 2 min gang imellem.",
+                "description": "- Varm-op 15m >5:39/km Pace\n\n4x\n- Halvmaraton-tempo 3m 4:35-4:45/km Pace\n- Pause 2m >5:39/km Pace\n\n- Cool-down 10m >5:39/km Pace\n\nHalvmaraton-tempo 4:35-4:45/km (B-løb, 1:37-1:40). Kør efter fornemmelse — kontrolleret, ikke hårdt. 4 reps, ikke 5 — 10 dage efter maraton. 2 min gang imellem.",
                 "workout_doc": {
                   "steps": [
                     {
@@ -6245,7 +6245,7 @@
                       "text": "4x",
                       "steps": [
                         {
-                          "text": "Målpace-interval 4:12-4:21/km",
+                          "text": "Halvmaraton-tempo 4:35-4:45/km",
                           "pace": {
                             "start": 101,
                             "end": 105,
@@ -6276,7 +6276,7 @@
                   ]
                 }
               },
-              "note": "Målpace-åbner mod 1:30. 4 reps, ikke 5 — 10 dage efter maraton",
+              "note": "Halvmaraton-tempo efter fornemmelse. 4 reps, ikke 5 — 10 dage efter maraton",
               "id": "86a116af"
             }
           ]
@@ -6459,43 +6459,28 @@
           "entries": [
             {
               "workout": {
-                "name": "CPH HALF — 21,1 km",
+                "name": "CPH HALF — 21,1 km, B-løb kontrolleret 4:35-4:45/km",
                 "type": "Run",
                 "moving_time": 5400,
-                "description": "- 0-5 km: 4:16/km, lås tempoet 21m 4:12-4:16/km Pace\n- 5-15 km: 4:15/km 43m 4:12-4:16/km Pace\n- 15-21,1 km: 4:14/km eller hurtigere 26m 4:05-4:16/km Pace\n\nMÅL: sub 1:30. Snit 4:15/km giver 1:29:40 — 20 sek buffer.\nKm-splits: 5 km 21:20 | 10 km 42:35 | 15 km 63:50 | mål 1:29:40.\nBeslutningsregel ved 5 km: gå efter 4:16 KUN hvis de første 5 km føles kontrollerede — ellers 4:35/km og nyd det. B-løb.\nRacesko. Gel ved 8 km og 15 km. Opvarmning 15 min let + 3 strides før start.",
+                "description": "- 0-5 km: bevidst langsomst 23m 4:40-4:50/km Pace\n- 5-15 km: 4:35-4:45/km 47m 4:35-4:45/km Pace\n- 15-21,1 km: efter benene 28m 4:30-4:45/km Pace\n\nMÅL: 1:37-1:40, kontrolleret (B-løb, 15 dage efter Médoc). Beslutning på dagen efter benene — aldrig over tærskel (4:24/km).\nRacesko. Gel ved 8 km og 15 km. Opvarmning 10 min let + 3 strides. Cut starter først mandag 21/9.",
                 "workout_doc": {
                   "steps": [
                     {
-                      "text": "0-5 km: 4:16/km, lås tempoet 4:12-4:16/km",
-                      "pace": {
-                        "start": 103,
-                        "end": 105,
-                        "units": "%pace"
-                      },
-                      "duration": 1260
+                      "text": "0-5 km bevidst langsomst 4:40-4:50/km",
+                      "duration": 1380
                     },
                     {
-                      "text": "5-15 km: 4:15/km 4:12-4:16/km",
-                      "pace": {
-                        "start": 103,
-                        "end": 105,
-                        "units": "%pace"
-                      },
-                      "duration": 2580
+                      "text": "5-15 km 4:35-4:45/km",
+                      "duration": 2820
                     },
                     {
-                      "text": "15-21,1 km: 4:14/km eller hurtigere 4:05-4:16/km",
-                      "pace": {
-                        "start": 103,
-                        "end": 108,
-                        "units": "%pace"
-                      },
-                      "duration": 1560
+                      "text": "15-21,1 km efter benene",
+                      "duration": 1680
                     }
                   ]
                 }
               },
-              "note": "Mål sub 1:30 (4:16/km). Beslutningsregel: gå efter 4:16 kun hvis de første 5 km føles kontrollerede — ellers 4:35/km og nyd det. B-løb.",
+              "note": "B-løb 1:37-1:40, 4:35-4:45/km. Første 5 km langsomst. Beslutning på dagen efter benene.",
               "id": "2d868f45"
             }
           ]
@@ -10264,7 +10249,7 @@
         "ftpTarget": 278,
         "tssTarget": 250,
         "location": "Gentofte. RACE søn",
-        "note": "CPH Half søn 20/9 — B-løb. Mål sub 1:30 med beslutningsregel ved 5 km. Cut starter IKKE før mandag 21/9.",
+        "note": "CPH Half søn 20/9 — B-løb. B-løb kontrolleret 1:37-1:40 (4:35-4:45/km). Cut starter IKKE før mandag 21/9.",
         "wkgTarget": 3.97,
         "purpose": "Race-uge: én målpace-åbner, let cykel/svøm, CPH Half som B-løb.",
         "quota": {

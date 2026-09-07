@@ -1,180 +1,150 @@
-import os, requests
+import os
+import sys
 from datetime import date, timedelta
 
-CLIENT_ID     = os.environ['AZURE_CLIENT_ID']
-TENANT_ID     = os.environ['AZURE_TENANT_ID']
-CLIENT_SECRET = os.environ['AZURE_CLIENT_SECRET']
-API_KEY       = os.environ['INTERVALS_API_KEY']
-ATHLETE_ID    = os.environ.get('INTERVALS_ATHLETE_ID') or 'i599466'  # fallback: secret har vist sig tom
-WEEK          = int(os.environ.get('WEEK', 2))
-USER          = 'kennet@hammerby.com'
-GRAPH         = f'https://graph.microsoft.com/v1.0/users/{USER}'
-TIMEOUT       = 30
-
-# Program og uge (rettet 3/9-2026): WEEK er ugenummer i programmet PROGRAM
-# (program-id fra plan.json -> programs). Mangler PROGRAM, bruges det program
-# der er aktivt i dag (modules/programs.py). Var før bundet til det ene legacy
-# 'program'-felt og frøs derfor på sidste uge ved programskifte.
-import json as _json, sys as _sys
+# Tidslogikken (styrke 06:30, +15 min, aldrig overlap) ligger i
+# scripts/modules/outlook_times.py — samme kilde som plan-edit (apply_edit.py).
 _REPO_ROOT = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', '..', '..')
-_sys.path.insert(0, os.path.join(_REPO_ROOT, 'scripts'))
-from modules import programs as _programs
-_plan = _json.load(open(os.path.join(_REPO_ROOT, 'data', 'plan.json'), encoding='utf-8'))
-PROGRAM_ID = os.environ.get('PROGRAM', '').strip()
-if PROGRAM_ID:
-    _prog = _programs.list_programs(_plan).get(PROGRAM_ID)
-    assert _prog, f'Ukendt program: {PROGRAM_ID!r}'
-else:
-    _prog = _programs.active_program(_plan, 'kennet')
-    PROGRAM_ID = _prog['id']
-PLAN_START_D = date.fromisoformat(_prog['start'])
-TOTAL_WEEKS  = _prog['totalWeeks']
+sys.path.insert(0, os.path.join(_REPO_ROOT, 'scripts'))
+from modules.outlook_times import schedule_day, event_body, normalize_overrides  # noqa: E402
 
-assert 1 <= WEEK <= TOTAL_WEEKS, f'Ugyldig uge: {WEEK} (program {PROGRAM_ID} har {TOTAL_WEEKS} uger)'
-print(f'Program {PROGRAM_ID}: uge {WEEK} af {TOTAL_WEEKS}')
+# ── Synk (kræver env + netværk) ───────────────────────────────────────────────
 
-# Token
-resp = requests.post(
-    f'https://login.microsoftonline.com/{TENANT_ID}/oauth2/v2.0/token',
-    data={'grant_type':'client_credentials','client_id':CLIENT_ID,
-          'client_secret':CLIENT_SECRET,'scope':'https://graph.microsoft.com/.default'},
-    timeout=TIMEOUT
-)
-resp.raise_for_status()
-token    = resp.json()['access_token']
-hdrs     = {'Authorization': f'Bearer {token}', 'Content-Type': 'application/json'}
-hdrs_get = {k:v for k,v in hdrs.items() if k != 'Content-Type'}
-print('Token OK')
-
-plan_start = PLAN_START_D
-week_start = plan_start + timedelta(weeks=WEEK-1)
-week_end   = week_start + timedelta(days=6)
-print(f'Uge {WEEK}: {week_start} til {week_end}')
-
-# TRIN 1: Hent workouts fra Intervals FØRST.
-# Rækkefølgen er kritisk: sletter vi før vi ved at der er noget at oprette,
-# efterlader en Intervals-fejl kalenderen tom. Gælder især uovervåget cron-kørsel.
-r = requests.get(
-    f'https://intervals.icu/api/v1/athlete/{ATHLETE_ID}/events',
-    auth=('API_KEY', API_KEY),
-    params={'oldest': f'{week_start}T00:00:00', 'newest': f'{week_end}T23:59:00',
-            'category': 'WORKOUT'},
-    timeout=TIMEOUT
-)
-if r.status_code != 200:
-    print(f'FEJL: Intervals GET returnerede {r.status_code}: {r.text[:200]}')
-    raise SystemExit(1)
-workouts = r.json()
-print(f'{len(workouts)} workouts fra Intervals')
-if not workouts:
-    print('FEJL: 0 workouts fra Intervals — forventede en planlagt uge. Afbryder.')
-    raise SystemExit(1)
-
-TYPE_EMOJI = {
-    'Run': '🏃', 'Ride': '🚴', 'Swim': '🏊',
-    'WeightTraining': '💪', 'Walk': '🚶',
-    # Manglede -> faldt tilbage til vaegtstang paa alle OW-svom (28/7-2026)
-    'OpenWaterSwim': '🏊', 'VirtualRide': '🚴', 'VirtualRun': '🏃',
-    'TrailRun': '🏃', 'Hike': '🥾', 'Gravel Ride': '🚴',
-}
-START_HOUR = {
-    'SWIM': (6, 0), 'OW': (6, 0), 'OPENWATERSWIM': (6, 0),
-    'RUN': (6, 30), 'TRAIL_RUN': (6, 30),
-    'RIDE': (7, 0), 'VIRTUAL_RIDE': (7, 0),
-    'WEIGHTTRAINING': (7, 0), 'WEIGHT_TRAINING': (7, 0), 'WEIGHTS': (7, 0),
-}
-
-# Tidspunkt-overrides fra plan.json — SAMME kilde som build_workouts.py.
-# Uden dette havde dette script sin egen tidstabel, og et pas flyttet til
-# eftermiddagen i plan.json landede alligevel 06:30 i kalenderen (28/7-2026).
-import json as _json
-
-def _load_time_overrides():
-    here = os.path.dirname(os.path.abspath(__file__))
-    for p in ('data/plan.json',
-              os.path.join(here, '..', '..', '..', 'data', 'plan.json')):
+def _load_time_overrides(repo_root):
+    """Tidspunkt-overrides fra plan.json — SAMME kilde som build_workouts.py.
+    Uden dette havde dette script sin egen tidstabel, og et pas flyttet til
+    eftermiddagen i plan.json landede alligevel 06:30 i kalenderen (28/7-2026)."""
+    import json as _json
+    for p in ('data/plan.json', os.path.join(repo_root, 'data', 'plan.json')):
         try:
             with open(p, encoding='utf-8') as f:
                 raw = _json.load(f)['athletes']['kennet'].get('timeOverrides', {})
         except Exception:
             continue
-        out = {}
-        for k, v in raw.items():
-            out[k] = ({s.lower(): tuple(t) for s, t in v.items()}
-                      if isinstance(v, dict) else tuple(v))
+        out = normalize_overrides(raw)
         print(f'timeOverrides: {len(out)} dato(er) fra {p}')
         return out
     print('  ADVARSEL: timeOverrides kunne ikke laeses — bruger standardtider')
     return {}
 
-TIME_OVERRIDES = _load_time_overrides()
 
-def _start_for(dt, wtype):
-    """dt er 'YYYY-MM-DD'. Dict-override slaar op pr. disciplin."""
-    ov = TIME_OVERRIDES.get(dt)
-    if isinstance(ov, dict):
-        hit = ov.get((wtype or '').lower())
-        if hit:
-            return hit
-    elif ov:
-        return ov
-    return START_HOUR.get((wtype or '').upper(), (6, 0))
+def main():
+    import requests
+    import json as _json
 
-# TRIN 2: Slet eksisterende Traening-events — først nu, hvor workouts er i hus
-url    = f'{GRAPH}/calendarView'
-params = {'startDateTime': f'{week_start}T00:00:00',
-          'endDateTime':   f'{week_end}T23:59:59',
-          '$select': 'id,subject,categories', '$top': '50'}
-existing = []
-while url:
-    r = requests.get(url, headers=hdrs_get, params=params, timeout=TIMEOUT)
-    params = None
-    body   = r.json()
-    existing.extend(body.get('value', []))
-    url = body.get('@odata.nextLink')
+    CLIENT_ID     = os.environ['AZURE_CLIENT_ID']
+    TENANT_ID     = os.environ['AZURE_TENANT_ID']
+    CLIENT_SECRET = os.environ['AZURE_CLIENT_SECRET']
+    API_KEY       = os.environ['INTERVALS_API_KEY']
+    ATHLETE_ID    = os.environ.get('INTERVALS_ATHLETE_ID') or 'i599466'  # fallback: secret har vist sig tom
+    WEEK          = int(os.environ.get('WEEK', 2))
+    USER          = 'kennet@hammerby.com'
+    GRAPH         = f'https://graph.microsoft.com/v1.0/users/{USER}'
+    TIMEOUT       = 30
 
-deleted = 0
-for e in existing:
-    if any(c in ('Træning', 'Traening') for c in e.get('categories', [])):
-        dr = requests.delete(f'{GRAPH}/events/{e["id"]}', headers=hdrs, timeout=TIMEOUT)
-        if dr.status_code in (204, 404):
-            print(f'  Slettet: {e["subject"]}')
-            deleted += 1
-        else:
-            print(f'  FEJL slet {e["subject"]}: {dr.status_code}')
-print(f'Slettet: {deleted}')
-
-# TRIN 3: Opret nye events
-ok = err = 0
-for w in workouts:
-    dt    = w.get('start_date_local', '')[:10]
-    name  = w.get('name', 'Træning')
-    wtype = w.get('type', 'Run')
-    dur   = w.get('moving_time') or 3600
-    desc  = w.get('description', '')
-    emoji = TYPE_EMOJI.get(wtype, '🏋')
-    sh, sm = _start_for(dt, wtype)
-    end_min = sh * 60 + sm + dur // 60
-    eh, em  = end_min // 60, end_min % 60
-    event = {
-        'subject': f'{emoji} {name}',
-        'body': {'contentType': 'text', 'content': desc or f'Fast as Fifty - {wtype}'},
-        'start': {'dateTime': f'{dt}T{sh:02d}:{sm:02d}:00', 'timeZone': 'Europe/Copenhagen'},
-        'end':   {'dateTime': f'{dt}T{eh:02d}:{em:02d}:00', 'timeZone': 'Europe/Copenhagen'},
-        'categories': ['Træning'],
-        'showAs': 'busy',
-        'isReminderOn': True,
-        'reminderMinutesBeforeStart': 30,
-    }
-    resp = requests.post(f'{GRAPH}/events', headers=hdrs, json=event, timeout=TIMEOUT)
-    if resp.status_code == 201:
-        print(f'  Oprettet: {dt} {emoji} {name}')
-        ok += 1
+    # Program og uge (rettet 3/9-2026): WEEK er ugenummer i programmet PROGRAM
+    # (program-id fra plan.json -> programs). Mangler PROGRAM, bruges det program
+    # der er aktivt i dag (modules/programs.py). Var før bundet til det ene legacy
+    # 'program'-felt og frøs derfor på sidste uge ved programskifte.
+    from modules import programs as _programs
+    _plan = _json.load(open(os.path.join(_REPO_ROOT, 'data', 'plan.json'), encoding='utf-8'))
+    PROGRAM_ID = os.environ.get('PROGRAM', '').strip()
+    if PROGRAM_ID:
+        _prog = _programs.list_programs(_plan).get(PROGRAM_ID)
+        assert _prog, f'Ukendt program: {PROGRAM_ID!r}'
     else:
-        print(f'  FEJL opret {dt} {name}: {resp.status_code} {resp.text[:120]}')
-        err += 1
+        _prog = _programs.active_program(_plan, 'kennet')
+        PROGRAM_ID = _prog['id']
+    PLAN_START_D = date.fromisoformat(_prog['start'])
+    TOTAL_WEEKS  = _prog['totalWeeks']
 
-print(f'Oprettet: {ok} | Fejl: {err}')
-if err > 0:
-    raise SystemExit(1)
-print('DONE')
+    assert 1 <= WEEK <= TOTAL_WEEKS, f'Ugyldig uge: {WEEK} (program {PROGRAM_ID} har {TOTAL_WEEKS} uger)'
+    print(f'Program {PROGRAM_ID}: uge {WEEK} af {TOTAL_WEEKS}')
+
+    # Token
+    resp = requests.post(
+        f'https://login.microsoftonline.com/{TENANT_ID}/oauth2/v2.0/token',
+        data={'grant_type':'client_credentials','client_id':CLIENT_ID,
+              'client_secret':CLIENT_SECRET,'scope':'https://graph.microsoft.com/.default'},
+        timeout=TIMEOUT
+    )
+    resp.raise_for_status()
+    token    = resp.json()['access_token']
+    hdrs     = {'Authorization': f'Bearer {token}', 'Content-Type': 'application/json'}
+    hdrs_get = {k:v for k,v in hdrs.items() if k != 'Content-Type'}
+    print('Token OK')
+
+    plan_start = PLAN_START_D
+    week_start = plan_start + timedelta(weeks=WEEK-1)
+    week_end   = week_start + timedelta(days=6)
+    print(f'Uge {WEEK}: {week_start} til {week_end}')
+
+    # TRIN 1: Hent workouts fra Intervals FØRST.
+    # Rækkefølgen er kritisk: sletter vi før vi ved at der er noget at oprette,
+    # efterlader en Intervals-fejl kalenderen tom. Gælder især uovervåget cron-kørsel.
+    r = requests.get(
+        f'https://intervals.icu/api/v1/athlete/{ATHLETE_ID}/events',
+        auth=('API_KEY', API_KEY),
+        params={'oldest': f'{week_start}T00:00:00', 'newest': f'{week_end}T23:59:00',
+                'category': 'WORKOUT'},
+        timeout=TIMEOUT
+    )
+    if r.status_code != 200:
+        print(f'FEJL: Intervals GET returnerede {r.status_code}: {r.text[:200]}')
+        raise SystemExit(1)
+    workouts = r.json()
+    print(f'{len(workouts)} workouts fra Intervals')
+    if not workouts:
+        print('FEJL: 0 workouts fra Intervals — forventede en planlagt uge. Afbryder.')
+        raise SystemExit(1)
+
+    TIME_OVERRIDES = _load_time_overrides(_REPO_ROOT)
+
+    # TRIN 2: Slet eksisterende Traening-events — først nu, hvor workouts er i hus
+    url    = f'{GRAPH}/calendarView'
+    params = {'startDateTime': f'{week_start}T00:00:00',
+              'endDateTime':   f'{week_end}T23:59:59',
+              '$select': 'id,subject,categories', '$top': '50'}
+    existing = []
+    while url:
+        r = requests.get(url, headers=hdrs_get, params=params, timeout=TIMEOUT)
+        params = None
+        body   = r.json()
+        existing.extend(body.get('value', []))
+        url = body.get('@odata.nextLink')
+
+    deleted = 0
+    for e in existing:
+        if any(c in ('Træning', 'Traening') for c in e.get('categories', [])):
+            dr = requests.delete(f'{GRAPH}/events/{e["id"]}', headers=hdrs, timeout=TIMEOUT)
+            if dr.status_code in (204, 404):
+                print(f'  Slettet: {e["subject"]}')
+                deleted += 1
+            else:
+                print(f'  FEJL slet {e["subject"]}: {dr.status_code}')
+    print(f'Slettet: {deleted}')
+
+    # TRIN 3: Opret nye events — tider pr. dag via schedule_day (aldrig overlap)
+    by_day = {}
+    for w in workouts:
+        by_day.setdefault((w.get('start_date_local') or '')[:10], []).append(w)
+    ok = err = 0
+    for dt in sorted(by_day):
+        for w, start_dt in schedule_day(by_day[dt], TIME_OVERRIDES.get(dt)):
+            event = event_body(w, start_dt)
+            resp = requests.post(f'{GRAPH}/events', headers=hdrs, json=event, timeout=TIMEOUT)
+            if resp.status_code == 201:
+                print(f'  Oprettet: {dt} {event["subject"]} {start_dt:%H:%M}')
+                ok += 1
+            else:
+                print(f'  FEJL opret {dt} {w.get("name", "Træning")}: {resp.status_code} {resp.text[:120]}')
+                err += 1
+
+    print(f'Oprettet: {ok} | Fejl: {err}')
+    if err > 0:
+        raise SystemExit(1)
+    print('DONE')
+
+
+if __name__ == '__main__':
+    main()

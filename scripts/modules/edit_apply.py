@@ -10,7 +10,9 @@ Flow:
      → Word master snapshot → skriv edit_result.json
   4. plan.html poller edit_result.json på requestId
 
-Alle actions arbejder på entry-niveau. Ved mutation af én entry på en dag,
+Alle actions arbejder på entry-niveau — undtagen set_zones og strength_log
+(blok 8: 3 felter efter styrkepas -> athletes.kennet.strengthLog[dato]), som
+hører til atleten og ikke rører Intervals/Outlook. Ved mutation af én entry på en dag,
 slettes ALLE den dags Intervals+Outlook events og genskabes fra plan.json
 — sikreste mønster (samme som build_workouts.py).
 """
@@ -65,6 +67,14 @@ def _simulate_mutation(plan: dict, action: str, entry_id: str,
             ftp_w=params.get("ftpW"),
         )
         return sim, "zones", ""
+
+    # Særtilfælde (blok 8): styrke-log efter pas. Hører til atleten, ikke til
+    # en entry — entryId er 'log:YYYY-MM-DD'. Ingen Friel-implikationer.
+    if action == "strength_log":
+        d_iso, rec = strength_log_record(entry_id, params)
+        log = sim["athletes"][athlete].setdefault("strengthLog", {})
+        log[d_iso] = rec                      # samme dato overskrives
+        return sim, "strength_log", ""
 
     ath = sim["athletes"][athlete]
 
@@ -173,6 +183,47 @@ def _simulate_mutation(plan: dict, action: str, entry_id: str,
         raise ValueError(f"Ukendt action: {action!r}")
 
     return sim, src_day["date"], extra_date
+
+
+STRENGTH_NOTE_MAX = 140
+
+
+def strength_log_record(entry_id: str, params: Optional[dict]) -> tuple[str, dict]:
+    """Validerer et styrke-log-kald og returnerer (dato, record).
+
+    entry_id 'log:YYYY-MM-DD' (dato kan alternativt stå i params['date']).
+    params: rpe 1-10 (heltal), complete 0/1 (alle runder × reps), note ≤ 140
+    tegn, template (template-id, valgfri). Record: {rpe, complete, note,
+    template, at} hvor at er ISO UTC."""
+    params = params or {}
+    raw = entry_id or ""
+    d_raw = raw[4:] if raw.startswith("log:") else params.get("date")
+    try:
+        d_iso = date.fromisoformat(str(d_raw)[:10]).isoformat()
+    except (TypeError, ValueError):
+        raise ValueError(f"strength_log kræver entryId 'log:YYYY-MM-DD' (fik {entry_id!r})")
+    try:
+        rpe = int(params.get("rpe"))
+    except (TypeError, ValueError):
+        raise ValueError("strength_log: rpe skal være et heltal 1-10")
+    if not 1 <= rpe <= 10:
+        raise ValueError(f"strength_log: rpe {rpe} uden for 1-10")
+    comp = params.get("complete")
+    if isinstance(comp, bool):
+        comp = int(comp)
+    if comp not in (0, 1, "0", "1"):
+        raise ValueError("strength_log: complete skal være 0 eller 1")
+    note = str(params.get("note") or "").strip()
+    if len(note) > STRENGTH_NOTE_MAX:
+        raise ValueError(f"strength_log: note må højst være {STRENGTH_NOTE_MAX} tegn ({len(note)})")
+    tpl = params.get("template")
+    return d_iso, {
+        "rpe": rpe,
+        "complete": int(comp),
+        "note": note,
+        "template": str(tpl) if tpl else None,
+        "at": datetime.now(timezone.utc).isoformat(timespec="seconds"),
+    }
 
 
 def _find_template(tid: str) -> dict:
@@ -292,11 +343,15 @@ def apply_edit(plan_json_raw: str, action: str, entry_id: str,
     plan = json.loads(plan_json_raw)
     sim_plan, primary_date, extra_date = _simulate_mutation(
         plan, action, entry_id, params or {}, athlete=athlete)
-    gate = gate_check(plan, sim_plan, confirmed_warn=confirmed_warn, athlete=athlete)
+    if action == "strength_log":
+        # Ingen Friel-gate: loggen ændrer ingen pas, kun atletens strengthLog.
+        gate = {"status": "ok", "flags": [], "msg": "Styrkelog gemt"}
+    else:
+        gate = gate_check(plan, sim_plan, confirmed_warn=confirmed_warn, athlete=athlete)
 
-    # set_zones rører ingen dage. Uden dette ville orkestratoren forsøge
-    # intervals_delete_date("zones") og outlook_sync_date("zones", ...).
-    dates = [] if action == "set_zones" else (
+    # set_zones/strength_log rører ingen dage. Uden dette ville orkestratoren
+    # forsøge intervals_delete_date("zones") og outlook_sync_date("zones", ...).
+    dates = [] if action in ("set_zones", "strength_log") else (
         [primary_date] + ([extra_date] if extra_date else []))
     result = {
         "status": gate["status"],

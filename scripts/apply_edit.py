@@ -22,7 +22,7 @@ from pathlib import Path
 import requests
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from modules import edit_apply, martin_signals, word_master
+from modules import edit_apply, martin_signals, outlook_times, word_master
 
 
 GH_TOKEN = os.environ["GITHUB_TOKEN"]
@@ -129,7 +129,9 @@ def outlook_token():
     return r.json()["access_token"]
 
 
-def outlook_sync_date(day_iso: str, entries: list, token: str):
+def outlook_sync_date(day_iso: str, entries: list, token: str, overrides: dict = None):
+    """Slet dagens Træning-events og genskab dem fra plan.json-entries.
+    overrides: normaliserede timeOverrides ({dato: (h, m) | {disciplin: (h, m)}})."""
     graph = f"https://graph.microsoft.com/v1.0/users/{OUTLOOK_USER}"
     hdrs = {"Authorization": f"Bearer {token}", "Content-Type": "application/json"}
     params = {"startDateTime": f"{day_iso}T00:00:00",
@@ -142,26 +144,13 @@ def outlook_sync_date(day_iso: str, entries: list, token: str):
         if any(c in ("Træning", "Traening") for c in cats):
             requests.delete(f"{graph}/events/{ev['id']}", headers=hdrs, timeout=30)
 
-    start_hours = {"Swim": 6, "OpenWaterSwim": 6, "Ride": 8, "Run": 8,
-                   "WeightTraining": 7, "Hike": 9, "Walk": 9}
-    slot = 6
-    for e in entries:
-        wo = e.get("workout")
-        if not wo:
-            continue
-        secs = int(wo.get("moving_time") or 3600)
-        h = start_hours.get(wo.get("type"), slot)
-        start = f"{day_iso}T{h:02d}:00:00"
-        end_dt = datetime.fromisoformat(start) + timedelta(seconds=secs)
-        body = {
-            "subject": wo["name"],
-            "start": {"dateTime": start, "timeZone": "Europe/Copenhagen"},
-            "end": {"dateTime": end_dt.isoformat(), "timeZone": "Europe/Copenhagen"},
-            "body": {"contentType": "text", "content": wo.get("description", "")},
-            "categories": ["Træning"],
-        }
-        requests.post(f"{graph}/events", headers=hdrs, json=body, timeout=30)
-        slot += 1
+    # Tider fra modules/outlook_times.py (blok 8) — SAMME regel som ugesynken
+    # (sync_outlook.py): styrke 06:30 først, +15 min mellem pas, aldrig overlap,
+    # timeOverrides pr. pas. Før havde denne funktion sin egen tidstabel.
+    workouts = outlook_times.workouts_from_entries(day_iso, entries)
+    for wo, start_dt in outlook_times.schedule_day(workouts, (overrides or {}).get(day_iso)):
+        requests.post(f"{graph}/events", headers=hdrs,
+                      json=outlook_times.event_body(wo, start_dt), timeout=30)
 
 
 # -- Main -----------------------------------------------------------------
@@ -244,10 +233,27 @@ def main():
 
     # COMMIT plan.json — sandheden først
     plan_sha_fresh, _ = gh_get("data/plan.json")  # frisk SHA
+    _what = entry_id if action == "strength_log" else entry_id[:8]
     plan_commit = gh_put("data/plan.json", plan_sha_fresh,
                           result["new_plan_raw"].encode(),
-                          f"plan-edit: {athlete} {action} {entry_id[:8]} ({', '.join(result['dates_changed'])})")
+                          f"plan-edit: {athlete} {action} {_what} ({', '.join(result['dates_changed'])})")
     print(f"plan.json commit: {plan_commit[:7]}")
+
+    # Styrke-log (blok 8): kun plan.json + edit_result. Intet pas er ændret,
+    # så Intervals/Outlook/Martin-signal/Word/OneDrive springes over.
+    if action == "strength_log":
+        write_result(request_id, {
+            "status": "ok",
+            "action": "strength_log",
+            "gate": result["gate"],
+            "dates_changed": [],
+            "plan_commit": plan_commit,
+            "sync_errors": [],
+            "athlete": athlete,
+            "request_ts": result["request_ts"],
+        })
+        print(f"=== FÆRDIG: styrkelog {entry_id} gemt ===")
+        return
 
     dates = result["dates_changed"]
     new_plan = json.loads(result["new_plan_raw"])
@@ -302,10 +308,12 @@ def main():
     if athlete == "kennet":
         try:
             tok = outlook_token()
+            _overrides = outlook_times.normalize_overrides(
+                new_plan["athletes"][athlete].get("timeOverrides"))
             for d_iso in sync_dates:
                 try:
                     day = days_map.get(d_iso, {"entries": []})
-                    outlook_sync_date(d_iso, day.get("entries", []), tok)
+                    outlook_sync_date(d_iso, day.get("entries", []), tok, _overrides)
                     print(f"Outlook synk: {d_iso}")
                 except Exception as ex:
                     sync_errors.append(f"Outlook {d_iso}: {ex}")

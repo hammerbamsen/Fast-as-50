@@ -13,7 +13,11 @@ Nøgler i `body`:
               'foran' | 'plan' | 'bagud' | None efter korridor ±0,5 kg OG
               2-mandags-reglen (uden for korridoren to mandage i træk).
   fat         14-dages snit, ændring over 28 d, lineær forventning, status.
-  ffm         fedtfri masse = avg14(vægt) × (1 − avg14(fedt)/100).
+  ffm         fedtfri masse = avg14(vægt) × (1 − avg14(fedt)/100). Hold-mål
+              (blok 8): baseline = avg14 ved cut-start (i pre: nu), floor =
+              baseline − 0,5, status ok/warn mod floor (pre altid ok).
+  strength    (blok 8, build_strength) templates fra workout_library, `next`
+              (A/B, template, reasoning) og `last4` fra styrke-loggen.
   cutCheck    fem signaler (rate/ffm/strength/recovery/plateau) -> ét level +
               ÉN handlingstekst. Kun aktiv i phase 'cut'. Manglende serier
               vises som 'ingen data' pr. signal — tjekket forsvinder aldrig tavst.
@@ -342,10 +346,30 @@ def ffm_status(wp, today, weight_history, fat_history):
     t, ft = wp.get('targetKg'), wp.get('bodyFatPctTarget')
     target = float(t) * (1 - float(ft) / 100.0) if (t is not None and ft is not None) else None
     chg = (now - prev) if (now is not None and prev is not None) else None
-    status = None
-    if chg is not None:
+
+    # Hold-mål (blok 8): baseline = avg14 ved cut-start, floor = baseline − 0,5.
+    # I pre er baseline det nuværende avg14 (cuttet er ikke begyndt) og status
+    # altid ok/neutral. target beholdes, men UI'et styrer efter floor.
+    phase = phase_for(wp, today)
+    d0 = _to_date(wp.get('cutStartsFrom'))
+    if phase in ('cut', 'hold') and d0:
+        baseline = _ffm(d0)
+        baseline_date = d0.isoformat()
+    else:
+        baseline = now
+        baseline_date = today.isoformat() if now is not None else None
+    floor = (baseline + FFM_ACT_KG) if baseline is not None else None
+    if phase in ('cut', 'hold') and now is not None and floor is not None:
+        status = 'ok' if now >= floor - 1e-9 else 'warn'
+    elif phase == 'pre':
+        status = 'ok' if now is not None else None
+    elif chg is not None:
         status = 'warn' if chg < FFM_ACT_KG else 'ok'
-    return {'now': _r(now), 'change28d': _r(chg), 'target': _r(target), 'status': status}
+    else:
+        status = None
+    return {'now': _r(now), 'change28d': _r(chg), 'target': _r(target), 'status': status,
+            'baseline': _r(baseline), 'baselineDate': baseline_date, 'floor': _r(floor),
+            'holdKg': FFM_ACT_KG}
 
 
 # ── Styrke ──────────────────────────────────────────────────────────────────
@@ -371,6 +395,156 @@ def strength_log_from_activities(activities, oldest, newest):
         out.append({'date': d, 'name': a.get('name') or 'Styrke'})
     return {'from': _to_date(oldest).isoformat(), 'to': _to_date(newest).isoformat(),
             'sessions': sorted(out, key=lambda x: x['date'])}
+
+
+def merge_strength_log(strength_log, plan_log):
+    """Beriger aktivitets-loggen (strength_log_from_activities) med de 3 felter
+    fra plan.athletes.kennet.strengthLog {dato: {rpe, complete, note, template,
+    at}} matchet på dato. Datoer i plan-loggen uden aktivitet (inden for
+    from..to) tilføjes som session med source 'log'. Ren funktion."""
+    log = dict(strength_log or {})
+    sessions = [dict(s) for s in (log.get('sessions') or []) if isinstance(s, dict) and s.get('date')]
+    plog = plan_log if isinstance(plan_log, dict) else {}
+    by_date = {s['date']: s for s in sessions}
+    lo, hi = log.get('from'), log.get('to')
+    for d_iso, rec in sorted(plog.items()):
+        if not isinstance(rec, dict):
+            continue
+        if lo and d_iso < lo or hi and d_iso > hi:
+            continue
+        s = by_date.get(d_iso)
+        if s is None:
+            s = {'date': d_iso, 'name': rec.get('template') or 'Styrke (logget)', 'source': 'log'}
+            sessions.append(s)
+            by_date[d_iso] = s
+        s['rpe'] = rec.get('rpe')
+        s['complete'] = rec.get('complete')
+        s['note'] = rec.get('note') or ''
+        s['template'] = rec.get('template')
+    for s in sessions:
+        s.setdefault('source', 'activity')
+        s.setdefault('note', '')
+        for k in ('rpe', 'complete', 'template'):
+            s.setdefault(k, None)
+    log['sessions'] = sorted(sessions, key=lambda x: x['date'])
+    return log
+
+
+def load_workout_library(path=None):
+    """data/workout_library.json -> liste af templates ([] ved fejl)."""
+    import json as _json
+    import os as _os
+    p = path or _os.path.join(_os.path.dirname(_os.path.abspath(__file__)), '..', '..', 'data', 'workout_library.json')
+    try:
+        with open(p, encoding='utf-8') as fh:
+            return list(_json.load(fh).get('templates') or [])
+    except (OSError, ValueError):
+        return []
+
+
+def strength_templates(templates):
+    """Kun styrke-templates med øvelsesliste (blok 8): [{id, name, rounds, exercises, progression}]."""
+    out = []
+    for t in (templates or []):
+        if not isinstance(t, dict) or t.get('type') != 'WeightTraining' or not t.get('exercises'):
+            continue
+        out.append({'id': t.get('id'), 'name': t.get('name'), 'rounds': t.get('rounds'),
+                    'movingTime': t.get('moving_time'),
+                    'exercises': [dict(e) for e in t['exercises']], 'progression': t.get('progression')})
+    return out
+
+
+def ab_of(name=None, template_id=None):
+    """'a' | 'b' | None ud fra template-id ('-a-'/'-b-', 'styrke-a-') eller navn ('Styrke A …')."""
+    tid = (template_id or '').lower()
+    for letter in ('a', 'b'):
+        if f'-{letter}-' in tid or tid.endswith(f'-{letter}') or tid.startswith(f'styrke-{letter}'):
+            return letter
+    n = (name or '').strip().lower()
+    for letter in ('a', 'b'):
+        if n.startswith(f'styrke {letter}') and (len(n) == 8 or not n[8].isalpha()):
+            return letter
+    return None
+
+
+def _template_for(letter, rounds, templates):
+    """Template med givet bogstav og rundetal — ellers første med bogstavet."""
+    cands = [t for t in templates if ab_of(t.get('name'), t.get('id')) == letter]
+    for t in cands:
+        if t.get('rounds') == rounds:
+            return t
+    return cands[0] if cands else None
+
+
+def next_strength(plan, strength_log, today, templates, athlete='kennet', target=2):
+    """{ab, templateId, name, reasoning, date} — det styrkepas der står i planen
+    næste gang (entry med libraryId/templateId eller navn 'Styrke A…'/'Styrke B…'
+    fra i dag, ikke gennemført), ellers skiftevis A/B ud fra seneste log.
+    Rundetal: 3 fra uge 41 hvis de to seneste afsluttede uger hver har ≥ target
+    pas, ellers 2."""
+    today = _to_date(today)
+    tpls = strength_templates(templates)
+    by_id = {t['id']: t for t in tpls}
+    weeks = strength_by_week(strength_log, today, weeks=2)
+    two_full = len(weeks) == 2 and all(v >= target for v in weeks.values())
+    rounds = 3 if (iso_week(today) >= 41 and two_full) else 2
+
+    def _pick(letter, reasoning, d_iso=None, tid=None):
+        t = by_id.get(tid) or _template_for(letter, rounds, tpls)
+        return {'ab': letter, 'templateId': t['id'] if t else None,
+                'name': t['name'] if t else None, 'rounds': t.get('rounds') if t else rounds,
+                'date': d_iso, 'reasoning': reasoning}
+
+    days = (plan.get('athletes') or {}).get(athlete, {}).get('days', [])
+    for d in sorted(days, key=lambda x: x.get('date', '')):
+        if d.get('date', '') < today.isoformat():
+            continue
+        for e in d.get('entries', []):
+            if e.get('done'):
+                continue
+            wo = e.get('workout') or {}
+            if wo.get('type') not in STRENGTH_TYPES:
+                continue
+            tid = e.get('templateId') or e.get('libraryId')
+            letter = ab_of(wo.get('name'), tid if tid in by_id else None)
+            if not letter:
+                continue
+            return _pick(letter, f"Planlagt {dk_short(d['date'])}: {wo.get('name')}", d['date'],
+                         tid if tid in by_id else None)
+
+    last = None
+    for s in reversed((strength_log or {}).get('sessions') or []):
+        letter = ab_of(s.get('name'), s.get('template'))
+        if letter:
+            last = (letter, s)
+            break
+    if last:
+        nxt = 'b' if last[0] == 'a' else 'a'
+        return _pick(nxt, f"Skiftevis A/B: seneste var {last[0].upper()} ({dk_short(last[1]['date'])})")
+    return _pick('a', 'Ingen styrke A/B i plan eller log endnu — start med A')
+
+
+def strength_last4(strength_log, n=4):
+    """De seneste n styrkepas, nyest først: [{date, name, ab, rpe, complete, note}]."""
+    out = []
+    for s in reversed((strength_log or {}).get('sessions') or []):
+        if not isinstance(s, dict) or not s.get('date'):
+            continue
+        out.append({'date': s['date'], 'name': s.get('name'),
+                    'ab': ab_of(s.get('name'), s.get('template')),
+                    'rpe': s.get('rpe'), 'complete': s.get('complete'), 'note': s.get('note') or ''})
+        if len(out) >= n:
+            break
+    return out
+
+
+def build_strength(plan, strength_log, today=None, templates=None, athlete='kennet', target=2):
+    """data['strength'] = {templates, next, last4} (blok 8)."""
+    today = _to_date(today) if today else date.today()
+    tpls = templates if templates is not None else load_workout_library()
+    return {'templates': strength_templates(tpls),
+            'next': next_strength(plan, strength_log, today, tpls, athlete, target),
+            'last4': strength_last4(strength_log)}
 
 
 def strength_by_week(strength_log, today, weeks=4):
