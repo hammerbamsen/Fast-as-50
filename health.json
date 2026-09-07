@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-07T06:13:33Z",
+  "generatedAt": "2026-09-07T07:42:36Z",
   "workflows": {
     "CI — pytest": {
       "lastRun": "2026-09-07T06:13:12Z",
@@ -22,6 +22,13 @@
       "event": "push",
       "runUrl": "https://github.com/hammerbamsen/fast-as-50/actions/runs/34089824499",
       "durationS": 18
+    },
+    "Intervals Webhook Receiver": {
+      "lastRun": "2026-09-07T07:42:22Z",
+      "conclusion": "success",
+      "event": "repository_dispatch",
+      "runUrl": "https://github.com/hammerbamsen/fast-as-50/actions/runs/34096719083",
+      "durationS": 45
     }
   },
   "secrets": {
