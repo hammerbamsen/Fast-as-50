@@ -403,6 +403,9 @@ def main():
             data['strengthLog'] = _strength_log
     except Exception as _e:
         print(f"  Styrke-log fejlede (ikke-blokerende, bruger cached): {_e}")
+    # af_log hentes her (ét kald) så cut-tjekkets alkohol-signal ser dagens
+    # registrering — genbruges i AF-log-afsnittet nedenfor.
+    full_af_log = get_full_af_log()
     body = None
     try:
         _body_in = {
@@ -411,6 +414,7 @@ def main():
             'rhrHistory':    (history or {}).get('rhrHistory')    or data.get('rhrHistory'),
             'hrvHistory':    (history or {}).get('hrvHistory')    or data.get('hrvHistory'),
             'week_sessions': build_week_sessions(done_map, planned_weeks.get(week_num, {}).get('sessions', data.get('week_sessions', []))),
+            'af_log':        full_af_log or data.get('af_log'),
         }
         body = _body.build_body(PLAN, _body_in, today, strength_log=_strength_log)
         data['body'] = body
@@ -523,7 +527,7 @@ def main():
     }
 
     # --- AF log: dag-for-dag til af.html sync (alle uger siden projektstart) ---
-    full_af_log = get_full_af_log()
+    # (full_af_log hentet ovenfor, før krop-modulet.)
     if full_af_log:
         data["af_log"] = full_af_log
         print(f"  AF log (alle dage): {len(full_af_log)} dage")

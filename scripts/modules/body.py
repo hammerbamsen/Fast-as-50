@@ -34,6 +34,8 @@ RATE_WARN = 0.4          # kg/uge tab over 2 uger -> warn
 RATE_ACT = 0.6           # kg/uge -> act
 FFM_ACT_KG = -0.5        # fedtfri masse over 4 uger -> act
 PLATEAU_KG = 0.2         # |Δ 7d-snit| over 3 uger under cut -> info
+ALC_WARN_DAYS7 = 3       # drikkedage på 7 dage under cut -> warn
+ALC_WARN_RUN = 2         # drikkedage i træk (klynge) under cut -> warn
 STRENGTH_TYPES = ('WeightTraining', 'Workout', 'Strength')
 
 COLOR_OK = '#27AE60'
@@ -419,8 +421,39 @@ def _no_data(text='ingen data'):
     return {'level': None, 'value': None, 'text': text}
 
 
+def alcohol_signal(af_log, today):
+    """Alkohol under cuttet. af_log = {iso-dato: 0/1} (1 = drikkedag), som
+    data.af_log. Tæller registrerede drikkedage de seneste 7 dage (i dag inkl.)
+    og længste sammenhængende række; uregistrerede dage bryder rækken.
+    warn ved >= ALC_WARN_DAYS7 dage eller en klynge >= ALC_WARN_RUN.
+    Klynger rammer HRV hårdere end spredte dage (31/7-2/8 og 4-6/9-2026)."""
+    today = _to_date(today)
+    if not af_log:
+        return _no_data('ingen registrering')
+    days, run, best, logged = 0, 0, 0, 0
+    for off in range(6, -1, -1):
+        v = af_log.get((today - timedelta(days=off)).isoformat())
+        if v is None:
+            run = 0
+            continue
+        logged += 1
+        if int(v) == 1:
+            days += 1
+            run += 1
+            best = max(best, run)
+        else:
+            run = 0
+    if logged == 0:
+        return _no_data('ingen registrering de seneste 7 dage')
+    lvl = 'warn' if (days >= ALC_WARN_DAYS7 or best >= ALC_WARN_RUN) else None
+    txt = f"{days} drikkedag{'e' if days != 1 else ''} på 7 dage"
+    if best >= 2:
+        txt += f" · {best} i træk"
+    return _sig(lvl, {'days7': days, 'run': best}, txt)
+
+
 def cut_check(glide, ffm, strength_weeks, strength_target, rhr_history, hrv_history,
-              weight_history, today, next_strength=None):
+              weight_history, today, next_strength=None, af_log=None):
     today = _to_date(today)
     phase = (glide or {}).get('phase')
     if phase != 'cut':
@@ -487,6 +520,9 @@ def cut_check(glide, ffm, strength_weeks, strength_target, rhr_history, hrv_hist
         signals['plateau'] = _sig('info' if abs(d3) < PLATEAU_KG else None, _r(d3),
                                   f"{'+' if d3 > 0 else ''}{fmt_da(d3)} kg over 3 uger")
 
+    # alkohol: >= 3 drikkedage /7 eller klynge >= 2 under cut
+    signals['alcohol'] = alcohol_signal(af_log, today)
+
     level = None
     for s in signals.values():
         if _LEVEL_RANK[s['level']] > _LEVEL_RANK[level]:
@@ -501,6 +537,8 @@ def cut_check(glide, ffm, strength_weeks, strength_target, rhr_history, hrv_hist
         text = f"Tabet er over {fmt_da(RATE_WARN)} kg/uge — læg 200-300 kcal på, protein 3/3"
     elif signals['recovery']['level'] == 'warn':
         text = "Hvilepuls op og HRV ned mens vægten falder — 2-3 dage på vedligehold, søvn først"
+    elif signals['alcohol']['level'] == 'warn':
+        text = f"{signals['alcohol']['text']} under cuttet — AF resten af ugen før du skærer mere"
     elif signals['strength']['level'] == 'warn':
         text = f"Under {strength_target} styrkepas to uger i træk — book {strength_target} pas i denne uge før du skærer mere"
     elif signals['plateau']['level'] == 'info':
@@ -514,7 +552,7 @@ def cut_check(glide, ffm, strength_weeks, strength_target, rhr_history, hrv_hist
 
 def build_body(plan, data, today=None, athlete='kennet', strength_log=None):
     """data: dict med weightHistory/fatHistory/rhrHistory/hrvHistory/week_sessions
-    (+ evt. strengthLog). Returnerer data['body']."""
+    (+ evt. strengthLog, af_log). Returnerer data['body']."""
     today = _to_date(today) if today else date.today()
     wp, goals, _prog = find_weight_plan(plan, athlete, today)
     wh, fh = data.get('weightHistory'), data.get('fatHistory')
@@ -525,7 +563,8 @@ def build_body(plan, data, today=None, athlete='kennet', strength_log=None):
     log = strength_log if strength_log is not None else data.get('strengthLog')
     weeks = strength_by_week(log, today)
     check = cut_check(g, m, weeks, sw['target'], data.get('rhrHistory'), data.get('hrvHistory'),
-                      wh, today, next_strength=next_strength_day(data.get('week_sessions'), today))
+                      wh, today, next_strength=next_strength_day(data.get('week_sessions'), today),
+                      af_log=data.get('af_log'))
     return {'asOf': today.isoformat(), 'glidepath': g, 'fat': f, 'ffm': m,
             'strengthWeek': sw, 'strengthWeeks': weeks, 'cutCheck': check}
 
