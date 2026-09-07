@@ -1,46 +1,46 @@
 {
   "meta": {
-    "updated": "2026-09-07 00:43",
-    "week": 14,
-    "totalWeeks": 14,
-    "blockType": "RACE",
-    "dayName": "Søndag",
-    "date": "6. sep",
+    "updated": "2026-09-07 02:43",
+    "week": 1,
+    "totalWeeks": 51,
+    "blockType": "RECOVERY",
+    "dayName": "Mandag",
+    "date": "7. sep",
     "rhrField": "restingHR",
     "nextRace": {
       "name": "CPH Half",
       "date": "2026-09-20",
-      "daysTo": 14,
+      "daysTo": 13,
       "priority": "B"
     },
-    "programId": "medoc-2026",
-    "programName": "Fast as Fifty — Christiansborg + Médoc 2026",
-    "phase": null,
-    "programDay": 98,
-    "programDays": 98,
-    "isoWeek": 36
+    "programId": "tds-2027",
+    "programName": "Tour des Stations 2027",
+    "phase": "TRANSITION",
+    "programDay": 1,
+    "programDays": 357,
+    "isoWeek": 37
   },
   "kpis": {
     "weight": {
-      "value": "72,5",
+      "value": "72,3",
       "unit": "kg",
       "sub": "cut starter uge 39",
       "color": "#7A6A58"
     },
     "fat": {
-      "value": "21,5",
+      "value": "21,6",
       "unit": "%",
       "sub": "14d-snit · cut starter uge 39",
       "color": "#7A6A58"
     },
     "ctl": {
-      "value": "50,8",
+      "value": "49,9",
       "unit": "",
-      "sub": "Uge 14-mål 43 · RACE",
+      "sub": "Uge 1-mål 47 · RECOVERY",
       "color": "#27AE60"
     },
     "tsb": {
-      "value": "-2,2",
+      "value": "2,1",
       "unit": "",
       "sub": "Form · CTL−ATL, frisk >0",
       "color": "#27AE60"
@@ -52,45 +52,45 @@
       "color": "#27AE60"
     },
     "runKm": {
-      "value": "51,8",
+      "value": "0,0",
       "unit": "km",
-      "sub": "Mål 40+ km/uge",
-      "color": "#27AE60"
+      "sub": "Løb denne uge",
+      "color": "#7A6A58"
     },
     "hrv": {
-      "value": "56,3",
+      "value": "55,2",
       "unit": "ms",
       "sub": "Snit 7d",
       "color": "#7A6A58"
     },
     "rhr": {
-      "value": "44",
+      "value": "45",
       "unit": "slag",
       "sub": "Hvilepuls · snit 7d",
       "color": "#7A6A58"
     },
     "tssComp": {
-      "value": "362",
+      "value": "0",
       "unit": "TSS",
-      "sub": "362 af 93 planlagt TSS",
-      "color": "#27AE60"
+      "sub": "0 af 255 planlagt TSS",
+      "color": "#7A6A58"
     },
     "bikeKm": {
-      "value": "55,1",
+      "value": "0,0",
       "unit": "km",
       "sub": "Cykel denne uge",
-      "color": "#27AE60"
+      "color": "#7A6A58"
     },
     "swimM": {
       "value": "0",
       "unit": "m",
-      "sub": "Svøm denne uge · mål 2000m",
+      "sub": "Svøm denne uge",
       "color": "#7A6A58"
     },
     "afStreak": {
-      "value": "3",
+      "value": "0",
       "unit": "",
-      "sub": "af 6 denne uge · snit 4 uger 4,8",
+      "sub": "af 6 denne uge · snit 4 uger 0,0",
       "color": "#59182A"
     },
     "protein": {
@@ -101,174 +101,102 @@
     }
   },
   "af": {
-    "weekDone": 3,
+    "weekDone": 0,
     "target": 6,
     "streak": 0
   },
-  "coachSpeech": "Søndag — afslut uge 14 stærkt. {HL} Godt: Søvn på 7,2 timer er solid. Fokus: Vægt på 72,3 kg (målt 3/9) — protein ved hvert måltid, alkohol som bevidst valg, søvn 7-8 t. Vægt/fedt vurderes på 7d-snit mod planen, ikke på én vejning. 3 AF-dage i 7 afsluttede dage — 3 mangler i 0 dage tilbage. Alle sessioner i hus. Juster de små ting, og resten følger. ❤️ Aerobt: VIGTIGT: Løbeturen 5/9 (snitpuls 127) kostede 26,5 % mere puls pr. meter end medianen af de seneste 4 sammenlignelige pas (EF 0,994 mod 1,352). Forbehold, som IKKE er trukket fra tallet: det var 29,7 °C. Konkluder ikke overtræning ud fra ét pas — sig hvad passet kostede, og at det enten var varmen eller for højt tempo. 📊 Store billede: CTL 50,8 er 7.8 point FORAN ugeplanen (planmål uge 14: 43). Vægten har tabt 2.4 kg over de seneste 89 dage (74,7 → 72,3 kg).  \"Den bedste træning er den, du faktisk gennemfører.\"",
-  "coachHighlight": "389 procent af ugens TSS er i hus",
-  "weekFocus": "Taper færdig — hold kroppen klar til Médoc-lørdagen",
+  "coachSpeech": "Uge 1 af RECOVERY — direkte efter Marathon du Médoc. Ugen er bygget op af gang, svøm og let cykel; ingen hård belastning og intet løb før lørdag 12/9 tidligst. HRV signalerer at kroppen stadig fordøjer lørdagens indsats. {HL} Ugen starter i uge 1 af RECOVERY-blokken. Intet er gennemført endnu — 7 pas ligger foran dig. Dagens plan er Gang let 45 min; med readiness LOW gælder: kortere er bedre end fuldt gennemført.",
+  "coachHighlight": "Gå 45 min let i dag — men sænk tempo og varighed til 30 min hvis benene stadig føles tunge efter Médoc.",
+  "weekFocus": "Restituér aktivt — gang og cykel bærer basen denne uge",
   "today": [
     {
-      "discipline": "walk",
-      "title": "Saint-Julien-Beychevelle Gang",
+      "discipline": "hike",
+      "title": "Gang let 45 min",
       "duration": "",
       "zone": "–",
       "desc": "",
-      "completed": true
+      "completed": false
     }
   ],
   "week_sessions": [
     {
       "day": "Man",
-      "disc": "strength",
-      "label": "Styrke 25 min overkrop + core",
-      "done": true,
-      "planned_tss": 17,
-      "planned_mins": 25,
-      "planned_distance_m": null,
-      "completion": "done",
-      "completion_pct": 80,
-      "actual_tss": 5,
-      "actual_mins": 20,
-      "actual_distance_m": null
-    },
-    {
-      "day": "Man",
-      "disc": "walk",
-      "label": "København Gang",
-      "done": true,
-      "extra": true,
-      "actual_tss": 10,
-      "actual_mins": 49,
-      "actual_distance_m": 4347.48
-    },
-    {
-      "day": "Tir",
-      "disc": "bike",
-      "label": "Cykel indendørs 45 min Z2",
-      "done": true,
-      "planned_tss": 34,
+      "disc": "hike",
+      "label": "Gang let 45 min",
+      "done": false,
+      "planned_tss": 14,
       "planned_mins": 45,
       "planned_distance_m": null,
-      "completion": "done",
-      "completion_pct": 91,
-      "actual_tss": 31,
-      "actual_mins": 45,
-      "actual_distance_m": 23912.19
+      "today": true
     },
     {
       "day": "Tir",
-      "disc": "walk",
-      "label": "Gentofte Gang",
-      "done": true,
-      "extra": true,
-      "actual_tss": 15,
-      "actual_mins": 52,
-      "actual_distance_m": 4850.24
-    },
-    {
-      "day": "Tir",
-      "disc": "strength",
-      "label": "Styrketræning",
-      "done": true,
-      "extra": true,
-      "actual_tss": 7,
-      "actual_mins": 20,
-      "actual_distance_m": null
+      "disc": "hike",
+      "label": "Gang let 60 min",
+      "done": false,
+      "planned_tss": 18,
+      "planned_mins": 60,
+      "planned_distance_m": null
     },
     {
       "day": "Ons",
-      "disc": "run",
-      "label": "Løb Z2 30 min",
-      "done": true,
-      "planned_tss": 28,
-      "planned_mins": 30,
-      "planned_distance_m": null,
-      "completion": "done",
-      "completion_pct": 150,
-      "actual_tss": 42,
-      "actual_mins": 33,
-      "actual_distance_m": 6588.52
+      "disc": "hike",
+      "label": "Gang let 60 min",
+      "done": false,
+      "planned_tss": 18,
+      "planned_mins": 60,
+      "planned_distance_m": null
     },
     {
       "day": "Tor",
       "disc": "bike",
-      "label": "Race-uge åbner T-2",
-      "done": true,
-      "extra": true,
-      "actual_tss": 41,
-      "actual_mins": 60,
-      "actual_distance_m": 31181.66
+      "label": "Cykel Z2 60 min",
+      "done": false,
+      "planned_tss": 45,
+      "planned_mins": 60,
+      "planned_distance_m": null
     },
     {
       "day": "Fre",
-      "disc": "run",
-      "label": "Løb Z1 15 min let",
-      "done": true,
-      "planned_tss": 14,
-      "planned_mins": 15,
-      "planned_distance_m": null,
-      "completion": "partial",
-      "completion_pct": 71,
-      "actual_tss": 10,
-      "actual_mins": 13,
-      "actual_distance_m": 2015.24
-    },
-    {
-      "day": "Fre",
-      "disc": "walk",
-      "label": "Bordeaux Gang",
-      "done": true,
-      "extra": true,
-      "actual_tss": 11,
-      "actual_mins": 89,
-      "actual_distance_m": 6703.15
+      "disc": "swim",
+      "label": "Svøm 2000m teknisk",
+      "done": false,
+      "planned_tss": 47,
+      "planned_mins": 56,
+      "planned_distance_m": 2000
     },
     {
       "day": "Lør",
       "disc": "run",
-      "label": "Pauillac Løb",
-      "done": true,
-      "extra": true,
-      "actual_tss": 176,
-      "actual_mins": 342,
-      "actual_distance_m": 43242.22
+      "label": "Løb let Z1 30 min",
+      "done": false,
+      "planned_tss": 28,
+      "planned_mins": 30,
+      "planned_distance_m": null
+    },
+    {
+      "day": "Lør",
+      "disc": "strength",
+      "label": "Styrke 25 min overkrop + core",
+      "done": false,
+      "planned_tss": 17,
+      "planned_mins": 25,
+      "planned_distance_m": null
     },
     {
       "day": "Søn",
-      "disc": "walk",
-      "label": "Saint-Julien-Beychevelle Gang",
-      "done": true,
-      "extra": true,
-      "actual_tss": 14,
-      "actual_mins": 137,
-      "actual_distance_m": 10257.66,
-      "today": true
+      "disc": "bike",
+      "label": "Cykel Z2 90 min",
+      "done": false,
+      "planned_tss": 68,
+      "planned_mins": 90,
+      "planned_distance_m": null
     }
   ],
   "ctlCurve": [
-    36.3,
-    40.5,
-    42.5,
-    43.5,
-    48.8,
-    47.2,
-    49.7,
-    51.0,
-    50.9,
-    53.0,
-    52.9,
-    52.4,
-    50.7,
-    50.8
+    49.9
   ],
   "weightHistory": [
-    {
-      "date": "2026-06-09",
-      "v": 74.7,
-      "real": true
-    },
     {
       "date": "2026-06-10",
       "v": 74.2,
@@ -593,14 +521,10 @@
     },
     null,
     null,
+    null,
     null
   ],
   "hrvHistory": [
-    {
-      "date": "2026-06-09",
-      "v": 59.0,
-      "real": true
-    },
     {
       "date": "2026-06-10",
       "v": 66.0,
@@ -1045,14 +969,10 @@
       "date": "2026-09-06",
       "v": 35.0,
       "real": true
-    }
+    },
+    null
   ],
   "sleepHistory": [
-    {
-      "date": "2026-06-09",
-      "v": 7.7,
-      "real": true
-    },
     {
       "date": "2026-06-10",
       "v": 8.6,
@@ -1497,14 +1417,10 @@
       "date": "2026-09-06",
       "v": 8.0,
       "real": true
-    }
+    },
+    null
   ],
   "tsbHistory": [
-    {
-      "date": "2026-06-09",
-      "v": -13.7,
-      "real": true
-    },
     {
       "date": "2026-06-10",
       "v": -15.8,
@@ -1949,6 +1865,11 @@
       "date": "2026-09-06",
       "v": -2.2,
       "real": true
+    },
+    {
+      "date": "2026-09-07",
+      "v": 2.1,
+      "real": true
     }
   ],
   "af_log": {
@@ -2052,62 +1973,91 @@
     "2026-09-06": 1
   },
   "all_weeks": {
-    "12": {
+    "1": {
       "sessions": [
         {
           "day": "Man",
-          "disc": "strength",
-          "label": "Styrke A Functional Strength 2 sæt",
+          "disc": "hike",
+          "label": "Gang let 45 min",
           "done": false,
-          "today": false,
-          "planned_tss": 27,
-          "planned_mins": 40,
-          "planned_distance_m": null
+          "planned_tss": 14,
+          "planned_mins": 45,
+          "planned_distance_m": null,
+          "today": true
         },
         {
           "day": "Tir",
-          "disc": "run",
-          "label": "Lang løb Z2 26 km (140 min)",
+          "disc": "hike",
+          "label": "Gang let 60 min",
           "done": false,
-          "today": false,
-          "planned_tss": 128,
-          "planned_mins": 140,
-          "planned_distance_m": 26000
+          "planned_tss": 18,
+          "planned_mins": 60,
+          "planned_distance_m": null
         },
         {
           "day": "Ons",
-          "disc": "bike",
-          "label": "Cykel Z2 50 min",
+          "disc": "hike",
+          "label": "Gang let 60 min",
           "done": false,
-          "today": false,
-          "planned_tss": 38,
-          "planned_mins": 50,
+          "planned_tss": 18,
+          "planned_mins": 60,
           "planned_distance_m": null
         },
         {
           "day": "Tor",
-          "disc": "run",
-          "label": "Shakeout løb + strides",
+          "disc": "bike",
+          "label": "Cykel Z2 60 min",
           "done": false,
-          "today": false,
-          "planned_tss": 17,
-          "planned_mins": 19,
+          "planned_tss": 45,
+          "planned_mins": 60,
           "planned_distance_m": null
         },
         {
           "day": "Fre",
-          "disc": "openwater",
-          "label": "OW-svøm Race-simulation 2000 m",
+          "disc": "swim",
+          "label": "Svøm 2000m teknisk",
           "done": false,
-          "today": false,
-          "planned_tss": 54,
-          "planned_mins": 65,
+          "planned_tss": 47,
+          "planned_mins": 56,
           "planned_distance_m": 2000
         },
         {
           "day": "Lør",
+          "disc": "run",
+          "label": "Løb let Z1 30 min",
+          "done": false,
+          "planned_tss": 28,
+          "planned_mins": 30,
+          "planned_distance_m": null
+        },
+        {
+          "day": "Lør",
+          "disc": "strength",
+          "label": "Styrke 25 min overkrop + core",
+          "done": false,
+          "planned_tss": 17,
+          "planned_mins": 25,
+          "planned_distance_m": null
+        },
+        {
+          "day": "Søn",
           "disc": "bike",
-          "label": "Cykel Z2 45 min (kælder)",
+          "label": "Cykel Z2 90 min",
+          "done": false,
+          "planned_tss": 68,
+          "planned_mins": 90,
+          "planned_distance_m": null
+        }
+      ],
+      "blockType": "RECOVERY",
+      "focus": "Restituér aktivt — gang og cykel bærer basen denne uge"
+    },
+    "2": {
+      "sessions": [
+        {
+          "day": "Man",
+          "disc": "bike",
+          "label": "Cykel Z2 45 min",
           "done": false,
           "today": false,
           "planned_tss": 34,
@@ -2115,9 +2065,155 @@
           "planned_distance_m": null
         },
         {
+          "day": "Man",
+          "disc": "strength",
+          "label": "Styrke 25 min overkrop + core",
+          "done": false,
+          "today": false,
+          "planned_tss": 17,
+          "planned_mins": 25,
+          "planned_distance_m": null
+        },
+        {
+          "day": "Tir",
+          "disc": "run",
+          "label": "Løb målpace 4×3 min (1:30-tempo)",
+          "done": false,
+          "today": false,
+          "planned_tss": 41,
+          "planned_mins": 45,
+          "planned_distance_m": null
+        },
+        {
+          "day": "Ons",
+          "disc": "bike",
+          "label": "Cykel Z1 40 min",
+          "done": false,
+          "today": false,
+          "planned_tss": 30,
+          "planned_mins": 40,
+          "planned_distance_m": null
+        },
+        {
+          "day": "Tor",
+          "disc": "run",
+          "label": "Løb let 40 min + 6 strides",
+          "done": false,
+          "today": false,
+          "planned_tss": 37,
+          "planned_mins": 40,
+          "planned_distance_m": null
+        },
+        {
+          "day": "Fre",
+          "disc": "swim",
+          "label": "Svøm 2000m let",
+          "done": false,
+          "today": false,
+          "planned_tss": 47,
+          "planned_mins": 56,
+          "planned_distance_m": 2000
+        },
+        {
+          "day": "Lør",
+          "disc": "hike",
+          "label": "Gang let 30 min",
+          "done": false,
+          "today": false,
+          "planned_tss": 9,
+          "planned_mins": 30,
+          "planned_distance_m": null
+        },
+        {
           "day": "Søn",
           "disc": "run",
-          "label": "Løb Z2 50 min",
+          "label": "CPH HALF — 21,1 km",
+          "done": false,
+          "today": false,
+          "planned_tss": 82,
+          "planned_mins": 90,
+          "planned_distance_m": 21100
+        }
+      ],
+      "blockType": "RACE",
+      "focus": "Race-uge 2 — 3 løb · 2 cykel · 1 svøm · 1 styrke. Fokus: konsistens over intensitet."
+    },
+    "3": {
+      "sessions": [
+        {
+          "day": "Man",
+          "disc": "strength",
+          "label": "Styrke Unilateral A 3 sæt",
+          "done": false,
+          "today": false,
+          "planned_tss": 30,
+          "planned_mins": 45,
+          "planned_distance_m": null
+        },
+        {
+          "day": "Tir",
+          "disc": "bike",
+          "label": "FaF 1 Z2 - Grundtur 80",
+          "done": false,
+          "today": false,
+          "planned_tss": 60,
+          "planned_mins": 80,
+          "planned_distance_m": null
+        },
+        {
+          "day": "Ons",
+          "disc": "run",
+          "label": "AEROB PROBE + Løb Z2 45 min",
+          "done": false,
+          "today": false,
+          "planned_tss": 41,
+          "planned_mins": 45,
+          "planned_distance_m": null
+        },
+        {
+          "day": "Tor",
+          "disc": "bike",
+          "label": "FaF 0 Test - FTP 20 min",
+          "done": false,
+          "today": false,
+          "planned_tss": 40,
+          "planned_mins": 53,
+          "planned_distance_m": null
+        },
+        {
+          "day": "Fre",
+          "disc": "strength",
+          "label": "Styrke Unilateral B 3 sæt",
+          "done": false,
+          "today": false,
+          "planned_tss": 30,
+          "planned_mins": 45,
+          "planned_distance_m": null
+        },
+        {
+          "day": "Fre",
+          "disc": "swim",
+          "label": "Svøm teknik 1500m (fokus: catch)",
+          "done": false,
+          "today": false,
+          "planned_tss": 50,
+          "planned_mins": 60,
+          "planned_distance_m": 1500
+        },
+        {
+          "day": "Lør",
+          "disc": "bike",
+          "label": "FaF 1 Z2 - Depottur 2 t",
+          "done": false,
+          "today": false,
+          "planned_tss": 98,
+          "planned_mins": 130,
+          "planned_distance_m": null
+        },
+        {
+          "day": "Søn",
+          "disc": "run",
+          "label": "Lang løb Z2 50 min",
           "done": false,
           "today": false,
           "planned_tss": 46,
@@ -2125,293 +2221,358 @@
           "planned_distance_m": null
         }
       ],
-      "blockType": "BUILD",
-      "focus": "Svøm skarpt, bevar benet frisk — nedtrapningen begynder nu"
+      "blockType": "BASE",
+      "focus": "Træningsuge 3 — 2 løb · 3 cykel · 1 svøm · 2 styrke. Fokus: konsistens over intensitet."
     },
-    "13": {
-      "sessions": [
-        {
-          "day": "Tir",
-          "disc": "run",
-          "label": "Løb Z2 18 km",
-          "done": false,
-          "today": false,
-          "planned_tss": 87,
-          "planned_mins": 95,
-          "planned_distance_m": 18000
-        },
-        {
-          "day": "Fre",
-          "disc": "openwater",
-          "label": "OW-svøm let 20 min (Gentofte)",
-          "done": false,
-          "today": false,
-          "planned_tss": 17,
-          "planned_mins": 20,
-          "planned_distance_m": null
-        },
-        {
-          "day": "Søn",
-          "disc": "bike",
-          "label": "Cykel indendørs 90 min varieret",
-          "done": false,
-          "today": false,
-          "planned_tss": 68,
-          "planned_mins": 90,
-          "planned_distance_m": null
-        }
-      ],
-      "blockType": "TAPER",
-      "focus": "Bevar skarphed og ro — Médoc-rytmen sidder i benene"
-    },
-    "14": {
+    "4": {
       "sessions": [
         {
           "day": "Man",
           "disc": "strength",
-          "label": "Styrke 25 min overkrop + core",
-          "done": true,
-          "planned_tss": 17,
-          "planned_mins": 25,
-          "planned_distance_m": null,
-          "completion": "done",
-          "completion_pct": 80,
-          "actual_tss": 5,
-          "actual_mins": 20,
-          "actual_distance_m": null
-        },
-        {
-          "day": "Man",
-          "disc": "walk",
-          "label": "København Gang",
-          "done": true,
-          "extra": true,
-          "actual_tss": 10,
-          "actual_mins": 49,
-          "actual_distance_m": 4347.48
-        },
-        {
-          "day": "Tir",
-          "disc": "bike",
-          "label": "Cykel indendørs 45 min Z2",
-          "done": true,
-          "planned_tss": 34,
+          "label": "Styrke Unilateral A 3 sæt",
+          "done": false,
+          "today": false,
+          "planned_tss": 30,
           "planned_mins": 45,
-          "planned_distance_m": null,
-          "completion": "done",
-          "completion_pct": 91,
-          "actual_tss": 31,
-          "actual_mins": 45,
-          "actual_distance_m": 23912.19
+          "planned_distance_m": null
         },
         {
           "day": "Tir",
-          "disc": "walk",
-          "label": "Gentofte Gang",
-          "done": true,
-          "extra": true,
-          "actual_tss": 15,
-          "actual_mins": 52,
-          "actual_distance_m": 4850.24
-        },
-        {
-          "day": "Tir",
-          "disc": "strength",
-          "label": "Styrketræning",
-          "done": true,
-          "extra": true,
-          "actual_tss": 7,
-          "actual_mins": 20,
-          "actual_distance_m": null
+          "disc": "bike",
+          "label": "FaF 1 Z2 - Grundtur 80",
+          "done": false,
+          "today": false,
+          "planned_tss": 60,
+          "planned_mins": 80,
+          "planned_distance_m": null
         },
         {
           "day": "Ons",
           "disc": "run",
-          "label": "Løb Z2 30 min",
-          "done": true,
-          "planned_tss": 28,
-          "planned_mins": 30,
-          "planned_distance_m": null,
-          "completion": "done",
-          "completion_pct": 150,
-          "actual_tss": 42,
-          "actual_mins": 33,
-          "actual_distance_m": 6588.52
+          "label": "Løb Z2 45 min",
+          "done": false,
+          "today": false,
+          "planned_tss": 41,
+          "planned_mins": 45,
+          "planned_distance_m": null
         },
         {
           "day": "Tor",
           "disc": "bike",
-          "label": "Race-uge åbner T-2",
-          "done": true,
-          "extra": true,
-          "actual_tss": 41,
-          "actual_mins": 60,
-          "actual_distance_m": 31181.66
+          "label": "FaF 1 Z2 - Åbnere 60",
+          "done": false,
+          "today": false,
+          "planned_tss": 45,
+          "planned_mins": 60,
+          "planned_distance_m": null
+        },
+        {
+          "day": "Tor",
+          "disc": "strength",
+          "label": "Styrke Unilateral B 3 sæt",
+          "done": false,
+          "today": false,
+          "planned_tss": 30,
+          "planned_mins": 45,
+          "planned_distance_m": null
         },
         {
           "day": "Fre",
-          "disc": "run",
-          "label": "Løb Z1 15 min let",
-          "done": true,
-          "planned_tss": 14,
-          "planned_mins": 15,
-          "planned_distance_m": null,
-          "completion": "partial",
-          "completion_pct": 71,
-          "actual_tss": 10,
-          "actual_mins": 13,
-          "actual_distance_m": 2015.24
-        },
-        {
-          "day": "Fre",
-          "disc": "walk",
-          "label": "Bordeaux Gang",
-          "done": true,
-          "extra": true,
-          "actual_tss": 11,
-          "actual_mins": 89,
-          "actual_distance_m": 6703.15
+          "disc": "swim",
+          "label": "Svøm teknik 1500m (fokus: hoved)",
+          "done": false,
+          "today": false,
+          "planned_tss": 50,
+          "planned_mins": 60,
+          "planned_distance_m": 1500
         },
         {
           "day": "Lør",
-          "disc": "run",
-          "label": "Pauillac Løb",
-          "done": true,
-          "extra": true,
-          "actual_tss": 176,
-          "actual_mins": 342,
-          "actual_distance_m": 43242.22
+          "disc": "bike",
+          "label": "FaF 2 Dur - Negativ split 2 t",
+          "done": false,
+          "today": false,
+          "planned_tss": 98,
+          "planned_mins": 130,
+          "planned_distance_m": null
         },
         {
           "day": "Søn",
-          "disc": "walk",
-          "label": "Saint-Julien-Beychevelle Gang",
-          "done": true,
-          "extra": true,
-          "actual_tss": 14,
-          "actual_mins": 137,
-          "actual_distance_m": 10257.66,
-          "today": true
+          "disc": "run",
+          "label": "Lang løb Z2 50 min",
+          "done": false,
+          "today": false,
+          "planned_tss": 46,
+          "planned_mins": 50,
+          "planned_distance_m": null
         }
       ],
-      "blockType": "RACE",
-      "focus": "Taper færdig — hold kroppen klar til Médoc-lørdagen"
+      "blockType": "BASE",
+      "focus": "Træningsuge 4 — 2 løb · 3 cykel · 1 svøm · 2 styrke. Fokus: konsistens over intensitet."
+    },
+    "5": {
+      "sessions": [
+        {
+          "day": "Man",
+          "disc": "strength",
+          "label": "Styrke Unilateral recovery 2 sæt",
+          "done": false,
+          "today": false,
+          "planned_tss": 23,
+          "planned_mins": 35,
+          "planned_distance_m": null
+        },
+        {
+          "day": "Tir",
+          "disc": "bike",
+          "label": "FaF 1 Z2 - Åbnere 60",
+          "done": false,
+          "today": false,
+          "planned_tss": 45,
+          "planned_mins": 60,
+          "planned_distance_m": null
+        },
+        {
+          "day": "Ons",
+          "disc": "run",
+          "label": "Løb Z2 40 min",
+          "done": false,
+          "today": false,
+          "planned_tss": 37,
+          "planned_mins": 40,
+          "planned_distance_m": null
+        },
+        {
+          "day": "Tor",
+          "disc": "strength",
+          "label": "Styrke Unilateral recovery 2 sæt",
+          "done": false,
+          "today": false,
+          "planned_tss": 23,
+          "planned_mins": 35,
+          "planned_distance_m": null
+        },
+        {
+          "day": "Fre",
+          "disc": "swim",
+          "label": "Svøm teknik 1500m (fokus: hofte)",
+          "done": false,
+          "today": false,
+          "planned_tss": 50,
+          "planned_mins": 60,
+          "planned_distance_m": 1500
+        },
+        {
+          "day": "Lør",
+          "disc": "bike",
+          "label": "FaF 1 Z2 - Grundtur 80",
+          "done": false,
+          "today": false,
+          "planned_tss": 60,
+          "planned_mins": 80,
+          "planned_distance_m": null
+        },
+        {
+          "day": "Søn",
+          "disc": "hike",
+          "label": "Gang let 60 min",
+          "done": false,
+          "today": false,
+          "planned_tss": 18,
+          "planned_mins": 60,
+          "planned_distance_m": null
+        }
+      ],
+      "blockType": "RECOVERY",
+      "focus": "Restituitionsuge 5 — 1 løb · 2 cykel · 1 svøm · 2 styrke. Fokus: konsistens over intensitet."
+    },
+    "6": {
+      "sessions": [
+        {
+          "day": "Man",
+          "disc": "strength",
+          "label": "Styrke Unilateral A 3 sæt",
+          "done": false,
+          "today": false,
+          "planned_tss": 30,
+          "planned_mins": 45,
+          "planned_distance_m": null
+        },
+        {
+          "day": "Tir",
+          "disc": "bike",
+          "label": "FaF 3 SS - 3 x 15",
+          "done": false,
+          "today": false,
+          "planned_tss": 63,
+          "planned_mins": 84,
+          "planned_distance_m": null
+        },
+        {
+          "day": "Ons",
+          "disc": "run",
+          "label": "Løb Z2 45 min",
+          "done": false,
+          "today": false,
+          "planned_tss": 41,
+          "planned_mins": 45,
+          "planned_distance_m": null
+        },
+        {
+          "day": "Tor",
+          "disc": "bike",
+          "label": "FaF 4 Tær - Over-unders 3 x 10",
+          "done": false,
+          "today": false,
+          "planned_tss": 53,
+          "planned_mins": 71,
+          "planned_distance_m": null
+        },
+        {
+          "day": "Fre",
+          "disc": "strength",
+          "label": "Styrke Unilateral B 3 sæt",
+          "done": false,
+          "today": false,
+          "planned_tss": 30,
+          "planned_mins": 45,
+          "planned_distance_m": null
+        },
+        {
+          "day": "Fre",
+          "disc": "swim",
+          "label": "Svøm teknik 1500m (fokus: catch)",
+          "done": false,
+          "today": false,
+          "planned_tss": 50,
+          "planned_mins": 60,
+          "planned_distance_m": 1500
+        },
+        {
+          "day": "Lør",
+          "disc": "bike",
+          "label": "FaF 2 Dur - Bjergtur 3 t",
+          "done": false,
+          "today": false,
+          "planned_tss": 139,
+          "planned_mins": 185,
+          "planned_distance_m": null
+        },
+        {
+          "day": "Søn",
+          "disc": "run",
+          "label": "Lang løb Z2 50 min",
+          "done": false,
+          "today": false,
+          "planned_tss": 46,
+          "planned_mins": 50,
+          "planned_distance_m": null
+        }
+      ],
+      "blockType": "BASE",
+      "focus": "Træningsuge 6 — 2 løb · 3 cykel · 1 svøm · 2 styrke. Fokus: konsistens over intensitet."
+    },
+    "7": {
+      "sessions": [
+        {
+          "day": "Man",
+          "disc": "strength",
+          "label": "Styrke Unilateral A 3 sæt",
+          "done": false,
+          "today": false,
+          "planned_tss": 30,
+          "planned_mins": 45,
+          "planned_distance_m": null
+        },
+        {
+          "day": "Tir",
+          "disc": "bike",
+          "label": "FaF 4 Tær - 3 x 12",
+          "done": false,
+          "today": false,
+          "planned_tss": 58,
+          "planned_mins": 77,
+          "planned_distance_m": null
+        },
+        {
+          "day": "Ons",
+          "disc": "run",
+          "label": "AEROB PROBE + Løb Z2 45 min",
+          "done": false,
+          "today": false,
+          "planned_tss": 41,
+          "planned_mins": 45,
+          "planned_distance_m": null
+        },
+        {
+          "day": "Tor",
+          "disc": "bike",
+          "label": "FaF 1 Z2 - Grundtur 80",
+          "done": false,
+          "today": false,
+          "planned_tss": 60,
+          "planned_mins": 80,
+          "planned_distance_m": null
+        },
+        {
+          "day": "Tor",
+          "disc": "strength",
+          "label": "Styrke Unilateral B 3 sæt",
+          "done": false,
+          "today": false,
+          "planned_tss": 30,
+          "planned_mins": 45,
+          "planned_distance_m": null
+        },
+        {
+          "day": "Fre",
+          "disc": "swim",
+          "label": "Svøm teknik 1500m (fokus: hoved)",
+          "done": false,
+          "today": false,
+          "planned_tss": 50,
+          "planned_mins": 60,
+          "planned_distance_m": 1500
+        },
+        {
+          "day": "Lør",
+          "disc": "bike",
+          "label": "FaF 2 Dur - Kvalitet sent 3 x 8",
+          "done": false,
+          "today": false,
+          "planned_tss": 142,
+          "planned_mins": 189,
+          "planned_distance_m": null
+        },
+        {
+          "day": "Søn",
+          "disc": "run",
+          "label": "Løb Z2 40 min",
+          "done": false,
+          "today": false,
+          "planned_tss": 37,
+          "planned_mins": 40,
+          "planned_distance_m": null
+        }
+      ],
+      "blockType": "BASE",
+      "focus": "Træningsuge 7 — 2 løb · 3 cykel · 1 svøm · 2 styrke. Fokus: konsistens over intensitet."
     }
   },
   "af_history": [
     {
       "week": 1,
-      "iso": 23,
-      "done": 7,
-      "total": 7,
-      "label": "Uge 23"
-    },
-    {
-      "week": 2,
-      "iso": 24,
-      "done": 7,
-      "total": 7,
-      "label": "Uge 24"
-    },
-    {
-      "week": 3,
-      "iso": 25,
-      "done": 7,
-      "total": 7,
-      "label": "Uge 25"
-    },
-    {
-      "week": 4,
-      "iso": 26,
-      "done": 7,
-      "total": 7,
-      "label": "Uge 26"
-    },
-    {
-      "week": 5,
-      "iso": 27,
-      "done": 6,
-      "total": 7,
-      "label": "Uge 27"
-    },
-    {
-      "week": 6,
-      "iso": 28,
-      "done": 6,
-      "total": 7,
-      "label": "Uge 28"
-    },
-    {
-      "week": 7,
-      "iso": 29,
-      "done": 6,
-      "total": 7,
-      "label": "Uge 29"
-    },
-    {
-      "week": 8,
-      "iso": 30,
-      "done": 6,
-      "total": 7,
-      "label": "Uge 30"
-    },
-    {
-      "week": 9,
-      "iso": 31,
-      "done": 4,
-      "total": 7,
-      "label": "Uge 31"
-    },
-    {
-      "week": 10,
-      "iso": 32,
-      "done": 6,
-      "total": 7,
-      "label": "Uge 32"
-    },
-    {
-      "week": 11,
-      "iso": 33,
-      "done": 3,
-      "total": 7,
-      "label": "Uge 33"
-    },
-    {
-      "week": 12,
-      "iso": 34,
-      "done": 7,
-      "total": 7,
-      "label": "Uge 34"
-    },
-    {
-      "week": 13,
-      "iso": 35,
-      "done": 6,
-      "total": 7,
-      "label": "Uge 35"
-    },
-    {
-      "week": 14,
-      "iso": 36,
-      "done": 3,
-      "total": 7,
-      "label": "Uge 36"
+      "iso": 37,
+      "done": 0,
+      "total": 1,
+      "label": "Uge 37"
     }
   ],
   "train_mins": {
-    "walk": 327.0,
-    "run": 388.0,
-    "bike": 105.0,
-    "strength": 40.0,
-    "planned": 115.0,
-    "actual_total": 860.0
+    "planned": 426.0,
+    "actual_total": 0
   },
   "fatHistory": [
-    {
-      "date": "2026-06-09",
-      "v": 22.3,
-      "real": true
-    },
     {
       "date": "2026-06-10",
       "v": 22.7,
@@ -2736,117 +2897,50 @@
     },
     null,
     null,
+    null,
     null
   ],
-  "coachAssessmentHtml": "<p class=\"coach-head\"><strong>Dag 98 af 98 · Søndag · Uge 14</strong></p><p class=\"coach-sec coach-big\">Du har netop afsluttet den sidste uge i Médoc-2026-blokken med et marathon i benene. Næste uge starter TdS-2027-programmet med en fuld restitutionsuge — kroppen skal tilbage til at kunne præstere ved CPH Half den 20. september, 14 dage herfra.</p><p class=\"coach-sec\"><span class=\"coach-sec-h\">Træning &amp; load</span>Ugen var en RACE-uge (uge 14/14 i Médoc-blokken) med et TSS-mål på 93. Du endte på 362 — 389% af planen, drevet af Marathon du Médoc lørdag med 176 TSS og 342 minutter. Ingen planlagte pas blev misset; alle 4 planlagte pas blev gennemført. CTL er 50,8 mod et mål på 43,0, altså 7,8 over target — naturlig effekt af race-belastningen. Ramp-rate er 0,1 denne uge, men akkumuleret race-load betyder kroppen er presset. Næste uge er uge 1 i en RECOVERY-blok (mesocyklus R): mål-TSS er 150, CTL-mål 47, ingen hårde eller moderate pas — kun gang, svøm og let cykel bærer den aerobe base, og første korte løb er tidligst lørdag 12/9.</p><p class=\"coach-sec\"><span class=\"coach-sec-h\">Krop &amp; kost</span>7-dages snit er 72,5 kg og 21,6% fedt. Begge er stabile — ændringen over 28 dage er 0,1 kg og 0,0 procentpoint, hvilket ikke når tærsklen for en retning. Cut er ikke aktivt. Ugens ene kost-handling: sæt protein som det første på tallerkenen ved hvert måltid i næste uge — det holder mæthed og restitution oppe uden at du behøver tælle noget.</p><p class=\"coach-sec\"><span class=\"coach-sec-h\">Vaner</span>Du havde 3 AF-dage denne uge mod et mål på 6, og alle 4 alkoholdage var bevidste valg — ingen autopilot-dage. Det er et race-weekend-mønster, men tre dage i træk (4/9–6/9) rammer HRV hårdere end spredte dage, og det ser du nu med HRV på 35,0 ms. Protein blev registreret 3 ud af 7 dage — det er for lidt i en restitutionsuge. Søvn-snit er 7,3 timer, over grænsen på 7,0, og søvnen i nat var 8,0 timer. Næste uge: hold alkohol-klynger væk og registrer protein mindst 5 dage.</p>",
-  "coachAssessmentTs": "21:17",
+  "coachAssessmentHtml": "<p class=\"coach-head\"><strong>Dag 1 af 357 · Mandag · Uge 1</strong></p><p class=\"coach-sec coach-big\">Uge 1 af RECOVERY — direkte efter Marathon du Médoc. Ugen er bygget op af gang, svøm og let cykel; ingen hård belastning og intet løb før lørdag 12/9 tidligst. HRV signalerer at kroppen stadig fordøjer lørdagens indsats.</p><p class=\"coach-sec\"><span class=\"coach-sec-h\">Træning &amp; load</span>Ugen starter i uge 1 af RECOVERY-blokken. Intet er gennemført endnu — 7 pas ligger foran dig. Dagens plan er Gang let 45 min; med readiness LOW gælder: kortere er bedre end fuldt gennemført. CTL er 49,9 mod et mål på 47,0 — du er over målet, hvilket er præcis rigtigt i en restitutionsblok. Løbet lørdag 12/9 er det tidligste tilladte løb efter Médocs 42 km excentrisk belastning.</p><p class=\"coach-sec\"><span class=\"coach-sec-h\">Krop &amp; kost</span>7-dages snit: 72,3 kg og 21,3% fedt. Vægten er stabil — ingen retning at konkludere på. Cut starter om 14 dage (21/9), så der er ingen aktiv kost-intervention nu. Protein ved hvert måltid er den eneste forberedelse der tæller.</p><p class=\"coach-sec\"><span class=\"coach-sec-h\">Vaner</span>Ingen AF-dage registreret denne uge mod et mål på 6. 3 drikkedage i træk (4/9–6/9) som valgte dage — ingen autopilot, men klynger rammer HRV hårdest. Protein er registreret 3 af de seneste 7 dage — for lavt op mod cut-start. Søvn 8,0 timer i nat; 7-dages snit 7,3 timer.</p>",
+  "coachAssessmentTs": "02:43",
   "commute_pairing_warnings": [],
   "warnings": [
     {
-      "type": "hrv",
-      "level": "warn",
-      "message": "HRV 35,0 ms — 38% under 7d-snit (56,3 ms). Kroppen er presset."
-    },
-    {
       "type": "alcohol_cluster",
       "level": "critical",
-      "message": "3 drikkedage i træk 4/9–6/9 — klynger rammer HRV hårdere end spredte dage."
+      "message": "3 drikkedage i træk 4/9–6/9 — klynger rammer HRV hårdere end spredte dage.",
+      "action": null,
+      "source": "rule"
+    },
+    {
+      "type": "readiness",
+      "level": "critical",
+      "message": "HRV 35,0 ms er 37% under 7-dages snit på 55,2 ms. Krop er presset — hold dagens aktivitet kort og let.",
+      "action": null,
+      "source": "ai"
+    },
+    {
+      "type": "hrv",
+      "level": "warn",
+      "message": "HRV 35,0 ms — 37% under 7d-snit (55,2 ms). Kroppen er presset.",
+      "action": null,
+      "source": "rule"
     }
   ],
-  "tsb": -2.2,
+  "tsb": 2.1,
   "swimHistory": [
     {
       "week": 1,
-      "date": "2026-06-01",
-      "meters": 2000.0,
-      "cumulative": 2000.0
-    },
-    {
-      "week": 2,
-      "date": "2026-06-08",
-      "meters": 1577.0,
-      "cumulative": 3577.0
-    },
-    {
-      "week": 3,
-      "date": "2026-06-15",
-      "meters": 1556.0,
-      "cumulative": 5133.0
-    },
-    {
-      "week": 4,
-      "date": "2026-06-22",
-      "meters": 3000.0,
-      "cumulative": 8133.0
-    },
-    {
-      "week": 5,
-      "date": "2026-06-29",
-      "meters": 1509.0,
-      "cumulative": 9642.0
-    },
-    {
-      "week": 6,
-      "date": "2026-07-06",
-      "meters": 2000.0,
-      "cumulative": 11642.0
-    },
-    {
-      "week": 7,
-      "date": "2026-07-13",
-      "meters": 4958.0,
-      "cumulative": 16600.0
-    },
-    {
-      "week": 8,
-      "date": "2026-07-20",
-      "meters": 1578.0,
-      "cumulative": 18178.0
-    },
-    {
-      "week": 9,
-      "date": "2026-07-27",
-      "meters": 1358.0,
-      "cumulative": 19536.0
-    },
-    {
-      "week": 10,
-      "date": "2026-08-03",
-      "meters": 2781.0,
-      "cumulative": 22317.0
-    },
-    {
-      "week": 11,
-      "date": "2026-08-10",
-      "meters": 1656.0,
-      "cumulative": 23973.0
-    },
-    {
-      "week": 12,
-      "date": "2026-08-17",
-      "meters": 3401.0,
-      "cumulative": 27374.0
-    },
-    {
-      "week": 13,
-      "date": "2026-08-24",
-      "meters": 1988.0,
-      "cumulative": 29362.0
-    },
-    {
-      "week": 14,
-      "date": "2026-08-31",
+      "date": "2026-09-07",
       "meters": 0,
-      "cumulative": 29362.0
+      "cumulative": 0
     }
   ],
-  "coachAssessmentLastActId": "i183862220",
-  "weekFocusWeek": 14,
-  "coachAssessmentPlanAtGen": "Saint-Julien-Beychevelle Gang",
+  "coachAssessmentLastActId": null,
+  "weekFocusWeek": 1,
+  "coachAssessmentPlanAtGen": "Gang let 45 min",
   "weightGoal": 68,
   "bodyFatGoal": 16,
   "weightMovingAvg7": [
-    null,
     null,
     null,
     null,
@@ -2935,10 +3029,10 @@
     72.53,
     72.57,
     72.58,
-    72.48
+    72.48,
+    72.27
   ],
   "fatMovingAvg7": [
-    null,
     null,
     null,
     null,
@@ -3027,23 +3121,61 @@
     21.59,
     21.72,
     21.74,
-    21.65
+    21.65,
+    21.33
   ],
   "ctlPlan": [
-    34,
-    36,
-    38,
-    41,
+    47,
+    45,
     48,
-    50,
-    54,
-    60,
-    48,
+    51,
     50,
     53,
-    51,
-    47,
-    43
+    56,
+    55,
+    57,
+    59,
+    62,
+    60,
+    62,
+    64,
+    66,
+    63,
+    61,
+    63,
+    65,
+    68,
+    66,
+    68,
+    70,
+    72,
+    70,
+    72,
+    74,
+    77,
+    74,
+    80,
+    77,
+    78,
+    80,
+    77,
+    79,
+    81,
+    83,
+    80,
+    78,
+    76,
+    78,
+    80,
+    78,
+    80,
+    83,
+    88,
+    84,
+    86,
+    87,
+    85,
+    82
   ],
   "coachAssessmentError": null,
   "coachAssessmentStale": false,
@@ -3057,10 +3189,10 @@
       "note": "Nøgle virker"
     }
   },
-  "credentialsCheckedTs": "2026-09-06T22:43:53.589184",
-  "coachAssessmentTsFull": "2026-09-06T19:18:06",
+  "credentialsCheckedTs": "2026-09-07T00:44:01.323145",
+  "coachAssessmentTsFull": "2026-09-07T00:44:01",
   "coachAssessmentWeightAtGen": 72.3,
-  "coachAssessmentAfAtGen": 3,
+  "coachAssessmentAfAtGen": 0,
   "event_structure_warnings": [],
   "coachAssessmentFatAtGen": 21.9,
   "zones": {
@@ -3164,7 +3296,7 @@
     {
       "name": "CPH Half",
       "date": "2026-09-20",
-      "days": 14,
+      "days": 13,
       "priority": "B",
       "distance": "21.1km",
       "registered": null,
@@ -3173,7 +3305,7 @@
     {
       "name": "Santini Stelvio Gran Fondo (lang rute)",
       "date": "2027-06-06",
-      "days": 273,
+      "days": 272,
       "priority": "B",
       "distance": "130km / 4500hm",
       "registered": true,
@@ -3182,7 +3314,7 @@
     {
       "name": "Tour des Stations Ultrafondo",
       "date": "2027-08-28",
-      "days": 356,
+      "days": 355,
       "priority": "A",
       "distance": "242km / 8848hm",
       "registered": false,
@@ -3404,11 +3536,11 @@
   },
   "efTrend": {
     "run": {
-      "current": 1.334,
-      "previous": 1.34,
-      "pct": -0.4,
-      "n": 4,
-      "n_prev": 4,
+      "current": 1.319,
+      "previous": 1.349,
+      "pct": -2.2,
+      "n": 3,
+      "n_prev": 5,
       "window": 42,
       "thin": false
     },
@@ -3423,11 +3555,6 @@
     }
   },
   "rhrHistory": [
-    {
-      "date": "2026-06-09",
-      "v": 40,
-      "real": true
-    },
     {
       "date": "2026-06-10",
       "v": 41,
@@ -3872,6 +3999,11 @@
       "date": "2026-09-06",
       "v": 47,
       "real": true
+    },
+    {
+      "date": "2026-09-07",
+      "v": 48,
+      "real": true
     }
   ],
   "aerobicFlag": {
@@ -3892,39 +4024,68 @@
     "warm": true,
     "time_of_day_comparable": true
   },
-  "blockType": "RACE",
+  "blockType": "RECOVERY",
   "blockTypes": {
-    "1": "BUILD",
-    "2": "BUILD+",
-    "3": "BUILD+",
-    "4": "RECOVERY",
-    "5": "BUILD",
-    "6": "RECOVERY",
-    "7": "BUILD",
-    "8": "BUILD+",
-    "9": "RECOVERY",
-    "10": "BUILD",
-    "11": "BUILD+",
-    "12": "BUILD",
-    "13": "TAPER",
-    "14": "RACE"
+    "1": "RECOVERY",
+    "2": "RACE",
+    "3": "BASE",
+    "4": "BASE",
+    "5": "RECOVERY",
+    "6": "BASE",
+    "7": "BASE",
+    "8": "RECOVERY",
+    "9": "BASE",
+    "10": "BASE",
+    "11": "BASE+",
+    "12": "RECOVERY",
+    "13": "BASE",
+    "14": "BASE",
+    "15": "BASE+",
+    "16": "RECOVERY",
+    "17": "RECOVERY",
+    "18": "BASE",
+    "19": "BASE",
+    "20": "BASE+",
+    "21": "RECOVERY",
+    "22": "BASE",
+    "23": "BUILD",
+    "24": "BUILD",
+    "25": "RECOVERY",
+    "26": "BUILD",
+    "27": "BUILD",
+    "28": "BUILD+",
+    "29": "RECOVERY",
+    "30": "CAMP",
+    "31": "RECOVERY",
+    "32": "BUILD",
+    "33": "BUILD",
+    "34": "RECOVERY",
+    "35": "BUILD",
+    "36": "BUILD",
+    "37": "BUILD+",
+    "38": "RECOVERY",
+    "39": "RACE",
+    "40": "RECOVERY",
+    "41": "SPECIFIK",
+    "42": "SPECIFIK",
+    "43": "RECOVERY",
+    "44": "SPECIFIK",
+    "45": "SPECIFIK+",
+    "46": "CAMP",
+    "47": "RECOVERY",
+    "48": "SPECIFIK",
+    "49": "SPECIFIK",
+    "50": "TAPER",
+    "51": "RACE"
   },
   "goals": {
     "weightKg": 68,
     "bodyFatPct": 16,
     "afDaysPerWeek": 6,
     "sleepHours": 7,
-    "swimMeters": 2000,
-    "runKmPerWeek": 40
+    "strengthPerWeek": 2
   },
   "checkinLog": [
-    {
-      "date": "2026-08-10",
-      "alkohol": 0,
-      "protein": null,
-      "energi": null,
-      "sult": null
-    },
     {
       "date": "2026-08-11",
       "alkohol": 0,
@@ -4113,6 +4274,13 @@
       "protein": 0,
       "energi": 1,
       "sult": null
+    },
+    {
+      "date": "2026-09-07",
+      "alkohol": null,
+      "protein": null,
+      "energi": null,
+      "sult": null
     }
   ],
   "energy7": 1.0,
@@ -4128,48 +4296,16 @@
     "2026-09-06": "valgt"
   },
   "planTab": {
-    "today": "2026-09-06",
-    "programId": "medoc-2026",
-    "programName": "Fast as Fifty — Christiansborg + Médoc 2026",
-    "currentWeek": 14,
+    "today": "2026-09-07",
+    "programId": "tds-2027",
+    "programName": "Tour des Stations 2027",
+    "currentWeek": 1,
     "minHoursHard": 72,
     "rules": {
       "maxHaard": 2,
       "maxModerat": 2
     },
     "weeks": [
-      {
-        "week": 10,
-        "programId": "medoc-2026",
-        "start": "2026-08-03",
-        "end": "2026-08-09",
-        "phase": null,
-        "blockType": "BUILD",
-        "mesoWeek": "1/1",
-        "ctlTarget": 50,
-        "tssTarget": 420,
-        "tssActual": 471,
-        "purpose": null,
-        "note": "Langtur 28-30 km. Open water-svøm starter.",
-        "quota": {
-          "haard": 0,
-          "moderat": 0
-        },
-        "quotaUsed": {
-          "haard": 0,
-          "moderat": 0
-        },
-        "keySessions": [
-          "Hometrainer 3×15 min Z3 90 min",
-          "Løb VO2 4×5 min Z4-Z5"
-        ],
-        "flags": [],
-        "races": [],
-        "travel": "Mallorca camp #2",
-        "isCurrent": false,
-        "isPast": true,
-        "hasDays": true
-      },
       {
         "week": 11,
         "programId": "medoc-2026",
@@ -4180,7 +4316,7 @@
         "mesoWeek": "1/1",
         "ctlTarget": 53,
         "tssTarget": 500,
-        "tssActual": 374,
+        "tssActual": null,
         "purpose": null,
         "note": "Camp #2. TSB-gulv -35 overvåges dagligt.",
         "quota": {
@@ -4212,7 +4348,7 @@
         "mesoWeek": "1/1",
         "ctlTarget": 51,
         "tssTarget": 300,
-        "tssActual": 367,
+        "tssActual": null,
         "purpose": null,
         "note": "Sidste langtur 32 km tirsdag. OW-svøm x2.",
         "quota": {
@@ -4251,7 +4387,7 @@
         "mesoWeek": "1/1",
         "ctlTarget": 47,
         "tssTarget": 180,
-        "tssActual": 320,
+        "tssActual": null,
         "purpose": null,
         "note": "Christiansborg Rundt lør 29. aug — svømmes UTAPERET (2000 m, bevidst valg). Løb Z2 18 km tir (simulation udgået efter aftale). Svøm 2.000 m i træk ons. Søn: cykel indendørs i stedet for løb (ingen løb to dage i streg). Médoc løbes med Eva.",
         "quota": {
@@ -4286,7 +4422,7 @@
         "mesoWeek": "1/1",
         "ctlTarget": 43,
         "tssTarget": 93,
-        "tssActual": 362,
+        "tssActual": null,
         "purpose": null,
         "note": "Marathon du Médoc lør 5. sep. Ren taper + race-ernæringsplan. Tir: cykel i stedet for løb (ingen løb to dage i streg). Ons: 25 min styrke overkrop/core, ingen benbelastning.",
         "quota": {
@@ -4314,8 +4450,8 @@
           }
         ],
         "travel": "Bordeaux / Médoc",
-        "isCurrent": true,
-        "isPast": false,
+        "isCurrent": false,
+        "isPast": true,
         "hasDays": true
       },
       {
@@ -4328,7 +4464,7 @@
         "mesoWeek": "R",
         "ctlTarget": 47,
         "tssTarget": 150,
-        "tssActual": null,
+        "tssActual": 284,
         "purpose": "Restitution efter Médoc — gang, svøm og let cykel; første korte løb tidligst lør 12/9.",
         "note": "Restitution efter Marathon du Médoc. Intet løb før tidligst lør 12/9 — 42 km excentrisk belastning kræver 10-14 dage. Cykel bærer den aerobe base.",
         "quota": {
@@ -4343,7 +4479,7 @@
         "flags": [],
         "races": [],
         "travel": null,
-        "isCurrent": false,
+        "isCurrent": true,
         "isPast": false,
         "hasDays": true
       },
@@ -5834,201 +5970,6 @@
     ],
     "sessions": [
       {
-        "week": 10,
-        "programId": "medoc-2026",
-        "start": "2026-08-03",
-        "days": [
-          {
-            "date": "2026-08-03",
-            "weekday": "Man",
-            "entries": [
-              {
-                "id": "8f8a5800",
-                "name": "Hometrainer 3×15 min Z3 90 min",
-                "type": "Ride",
-                "disc": "bike",
-                "mins": 90,
-                "libraryId": null,
-                "load": "haard",
-                "erg": null,
-                "purpose": null,
-                "zwiftName": null,
-                "done": false,
-                "actualMins": null,
-                "actualTss": null,
-                "note": "Hometrainer 3×15 Z3 — byttet med mandagens svøm (2/8). Kør lav Z3 (205-220W) hvis HRV stadig er lav. Gang 30 min om aftenen.",
-                "isKey": true,
-                "optional": false
-              }
-            ],
-            "restNote": null,
-            "restId": null,
-            "isToday": false
-          },
-          {
-            "date": "2026-08-04",
-            "weekday": "Tir",
-            "entries": [
-              {
-                "id": "cbf5dfd1",
-                "name": "Løb Z1 30 min let",
-                "type": "Run",
-                "disc": "run",
-                "mins": 30,
-                "libraryId": null,
-                "load": "let",
-                "erg": null,
-                "purpose": null,
-                "zwiftName": null,
-                "done": false,
-                "actualMins": null,
-                "actualTss": null,
-                "note": "Ekstra let Z1-løb 30 min — VO2 flyttet til torsdag (HRV-restitution)",
-                "isKey": false,
-                "optional": false
-              }
-            ],
-            "restNote": null,
-            "restId": null,
-            "isToday": false
-          },
-          {
-            "date": "2026-08-05",
-            "weekday": "Ons",
-            "entries": [
-              {
-                "id": "925bfcc2",
-                "name": "Svøm 1500m teknisk",
-                "type": "Swim",
-                "disc": "swim",
-                "mins": 40,
-                "libraryId": null,
-                "load": "let",
-                "erg": null,
-                "purpose": null,
-                "zwiftName": null,
-                "done": false,
-                "actualMins": null,
-                "actualTss": null,
-                "note": "Svøm 1500m teknisk — byttet fra mandag. Let onsdag før VO2-løb torsdag 07:00.",
-                "isKey": false,
-                "optional": false
-              },
-              {
-                "id": "b3f1a7d2",
-                "name": "Styrke A Functional Strength 2 sæt",
-                "type": "WeightTraining",
-                "disc": "strength",
-                "mins": 45,
-                "libraryId": null,
-                "load": "let",
-                "erg": null,
-                "purpose": null,
-                "zwiftName": null,
-                "done": false,
-                "actualMins": null,
-                "actualTss": null,
-                "note": "Styrke A 2 sæt — flyttet fra mandag. Kontrolleret, lette vægte (VO2-løb torsdag 07:00)",
-                "isKey": false,
-                "optional": false
-              }
-            ],
-            "restNote": null,
-            "restId": null,
-            "isToday": false
-          },
-          {
-            "date": "2026-08-06",
-            "weekday": "Tor",
-            "entries": [
-              {
-                "id": "034518a1",
-                "name": "Løb VO2 4×5 min Z4-Z5",
-                "type": "Run",
-                "disc": "run",
-                "mins": 70,
-                "libraryId": null,
-                "load": "haard",
-                "erg": null,
-                "purpose": null,
-                "zwiftName": null,
-                "done": false,
-                "actualMins": null,
-                "actualTss": null,
-                "note": "Løb VO2 4×5 Z4-Z5 — flyttet fra tirsdag. Cykel Z2 udgår (dækket tirsdag/Mallorca)",
-                "isKey": true,
-                "optional": false
-              }
-            ],
-            "restNote": null,
-            "restId": null,
-            "isToday": false
-          },
-          {
-            "date": "2026-08-07",
-            "weekday": "Fre",
-            "entries": [
-              {
-                "id": "cc084f1c",
-                "name": "OW-svøm 2500m SAMMENHÆNGENDE (Christiansborg-generalprøve)",
-                "type": "OpenWaterSwim",
-                "disc": "openwater",
-                "mins": 50,
-                "libraryId": null,
-                "load": "let",
-                "erg": null,
-                "purpose": null,
-                "zwiftName": null,
-                "done": false,
-                "actualMins": null,
-                "actualTss": null,
-                "note": "OW-svøm 2500m i ét stræk — generalprøve til Christiansborg 29/8 (flyttet til fredag morgen)",
-                "isKey": false,
-                "optional": false
-              }
-            ],
-            "restNote": null,
-            "restId": null,
-            "isToday": false
-          },
-          {
-            "date": "2026-08-08",
-            "weekday": "Lør",
-            "entries": [
-              {
-                "id": "d2fe291e",
-                "name": "Lang løb Z2 29 km (155 min)",
-                "type": "Run",
-                "disc": "run",
-                "mins": 155,
-                "libraryId": null,
-                "load": "let",
-                "erg": null,
-                "purpose": null,
-                "zwiftName": null,
-                "done": false,
-                "actualMins": null,
-                "actualTss": null,
-                "note": "Lang løb 28-30 km — marathon-ladder",
-                "isKey": true,
-                "optional": false
-              }
-            ],
-            "restNote": null,
-            "restId": null,
-            "isToday": false
-          },
-          {
-            "date": "2026-08-09",
-            "weekday": "Søn",
-            "entries": [],
-            "restNote": "Fly → Mallorca #2 (søn 9. aug)",
-            "restId": "985a90bd",
-            "isToday": false
-          }
-        ]
-      },
-      {
         "week": 11,
         "programId": "medoc-2026",
         "start": "2026-08-10",
@@ -6559,31 +6500,12 @@
                 "erg": null,
                 "purpose": null,
                 "zwiftName": null,
-                "done": true,
-                "actualMins": 20,
-                "actualTss": 5,
+                "done": false,
+                "actualMins": null,
+                "actualTss": null,
                 "note": "Styrke overkrop + core — byttet med 2/9",
                 "isKey": false,
-                "optional": false,
-                "completion": "done"
-              },
-              {
-                "id": null,
-                "name": "København Gang",
-                "type": null,
-                "disc": "walk",
-                "mins": 49,
-                "libraryId": null,
-                "load": "let",
-                "erg": null,
-                "purpose": null,
-                "zwiftName": null,
-                "done": true,
-                "actualMins": 49,
-                "actualTss": 10,
-                "note": null,
-                "isKey": false,
-                "extra": true
+                "optional": false
               }
             ],
             "restNote": null,
@@ -6605,49 +6527,12 @@
                 "erg": null,
                 "purpose": null,
                 "zwiftName": null,
-                "done": true,
-                "actualMins": 45,
-                "actualTss": 31,
+                "done": false,
+                "actualMins": null,
+                "actualTss": null,
                 "note": "Cykel indendørs 45 min Z2 — erstatter løb (ingen løb to dage i streg)",
                 "isKey": false,
-                "optional": false,
-                "completion": "done"
-              },
-              {
-                "id": null,
-                "name": "Gentofte Gang",
-                "type": null,
-                "disc": "walk",
-                "mins": 52,
-                "libraryId": null,
-                "load": "let",
-                "erg": null,
-                "purpose": null,
-                "zwiftName": null,
-                "done": true,
-                "actualMins": 52,
-                "actualTss": 15,
-                "note": null,
-                "isKey": false,
-                "extra": true
-              },
-              {
-                "id": null,
-                "name": "Styrketræning",
-                "type": null,
-                "disc": "strength",
-                "mins": 20,
-                "libraryId": null,
-                "load": "let",
-                "erg": null,
-                "purpose": null,
-                "zwiftName": null,
-                "done": true,
-                "actualMins": 20,
-                "actualTss": 7,
-                "note": null,
-                "isKey": false,
-                "extra": true
+                "optional": false
               }
             ],
             "restNote": null,
@@ -6669,13 +6554,12 @@
                 "erg": null,
                 "purpose": null,
                 "zwiftName": null,
-                "done": true,
-                "actualMins": 33,
-                "actualTss": 42,
+                "done": false,
+                "actualMins": null,
+                "actualTss": null,
                 "note": "Sidste rigtige løb før Médoc — byttet fra 31/8, kortet til 30 min",
                 "isKey": false,
-                "optional": false,
-                "completion": "done"
+                "optional": false
               }
             ],
             "restNote": "Byttet med 31/8",
@@ -6685,26 +6569,7 @@
           {
             "date": "2026-09-03",
             "weekday": "Tor",
-            "entries": [
-              {
-                "id": null,
-                "name": "Race-uge åbner T-2",
-                "type": null,
-                "disc": "bike",
-                "mins": 60,
-                "libraryId": null,
-                "load": "let",
-                "erg": null,
-                "purpose": null,
-                "zwiftName": null,
-                "done": true,
-                "actualMins": 60,
-                "actualTss": 41,
-                "note": null,
-                "isKey": false,
-                "extra": true
-              }
-            ],
+            "entries": [],
             "restNote": "Fly → Bordeaux (tor 3. sep). Hviledag — shakeout droppet, løb flyttet til 2/9",
             "restId": "2b3361a4",
             "isToday": false
@@ -6724,31 +6589,12 @@
                 "erg": null,
                 "purpose": null,
                 "zwiftName": null,
-                "done": true,
-                "actualMins": 13,
-                "actualTss": 10,
+                "done": false,
+                "actualMins": null,
+                "actualTss": null,
                 "note": "Kort jog 15 min — Hotel Bordeaux (fre 4. sep)",
                 "isKey": false,
-                "optional": false,
-                "completion": "partial"
-              },
-              {
-                "id": null,
-                "name": "Bordeaux Gang",
-                "type": null,
-                "disc": "walk",
-                "mins": 89,
-                "libraryId": null,
-                "load": "let",
-                "erg": null,
-                "purpose": null,
-                "zwiftName": null,
-                "done": true,
-                "actualMins": 89,
-                "actualTss": 11,
-                "note": null,
-                "isKey": false,
-                "extra": true
+                "optional": false
               }
             ],
             "restNote": "Hotel Bordeaux — hvile (fre 4. sep)",
@@ -6758,26 +6604,7 @@
           {
             "date": "2026-09-05",
             "weekday": "Lør",
-            "entries": [
-              {
-                "id": null,
-                "name": "Pauillac Løb",
-                "type": null,
-                "disc": "run",
-                "mins": 342,
-                "libraryId": null,
-                "load": "let",
-                "erg": null,
-                "purpose": null,
-                "zwiftName": null,
-                "done": true,
-                "actualMins": 342,
-                "actualTss": 176,
-                "note": null,
-                "isKey": false,
-                "extra": true
-              }
-            ],
+            "entries": [],
             "restNote": "🏆 MARATHON MÉDOC (lør 5. sep)",
             "restId": "79cdbfe1",
             "isToday": false
@@ -6785,29 +6612,10 @@
           {
             "date": "2026-09-06",
             "weekday": "Søn",
-            "entries": [
-              {
-                "id": null,
-                "name": "Saint-Julien-Beychevelle Gang",
-                "type": null,
-                "disc": "walk",
-                "mins": 137,
-                "libraryId": null,
-                "load": "let",
-                "erg": null,
-                "purpose": null,
-                "zwiftName": null,
-                "done": true,
-                "actualMins": 137,
-                "actualTss": 14,
-                "note": null,
-                "isKey": false,
-                "extra": true
-              }
-            ],
+            "entries": [],
             "restNote": "Recovery Bordeaux (søn 6. sep)",
             "restId": "7a4e28f9",
-            "isToday": true
+            "isToday": false
           }
         ]
       },
@@ -6841,7 +6649,7 @@
             ],
             "restNote": null,
             "restId": null,
-            "isToday": false
+            "isToday": true
           },
           {
             "date": "2026-09-08",
@@ -8491,12 +8299,6 @@
     "ctl": {
       "history": [
         {
-          "week": 3,
-          "programId": "medoc-2026",
-          "start": "2026-06-15",
-          "ctl": 42.5
-        },
-        {
           "week": 4,
           "programId": "medoc-2026",
           "start": "2026-06-22",
@@ -8561,15 +8363,16 @@
           "programId": "medoc-2026",
           "start": "2026-08-31",
           "ctl": 50.8
+        },
+        {
+          "week": 1,
+          "programId": "tds-2027",
+          "start": "2026-09-07",
+          "ctl": 49.9
         }
       ],
       "projection": [],
       "targets": [
-        {
-          "week": 10,
-          "start": "2026-08-03",
-          "ctlTarget": 50
-        },
         {
           "week": 11,
           "start": "2026-08-10",
@@ -8624,14 +8427,14 @@
           "week": 7,
           "start": "2026-10-19",
           "ctlTarget": 56
+        },
+        {
+          "week": 8,
+          "start": "2026-10-26",
+          "ctlTarget": 55
         }
       ],
       "phases": [
-        {
-          "from": "2026-08-03",
-          "to": "2026-08-09",
-          "name": "BUILD"
-        },
         {
           "from": "2026-08-10",
           "to": "2026-08-16",
@@ -8676,38 +8479,19 @@
           "from": "2026-10-12",
           "to": "2026-10-25",
           "name": "BASE"
+        },
+        {
+          "from": "2026-10-26",
+          "to": "2026-11-01",
+          "name": "RECOVERY"
         }
       ],
       "window": {
-        "from": "2026-06-15",
-        "to": "2026-10-25"
+        "from": "2026-06-22",
+        "to": "2026-11-01"
       }
     },
     "hardSpacing": [
-      {
-        "fromId": "8f8a5800",
-        "fromName": "Hometrainer 3×15 min Z3 90 min",
-        "fromDate": "2026-08-03",
-        "fromDisc": "bike",
-        "toId": "034518a1",
-        "toName": "Løb VO2 4×5 min Z4-Z5",
-        "toDate": "2026-08-06",
-        "toDisc": "run",
-        "hours": 72,
-        "ok": true
-      },
-      {
-        "fromId": "034518a1",
-        "fromName": "Løb VO2 4×5 min Z4-Z5",
-        "fromDate": "2026-08-06",
-        "fromDisc": "run",
-        "toId": "022d0b30",
-        "toName": "Sa Calobra TEST via Puig Major",
-        "toDate": "2026-08-11",
-        "toDisc": "bike",
-        "hours": 120,
-        "ok": true
-      },
       {
         "fromId": "022d0b30",
         "fromName": "Sa Calobra TEST via Puig Major",
@@ -8795,57 +8579,45 @@
     ]
   },
   "coach": {
-    "generatedAt": "2026-09-06T19:18:06Z",
-    "inputsHash": "40368df52bafdc5be3b6e78671b7e91c65cc1147",
+    "generatedAt": "2026-09-07T00:44:01Z",
+    "inputsHash": "2957df7fbf70e7f59e0ea7717aee5cd05b71222a",
     "model": "claude-sonnet-4-6",
-    "mode": "sunday",
+    "mode": "daily",
     "oneThing": {
-      "action": "Drik kun vand i dag og læg dig senest kl. 22 — alkohol tre dage i træk har presset HRV til 35 ms.",
-      "why": "HRV er 38% under 7-dages snittet; restitution starter med at fjerne det der bremser den."
+      "action": "Gå 45 min let i dag — men sænk tempo og varighed til 30 min hvis benene stadig føles tunge efter Médoc.",
+      "why": "HRV er 37% under 7-dages snit. Kroppen er ikke klar til mere — let bevægelse er nok i dag."
     },
     "training": {
-      "text": "Ugen var en RACE-uge (uge 14/14 i Médoc-blokken) med et TSS-mål på 93. Du endte på 362 — 389% af planen, drevet af Marathon du Médoc lørdag med 176 TSS og 342 minutter. Ingen planlagte pas blev misset; alle 4 planlagte pas blev gennemført. CTL er 50,8 mod et mål på 43,0, altså 7,8 over target — naturlig effekt af race-belastningen. Ramp-rate er 0,1 denne uge, men akkumuleret race-load betyder kroppen er presset. Næste uge er uge 1 i en RECOVERY-blok (mesocyklus R): mål-TSS er 150, CTL-mål 47, ingen hårde eller moderate pas — kun gang, svøm og let cykel bærer den aerobe base, og første korte løb er tidligst lørdag 12/9.",
+      "text": "Ugen starter i uge 1 af RECOVERY-blokken. Intet er gennemført endnu — 7 pas ligger foran dig. Dagens plan er Gang let 45 min; med readiness LOW gælder: kortere er bedre end fuldt gennemført. CTL er 49,9 mod et mål på 47,0 — du er over målet, hvilket er præcis rigtigt i en restitutionsblok. Løbet lørdag 12/9 er det tidligste tilladte løb efter Médocs 42 km excentrisk belastning.",
       "refs": [
-        93.0,
-        362.0,
-        389.0,
-        176.0,
-        342.0,
-        50.8,
-        43.0,
-        7.8,
-        0.1,
-        150.0,
-        47.0
+        45.0,
+        7.0,
+        49.9,
+        47.0,
+        42.0
       ]
     },
     "body": {
-      "text": "7-dages snit er 72,5 kg og 21,6% fedt. Begge er stabile — ændringen over 28 dage er 0,1 kg og 0,0 procentpoint, hvilket ikke når tærsklen for en retning. Cut er ikke aktivt. Ugens ene kost-handling: sæt protein som det første på tallerkenen ved hvert måltid i næste uge — det holder mæthed og restitution oppe uden at du behøver tælle noget.",
+      "text": "7-dages snit: 72,3 kg og 21,3% fedt. Vægten er stabil — ingen retning at konkludere på. Cut starter om 14 dage (21/9), så der er ingen aktiv kost-intervention nu. Protein ved hvert måltid er den eneste forberedelse der tæller.",
       "refs": [
-        72.5,
-        21.6,
-        0.1,
-        0.0
+        72.3,
+        21.3,
+        14.0
       ]
     },
     "habits": {
-      "text": "Du havde 3 AF-dage denne uge mod et mål på 6, og alle 4 alkoholdage var bevidste valg — ingen autopilot-dage. Det er et race-weekend-mønster, men tre dage i træk (4/9–6/9) rammer HRV hårdere end spredte dage, og det ser du nu med HRV på 35,0 ms. Protein blev registreret 3 ud af 7 dage — det er for lidt i en restitutionsuge. Søvn-snit er 7,3 timer, over grænsen på 7,0, og søvnen i nat var 8,0 timer. Næste uge: hold alkohol-klynger væk og registrer protein mindst 5 dage.",
+      "text": "Ingen AF-dage registreret denne uge mod et mål på 6. 3 drikkedage i træk (4/9–6/9) som valgte dage — ingen autopilot, men klynger rammer HRV hårdest. Protein er registreret 3 af de seneste 7 dage — for lavt op mod cut-start. Søvn 8,0 timer i nat; 7-dages snit 7,3 timer.",
       "refs": [
-        3.0,
         6.0,
-        4.0,
-        35.0,
         3.0,
-        7.0,
-        7.3,
         7.0,
         8.0,
-        5.0
+        7.3
       ]
     },
-    "bigPicture": "Du har netop afsluttet den sidste uge i Médoc-2026-blokken med et marathon i benene. Næste uge starter TdS-2027-programmet med en fuld restitutionsuge — kroppen skal tilbage til at kunne præstere ved CPH Half den 20. september, 14 dage herfra.",
-    "weekFocus": "Restitution og protein — cykel og gang bærer basen til CPH Half",
-    "weekFocusFor": 15,
+    "bigPicture": "Uge 1 af RECOVERY — direkte efter Marathon du Médoc. Ugen er bygget op af gang, svøm og let cykel; ingen hård belastning og intet løb før lørdag 12/9 tidligst. HRV signalerer at kroppen stadig fordøjer lørdagens indsats.",
+    "weekFocus": "Restituér aktivt — gang og cykel bærer basen denne uge",
+    "weekFocusFor": 1,
     "warnings": [
       {
         "type": "alcohol_cluster",
@@ -8855,24 +8627,24 @@
         "source": "rule"
       },
       {
-        "type": "hrv",
-        "level": "warn",
-        "message": "HRV 35,0 ms — 38% under 7d-snit (56,3 ms). Kroppen er presset.",
-        "action": null,
-        "source": "rule"
-      },
-      {
-        "type": "spacing",
-        "level": "info",
-        "message": "Løb målpace 15/9 og CPH Half 20/9 har 120 timers mellemrum — det er OK og over 72-timers-kravet.",
+        "type": "readiness",
+        "level": "act",
+        "message": "HRV 35,0 ms er 37% under 7-dages snit på 55,2 ms. Krop er presset — hold dagens aktivitet kort og let.",
         "action": null,
         "source": "ai"
+      },
+      {
+        "type": "hrv",
+        "level": "warn",
+        "message": "HRV 35,0 ms — 37% under 7d-snit (55,2 ms). Kroppen er presset.",
+        "action": null,
+        "source": "rule"
       }
     ],
     "error": null,
     "validationError": null,
     "notes": null,
-    "stale": true
+    "stale": false
   },
   "weekFocusNext": {
     "week": 1,
@@ -8880,8 +8652,8 @@
     "text": "Restitution og protein — cykel og gang bærer basen til CPH Half"
   },
   "strengthLog": {
-    "from": "2026-08-09",
-    "to": "2026-09-06",
+    "from": "2026-08-10",
+    "to": "2026-09-07",
     "sessions": [
       {
         "date": "2026-08-17",
@@ -8918,12 +8690,12 @@
     ]
   },
   "body": {
-    "asOf": "2026-09-06",
+    "asOf": "2026-09-07",
     "glidepath": {
       "phase": "pre",
       "cutWeek": null,
       "cutWeeks": 19,
-      "isoWeek": 36,
+      "isoWeek": 37,
       "cutStartsFrom": "2026-09-21",
       "targetDate": "2027-01-31",
       "cutStartIsoWeek": 39,
@@ -8931,13 +8703,13 @@
       "targetKg": 68.0,
       "expectedKg": null,
       "corridorKg": 0.5,
-      "avg7": 72.5,
+      "avg7": 72.3,
       "avg7Date": "2026-09-03",
       "delta": null,
       "status": null,
       "note": "cut starter uge 39 (21/9)",
       "ratePerWeek": -0.22,
-      "actualRate4w": 0.03,
+      "actualRate4w": 0.0,
       "series": [
         {
           "date": "2026-09-21",
@@ -9022,7 +8794,7 @@
       ]
     },
     "fat": {
-      "avg14": 21.5,
+      "avg14": 21.6,
       "avg14Change28d": -0.1,
       "expected": null,
       "target": 16.0,
@@ -9037,13 +8809,14 @@
       "status": "ok"
     },
     "strengthWeek": {
-      "done": 2,
+      "done": 0,
       "target": 2
     },
     "strengthWeeks": {
       "2026-08-10": 0,
       "2026-08-17": 2,
-      "2026-08-24": 4
+      "2026-08-24": 4,
+      "2026-08-31": 2
     },
     "cutCheck": {
       "active": false,
