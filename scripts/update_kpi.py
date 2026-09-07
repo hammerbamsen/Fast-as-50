@@ -542,7 +542,7 @@ def main():
         'streak': af_streak
     }
 
-    # --- AF log: dag-for-dag til af.html sync (alle uger siden projektstart) ---
+    # --- AF log: dag-for-dag til index.html's log-ark (af.html slettet blok 9) (alle uger siden projektstart) ---
     # (full_af_log hentet ovenfor, før krop-modulet.)
     if full_af_log:
         data["af_log"] = full_af_log
@@ -572,7 +572,7 @@ def main():
     # --- Check-in-log (alkohol/protein/energi/aftensult) sidste 28 dage ---
     # Samme wellness-kilde som af_log. Bruges af I dag-fanens log-ark (7 prikker),
     # Krop-fanens protein-kort og én linje i coach-prompten. af_log holder sig til
-    # 0/1 (af.html/index læser det); hvordan drikkedagen blev registreret
+    # 0/1 (index.html læser det); hvordan drikkedagen blev registreret
     # (valgt/autopilot) ligger i checkinLog.alkohol (1/2) og i af_kind.
     checkin_log = _checkin.get_checkin_log()
     data['checkinLog'] = checkin_log
@@ -758,6 +758,17 @@ def main():
                        f"martin: signaler uge {_iso}")
     except Exception as _e:
         print(f"  Martin-mail fejlede (ikke-blokerende): {_e}")
+
+    # --- Forslag (blok 9): data/proposals/*.json med status pending -> data.proposals
+    # (before = nuværende plan, after = forslaget, pr. ISO-uge). Tomt array når ingen.
+    data['proposals'] = []
+    try:
+        from modules import proposals as _props
+        data['proposals'] = _props.build_data_proposals(PLAN)
+        print(f"  Forslag: {len(data['proposals'])} afventer"
+              + (" — " + ", ".join(p['id'] for p in data['proposals']) if data['proposals'] else ""))
+    except Exception as _e:
+        print(f"  Forslag fejlede (ikke-blokerende): {_e}")
 
     # --- Today session(s) ---
     # NB: der kan være flere sessioner samme dag (fx styrke + løb) — tag dem ALLE, ikke kun den første.

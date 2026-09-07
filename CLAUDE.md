@@ -23,14 +23,14 @@ python3 scripts/update_kpi.py                                         # kræver 
 4. FTP er indendørs-målt. Styrke 2×/uge tæller i samlet belastning, men ikke i max-2-hårde-reglen.
 
 ## Filoversigt
-- `index.html` + `sw.js` + `manifest.json` — dashboardet (I dag / Plan / Krop / Mere). `af.html`, `checkin.html`, `plan.html`, `eva.html` — klientsider der dispatcher via Worker'en.
+- `index.html` + `sw.js` + `manifest.json` — dashboardet (I dag / Plan / Krop / Mere). `plan.html`, `eva.html` — klientsider der dispatcher via Worker'en (AF/check-in ligger i index.html's log-ark; af.html/checkin.html slettet blok 9).
 - `scripts/update_kpi.py` — pipelinen; `scripts/modules/*` — ren logik + tests (`test_*.py`). `scripts/send_push.py` (daglig/aften/`--alert`), `scripts/health_report.py`, `scripts/build_workouts.py`, `scripts/build_zwo.py`, `scripts/apply_edit.py`.
-- `data/plan.json`, `data/bike_library.json`, `data/plan_view.json`, `data/workout_library.json`; `data.json` og `health.json` i roden (skrives af Actions — ret dem aldrig i hånden).
+- `data/plan.json`, `data/bike_library.json`, `data/plan_view.json`, `data/workout_library.json`, `data/proposals/*.json` (forslag — anvendes KUN via `edit_apply` action `apply_proposal`, offline med `python3 -m modules.proposals apply-offline <id>` fra `scripts/`); `data.json` og `health.json` i roden (skrives af Actions — ret dem aldrig i hånden).
 - `.github/workflows/*` — se `docs/PIPELINE.md`. `schemas/` — JSON-kontrakter + `validate.py`. `workers/webhook-dispatch/` — Cloudflare Worker (GitHub App).
 - `docs/` — PIPELINE, PAT_RENEWAL, PUSH_SETUP, AZURE_SETUP. `CHANGES-*.md` — ændringslogs pr. blok.
 
 ## Kontrakter
-- **plan.json**: `programs{id → {start, end, totalWeeks, weeks[{week, start, blockType, ctlTarget}]}}`, `athletes{kennet, eva → {zones, days[{date, entries[{id, workout|null, note?, libraryId?}]}]}}`. Aktivt program vælges efter dato i `modules/programs.py`.
+- **plan.json**: `programs{id → {start, end, totalWeeks, weeks[{week, start, blockType, ctlTarget}]}}`, `athletes{kennet, eva → {zones, days[{date, entries[{id, workout|null, note?, libraryId?, templateId?}]}]}}`. Aktivt program vælges efter dato i `modules/programs.py`.
 - **data.json**: `meta{updated 'YYYY-MM-DD HH:MM' lokal, week, date, ...}`, `kpis{label → {value, unit, sub, color}}`, `today[]`, `week_sessions[{day, disc, label, done}]`, plus historik/planTab/body. Farver beregnes i pipelinen, ikke i UI'et.
 - **health.json**: `generatedAt`, `workflows{navn → {lastRun, conclusion, event, runUrl, durationS, expectedEveryMin?}}`, `secrets{navn → {expires, usedBy, note}}`. Dashboardet regner alder/farver selv — ingen anden tilstand i filen.
 - **bike_library.json**: `meta{categories, rules}`, `workouts[{id, name, category, load, erg?, est_min, steps[{type steady|ramp|reps|free, min, pct|from/to|n+steps}]}]`.

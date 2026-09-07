@@ -1,0 +1,769 @@
+{
+  "id": "2026-09-07-uge3-8",
+  "createdAt": "2026-09-07T20:00:00Z",
+  "createdBy": "claude",
+  "title": "Uge 3-8: cut + kælder (21/9 → 1/11)",
+  "note": "Svømning droppes til foråret, så uge 3-8 får to faste kælder-styrkepas med de nye Functional 4-templates (A mandag, B torsdag/fredag) i stedet for 'Unilateral 3 sæt'. Recovery-ugerne 5 og 8 kører 2 runder uden progression. Lørdagsturene i uge 3-5 må køres ude som ren Z2 hvis vejret tillader; fra uge 6 er lørdag kælder. Uge 1-2 røres ikke.",
+  "summary": [
+    "Svøm fjernet uge 3-8 (droppes til foråret) — fredag bliver fri i uge 4, 5, 7 og 8",
+    "Styrke A/B som styrke-fs4-a-2r / styrke-fs4-b-2r (2 runder) — man + tor/fre som i dag",
+    "Uge 5 og 8 (recovery): 2 runder, ingen progression",
+    "Lørdag 26/9, 3/10, 10/10: ude som ren Z2 hvis vejret tillader — samme varighed",
+    "Fra uge 6: lørdag i kælderen; FTP-test 24/9 og alle kælderpas uændrede"
+  ],
+  "status": "applied-offline",
+  "decidedAt": "2026-09-07T18:58:57+00:00",
+  "result": {
+    "dates_changed": [
+      "2026-09-21",
+      "2026-09-25",
+      "2026-09-26",
+      "2026-09-28",
+      "2026-10-01",
+      "2026-10-02",
+      "2026-10-03",
+      "2026-10-05",
+      "2026-10-08",
+      "2026-10-09",
+      "2026-10-10",
+      "2026-10-12",
+      "2026-10-16",
+      "2026-10-19",
+      "2026-10-22",
+      "2026-10-23",
+      "2026-10-26",
+      "2026-10-29",
+      "2026-10-30",
+      "2026-10-31"
+    ],
+    "commit": null
+  },
+  "changes": [
+    {
+      "date": "2026-09-21",
+      "action": "set_day",
+      "entries": [
+        {
+          "workout": {
+            "name": "Styrke A · Functional 4 · 2 runder",
+            "type": "WeightTraining",
+            "moving_time": 1500,
+            "description": "2x\n- Thruster 2×5kg DB ×10 1m freeride\n- Renegade row 10kg DB ×8/side 1m freeride\n- KB swing 12,5kg KB ×15 1m freeride\n- KB row 10kg DB ×10/side 1m freeride\n- Press 2×5kg DB ×10 1m freeride\n- Pause 90 sek 2m freeride"
+          },
+          "templateId": "styrke-fs4-a-2r",
+          "note": "Cut starter. Styrke Functional 4 A/B 2×/uge starter — 2 runder"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-25",
+      "action": "set_day",
+      "entries": [
+        {
+          "workout": {
+            "name": "Styrke B · Functional 4 · 2 runder",
+            "type": "WeightTraining",
+            "moving_time": 1500,
+            "description": "2x\n- RDL 12kg ×12 1m freeride\n- Split squat 12,5kg KB goblet ×8/ben 1m freeride\n- Pullover 7kg DB ×12 1m freeride\n- Bænkpres 2×7kg DB ×12 1m freeride\n- Farmers walk 2×10kg 40 m 1m freeride\n- Pause 90 sek 2m freeride"
+          },
+          "templateId": "styrke-fs4-b-2r",
+          "note": "Styrke B · Functional 4"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-26",
+      "action": "set_day",
+      "entries": [
+        {
+          "workout": {
+            "name": "FaF 1 Z2 - Depottur 2 t",
+            "type": "Ride",
+            "moving_time": 7800,
+            "description": "- Varm-op 10m ramp 45-62% FTP\n- Z2 20m 66% FTP\n- Z2 20m 70% FTP\n- Z2 20m 66% FTP\n- Z2 let op 20m 72% FTP\n- Z2 20m 66% FTP\n- Sidste 10 10m 70% FTP\n- Cool-down 10m ramp 62-40% FTP\n\nFORMÅL: To timer Z2 med fast energiplan. Lige så meget mavetræning som bentræning. Race-evalueringerne siger det samme i ni år: energiplanen er det der knækker dig.\n\nMål: 80-100 g kulhydrat i timen. Notér bagefter hvad du spiste og hvordan maven lå.",
+            "workout_doc": {
+              "steps": [
+                {
+                  "ramp": true,
+                  "power": {
+                    "start": 45,
+                    "end": 62,
+                    "units": "%ftp"
+                  },
+                  "duration": 600,
+                  "warmup": true,
+                  "text": "Varm-op"
+                },
+                {
+                  "power": {
+                    "start": 66,
+                    "end": 66,
+                    "units": "%ftp"
+                  },
+                  "duration": 1200,
+                  "text": "Z2 66% FTP"
+                },
+                {
+                  "power": {
+                    "start": 70,
+                    "end": 70,
+                    "units": "%ftp"
+                  },
+                  "duration": 1200,
+                  "text": "Z2 70% FTP"
+                },
+                {
+                  "power": {
+                    "start": 66,
+                    "end": 66,
+                    "units": "%ftp"
+                  },
+                  "duration": 1200,
+                  "text": "Z2 66% FTP"
+                },
+                {
+                  "power": {
+                    "start": 72,
+                    "end": 72,
+                    "units": "%ftp"
+                  },
+                  "duration": 1200,
+                  "text": "Z2 let op 72% FTP"
+                },
+                {
+                  "power": {
+                    "start": 66,
+                    "end": 66,
+                    "units": "%ftp"
+                  },
+                  "duration": 1200,
+                  "text": "Z2 66% FTP"
+                },
+                {
+                  "power": {
+                    "start": 70,
+                    "end": 70,
+                    "units": "%ftp"
+                  },
+                  "duration": 600,
+                  "text": "Sidste 10 70% FTP"
+                },
+                {
+                  "ramp": true,
+                  "power": {
+                    "start": 62,
+                    "end": 40,
+                    "units": "%ftp"
+                  },
+                  "duration": 600,
+                  "cooldown": true,
+                  "text": "Cool-down"
+                }
+              ]
+            }
+          },
+          "note": "Ude som ren Z2 hvis vejret tillader — samme varighed",
+          "libraryId": "z2_depottur_2t"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-28",
+      "action": "set_day",
+      "entries": [
+        {
+          "workout": {
+            "name": "Styrke A · Functional 4 · 2 runder",
+            "type": "WeightTraining",
+            "moving_time": 1500,
+            "description": "2x\n- Thruster 2×5kg DB ×10 1m freeride\n- Renegade row 10kg DB ×8/side 1m freeride\n- KB swing 12,5kg KB ×15 1m freeride\n- KB row 10kg DB ×10/side 1m freeride\n- Press 2×5kg DB ×10 1m freeride\n- Pause 90 sek 2m freeride"
+          },
+          "templateId": "styrke-fs4-a-2r",
+          "note": "Styrke A · Functional 4"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-01",
+      "action": "set_day",
+      "entries": [
+        {
+          "workout": {
+            "name": "FaF 1 Z2 - Åbnere 60",
+            "type": "Ride",
+            "moving_time": 3600,
+            "description": "- Varm-op 10m ramp 45-62% FTP\n- Zone 2 20m 62% FTP\n\n4x \n- Åbner 95+ rpm 2m 85% FTP @ 95 rpm\n- Let 3m 48% FTP\n\n- Cool-down 10m ramp 62-40% FTP\n\nFORMÅL: Race-uge og stille uger. Zone 2 med fire korte åbnere i høj kadence, så benene vågner uden at der bygges træthed. Bygget 2/9-2026 to dage før Médoc.\n\nBenene skal føles lette bagefter — ellers var det for hårdt. Ikke et træningspas.",
+            "workout_doc": {
+              "steps": [
+                {
+                  "ramp": true,
+                  "power": {
+                    "start": 45,
+                    "end": 62,
+                    "units": "%ftp"
+                  },
+                  "duration": 600,
+                  "warmup": true,
+                  "text": "Varm-op"
+                },
+                {
+                  "power": {
+                    "start": 62,
+                    "end": 62,
+                    "units": "%ftp"
+                  },
+                  "duration": 1200,
+                  "text": "Zone 2 62% FTP"
+                },
+                {
+                  "reps": 4,
+                  "text": "4x",
+                  "steps": [
+                    {
+                      "power": {
+                        "start": 85,
+                        "end": 85,
+                        "units": "%ftp"
+                      },
+                      "duration": 120,
+                      "text": "Åbner 95+ rpm 85% FTP",
+                      "cadence": {
+                        "start": 95,
+                        "end": 95,
+                        "units": "rpm"
+                      }
+                    },
+                    {
+                      "power": {
+                        "start": 48,
+                        "end": 48,
+                        "units": "%ftp"
+                      },
+                      "duration": 180,
+                      "text": "Let 48% FTP"
+                    }
+                  ]
+                },
+                {
+                  "ramp": true,
+                  "power": {
+                    "start": 62,
+                    "end": 40,
+                    "units": "%ftp"
+                  },
+                  "duration": 600,
+                  "cooldown": true,
+                  "text": "Cool-down"
+                }
+              ]
+            }
+          },
+          "note": "Z2 åbnere — kort kælderpas før styrke",
+          "libraryId": "z2_aabnere_60"
+        },
+        {
+          "workout": {
+            "name": "Styrke B · Functional 4 · 2 runder",
+            "type": "WeightTraining",
+            "moving_time": 1500,
+            "description": "2x\n- RDL 12kg ×12 1m freeride\n- Split squat 12,5kg KB goblet ×8/ben 1m freeride\n- Pullover 7kg DB ×12 1m freeride\n- Bænkpres 2×7kg DB ×12 1m freeride\n- Farmers walk 2×10kg 40 m 1m freeride\n- Pause 90 sek 2m freeride"
+          },
+          "templateId": "styrke-fs4-b-2r",
+          "note": "Styrke B · Functional 4 — efter åbnerne"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-02",
+      "action": "set_day",
+      "entries": []
+    },
+    {
+      "date": "2026-10-03",
+      "action": "set_day",
+      "entries": [
+        {
+          "workout": {
+            "name": "FaF 2 Dur - Negativ split 2 t",
+            "type": "Ride",
+            "moving_time": 7800,
+            "description": "- Varm-op 12m ramp 45-62% FTP\n- Z2 35m 66% FTP\n- Z2 35m 70% FTP\n- Op i Z3 20m 80% FTP\n- Z3 højere 20m 83% FTP\n- Cool-down 8m ramp 60-40% FTP\n\nFORMÅL: Halvanden time Z2, derefter 40 minutter løftet til Z3. Træner at producere kvalitet i forudtrættet tilstand — uden prisen for et fuldt tærskelpas.",
+            "workout_doc": {
+              "steps": [
+                {
+                  "ramp": true,
+                  "power": {
+                    "start": 45,
+                    "end": 62,
+                    "units": "%ftp"
+                  },
+                  "duration": 720,
+                  "warmup": true,
+                  "text": "Varm-op"
+                },
+                {
+                  "power": {
+                    "start": 66,
+                    "end": 66,
+                    "units": "%ftp"
+                  },
+                  "duration": 2100,
+                  "text": "Z2 66% FTP"
+                },
+                {
+                  "power": {
+                    "start": 70,
+                    "end": 70,
+                    "units": "%ftp"
+                  },
+                  "duration": 2100,
+                  "text": "Z2 70% FTP"
+                },
+                {
+                  "power": {
+                    "start": 80,
+                    "end": 80,
+                    "units": "%ftp"
+                  },
+                  "duration": 1200,
+                  "text": "Op i Z3 80% FTP"
+                },
+                {
+                  "power": {
+                    "start": 83,
+                    "end": 83,
+                    "units": "%ftp"
+                  },
+                  "duration": 1200,
+                  "text": "Z3 højere 83% FTP"
+                },
+                {
+                  "ramp": true,
+                  "power": {
+                    "start": 60,
+                    "end": 40,
+                    "units": "%ftp"
+                  },
+                  "duration": 480,
+                  "cooldown": true,
+                  "text": "Cool-down"
+                }
+              ]
+            }
+          },
+          "note": "Ude som ren Z2 hvis vejret tillader — samme varighed",
+          "libraryId": "dur_negativ_split"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-05",
+      "action": "set_day",
+      "entries": [
+        {
+          "workout": {
+            "name": "Styrke A · Functional 4 · 2 runder",
+            "type": "WeightTraining",
+            "moving_time": 1500,
+            "description": "2x\n- Thruster 2×5kg DB ×10 1m freeride\n- Renegade row 10kg DB ×8/side 1m freeride\n- KB swing 12,5kg KB ×15 1m freeride\n- KB row 10kg DB ×10/side 1m freeride\n- Press 2×5kg DB ×10 1m freeride\n- Pause 90 sek 2m freeride"
+          },
+          "templateId": "styrke-fs4-a-2r",
+          "note": "recovery: 2 runder, ingen progression"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-08",
+      "action": "set_day",
+      "entries": [
+        {
+          "workout": {
+            "name": "Styrke B · Functional 4 · 2 runder",
+            "type": "WeightTraining",
+            "moving_time": 1500,
+            "description": "2x\n- RDL 12kg ×12 1m freeride\n- Split squat 12,5kg KB goblet ×8/ben 1m freeride\n- Pullover 7kg DB ×12 1m freeride\n- Bænkpres 2×7kg DB ×12 1m freeride\n- Farmers walk 2×10kg 40 m 1m freeride\n- Pause 90 sek 2m freeride"
+          },
+          "templateId": "styrke-fs4-b-2r",
+          "note": "recovery: 2 runder, ingen progression"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-09",
+      "action": "set_day",
+      "entries": []
+    },
+    {
+      "date": "2026-10-10",
+      "action": "set_day",
+      "entries": [
+        {
+          "workout": {
+            "name": "FaF 1 Z2 - Grundtur 80",
+            "type": "Ride",
+            "moving_time": 4800,
+            "description": "- Varm-op 10m ramp 45-62% FTP\n- Zone 2 25m 66% FTP\n- Kadence 100 5m 70% FTP @ 100 rpm\n- Zone 2 25m 66% FTP\n- Kadence 100 5m 70% FTP @ 100 rpm\n- Cool-down 10m ramp 62-40% FTP\n\nFORMÅL: Ren zone 2. Skal føles kedeligt. Fundamentet under alt andet — og den enkeltfaktor der bedst forudsiger hvor lidt VO2max falder med alderen.",
+            "workout_doc": {
+              "steps": [
+                {
+                  "ramp": true,
+                  "power": {
+                    "start": 45,
+                    "end": 62,
+                    "units": "%ftp"
+                  },
+                  "duration": 600,
+                  "warmup": true,
+                  "text": "Varm-op"
+                },
+                {
+                  "power": {
+                    "start": 66,
+                    "end": 66,
+                    "units": "%ftp"
+                  },
+                  "duration": 1500,
+                  "text": "Zone 2 66% FTP"
+                },
+                {
+                  "power": {
+                    "start": 70,
+                    "end": 70,
+                    "units": "%ftp"
+                  },
+                  "duration": 300,
+                  "text": "Kadence 100 70% FTP",
+                  "cadence": {
+                    "start": 100,
+                    "end": 100,
+                    "units": "rpm"
+                  }
+                },
+                {
+                  "power": {
+                    "start": 66,
+                    "end": 66,
+                    "units": "%ftp"
+                  },
+                  "duration": 1500,
+                  "text": "Zone 2 66% FTP"
+                },
+                {
+                  "power": {
+                    "start": 70,
+                    "end": 70,
+                    "units": "%ftp"
+                  },
+                  "duration": 300,
+                  "text": "Kadence 100 70% FTP",
+                  "cadence": {
+                    "start": 100,
+                    "end": 100,
+                    "units": "rpm"
+                  }
+                },
+                {
+                  "ramp": true,
+                  "power": {
+                    "start": 62,
+                    "end": 40,
+                    "units": "%ftp"
+                  },
+                  "duration": 600,
+                  "cooldown": true,
+                  "text": "Cool-down"
+                }
+              ]
+            }
+          },
+          "note": "Ude som ren Z2 hvis vejret tillader — samme varighed",
+          "libraryId": "z2_grundtur_80"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-12",
+      "action": "set_day",
+      "entries": [
+        {
+          "workout": {
+            "name": "Styrke A · Functional 4 · 2 runder",
+            "type": "WeightTraining",
+            "moving_time": 1500,
+            "description": "2x\n- Thruster 2×5kg DB ×10 1m freeride\n- Renegade row 10kg DB ×8/side 1m freeride\n- KB swing 12,5kg KB ×15 1m freeride\n- KB row 10kg DB ×10/side 1m freeride\n- Press 2×5kg DB ×10 1m freeride\n- Pause 90 sek 2m freeride"
+          },
+          "templateId": "styrke-fs4-a-2r",
+          "note": "Styrke A · Functional 4"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-16",
+      "action": "set_day",
+      "entries": [
+        {
+          "workout": {
+            "name": "Styrke B · Functional 4 · 2 runder",
+            "type": "WeightTraining",
+            "moving_time": 1500,
+            "description": "2x\n- RDL 12kg ×12 1m freeride\n- Split squat 12,5kg KB goblet ×8/ben 1m freeride\n- Pullover 7kg DB ×12 1m freeride\n- Bænkpres 2×7kg DB ×12 1m freeride\n- Farmers walk 2×10kg 40 m 1m freeride\n- Pause 90 sek 2m freeride"
+          },
+          "templateId": "styrke-fs4-b-2r",
+          "note": "Styrke B · Functional 4"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-19",
+      "action": "set_day",
+      "entries": [
+        {
+          "workout": {
+            "name": "Styrke A · Functional 4 · 2 runder",
+            "type": "WeightTraining",
+            "moving_time": 1500,
+            "description": "2x\n- Thruster 2×5kg DB ×10 1m freeride\n- Renegade row 10kg DB ×8/side 1m freeride\n- KB swing 12,5kg KB ×15 1m freeride\n- KB row 10kg DB ×10/side 1m freeride\n- Press 2×5kg DB ×10 1m freeride\n- Pause 90 sek 2m freeride"
+          },
+          "templateId": "styrke-fs4-a-2r",
+          "note": "Styrke A · Functional 4"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-22",
+      "action": "set_day",
+      "entries": [
+        {
+          "workout": {
+            "name": "FaF 1 Z2 - Grundtur 80",
+            "type": "Ride",
+            "moving_time": 4800,
+            "description": "- Varm-op 10m ramp 45-62% FTP\n- Zone 2 25m 66% FTP\n- Kadence 100 5m 70% FTP @ 100 rpm\n- Zone 2 25m 66% FTP\n- Kadence 100 5m 70% FTP @ 100 rpm\n- Cool-down 10m ramp 62-40% FTP\n\nFORMÅL: Ren zone 2. Skal føles kedeligt. Fundamentet under alt andet — og den enkeltfaktor der bedst forudsiger hvor lidt VO2max falder med alderen.",
+            "workout_doc": {
+              "steps": [
+                {
+                  "ramp": true,
+                  "power": {
+                    "start": 45,
+                    "end": 62,
+                    "units": "%ftp"
+                  },
+                  "duration": 600,
+                  "warmup": true,
+                  "text": "Varm-op"
+                },
+                {
+                  "power": {
+                    "start": 66,
+                    "end": 66,
+                    "units": "%ftp"
+                  },
+                  "duration": 1500,
+                  "text": "Zone 2 66% FTP"
+                },
+                {
+                  "power": {
+                    "start": 70,
+                    "end": 70,
+                    "units": "%ftp"
+                  },
+                  "duration": 300,
+                  "text": "Kadence 100 70% FTP",
+                  "cadence": {
+                    "start": 100,
+                    "end": 100,
+                    "units": "rpm"
+                  }
+                },
+                {
+                  "power": {
+                    "start": 66,
+                    "end": 66,
+                    "units": "%ftp"
+                  },
+                  "duration": 1500,
+                  "text": "Zone 2 66% FTP"
+                },
+                {
+                  "power": {
+                    "start": 70,
+                    "end": 70,
+                    "units": "%ftp"
+                  },
+                  "duration": 300,
+                  "text": "Kadence 100 70% FTP",
+                  "cadence": {
+                    "start": 100,
+                    "end": 100,
+                    "units": "rpm"
+                  }
+                },
+                {
+                  "ramp": true,
+                  "power": {
+                    "start": 62,
+                    "end": 40,
+                    "units": "%ftp"
+                  },
+                  "duration": 600,
+                  "cooldown": true,
+                  "text": "Cool-down"
+                }
+              ]
+            }
+          },
+          "note": "Z2 grundtur — kælder, før styrke",
+          "libraryId": "z2_grundtur_80"
+        },
+        {
+          "workout": {
+            "name": "Styrke B · Functional 4 · 2 runder",
+            "type": "WeightTraining",
+            "moving_time": 1500,
+            "description": "2x\n- RDL 12kg ×12 1m freeride\n- Split squat 12,5kg KB goblet ×8/ben 1m freeride\n- Pullover 7kg DB ×12 1m freeride\n- Bænkpres 2×7kg DB ×12 1m freeride\n- Farmers walk 2×10kg 40 m 1m freeride\n- Pause 90 sek 2m freeride"
+          },
+          "templateId": "styrke-fs4-b-2r",
+          "note": "Styrke B · Functional 4 — efter grundturen"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-23",
+      "action": "set_day",
+      "entries": []
+    },
+    {
+      "date": "2026-10-26",
+      "action": "set_day",
+      "entries": [
+        {
+          "workout": {
+            "name": "Styrke A · Functional 4 · 2 runder",
+            "type": "WeightTraining",
+            "moving_time": 1500,
+            "description": "2x\n- Thruster 2×5kg DB ×10 1m freeride\n- Renegade row 10kg DB ×8/side 1m freeride\n- KB swing 12,5kg KB ×15 1m freeride\n- KB row 10kg DB ×10/side 1m freeride\n- Press 2×5kg DB ×10 1m freeride\n- Pause 90 sek 2m freeride"
+          },
+          "templateId": "styrke-fs4-a-2r",
+          "note": "recovery: 2 runder, ingen progression"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-29",
+      "action": "set_day",
+      "entries": [
+        {
+          "workout": {
+            "name": "Styrke B · Functional 4 · 2 runder",
+            "type": "WeightTraining",
+            "moving_time": 1500,
+            "description": "2x\n- RDL 12kg ×12 1m freeride\n- Split squat 12,5kg KB goblet ×8/ben 1m freeride\n- Pullover 7kg DB ×12 1m freeride\n- Bænkpres 2×7kg DB ×12 1m freeride\n- Farmers walk 2×10kg 40 m 1m freeride\n- Pause 90 sek 2m freeride"
+          },
+          "templateId": "styrke-fs4-b-2r",
+          "note": "recovery: 2 runder, ingen progression. Stelvio couples-tilmelding deadline i dag"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-30",
+      "action": "set_day",
+      "entries": []
+    },
+    {
+      "date": "2026-10-31",
+      "action": "set_day",
+      "entries": [
+        {
+          "workout": {
+            "name": "FaF 1 Z2 - Depottur 2 t",
+            "type": "Ride",
+            "moving_time": 7800,
+            "description": "- Varm-op 10m ramp 45-62% FTP\n- Z2 20m 66% FTP\n- Z2 20m 70% FTP\n- Z2 20m 66% FTP\n- Z2 let op 20m 72% FTP\n- Z2 20m 66% FTP\n- Sidste 10 10m 70% FTP\n- Cool-down 10m ramp 62-40% FTP\n\nFORMÅL: To timer Z2 med fast energiplan. Lige så meget mavetræning som bentræning. Race-evalueringerne siger det samme i ni år: energiplanen er det der knækker dig.\n\nMål: 80-100 g kulhydrat i timen. Notér bagefter hvad du spiste og hvordan maven lå.",
+            "workout_doc": {
+              "steps": [
+                {
+                  "ramp": true,
+                  "power": {
+                    "start": 45,
+                    "end": 62,
+                    "units": "%ftp"
+                  },
+                  "duration": 600,
+                  "warmup": true,
+                  "text": "Varm-op"
+                },
+                {
+                  "power": {
+                    "start": 66,
+                    "end": 66,
+                    "units": "%ftp"
+                  },
+                  "duration": 1200,
+                  "text": "Z2 66% FTP"
+                },
+                {
+                  "power": {
+                    "start": 70,
+                    "end": 70,
+                    "units": "%ftp"
+                  },
+                  "duration": 1200,
+                  "text": "Z2 70% FTP"
+                },
+                {
+                  "power": {
+                    "start": 66,
+                    "end": 66,
+                    "units": "%ftp"
+                  },
+                  "duration": 1200,
+                  "text": "Z2 66% FTP"
+                },
+                {
+                  "power": {
+                    "start": 72,
+                    "end": 72,
+                    "units": "%ftp"
+                  },
+                  "duration": 1200,
+                  "text": "Z2 let op 72% FTP"
+                },
+                {
+                  "power": {
+                    "start": 66,
+                    "end": 66,
+                    "units": "%ftp"
+                  },
+                  "duration": 1200,
+                  "text": "Z2 66% FTP"
+                },
+                {
+                  "power": {
+                    "start": 70,
+                    "end": 70,
+                    "units": "%ftp"
+                  },
+                  "duration": 600,
+                  "text": "Sidste 10 70% FTP"
+                },
+                {
+                  "ramp": true,
+                  "power": {
+                    "start": 62,
+                    "end": 40,
+                    "units": "%ftp"
+                  },
+                  "duration": 600,
+                  "cooldown": true,
+                  "text": "Cool-down"
+                }
+              ]
+            }
+          },
+          "note": "Kælder — ren Z2, recovery-uge",
+          "libraryId": "z2_depottur_2t"
+        }
+      ]
+    }
+  ]
+}

@@ -210,6 +210,10 @@
           "type": "string",
           "description": "Kælderpas-id fra data/bike_library.json (eller template-id fra workout_library.json)"
         },
+        "templateId": {
+          "type": "string",
+          "description": "Template-id fra data/workout_library.json (styrke-templates, blok 8/9)"
+        },
         "done": {
           "type": "boolean"
         },

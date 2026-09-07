@@ -111,7 +111,7 @@ def hunger_days(log, n=7):
     return sum(1 for e in _last(log, n) if e.get('sult') == 2)
 
 
-# Før 4/9-2026 betød Alkohol=1 blot "drak" (af.html). Valgt/autopilot-skelnen
+# Før 4/9-2026 betød Alkohol=1 blot "drak" (den gamle af.html, slettet blok 9). Valgt/autopilot-skelnen
 # findes først fra log-arket i v2.0 — ældre 1'ere må ikke vises som "valgt".
 KIND_CUTOVER = '2026-09-04'
 

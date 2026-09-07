@@ -22,7 +22,7 @@ from pathlib import Path
 import requests
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from modules import edit_apply, martin_signals, outlook_times, word_master
+from modules import edit_apply, martin_signals, outlook_times, proposals, word_master
 
 
 GH_TOKEN = os.environ["GITHUB_TOKEN"]
@@ -153,6 +153,21 @@ def outlook_sync_date(day_iso: str, entries: list, token: str, overrides: dict =
                       json=outlook_times.event_body(wo, start_dt), timeout=30)
 
 
+# -- Forslag (blok 9) -----------------------------------------------------
+
+def proposal_decide(pid: str, status: str, result: dict) -> str:
+    """Sæt status/decidedAt/result i data/proposals/<pid>.json på GitHub.
+    Læser den friske fil (ikke checkout'et) så en samtidig ændring ikke
+    overskrives. Returnerer commit-sha."""
+    rel = f"data/proposals/{pid}.json"
+    sha, raw = gh_get(rel)
+    if raw is None:
+        raise ValueError(f"{rel} findes ikke i repoet")
+    prop = proposals.decide(json.loads(raw), status, result)
+    return gh_put(rel, sha, proposals.dumps(prop).encode(),
+                  f"forslag {pid}: {status}")
+
+
 # -- Main -----------------------------------------------------------------
 
 def write_result(request_id: str, payload: dict):
@@ -221,6 +236,28 @@ def main():
     result = edit_apply.apply_edit(plan_raw, action, entry_id, params,
                                     confirmed_warn=confirmed_warn, athlete=athlete)
 
+    # Forslag (blok 9): reject_proposal ændrer ikke planen — kun forslagsfilen.
+    if action == "reject_proposal" and result["status"] == "ok":
+        pid = result["proposal_id"]
+        try:
+            _pcommit = proposal_decide(pid, "rejected",
+                                       {"reason": params.get("reason") or None})
+        except Exception as ex:
+            write_result(request_id, {
+                "status": "reject", "action": action, "proposal_id": pid,
+                "gate": {"msg": f"Kunne ikke opdatere forslagsfilen: {ex}"},
+                "dates_changed": [], "athlete": athlete, "request_ts": result["request_ts"],
+            })
+            return
+        write_result(request_id, {
+            "status": "ok", "action": action, "proposal_id": pid,
+            "gate": result["gate"], "dates_changed": [], "plan_commit": None,
+            "proposal_commit": _pcommit, "sync_errors": [],
+            "athlete": athlete, "request_ts": result["request_ts"],
+        })
+        print(f"=== FÆRDIG: forslag {pid} afvist ===")
+        return
+
     if result["status"] != "ok":
         print(f"Gate returnerede {result['status']}: {result['gate']['msg']}")
         write_result(request_id, {
@@ -233,11 +270,29 @@ def main():
 
     # COMMIT plan.json — sandheden først
     plan_sha_fresh, _ = gh_get("data/plan.json")  # frisk SHA
-    _what = entry_id if action == "strength_log" else entry_id[:8]
+    _what = entry_id if action in ("strength_log", "apply_proposal") else entry_id[:8]
+    _dates_msg = (f"{len(result['dates_changed'])} datoer" if len(result["dates_changed"]) > 14
+                  else ", ".join(result["dates_changed"]))
     plan_commit = gh_put("data/plan.json", plan_sha_fresh,
                           result["new_plan_raw"].encode(),
-                          f"plan-edit: {athlete} {action} {_what} ({', '.join(result['dates_changed'])})")
+                          f"plan-edit: {athlete} {action} {_what} ({_dates_msg})")
     print(f"plan.json commit: {plan_commit[:7]}")
+
+    # Forslag (blok 9): markér accepteret lige efter plan-commit'et, så
+    # data.json's forslag-kort forsvinder ved næste pipeline-kørsel selv om
+    # Intervals/Outlook skulle fejle nedenfor. Fejl her er ikke-fatale.
+    proposal_id = result.get("proposal_id")
+    proposal_commit = None
+    _proposal_error = None
+    if action == "apply_proposal":
+        try:
+            proposal_commit = proposal_decide(
+                proposal_id, "accepted",
+                {"dates_changed": result["dates_changed"], "commit": plan_commit})
+            print(f"forslag {proposal_id} accepteret: {proposal_commit[:7]}")
+        except Exception as ex:
+            _proposal_error = f"Forslag {proposal_id}: {ex}"
+            print(f"FEJL forslagsfil: {ex}")
 
     # Styrke-log (blok 8): kun plan.json + edit_result. Intet pas er ændret,
     # så Intervals/Outlook/Martin-signal/Word/OneDrive springes over.
@@ -258,7 +313,7 @@ def main():
     dates = result["dates_changed"]
     new_plan = json.loads(result["new_plan_raw"])
     days_map = {d["date"]: d for d in new_plan["athletes"][athlete]["days"]}
-    sync_errors = []
+    sync_errors = [_proposal_error] if _proposal_error else []
 
     # Martin-signal (T5): kostrelevante ændringer -> data/martin_signals.md.
     # Non-fatal — må aldrig stoppe edit-flowet, fejl logges kun til stdout.
@@ -285,7 +340,11 @@ def main():
     if skipped:
         print(f"Intervals/Outlook: springer ikke-datoer over: {', '.join(skipped)}")
 
-    # Intervals+Outlook: KUN for Kennet — Eva bruger .ics-eksport i stedet
+    # Intervals+Outlook: KUN for Kennet — Eva bruger .ics-eksport i stedet.
+    # Et forslag (apply_proposal) kan ramme mange datoer (uge 3-8 = 40+);
+    # de synkes ALLE gennem samme per-dato-løkke, med ét Outlook-token.
+    if len(sync_dates) > 14:
+        print(f"Batch-synk: {len(sync_dates)} datoer")
     if athlete == "kennet":
         # Intervals — for hver berørt dato: slet+opret
         for d_iso in sync_dates:
@@ -348,7 +407,7 @@ def main():
         sync_errors.append(f"OneDrive: {ex}")
         print(f"FEJL OneDrive: {ex}")
 
-    write_result(request_id, {
+    payload = {
         "status": "ok",
         "gate": result["gate"],
         "dates_changed": dates,
@@ -356,7 +415,11 @@ def main():
         "sync_errors": sync_errors,
         "athlete": athlete,
         "request_ts": result["request_ts"],
-    })
+    }
+    if proposal_id:
+        payload.update({"action": action, "proposal_id": proposal_id,
+                        "proposal_commit": proposal_commit})
+    write_result(request_id, payload)
     print(f"=== FÆRDIG: {len(sync_errors)} sync-fejl ===")
 
 
