@@ -9,7 +9,7 @@ Fast as Fifty: Kennets trænings-dashboard (PWA) + pipeline i GitHub Actions. Al
 
 ## Kommandoer
 ```
-python3 -m pytest scripts/modules/ scripts/test_health_report.py -q   # enhedstests (CI-trin a)
+python3 -m pytest scripts/modules/ scripts/test_*.py -q   # enhedstests (CI-trin a)
 python3 schemas/validate.py                                           # JSON-skemaer (CI-trin b)
 node --check sw.js                                                    # (CI-trin c; d = index.html's inline scripts)
 python3 scripts/build_zwo.py                                          # .zwo-filer fra bike_library.json → workouts/zwift/

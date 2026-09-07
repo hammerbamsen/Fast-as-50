@@ -538,6 +538,15 @@ def make_plan():
     out = []
     for d in plan["athletes"]["kennet"]["days"]:
         dt = date.fromisoformat(d["date"])
+        if not d.get("entries"):
+            # Dagen er RYDDET i planen (fx et forslag der fjernede svømningen).
+            # Den skal stadig besøges af run_plan, ellers bliver et gammelt
+            # event stående i Intervals og Outlook for evigt: sletningen sker
+            # kun på datoer der optræder her. Fundet ved QA 9/9-2026, hvor fire
+            # svømmepas 2/10-30/10 stod tilbage efter forslaget til uge 3-8.
+            # None = hviledag, samme behandling som en dag uden pas.
+            out.append((dt, None, d.get("note") or "ingen pas i planen"))
+            continue
         for e in d["entries"]:
             wo = e.get("workout")
             # Valgfrit pas: markér i selve event-navnet, så det er synligt i
