@@ -12,7 +12,9 @@ Flow:
 
 Alle actions arbejder på entry-niveau — undtagen set_zones og strength_log
 (blok 8: 3 felter efter styrkepas -> athletes.kennet.strengthLog[dato]), som
-hører til atleten og ikke rører Intervals/Outlook. Ved mutation af én entry på en dag,
+hører til atleten og ikke rører Intervals/Outlook, og apply_proposal/
+reject_proposal (blok 9: entryId 'proposal:<id>' -> data/proposals/<id>.json,
+alle set_day-changes i én simulation + check_week pr. uge). Ved mutation af én entry på en dag,
 slettes ALLE den dags Intervals+Outlook events og genskabes fra plan.json
 — sikreste mønster (samme som build_workouts.py).
 """
@@ -75,6 +77,26 @@ def _simulate_mutation(plan: dict, action: str, entry_id: str,
         log = sim["athletes"][athlete].setdefault("strengthLog", {})
         log[d_iso] = rec                      # samme dato overskrives
         return sim, "strength_log", ""
+
+    # Særtilfælde (blok 9): forslag. entryId er 'proposal:<id>'; forslaget
+    # læses fra data/proposals/<id>.json (eller params['proposal'] — samme
+    # struktur — så offline-anvendelse og tests går gennem præcis denne vej).
+    # Alle set_day-changes anvendes i ÉN simulation; gaten i apply_edit tager
+    # Friel + bike_library.check_week() pr. berørt uge.
+    if action in ("apply_proposal", "reject_proposal"):
+        from . import proposals as _props
+        pid = _props.pid_from_entry_id(entry_id)
+        prop = params.get("proposal") or _props.load(pid)
+        _props.validate(prop)
+        if prop["id"] != pid:
+            raise ValueError(f"Forslag-id {prop['id']!r} matcher ikke entryId {entry_id!r}")
+        if prop["status"] != "pending" and not params.get("allow_decided"):
+            raise ValueError(f"Forslag {pid!r} er allerede afgjort ({prop['status']})")
+        if action == "reject_proposal":
+            return sim, "reject_proposal", ""
+        sim, dates = _props.apply_changes(sim, prop["changes"], athlete)
+        # primary_date bærer ALLE datoer (liste) — apply_edit pakker dem ud.
+        return sim, dates, ""
 
     ath = sim["athletes"][athlete]
 
@@ -346,13 +368,31 @@ def apply_edit(plan_json_raw: str, action: str, entry_id: str,
     if action == "strength_log":
         # Ingen Friel-gate: loggen ændrer ingen pas, kun atletens strengthLog.
         gate = {"status": "ok", "flags": [], "msg": "Styrkelog gemt"}
+    elif action == "reject_proposal":
+        gate = {"status": "ok", "flags": [], "msg": "Forslag afvist"}
     else:
-        gate = gate_check(plan, sim_plan, confirmed_warn=confirmed_warn, athlete=athlete)
+        gate = None
+        if action == "apply_proposal":
+            # Kælderreglen (CLAUDE.md §3) pr. berørt uge FØR Friel — brud er
+            # altid reject (aldrig warn), så den kan ikke bekræftes væk.
+            from . import proposals as _props
+            broken = _props.check_weeks(sim_plan, primary_date, athlete)
+            if broken:
+                msgs = [f"{lbl}: {'; '.join(w)}" for lbl, w in broken]
+                gate = {"status": "reject", "msg": "Afvist (kælderregel): " + " | ".join(msgs),
+                        "flags": [{"week": lbl, "rule": "bike_library", "level": "HARD", "msg": m}
+                                  for lbl, ws in broken for m in ws]}
+        if gate is None:
+            gate = gate_check(plan, sim_plan, confirmed_warn=confirmed_warn, athlete=athlete)
 
-    # set_zones/strength_log rører ingen dage. Uden dette ville orkestratoren
-    # forsøge intervals_delete_date("zones") og outlook_sync_date("zones", ...).
-    dates = [] if action in ("set_zones", "strength_log") else (
-        [primary_date] + ([extra_date] if extra_date else []))
+    # set_zones/strength_log/reject_proposal rører ingen dage. Uden dette ville
+    # orkestratoren forsøge intervals_delete_date("zones") og outlook_sync_date(...).
+    if action in ("set_zones", "strength_log", "reject_proposal"):
+        dates = []
+    elif action == "apply_proposal":
+        dates = list(primary_date)            # alle datoer i forslaget
+    else:
+        dates = [primary_date] + ([extra_date] if extra_date else [])
     result = {
         "status": gate["status"],
         "gate": gate,
@@ -360,6 +400,9 @@ def apply_edit(plan_json_raw: str, action: str, entry_id: str,
         "athlete": athlete,
         "request_ts": datetime.now(timezone.utc).isoformat(timespec="seconds"),
     }
+    if action in ("apply_proposal", "reject_proposal"):
+        from . import proposals as _props
+        result["proposal_id"] = _props.pid_from_entry_id(entry_id)
     if gate["status"] == "ok":
         result["new_plan_raw"] = json.dumps(sim_plan, ensure_ascii=False, indent=2) + "\n"
     return result

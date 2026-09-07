@@ -107,7 +107,7 @@ def get_af_history():
 
 
 def get_full_af_log():
-    """Henter dag-for-dag AF log siden projektstart (første program) til af.html.
+    """Henter dag-for-dag AF log siden projektstart (første program) til index.html's log-ark (af.html slettet blok 9).
     Returnerer {dato: 0/1} hvor 0 = AF-dag, 1 = ikke AF.
     """
     project_start = PROJECT_START

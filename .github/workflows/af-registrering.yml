@@ -15,7 +15,7 @@ jobs:
     # cancel-in-progress: false. Når webhook-receiver.yml fik en byrge af
     # aktivitets-events (29/7 kl. 05:22-05:24), stod AF-registreringen i kø og
     # blev cancelled efter 9 sekunder uden at køre et enkelt step. Worker'en
-    # havde allerede svaret 200, så af.html viste grønt "gemt" mens dagen
+    # havde allerede svaret 200, så log-arket (dengang af.html) viste grønt "gemt" mens dagen
     # aldrig nåede Intervals. Egen gruppe = brugerskabte, ikke-idempotente
     # skrivninger konkurrerer aldrig med byrge-trafik. data.json-race mod en
     # samtidig update-kpi-kørsel er dækket af push-steppets fetch/rebase-loop.
@@ -62,10 +62,10 @@ jobs:
           echo "Gemt: $DATE alkohol=$ALKOHOL"
 
       # Kun af-registrering opdaterer data.json's af_log/streak med det samme —
-      # dette erstatter den GET+PUT-blok af.html tidligere lavede direkte i
+      # dette erstatter den GET+PUT-blok den gamle af.html lavede direkte i
       # browseren med sin PAT (fjernet i samme omgang som token-fri dispatch).
-      # checkin.html rørte aldrig data.json client-side — af_log for
-      # checkin-events opdateres fortsat kun af den almindelige 30-min-cron.
+      # Check-in-arket (før: checkin.html, slettet blok 9) rørte aldrig data.json
+      # client-side — af_log for checkin-events opdateres fortsat kun af den almindelige 30-min-cron.
       - name: Checkout
         if: github.event.action == 'af-registrering'
         uses: actions/checkout@v4

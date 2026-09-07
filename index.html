@@ -360,9 +360,6 @@ body.sw-update .main { padding-top:62px !important; }
 .banner.act  { background:rgba(192,57,43,.14); color:var(--act); }
 .banner b { font-weight:700; }
 .banner .row { display:block; color:var(--ink); font-family:'Hanken Grotesk',sans-serif; font-size:12px; margin-top:2px; }
-.plan-open { display:flex; justify-content:space-between; align-items:center; gap:10px; width:100%; background:var(--card); border:1.5px solid var(--wine); color:var(--wine); border-radius:12px; padding:13px 14px; font:600 14px 'Hanken Grotesk',sans-serif; text-decoration:none; margin-bottom:14px; }
-@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .plan-open { border-color:var(--gold); color:var(--gold); } }
-:root[data-theme="dark"] .plan-open { border-color:var(--gold); color:var(--gold); }
 .section-h { font-family:'Newsreader',serif; font-size:22px; font-weight:600; color:var(--ink); margin:22px 0 12px; padding-bottom:6px; border-bottom:1px solid var(--line); }
 .section-h:first-child { margin-top:4px; }
 details.fold > summary { list-style:none; cursor:pointer; display:flex; justify-content:space-between; align-items:center; }
@@ -540,6 +537,37 @@ details.fold[open] > summary::after { content:"▴"; }
 .martin-btns button.pri { background:var(--wine); color:#fff; }
 .martin-msg { font-family:'Space Mono',monospace; font-size:11px; color:var(--ok); min-height:14px; margin-top:6px; }
 .martin-msg.err { color:var(--act); }
+
+/* ── Blok 9 (9/9-26): forslag-kort (Plan), Justér/valgfri/historik i ⋯-arket ── */
+.pt-prop { border:1.5px solid var(--gold); margin-bottom:14px; }
+.pt-prop .note { font-size:14px; line-height:1.5; color:var(--ink); margin:4px 0 8px; }
+.pt-prop .sum { margin:0 0 8px; padding-left:18px; font-size:13px; line-height:1.5; color:var(--ink); }
+.pt-prop .sum li { margin:2px 0; }
+.pt-prop .meta { font-family:'Space Mono',monospace; font-size:10px; color:var(--muted); margin:8px 0 2px; }
+.pt-prop-wk { border-top:1px solid var(--line); padding:8px 0; }
+.pt-prop-wk > summary { font-size:13.5px; color:var(--ink); }
+.pt-prop-wk > summary .rng { font-family:'Space Mono',monospace; font-size:10px; color:var(--muted); margin-left:4px; }
+.pt-prop-wk > summary .cnt { font-family:'Space Mono',monospace; font-size:10px; color:var(--gold); margin-right:8px; }
+.pt-prop-day { display:grid; grid-template-columns:54px 1fr auto 1fr; gap:6px; align-items:baseline; font-size:12.5px; line-height:1.4; padding:5px 0 0; }
+.pt-prop-day .dn { font-family:'Space Mono',monospace; font-size:10px; letter-spacing:.04em; color:var(--muted); text-transform:uppercase; }
+.pt-prop-day .b { color:var(--muted); text-decoration:line-through; text-decoration-color:rgba(192,57,43,.5); overflow-wrap:anywhere; }
+.pt-prop-day .arr { color:var(--muted); font-family:'Space Mono',monospace; }
+.pt-prop-day .a { color:var(--ink); font-weight:600; overflow-wrap:anywhere; }
+.pt-prop-day.same .b { text-decoration:none; }
+.pt-prop-day.same .a { font-weight:400; color:var(--muted); }
+.pt-prop .pt-btns { margin-top:8px; }
+.pt-hist { appearance:none; border:1px solid var(--line); background:var(--card); color:var(--muted); border-radius:999px; padding:2px 9px; font-family:'Space Mono',monospace; font-size:9.5px; letter-spacing:.03em; cursor:pointer; margin-left:auto; }
+.pt-hist-list { display:grid; gap:6px; max-height:52vh; overflow-y:auto; margin:6px 0; }
+.pt-hrow { display:grid; grid-template-columns:1fr auto; gap:2px 10px; align-items:center; border:1.5px solid var(--line); border-radius:12px; padding:9px 12px; background:var(--bg); }
+.pt-hrow .m { font-family:'Space Mono',monospace; font-size:10px; color:var(--muted); grid-column:1; }
+.pt-hrow .t { font-size:13px; color:var(--ink); line-height:1.35; grid-column:1; overflow-wrap:anywhere; }
+.pt-hrow .cur { grid-column:2; grid-row:1 / span 2; font-family:'Space Mono',monospace; font-size:9px; letter-spacing:.06em; color:var(--ok); font-weight:700; }
+.pt-restore { grid-column:2; grid-row:1 / span 2; appearance:none; border:1px solid var(--line); background:var(--card); color:var(--ink); border-radius:8px; padding:7px 10px; font:600 12px 'Hanken Grotesk',sans-serif; cursor:pointer; }
+.pt-restore.sel { border-color:var(--wine); box-shadow:inset 0 0 0 1px var(--wine); color:var(--wine); }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .pt-restore.sel { border-color:var(--gold); box-shadow:inset 0 0 0 1px var(--gold); color:var(--gold); } }
+:root[data-theme="dark"] .pt-restore.sel { border-color:var(--gold); box-shadow:inset 0 0 0 1px var(--gold); color:var(--gold); }
+.sheet .pt-lab { display:block; font-family:'Space Mono',monospace; font-size:9.5px; letter-spacing:.06em; text-transform:uppercase; color:var(--muted); margin:10px 0 4px; }
+.sheet input.pt-in { width:100%; border:1.5px solid var(--line); border-radius:10px; background:var(--bg); color:var(--ink); padding:10px 12px; font:600 16px 'Space Mono',monospace; }
 
 /* Page sections */
 .page { display:none; }
@@ -824,6 +852,7 @@ let D = {
   energy7: null,
   readinessRemote: null,
   planTab: null,    // data.json planTab (scripts/modules/plan_tab.py) — Plan-fanen
+  proposals: [],    // data.json proposals (blok 9): ventende plan-forslag med før/efter pr. uge
   body: null,       // data.json body (scripts/modules/body.py): glidepath, fat, ffm, cutCheck, strengthWeek
   strength: null,   // data.json strength (blok 8): templates[], next{a|b, templateId, name, reasoning}, last4[]
   martinMail: null, // data.json martinMail (blok 8, martin_signals.build_weekly): {week, isoWeek, lines[8], generatedAt}
@@ -1279,7 +1308,6 @@ function renderToday() {
   const sub = first && first.desc ? first.desc : (isFree ? (D.weekFocus || '') : [first.duration, first.zone && first.zone!=='–' ? 'Zone '+first.zone : ''].filter(Boolean).join(' · '));
   const extra = sessions.slice(1).map(s => `+ ${esc(s.title)}${s.duration ? ' · '+esc(s.duration) : ''}`).join('<br>');
   const done0 = !!sessionDoneList[0];
-  const planLink = `plan.html#${todayStr}`;
   setTimeout(checkSystemHealth, 0);
   return `
   <div id="banner-slot">${bannerSlotHtml()}</div>
@@ -1291,7 +1319,7 @@ function renderToday() {
     ${extra ? `<p class="sub">${extra}</p>` : ''}
     <div class="row">
       ${first && !isFree ? `<button class="btn fill ${done0?'done':''}" id="btn-done" onclick="toggleDone(this, 0)" ${done0?'disabled':''}>${done0?'Gennemført ✓':'Markér gennemført'}</button>` : ''}
-      <a class="btn" href="${planLink}">Byt / aflys</a>
+      <button class="btn" onclick="ptOpenToday()">Byt / aflys</button>
     </div>
   </div>
   ${weekStripV2()}
@@ -1456,7 +1484,10 @@ function coachFoldedCard() {
 // scripts/modules/plan_tab.py). Redigering går som i plan.html gennem Worker'ens
 // /plan-edit (Friel-gate i Python) og polles fra data/edit_result.json.
 // Mangler planTab (pipelinen har ikke kørt endnu) vises den gamle ugevisning.
-const PT = { sel: null, sheet: null, bikeLib: null, woLib: null };
+const PT = { sel: null, sheet: null, bikeLib: null, woLib: null, prop: {}, history: null };
+const PT_GH_REPO = 'hammerbamsen/fast-as-50';
+let PT_POLL_MS = 3000, PT_POLL_MAX = 60;   // overskrives i Playwright-testen
+function ptReqId(){ return "r" + Date.now().toString(36) + Math.random().toString(36).slice(2,6); }
 const PT_RULE_DA = { max_runs:"For mange løbedage", consecutive_runs:"Fortløbende løb", vo2_missing:"VO2 mangler",
   vo2_excess:"Ekstra VO2", missing_recovery:"Recovery mangler", tsb_floor:"TSB under gulv", ctl_ramp:"CTL-ramp",
   low_readiness:"Lav readiness", race_tsb:"Race-TSB", taper_ctl_rising:"Taper: CTL stiger", plan_actual_mismatch:"Plan ≠ faktisk" };
@@ -1620,7 +1651,7 @@ function ptWeekDetail(i){
       <button onclick="ptStep(1)" ${i>=nW-1?'disabled':''} aria-label="Næste uge">›</button></div>
     ${purpose?`<div class="p">${esc(purpose)}</div>`:''}
     <div class="p" style="font-family:'Space Mono',monospace;font-size:10.5px">CTL-mål ${w.ctlTarget ?? '–'} · TSS ${w.tssActual!=null?`${w.tssActual} / `:''}${w.tssTarget ?? '–'}${w.keySessions&&w.keySessions.length?` · nøgle: ${esc(w.keySessions.join(', '))}`:''}</div>
-    <div class="fl">${ptFlagsHtml(w, !!s)}</div>
+    <div class="fl">${ptFlagsHtml(w, !!s)}<button class="pt-hist" onclick="ptSheetHistory()" aria-label="Historik over planændringer">⟲ Historik</button></div>
   </div>`;
   if (!s) {
     return head + `<div class="pt-empty">Ingen pas lagt endnu — planlægges ved søndags-check-in.${w.programId ? ` <span style="font-family:'Space Mono',monospace;font-size:10px">(${esc(w.programId)} · program-uge ${w.week ?? '–'})</span>` : ''}</div>`;
@@ -1640,15 +1671,97 @@ function ptWeekDetail(i){
 
 function renderPlan() {
   if (!D.planTab || !ptWeeks().length) {
-    return `<a class="plan-open" href="plan.html"><span>Åbn planlægning (flyt / aflys / skift pas)</span><span>→</span></a>
-      <div class="banner info"><span>ℹ️</span><span>Plan-fanens nye visning kommer når pipelinen har skrevet planTab til data.json.</span></div>
+    return `<div class="banner info"><span>ℹ️</span><span>Plan-fanens nye visning kommer når pipelinen har skrevet planTab til data.json.</span></div>
       ${renderWeek()}`;
   }
   const sel = ptSelIdx();
   setTimeout(() => ptScrollToSel('auto'), 0);   // aktuel/valgt uge centreret ved åbning
-  return `${ptStrip()}${ptCtlChart()}<div id="pt-detail">${ptWeekDetail(sel)}</div>
+  return `${ptProposalsHtml()}${ptStrip()}${ptCtlChart()}<div id="pt-detail">${ptWeekDetail(sel)}</div>
     ${coachFoldedCard()}`;
 }
+
+// I dag → "Byt / aflys": åbn Plan-fanens ⋯-ark for dagens første planlagte pas
+// (erstatter linket til plan.html, blok 9). Fri dag eller intet planTab: bare
+// Plan-fanen med den aktuelle uge valgt.
+function ptOpenToday(){
+  const tIso = todayIso();
+  const day = ptSessions().flatMap(w=>w.days).find(d => d.date === tIso);
+  const e = day && day.entries.find(x => x.id && !x.extra);
+  PT.sel = null;
+  navigate('plan');
+  if (e) setTimeout(() => ptOpenSheet(e.id), 80);
+}
+
+// ═══ Forslag-kort (blok 9) ═══════════════════════════════════════════════
+// data.json.proposals = [{id, title, createdAt, status, summary[], note,
+// weeks[{isoWeek, start, days[{date, before[], after[]}]}]}] — kun ventende.
+// Acceptér → /plan-edit {action:'apply_proposal', entryId:'proposal:<id>'},
+// Afvis → 'reject_proposal'. Samme gate/polling som ⋯-arket (ptRunEdit).
+// PT.prop[id] husker kortets tilstand (sending/warn/accepted/rejected) på
+// tværs af re-render, indtil data.json ikke længere har forslaget.
+function ptProposals(){ return Array.isArray(D.proposals) ? D.proposals.filter(p => p && p.id) : []; }
+function ptPropState(id){ return PT.prop[id] || (PT.prop[id] = { status:'idle', confirmedWarn:false, msg:'' }); }
+function ptPropDayRow(d){
+  const b = (d.before||[]).join(' · ') || 'fri', a = (d.after||[]).join(' · ') || 'fri';
+  const same = b === a;
+  return `<div class="pt-prop-day${same?' same':''}"><span class="dn">${esc(ptDayLabel(d.date))}</span><span class="b">${esc(b)}</span><span class="arr">→</span><span class="a">${esc(a)}</span></div>`;
+}
+function ptProposalHtml(p){
+  const st = ptPropState(p.id);
+  const weeks = (p.weeks||[]).map((w, i) => {
+    const days = (w.days||[]);
+    const changed = days.filter(d => (d.before||[]).join('|') !== (d.after||[]).join('|')).length;
+    const end = w.start ? isoOf(new Date(new Date(w.start+"T12:00:00").getTime() + 6*864e5)) : null;
+    return `<details class="fold pt-prop-wk"${i===0 && st.open ? ' open' : ''}><summary><span><b>Uge ${esc(w.isoWeek ?? (w.start ? isoWeekOf(w.start) : '–'))}</b>${w.start && end ? ` <span class="rng">${esc(ptRange(w.start, end))}</span>` : ''}</span><span class="cnt">${changed} ${changed===1?'dag':'dage'} ændres</span></summary>${days.map(ptPropDayRow).join('')}</details>`;
+  }).join('');
+  let foot;
+  if (st.status === 'accepted') foot = `<div class="pt-cons ok">Accepteret ✓ — synkes til Intervals/Outlook. Kortet forsvinder når data.json er opdateret.</div>`;
+  else if (st.status === 'rejected') foot = `<div class="pt-cons">Afvist — planen er uændret.</div>`;
+  else foot = `<div class="pt-msg" id="prop-msg-${esc(p.id)}">${st.msg||''}</div>
+    <div class="pt-btns"><button class="sec" id="prop-no-${esc(p.id)}" onclick="ptProposalSubmit('${esc(p.id)}','reject_proposal')"${st.status==='sending'?' disabled':''}>Afvis</button><button class="pri" id="prop-go-${esc(p.id)}" onclick="ptProposalSubmit('${esc(p.id)}','apply_proposal')"${st.status==='sending'?' disabled':''}>Acceptér</button></div>`;
+  return `<div class="card pt-prop" id="prop-${esc(p.id)}">
+    <div class="label label-gold">FORSLAG · ${esc(p.title||p.id)}</div>
+    ${p.note ? `<p class="note">${esc(p.note)}</p>` : ''}
+    ${Array.isArray(p.summary) && p.summary.length ? `<ul class="sum">${p.summary.map(s=>`<li>${esc(s)}</li>`).join('')}</ul>` : ''}
+    ${weeks}
+    ${p.createdAt ? `<div class="meta">${esc(relTime(p.createdAt) || '')} · ${esc(p.createdBy || 'claude')}</div>` : ''}
+    ${foot}
+  </div>`;
+}
+function ptProposalsHtml(){ const ps = ptProposals(); return ps.length ? ps.map(ptProposalHtml).join('') : ''; }
+function ptRerenderProposal(id){
+  const el = document.getElementById(`prop-${id}`); const p = ptProposals().find(x => x.id === id);
+  if (el && p) { const open = [...el.querySelectorAll('details')].map(d => d.open); el.outerHTML = ptProposalHtml(p);
+    const nel = document.getElementById(`prop-${id}`); if (nel) [...nel.querySelectorAll('details')].forEach((d,i) => { if (open[i] != null) d.open = open[i]; }); }
+}
+async function ptProposalSubmit(id, action, confirmedWarn){
+  const p = ptProposals().find(x => x.id === id); if (!p) return;
+  const st = ptPropState(id);
+  if (confirmedWarn) st.confirmedWarn = true;
+  if (action === 'reject_proposal') st.confirmedWarn = false;
+  st.status = 'sending'; st.msg = '';
+  ptRerenderProposal(id);
+  const payload = { requestId: ptReqId(), action, entryId: `proposal:${id}`, params: {}, confirmedWarn: !!st.confirmedWarn, athlete: 'kennet' };
+  const busy = () => ({ msg: document.getElementById(`prop-msg-${id}`), go: document.getElementById(`prop-go-${id}`), no: document.getElementById(`prop-no-${id}`) });
+  const idle = () => { st.status = 'idle'; const u = busy(); if (u.go) u.go.disabled = false; if (u.no) u.no.disabled = false; };
+  await ptRunEdit(payload, {
+    get msg(){ return busy().msg; }, get go(){ return busy().go; },
+    alive: () => PT.prop[id] && PT.prop[id].status === 'sending',
+    retry: () => ptProposalSubmit(id, action),
+    label: action === 'apply_proposal' ? 'Anvender forslaget — gate kører… (op til et par minutter)' : 'Afviser…',
+    warnBtns: `<button class="sec" onclick="ptProposalReset('${esc(id)}')">Fortryd</button><button class="pri" onclick="ptProposalSubmit('${esc(id)}','apply_proposal',true)">Acceptér alligevel</button>`,
+    onFail: idle,
+    onReject: r => { st.status = 'idle'; st.msg = busy().msg ? busy().msg.innerHTML : ''; const u = busy(); if (u.no) u.no.disabled = false; },
+    onWarn: r => { st.status = 'warn'; st.msg = busy().msg ? busy().msg.innerHTML : ''; const u = busy(); if (u.no) u.no.disabled = false; },
+    onOk: r => {
+      st.status = action === 'apply_proposal' ? 'accepted' : 'rejected';
+      ptRerenderProposal(id);
+      setTimeout(() => { if (typeof forceDataRefresh === 'function') forceDataRefresh(); }, 1500);
+    },
+    onTimeout: () => { st.status = 'idle'; st.msg = busy().msg ? busy().msg.innerHTML : ''; const u = busy(); if (u.no) u.no.disabled = false; },
+  });
+}
+function ptProposalReset(id){ const st = ptPropState(id); st.status = 'idle'; st.confirmedWarn = false; st.msg = ''; ptRerenderProposal(id); }
 
 // Lag 3: ⋯-ark. Portet fra plan.html (openSheet/renderSheet/submitEdit):
 // samme payload {requestId, action, entryId, params, confirmedWarn}, samme
@@ -1675,12 +1788,115 @@ function ptSheetHead(title){
 function ptRenderMenu(){
   const f = ptFindEntry(PT.sheet.entryId); if (!f) return;
   const isBike = f.e.disc === 'bike';
+  const isOpt = !!f.e.optional;
   ptSheetEl().innerHTML = ptSheetHead('Hvad vil du?') + `<div class="pt-menu">
     <button onclick="ptSheetMove()">${icon('week',18,'currentColor')}<span>Flyt<small>vælg en anden dag i ugen — dagene byttes</small></span></button>
     <button onclick="ptSheetSwap()">${icon('plan',18,'currentColor')}<span>Skift pas<small>${isBike?'vælg et andet kælderpas fra biblioteket':'vælg en skabelon'}</small></span></button>
+    <button onclick="ptSheetAdjust()">${icon('today',18,'currentColor')}<span>Justér<small>varighed${f.e.mins?` (nu ${ptMins(f.e.mins)})`:''} og note</small></span></button>
+    <button onclick="ptSheetOptional()">${icon('flag',18,'currentColor')}<span>${isOpt?'Gør obligatorisk':'Gør valgfri'}<small>${isOpt?'tæller igen fuldt i CTL-projektionen':'bliver stående, men tæller ikke i CTL-projektionen'}</small></span></button>
     <button onclick="ptSheetNote()">${icon('rules',18,'currentColor')}<span>Note<small>${f.e.note?esc(f.e.note):'skriv en note til passet'}</small></span></button>
     <button class="danger" onclick="ptSheetCancel()">${icon('rest',18,'currentColor')}<span>Aflys<small>dagen bliver hviledag i Intervals og Outlook</small></span></button>
   </div><button class="close" onclick="ptCloseSheet()">Luk</button>`;
+}
+
+// Justér (blok 9, portet fra plan.html's adjust-ark): varighed i minutter +
+// note. Params som plan.html sender dem: moving_time i sekunder, note. Navn/
+// type/beskrivelse sendes ikke (planTab har dem ikke; backend lader dem stå).
+function ptSheetAdjust(){
+  const f = ptFindEntry(PT.sheet.entryId); if (!f) return;
+  PT.sheet.action = 'adjust'; PT.sheet.params = {};
+  ptSheetEl().innerHTML = ptSheetHead('Justér pas') + `
+    <label class="pt-lab" for="pt-mins">Varighed (minutter)</label>
+    <input class="pt-in" id="pt-mins" type="number" inputmode="numeric" min="10" max="360" step="5" value="${f.e.mins ? Math.round(f.e.mins) : 60}" oninput="ptAdjustChanged()">
+    <label class="pt-lab" for="pt-adj-note">Note (valgfri)</label>
+    <textarea class="pt-note" id="pt-adj-note" placeholder="Fx: kortere i dag — benene er tunge" oninput="ptAdjustChanged()">${esc(f.e.note||'')}</textarea>
+    <div id="pt-cons"></div><div class="pt-msg" id="pt-msg"></div>
+    <div class="pt-btns"><button class="sec" onclick="ptRenderMenu()">Tilbage</button><button class="pri" id="pt-go" disabled onclick="ptAdjustGo()">Gem</button></div>`;
+}
+function ptAdjustRead(){
+  const mins = parseInt(document.getElementById('pt-mins').value, 10);
+  const note = document.getElementById('pt-adj-note').value;
+  return { mins: isNaN(mins) ? null : mins, note };
+}
+function ptAdjustChanged(){
+  const f = ptFindEntry(PT.sheet.entryId); if (!f) return;
+  const { mins, note } = ptAdjustRead();
+  const go = document.getElementById('pt-go'), cons = document.getElementById('pt-cons');
+  const bad = mins == null || mins < 10 || mins > 360;
+  const changed = !bad && (mins !== Math.round(f.e.mins||0) || note !== (f.e.note||''));
+  go.disabled = !changed;
+  if (bad) cons.innerHTML = `<div class="pt-cons bad">Varighed skal være 10–360 min.</div>`;
+  else if (f.e.mins && mins !== Math.round(f.e.mins)) { const d = mins - Math.round(f.e.mins); cons.innerHTML = `<div class="pt-cons ${Math.abs(d) >= 30 ? 'warn' : 'ok'}"><b>${d>0?'+':''}${d} min</b> — ${ptMins(f.e.mins)} → ${ptMins(mins)}${Math.abs(d) >= 30 ? ' · ændrer ugens belastning mærkbart' : ''}</div>`; }
+  else cons.innerHTML = '';
+}
+function ptAdjustGo(){
+  const { mins, note } = ptAdjustRead(); if (mins == null) return;
+  PT.sheet.params = { moving_time: mins * 60, note };
+  ptSubmit();
+}
+
+// Gør valgfri / obligatorisk (blok 9, portet fra plan.html's toggle_optional):
+// ingen params — backend vender flaget.
+function ptSheetOptional(){
+  const f = ptFindEntry(PT.sheet.entryId); if (!f) return;
+  const isOpt = !!f.e.optional, t = isOpt ? 'Gør obligatorisk' : 'Gør valgfri';
+  PT.sheet.action = 'toggle_optional'; PT.sheet.params = {};
+  ptSheetEl().innerHTML = ptSheetHead(t) + `<p style="font-size:14px;margin:8px 0;line-height:1.5">${isOpt
+      ? 'Passet tæller igen fuldt med i CTL-projektionen, og "(valgfri)" fjernes fra navnet i Intervals og Outlook.'
+      : 'Passet bliver stående i Intervals og Outlook med "(valgfri)" i navnet, men tæller ikke med i CTL-projektionen. Projektionen viser det konservative scenarie hvor passet springes over.'}</p>
+    ${!isOpt && f.e.isKey ? `<div class="pt-cons warn">Det er et nøglepas i ugen${f.e.load==='haard'?' (hårdt)':''}.</div>` : ''}
+    <div class="pt-msg" id="pt-msg"></div>
+    <div class="pt-btns"><button class="sec" onclick="ptRenderMenu()">Tilbage</button><button class="pri" id="pt-go" onclick="ptSubmit()">${t}</button></div>`;
+}
+
+// Historik (blok 9, portet fra plan.html's showHistory/restoreCommit): de
+// seneste 10 commits på data/plan.json fra GitHub's offentlige commits-API,
+// "Gendan" → restore_from_commit gennem samme gate som andre edits.
+function ptHistHead(){
+  const w = ptWeeks()[ptSelIdx()] || {};
+  return `<h2>Historik</h2><p class="sub">Seneste 10 ændringer af planen${w.start ? ` · valgt uge ${isoWeekOf(w.start)}` : ''}</p>`;
+}
+async function ptSheetHistory(){
+  PT.sheet = { entryId: 'N/A', date: (ptWeeks()[ptSelIdx()]||{}).start || todayIso(), wkIdx: -1, confirmedWarn:false, action:null, params:{}, history:true };
+  const el = ptSheetEl();
+  el.innerHTML = ptHistHead() + `<div class="pt-msg" style="color:var(--muted)">Henter…</div><button class="close" onclick="ptCloseSheet()">Luk</button>`;
+  ptShowSheet(true);
+  let commits = PT.history;
+  if (!commits) {
+    try {
+      const r = await fetch(`https://api.github.com/repos/${PT_GH_REPO}/commits?path=data/plan.json&per_page=10`, { headers: { 'Accept': 'application/vnd.github+json' } });
+      if (!r.ok) throw new Error(`HTTP ${r.status}`);
+      commits = await r.json();
+      if (!Array.isArray(commits)) throw new Error('uventet svar');
+      PT.history = commits;
+    } catch(e) {
+      if (!PT.sheet || !PT.sheet.history) return;
+      el.innerHTML = ptHistHead() + `<div class="pt-msg" style="color:var(--act)">Kunne ikke hente historik (${esc(e.message||e)}).</div>
+        <div class="pt-btns"><button class="sec" onclick="ptCloseSheet()">Luk</button><button class="pri" onclick="ptSheetHistory()">Prøv igen</button></div>`;
+      return;
+    }
+  }
+  if (!PT.sheet || !PT.sheet.history) return;
+  ptRenderHistory(commits);
+}
+function ptRenderHistory(commits){
+  const rows = commits.map((c, i) => {
+    const d = c.commit && c.commit.author && c.commit.author.date;
+    const msg = ((c.commit && c.commit.message) || '').split('\n')[0].slice(0, 90);
+    const sha = String(c.sha||'');
+    return `<div class="pt-hrow"><div class="m">${esc(d ? (relTime(d) || '') : '')} · ${esc(sha.slice(0,7))}</div><div class="t">${esc(msg)}</div>
+      ${i === 0 ? `<div class="cur">NUVÆRENDE</div>` : `<button class="pt-restore" onclick="ptPickRestore('${esc(sha)}')">Gendan</button>`}</div>`;
+  }).join('');
+  ptSheetEl().innerHTML = ptHistHead() + `<div class="pt-hist-list">${rows || '<div class="pt-msg" style="color:var(--muted)">Ingen ændringer fundet.</div>'}</div>
+    <div id="pt-cons"></div><div class="pt-msg" id="pt-msg"></div>
+    <div class="pt-btns"><button class="sec" onclick="ptCloseSheet()">Luk</button><button class="pri" id="pt-go" disabled onclick="ptSubmit()">Gendan</button></div>`;
+}
+function ptPickRestore(sha){
+  if (!PT.sheet || !PT.sheet.history) return;
+  PT.sheet.action = 'restore_from_commit'; PT.sheet.params = { source_commit: sha }; PT.sheet.confirmedWarn = false;
+  document.querySelectorAll('.pt-hist-list .pt-restore').forEach(b => b.classList.toggle('sel', b.getAttribute('onclick').includes(sha)));
+  document.getElementById('pt-cons').innerHTML = `<div class="pt-cons warn">Ruller <b>data/plan.json</b> tilbage til <b>${esc(sha.slice(0,7))}</b>. Program-arkiv og fitnessSeed bevares. Gaten kører som ved andre ændringer.</div>`;
+  const go = document.getElementById('pt-go'); go.disabled = false; go.textContent = `Gendan ${sha.slice(0,7)}`;
 }
 
 // Konsekvens FØR bekræftelse: timer til nærmeste andet hårde pas + kvote i målugen.
@@ -1788,56 +2004,85 @@ function ptGateFlags(gate){
   if (!fl.length) return '';
   return `<div class="flags">${fl.map(f=>`<span class="pt-flag ${f.level==='HARD'?'HARD':'WARN'}" title="${esc(f.msg)}">${f.level==='HARD'?'⚠':'!'} ${esc(PT_RULE_DA[f.rule]||f.rule)}</span>`).join('')}</div>`;
 }
-async function ptSubmit(){
-  const s = PT.sheet; if (!s || !s.action) return;
-  const msg = document.getElementById('pt-msg'), go = document.getElementById('pt-go');
-  if (go) go.disabled = true;
-  const requestId = "r" + Date.now().toString(36) + Math.random().toString(36).slice(2,6);
-  const payload = { requestId, action: s.action, entryId: s.entryId, params: s.params || {}, confirmedWarn: !!s.confirmedWarn };
-  msg.innerHTML = `<span style="color:var(--muted)">Sender ændring…</span>`;
+// Fælles kørsel af en /plan-edit (blok 9): dispatch via Worker'en, poll
+// data/edit_result.json på requestId, og vis gate-svaret. ui = { msg, go
+// (elementer — må være getters), alive() (stop hvis arket/kortet er væk),
+// retry() (efter indtastet app-kode), label, warnBtns (HTML), onOk(r),
+// onWarn(r), onReject(r), onFail(), onTimeout() }. Bruges af ⋯-arket
+// (ptSubmit) og forslag-kortet (ptProposalSubmit).
+async function ptRunEdit(payload, ui){
+  const say = html => { const m = ui.msg; if (m) m.innerHTML = html; };
+  const enable = () => { const g = ui.go; if (g) g.disabled = false; };
+  { const g = ui.go; if (g) g.disabled = true; }
+  say(`<span style="color:var(--muted)">Sender ændring…</span>`);
   try {
     await dispatchViaWorker('/plan-edit', payload);
   } catch(err) {
     if (err.code === 'NO_SECRET' || err.status === 401 || err.status === 403) {
       const val = (window.prompt(err.code === 'NO_SECRET'
-        ? 'App-koden mangler på denne enhed.\n\nIndsæt den samme kode som i AF-appen:'
+        ? 'App-koden mangler på denne enhed.\n\nIndsæt app-koden (den delte hemmelighed til Worker\'en):'
         : 'App-koden blev afvist af Worker\'en.\n\nIndsæt den rigtige kode:') || '').trim();
-      if (val) { setSecret(val); if (go) go.disabled = false; return ptSubmit(); }
-      msg.innerHTML = `<span style="color:var(--act)">Ikke sendt — app-kode mangler.</span>`;
+      if (val) { setSecret(val); enable(); return ui.retry ? ui.retry() : undefined; }
+      say(`<span style="color:var(--act)">Ikke sendt — app-kode mangler.</span>`);
     } else {
-      msg.innerHTML = `<span style="color:var(--act)">Ikke sendt — ${esc(err.code === 'NO_URL' ? 'Worker-URL mangler' : err.status ? 'Worker svarede ' + err.status : 'netværksfejl')}.</span>`;
+      say(`<span style="color:var(--act)">Ikke sendt — ${esc(err.code === 'NO_URL' ? 'Worker-URL mangler' : err.status ? 'Worker svarede ' + err.status : 'netværksfejl')}.</span>`);
     }
-    if (go) go.disabled = false;
+    enable();
+    if (ui.onFail) ui.onFail(err);
     return;
   }
-  msg.innerHTML = `<span style="color:var(--muted)">Friel-gate kører… (op til et par minutter)</span>`;
-  for (let i = 0; i < 60; i++) {
-    await new Promise(r => setTimeout(r, 3000));
-    if (!PT.sheet) return;   // arket er lukket imens
+  say(`<span style="color:var(--muted)">${esc(ui.label || 'Friel-gate kører… (op til et par minutter)')}</span>`);
+  for (let i = 0; i < PT_POLL_MAX; i++) {
+    await new Promise(r => setTimeout(r, PT_POLL_MS));
+    if (ui.alive && !ui.alive()) return;   // arket er lukket / kortet nulstillet imens
     try {
-      const res = await fetch(`https://raw.githubusercontent.com/hammerbamsen/fast-as-50/main/data/edit_result.json?t=${Date.now()}`);
+      const res = await fetch(`https://raw.githubusercontent.com/${PT_GH_REPO}/main/data/edit_result.json?t=${Date.now()}`);
       if (!res.ok) continue;
-      const r = (await res.json())[requestId];
+      const r = (await res.json())[payload.requestId];
       if (!r) continue;
       if (r.status === 'reject') {
-        msg.innerHTML = `${ptGateFlags(r.gate)}<span style="color:var(--act)"><b>Afvist:</b> ${esc(r.gate && r.gate.msg || '')}</span>`;
-        if (go) go.disabled = false;
+        say(`${ptGateFlags(r.gate)}<span style="color:var(--act)"><b>Afvist:</b> ${esc(r.gate && r.gate.msg || r.error || '')}</span>`);
+        enable();
+        if (ui.onReject) ui.onReject(r);
         return;
       }
       if (r.status === 'warn') {
-        msg.innerHTML = `${ptGateFlags(r.gate)}<span>${esc(r.gate && r.gate.msg || 'Advarsel')}</span>
-          <div class="pt-btns" style="margin-top:8px"><button class="sec" onclick="ptCloseSheet()">Fortryd</button><button class="pri" onclick="PT.sheet.confirmedWarn=true; ptSubmit()">Fortsæt alligevel</button></div>`;
+        say(`${ptGateFlags(r.gate)}<span>${esc(r.gate && r.gate.msg || 'Advarsel')}</span>
+          <div class="pt-btns" style="margin-top:8px">${ui.warnBtns || ''}</div>`);
+        if (ui.onWarn) ui.onWarn(r);
+        return;
+      }
+      if (r.status && r.status !== 'ok') {
+        say(`<span style="color:var(--act)"><b>Fejl:</b> ${esc(r.error || r.message || r.status)}</span>`);
+        enable();
+        if (ui.onReject) ui.onReject(r);
         return;
       }
       const sync = r.sync_errors && r.sync_errors.length ? `${r.sync_errors.length} sync-fejl — næste auto-sync retter.` : 'Intervals + Outlook synkroniseret.';
-      msg.innerHTML = `<span style="color:var(--ok)">✓ Opdateret. ${esc(sync)}</span>`;
-      ptApplyLocal(s.action, s.entryId, s.params);
-      setTimeout(() => { ptCloseSheet(); if (typeof forceDataRefresh === 'function') forceDataRefresh(); }, 1500);
+      say(`<span style="color:var(--ok)">✓ Opdateret. ${esc(sync)}</span>`);
+      if (ui.onOk) ui.onOk(r);
       return;
     } catch(e) { /* fortsæt polling */ }
   }
-  msg.innerHTML = `<span style="color:var(--muted)">Det tager længere end normalt. Ændringen er sandsynligvis gennemført — luk og træk ned for at genindlæse.</span>`;
-  if (go) go.disabled = false;
+  say(`<span style="color:var(--muted)">Det tager længere end normalt. Ændringen er sandsynligvis gennemført — luk og træk ned for at genindlæse.</span>`);
+  enable();
+  if (ui.onTimeout) ui.onTimeout();
+}
+async function ptSubmit(){
+  const s = PT.sheet; if (!s || !s.action) return;
+  const payload = { requestId: ptReqId(), action: s.action, entryId: s.entryId, params: s.params || {}, confirmedWarn: !!s.confirmedWarn };
+  if (s.action === 'restore_from_commit') payload.athlete = 'kennet';   // som plan.html's restoreCommit
+  await ptRunEdit(payload, {
+    get msg(){ return document.getElementById('pt-msg'); }, get go(){ return document.getElementById('pt-go'); },
+    alive: () => PT.sheet === s,
+    retry: ptSubmit,
+    label: s.action === 'restore_from_commit' ? 'Ruller tilbage — gate kører… (op til et par minutter)' : 'Friel-gate kører… (op til et par minutter)',
+    warnBtns: `<button class="sec" onclick="ptCloseSheet()">Fortryd</button><button class="pri" onclick="PT.sheet.confirmedWarn=true; ptSubmit()">Fortsæt alligevel</button>`,
+    onOk: () => {
+      ptApplyLocal(s.action, s.entryId, s.params);
+      setTimeout(() => { ptCloseSheet(); if (typeof forceDataRefresh === 'function') forceDataRefresh(); }, 1500);
+    },
+  });
 }
 
 // Lokal opdatering af planTab efter succes, så skærmen svarer til planen
@@ -1857,6 +2102,9 @@ function ptApplyLocal(action, entryId, params){
     f.day.entries = f.day.entries.filter(x=>x!==f.e); f.day.restNote = params.note || 'Aflyst — hviledag'; f.day.restId = entryId;
   } else if (action === 'adjust') {
     if ('note' in params) f.e.note = params.note;
+    if (params.moving_time) f.e.mins = Math.round(params.moving_time / 60);   // blok 9: Justér-arket
+  } else if (action === 'toggle_optional') {
+    f.e.optional = !f.e.optional;   // blok 9: backend vender flaget — spejl det lokalt
   } else if (action === 'swap_template') {
     const w = PT.bikeLib && PT.bikeLib.workouts.find(x=>x.id===params.template_id);
     if (w) Object.assign(f.e, { name:w.name, zwiftName:w.name, libraryId:w.id, load:w.load, erg:w.erg!==false, purpose:w.purpose, mins:w.est_min||f.e.mins, disc:'bike', isKey: w.load==='haard' || (w.est_min||0)>=120 });
@@ -2235,10 +2483,10 @@ async function refreshCoachAssessment() {
   } catch (e) {
     // Samme fire tilstande som triggerRefresh. NO_SECRET er ikke en netværksfejl
     // — den kan rettes her og nu. iOS giver hver hjemmeskærms-app sin EGEN
-    // localStorage: at AF-appen har koden betyder ikke at dashboardet har den.
+    // localStorage: at en anden hjemmeskærms-app (fx eva.html) har koden betyder ikke at dashboardet har den.
     if (e.code === 'NO_SECRET' || e.status === 401) {
       const val = (window.prompt(e.code === 'NO_SECRET'
-        ? 'App-koden mangler p\u00e5 denne enhed.\n\nInds\u00e6t den samme kode som i AF-appen:'
+        ? 'App-koden mangler p\u00e5 denne enhed.\n\nInds\u00e6t app-koden (den delte hemmelighed til Worker\'en):'
         : 'App-koden p\u00e5 denne enhed blev afvist af Worker\'en.\n\nInds\u00e6t den rigtige kode:') || '').trim();
       if (val) { setSecret(val); errMsg = 'Kode gemt \u2014 tryk \u21bb igen'; }
       else     { errMsg = 'App-kode mangler \u2014 tryk \u21bb og inds\u00e6t den'; }
@@ -3504,7 +3752,7 @@ function trainingDonut() {
 
 // ── Log-ark: Registrér i dag (4/9-26) ─────────────────────────
 // Fire spørgsmål, gemmer ved hvert tryk til Worker'ens /checkin (samme
-// endpoint som checkin.html). Felter: date, alkohol (0 nej / 1 ja valgt /
+// endpoint som det gamle checkin.html brugte — slettet blok 9). Felter: date, alkohol (0 nej / 1 ja valgt /
 // 2 ja bare skete), protein (2 = 3 af 3, 1 = 2 af 3, 0 = ≤1), energi
 // (1 lav / 3 ok / 5 høj), sult (0 nej / 1 lidt / 2 ja). Optimistisk UI:
 // dagens valg gemmes i localStorage og lægges oven på data.checkinLog, så
@@ -3621,7 +3869,7 @@ async function logSend(){
   } catch(err) {
     if (err.code === 'NO_SECRET' || err.status === 401) {
       const val = (window.prompt(err.code === 'NO_SECRET'
-        ? 'App-koden mangler på denne enhed.\n\nIndsæt den samme kode som i AF-appen:'
+        ? 'App-koden mangler på denne enhed.\n\nIndsæt app-koden (den delte hemmelighed til Worker\'en):'
         : 'App-koden blev afvist af Worker\'en.\n\nIndsæt den rigtige kode:') || '').trim();
       if (val) { setSecret(val); return logSend(); }
       logSay('Ikke gemt — app-kode mangler', true);
@@ -3744,7 +3992,7 @@ async function slSave(){
   } catch(err) {
     if (err.code === 'NO_SECRET' || err.status === 401 || err.status === 403) {
       const val = (window.prompt(err.code === 'NO_SECRET'
-        ? 'App-koden mangler på denne enhed.\n\nIndsæt den samme kode som i AF-appen:'
+        ? 'App-koden mangler på denne enhed.\n\nIndsæt app-koden (den delte hemmelighed til Worker\'en):'
         : 'App-koden blev afvist af Worker\'en.\n\nIndsæt den rigtige kode:') || '').trim();
       if (val) { setSecret(val); if (go) go.disabled = false; return slSave(); }
       msg.innerHTML = `<span style="color:var(--act)">Ikke gemt — app-kode mangler.</span>`;
@@ -3985,6 +4233,9 @@ function applyRemote(remote) {
       if (remote.week_sessions)  D.week_sessions  = remote.week_sessions;
       if (remote.all_weeks)      D.all_weeks      = remote.all_weeks;
       if (remote.planTab && typeof remote.planTab === 'object') D.planTab = remote.planTab;
+      // Blok 9: ventende forslag. Tomt array når feltet mangler, så et accepteret
+      // forslag forsvinder fra kortet når pipelinen har skrevet data.json igen.
+      D.proposals = Array.isArray(remote.proposals) ? remote.proposals : [];
       if (remote.warnings)       D.warnings       = remote.warnings || [];
       if (remote.tsb !== undefined) D.tsb = remote.tsb;
       if (remote.warnings)       D.warnings = remote.warnings || [];
@@ -4166,13 +4417,13 @@ async function triggerRefresh() {
     // Første udgave sagde bare "forkert kode" og sendte fejlsøgningen 16/7
     // efter et Cloudflare-deploy der var helt i orden.
     // Fire tilstande, ikke tre. NO_SECRET er ikke en netværksfejl — den kan
-    // rettes her og nu, uden af.html og uden en URL med #s=.
-    // iOS giver hver hjemmeskærms-app sin EGEN localStorage: at AF-appen har
+    // rettes her og nu — uden en URL med #s= (af.html er slettet, blok 9).
+    // iOS giver hver hjemmeskærms-app sin EGEN localStorage: at en anden app har
     // koden betyder ikke at dashboardet har den.
     if (e.code === 'NO_SECRET' || e.status === 401) {
       const mangler = e.code === 'NO_SECRET';
       const val = (window.prompt(mangler
-        ? 'App-koden mangler på denne enhed.\n\nIndsæt den samme kode som i AF-appen:'
+        ? 'App-koden mangler på denne enhed.\n\nIndsæt app-koden (den delte hemmelighed til Worker\'en):'
         : 'App-koden på denne enhed blev afvist af Worker\'en.\n\nIndsæt den rigtige kode:') || '').trim();
       if (val) { setSecret(val); setStatus('Kode gemt — tryk ↻ igen'); }
       else     { setStatus(mangler ? 'App-kode mangler — tryk ↻ og indsæt den'
@@ -4214,7 +4465,7 @@ async function triggerRefresh() {
       if (btn)  btn.textContent  = '⚠ IKKE OPDATERET';
       if (mBtn) mBtn.textContent = '⚠ ' + time;
       if (!(status && status.textContent) && !(statusM && statusM.textContent)) {
-        setStatus('Nåede ikke Worker\'en — prøv af.html?reset');
+        setStatus('Nåede ikke Worker\'en — app-koden mangler. Tryk ↻ igen og indtast den, eller åbn dashboardet med #s=KODE.');
       }
     } else {
       if (btn)  btn.textContent  = changed ? '✓ OPDATERET' : '✓ INGEN NY DATA';
@@ -4383,7 +4634,7 @@ const SECRET_KEY = "af_plan_secret";
 const getSecret = () => localStorage.getItem(SECRET_KEY);
 const setSecret = s => localStorage.setItem(SECRET_KEY, s);
 
-// Sår app-koden fra URL-fragmentet (#s=KODE), præcis som af.html gør. Uden
+// Sår app-koden fra URL-fragmentet (#s=KODE), som det gamle af.html gjorde. Uden
 // den stod dashboardet uden kode, hvis iOS havde ryddet localStorage — og så
 // fejlede ↻-knappens dispatch tavst (fundet 23/7). Fragmentet sendes aldrig
 // til en server. Fjernes fra URL'en bagefter, så hash-routingen ikke ser det.

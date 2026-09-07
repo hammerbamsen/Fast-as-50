@@ -1,0 +1,49 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "fast-as-50/proposal.schema.json",
+  "title": "data/proposals/<id>.json — forslag til plan.json (blok 9)",
+  "description": "Kontrakt jf. blok9-spec §1. Kun set_day i denne blok. Anvendes via edit_apply.apply_edit(action='apply_proposal'). additionalProperties: true.",
+  "type": "object",
+  "required": ["id", "title", "status", "changes"],
+  "additionalProperties": true,
+  "properties": {
+    "id": {"type": "string", "minLength": 1, "pattern": "^[A-Za-z0-9][A-Za-z0-9._-]*$"},
+    "createdAt": {"type": ["string", "null"]},
+    "createdBy": {"type": "string"},
+    "title": {"type": "string"},
+    "note": {"type": "string"},
+    "summary": {"type": "array", "items": {"type": "string"}},
+    "status": {"type": "string", "enum": ["pending", "accepted", "rejected", "applied-offline"]},
+    "decidedAt": {"type": ["string", "null"]},
+    "result": {"type": ["object", "null"], "additionalProperties": true},
+    "changes": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["date", "action", "entries"],
+        "additionalProperties": true,
+        "properties": {
+          "date": {"type": "string", "pattern": "^\\d{4}-\\d{2}-\\d{2}$"},
+          "action": {"type": "string", "enum": ["set_day"]},
+          "entries": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": ["workout"],
+              "additionalProperties": true,
+              "properties": {
+                "workout": {"type": ["object", "null"], "required": ["name", "type"], "additionalProperties": true,
+                            "properties": {"name": {"type": "string"}, "type": {"type": "string"},
+                                           "moving_time": {"type": "integer"}, "description": {"type": "string"}}},
+                "libraryId": {"type": "string"},
+                "templateId": {"type": "string"},
+                "note": {"type": ["string", "null"]},
+                "optional": {"type": "boolean"}
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

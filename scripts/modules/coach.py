@@ -6,6 +6,9 @@ from .config import (PLAN, ACTIVE_PROGRAM, GOALS, TOTAL_WEEKS, BASE, AUTH, api_g
                       CTL_START, CTL_GOAL, AF_GOAL, SLEEP_GOAL_HOURS, athlete_age)
 from . import programs as _programs
 
+# Blok-typer hvor lav TSS er planen (blok 9): ingen TSS-andels-linjer i teksten.
+LOW_LOAD_BLOCKS = ('RACE', 'RECOVERY', 'TAPER')
+
 
 def weeks_to_next_race(today=None):
     """Hele uger til næste løb på tværs af programmerne (None hvis intet løb forude)."""
@@ -372,7 +375,7 @@ def generate_coach_speech(week_num, weekday, streak, af_this_week, today_session
     DK_DAYS = ['mandag','tirsdag','onsdag','torsdag','fredag','lørdag','søndag']
     day_name = DK_DAYS[weekday]
 
-    BLOCK_LABELS = {'BUILD':'build-uge','BUILD+':'intensiv build-uge','RECOVERY':'restituitionsuge','TAPER':'taper-uge','RACE':'race-uge'}
+    BLOCK_LABELS = {'BUILD':'build-uge','BUILD+':'intensiv build-uge','RECOVERY':'restitutionsuge','TAPER':'taper-uge','RACE':'race-uge'}
     block_label = BLOCK_LABELS.get(block_type, 'træningsuge')
 
     # Streak-kommentar (fallback highlight)
@@ -453,7 +456,12 @@ def generate_coach_speech(week_num, weekday, streak, af_this_week, today_session
     # TSS-compliance — kun baseret på faktisk done status
     # Mandag morgen med 0 TSS er NORMALT — der er en fuld uge foran
     is_monday_start = (weekday == 0 and (tss_act or 0) == 0)
-    if compliance is not None and not is_monday_start:
+    # Blok 9: i RACE/RECOVERY/TAPER er lav TSS meningen — ingen "N procent af
+    # ugens TSS" og ingen "X af Y TSS"-linjer, kun én neutral sætning.
+    low_load_block = block_type in LOW_LOAD_BLOCKS
+    if low_load_block and not is_monday_start:
+        goods.append(f"Lavere belastning er meningen i en {block_label} — der er ingen ugeprocent at jagte.")
+    elif compliance is not None and not is_monday_start:
         if compliance >= 90 or all_done:
             goods.append(f"{int(compliance)} procent af ugens TSS er i hus.")
         else:

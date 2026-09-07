@@ -8,6 +8,8 @@ week_sessions-liste eller et Anthropic-API-kald.
 """
 from datetime import date
 
+import pytest
+
 from . import coach
 
 TODAY_WEEKDAY = date.today().weekday()
@@ -173,3 +175,39 @@ def test_coach_speech_tier_uden_aerobt_flag():
     speech, _highlight = coach.generate_coach_speech(
         **_base_speech_kwargs(today_session, [today_session]))
     assert "Aerobt" not in speech
+
+
+# ── Ingen TSS-% i RACE/RECOVERY/TAPER (blok 9, 9/9-2026) ────────────────
+# I en lav-belastningsuge er lav TSS planen. "N procent af ugens TSS er i hus"
+# og "X af Y TSS" læses som et efterslæb — de udelades, én neutral linje i stedet.
+
+def _low_load_kwargs(block_type, compliance=40, done=False):
+    today_session = {"today": True, "done": done, "disc": "bike", "label": "Cykel Z2 60 min",
+                     "planned_distance_m": None, "actual_distance_m": None}
+    other = {"day": "tirs", "done": False, "disc": "run", "label": "Løb Z2 40 min"}
+    kwargs = _base_speech_kwargs(today_session, [today_session, other])
+    kwargs.update(block_type=block_type, compliance=compliance, tss_act=100, planned=250)
+    return kwargs
+
+
+@pytest.mark.parametrize("block", ["RACE", "RECOVERY", "TAPER"])
+def test_coach_speech_no_tss_share_in_low_load_blocks(block):
+    speech, highlight = coach.generate_coach_speech(**_low_load_kwargs(block))
+    combined = speech + " " + highlight
+    assert "TSS er i hus" not in combined
+    assert "procent af ugens TSS" not in combined
+    assert "af planlagt TSS" not in combined
+    assert "Lavere belastning er meningen" in combined
+
+
+@pytest.mark.parametrize("compliance", [40, 95])
+def test_coach_speech_no_tss_share_regardless_of_compliance(compliance):
+    speech, highlight = coach.generate_coach_speech(**_low_load_kwargs("RECOVERY", compliance))
+    assert "TSS" not in speech + " " + highlight
+
+
+def test_coach_speech_keeps_tss_share_in_build():
+    speech, highlight = coach.generate_coach_speech(**_low_load_kwargs("BUILD", 40))
+    combined = speech + " " + highlight
+    assert "100 af 250 TSS er i hus" in combined
+    assert "Lavere belastning er meningen" not in combined

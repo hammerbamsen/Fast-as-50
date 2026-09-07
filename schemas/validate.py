@@ -12,7 +12,8 @@ Skemaerne kræver kun de felter koden reelt afhænger af (programs/weeks/days/
 entries, id/load/erg/steps, meta/kpis/today/week_sessions) med
 additionalProperties: true overalt — de fanger struktur-brud, ikke nye felter.
 Ud over skemaet tjekkes to ting skemaer ikke kan: unikke pas-id'er i
-bike_library.json og unikke entry-id'er i plan.json.
+bike_library.json og unikke entry-id'er i plan.json. Forslag i data/proposals/
+tjekkes desuden for at filnavn = id og at ingen dato optræder to gange.
 """
 import json
 import sys
@@ -27,6 +28,9 @@ FILES = {
     "data/bike_library.json": "bike_library.schema.json",
     "data.json": "data.schema.json",
 }
+# Forslag (blok 9): alle data/proposals/*.json valideres mod proposal.schema.json.
+FILES.update({str(p.relative_to(ROOT)).replace("\\", "/"): "proposal.schema.json"
+              for p in sorted((ROOT / "data" / "proposals").glob("*.json"))})
 
 
 def _dupes(ids):
@@ -48,6 +52,13 @@ def extra_checks(rel, doc):
         d = _dupes(ids)
         if d:
             errs.append(f"dublerede entry-id'er på tværs af atleter/dage: {d[:10]}")
+    if rel.startswith("data/proposals/"):
+        if doc.get("id") != Path(rel).stem:
+            errs.append(f"id {doc.get('id')!r} matcher ikke filnavnet {Path(rel).stem!r}")
+        dates = [c.get("date") for c in doc.get("changes", [])]
+        d = _dupes(dates)
+        if d:
+            errs.append(f"datoer optræder to gange i changes: {d}")
     return errs
 
 

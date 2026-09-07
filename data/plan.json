@@ -1,6 +1,6 @@
 {
   "version": 4,
-  "updated": "2026-09-03",
+  "updated": "2026-09-09",
   "programs": {
     "medoc-2026": {
       "id": "medoc-2026",
@@ -217,7 +217,7 @@
           "ftpTarget": 278,
           "tssTarget": 380,
           "location": "Gentofte",
-          "note": "Cut starter. Kælder starter med FTP-test tor 24/9. Styrke unilateralt 2× starter.",
+          "note": "Cut starter. Kælder starter med FTP-test tor 24/9. Styrke Functional 4 A/B 2×/uge starter (2 runder). Svøm droppet til foråret.",
           "wkgTarget": 3.97,
           "purpose": "Base 1/2: cut og kælder starter — aerobe prober (cykel + løb) som EF-baseline, FTP-test tor 24/9.",
           "quota": {
@@ -252,7 +252,7 @@
           "location": "Gentofte",
           "note": "Recovery. Ingen test (kørt 24/9).",
           "wkgTarget": 3.97,
-          "purpose": "Recovery: styrke 2 sæt let, korte Z2-pas, ingen test.",
+          "purpose": "Recovery: styrke 2 runder uden progression, korte Z2-pas, ingen test.",
           "quota": {
             "haard": 0,
             "moderat": 0
@@ -301,7 +301,7 @@
           "location": "Gentofte",
           "note": "Stelvio couples-tilmelding deadline 29/10 (med Eva).",
           "wkgTarget": 3.97,
-          "purpose": "Recovery: lette Z2-pas, styrke 2 sæt, Stelvio couples-tilmelding tor 29/10.",
+          "purpose": "Recovery: lette Z2-pas, styrke 2 runder uden progression, Stelvio couples-tilmelding tor 29/10.",
           "quota": {
             "haard": 0,
             "moderat": 0
@@ -6489,48 +6489,15 @@
           "date": "2026-09-21",
           "entries": [
             {
+              "id": "e0cdecb2",
               "workout": {
-                "name": "Styrke Unilateral A 3 sæt",
+                "name": "Styrke A · Functional 4 · 2 runder",
                 "type": "WeightTraining",
-                "moving_time": 2700,
-                "description": "3x\n- Bulgarian Split Squat 12.5kg ×8/ben 1m freeride\n- Enarms Row 20kg ×10/arm 1m freeride\n- Step-up 30cm 10kg ×8/ben 1m freeride\n- Enbens RDL 10kg ×8/ben 1m freeride\n- Pause 60 sek 2m freeride\n\n- Walk Z1 24m freeride",
-                "workout_doc": {
-                  "steps": [
-                    {
-                      "reps": 3,
-                      "text": "3x",
-                      "steps": [
-                        {
-                          "text": "Bulgarian Split Squat 12.5kg ×8/ben",
-                          "duration": 60
-                        },
-                        {
-                          "text": "Enarms Row 20kg ×10/arm",
-                          "duration": 60
-                        },
-                        {
-                          "text": "Step-up 30cm 10kg ×8/ben",
-                          "duration": 60
-                        },
-                        {
-                          "text": "Enbens RDL 10kg ×8/ben",
-                          "duration": 60
-                        },
-                        {
-                          "text": "Pause 60 sek",
-                          "duration": 120
-                        }
-                      ]
-                    },
-                    {
-                      "text": "Walk Z1",
-                      "duration": 1440
-                    }
-                  ]
-                }
+                "moving_time": 1500,
+                "description": "2x\n- Thruster 2×5kg DB ×10 1m freeride\n- Renegade row 10kg DB ×8/side 1m freeride\n- KB swing 12,5kg KB ×15 1m freeride\n- KB row 10kg DB ×10/side 1m freeride\n- Press 2×5kg DB ×10 1m freeride\n- Pause 90 sek 2m freeride"
               },
-              "note": "Cut starter. Styrke 2×/uge unilateralt starter",
-              "id": "f3618294"
+              "templateId": "styrke-fs4-a-2r",
+              "note": "Cut starter. Styrke Functional 4 A/B 2×/uge starter — 2 runder"
             }
           ]
         },
@@ -6769,82 +6736,15 @@
           "date": "2026-09-25",
           "entries": [
             {
+              "id": "6d73b30d",
               "workout": {
-                "name": "Styrke Unilateral B 3 sæt",
+                "name": "Styrke B · Functional 4 · 2 runder",
                 "type": "WeightTraining",
-                "moving_time": 2700,
-                "description": "3x\n- Walking Lunge 10kg ×10/ben 1m freeride\n- Enbens Glute Bridge ×12/ben 1m freeride\n- Enarms Overhead Press 10kg ×8/arm 1m freeride\n- Sideplanke ×30 sek/side 1m freeride\n- Pause 60 sek 2m freeride\n\n- Walk Z1 24m freeride",
-                "workout_doc": {
-                  "steps": [
-                    {
-                      "reps": 3,
-                      "text": "3x",
-                      "steps": [
-                        {
-                          "text": "Walking Lunge 10kg ×10/ben",
-                          "duration": 60
-                        },
-                        {
-                          "text": "Enbens Glute Bridge ×12/ben",
-                          "duration": 60
-                        },
-                        {
-                          "text": "Enarms Overhead Press 10kg ×8/arm",
-                          "duration": 60
-                        },
-                        {
-                          "text": "Sideplanke ×30 sek/side",
-                          "duration": 60
-                        },
-                        {
-                          "text": "Pause 60 sek",
-                          "duration": 120
-                        }
-                      ]
-                    },
-                    {
-                      "text": "Walk Z1",
-                      "duration": 1440
-                    }
-                  ]
-                }
+                "moving_time": 1500,
+                "description": "2x\n- RDL 12kg ×12 1m freeride\n- Split squat 12,5kg KB goblet ×8/ben 1m freeride\n- Pullover 7kg DB ×12 1m freeride\n- Bænkpres 2×7kg DB ×12 1m freeride\n- Farmers walk 2×10kg 40 m 1m freeride\n- Pause 90 sek 2m freeride"
               },
-              "note": "Styrke Unilateral B",
-              "id": "451fd3ed"
-            },
-            {
-              "workout": {
-                "name": "Svøm teknik 1500m (fokus: catch)",
-                "type": "Swim",
-                "moving_time": 3600,
-                "description": "- Opvarmning 300m rolig, blandet\n- Drill-sæt: 8×25m Fist swim (svøm med lukkede næver — brug underarmen som åre, mærk fat i vandet), 15-20 sek pause\n- Main set: 8×50m hurtigt men med formen intakt, 20 sek pause — fokus: fat i vandet / træk fra ryg, ikke arm\n- Kick-sæt: 4×50m, fokus benspark/kropsposition, 20 sek pause\n- Udsvømning 400m rolig\n\n1500m i alt. Ét fokuspunkt ad gangen — roterer uge for uge (catch → hoved → hofte).",
-                "workout_doc": {
-                  "steps": [
-                    {
-                      "text": "Opvarmning rolig, blandet",
-                      "duration": 900
-                    },
-                    {
-                      "text": "8×25m Fist swim (svøm med lukkede næver — brug underarmen som åre, mærk fat i vandet)",
-                      "duration": 900
-                    },
-                    {
-                      "text": "Main set 8×50m hurtigt, form intakt — fat i vandet / træk fra ryg, ikke arm",
-                      "duration": 900
-                    },
-                    {
-                      "text": "Kick-sæt 4×50m — benspark/kropsposition",
-                      "duration": 600
-                    },
-                    {
-                      "text": "Udsvømning rolig",
-                      "duration": 300
-                    }
-                  ]
-                }
-              },
-              "note": "Svøm teknik let (Kildeskovshallen) — fokus catch",
-              "id": "5776410d"
+              "templateId": "styrke-fs4-b-2r",
+              "note": "Styrke B · Functional 4"
             }
           ]
         },
@@ -6852,6 +6752,7 @@
           "date": "2026-09-26",
           "entries": [
             {
+              "id": "e11fdbd5",
               "workout": {
                 "name": "FaF 1 Z2 - Depottur 2 t",
                 "type": "Ride",
@@ -6938,9 +6839,8 @@
                   ]
                 }
               },
-              "note": "Ude hvis tørt og >8 °C, ren Z2 samme varighed; ellers kælder",
-              "libraryId": "z2_depottur_2t",
-              "id": "e11fdbd5"
+              "note": "Ude som ren Z2 hvis vejret tillader — samme varighed",
+              "libraryId": "z2_depottur_2t"
             }
           ]
         },
@@ -6994,48 +6894,15 @@
           "date": "2026-09-28",
           "entries": [
             {
+              "id": "20b61500",
               "workout": {
-                "name": "Styrke Unilateral A 3 sæt",
+                "name": "Styrke A · Functional 4 · 2 runder",
                 "type": "WeightTraining",
-                "moving_time": 2700,
-                "description": "3x\n- Bulgarian Split Squat 12.5kg ×8/ben 1m freeride\n- Enarms Row 20kg ×10/arm 1m freeride\n- Step-up 30cm 10kg ×8/ben 1m freeride\n- Enbens RDL 10kg ×8/ben 1m freeride\n- Pause 60 sek 2m freeride\n\n- Walk Z1 24m freeride",
-                "workout_doc": {
-                  "steps": [
-                    {
-                      "reps": 3,
-                      "text": "3x",
-                      "steps": [
-                        {
-                          "text": "Bulgarian Split Squat 12.5kg ×8/ben",
-                          "duration": 60
-                        },
-                        {
-                          "text": "Enarms Row 20kg ×10/arm",
-                          "duration": 60
-                        },
-                        {
-                          "text": "Step-up 30cm 10kg ×8/ben",
-                          "duration": 60
-                        },
-                        {
-                          "text": "Enbens RDL 10kg ×8/ben",
-                          "duration": 60
-                        },
-                        {
-                          "text": "Pause 60 sek",
-                          "duration": 120
-                        }
-                      ]
-                    },
-                    {
-                      "text": "Walk Z1",
-                      "duration": 1440
-                    }
-                  ]
-                }
+                "moving_time": 1500,
+                "description": "2x\n- Thruster 2×5kg DB ×10 1m freeride\n- Renegade row 10kg DB ×8/side 1m freeride\n- KB swing 12,5kg KB ×15 1m freeride\n- KB row 10kg DB ×10/side 1m freeride\n- Press 2×5kg DB ×10 1m freeride\n- Pause 90 sek 2m freeride"
               },
-              "note": "Styrke Unilateral A",
-              "id": "61704615"
+              "templateId": "styrke-fs4-a-2r",
+              "note": "Styrke A · Functional 4"
             }
           ]
         },
@@ -7177,6 +7044,7 @@
           "date": "2026-10-01",
           "entries": [
             {
+              "id": "745f6a02",
               "workout": {
                 "name": "FaF 1 Z2 - Åbnere 60",
                 "type": "Ride",
@@ -7248,98 +7116,30 @@
                 }
               },
               "note": "Z2 åbnere — kort kælderpas før styrke",
-              "libraryId": "z2_aabnere_60",
-              "id": "745f6a02"
+              "libraryId": "z2_aabnere_60"
             },
             {
+              "id": "db969ea9",
               "workout": {
-                "name": "Styrke Unilateral B 3 sæt",
+                "name": "Styrke B · Functional 4 · 2 runder",
                 "type": "WeightTraining",
-                "moving_time": 2700,
-                "description": "3x\n- Walking Lunge 10kg ×10/ben 1m freeride\n- Enbens Glute Bridge ×12/ben 1m freeride\n- Enarms Overhead Press 10kg ×8/arm 1m freeride\n- Sideplanke ×30 sek/side 1m freeride\n- Pause 60 sek 2m freeride\n\n- Walk Z1 24m freeride",
-                "workout_doc": {
-                  "steps": [
-                    {
-                      "reps": 3,
-                      "text": "3x",
-                      "steps": [
-                        {
-                          "text": "Walking Lunge 10kg ×10/ben",
-                          "duration": 60
-                        },
-                        {
-                          "text": "Enbens Glute Bridge ×12/ben",
-                          "duration": 60
-                        },
-                        {
-                          "text": "Enarms Overhead Press 10kg ×8/arm",
-                          "duration": 60
-                        },
-                        {
-                          "text": "Sideplanke ×30 sek/side",
-                          "duration": 60
-                        },
-                        {
-                          "text": "Pause 60 sek",
-                          "duration": 120
-                        }
-                      ]
-                    },
-                    {
-                      "text": "Walk Z1",
-                      "duration": 1440
-                    }
-                  ]
-                }
+                "moving_time": 1500,
+                "description": "2x\n- RDL 12kg ×12 1m freeride\n- Split squat 12,5kg KB goblet ×8/ben 1m freeride\n- Pullover 7kg DB ×12 1m freeride\n- Bænkpres 2×7kg DB ×12 1m freeride\n- Farmers walk 2×10kg 40 m 1m freeride\n- Pause 90 sek 2m freeride"
               },
-              "note": "Styrke Unilateral B",
-              "id": "b65a88a8"
+              "templateId": "styrke-fs4-b-2r",
+              "note": "Styrke B · Functional 4 — efter åbnerne"
             }
           ]
         },
         {
           "date": "2026-10-02",
-          "entries": [
-            {
-              "workout": {
-                "name": "Svøm teknik 1500m (fokus: hoved)",
-                "type": "Swim",
-                "moving_time": 3600,
-                "description": "- Opvarmning 300m rolig, blandet\n- Drill-sæt: 8×25m Catch-up drill (én arm i ro fremme til den anden er helt fremme før næste tag), 15-20 sek pause\n- Main set: 8×50m hurtigt men med formen intakt, 20 sek pause — fokus: hoved nede og stille, tør nakke\n- Kick-sæt: 4×50m, fokus benspark/kropsposition, 20 sek pause\n- Udsvømning 400m rolig\n\n1500m i alt. Ét fokuspunkt ad gangen — roterer uge for uge (catch → hoved → hofte).",
-                "workout_doc": {
-                  "steps": [
-                    {
-                      "text": "Opvarmning rolig, blandet",
-                      "duration": 900
-                    },
-                    {
-                      "text": "8×25m Catch-up drill (én arm i ro fremme til den anden er helt fremme før næste tag)",
-                      "duration": 900
-                    },
-                    {
-                      "text": "Main set 8×50m hurtigt, form intakt — hoved nede og stille, tør nakke",
-                      "duration": 900
-                    },
-                    {
-                      "text": "Kick-sæt 4×50m — benspark/kropsposition",
-                      "duration": 600
-                    },
-                    {
-                      "text": "Udsvømning rolig",
-                      "duration": 300
-                    }
-                  ]
-                }
-              },
-              "note": "Svøm teknik let (Kildeskovshallen) — fokus hoved",
-              "id": "65d9d9ef"
-            }
-          ]
+          "entries": []
         },
         {
           "date": "2026-10-03",
           "entries": [
             {
+              "id": "d7a733a9",
               "workout": {
                 "name": "FaF 2 Dur - Negativ split 2 t",
                 "type": "Ride",
@@ -7408,9 +7208,8 @@
                   ]
                 }
               },
-              "note": "Ude hvis tørt og >8 °C, ren Z2 samme varighed; ellers kælder",
-              "libraryId": "dur_negativ_split",
-              "id": "d7a733a9"
+              "note": "Ude som ren Z2 hvis vejret tillader — samme varighed",
+              "libraryId": "dur_negativ_split"
             }
           ]
         },
@@ -7464,44 +7263,15 @@
           "date": "2026-10-05",
           "entries": [
             {
+              "id": "4673c4e3",
               "workout": {
-                "name": "Styrke Unilateral recovery 2 sæt",
+                "name": "Styrke A · Functional 4 · 2 runder",
                 "type": "WeightTraining",
-                "moving_time": 2100,
-                "description": "2x\n- Bulgarian Split Squat kropsvægt ×10/ben 1m freeride\n- Enbens RDL kropsvægt ×10/ben 1m freeride\n- Sideplanke ×20 sek/side 1m freeride\n- Pause 60 sek 2m freeride\n\n- Walk Z1 19m freeride",
-                "workout_doc": {
-                  "steps": [
-                    {
-                      "reps": 2,
-                      "text": "2x",
-                      "steps": [
-                        {
-                          "text": "Bulgarian Split Squat kropsvægt ×10/ben",
-                          "duration": 60
-                        },
-                        {
-                          "text": "Enbens RDL kropsvægt ×10/ben",
-                          "duration": 60
-                        },
-                        {
-                          "text": "Sideplanke ×20 sek/side",
-                          "duration": 60
-                        },
-                        {
-                          "text": "Pause 60 sek",
-                          "duration": 120
-                        }
-                      ]
-                    },
-                    {
-                      "text": "Walk Z1",
-                      "duration": 1140
-                    }
-                  ]
-                }
+                "moving_time": 1500,
+                "description": "2x\n- Thruster 2×5kg DB ×10 1m freeride\n- Renegade row 10kg DB ×8/side 1m freeride\n- KB swing 12,5kg KB ×15 1m freeride\n- KB row 10kg DB ×10/side 1m freeride\n- Press 2×5kg DB ×10 1m freeride\n- Pause 90 sek 2m freeride"
               },
-              "note": "Recovery-uge — styrke 2 sæt let",
-              "id": "aaa159ce"
+              "templateId": "styrke-fs4-a-2r",
+              "note": "recovery: 2 runder, ingen progression"
             }
           ]
         },
@@ -7635,90 +7405,27 @@
           "date": "2026-10-08",
           "entries": [
             {
+              "id": "ce7e8bcf",
               "workout": {
-                "name": "Styrke Unilateral recovery 2 sæt",
+                "name": "Styrke B · Functional 4 · 2 runder",
                 "type": "WeightTraining",
-                "moving_time": 2100,
-                "description": "2x\n- Bulgarian Split Squat kropsvægt ×10/ben 1m freeride\n- Enbens RDL kropsvægt ×10/ben 1m freeride\n- Sideplanke ×20 sek/side 1m freeride\n- Pause 60 sek 2m freeride\n\n- Walk Z1 19m freeride",
-                "workout_doc": {
-                  "steps": [
-                    {
-                      "reps": 2,
-                      "text": "2x",
-                      "steps": [
-                        {
-                          "text": "Bulgarian Split Squat kropsvægt ×10/ben",
-                          "duration": 60
-                        },
-                        {
-                          "text": "Enbens RDL kropsvægt ×10/ben",
-                          "duration": 60
-                        },
-                        {
-                          "text": "Sideplanke ×20 sek/side",
-                          "duration": 60
-                        },
-                        {
-                          "text": "Pause 60 sek",
-                          "duration": 120
-                        }
-                      ]
-                    },
-                    {
-                      "text": "Walk Z1",
-                      "duration": 1140
-                    }
-                  ]
-                }
+                "moving_time": 1500,
+                "description": "2x\n- RDL 12kg ×12 1m freeride\n- Split squat 12,5kg KB goblet ×8/ben 1m freeride\n- Pullover 7kg DB ×12 1m freeride\n- Bænkpres 2×7kg DB ×12 1m freeride\n- Farmers walk 2×10kg 40 m 1m freeride\n- Pause 90 sek 2m freeride"
               },
-              "note": "Recovery-uge — styrke 2 sæt let",
-              "id": "0e612c15"
+              "templateId": "styrke-fs4-b-2r",
+              "note": "recovery: 2 runder, ingen progression"
             }
           ]
         },
         {
           "date": "2026-10-09",
-          "entries": [
-            {
-              "workout": {
-                "name": "Svøm teknik 1500m (fokus: hofte)",
-                "type": "Swim",
-                "moving_time": 3600,
-                "description": "- Opvarmning 300m rolig, blandet\n- Drill-sæt: 8×25m Enarmscrawl m/finner (passiv arm langs siden, rotér fra hoften for at holde fart), 15-20 sek pause\n- Main set: 8×50m hurtigt men med formen intakt, 20 sek pause — fokus: rotation og skub fra hoften, ikke skuldrene\n- Kick-sæt: 4×50m, fokus benspark/kropsposition, 20 sek pause\n- Udsvømning 400m rolig\n\n1500m i alt. Ét fokuspunkt ad gangen — roterer uge for uge (catch → hoved → hofte).",
-                "workout_doc": {
-                  "steps": [
-                    {
-                      "text": "Opvarmning rolig, blandet",
-                      "duration": 900
-                    },
-                    {
-                      "text": "8×25m Enarmscrawl m/finner (passiv arm langs siden, rotér fra hoften for at holde fart)",
-                      "duration": 900
-                    },
-                    {
-                      "text": "Main set 8×50m hurtigt, form intakt — rotation og skub fra hoften, ikke skuldrene",
-                      "duration": 900
-                    },
-                    {
-                      "text": "Kick-sæt 4×50m — benspark/kropsposition",
-                      "duration": 600
-                    },
-                    {
-                      "text": "Udsvømning rolig",
-                      "duration": 300
-                    }
-                  ]
-                }
-              },
-              "note": "Svøm teknik let (Kildeskovshallen) — fokus hofte",
-              "id": "4109401a"
-            }
-          ]
+          "entries": []
         },
         {
           "date": "2026-10-10",
           "entries": [
             {
+              "id": "1e402480",
               "workout": {
                 "name": "FaF 1 Z2 - Grundtur 80",
                 "type": "Ride",
@@ -7797,9 +7504,8 @@
                   ]
                 }
               },
-              "note": "Ude hvis tørt og >8 °C, ren Z2 samme varighed; ellers kælder",
-              "libraryId": "z2_grundtur_80",
-              "id": "1e402480"
+              "note": "Ude som ren Z2 hvis vejret tillader — samme varighed",
+              "libraryId": "z2_grundtur_80"
             }
           ]
         },
@@ -7830,48 +7536,15 @@
           "date": "2026-10-12",
           "entries": [
             {
+              "id": "427a348e",
               "workout": {
-                "name": "Styrke Unilateral A 3 sæt",
+                "name": "Styrke A · Functional 4 · 2 runder",
                 "type": "WeightTraining",
-                "moving_time": 2700,
-                "description": "3x\n- Bulgarian Split Squat 12.5kg ×8/ben 1m freeride\n- Enarms Row 20kg ×10/arm 1m freeride\n- Step-up 30cm 10kg ×8/ben 1m freeride\n- Enbens RDL 10kg ×8/ben 1m freeride\n- Pause 60 sek 2m freeride\n\n- Walk Z1 24m freeride",
-                "workout_doc": {
-                  "steps": [
-                    {
-                      "reps": 3,
-                      "text": "3x",
-                      "steps": [
-                        {
-                          "text": "Bulgarian Split Squat 12.5kg ×8/ben",
-                          "duration": 60
-                        },
-                        {
-                          "text": "Enarms Row 20kg ×10/arm",
-                          "duration": 60
-                        },
-                        {
-                          "text": "Step-up 30cm 10kg ×8/ben",
-                          "duration": 60
-                        },
-                        {
-                          "text": "Enbens RDL 10kg ×8/ben",
-                          "duration": 60
-                        },
-                        {
-                          "text": "Pause 60 sek",
-                          "duration": 120
-                        }
-                      ]
-                    },
-                    {
-                      "text": "Walk Z1",
-                      "duration": 1440
-                    }
-                  ]
-                }
+                "moving_time": 1500,
+                "description": "2x\n- Thruster 2×5kg DB ×10 1m freeride\n- Renegade row 10kg DB ×8/side 1m freeride\n- KB swing 12,5kg KB ×15 1m freeride\n- KB row 10kg DB ×10/side 1m freeride\n- Press 2×5kg DB ×10 1m freeride\n- Pause 90 sek 2m freeride"
               },
-              "note": "Styrke Unilateral A",
-              "id": "fd380a6b"
+              "templateId": "styrke-fs4-a-2r",
+              "note": "Styrke A · Functional 4"
             }
           ]
         },
@@ -8237,82 +7910,15 @@
           "date": "2026-10-16",
           "entries": [
             {
+              "id": "868c1f5e",
               "workout": {
-                "name": "Styrke Unilateral B 3 sæt",
+                "name": "Styrke B · Functional 4 · 2 runder",
                 "type": "WeightTraining",
-                "moving_time": 2700,
-                "description": "3x\n- Walking Lunge 10kg ×10/ben 1m freeride\n- Enbens Glute Bridge ×12/ben 1m freeride\n- Enarms Overhead Press 10kg ×8/arm 1m freeride\n- Sideplanke ×30 sek/side 1m freeride\n- Pause 60 sek 2m freeride\n\n- Walk Z1 24m freeride",
-                "workout_doc": {
-                  "steps": [
-                    {
-                      "reps": 3,
-                      "text": "3x",
-                      "steps": [
-                        {
-                          "text": "Walking Lunge 10kg ×10/ben",
-                          "duration": 60
-                        },
-                        {
-                          "text": "Enbens Glute Bridge ×12/ben",
-                          "duration": 60
-                        },
-                        {
-                          "text": "Enarms Overhead Press 10kg ×8/arm",
-                          "duration": 60
-                        },
-                        {
-                          "text": "Sideplanke ×30 sek/side",
-                          "duration": 60
-                        },
-                        {
-                          "text": "Pause 60 sek",
-                          "duration": 120
-                        }
-                      ]
-                    },
-                    {
-                      "text": "Walk Z1",
-                      "duration": 1440
-                    }
-                  ]
-                }
+                "moving_time": 1500,
+                "description": "2x\n- RDL 12kg ×12 1m freeride\n- Split squat 12,5kg KB goblet ×8/ben 1m freeride\n- Pullover 7kg DB ×12 1m freeride\n- Bænkpres 2×7kg DB ×12 1m freeride\n- Farmers walk 2×10kg 40 m 1m freeride\n- Pause 90 sek 2m freeride"
               },
-              "note": "Styrke Unilateral B",
-              "id": "371cb833"
-            },
-            {
-              "workout": {
-                "name": "Svøm teknik 1500m (fokus: catch)",
-                "type": "Swim",
-                "moving_time": 3600,
-                "description": "- Opvarmning 300m rolig, blandet\n- Drill-sæt: 8×25m Fist swim (svøm med lukkede næver — brug underarmen som åre, mærk fat i vandet), 15-20 sek pause\n- Main set: 8×50m hurtigt men med formen intakt, 20 sek pause — fokus: fat i vandet / træk fra ryg, ikke arm\n- Kick-sæt: 4×50m, fokus benspark/kropsposition, 20 sek pause\n- Udsvømning 400m rolig\n\n1500m i alt. Ét fokuspunkt ad gangen — roterer uge for uge (catch → hoved → hofte).",
-                "workout_doc": {
-                  "steps": [
-                    {
-                      "text": "Opvarmning rolig, blandet",
-                      "duration": 900
-                    },
-                    {
-                      "text": "8×25m Fist swim (svøm med lukkede næver — brug underarmen som åre, mærk fat i vandet)",
-                      "duration": 900
-                    },
-                    {
-                      "text": "Main set 8×50m hurtigt, form intakt — fat i vandet / træk fra ryg, ikke arm",
-                      "duration": 900
-                    },
-                    {
-                      "text": "Kick-sæt 4×50m — benspark/kropsposition",
-                      "duration": 600
-                    },
-                    {
-                      "text": "Udsvømning rolig",
-                      "duration": 300
-                    }
-                  ]
-                }
-              },
-              "note": "Svøm teknik (Kildeskovshallen) — fokus catch",
-              "id": "98bea106"
+              "templateId": "styrke-fs4-b-2r",
+              "note": "Styrke B · Functional 4"
             }
           ]
         },
@@ -8515,48 +8121,15 @@
           "date": "2026-10-19",
           "entries": [
             {
+              "id": "06faed5a",
               "workout": {
-                "name": "Styrke Unilateral A 3 sæt",
+                "name": "Styrke A · Functional 4 · 2 runder",
                 "type": "WeightTraining",
-                "moving_time": 2700,
-                "description": "3x\n- Bulgarian Split Squat 12.5kg ×8/ben 1m freeride\n- Enarms Row 20kg ×10/arm 1m freeride\n- Step-up 30cm 10kg ×8/ben 1m freeride\n- Enbens RDL 10kg ×8/ben 1m freeride\n- Pause 60 sek 2m freeride\n\n- Walk Z1 24m freeride",
-                "workout_doc": {
-                  "steps": [
-                    {
-                      "reps": 3,
-                      "text": "3x",
-                      "steps": [
-                        {
-                          "text": "Bulgarian Split Squat 12.5kg ×8/ben",
-                          "duration": 60
-                        },
-                        {
-                          "text": "Enarms Row 20kg ×10/arm",
-                          "duration": 60
-                        },
-                        {
-                          "text": "Step-up 30cm 10kg ×8/ben",
-                          "duration": 60
-                        },
-                        {
-                          "text": "Enbens RDL 10kg ×8/ben",
-                          "duration": 60
-                        },
-                        {
-                          "text": "Pause 60 sek",
-                          "duration": 120
-                        }
-                      ]
-                    },
-                    {
-                      "text": "Walk Z1",
-                      "duration": 1440
-                    }
-                  ]
-                }
+                "moving_time": 1500,
+                "description": "2x\n- Thruster 2×5kg DB ×10 1m freeride\n- Renegade row 10kg DB ×8/side 1m freeride\n- KB swing 12,5kg KB ×15 1m freeride\n- KB row 10kg DB ×10/side 1m freeride\n- Press 2×5kg DB ×10 1m freeride\n- Pause 90 sek 2m freeride"
               },
-              "note": "Styrke Unilateral A",
-              "id": "12acfc68"
+              "templateId": "styrke-fs4-a-2r",
+              "note": "Styrke A · Functional 4"
             }
           ]
         },
@@ -8739,6 +8312,7 @@
           "date": "2026-10-22",
           "entries": [
             {
+              "id": "e3d5b2da",
               "workout": {
                 "name": "FaF 1 Z2 - Grundtur 80",
                 "type": "Ride",
@@ -8818,93 +8392,24 @@
                 }
               },
               "note": "Z2 grundtur — kælder, før styrke",
-              "libraryId": "z2_grundtur_80",
-              "id": "e3d5b2da"
+              "libraryId": "z2_grundtur_80"
             },
             {
+              "id": "51a6d528",
               "workout": {
-                "name": "Styrke Unilateral B 3 sæt",
+                "name": "Styrke B · Functional 4 · 2 runder",
                 "type": "WeightTraining",
-                "moving_time": 2700,
-                "description": "3x\n- Walking Lunge 10kg ×10/ben 1m freeride\n- Enbens Glute Bridge ×12/ben 1m freeride\n- Enarms Overhead Press 10kg ×8/arm 1m freeride\n- Sideplanke ×30 sek/side 1m freeride\n- Pause 60 sek 2m freeride\n\n- Walk Z1 24m freeride",
-                "workout_doc": {
-                  "steps": [
-                    {
-                      "reps": 3,
-                      "text": "3x",
-                      "steps": [
-                        {
-                          "text": "Walking Lunge 10kg ×10/ben",
-                          "duration": 60
-                        },
-                        {
-                          "text": "Enbens Glute Bridge ×12/ben",
-                          "duration": 60
-                        },
-                        {
-                          "text": "Enarms Overhead Press 10kg ×8/arm",
-                          "duration": 60
-                        },
-                        {
-                          "text": "Sideplanke ×30 sek/side",
-                          "duration": 60
-                        },
-                        {
-                          "text": "Pause 60 sek",
-                          "duration": 120
-                        }
-                      ]
-                    },
-                    {
-                      "text": "Walk Z1",
-                      "duration": 1440
-                    }
-                  ]
-                }
+                "moving_time": 1500,
+                "description": "2x\n- RDL 12kg ×12 1m freeride\n- Split squat 12,5kg KB goblet ×8/ben 1m freeride\n- Pullover 7kg DB ×12 1m freeride\n- Bænkpres 2×7kg DB ×12 1m freeride\n- Farmers walk 2×10kg 40 m 1m freeride\n- Pause 90 sek 2m freeride"
               },
-              "note": "Styrke Unilateral B",
-              "id": "c55a0c46"
+              "templateId": "styrke-fs4-b-2r",
+              "note": "Styrke B · Functional 4 — efter grundturen"
             }
           ]
         },
         {
           "date": "2026-10-23",
-          "entries": [
-            {
-              "workout": {
-                "name": "Svøm teknik 1500m (fokus: hoved)",
-                "type": "Swim",
-                "moving_time": 3600,
-                "description": "- Opvarmning 300m rolig, blandet\n- Drill-sæt: 8×25m Catch-up drill (én arm i ro fremme til den anden er helt fremme før næste tag), 15-20 sek pause\n- Main set: 8×50m hurtigt men med formen intakt, 20 sek pause — fokus: hoved nede og stille, tør nakke\n- Kick-sæt: 4×50m, fokus benspark/kropsposition, 20 sek pause\n- Udsvømning 400m rolig\n\n1500m i alt. Ét fokuspunkt ad gangen — roterer uge for uge (catch → hoved → hofte).",
-                "workout_doc": {
-                  "steps": [
-                    {
-                      "text": "Opvarmning rolig, blandet",
-                      "duration": 900
-                    },
-                    {
-                      "text": "8×25m Catch-up drill (én arm i ro fremme til den anden er helt fremme før næste tag)",
-                      "duration": 900
-                    },
-                    {
-                      "text": "Main set 8×50m hurtigt, form intakt — hoved nede og stille, tør nakke",
-                      "duration": 900
-                    },
-                    {
-                      "text": "Kick-sæt 4×50m — benspark/kropsposition",
-                      "duration": 600
-                    },
-                    {
-                      "text": "Udsvømning rolig",
-                      "duration": 300
-                    }
-                  ]
-                }
-              },
-              "note": "Svøm teknik (Kildeskovshallen) — fokus hoved",
-              "id": "2d996a29"
-            }
-          ]
+          "entries": []
         },
         {
           "date": "2026-10-24",
@@ -9049,44 +8554,15 @@
           "date": "2026-10-26",
           "entries": [
             {
+              "id": "ddbc2985",
               "workout": {
-                "name": "Styrke Unilateral recovery 2 sæt",
+                "name": "Styrke A · Functional 4 · 2 runder",
                 "type": "WeightTraining",
-                "moving_time": 2100,
-                "description": "2x\n- Bulgarian Split Squat kropsvægt ×10/ben 1m freeride\n- Enbens RDL kropsvægt ×10/ben 1m freeride\n- Sideplanke ×20 sek/side 1m freeride\n- Pause 60 sek 2m freeride\n\n- Walk Z1 19m freeride",
-                "workout_doc": {
-                  "steps": [
-                    {
-                      "reps": 2,
-                      "text": "2x",
-                      "steps": [
-                        {
-                          "text": "Bulgarian Split Squat kropsvægt ×10/ben",
-                          "duration": 60
-                        },
-                        {
-                          "text": "Enbens RDL kropsvægt ×10/ben",
-                          "duration": 60
-                        },
-                        {
-                          "text": "Sideplanke ×20 sek/side",
-                          "duration": 60
-                        },
-                        {
-                          "text": "Pause 60 sek",
-                          "duration": 120
-                        }
-                      ]
-                    },
-                    {
-                      "text": "Walk Z1",
-                      "duration": 1140
-                    }
-                  ]
-                }
+                "moving_time": 1500,
+                "description": "2x\n- Thruster 2×5kg DB ×10 1m freeride\n- Renegade row 10kg DB ×8/side 1m freeride\n- KB swing 12,5kg KB ×15 1m freeride\n- KB row 10kg DB ×10/side 1m freeride\n- Press 2×5kg DB ×10 1m freeride\n- Pause 90 sek 2m freeride"
               },
-              "note": "Recovery-uge — styrke 2 sæt let",
-              "id": "304f1b55"
+              "templateId": "styrke-fs4-a-2r",
+              "note": "recovery: 2 runder, ingen progression"
             }
           ]
         },
@@ -9220,90 +8696,27 @@
           "date": "2026-10-29",
           "entries": [
             {
+              "id": "d808c4b2",
               "workout": {
-                "name": "Styrke Unilateral recovery 2 sæt",
+                "name": "Styrke B · Functional 4 · 2 runder",
                 "type": "WeightTraining",
-                "moving_time": 2100,
-                "description": "2x\n- Bulgarian Split Squat kropsvægt ×10/ben 1m freeride\n- Enbens RDL kropsvægt ×10/ben 1m freeride\n- Sideplanke ×20 sek/side 1m freeride\n- Pause 60 sek 2m freeride\n\n- Walk Z1 19m freeride",
-                "workout_doc": {
-                  "steps": [
-                    {
-                      "reps": 2,
-                      "text": "2x",
-                      "steps": [
-                        {
-                          "text": "Bulgarian Split Squat kropsvægt ×10/ben",
-                          "duration": 60
-                        },
-                        {
-                          "text": "Enbens RDL kropsvægt ×10/ben",
-                          "duration": 60
-                        },
-                        {
-                          "text": "Sideplanke ×20 sek/side",
-                          "duration": 60
-                        },
-                        {
-                          "text": "Pause 60 sek",
-                          "duration": 120
-                        }
-                      ]
-                    },
-                    {
-                      "text": "Walk Z1",
-                      "duration": 1140
-                    }
-                  ]
-                }
+                "moving_time": 1500,
+                "description": "2x\n- RDL 12kg ×12 1m freeride\n- Split squat 12,5kg KB goblet ×8/ben 1m freeride\n- Pullover 7kg DB ×12 1m freeride\n- Bænkpres 2×7kg DB ×12 1m freeride\n- Farmers walk 2×10kg 40 m 1m freeride\n- Pause 90 sek 2m freeride"
               },
-              "note": "Recovery-uge — styrke 2 sæt let. Stelvio couples-tilmelding deadline i dag",
-              "id": "18c9df73"
+              "templateId": "styrke-fs4-b-2r",
+              "note": "recovery: 2 runder, ingen progression. Stelvio couples-tilmelding deadline i dag"
             }
           ]
         },
         {
           "date": "2026-10-30",
-          "entries": [
-            {
-              "workout": {
-                "name": "Svøm teknik 1500m (fokus: hofte)",
-                "type": "Swim",
-                "moving_time": 3600,
-                "description": "- Opvarmning 300m rolig, blandet\n- Drill-sæt: 8×25m Enarmscrawl m/finner (passiv arm langs siden, rotér fra hoften for at holde fart), 15-20 sek pause\n- Main set: 8×50m hurtigt men med formen intakt, 20 sek pause — fokus: rotation og skub fra hoften, ikke skuldrene\n- Kick-sæt: 4×50m, fokus benspark/kropsposition, 20 sek pause\n- Udsvømning 400m rolig\n\n1500m i alt. Ét fokuspunkt ad gangen — roterer uge for uge (catch → hoved → hofte).",
-                "workout_doc": {
-                  "steps": [
-                    {
-                      "text": "Opvarmning rolig, blandet",
-                      "duration": 900
-                    },
-                    {
-                      "text": "8×25m Enarmscrawl m/finner (passiv arm langs siden, rotér fra hoften for at holde fart)",
-                      "duration": 900
-                    },
-                    {
-                      "text": "Main set 8×50m hurtigt, form intakt — rotation og skub fra hoften, ikke skuldrene",
-                      "duration": 900
-                    },
-                    {
-                      "text": "Kick-sæt 4×50m — benspark/kropsposition",
-                      "duration": 600
-                    },
-                    {
-                      "text": "Udsvømning rolig",
-                      "duration": 300
-                    }
-                  ]
-                }
-              },
-              "note": "Svøm teknik (Kildeskovshallen) — fokus hofte",
-              "id": "68e5da28"
-            }
-          ]
+          "entries": []
         },
         {
           "date": "2026-10-31",
           "entries": [
             {
+              "id": "37e8e66e",
               "workout": {
                 "name": "FaF 1 Z2 - Depottur 2 t",
                 "type": "Ride",
@@ -9390,9 +8803,8 @@
                   ]
                 }
               },
-              "note": "Ude hvis tørt og >8 °C, ren Z2 samme varighed; ellers kælder",
-              "libraryId": "z2_depottur_2t",
-              "id": "37e8e66e"
+              "note": "Kælder — ren Z2, recovery-uge",
+              "libraryId": "z2_depottur_2t"
             }
           ]
         },
@@ -10266,7 +9678,7 @@
         "ftpTarget": 278,
         "tssTarget": 380,
         "location": "Gentofte",
-        "note": "Cut starter. Kælder starter med FTP-test tor 24/9. Styrke unilateralt 2× starter.",
+        "note": "Cut starter. Kælder starter med FTP-test tor 24/9. Styrke Functional 4 A/B 2×/uge starter (2 runder). Svøm droppet til foråret.",
         "wkgTarget": 3.97,
         "purpose": "Base 1/2: cut og kælder starter — aerobe prober (cykel + løb) som EF-baseline, FTP-test tor 24/9.",
         "quota": {
@@ -10301,7 +9713,7 @@
         "location": "Gentofte",
         "note": "Recovery. Ingen test (kørt 24/9).",
         "wkgTarget": 3.97,
-        "purpose": "Recovery: styrke 2 sæt let, korte Z2-pas, ingen test.",
+        "purpose": "Recovery: styrke 2 runder uden progression, korte Z2-pas, ingen test.",
         "quota": {
           "haard": 0,
           "moderat": 0
@@ -10350,7 +9762,7 @@
         "location": "Gentofte",
         "note": "Stelvio couples-tilmelding deadline 29/10 (med Eva).",
         "wkgTarget": 3.97,
-        "purpose": "Recovery: lette Z2-pas, styrke 2 sæt, Stelvio couples-tilmelding tor 29/10.",
+        "purpose": "Recovery: lette Z2-pas, styrke 2 runder uden progression, Stelvio couples-tilmelding tor 29/10.",
         "quota": {
           "haard": 0,
           "moderat": 0

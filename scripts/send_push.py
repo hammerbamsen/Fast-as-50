@@ -69,7 +69,7 @@ AF_EVENING_MSG = {
     "title": "Aften-check-in \U0001F4AA",
     "body": "Husk dagens AF-check-in",
     "tag": "fast50-af-evening",   # eget tag => kolliderer ikke med daglig push
-    "url": "index.html#log",
+    "url": "./#log",   # I dag-fanens log-ark (af.html slettet blok 9)
     "athlete": "kennet",
 }
 
