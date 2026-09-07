@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-09-07 19:11",
+    "updated": "2026-09-07 19:14",
     "week": 1,
     "totalWeeks": 51,
     "blockType": "RECOVERY",
@@ -105,21 +105,13 @@
     "target": 6,
     "streak": 1
   },
-  "coachSpeech": "Ny uge starter — uge 1 af 51. Restituitionsuge. {HL} Godt: 1 AF-dage i 1 gennemførte dage — på rette spor. 5 mere og ugens mål er i hus. Fokus: 18 af 255 TSS er i hus — 8 sessioner tilbage, heriblandt Gang let 45 min, Gang let 60 min. Vægt på 72,3 kg (målt 3/9) — protein ved hvert måltid, alkohol som bevidst valg, søvn 7-8 t. Vægt/fedt vurderes på 7d-snit mod planen, ikke på én vejning. Keep moving forward. ❤️ Aerobt: VIGTIGT: Løbeturen 5/9 (snitpuls 127) kostede 26,5 % mere puls pr. meter end medianen af de seneste 4 sammenlignelige pas (EF 0,994 mod 1,352). Forbehold, som IKKE er trukket fra tallet: det var 29,7 °C. Konkluder ikke overtræning ud fra ét pas — sig hvad passet kostede, og at det enten var varmen eller for højt tempo.  \"Kroppen tror, hvad sindet siger.\"",
+  "coachSpeech": "Ny uge starter — uge 1 af 51. Restituitionsuge. {HL} Godt: 1 AF-dage i 1 gennemførte dage — på rette spor. 5 mere og ugens mål er i hus. Fokus: 18 af 255 TSS er i hus — 7 sessioner tilbage, heriblandt Gang let 60 min, Gang let 60 min. Vægt på 72,3 kg (målt 3/9) — protein ved hvert måltid, alkohol som bevidst valg, søvn 7-8 t. Vægt/fedt vurderes på 7d-snit mod planen, ikke på én vejning. Keep moving forward. ❤️ Aerobt: VIGTIGT: Løbeturen 5/9 (snitpuls 127) kostede 26,5 % mere puls pr. meter end medianen af de seneste 4 sammenlignelige pas (EF 0,994 mod 1,352). Forbehold, som IKKE er trukket fra tallet: det var 29,7 °C. Konkluder ikke overtræning ud fra ét pas — sig hvad passet kostede, og at det enten var varmen eller for højt tempo.  \"Kroppen tror, hvad sindet siger.\"",
   "coachHighlight": "Søvn på 7,3 timer er solid",
   "weekFocus": "Bevæg dig hver dag — ingen ambitioner, fuld restitution",
   "today": [
     {
       "discipline": "hike",
       "title": "Gang let 45 min",
-      "duration": "",
-      "zone": "–",
-      "desc": "",
-      "completed": false
-    },
-    {
-      "discipline": "walk",
-      "title": "Bordeaux Gang",
       "duration": "",
       "zone": "–",
       "desc": "",
@@ -131,22 +123,16 @@
       "day": "Man",
       "disc": "hike",
       "label": "Gang let 45 min",
-      "done": false,
+      "done": true,
       "planned_tss": 14,
       "planned_mins": 45,
       "planned_distance_m": null,
-      "today": true
-    },
-    {
-      "day": "Man",
-      "disc": "walk",
-      "label": "Bordeaux Gang",
-      "done": true,
-      "extra": true,
+      "today": true,
+      "completion": "done",
+      "completion_pct": 491,
       "actual_tss": 18,
       "actual_mins": 221,
-      "actual_distance_m": 15525.52,
-      "today": true
+      "actual_distance_m": 15525.52
     },
     {
       "day": "Tir",
@@ -2007,22 +1993,16 @@
           "day": "Man",
           "disc": "hike",
           "label": "Gang let 45 min",
-          "done": false,
+          "done": true,
           "planned_tss": 14,
           "planned_mins": 45,
           "planned_distance_m": null,
-          "today": true
-        },
-        {
-          "day": "Man",
-          "disc": "walk",
-          "label": "Bordeaux Gang",
-          "done": true,
-          "extra": true,
+          "today": true,
+          "completion": "done",
+          "completion_pct": 491,
           "actual_tss": 18,
           "actual_mins": 221,
-          "actual_distance_m": 15525.52,
-          "today": true
+          "actual_distance_m": 15525.52
         },
         {
           "day": "Tir",
@@ -3213,7 +3193,7 @@
       "note": "Nøgle virker"
     }
   },
-  "credentialsCheckedTs": "2026-09-07T17:11:26.844641",
+  "credentialsCheckedTs": "2026-09-07T17:14:41.295734",
   "coachAssessmentTsFull": "2026-09-07T16:49:43",
   "coachAssessmentWeightAtGen": 72.3,
   "coachAssessmentAfAtGen": 1,
@@ -6687,30 +6667,13 @@
                 "erg": null,
                 "purpose": null,
                 "zwiftName": null,
-                "done": false,
-                "actualMins": null,
-                "actualTss": null,
-                "note": "Restitution efter Médoc — gang, intet løb",
-                "isKey": false,
-                "optional": false
-              },
-              {
-                "id": null,
-                "name": "Bordeaux Gang",
-                "type": null,
-                "disc": "walk",
-                "mins": 221,
-                "libraryId": null,
-                "load": "let",
-                "erg": null,
-                "purpose": null,
-                "zwiftName": null,
                 "done": true,
                 "actualMins": 221,
                 "actualTss": 18,
-                "note": null,
+                "note": "Restitution efter Médoc — gang, intet løb",
                 "isKey": false,
-                "extra": true
+                "optional": false,
+                "completion": "done"
               }
             ],
             "restNote": null,
@@ -8923,7 +8886,7 @@
     "error": null,
     "validationError": null,
     "notes": null,
-    "stale": false
+    "stale": true
   },
   "weekFocusNext": {
     "week": 1,
@@ -9387,6 +9350,6 @@
       "Næste uge (38, RACE): TSS-mål 250 · hårde/lange dage: tir 15/9 Løb 4×3 min halvmaraton-tempo (4:35-4:45) efter fornemmelse 45 min, søn 20/9 CPH HALF — 21,1 km, B-løb kontrolleret 4:35-4:45/km 90 min",
       "Planændringer siden sidst: 1 — se martin_signals.md"
     ],
-    "generatedAt": "2026-09-07T17:11:26Z"
+    "generatedAt": "2026-09-07T17:14:41Z"
   }
 }
