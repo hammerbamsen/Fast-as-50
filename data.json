@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-09-07 07:44",
+    "updated": "2026-09-07 09:41",
     "week": 1,
     "totalWeeks": 51,
     "blockType": "RECOVERY",
@@ -105,9 +105,9 @@
     "target": 6,
     "streak": 0
   },
-  "coachSpeech": "Ny uge starter — uge 1 af 51. Restituitionsuge. {HL} Godt: Søvn på 7,3 timer er solid. Ny uge med 0 dages streak i ryggen. Hold den. Fokus: Vægt på 72,3 kg (målt 3/9) — protein ved hvert måltid, alkohol som bevidst valg, søvn 7-8 t. Vægt/fedt vurderes på 7d-snit mod planen, ikke på én vejning. Keep moving forward. ❤️ Aerobt: VIGTIGT: Løbeturen 5/9 (snitpuls 127) kostede 26,5 % mere puls pr. meter end medianen af de seneste 4 sammenlignelige pas (EF 0,994 mod 1,352). Forbehold, som IKKE er trukket fra tallet: det var 29,7 °C. Konkluder ikke overtræning ud fra ét pas — sig hvad passet kostede, og at det enten var varmen eller for højt tempo.  \"Kroppen tror, hvad sindet siger.\"",
-  "coachHighlight": "Fuld uge foran — i dag: Gang let 45 min",
-  "weekFocus": "Restituér aktivt — gang og cykel bærer basen denne uge",
+  "coachSpeech": "Uge 1 af RECOVERY-blokken i Tour des Stations 2027-programmet — direkte efter Marathon du Médoc. Ugen er designet til gang, svøm og let cykel; ingen intensitet, fordi 42 km excentrisk løb kræver 10-14 dage at restituere fra. {HL} I dag er der ét pas: Gang let 45 min. Ugen er uge 1 af en RECOVERY-blok — ingen hårde eller moderate pas i kvoten.",
+  "coachHighlight": "Gå Gang let 45 min i roligt tempo — ingen puls-ambitioner, bare blod i benene",
+  "weekFocus": "Restituér aktivt — gang og let bevægelse bærer ugen",
   "today": [
     {
       "discipline": "hike",
@@ -2058,7 +2058,7 @@
         }
       ],
       "blockType": "RECOVERY",
-      "focus": "Restituér aktivt — gang og cykel bærer basen denne uge"
+      "focus": "Restituér aktivt — gang og let bevægelse bærer ugen"
     },
     "2": {
       "sessions": [
@@ -2908,14 +2908,16 @@
     null,
     null
   ],
-  "coachAssessmentHtml": "<p class=\"coach-head\"><strong>Dag 1 af 357 · Mandag · Uge 1</strong></p><p class=\"coach-sec coach-big\">Uge 1 af RECOVERY — direkte efter Marathon du Médoc. Ugen er bygget op af gang, svøm og let cykel; ingen hård belastning og intet løb før lørdag 12/9 tidligst. HRV signalerer at kroppen stadig fordøjer lørdagens indsats.</p><p class=\"coach-sec\"><span class=\"coach-sec-h\">Træning &amp; load</span>Ugen starter i uge 1 af RECOVERY-blokken. Intet er gennemført endnu — 7 pas ligger foran dig. Dagens plan er Gang let 45 min; med readiness LOW gælder: kortere er bedre end fuldt gennemført. CTL er 49,9 mod et mål på 47,0 — du er over målet, hvilket er præcis rigtigt i en restitutionsblok. Løbet lørdag 12/9 er det tidligste tilladte løb efter Médocs 42 km excentrisk belastning.</p><p class=\"coach-sec\"><span class=\"coach-sec-h\">Krop &amp; kost</span>7-dages snit: 72,3 kg og 21,3% fedt. Vægten er stabil — ingen retning at konkludere på. Cut starter om 14 dage (21/9), så der er ingen aktiv kost-intervention nu. Protein ved hvert måltid er den eneste forberedelse der tæller.</p><p class=\"coach-sec\"><span class=\"coach-sec-h\">Vaner</span>Ingen AF-dage registreret denne uge mod et mål på 6. 3 drikkedage i træk (4/9–6/9) som valgte dage — ingen autopilot, men klynger rammer HRV hårdest. Protein er registreret 3 af de seneste 7 dage — for lavt op mod cut-start. Søvn 8,0 timer i nat; 7-dages snit 7,3 timer.</p>",
-  "coachAssessmentTs": "02:43",
+  "coachAssessmentHtml": "<p class=\"coach-head\"><strong>Dag 1 af 357 · Mandag · Uge 1</strong></p><p class=\"coach-sec coach-big\">Uge 1 af RECOVERY-blokken i Tour des Stations 2027-programmet — direkte efter Marathon du Médoc. Ugen er designet til gang, svøm og let cykel; ingen intensitet, fordi 42 km excentrisk løb kræver 10-14 dage at restituere fra.</p><p class=\"coach-sec\"><span class=\"coach-sec-h\">Træning &amp; load</span>I dag er der ét pas: Gang let 45 min. Ugen er uge 1 af en RECOVERY-blok — ingen hårde eller moderate pas i kvoten. CTL ligger på 49.9 mod et mål på 47.0, så du er 2.9 point over target, og i RECOVERY er lavere TSS det rigtige. TSB er 2.1 — du er ikke slidt, men benene har stadig 42 km excentrisk belastning i sig fra Médoc; lad dem restituere. Første løb er tidligst lørdag 12/9.</p><p class=\"coach-sec\"><span class=\"coach-sec-h\">Krop &amp; kost</span>7-dages snitvægt er 72.3 kg, uændret over 28 dage — stabil. Fedtprocent på 7-dages snit er 21.3, ændret -0.3 procentpoint over 28 dage — ikke nok til at kalde en retning. Cut starter tidligst 21/9; frem til da handler det om at holde vægten og spise nok til at restitutionen kører.</p><p class=\"coach-sec\"><span class=\"coach-sec-h\">Vaner</span>0 AF-dage denne uge mod et mål på 6 — og 4 valgte drikkedage de seneste 7 dage, heraf 3 i træk (4/9–6/9). Protein registreret 3 ud af 7 dage. Søvn 7.7 timer i nat, 7.3 i snit over 7 dage — begge over grænsen på 7.0. Energi scorer 1.0 i snit — hold øje med det når du også ser HRV 8% under 7-dages snit.</p>",
+  "coachAssessmentTs": "09:41",
   "commute_pairing_warnings": [],
   "warnings": [
     {
       "type": "alcohol_cluster",
       "level": "critical",
-      "message": "3 drikkedage i træk 4/9–6/9 — klynger rammer HRV hårdere end spredte dage."
+      "message": "3 drikkedage i træk 4/9–6/9 — klynger rammer HRV hårdere end spredte dage.",
+      "action": null,
+      "source": "rule"
     }
   ],
   "tsb": 2.1,
@@ -3181,8 +3183,8 @@
       "note": "Nøgle virker"
     }
   },
-  "credentialsCheckedTs": "2026-09-07T05:44:31.210775",
-  "coachAssessmentTsFull": "2026-09-07T00:44:01",
+  "credentialsCheckedTs": "2026-09-07T07:42:15.669087",
+  "coachAssessmentTsFull": "2026-09-07T07:42:15",
   "coachAssessmentWeightAtGen": 72.3,
   "coachAssessmentAfAtGen": 0,
   "event_structure_warnings": [
@@ -4491,14 +4493,7 @@
           "moderat": 0
         },
         "keySessions": [],
-        "flags": [
-          {
-            "level": "WARN",
-            "rule": "low_readiness",
-            "text": "Lav readiness i dag (HRV/søvn) — overvej at reducere dagens/ugens belastning",
-            "historic": false
-          }
-        ],
+        "flags": [],
         "races": [],
         "travel": null,
         "isCurrent": true,
@@ -4517,7 +4512,7 @@
         "tssTarget": 250,
         "tssActual": null,
         "purpose": "Race-uge: én målpace-åbner, let cykel/svøm, CPH Half som B-løb.",
-        "note": "CPH Half søn 20/9 — B-løb. Mål sub 1:30 med beslutningsregel ved 5 km. Cut starter IKKE før mandag 21/9.",
+        "note": "CPH Half søn 20/9 — B-løb. B-løb kontrolleret 1:37-1:40 (4:35-4:45/km). Cut starter IKKE før mandag 21/9.",
         "quota": {
           "haard": 0,
           "moderat": 0
@@ -4527,8 +4522,8 @@
           "moderat": 0
         },
         "keySessions": [
-          "Løb målpace 4×3 min (1:30-tempo)",
-          "CPH HALF — 21,1 km"
+          "Løb 4×3 min halvmaraton-tempo (4:35-4:45) efter fornemmelse",
+          "CPH HALF — 21,1 km, B-løb kontrolleret 4:35-4:45/km"
         ],
         "flags": [],
         "races": [
@@ -6925,7 +6920,7 @@
             "entries": [
               {
                 "id": "86a116af",
-                "name": "Løb målpace 4×3 min (1:30-tempo)",
+                "name": "Løb 4×3 min halvmaraton-tempo (4:35-4:45) efter fornemmelse",
                 "type": "Run",
                 "disc": "run",
                 "mins": 45,
@@ -6937,7 +6932,7 @@
                 "done": false,
                 "actualMins": null,
                 "actualTss": null,
-                "note": "Målpace-åbner mod 1:30. 4 reps, ikke 5 — 10 dage efter maraton",
+                "note": "Halvmaraton-tempo efter fornemmelse. 4 reps, ikke 5 — 10 dage efter maraton",
                 "isKey": true,
                 "optional": false
               }
@@ -7060,7 +7055,7 @@
             "entries": [
               {
                 "id": "2d868f45",
-                "name": "CPH HALF — 21,1 km",
+                "name": "CPH HALF — 21,1 km, B-løb kontrolleret 4:35-4:45/km",
                 "type": "Run",
                 "disc": "run",
                 "mins": 90,
@@ -7072,7 +7067,7 @@
                 "done": false,
                 "actualMins": null,
                 "actualTss": null,
-                "note": "Mål sub 1:30 (4:16/km). Beslutningsregel: gå efter 4:16 kun hvis de første 5 km føles kontrollerede — ellers 4:35/km og nyd det. B-løb.",
+                "note": "B-løb 1:37-1:40, 4:35-4:45/km. Første 5 km langsomst. Beslutning på dagen efter benene.",
                 "isKey": true,
                 "optional": false
               }
@@ -8767,7 +8762,7 @@
         "fromDate": "2026-08-21",
         "fromDisc": "openwater",
         "toId": "86a116af",
-        "toName": "Løb målpace 4×3 min (1:30-tempo)",
+        "toName": "Løb 4×3 min halvmaraton-tempo (4:35-4:45) efter fornemmelse",
         "toDate": "2026-09-15",
         "toDisc": "run",
         "hours": 600,
@@ -8775,11 +8770,11 @@
       },
       {
         "fromId": "86a116af",
-        "fromName": "Løb målpace 4×3 min (1:30-tempo)",
+        "fromName": "Løb 4×3 min halvmaraton-tempo (4:35-4:45) efter fornemmelse",
         "fromDate": "2026-09-15",
         "fromDisc": "run",
         "toId": "2d868f45",
-        "toName": "CPH HALF — 21,1 km",
+        "toName": "CPH HALF — 21,1 km, B-løb kontrolleret 4:35-4:45/km",
         "toDate": "2026-09-20",
         "toDisc": "run",
         "hours": 120,
@@ -8787,7 +8782,7 @@
       },
       {
         "fromId": "2d868f45",
-        "fromName": "CPH HALF — 21,1 km",
+        "fromName": "CPH HALF — 21,1 km, B-løb kontrolleret 4:35-4:45/km",
         "fromDate": "2026-09-20",
         "fromDisc": "run",
         "toId": "0d3d7bb7",
@@ -8836,44 +8831,51 @@
     ]
   },
   "coach": {
-    "generatedAt": "2026-09-07T00:44:01Z",
-    "inputsHash": "2957df7fbf70e7f59e0ea7717aee5cd05b71222a",
+    "generatedAt": "2026-09-07T07:42:15Z",
+    "inputsHash": "01b12cd8d27287478d93a49b4cebfdf485a69a51",
     "model": "claude-sonnet-4-6",
     "mode": "daily",
     "oneThing": {
-      "action": "Gå 45 min let i dag — men sænk tempo og varighed til 30 min hvis benene stadig føles tunge efter Médoc.",
-      "why": "HRV er 37% under 7-dages snit. Kroppen er ikke klar til mere — let bevægelse er nok i dag."
+      "action": "Gå Gang let 45 min i roligt tempo — ingen puls-ambitioner, bare blod i benene",
+      "why": "Restitutionsuge starter i dag: kroppen skal hente sig ind efter Médoc, ikke præstere."
     },
     "training": {
-      "text": "Ugen starter i uge 1 af RECOVERY-blokken. Intet er gennemført endnu — 7 pas ligger foran dig. Dagens plan er Gang let 45 min; med readiness LOW gælder: kortere er bedre end fuldt gennemført. CTL er 49,9 mod et mål på 47,0 — du er over målet, hvilket er præcis rigtigt i en restitutionsblok. Løbet lørdag 12/9 er det tidligste tilladte løb efter Médocs 42 km excentrisk belastning.",
+      "text": "I dag er der ét pas: Gang let 45 min. Ugen er uge 1 af en RECOVERY-blok — ingen hårde eller moderate pas i kvoten. CTL ligger på 49.9 mod et mål på 47.0, så du er 2.9 point over target, og i RECOVERY er lavere TSS det rigtige. TSB er 2.1 — du er ikke slidt, men benene har stadig 42 km excentrisk belastning i sig fra Médoc; lad dem restituere. Første løb er tidligst lørdag 12/9.",
       "refs": [
         45.0,
-        7.0,
         49.9,
         47.0,
+        2.9,
+        2.1,
         42.0
       ]
     },
     "body": {
-      "text": "7-dages snit: 72,3 kg og 21,3% fedt. Vægten er stabil — ingen retning at konkludere på. Cut starter om 14 dage (21/9), så der er ingen aktiv kost-intervention nu. Protein ved hvert måltid er den eneste forberedelse der tæller.",
+      "text": "7-dages snitvægt er 72.3 kg, uændret over 28 dage — stabil. Fedtprocent på 7-dages snit er 21.3, ændret -0.3 procentpoint over 28 dage — ikke nok til at kalde en retning. Cut starter tidligst 21/9; frem til da handler det om at holde vægten og spise nok til at restitutionen kører.",
       "refs": [
         72.3,
         21.3,
-        14.0
+        -0.3
       ]
     },
     "habits": {
-      "text": "Ingen AF-dage registreret denne uge mod et mål på 6. 3 drikkedage i træk (4/9–6/9) som valgte dage — ingen autopilot, men klynger rammer HRV hårdest. Protein er registreret 3 af de seneste 7 dage — for lavt op mod cut-start. Søvn 8,0 timer i nat; 7-dages snit 7,3 timer.",
+      "text": "0 AF-dage denne uge mod et mål på 6 — og 4 valgte drikkedage de seneste 7 dage, heraf 3 i træk (4/9–6/9). Protein registreret 3 ud af 7 dage. Søvn 7.7 timer i nat, 7.3 i snit over 7 dage — begge over grænsen på 7.0. Energi scorer 1.0 i snit — hold øje med det når du også ser HRV 8% under 7-dages snit.",
       "refs": [
+        0.0,
         6.0,
+        4.0,
+        3.0,
         3.0,
         7.0,
-        8.0,
-        7.3
+        7.7,
+        7.3,
+        7.0,
+        1.0,
+        8.0
       ]
     },
-    "bigPicture": "Uge 1 af RECOVERY — direkte efter Marathon du Médoc. Ugen er bygget op af gang, svøm og let cykel; ingen hård belastning og intet løb før lørdag 12/9 tidligst. HRV signalerer at kroppen stadig fordøjer lørdagens indsats.",
-    "weekFocus": "Restituér aktivt — gang og cykel bærer basen denne uge",
+    "bigPicture": "Uge 1 af RECOVERY-blokken i Tour des Stations 2027-programmet — direkte efter Marathon du Médoc. Ugen er designet til gang, svøm og let cykel; ingen intensitet, fordi 42 km excentrisk løb kræver 10-14 dage at restituere fra.",
+    "weekFocus": "Restituér aktivt — gang og let bevægelse bærer ugen",
     "weekFocusFor": 1,
     "warnings": [
       {
@@ -8882,26 +8884,12 @@
         "message": "3 drikkedage i træk 4/9–6/9 — klynger rammer HRV hårdere end spredte dage.",
         "action": null,
         "source": "rule"
-      },
-      {
-        "type": "readiness",
-        "level": "act",
-        "message": "HRV 35,0 ms er 37% under 7-dages snit på 55,2 ms. Krop er presset — hold dagens aktivitet kort og let.",
-        "action": null,
-        "source": "ai"
-      },
-      {
-        "type": "hrv",
-        "level": "warn",
-        "message": "HRV 35,0 ms — 37% under 7d-snit (55,2 ms). Kroppen er presset.",
-        "action": null,
-        "source": "rule"
       }
     ],
     "error": null,
     "validationError": null,
     "notes": null,
-    "stale": true
+    "stale": false
   },
   "weekFocusNext": {
     "week": 1,
@@ -8914,35 +8902,75 @@
     "sessions": [
       {
         "date": "2026-08-17",
-        "name": "Styrketræning"
+        "name": "Styrketræning",
+        "source": "activity",
+        "note": "",
+        "rpe": null,
+        "complete": null,
+        "template": null
       },
       {
         "date": "2026-08-19",
-        "name": "Styrketræning"
+        "name": "Styrketræning",
+        "source": "activity",
+        "note": "",
+        "rpe": null,
+        "complete": null,
+        "template": null
       },
       {
         "date": "2026-08-24",
-        "name": "Styrketræning"
+        "name": "Styrketræning",
+        "source": "activity",
+        "note": "",
+        "rpe": null,
+        "complete": null,
+        "template": null
       },
       {
         "date": "2026-08-25",
-        "name": "Styrketræning"
+        "name": "Styrketræning",
+        "source": "activity",
+        "note": "",
+        "rpe": null,
+        "complete": null,
+        "template": null
       },
       {
         "date": "2026-08-28",
-        "name": "Styrketræning"
+        "name": "Styrketræning",
+        "source": "activity",
+        "note": "",
+        "rpe": null,
+        "complete": null,
+        "template": null
       },
       {
         "date": "2026-08-30",
-        "name": "Styrketræning"
+        "name": "Styrketræning",
+        "source": "activity",
+        "note": "",
+        "rpe": null,
+        "complete": null,
+        "template": null
       },
       {
         "date": "2026-08-31",
-        "name": "Styrketræning"
+        "name": "Styrketræning",
+        "source": "activity",
+        "note": "",
+        "rpe": null,
+        "complete": null,
+        "template": null
       },
       {
         "date": "2026-09-01",
-        "name": "Styrketræning"
+        "name": "Styrketræning",
+        "source": "activity",
+        "note": "",
+        "rpe": null,
+        "complete": null,
+        "template": null
       }
     ]
   },
@@ -9063,7 +9091,11 @@
       "now": 56.6,
       "change28d": -0.1,
       "target": 57.1,
-      "status": "ok"
+      "status": "ok",
+      "baseline": 56.6,
+      "baselineDate": "2026-09-07",
+      "floor": 56.1,
+      "holdKg": -0.5
     },
     "strengthWeek": {
       "done": 0,
@@ -9081,5 +9113,246 @@
       "text": "Aktiveres uge 39 (21/9)",
       "signals": {}
     }
+  },
+  "strength": {
+    "templates": [
+      {
+        "id": "styrke-fs4-a-2r",
+        "name": "Styrke A · Functional 4 · 2 runder",
+        "rounds": 2,
+        "movingTime": 1500,
+        "exercises": [
+          {
+            "name": "Thruster",
+            "load": "2×5 kg DB",
+            "reps": 10,
+            "unit": "reps",
+            "group": "ben"
+          },
+          {
+            "name": "Renegade row",
+            "load": "10 kg DB",
+            "reps": 8,
+            "unit": "reps/side",
+            "group": "core"
+          },
+          {
+            "name": "KB swing",
+            "load": "12,5 kg KB",
+            "reps": 15,
+            "unit": "reps",
+            "group": "ben"
+          },
+          {
+            "name": "KB row",
+            "load": "10 kg DB",
+            "reps": 10,
+            "unit": "reps/side",
+            "group": "overkrop"
+          },
+          {
+            "name": "Press",
+            "load": "2×5 kg DB",
+            "reps": 10,
+            "unit": "reps",
+            "group": "overkrop"
+          }
+        ],
+        "progression": "Ben først: når alle runder × reps er gennemført med RPE ≤ 7 to pas i træk, næste KB-trin (12,5→16→20). Overkrop: +2 reps (max +4) før +2,5 kg, så tilbage til grund-reps. Recovery-uger: 2 runder, ingen progression. 3 runder fra uge 41 hvis loggen viser to fulde uger."
+      },
+      {
+        "id": "styrke-fs4-b-2r",
+        "name": "Styrke B · Functional 4 · 2 runder",
+        "rounds": 2,
+        "movingTime": 1500,
+        "exercises": [
+          {
+            "name": "RDL",
+            "load": "12 kg",
+            "reps": 12,
+            "unit": "reps",
+            "group": "ben"
+          },
+          {
+            "name": "Split squat",
+            "load": "12,5 kg KB goblet",
+            "reps": 8,
+            "unit": "reps/ben",
+            "group": "ben"
+          },
+          {
+            "name": "Pullover",
+            "load": "7 kg DB",
+            "reps": 12,
+            "unit": "reps",
+            "group": "overkrop"
+          },
+          {
+            "name": "Bænkpres",
+            "load": "2×7 kg DB",
+            "reps": 12,
+            "unit": "reps",
+            "group": "overkrop"
+          },
+          {
+            "name": "Farmers walk",
+            "load": "2×10 kg",
+            "reps": 40,
+            "unit": "m",
+            "group": "core"
+          }
+        ],
+        "progression": "Ben først: når alle runder × reps er gennemført med RPE ≤ 7 to pas i træk, næste KB-trin (12,5→16→20). Overkrop: +2 reps (max +4) før +2,5 kg, så tilbage til grund-reps. Recovery-uger: 2 runder, ingen progression. 3 runder fra uge 41 hvis loggen viser to fulde uger."
+      },
+      {
+        "id": "styrke-fs4-a-3r",
+        "name": "Styrke A · Functional 4 · 3 runder",
+        "rounds": 3,
+        "movingTime": 2100,
+        "exercises": [
+          {
+            "name": "Thruster",
+            "load": "2×5 kg DB",
+            "reps": 10,
+            "unit": "reps",
+            "group": "ben"
+          },
+          {
+            "name": "Renegade row",
+            "load": "10 kg DB",
+            "reps": 8,
+            "unit": "reps/side",
+            "group": "core"
+          },
+          {
+            "name": "KB swing",
+            "load": "12,5 kg KB",
+            "reps": 15,
+            "unit": "reps",
+            "group": "ben"
+          },
+          {
+            "name": "KB row",
+            "load": "10 kg DB",
+            "reps": 10,
+            "unit": "reps/side",
+            "group": "overkrop"
+          },
+          {
+            "name": "Press",
+            "load": "2×5 kg DB",
+            "reps": 10,
+            "unit": "reps",
+            "group": "overkrop"
+          }
+        ],
+        "progression": "Ben først: når alle runder × reps er gennemført med RPE ≤ 7 to pas i træk, næste KB-trin (12,5→16→20). Overkrop: +2 reps (max +4) før +2,5 kg, så tilbage til grund-reps. Recovery-uger: 2 runder, ingen progression. 3 runder fra uge 41 hvis loggen viser to fulde uger."
+      },
+      {
+        "id": "styrke-fs4-b-3r",
+        "name": "Styrke B · Functional 4 · 3 runder",
+        "rounds": 3,
+        "movingTime": 2100,
+        "exercises": [
+          {
+            "name": "RDL",
+            "load": "12 kg",
+            "reps": 12,
+            "unit": "reps",
+            "group": "ben"
+          },
+          {
+            "name": "Split squat",
+            "load": "12,5 kg KB goblet",
+            "reps": 8,
+            "unit": "reps/ben",
+            "group": "ben"
+          },
+          {
+            "name": "Pullover",
+            "load": "7 kg DB",
+            "reps": 12,
+            "unit": "reps",
+            "group": "overkrop"
+          },
+          {
+            "name": "Bænkpres",
+            "load": "2×7 kg DB",
+            "reps": 12,
+            "unit": "reps",
+            "group": "overkrop"
+          },
+          {
+            "name": "Farmers walk",
+            "load": "2×10 kg",
+            "reps": 40,
+            "unit": "m",
+            "group": "core"
+          }
+        ],
+        "progression": "Ben først: når alle runder × reps er gennemført med RPE ≤ 7 to pas i træk, næste KB-trin (12,5→16→20). Overkrop: +2 reps (max +4) før +2,5 kg, så tilbage til grund-reps. Recovery-uger: 2 runder, ingen progression. 3 runder fra uge 41 hvis loggen viser to fulde uger."
+      }
+    ],
+    "next": {
+      "ab": "a",
+      "templateId": "styrke-fs4-a-2r",
+      "name": "Styrke A · Functional 4 · 2 runder",
+      "rounds": 2,
+      "date": null,
+      "reasoning": "Ingen styrke A/B i plan eller log endnu — start med A"
+    },
+    "last4": [
+      {
+        "date": "2026-09-01",
+        "name": "Styrketræning",
+        "ab": null,
+        "rpe": null,
+        "complete": null,
+        "note": ""
+      },
+      {
+        "date": "2026-08-31",
+        "name": "Styrketræning",
+        "ab": null,
+        "rpe": null,
+        "complete": null,
+        "note": ""
+      },
+      {
+        "date": "2026-08-30",
+        "name": "Styrketræning",
+        "ab": null,
+        "rpe": null,
+        "complete": null,
+        "note": ""
+      },
+      {
+        "date": "2026-08-28",
+        "name": "Styrketræning",
+        "ab": null,
+        "rpe": null,
+        "complete": null,
+        "note": ""
+      }
+    ]
+  },
+  "weekTss": {
+    "actual": 0,
+    "planned": 255
+  },
+  "martinMail": {
+    "week": 1,
+    "isoWeek": 37,
+    "lines": [
+      "Uge 37: TSS 0 af 255 (0 %) · CTL 49,9 (mål 47) · TSB +2,1",
+      "Vægt 7d 72,3 kg · fedt 14d 21,6 % · cut starter uge 39 (21/9)",
+      "HRV 7d 54 (28d 58) · hvilepuls 44 · søvn 7d 7,3 t",
+      "AF 2/7 · protein 3/3 0/7 · aftensult —/7",
+      "Styrke 1/2 · seneste RPE —",
+      "Cut-tjek: inaktivt — Aktiveres uge 39 (21/9)",
+      "Næste uge (38, RACE): TSS-mål 250 · hårde/lange dage: tir 15/9 Løb 4×3 min halvmaraton-tempo (4:35-4:45) efter fornemmelse 45 min, søn 20/9 CPH HALF — 21,1 km, B-løb kontrolleret 4:35-4:45/km 90 min",
+      "Planændringer siden sidst: 1 — se martin_signals.md"
+    ],
+    "generatedAt": "2026-09-07T07:41:53Z"
   }
 }
