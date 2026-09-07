@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-09-07 22:43",
+    "updated": "2026-09-08 01:18",
     "week": 1,
     "totalWeeks": 51,
     "blockType": "RECOVERY",
@@ -105,9 +105,9 @@
     "target": 6,
     "streak": 1
   },
-  "coachSpeech": "Ny uge starter — uge 1 af 51. Restitutionsuge. {HL} Godt: Søvn på 7,3 timer er solid. 1 AF-dage i 1 gennemførte dage — på rette spor. 5 mere og ugens mål er i hus. Fokus: Vægt på 72,3 kg (målt 3/9) — protein ved hvert måltid, alkohol som bevidst valg, søvn 7-8 t. Vægt/fedt vurderes på 7d-snit mod planen, ikke på én vejning. Keep moving forward. ❤️ Aerobt: VIGTIGT: Løbeturen 5/9 (snitpuls 127) kostede 26,5 % mere puls pr. meter end medianen af de seneste 4 sammenlignelige pas (EF 0,994 mod 1,352). Forbehold, som IKKE er trukket fra tallet: det var 29,7 °C. Konkluder ikke overtræning ud fra ét pas — sig hvad passet kostede, og at det enten var varmen eller for højt tempo.  \"Kroppen tror, hvad sindet siger.\"",
-  "coachHighlight": "Lavere belastning er meningen i en restitutionsuge — der er ingen ugeprocent at jagte",
-  "weekFocus": "Bevæg dig hver dag — ingen ambitioner, fuld restitution",
+  "coachSpeech": "Uge 1 af 51, RECOVERY-blok efter Marathon du Médoc. Ugen er designet til at lade kroppen restituere med gang, let cykel og svøm — ingen hårde eller moderate pas i kvoten. {HL} Du gennemførte Gang let 45 min i dag med 18 TSS. Det er første uge i et restitutionsblok efter Médoc — ugens plan er let, og lav TSS er præcis det rigtige her.",
+  "coachHighlight": "Gå 45 min let tur i dag — det er gjort. Sørg for at sove 7-8 timer i nat for at vende HRV-trenden.",
+  "weekFocus": "Restituer komplet — let bevægelse, ingen pres, sov 7-8 timer",
   "today": [
     {
       "discipline": "hike",
@@ -2069,7 +2069,7 @@
         }
       ],
       "blockType": "RECOVERY",
-      "focus": "Bevæg dig hver dag — ingen ambitioner, fuld restitution"
+      "focus": "Restituer komplet — let bevægelse, ingen pres, sov 7-8 timer"
     },
     "2": {
       "sessions": [
@@ -2870,14 +2870,16 @@
     null,
     null
   ],
-  "coachAssessmentHtml": "<p class=\"coach-head\"><strong>Dag 1 af 357 · Mandag · Uge 1</strong></p><p class=\"coach-sec coach-big\">Uge 1 af 51 i Tour des Stations 2027-programmet — første uge i TRANSITION/RECOVERY efter Médoc. Cykel bærer den aerobe base, løb tidligst lørdag 12/9, og CPH Half 20/9 er 13 dage væk.</p><p class=\"coach-sec\"><span class=\"coach-sec-h\">Træning &amp; load</span>Du er i uge 1 af en RECOVERY-blok efter Marathon du Médoc — ingen hårde eller moderate pas denne uge. I dag er planen Gang let 45 min (ikke gennemført endnu). Bordeaux Gang på 221 min er registreret som ekstra og bidrog med 18 TSS, som nu er hele ugens aktuelle belastning. CTL ligger på 50.3 mod et mål på 47.0 — du er over target, og i en restitutionsuge er det kun godt; hold bare belastningen lav. Aerob flag fra løbet 5/9 i 29.7°C viser EF 26.5% under baseline, men varme alene forklarer det fuldt ud — ingen bekymring.</p><p class=\"coach-sec\"><span class=\"coach-sec-h\">Krop &amp; kost</span>7-dages snit for vægt ligger på 72.3 kg — uændret over 28 dage, stabil. Fedt-snit på 21.3% er faldet 0.3 procentpoint over 28 dage, hvilket er under tærsklen for en reel retning. Cut starter tidligst 21. september, og du er pt. 0.1 kg under din FFM-målsætning — ingen grund til at skrue ned for maden nu.</p><p class=\"coach-sec\"><span class=\"coach-sec-h\">Vaner</span>1 AF-dag i uge ud af 6 som mål — og her er der et reelt signal: 3 drikkedage i træk (4/9–6/9), som rammer HRV hårdere end spredte dage. HRV ligger på 50.0 mod 42-dages snit på 55.0, det er 8% under 7-dages snit. Protein er kun registreret 4 af 7 dage — få det på plads fra i dag. Søvn de seneste 7 dage snitter 7.3 timer, og i nat sov du 7.7 — det er fint.</p>",
-  "coachAssessmentTs": "18:49",
+  "coachAssessmentHtml": "<p class=\"coach-head\"><strong>Dag 1 af 357 · Mandag · Uge 1</strong></p><p class=\"coach-sec coach-big\">Uge 1 af 51, RECOVERY-blok efter Marathon du Médoc. Ugen er designet til at lade kroppen restituere med gang, let cykel og svøm — ingen hårde eller moderate pas i kvoten.</p><p class=\"coach-sec\"><span class=\"coach-sec-h\">Træning &amp; load</span>Du gennemførte Gang let 45 min i dag med 18 TSS. Det er første uge i et restitutionsblok efter Médoc — ugens plan er let, og lav TSS er præcis det rigtige her. CTL ligger på 50.3 mod et target på 47.0 i denne blok; det er positivt, og du skal ikke jage mere load. Første løb er tidligst lørdag 12/9 — 30 min let Z1.</p><p class=\"coach-sec\"><span class=\"coach-sec-h\">Krop &amp; kost</span>7-dages snit for vægt er 72.3 kg og fedtprocent 72.3 kg — begge stabile; forandringen over 28 dage er 0.0 kg og -0.3 procentpoint, hvilket ikke er nok til at kalde en retning. Cut starter tidligst 21/9 — ingen grund til at ændre noget nu. Protein er kun registreret 4 af 7 dage; få det ind ved hvert måltid resten af ugen.</p><p class=\"coach-sec\"><span class=\"coach-sec-h\">Vaner</span>1 alkoholfri dag ud af et mål på 6 denne uge — og 3 drikkedage i klynge 4-6/9 er et reelt HRV-problem. Ingen autopilot-dage i AF-registreringen, men klyngen er allerede håndteret som en advarsel. Søvn snit 7.3 timer — over grænsen på 7.0, og natten var 7.7 timer. Energi-snit 1.5 over 7 dage er lavt; sæt søvn og alkoholfrihed øverst resten af ugen.</p>",
+  "coachAssessmentTs": "01:18",
   "commute_pairing_warnings": [],
   "warnings": [
     {
       "type": "alcohol_cluster",
       "level": "critical",
-      "message": "3 drikkedage i træk 4/9–6/9 — klynger rammer HRV hårdere end spredte dage."
+      "message": "3 drikkedage i træk 4/9–6/9 — klynger rammer HRV hårdere end spredte dage.",
+      "action": null,
+      "source": "rule"
     }
   ],
   "tsb": 0.1,
@@ -3143,8 +3145,8 @@
       "note": "Nøgle virker"
     }
   },
-  "credentialsCheckedTs": "2026-09-07T20:43:07.419106",
-  "coachAssessmentTsFull": "2026-09-07T16:49:43",
+  "credentialsCheckedTs": "2026-09-07T23:18:37.234524",
+  "coachAssessmentTsFull": "2026-09-07T23:18:37",
   "coachAssessmentWeightAtGen": 72.3,
   "coachAssessmentAfAtGen": 1,
   "event_structure_warnings": [
@@ -8294,27 +8296,27 @@
         },
         {
           "d": "2026-09-28",
-          "ctl": 46.5
-        },
-        {
-          "d": "2026-09-29",
           "ctl": 46.7
         },
         {
-          "d": "2026-09-30",
-          "ctl": 47.0
-        },
-        {
-          "d": "2026-10-01",
+          "d": "2026-09-29",
           "ctl": 47.2
         },
         {
+          "d": "2026-09-30",
+          "ctl": 47.7
+        },
+        {
+          "d": "2026-10-01",
+          "ctl": 48.1
+        },
+        {
           "d": "2026-10-02",
-          "ctl": 47.5
+          "ctl": 47.0
         },
         {
           "d": "2026-10-03",
-          "ctl": 47.7
+          "ctl": 47.4
         },
         {
           "d": "2026-10-04",
@@ -8322,27 +8324,27 @@
         },
         {
           "d": "2026-10-05",
-          "ctl": 47.6
+          "ctl": 47.7
         },
         {
           "d": "2026-10-06",
-          "ctl": 47.4
+          "ctl": 47.6
         },
         {
           "d": "2026-10-07",
-          "ctl": 47.1
+          "ctl": 47.5
         },
         {
           "d": "2026-10-08",
-          "ctl": 46.8
+          "ctl": 47.3
         },
         {
           "d": "2026-10-09",
-          "ctl": 46.5
+          "ctl": 46.2
         },
         {
           "d": "2026-10-10",
-          "ctl": 46.3
+          "ctl": 46.1
         },
         {
           "d": "2026-10-11",
@@ -8350,11 +8352,11 @@
         },
         {
           "d": "2026-10-12",
-          "ctl": 46.4
+          "ctl": 46.3
         },
         {
           "d": "2026-10-13",
-          "ctl": 46.7
+          "ctl": 46.6
         },
         {
           "d": "2026-10-14",
@@ -8378,31 +8380,31 @@
         },
         {
           "d": "2026-10-19",
-          "ctl": 48.5
+          "ctl": 48.8
         },
         {
           "d": "2026-10-20",
-          "ctl": 48.9
+          "ctl": 49.3
         },
         {
           "d": "2026-10-21",
-          "ctl": 49.2
-        },
-        {
-          "d": "2026-10-22",
-          "ctl": 49.5
-        },
-        {
-          "d": "2026-10-23",
           "ctl": 49.9
         },
         {
+          "d": "2026-10-22",
+          "ctl": 50.5
+        },
+        {
+          "d": "2026-10-23",
+          "ctl": 49.3
+        },
+        {
           "d": "2026-10-24",
-          "ctl": 50.2
+          "ctl": 49.8
         },
         {
           "d": "2026-10-25",
-          "ctl": 50.5
+          "ctl": 50.4
         },
         {
           "d": "2026-10-26",
@@ -8410,27 +8412,27 @@
         },
         {
           "d": "2026-10-27",
-          "ctl": 49.8
+          "ctl": 50.1
         },
         {
           "d": "2026-10-28",
-          "ctl": 49.5
+          "ctl": 49.9
         },
         {
           "d": "2026-10-29",
-          "ctl": 49.2
+          "ctl": 49.8
         },
         {
           "d": "2026-10-30",
-          "ctl": 49.0
+          "ctl": 48.6
         },
         {
           "d": "2026-10-31",
-          "ctl": 48.7
+          "ctl": 48.4
         },
         {
           "d": "2026-11-01",
-          "ctl": 48.4
+          "ctl": 48.3
         }
       ],
       "targets": [
@@ -8640,50 +8642,45 @@
     ]
   },
   "coach": {
-    "generatedAt": "2026-09-07T16:49:43Z",
-    "inputsHash": "bfd6ce07fd248a22f34b96b8daea175f67f6725d",
+    "generatedAt": "2026-09-07T23:18:37Z",
+    "inputsHash": "ca299e691fdb2fbe0486a546576e40a1f07ad33a",
     "model": "claude-sonnet-4-6",
     "mode": "daily",
     "oneThing": {
-      "action": "Gå Gang let 45 min i dag — roligt tempo, ingen puls-ambitioner.",
-      "why": "Restitutionsuge efter Médoc: kroppen skal bevæge sig, ikke belastes. Dagens planlagte gang er alt hvad der skal til."
+      "action": "Gå 45 min let tur i dag — det er gjort. Sørg for at sove 7-8 timer i nat for at vende HRV-trenden.",
+      "why": "HRV er 8 % under dit 7-dages snit, og tre alkoholdage i træk 4-6/9 presser HRV-recovery denne uge."
     },
     "training": {
-      "text": "Du er i uge 1 af en RECOVERY-blok efter Marathon du Médoc — ingen hårde eller moderate pas denne uge. I dag er planen Gang let 45 min (ikke gennemført endnu). Bordeaux Gang på 221 min er registreret som ekstra og bidrog med 18 TSS, som nu er hele ugens aktuelle belastning. CTL ligger på 50.3 mod et mål på 47.0 — du er over target, og i en restitutionsuge er det kun godt; hold bare belastningen lav. Aerob flag fra løbet 5/9 i 29.7°C viser EF 26.5% under baseline, men varme alene forklarer det fuldt ud — ingen bekymring.",
+      "text": "Du gennemførte Gang let 45 min i dag med 18 TSS. Det er første uge i et restitutionsblok efter Médoc — ugens plan er let, og lav TSS er præcis det rigtige her. CTL ligger på 50.3 mod et target på 47.0 i denne blok; det er positivt, og du skal ikke jage mere load. Første løb er tidligst lørdag 12/9 — 30 min let Z1.",
       "refs": [
-        221.0,
         18.0,
         50.3,
         47.0,
-        26.5,
-        29.7
+        30.0
       ]
     },
     "body": {
-      "text": "7-dages snit for vægt ligger på 72.3 kg — uændret over 28 dage, stabil. Fedt-snit på 21.3% er faldet 0.3 procentpoint over 28 dage, hvilket er under tærsklen for en reel retning. Cut starter tidligst 21. september, og du er pt. 0.1 kg under din FFM-målsætning — ingen grund til at skrue ned for maden nu.",
+      "text": "7-dages snit for vægt er 72.3 kg og fedtprocent 72.3 kg — begge stabile; forandringen over 28 dage er 0.0 kg og -0.3 procentpoint, hvilket ikke er nok til at kalde en retning. Cut starter tidligst 21/9 — ingen grund til at ændre noget nu. Protein er kun registreret 4 af 7 dage; få det ind ved hvert måltid resten af ugen.",
       "refs": [
         72.3,
         21.3,
-        0.3,
-        0.1
+        0.0,
+        4.0
       ]
     },
     "habits": {
-      "text": "1 AF-dag i uge ud af 6 som mål — og her er der et reelt signal: 3 drikkedage i træk (4/9–6/9), som rammer HRV hårdere end spredte dage. HRV ligger på 50.0 mod 42-dages snit på 55.0, det er 8% under 7-dages snit. Protein er kun registreret 4 af 7 dage — få det på plads fra i dag. Søvn de seneste 7 dage snitter 7.3 timer, og i nat sov du 7.7 — det er fint.",
+      "text": "1 alkoholfri dag ud af et mål på 6 denne uge — og 3 drikkedage i klynge 4-6/9 er et reelt HRV-problem. Ingen autopilot-dage i AF-registreringen, men klyngen er allerede håndteret som en advarsel. Søvn snit 7.3 timer — over grænsen på 7.0, og natten var 7.7 timer. Energi-snit 1.5 over 7 dage er lavt; sæt søvn og alkoholfrihed øverst resten af ugen.",
       "refs": [
         1.0,
         6.0,
-        50.0,
-        55.0,
-        8.0,
-        4.0,
-        7.0,
         7.3,
-        7.7
+        7.0,
+        7.7,
+        1.5
       ]
     },
-    "bigPicture": "Uge 1 af 51 i Tour des Stations 2027-programmet — første uge i TRANSITION/RECOVERY efter Médoc. Cykel bærer den aerobe base, løb tidligst lørdag 12/9, og CPH Half 20/9 er 13 dage væk.",
-    "weekFocus": "Bevæg dig hver dag — ingen ambitioner, fuld restitution",
+    "bigPicture": "Uge 1 af 51, RECOVERY-blok efter Marathon du Médoc. Ugen er designet til at lade kroppen restituere med gang, let cykel og svøm — ingen hårde eller moderate pas i kvoten.",
+    "weekFocus": "Restituer komplet — let bevægelse, ingen pres, sov 7-8 timer",
     "weekFocusFor": 1,
     "warnings": [
       {
@@ -8697,7 +8694,7 @@
     "error": null,
     "validationError": null,
     "notes": null,
-    "stale": true
+    "stale": false
   },
   "weekFocusNext": {
     "week": 1,
@@ -9161,7 +9158,7 @@
       "Næste uge (38, RACE): TSS-mål 250 · hårde/lange dage: tir 15/9 Løb 4×3 min halvmaraton-tempo (4:35-4:45) efter fornemmelse 45 min, søn 20/9 CPH HALF — 21,1 km, B-løb kontrolleret 4:35-4:45/km 90 min",
       "Planændringer siden sidst: 1 — se martin_signals.md"
     ],
-    "generatedAt": "2026-09-07T20:43:07Z"
+    "generatedAt": "2026-09-07T23:18:13Z"
   },
   "proposals": []
 }
