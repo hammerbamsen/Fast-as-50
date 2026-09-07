@@ -310,3 +310,49 @@ def test_swap_template_from_bike_library_sets_library_id():
                                      e["id"], {"template_id": "lob-z2-45"})
     _, e2 = _entry_by_id(json.loads(result2["new_plan_raw"]), e["id"])
     assert "libraryId" not in e2
+
+
+# -- strength_log (blok 8, 8/9-2026) -------------------------------------------
+
+def test_strength_log_writes_athlete_log_no_dates():
+    plan = _plan_copy()
+    res = edit_apply.apply_edit(json.dumps(plan), "strength_log", "log:2026-09-12",
+                                {"rpe": 7, "complete": 1, "note": "swing 16 næste gang",
+                                 "template": "styrke-fs4-a-2r"})
+    assert res["status"] == "ok" and res["dates_changed"] == []
+    new = json.loads(res["new_plan_raw"])
+    rec = new["athletes"]["kennet"]["strengthLog"]["2026-09-12"]
+    assert rec["rpe"] == 7 and rec["complete"] == 1 and rec["template"] == "styrke-fs4-a-2r"
+    assert rec["note"] == "swing 16 næste gang" and rec["at"].endswith("+00:00")
+    # dage og zoner urørte
+    assert new["athletes"]["kennet"]["days"] == plan["athletes"]["kennet"]["days"]
+    assert new["athletes"]["kennet"]["zones"] == plan["athletes"]["kennet"]["zones"]
+
+
+def test_strength_log_overwrites_same_date_and_keeps_others():
+    plan = _plan_copy()
+    r1 = edit_apply.apply_edit(json.dumps(plan), "strength_log", "log:2026-09-12",
+                               {"rpe": 8, "complete": 0, "note": ""})
+    r2 = edit_apply.apply_edit(r1["new_plan_raw"], "strength_log", "log:2026-09-14",
+                               {"rpe": 6, "complete": True})
+    r3 = edit_apply.apply_edit(r2["new_plan_raw"], "strength_log", "log:2026-09-12",
+                               {"rpe": "5", "complete": "1", "note": "bedre"})
+    log = json.loads(r3["new_plan_raw"])["athletes"]["kennet"]["strengthLog"]
+    assert set(log) == {"2026-09-12", "2026-09-14"}
+    assert log["2026-09-12"] == {**log["2026-09-12"], "rpe": 5, "complete": 1, "note": "bedre", "template": None}
+    assert log["2026-09-14"]["complete"] == 1 and log["2026-09-14"]["rpe"] == 6
+
+
+@pytest.mark.parametrize("entry_id,params", [
+    ("log:2026-09-12", {"rpe": 0, "complete": 1}),
+    ("log:2026-09-12", {"rpe": 11, "complete": 1}),
+    ("log:2026-09-12", {"rpe": "syv", "complete": 1}),
+    ("log:2026-09-12", {"rpe": 7, "complete": 2}),
+    ("log:2026-09-12", {"rpe": 7, "complete": 1, "note": "x" * 141}),
+    ("2026-09-12", {"rpe": 7, "complete": 1}),
+    ("log:12-09-2026", {"rpe": 7, "complete": 1}),
+])
+def test_strength_log_rejects_bad_input(entry_id, params):
+    plan = _plan_copy()
+    with pytest.raises(ValueError):
+        edit_apply.apply_edit(json.dumps(plan), "strength_log", entry_id, params)

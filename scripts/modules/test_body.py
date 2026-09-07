@@ -384,3 +384,108 @@ def test_build_body_passes_af_log():
          "week_sessions": [], "af_log": _aflog("2026-10-12", "1110000")}
     b = body.build_body(_plan(), d, _d(2026, 10, 12))
     assert b["cutCheck"]["signals"]["alcohol"]["value"] == {"days7": 3, "run": 3}
+
+
+# ── Fedtfri masse: hold-mål (blok 8) ───────────────────────────────────────
+
+def test_ffm_baseline_floor_pre_is_now_and_ok():
+    m = body.ffm_status(WP, date(2026, 9, 6), flat("2026-09-06", 30, 72.5), flat("2026-09-06", 30, 21.8))
+    assert m["baseline"] == m["now"] and m["baselineDate"] == "2026-09-06"
+    assert abs(m["floor"] - (m["now"] - 0.5)) < 0.06 and m["status"] == "ok" and m["holdKg"] == -0.5
+    assert m["target"] == 57.1                                         # beholdes
+    empty = body.ffm_status(WP, date(2026, 9, 6), [], [])
+    assert empty["baseline"] is None and empty["floor"] is None and empty["status"] is None
+
+
+def test_ffm_baseline_at_cut_start_and_floor_status():
+    # 73,0 kg / 21 % frem til 29/9, derefter −1,3 kg: baseline måles 21/9 (cut-start)
+    w = series("2026-10-12", 60, lambda i: 73.0 - (1.3 if i >= 46 else 0.0))
+    m = body.ffm_status(WP, date(2026, 10, 12), w, flat("2026-10-12", 60, 21.0))
+    assert m["baselineDate"] == "2026-09-21" and m["baseline"] == 57.7 and m["floor"] == 57.2
+    assert m["now"] < m["floor"] and m["status"] == "warn"
+    # samme baseline, vægt kun −0,3 kg -> over floor -> ok (selv om change28d er negativ)
+    w2 = series("2026-10-12", 60, lambda i: 73.0 - (0.3 if i >= 46 else 0.0))
+    m2 = body.ffm_status(WP, date(2026, 10, 12), w2, flat("2026-10-12", 60, 21.0))
+    assert m2["baseline"] == 57.7 and m2["now"] >= m2["floor"] and m2["status"] == "ok"
+    assert m2["change28d"] is not None and m2["change28d"] < 0
+
+
+# ── Styrke-log + templates (blok 8) ────────────────────────────────────────
+
+def _lib():
+    return body.load_workout_library(os.path.join(_ROOT, "data", "workout_library.json"))
+
+
+def test_workout_library_has_four_fs4_templates():
+    tp = body.strength_templates(_lib())
+    ids = [t["id"] for t in tp]
+    assert ids == ["styrke-fs4-a-2r", "styrke-fs4-b-2r", "styrke-fs4-a-3r", "styrke-fs4-b-3r"]
+    a2 = next(t for t in tp if t["id"] == "styrke-fs4-a-2r")
+    assert a2["rounds"] == 2 and len(a2["exercises"]) == 5 and "Ben først" in a2["progression"]
+    assert {e["group"] for e in a2["exercises"]} <= {"ben", "overkrop", "core"}
+    assert all(set(e) == {"name", "load", "reps", "unit", "group"} for e in a2["exercises"])
+    assert body.ab_of("Styrke A · Functional 4 · 2 runder") == "a"
+    assert body.ab_of(None, "styrke-fs4-b-3r") == "b" and body.ab_of("Styrke Unilateral A 3 sæt") is None
+    assert body.ab_of("Styrke B 2 sæt") == "b" and body.ab_of("Styrketræning") is None
+
+
+def test_merge_strength_log_enriches_and_adds_logged_days():
+    log = {"from": "2026-09-01", "to": "2026-09-28",
+           "sessions": [{"date": "2026-09-12", "name": "Styrketræning"}, {"date": "2026-09-14", "name": "Styrketræning"}]}
+    plog = {"2026-09-12": {"rpe": 7, "complete": 1, "note": "swing 16 næste gang", "template": "styrke-fs4-a-2r", "at": "x"},
+            "2026-09-16": {"rpe": 8, "complete": 0, "note": "", "template": None, "at": "y"},
+            "2026-08-01": {"rpe": 5, "complete": 1, "note": "", "template": None, "at": "z"}}   # uden for vinduet
+    m = body.merge_strength_log(log, plog)
+    assert [s["date"] for s in m["sessions"]] == ["2026-09-12", "2026-09-14", "2026-09-16"]
+    s12, s14, s16 = m["sessions"]
+    assert s12["rpe"] == 7 and s12["complete"] == 1 and s12["template"] == "styrke-fs4-a-2r" and s12["source"] == "activity"
+    assert s14["rpe"] is None and s14["complete"] is None and s14["note"] == "" and s14["source"] == "activity"
+    assert s16["source"] == "log" and s16["rpe"] == 8 and s16["name"] == "Styrke (logget)"
+    assert body.merge_strength_log(log, None)["sessions"][0]["rpe"] is None
+    assert body.merge_strength_log(None, plog)["sessions"] and "from" not in body.merge_strength_log(None, plog)
+
+
+def test_next_strength_from_plan_then_alternating():
+    tp = _lib()
+    plan = {"athletes": {"kennet": {"days": [
+        {"date": "2026-09-14", "entries": [{"id": "x1", "workout": {"type": "WeightTraining", "name": "Styrke A · Functional 4 · 2 runder"},
+                                            "libraryId": "styrke-fs4-a-2r", "done": True}]},
+        {"date": "2026-09-16", "entries": [{"id": "x2", "workout": {"type": "WeightTraining", "name": "Styrke B · Functional 4 · 2 runder"},
+                                            "templateId": "styrke-fs4-b-2r"}]},
+    ]}}}
+    log = {"from": "2026-08-20", "to": "2026-09-15", "sessions": [
+        {"date": "2026-09-14", "name": "Styrketræning", "template": "styrke-fs4-a-2r", "rpe": 7, "complete": 1, "note": ""}]}
+    n = body.next_strength(plan, log, date(2026, 9, 15), tp)
+    assert n["ab"] == "b" and n["templateId"] == "styrke-fs4-b-2r" and n["date"] == "2026-09-16"
+    assert n["reasoning"] == "Planlagt 16/9: Styrke B · Functional 4 · 2 runder" and n["name"].startswith("Styrke B")
+    # gennemført pas springes over; ingen fremtidige -> skiftevis ud fra loggen
+    plan["athletes"]["kennet"]["days"][1]["entries"][0]["done"] = True
+    n2 = body.next_strength(plan, log, date(2026, 9, 17), tp)
+    assert n2["ab"] == "b" and n2["templateId"] == "styrke-fs4-b-2r" and n2["date"] is None
+    assert n2["reasoning"] == "Skiftevis A/B: seneste var A (14/9)"
+    # ingen A/B nogen steder -> A
+    n3 = body.next_strength({"athletes": {"kennet": {"days": []}}}, {"sessions": [{"date": "2026-09-01", "name": "Styrketræning"}]},
+                            date(2026, 9, 17), tp)
+    assert n3["ab"] == "a" and n3["templateId"] == "styrke-fs4-a-2r" and "start med A" in n3["reasoning"]
+    # 3 runder fra uge 41 når de to seneste afsluttede uger har ≥ 2 pas
+    log3 = {"from": "2026-09-14", "to": "2026-10-11", "sessions": [
+        {"date": d, "name": "Styrketræning", "template": "styrke-fs4-b-2r"} for d in
+        ("2026-09-28", "2026-10-01", "2026-10-05", "2026-10-08")]}
+    n4 = body.next_strength({"athletes": {"kennet": {"days": []}}}, log3, date(2026, 10, 12), tp)   # uge 42
+    assert n4["ab"] == "a" and n4["templateId"] == "styrke-fs4-a-3r" and n4["rounds"] == 3
+    log2 = dict(log3, sessions=log3["sessions"][:3])   # kun 1 pas i seneste uge -> 2 runder
+    n5 = body.next_strength({"athletes": {"kennet": {"days": []}}}, log2, date(2026, 10, 12), tp)
+    assert n5["rounds"] == 2
+
+
+def test_build_strength_last4_newest_first():
+    log = {"from": "2026-08-20", "to": "2026-09-15", "sessions": [
+        {"date": f"2026-09-{d:02d}", "name": "Styrketræning", "template": t, "rpe": r, "complete": c, "note": n}
+        for d, t, r, c, n in ((1, None, None, None, None), (3, "styrke-fs4-a-2r", 7, 1, "ok"),
+                              (5, "styrke-fs4-b-2r", 8, 0, "tung"), (8, "styrke-fs4-a-2r", 6, 1, ""),
+                              (10, "styrke-fs4-b-2r", 7, 1, "swing 16 næste gang"))]}
+    s = body.build_strength({"athletes": {"kennet": {"days": []}}}, log, date(2026, 9, 12), templates=_lib())
+    assert [x["date"] for x in s["last4"]] == ["2026-09-10", "2026-09-08", "2026-09-05", "2026-09-03"]
+    assert s["last4"][0] == {"date": "2026-09-10", "name": "Styrketræning", "ab": "b", "rpe": 7, "complete": 1, "note": "swing 16 næste gang"}
+    assert s["next"]["ab"] == "a" and len(s["templates"]) == 4
+    json.dumps(s)

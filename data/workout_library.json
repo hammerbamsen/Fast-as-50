@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "updated": "2026-07-07",
-  "note": "Bibliotek af workout-templates. Bruges af 'Skift pas' i plan.html. Vokser når nye pas gemmes via 'Gem som template' i edit-flowet.",
+  "updated": "2026-09-08",
+  "note": "Bibliotek af workout-templates. Bruges af 'Skift pas' i plan.html. Vokser når nye pas gemmes via 'Gem som template' i edit-flowet. Blok 8 (8/9-2026): styrke-fs4-* har desuden rounds/progression/exercises (Krop → Styrke-kort).",
   "templates": [
     {
       "id": "styrke-a-3set",
@@ -24,6 +24,206 @@
         "styrke",
         "hjemme",
         "let"
+      ]
+    },
+    {
+      "id": "styrke-fs4-a-2r",
+      "name": "Styrke A · Functional 4 · 2 runder",
+      "type": "WeightTraining",
+      "moving_time": 1500,
+      "description": "2x\n- Thruster 2×5kg DB ×10 1m freeride\n- Renegade row 10kg DB ×8/side 1m freeride\n- KB swing 12,5kg KB ×15 1m freeride\n- KB row 10kg DB ×10/side 1m freeride\n- Press 2×5kg DB ×10 1m freeride\n- Pause 90 sek 2m freeride",
+      "tags": [
+        "styrke",
+        "hjemme"
+      ],
+      "rounds": 2,
+      "progression": "Ben først: når alle runder × reps er gennemført med RPE ≤ 7 to pas i træk, næste KB-trin (12,5→16→20). Overkrop: +2 reps (max +4) før +2,5 kg, så tilbage til grund-reps. Recovery-uger: 2 runder, ingen progression. 3 runder fra uge 41 hvis loggen viser to fulde uger.",
+      "exercises": [
+        {
+          "name": "Thruster",
+          "load": "2×5 kg DB",
+          "reps": 10,
+          "unit": "reps",
+          "group": "ben"
+        },
+        {
+          "name": "Renegade row",
+          "load": "10 kg DB",
+          "reps": 8,
+          "unit": "reps/side",
+          "group": "core"
+        },
+        {
+          "name": "KB swing",
+          "load": "12,5 kg KB",
+          "reps": 15,
+          "unit": "reps",
+          "group": "ben"
+        },
+        {
+          "name": "KB row",
+          "load": "10 kg DB",
+          "reps": 10,
+          "unit": "reps/side",
+          "group": "overkrop"
+        },
+        {
+          "name": "Press",
+          "load": "2×5 kg DB",
+          "reps": 10,
+          "unit": "reps",
+          "group": "overkrop"
+        }
+      ]
+    },
+    {
+      "id": "styrke-fs4-b-2r",
+      "name": "Styrke B · Functional 4 · 2 runder",
+      "type": "WeightTraining",
+      "moving_time": 1500,
+      "description": "2x\n- RDL 12kg ×12 1m freeride\n- Split squat 12,5kg KB goblet ×8/ben 1m freeride\n- Pullover 7kg DB ×12 1m freeride\n- Bænkpres 2×7kg DB ×12 1m freeride\n- Farmers walk 2×10kg 40 m 1m freeride\n- Pause 90 sek 2m freeride",
+      "tags": [
+        "styrke",
+        "hjemme"
+      ],
+      "rounds": 2,
+      "progression": "Ben først: når alle runder × reps er gennemført med RPE ≤ 7 to pas i træk, næste KB-trin (12,5→16→20). Overkrop: +2 reps (max +4) før +2,5 kg, så tilbage til grund-reps. Recovery-uger: 2 runder, ingen progression. 3 runder fra uge 41 hvis loggen viser to fulde uger.",
+      "exercises": [
+        {
+          "name": "RDL",
+          "load": "12 kg",
+          "reps": 12,
+          "unit": "reps",
+          "group": "ben"
+        },
+        {
+          "name": "Split squat",
+          "load": "12,5 kg KB goblet",
+          "reps": 8,
+          "unit": "reps/ben",
+          "group": "ben"
+        },
+        {
+          "name": "Pullover",
+          "load": "7 kg DB",
+          "reps": 12,
+          "unit": "reps",
+          "group": "overkrop"
+        },
+        {
+          "name": "Bænkpres",
+          "load": "2×7 kg DB",
+          "reps": 12,
+          "unit": "reps",
+          "group": "overkrop"
+        },
+        {
+          "name": "Farmers walk",
+          "load": "2×10 kg",
+          "reps": 40,
+          "unit": "m",
+          "group": "core"
+        }
+      ]
+    },
+    {
+      "id": "styrke-fs4-a-3r",
+      "name": "Styrke A · Functional 4 · 3 runder",
+      "type": "WeightTraining",
+      "moving_time": 2100,
+      "description": "3x\n- Thruster 2×5kg DB ×10 1m freeride\n- Renegade row 10kg DB ×8/side 1m freeride\n- KB swing 12,5kg KB ×15 1m freeride\n- KB row 10kg DB ×10/side 1m freeride\n- Press 2×5kg DB ×10 1m freeride\n- Pause 90 sek 2m freeride",
+      "tags": [
+        "styrke",
+        "hjemme"
+      ],
+      "rounds": 3,
+      "progression": "Ben først: når alle runder × reps er gennemført med RPE ≤ 7 to pas i træk, næste KB-trin (12,5→16→20). Overkrop: +2 reps (max +4) før +2,5 kg, så tilbage til grund-reps. Recovery-uger: 2 runder, ingen progression. 3 runder fra uge 41 hvis loggen viser to fulde uger.",
+      "exercises": [
+        {
+          "name": "Thruster",
+          "load": "2×5 kg DB",
+          "reps": 10,
+          "unit": "reps",
+          "group": "ben"
+        },
+        {
+          "name": "Renegade row",
+          "load": "10 kg DB",
+          "reps": 8,
+          "unit": "reps/side",
+          "group": "core"
+        },
+        {
+          "name": "KB swing",
+          "load": "12,5 kg KB",
+          "reps": 15,
+          "unit": "reps",
+          "group": "ben"
+        },
+        {
+          "name": "KB row",
+          "load": "10 kg DB",
+          "reps": 10,
+          "unit": "reps/side",
+          "group": "overkrop"
+        },
+        {
+          "name": "Press",
+          "load": "2×5 kg DB",
+          "reps": 10,
+          "unit": "reps",
+          "group": "overkrop"
+        }
+      ]
+    },
+    {
+      "id": "styrke-fs4-b-3r",
+      "name": "Styrke B · Functional 4 · 3 runder",
+      "type": "WeightTraining",
+      "moving_time": 2100,
+      "description": "3x\n- RDL 12kg ×12 1m freeride\n- Split squat 12,5kg KB goblet ×8/ben 1m freeride\n- Pullover 7kg DB ×12 1m freeride\n- Bænkpres 2×7kg DB ×12 1m freeride\n- Farmers walk 2×10kg 40 m 1m freeride\n- Pause 90 sek 2m freeride",
+      "tags": [
+        "styrke",
+        "hjemme"
+      ],
+      "rounds": 3,
+      "progression": "Ben først: når alle runder × reps er gennemført med RPE ≤ 7 to pas i træk, næste KB-trin (12,5→16→20). Overkrop: +2 reps (max +4) før +2,5 kg, så tilbage til grund-reps. Recovery-uger: 2 runder, ingen progression. 3 runder fra uge 41 hvis loggen viser to fulde uger.",
+      "exercises": [
+        {
+          "name": "RDL",
+          "load": "12 kg",
+          "reps": 12,
+          "unit": "reps",
+          "group": "ben"
+        },
+        {
+          "name": "Split squat",
+          "load": "12,5 kg KB goblet",
+          "reps": 8,
+          "unit": "reps/ben",
+          "group": "ben"
+        },
+        {
+          "name": "Pullover",
+          "load": "7 kg DB",
+          "reps": 12,
+          "unit": "reps",
+          "group": "overkrop"
+        },
+        {
+          "name": "Bænkpres",
+          "load": "2×7 kg DB",
+          "reps": 12,
+          "unit": "reps",
+          "group": "overkrop"
+        },
+        {
+          "name": "Farmers walk",
+          "load": "2×10 kg",
+          "reps": 40,
+          "unit": "m",
+          "group": "core"
+        }
       ]
     },
     {
