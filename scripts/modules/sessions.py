@@ -1166,6 +1166,17 @@ def calc_completion(actual_tss, planned_tss, actual_mins, planned_mins,
     elif pct >= 0.20:         return 'partial', round(pct * 100)
     else:                     return 'minimal', round(pct * 100)
 
+# Discipliner der matcher paa tvaers (7/9-2026): Garmin sender gaature som
+# "Walk", men plan.json bruger "hike" til alle Gang-pas. Uden aekvivalens
+# landede dagens tur som "ekstra" og det planlagte pas stod aabent.
+_DISC_EQUIV = (("swim", "openwater"), ("walk", "hike"))
+
+def _disc_equiv(a, b):
+    if a == b:
+        return True
+    return any(a in grp and b in grp for grp in _DISC_EQUIV)
+
+
 def build_week_sessions(done_map, planned_sessions):
     """Opdater done-status på ugessessioner baseret på Intervals-aktiviteter.
     done_map: {dag_short: [(disc, navn), ...]} sorteret efter tidspunkt.
@@ -1215,10 +1226,7 @@ def build_week_sessions(done_map, planned_sessions):
                 # selvstaendig ekstra-aktivitet. Den gamle regel lod commute
                 # forbruge et cykel-pas hvis ingen rigtig cykeltur fandtes, og
                 # gjorde dagens pas "brugt" foer det var koert.
-                if i not in used[day_key] and (
-                    disc == planned_disc
-                    or (disc in ("swim", "openwater") and planned_disc in ("swim", "openwater"))
-                ):
+                if i not in used[day_key] and _disc_equiv(disc, planned_disc):
                     match_idx = i
                     break
             if match_idx is not None:
