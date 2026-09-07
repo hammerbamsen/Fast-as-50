@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-07T20:09:32Z",
+  "generatedAt": "2026-09-07T20:21:33Z",
   "workflows": {
     "CI — pytest": {
       "lastRun": "2026-09-07T20:01:47Z",
@@ -31,10 +31,10 @@
       "durationS": 23
     },
     "Send daglig push-påmindelse": {
-      "lastRun": "2026-09-07T20:09:14Z",
+      "lastRun": "2026-09-07T20:21:18Z",
       "conclusion": "success",
-      "event": "workflow_dispatch",
-      "runUrl": "https://github.com/hammerbamsen/fast-as-50/actions/runs/34158283925",
+      "event": "schedule",
+      "runUrl": "https://github.com/hammerbamsen/fast-as-50/actions/runs/34159062832",
       "durationS": 20,
       "expectedEveryMin": 1500
     },
