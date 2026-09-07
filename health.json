@@ -1,0 +1,23 @@
+{
+  "generatedAt": "2026-09-07T05:43:14Z",
+  "workflows": {
+    "CI — pytest": {
+      "lastRun": "2026-09-07T05:43:00Z",
+      "conclusion": "success",
+      "event": "push",
+      "runUrl": "https://github.com/hammerbamsen/fast-as-50/actions/runs/34087842621",
+      "durationS": 21
+    }
+  },
+  "secrets": {
+    "PRIVATE_REPO_TOKEN": {
+      "expires": "2026-10-15",
+      "usedBy": [
+        "Send daglig push-påmindelse",
+        "Modtag push-subscription",
+        "Workflow-sundhed"
+      ],
+      "note": "Fine-grained PAT til det private repo (push-subscriptions). Bør erstattes af GitHub App-token (Worker'en bruger allerede GitHub App)."
+    }
+  }
+}
