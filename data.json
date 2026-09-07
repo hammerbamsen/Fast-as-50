@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-09-07 09:41",
+    "updated": "2026-09-07 09:42",
     "week": 1,
     "totalWeeks": 51,
     "blockType": "RECOVERY",
@@ -105,8 +105,8 @@
     "target": 6,
     "streak": 0
   },
-  "coachSpeech": "Uge 1 af RECOVERY-blokken i Tour des Stations 2027-programmet — direkte efter Marathon du Médoc. Ugen er designet til gang, svøm og let cykel; ingen intensitet, fordi 42 km excentrisk løb kræver 10-14 dage at restituere fra. {HL} I dag er der ét pas: Gang let 45 min. Ugen er uge 1 af en RECOVERY-blok — ingen hårde eller moderate pas i kvoten.",
-  "coachHighlight": "Gå Gang let 45 min i roligt tempo — ingen puls-ambitioner, bare blod i benene",
+  "coachSpeech": "Ny uge starter — uge 1 af 51. Restituitionsuge. {HL} Godt: Søvn på 7,3 timer er solid. Ny uge med 0 dages streak i ryggen. Hold den. Fokus: Vægt på 72,3 kg (målt 3/9) — protein ved hvert måltid, alkohol som bevidst valg, søvn 7-8 t. Vægt/fedt vurderes på 7d-snit mod planen, ikke på én vejning. Keep moving forward. ❤️ Aerobt: VIGTIGT: Løbeturen 5/9 (snitpuls 127) kostede 26,5 % mere puls pr. meter end medianen af de seneste 4 sammenlignelige pas (EF 0,994 mod 1,352). Forbehold, som IKKE er trukket fra tallet: det var 29,7 °C. Konkluder ikke overtræning ud fra ét pas — sig hvad passet kostede, og at det enten var varmen eller for højt tempo.  \"Kroppen tror, hvad sindet siger.\"",
+  "coachHighlight": "Fuld uge foran — i dag: Gang let 45 min",
   "weekFocus": "Restituér aktivt — gang og let bevægelse bærer ugen",
   "today": [
     {
@@ -2915,9 +2915,7 @@
     {
       "type": "alcohol_cluster",
       "level": "critical",
-      "message": "3 drikkedage i træk 4/9–6/9 — klynger rammer HRV hårdere end spredte dage.",
-      "action": null,
-      "source": "rule"
+      "message": "3 drikkedage i træk 4/9–6/9 — klynger rammer HRV hårdere end spredte dage."
     }
   ],
   "tsb": 2.1,
@@ -3183,7 +3181,7 @@
       "note": "Nøgle virker"
     }
   },
-  "credentialsCheckedTs": "2026-09-07T07:42:15.669087",
+  "credentialsCheckedTs": "2026-09-07T07:42:59.816179",
   "coachAssessmentTsFull": "2026-09-07T07:42:15",
   "coachAssessmentWeightAtGen": 72.3,
   "coachAssessmentAfAtGen": 0,
@@ -9353,6 +9351,6 @@
       "Næste uge (38, RACE): TSS-mål 250 · hårde/lange dage: tir 15/9 Løb 4×3 min halvmaraton-tempo (4:35-4:45) efter fornemmelse 45 min, søn 20/9 CPH HALF — 21,1 km, B-løb kontrolleret 4:35-4:45/km 90 min",
       "Planændringer siden sidst: 1 — se martin_signals.md"
     ],
-    "generatedAt": "2026-09-07T07:41:53Z"
+    "generatedAt": "2026-09-07T07:42:59Z"
   }
 }
