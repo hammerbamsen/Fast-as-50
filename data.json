@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-09-07 02:43",
+    "updated": "2026-09-07 07:44",
     "week": 1,
     "totalWeeks": 51,
     "blockType": "RECOVERY",
@@ -46,7 +46,7 @@
       "color": "#27AE60"
     },
     "sleep": {
-      "value": "8,0",
+      "value": "7,7",
       "unit": "t",
       "sub": "Snit 7d 7,3t · mål 7t",
       "color": "#27AE60"
@@ -58,13 +58,13 @@
       "color": "#7A6A58"
     },
     "hrv": {
-      "value": "55,2",
+      "value": "54,4",
       "unit": "ms",
       "sub": "Snit 7d",
       "color": "#7A6A58"
     },
     "rhr": {
-      "value": "45",
+      "value": "44",
       "unit": "slag",
       "sub": "Hvilepuls · snit 7d",
       "color": "#7A6A58"
@@ -105,8 +105,8 @@
     "target": 6,
     "streak": 0
   },
-  "coachSpeech": "Uge 1 af RECOVERY — direkte efter Marathon du Médoc. Ugen er bygget op af gang, svøm og let cykel; ingen hård belastning og intet løb før lørdag 12/9 tidligst. HRV signalerer at kroppen stadig fordøjer lørdagens indsats. {HL} Ugen starter i uge 1 af RECOVERY-blokken. Intet er gennemført endnu — 7 pas ligger foran dig. Dagens plan er Gang let 45 min; med readiness LOW gælder: kortere er bedre end fuldt gennemført.",
-  "coachHighlight": "Gå 45 min let i dag — men sænk tempo og varighed til 30 min hvis benene stadig føles tunge efter Médoc.",
+  "coachSpeech": "Ny uge starter — uge 1 af 51. Restituitionsuge. {HL} Godt: Søvn på 7,3 timer er solid. Ny uge med 0 dages streak i ryggen. Hold den. Fokus: Vægt på 72,3 kg (målt 3/9) — protein ved hvert måltid, alkohol som bevidst valg, søvn 7-8 t. Vægt/fedt vurderes på 7d-snit mod planen, ikke på én vejning. Keep moving forward. ❤️ Aerobt: VIGTIGT: Løbeturen 5/9 (snitpuls 127) kostede 26,5 % mere puls pr. meter end medianen af de seneste 4 sammenlignelige pas (EF 0,994 mod 1,352). Forbehold, som IKKE er trukket fra tallet: det var 29,7 °C. Konkluder ikke overtræning ud fra ét pas — sig hvad passet kostede, og at det enten var varmen eller for højt tempo.  \"Kroppen tror, hvad sindet siger.\"",
+  "coachHighlight": "Fuld uge foran — i dag: Gang let 45 min",
   "weekFocus": "Restituér aktivt — gang og cykel bærer basen denne uge",
   "today": [
     {
@@ -970,7 +970,11 @@
       "v": 35.0,
       "real": true
     },
-    null
+    {
+      "date": "2026-09-07",
+      "v": 50.0,
+      "real": true
+    }
   ],
   "sleepHistory": [
     {
@@ -1418,7 +1422,11 @@
       "v": 8.0,
       "real": true
     },
-    null
+    {
+      "date": "2026-09-07",
+      "v": 7.7,
+      "real": true
+    }
   ],
   "tsbHistory": [
     {
@@ -2077,10 +2085,10 @@
         {
           "day": "Tir",
           "disc": "run",
-          "label": "Løb målpace 4×3 min (1:30-tempo)",
+          "label": "Løb 4×3 min halvmaraton-tempo (4:35-4:45) efter fornemmelse",
           "done": false,
           "today": false,
-          "planned_tss": 41,
+          "planned_tss": 38,
           "planned_mins": 45,
           "planned_distance_m": null
         },
@@ -2127,11 +2135,11 @@
         {
           "day": "Søn",
           "disc": "run",
-          "label": "CPH HALF — 21,1 km",
+          "label": "CPH HALF — 21,1 km, B-løb kontrolleret 4:35-4:45/km",
           "done": false,
           "today": false,
           "planned_tss": 82,
-          "planned_mins": 90,
+          "planned_mins": 98,
           "planned_distance_m": 21100
         }
       ],
@@ -2907,23 +2915,7 @@
     {
       "type": "alcohol_cluster",
       "level": "critical",
-      "message": "3 drikkedage i træk 4/9–6/9 — klynger rammer HRV hårdere end spredte dage.",
-      "action": null,
-      "source": "rule"
-    },
-    {
-      "type": "readiness",
-      "level": "critical",
-      "message": "HRV 35,0 ms er 37% under 7-dages snit på 55,2 ms. Krop er presset — hold dagens aktivitet kort og let.",
-      "action": null,
-      "source": "ai"
-    },
-    {
-      "type": "hrv",
-      "level": "warn",
-      "message": "HRV 35,0 ms — 37% under 7d-snit (55,2 ms). Kroppen er presset.",
-      "action": null,
-      "source": "rule"
+      "message": "3 drikkedage i træk 4/9–6/9 — klynger rammer HRV hårdere end spredte dage."
     }
   ],
   "tsb": 2.1,
@@ -3189,11 +3181,48 @@
       "note": "Nøgle virker"
     }
   },
-  "credentialsCheckedTs": "2026-09-07T00:44:01.323145",
+  "credentialsCheckedTs": "2026-09-07T05:44:31.210775",
   "coachAssessmentTsFull": "2026-09-07T00:44:01",
   "coachAssessmentWeightAtGen": 72.3,
   "coachAssessmentAfAtGen": 0,
-  "event_structure_warnings": [],
+  "event_structure_warnings": [
+    {
+      "date": "2026-09-15",
+      "name": "Løb 4×3 min halvmaraton-tempo (4:35-4:45) efter fornemmelse",
+      "type": "Run",
+      "event_id": 134171886,
+      "level": "error",
+      "code": "PROSA_BESKRIVELSE",
+      "text": "Beskrivelsen har ingen workout-syntaks (linjer med \"- \"). Intervals kan ikke bygge trin — uret får en tom traening."
+    },
+    {
+      "date": "2026-09-15",
+      "name": "Løb 4×3 min halvmaraton-tempo (4:35-4:45) efter fornemmelse",
+      "type": "Run",
+      "event_id": 134171886,
+      "level": "error",
+      "code": "INGEN_TRIN",
+      "text": "workout_doc har ingen trin."
+    },
+    {
+      "date": "2026-09-20",
+      "name": "CPH HALF — 21,1 km, B-løb kontrolleret 4:35-4:45/km",
+      "type": "Run",
+      "event_id": 134171902,
+      "level": "error",
+      "code": "PROSA_BESKRIVELSE",
+      "text": "Beskrivelsen har ingen workout-syntaks (linjer med \"- \"). Intervals kan ikke bygge trin — uret får en tom traening."
+    },
+    {
+      "date": "2026-09-20",
+      "name": "CPH HALF — 21,1 km, B-løb kontrolleret 4:35-4:45/km",
+      "type": "Run",
+      "event_id": 134171902,
+      "level": "error",
+      "code": "INGEN_TRIN",
+      "text": "workout_doc har ingen trin."
+    }
+  ],
   "coachAssessmentFatAtGen": 21.9,
   "zones": {
     "runThreshold": "4:24/km",
@@ -4002,7 +4031,7 @@
     },
     {
       "date": "2026-09-07",
-      "v": 48,
+      "v": 45,
       "real": true
     }
   ],
@@ -4363,14 +4392,7 @@
           "OW-svøm Race-simulation 2000 m",
           "Lang løb Z2 26 km (140 min)"
         ],
-        "flags": [
-          {
-            "level": "WARN",
-            "rule": "vo2_missing",
-            "text": "Ingen VO2-stimulus i build-uge 12",
-            "historic": false
-          }
-        ],
+        "flags": [],
         "races": [],
         "travel": "Norge-tur",
         "isCurrent": false,
@@ -4434,14 +4456,7 @@
           "moderat": 0
         },
         "keySessions": [],
-        "flags": [
-          {
-            "level": "WARN",
-            "rule": "low_readiness",
-            "text": "Lav readiness i dag (HRV/søvn) — overvej at reducere dagens/ugens belastning",
-            "historic": false
-          }
-        ],
+        "flags": [],
         "races": [
           {
             "name": "Marathon du Médoc",
@@ -4476,7 +4491,14 @@
           "moderat": 0
         },
         "keySessions": [],
-        "flags": [],
+        "flags": [
+          {
+            "level": "WARN",
+            "rule": "low_readiness",
+            "text": "Lav readiness i dag (HRV/søvn) — overvej at reducere dagens/ugens belastning",
+            "historic": false
+          }
+        ],
         "races": [],
         "travel": null,
         "isCurrent": true,
@@ -5600,7 +5622,14 @@
           "moderat": 0
         },
         "keySessions": [],
-        "flags": [],
+        "flags": [
+          {
+            "level": "WARN",
+            "rule": "race_tsb",
+            "text": "TSB 0.3 på race-dag (Santini Stelvio Gran Fondo (lang rute)) — mål +5 til +15",
+            "historic": false
+          }
+        ],
         "races": [
           {
             "name": "Santini Stelvio Gran Fondo (lang rute)",
@@ -5954,7 +5983,14 @@
           "moderat": 0
         },
         "keySessions": [],
-        "flags": [],
+        "flags": [
+          {
+            "level": "WARN",
+            "rule": "race_tsb",
+            "text": "TSB 0.0 på race-dag (Tour des Stations Ultrafondo) — mål +5 til +15",
+            "historic": false
+          }
+        ],
         "races": [
           {
             "name": "Tour des Stations Ultrafondo",
@@ -8371,7 +8407,228 @@
           "ctl": 49.9
         }
       ],
-      "projection": [],
+      "projection": [
+        {
+          "d": "2026-09-08",
+          "ctl": 49.2
+        },
+        {
+          "d": "2026-09-09",
+          "ctl": 48.6
+        },
+        {
+          "d": "2026-09-10",
+          "ctl": 47.9
+        },
+        {
+          "d": "2026-09-11",
+          "ctl": 47.3
+        },
+        {
+          "d": "2026-09-12",
+          "ctl": 46.7
+        },
+        {
+          "d": "2026-09-13",
+          "ctl": 46.1
+        },
+        {
+          "d": "2026-09-14",
+          "ctl": 45.8
+        },
+        {
+          "d": "2026-09-15",
+          "ctl": 45.6
+        },
+        {
+          "d": "2026-09-16",
+          "ctl": 45.3
+        },
+        {
+          "d": "2026-09-17",
+          "ctl": 45.1
+        },
+        {
+          "d": "2026-09-18",
+          "ctl": 44.9
+        },
+        {
+          "d": "2026-09-19",
+          "ctl": 44.7
+        },
+        {
+          "d": "2026-09-20",
+          "ctl": 44.5
+        },
+        {
+          "d": "2026-09-21",
+          "ctl": 44.7
+        },
+        {
+          "d": "2026-09-22",
+          "ctl": 44.9
+        },
+        {
+          "d": "2026-09-23",
+          "ctl": 45.1
+        },
+        {
+          "d": "2026-09-24",
+          "ctl": 45.4
+        },
+        {
+          "d": "2026-09-25",
+          "ctl": 45.6
+        },
+        {
+          "d": "2026-09-26",
+          "ctl": 45.8
+        },
+        {
+          "d": "2026-09-27",
+          "ctl": 46.0
+        },
+        {
+          "d": "2026-09-28",
+          "ctl": 46.3
+        },
+        {
+          "d": "2026-09-29",
+          "ctl": 46.5
+        },
+        {
+          "d": "2026-09-30",
+          "ctl": 46.8
+        },
+        {
+          "d": "2026-10-01",
+          "ctl": 47.0
+        },
+        {
+          "d": "2026-10-02",
+          "ctl": 47.3
+        },
+        {
+          "d": "2026-10-03",
+          "ctl": 47.5
+        },
+        {
+          "d": "2026-10-04",
+          "ctl": 47.7
+        },
+        {
+          "d": "2026-10-05",
+          "ctl": 47.4
+        },
+        {
+          "d": "2026-10-06",
+          "ctl": 47.2
+        },
+        {
+          "d": "2026-10-07",
+          "ctl": 46.9
+        },
+        {
+          "d": "2026-10-08",
+          "ctl": 46.6
+        },
+        {
+          "d": "2026-10-09",
+          "ctl": 46.4
+        },
+        {
+          "d": "2026-10-10",
+          "ctl": 46.1
+        },
+        {
+          "d": "2026-10-11",
+          "ctl": 45.9
+        },
+        {
+          "d": "2026-10-12",
+          "ctl": 46.2
+        },
+        {
+          "d": "2026-10-13",
+          "ctl": 46.5
+        },
+        {
+          "d": "2026-10-14",
+          "ctl": 46.8
+        },
+        {
+          "d": "2026-10-15",
+          "ctl": 47.2
+        },
+        {
+          "d": "2026-10-16",
+          "ctl": 47.5
+        },
+        {
+          "d": "2026-10-17",
+          "ctl": 47.8
+        },
+        {
+          "d": "2026-10-18",
+          "ctl": 48.0
+        },
+        {
+          "d": "2026-10-19",
+          "ctl": 48.4
+        },
+        {
+          "d": "2026-10-20",
+          "ctl": 48.7
+        },
+        {
+          "d": "2026-10-21",
+          "ctl": 49.1
+        },
+        {
+          "d": "2026-10-22",
+          "ctl": 49.4
+        },
+        {
+          "d": "2026-10-23",
+          "ctl": 49.7
+        },
+        {
+          "d": "2026-10-24",
+          "ctl": 50.0
+        },
+        {
+          "d": "2026-10-25",
+          "ctl": 50.3
+        },
+        {
+          "d": "2026-10-26",
+          "ctl": 50.0
+        },
+        {
+          "d": "2026-10-27",
+          "ctl": 49.7
+        },
+        {
+          "d": "2026-10-28",
+          "ctl": 49.4
+        },
+        {
+          "d": "2026-10-29",
+          "ctl": 49.1
+        },
+        {
+          "d": "2026-10-30",
+          "ctl": 48.8
+        },
+        {
+          "d": "2026-10-31",
+          "ctl": 48.6
+        },
+        {
+          "d": "2026-11-01",
+          "ctl": 48.3
+        }
+      ],
       "targets": [
         {
           "week": 11,
@@ -8644,7 +8901,7 @@
     "error": null,
     "validationError": null,
     "notes": null,
-    "stale": false
+    "stale": true
   },
   "weekFocusNext": {
     "week": 1,
