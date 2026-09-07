@@ -12,6 +12,8 @@ permissions:
 jobs:
   store:
     runs-on: ubuntu-latest
+    env:
+      HAS_APP: ${{ secrets.FAF_APP_ID != '' && secrets.FAF_APP_PRIVATE_KEY != '' }}
     steps:
       - name: Python setup
         uses: actions/setup-python@v5
@@ -21,9 +23,27 @@ jobs:
         uses: actions/checkout@v4
       - name: Install requests
         run: pip install requests
+      - name: GitHub App-token til det private repo
+        # Mintes pr. kørsel af den App Worker'en allerede bruger (4259031) og
+        # udløber efter en time — ingen langlivet nøgle at forny. Kører kun når
+        # FAF_APP_ID/FAF_APP_PRIVATE_KEY er sat; ellers falder vi tilbage til
+        # PAT'en, så push aldrig stopper midt i en omlægning. docs/PAT_RENEWAL.md.
+        id: apptoken
+        if: env.HAS_APP == 'true'
+        # Fejler mintningen (app ikke installeret på det private repo, forkert
+        # nøgle), falder vi tilbage til PAT'en i stedet for at vælte jobbet —
+        # push er vigtigere end hvilken nøgle der bruges.
+        continue-on-error: true
+        uses: actions/create-github-app-token@v2
+        with:
+          app-id: ${{ secrets.FAF_APP_ID }}
+          private-key: ${{ secrets.FAF_APP_PRIVATE_KEY }}
+          owner: ${{ github.repository_owner }}
+          repositories: fast-as-50-private
       - name: Gem subscription
         env:
           PRIVATE_REPO: ${{ secrets.PRIVATE_REPO }}
-          PRIVATE_REPO_TOKEN: ${{ secrets.PRIVATE_REPO_TOKEN }}
+          PRIVATE_REPO_TOKEN: ${{ steps.apptoken.outputs.token || secrets.PRIVATE_REPO_TOKEN }}
+          PRIVATE_REPO_AUTH: ${{ steps.apptoken.outputs.token && 'app' || 'pat' }}
           SUB_JSON: ${{ toJSON(github.event.client_payload.subscription) }}
         run: python scripts/store_subscription.py

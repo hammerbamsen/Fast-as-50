@@ -110,3 +110,36 @@ def test_run_from_env():
     assert r["name"] == "CI — pytest" and r["conclusion"] == "failure"
     assert hr.duration_s(r) == 150
     assert hr.run_from_env({}) is None
+
+
+# ── Nøgler: PAT vs GitHub App-token (9/9-2026) ─────────────────────────────
+
+def test_secrets_pat_er_standard_og_har_udloeb():
+    for mode in ("pat", "", None, "noget-andet"):
+        s = hr.secrets_for(mode)
+        assert list(s) == ["PRIVATE_REPO_TOKEN"], mode
+        assert s["PRIVATE_REPO_TOKEN"]["expires"] == "2026-10-15"
+        assert "Send daglig push-påmindelse" in s["PRIVATE_REPO_TOKEN"]["usedBy"]
+
+
+def test_secrets_app_har_intet_udloeb():
+    s = hr.secrets_for("APP ")
+    assert list(s) == ["GitHub App (privat repo)"]
+    e = s["GitHub App (privat repo)"]
+    assert "expires" not in e            # dashboardet viser "ingen udløbsdato"
+    assert "udløber ikke" in e["note"]
+    assert e["usedBy"] == hr.PRIVATE_REPO_USED_BY
+
+
+def test_secrets_er_kopier_ikke_delt_tilstand():
+    a = hr.secrets_for("pat")
+    a["PRIVATE_REPO_TOKEN"]["usedBy"].append("noget")
+    assert "noget" not in hr.secrets_for("pat")["PRIVATE_REPO_TOKEN"]["usedBy"]
+
+
+def test_merge_run_skifter_noegleblok_med_auth_mode():
+    h = hr.merge_run(hr.empty_health(), None, NOW, "app")
+    assert list(h["secrets"]) == ["GitHub App (privat repo)"]
+    # Skift tilbage til PAT rydder app-posten (ingen efterladt spøgelse)
+    h2 = hr.merge_run(h, None, NOW, "pat")
+    assert list(h2["secrets"]) == ["PRIVATE_REPO_TOKEN"]

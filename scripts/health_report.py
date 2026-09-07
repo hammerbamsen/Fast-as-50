@@ -50,16 +50,39 @@ EXPECTED_EVERY_MIN = {
     "Sync workouts til Outlook kalender": WEEK_MIN,  # søndag 18:00 UTC (+ efter build)
 }
 
-# Secrets med kendt udløb. Dashboardet viser nedtælling (grøn > 21 d, gul ≤ 21 d,
-# rød ≤ 7 d/udløbet). Fornyelse: docs/PAT_RENEWAL.md.
-SECRETS = {
-    "PRIVATE_REPO_TOKEN": {
-        "expires": "2026-10-15",
-        "usedBy": ["Send daglig push-påmindelse", "Modtag push-subscription", "Workflow-sundhed"],
-        "note": "Fine-grained PAT til det private repo (push-subscriptions). "
-                "Bør erstattes af GitHub App-token (Worker'en bruger allerede GitHub App).",
-    },
-}
+# Nøgler til det private repo (push-subscriptions). To tilstande:
+#   pat  — fine-grained PAT i secrets.PRIVATE_REPO_TOKEN, udløber 15/10-2026.
+#   app  — installations-token mintet pr. kørsel af actions/create-github-app-token
+#          fra den GitHub App Worker'en allerede bruger. Udløber aldrig.
+# Workflowet sætter PRIVATE_REPO_AUTH; dashboardet viser nedtælling for pat
+# (grøn > 21 d, gul ≤ 21 d, rød ≤ 7 d/udløbet) og "udløber ikke" for app.
+# Opsætning: docs/PAT_RENEWAL.md.
+PRIVATE_REPO_USED_BY = ["Send daglig push-påmindelse", "Modtag push-subscription",
+                        "Workflow-sundhed"]
+PAT_EXPIRES = "2026-10-15"
+
+
+def secrets_for(auth_mode):
+    """health.json's secrets-blok ud fra hvordan det private repo autentificeres.
+    Ukendt/tom værdi behandles som 'pat' — den sikre antagelse, for så bliver
+    udløbet ved med at være synligt i stedet for at forsvinde tavst."""
+    if str(auth_mode or "").strip().lower() == "app":
+        return {
+            "GitHub App (privat repo)": {
+                "usedBy": list(PRIVATE_REPO_USED_BY),
+                "note": "Installations-token mintes pr. kørsel — udløber ikke. "
+                        "App 4259031, samme som Cloudflare Worker'en.",
+            },
+        }
+    return {
+        "PRIVATE_REPO_TOKEN": {
+            "expires": PAT_EXPIRES,
+            "usedBy": list(PRIVATE_REPO_USED_BY),
+            "note": "Fine-grained PAT til det private repo (push-subscriptions). "
+                    "Erstattes af GitHub App-token — se docs/PAT_RENEWAL.md.",
+        },
+    }
+
 
 ALERT_CONCLUSIONS_IGNORED = ("success", "skipped")
 
@@ -91,12 +114,14 @@ def empty_health():
     return {"generatedAt": None, "workflows": {}, "secrets": {}}
 
 
-def merge_run(health, run, now):
+def merge_run(health, run, now, auth_mode=None):
     """Returnerer en NY health-dict med kørslen `run` indarbejdet.
 
     `run` = {name, conclusion, event, html_url, run_started_at, updated_at}
     (feltnavne som github.event.workflow_run). `run` må være None/tom ved
     manuel start — så opdateres kun generatedAt og secrets.
+
+    `auth_mode` = env PRIVATE_REPO_AUTH ('app' eller 'pat', se secrets_for).
     """
     out = json.loads(json.dumps(health)) if health else empty_health()
     out.setdefault("workflows", {})
@@ -116,7 +141,7 @@ def merge_run(health, run, now):
             entry.pop("expectedEveryMin", None)
         out["workflows"][name] = entry
 
-    out["secrets"].update(json.loads(json.dumps(SECRETS)))
+    out["secrets"] = secrets_for(auth_mode)
     out["generatedAt"] = _iso(now)
     return out
 
@@ -203,7 +228,9 @@ def main():
         print("Ingen workflow_run i miljøet (manuel start) — opdaterer kun generatedAt/secrets")
 
     sha, health = _load_health(github)
-    merged = merge_run(health, run, now)
+    auth_mode = os.environ.get("PRIVATE_REPO_AUTH", "")
+    merged = merge_run(health, run, now, auth_mode)
+    print(f"Privat repo-auth: {auth_mode or 'pat (antaget)'}")
     message = f"health: {run['name']} {run['conclusion']}" if run else "health: manuel opdatering"
     ok = _write_health(github, sha, merged, message)
 
