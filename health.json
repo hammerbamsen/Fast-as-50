@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-09-07T19:58:13Z",
+  "generatedAt": "2026-09-07T20:01:58Z",
   "workflows": {
     "CI — pytest": {
-      "lastRun": "2026-09-07T19:58:01Z",
+      "lastRun": "2026-09-07T20:01:47Z",
       "conclusion": "success",
-      "event": "pull_request",
-      "runUrl": "https://github.com/hammerbamsen/fast-as-50/actions/runs/34157549487",
-      "durationS": 26
+      "event": "push",
+      "runUrl": "https://github.com/hammerbamsen/fast-as-50/actions/runs/34157788134",
+      "durationS": 28
     },
     "Daglig dashboard-opdatering": {
       "lastRun": "2026-09-07T17:23:13Z",
@@ -62,7 +62,7 @@
         "Modtag push-subscription",
         "Workflow-sundhed"
       ],
-      "note": "Fine-grained PAT til det private repo (push-subscriptions). Bør erstattes af GitHub App-token (Worker'en bruger allerede GitHub App)."
+      "note": "Fine-grained PAT til det private repo (push-subscriptions). Erstattes af GitHub App-token — se docs/PAT_RENEWAL.md."
     }
   }
 }
