@@ -2296,7 +2296,7 @@ function systemCardHtml() {
       const note = secs[k].note ? `<div class="sys-sub">${esc(secs[k].note)}</div>` : '';
       return `<div class="sys-sec"><div class="sys-wf-h">${dot(ss.col)}<span class="sys-wf-n">${esc(k)}</span></div><div class="sys-wf-s" style="color:${ss.col}">${esc(ss.txt)}</div>${used}${note}</div>`;
     }).join('');
-    if (secHtml) wfHtml += `<div class="label" style="margin:12px 0 4px">Nøgler med udløb</div>${secHtml}`;
+    if (secHtml) wfHtml += `<div class="label" style="margin:12px 0 4px">Nøgler</div>${secHtml}`;
   }
 
   // (c) credentials fra data.json

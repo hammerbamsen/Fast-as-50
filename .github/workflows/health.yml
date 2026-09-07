@@ -39,6 +39,8 @@ concurrency:
 jobs:
   report:
     runs-on: ubuntu-latest
+    env:
+      HAS_APP: ${{ secrets.FAF_APP_ID != '' && secrets.FAF_APP_PRIVATE_KEY != '' }}
     timeout-minutes: 10
     steps:
       - uses: actions/checkout@v4
@@ -46,6 +48,23 @@ jobs:
         with:
           python-version: '3.11'
       - run: pip install requests pywebpush
+      - name: GitHub App-token til det private repo
+        # Mintes pr. kørsel af den App Worker'en allerede bruger (4259031) og
+        # udløber efter en time — ingen langlivet nøgle at forny. Kører kun når
+        # FAF_APP_ID/FAF_APP_PRIVATE_KEY er sat; ellers falder vi tilbage til
+        # PAT'en, så push aldrig stopper midt i en omlægning. docs/PAT_RENEWAL.md.
+        id: apptoken
+        if: env.HAS_APP == 'true'
+        # Fejler mintningen (app ikke installeret på det private repo, forkert
+        # nøgle), falder vi tilbage til PAT'en i stedet for at vælte jobbet —
+        # push er vigtigere end hvilken nøgle der bruges.
+        continue-on-error: true
+        uses: actions/create-github-app-token@v2
+        with:
+          app-id: ${{ secrets.FAF_APP_ID }}
+          private-key: ${{ secrets.FAF_APP_PRIVATE_KEY }}
+          owner: ${{ github.repository_owner }}
+          repositories: fast-as-50-private
       - name: Opdatér health.json (+ push ved fejl)
         env:
           RUN_NAME:        ${{ github.event.workflow_run.name }}
@@ -60,7 +79,8 @@ jobs:
           GITHUB_TOKEN:       ${{ secrets.GITHUB_TOKEN }}
           GITHUB_REPOSITORY:  ${{ github.repository }}
           PRIVATE_REPO:       ${{ secrets.PRIVATE_REPO }}
-          PRIVATE_REPO_TOKEN: ${{ secrets.PRIVATE_REPO_TOKEN }}
+          PRIVATE_REPO_TOKEN: ${{ steps.apptoken.outputs.token || secrets.PRIVATE_REPO_TOKEN }}
+          PRIVATE_REPO_AUTH: ${{ steps.apptoken.outputs.token && 'app' || 'pat' }}
           VAPID_PRIVATE:      ${{ secrets.VAPID_PRIVATE }}
           VAPID_SUBJECT:      ${{ secrets.VAPID_SUBJECT }}
           ALERT_URL:          "./#more"
