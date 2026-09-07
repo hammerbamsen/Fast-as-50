@@ -8,6 +8,13 @@ on:
   # for færre oversprungne kørsler. Data ændrer sig sjældnere end det alligevel.
   schedule:
     - cron: '*/30 * * * *'
+    # 2026-09-07 (blok 7): 7/9 lå der 4,5 timer uden kørsel mellem 00:44 og
+    # 05:10 UTC selv om */30 stod på — GitHub springer hyppige crons over.
+    # De to faste linjer er SEPARATE schedules og rammer morgenen, hvor Garmin
+    # har synket HRV/søvn (06:30 og 07:15 CEST). health.json's
+    # expectedEveryMin for dette workflow er 60.
+    - cron: '30 4 * * *'   # 04:30 UTC = 06:30 CEST
+    - cron: '15 5 * * *'   # 05:15 UTC = 07:15 CEST
   workflow_dispatch:
     inputs:
       force_coach:
@@ -25,6 +32,9 @@ concurrency:
 jobs:
   opdater:
     runs-on: ubuntu-latest
+    # En hængende Intervals-/Anthropic-forbindelse må ikke blokere
+    # concurrency-gruppen i timevis (default er 360 min).
+    timeout-minutes: 15
     steps:
       - name: Checkout
         uses: actions/checkout@v4

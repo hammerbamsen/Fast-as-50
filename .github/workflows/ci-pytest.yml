@@ -1,23 +1,17 @@
 name: CI — pytest
 
-# Kører modultests ved ændringer i kode OG i plan-data. Path-filteret sikrer
-# at den hyppige data.json-push (KPI-bot hvert 10. min) IKKE trigger CI —
-# men plan.json er en kontrakt testene håndhæver (programmer, uger, zoner),
-# så den skal med.
+# Blok 7 (7/9-2026): kører på ALLE push til main og alle PR'er — path-filtrene
+# er fjernet. Grunden: index.html og sw.js var uden nogen som helst kontrol, og
+# data.json-strukturen (som dashboardet lever af) blev aldrig valideret.
+# Data.json skrives med GITHUB_TOKEN via Contents API og trigger derfor ikke
+# push-events — CI kører altså ikke på hver 30-min-opdatering.
+#
+# Fire trin: (a) pytest, (b) JSON-skema-validering af plan/bibliotek/data,
+# (c) node --check sw.js, (d) node --check af index.html's inline scripts.
 on:
   push:
     branches: [main]
-    paths:
-      - 'scripts/**'
-      - 'data/plan.json'
-      - 'data/bike_library.json'
-      - '.github/workflows/ci-pytest.yml'
   pull_request:
-    paths:
-      - 'scripts/**'
-      - 'data/plan.json'
-      - 'data/bike_library.json'
-      - '.github/workflows/ci-pytest.yml'
 
 permissions:
   contents: read
@@ -25,12 +19,46 @@ permissions:
 jobs:
   test:
     runs-on: ubuntu-latest
+    timeout-minutes: 15
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
       - name: Install test deps
-        run: pip install pytest requests pywebpush
-      - name: Run pytest
-        run: python3 -m pytest scripts/modules/ -q
+        run: pip install pytest requests pywebpush jsonschema
+
+      - name: (a) pytest
+        run: python3 -m pytest scripts/modules/ scripts/test_health_report.py -q
+
+      - name: (b) JSON-skemaer (plan.json, bike_library.json, data.json)
+        run: python3 schemas/validate.py
+
+      - name: (c) sw.js syntaks
+        run: node --check sw.js
+
+      - name: (d) index.html inline-scripts syntaks
+        run: |
+          python3 - <<'PY'
+          import re, subprocess, sys, tempfile, pathlib
+          html = pathlib.Path("index.html").read_text(encoding="utf-8")
+          # Kun inline scripts (uden src). Attributter i vilkårlig rækkefølge.
+          blocks = [m.group(2) for m in re.finditer(r"<script(\s[^>]*)?>(.*?)</script>", html, re.S | re.I)
+                    if not re.search(r"\bsrc\s*=", m.group(1) or "", re.I)
+                    and not re.search(r"type\s*=\s*['\"](?!(module|text/javascript|application/javascript))", m.group(1) or "", re.I)]
+          if not blocks:
+              print("ingen inline scripts fundet — tjek regex"); sys.exit(1)
+          bad = 0
+          for i, js in enumerate(blocks, 1):
+              with tempfile.NamedTemporaryFile("w", suffix=".js", delete=False, encoding="utf-8") as f:
+                  f.write(js); path = f.name
+              r = subprocess.run(["node", "--check", path], capture_output=True, text=True)
+              status = "OK" if r.returncode == 0 else "FEJL"
+              print(f"script #{i}: {len(js.splitlines())} linjer → {status}")
+              if r.returncode:
+                  bad += 1; print(r.stderr)
+          sys.exit(1 if bad else 0)
+          PY
