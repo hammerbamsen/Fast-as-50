@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-09-08 18:07",
+    "updated": "2026-09-08 19:23",
     "week": 1,
     "totalWeeks": 51,
     "blockType": "RECOVERY",
@@ -3167,7 +3167,7 @@
       "note": "Nøgle virker"
     }
   },
-  "credentialsCheckedTs": "2026-09-08T16:07:43.754691",
+  "credentialsCheckedTs": "2026-09-08T17:23:43.372703",
   "coachAssessmentTsFull": "2026-09-08T13:49:26",
   "coachAssessmentWeightAtGen": 72.3,
   "coachAssessmentAfAtGen": 2,
@@ -8992,7 +8992,7 @@
             "group": "overkrop"
           }
         ],
-        "progression": "Ben først: når alle runder × reps er gennemført med RPE ≤ 7 to pas i træk, næste KB-trin (12,5→16→20). Overkrop: +2 reps (max +4) før +2,5 kg, så tilbage til grund-reps. Recovery-uger: 2 runder, ingen progression. 3 runder fra uge 41 hvis loggen viser to fulde uger."
+        "progression": "Ben først: check-in hver 14. dag (søndag) i I dag — 'alle runder × reps med RPE ≤ 7 på de sidste 2 pas?'. Ja på ben → næste trin (KB 12,5→16→20 · DB 5→7→10→12,5→15). Ja på overkrop (inkl. core) → +2 reps (max +4), derefter næste trin og tilbage til grund-reps. Recovery-uger: 2 runder, ingen progression. 3 runder fra uge 41 hvis loggen viser to fulde uger."
       },
       {
         "id": "styrke-fs4-b-2r",
@@ -9002,7 +9002,7 @@
         "exercises": [
           {
             "name": "RDL",
-            "load": "12 kg",
+            "load": "12,5 kg KB",
             "reps": 12,
             "unit": "reps",
             "group": "ben"
@@ -9030,13 +9030,13 @@
           },
           {
             "name": "Farmers walk",
-            "load": "2×10 kg",
+            "load": "2×10 kg DB",
             "reps": 40,
             "unit": "m",
             "group": "core"
           }
         ],
-        "progression": "Ben først: når alle runder × reps er gennemført med RPE ≤ 7 to pas i træk, næste KB-trin (12,5→16→20). Overkrop: +2 reps (max +4) før +2,5 kg, så tilbage til grund-reps. Recovery-uger: 2 runder, ingen progression. 3 runder fra uge 41 hvis loggen viser to fulde uger."
+        "progression": "Ben først: check-in hver 14. dag (søndag) i I dag — 'alle runder × reps med RPE ≤ 7 på de sidste 2 pas?'. Ja på ben → næste trin (KB 12,5→16→20 · DB 5→7→10→12,5→15). Ja på overkrop (inkl. core) → +2 reps (max +4), derefter næste trin og tilbage til grund-reps. Recovery-uger: 2 runder, ingen progression. 3 runder fra uge 41 hvis loggen viser to fulde uger."
       },
       {
         "id": "styrke-fs4-a-3r",
@@ -9080,7 +9080,7 @@
             "group": "overkrop"
           }
         ],
-        "progression": "Ben først: når alle runder × reps er gennemført med RPE ≤ 7 to pas i træk, næste KB-trin (12,5→16→20). Overkrop: +2 reps (max +4) før +2,5 kg, så tilbage til grund-reps. Recovery-uger: 2 runder, ingen progression. 3 runder fra uge 41 hvis loggen viser to fulde uger."
+        "progression": "Ben først: check-in hver 14. dag (søndag) i I dag — 'alle runder × reps med RPE ≤ 7 på de sidste 2 pas?'. Ja på ben → næste trin (KB 12,5→16→20 · DB 5→7→10→12,5→15). Ja på overkrop (inkl. core) → +2 reps (max +4), derefter næste trin og tilbage til grund-reps. Recovery-uger: 2 runder, ingen progression. 3 runder fra uge 41 hvis loggen viser to fulde uger."
       },
       {
         "id": "styrke-fs4-b-3r",
@@ -9090,7 +9090,7 @@
         "exercises": [
           {
             "name": "RDL",
-            "load": "12 kg",
+            "load": "12,5 kg KB",
             "reps": 12,
             "unit": "reps",
             "group": "ben"
@@ -9118,13 +9118,13 @@
           },
           {
             "name": "Farmers walk",
-            "load": "2×10 kg",
+            "load": "2×10 kg DB",
             "reps": 40,
             "unit": "m",
             "group": "core"
           }
         ],
-        "progression": "Ben først: når alle runder × reps er gennemført med RPE ≤ 7 to pas i træk, næste KB-trin (12,5→16→20). Overkrop: +2 reps (max +4) før +2,5 kg, så tilbage til grund-reps. Recovery-uger: 2 runder, ingen progression. 3 runder fra uge 41 hvis loggen viser to fulde uger."
+        "progression": "Ben først: check-in hver 14. dag (søndag) i I dag — 'alle runder × reps med RPE ≤ 7 på de sidste 2 pas?'. Ja på ben → næste trin (KB 12,5→16→20 · DB 5→7→10→12,5→15). Ja på overkrop (inkl. core) → +2 reps (max +4), derefter næste trin og tilbage til grund-reps. Recovery-uger: 2 runder, ingen progression. 3 runder fra uge 41 hvis loggen viser to fulde uger."
       }
     ],
     "next": {
@@ -9133,7 +9133,70 @@
       "name": "Styrke A · Functional 4 · 2 runder",
       "rounds": 2,
       "date": "2026-09-21",
-      "reasoning": "Planlagt 21/9: Styrke A · Functional 4 · 2 runder"
+      "reasoning": "Planlagt 21/9: Styrke A · Functional 4 · 2 runder",
+      "recovery": false,
+      "exercises": [
+        {
+          "name": "Thruster",
+          "load": "2×5 kg DB",
+          "reps": 10,
+          "unit": "reps",
+          "group": "ben",
+          "baseLoad": "2×5 kg DB",
+          "baseReps": 10,
+          "capped": false
+        },
+        {
+          "name": "Renegade row",
+          "load": "10 kg DB",
+          "reps": 8,
+          "unit": "reps/side",
+          "group": "core",
+          "baseLoad": "10 kg DB",
+          "baseReps": 8,
+          "capped": false
+        },
+        {
+          "name": "KB swing",
+          "load": "12,5 kg KB",
+          "reps": 15,
+          "unit": "reps",
+          "group": "ben",
+          "baseLoad": "12,5 kg KB",
+          "baseReps": 15,
+          "capped": false
+        },
+        {
+          "name": "KB row",
+          "load": "10 kg DB",
+          "reps": 10,
+          "unit": "reps/side",
+          "group": "overkrop",
+          "baseLoad": "10 kg DB",
+          "baseReps": 10,
+          "capped": false
+        },
+        {
+          "name": "Press",
+          "load": "2×5 kg DB",
+          "reps": 10,
+          "unit": "reps",
+          "group": "overkrop",
+          "baseLoad": "2×5 kg DB",
+          "baseReps": 10,
+          "capped": false
+        }
+      ],
+      "state": {
+        "ben": {
+          "step": 0
+        },
+        "overkrop": {
+          "step": 0,
+          "extraReps": 0
+        }
+      },
+      "stateSummary": "Ben grundvægt · Overkrop grundvægt"
     },
     "last4": [
       {
@@ -9168,7 +9231,26 @@
         "complete": null,
         "note": ""
       }
-    ]
+    ],
+    "checkin": {
+      "due": false,
+      "date": null,
+      "next": "2026-10-04",
+      "question": "Alle runder × reps med RPE ≤ 7 på de sidste 2 pas?",
+      "recoveryNext": false,
+      "last": null,
+      "state": {
+        "ben": {
+          "step": 0
+        },
+        "overkrop": {
+          "step": 0,
+          "extraReps": 0
+        }
+      },
+      "stateSummary": "Ben grundvægt · Overkrop grundvægt",
+      "effectiveFrom": null
+    }
   },
   "weekTss": {
     "actual": 36,
@@ -9182,12 +9264,12 @@
       "Vægt 7d 72,3 kg · fedt 14d 21,6 % · cut starter uge 39 (21/9)",
       "HRV 7d 55 (28d 58) · hvilepuls 44 · søvn 7d 7,2 t",
       "AF 3/7 · protein 3/3 0/7 · aftensult —/7",
-      "Styrke 0/2 · seneste RPE —",
+      "Styrke 0/2 · check-in —",
       "Cut-tjek: inaktivt — Aktiveres uge 39 (21/9)",
       "Næste uge (38, RACE): TSS-mål 250 · hårde/lange dage: tir 15/9 Løb 4×3 min halvmaraton-tempo (4:35-4:45) efter fornemmelse 45 min, søn 20/9 CPH HALF — 21,1 km, B-løb kontrolleret 4:35-4:45/km 90 min",
       "Planændringer siden sidst: 1 — se martin_signals.md"
     ],
-    "generatedAt": "2026-09-08T16:07:43Z"
+    "generatedAt": "2026-09-08T17:23:43Z"
   },
   "proposals": []
 }
