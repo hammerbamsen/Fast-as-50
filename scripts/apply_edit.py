@@ -270,7 +270,7 @@ def main():
 
     # COMMIT plan.json — sandheden først
     plan_sha_fresh, _ = gh_get("data/plan.json")  # frisk SHA
-    _what = entry_id if action in ("strength_log", "apply_proposal") else entry_id[:8]
+    _what = entry_id if action in ("strength_log", "strength_checkin", "apply_proposal") else entry_id[:8]
     _dates_msg = (f"{len(result['dates_changed'])} datoer" if len(result["dates_changed"]) > 14
                   else ", ".join(result["dates_changed"]))
     plan_commit = gh_put("data/plan.json", plan_sha_fresh,
@@ -294,12 +294,12 @@ def main():
             _proposal_error = f"Forslag {proposal_id}: {ex}"
             print(f"FEJL forslagsfil: {ex}")
 
-    # Styrke-log (blok 8): kun plan.json + edit_result. Intet pas er ændret,
+    # Styrke-log (blok 8) og check-in (blok 10): kun plan.json + edit_result. Intet pas er ændret,
     # så Intervals/Outlook/Martin-signal/Word/OneDrive springes over.
-    if action == "strength_log":
+    if action in ("strength_log", "strength_checkin"):
         write_result(request_id, {
             "status": "ok",
-            "action": "strength_log",
+            "action": action,
             "gate": result["gate"],
             "dates_changed": [],
             "plan_commit": plan_commit,
@@ -307,7 +307,7 @@ def main():
             "athlete": athlete,
             "request_ts": result["request_ts"],
         })
-        print(f"=== FÆRDIG: styrkelog {entry_id} gemt ===")
+        print(f"=== FÆRDIG: {'check-in' if action == 'strength_checkin' else 'styrkelog'} {entry_id} gemt ===")
         return
 
     dates = result["dates_changed"]

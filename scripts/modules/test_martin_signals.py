@@ -120,7 +120,7 @@ def test_build_weekly_eight_lines_from_data():
     assert L[1] == "Vægt 7d 72,3 kg · fedt 14d 21,6 % · cut starter uge 39 (21/9)"
     assert L[2] == "HRV 7d 54 (28d 58) · hvilepuls 44 · søvn 7d 7,3 t"
     assert L[3] == "AF 5/7 · protein 3/3 4/7 · aftensult 1/7"
-    assert L[4] == "Styrke 2/2 · seneste RPE 7 (alle runder)"
+    assert L[4] == "Styrke 2/2 · check-in —"
     assert L[5] == "Cut-tjek: inaktivt — Aktiveres uge 39 (21/9)"
     assert L[6] == ("Næste uge (38, RACE): TSS-mål 250 · hårde/lange dage: "
                     "tir 15/9 Løb VO2 5×3 min 45 min, lør 19/9 z2_depottur_2t 130 min")
@@ -135,7 +135,7 @@ def test_build_weekly_missing_data_gives_dashes_never_guesses():
     assert L[1] == "Vægt 7d — kg · fedt 14d — % · intet cut i planen"
     assert L[2] == "HRV 7d — (28d —) · hvilepuls — · søvn 7d — t"
     assert L[3] == "AF —/7 · protein 3/3 —/7 · aftensult —/7"
-    assert L[4] == "Styrke —/2 · seneste RPE —"
+    assert L[4] == "Styrke —/2 · check-in —"
     assert L[5] == "Cut-tjek: inaktivt — intet cut i planen"
     assert L[6] == "Næste uge (38, —): TSS-mål — · hårde/lange dage: ingen"
     assert L[7] == "Planændringer siden sidst: — — se martin_signals.md"
@@ -153,7 +153,7 @@ def test_build_weekly_cut_status_and_fallbacks():
     L = r["lines"]
     assert L[0].startswith("Uge 37: TSS 110 af 150 (73 %)")
     assert L[1].endswith("· bagud 0,7 kg mod glidepath (71,4)")
-    assert L[4] == "Styrke 2/2 · seneste RPE 7 (ikke alle runder)"
+    assert L[4] == "Styrke 2/2 · check-in —"
     assert L[5] == "Cut-tjek: warn — Tabet er over 0,4 kg/uge — læg 200-300 kcal på"
     data["body"]["cutCheck"]["level"] = None
     assert ms.build_weekly(data, _plan_w(), date(2026, 9, 13))["lines"][5].startswith("Cut-tjek: ok —")
@@ -169,3 +169,10 @@ def test_weekly_md_helpers():
     assert out.endswith("\n### Signaler uge 37\n- l1\n- l2\n")
     assert ms.has_weekly(out, 37) and not ms.has_weekly(out, 3) and not ms.has_weekly(out, 370)
     assert ms.count_plan_changes_since_last_weekly(out) == 0
+
+
+def test_strength_line_uses_checkin_when_present():
+    data = dict(_data_w())
+    data["strength"] = {"checkin": {"last": {"date": "2026-10-04", "legs": 1, "upper": 0}}}
+    r = ms.build_weekly(data, _plan_w([]), date(2026, 10, 11))
+    assert r["lines"][4].endswith("· check-in 4/10 ben ✓ overkrop ✗")

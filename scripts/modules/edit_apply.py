@@ -78,6 +78,19 @@ def _simulate_mutation(plan: dict, action: str, entry_id: str,
         log[d_iso] = rec                      # samme dato overskrives
         return sim, "strength_log", ""
 
+    # Særtilfælde (blok 10): 14-dages styrke-check-in. entryId 'chk:YYYY-MM-DD'
+    # (søndagen), params legs/upper 0/1. Skriver strengthCheckin[dato] og
+    # ruller strengthProgression frem (recovery-uge udskyder effectiveFrom).
+    if action == "strength_checkin":
+        from . import strength_progression as _sp
+        d_iso, rec = strength_checkin_record(entry_id, params)
+        ath = sim["athletes"][athlete]
+        ath.setdefault("strengthCheckin", {})[d_iso] = rec
+        ath["strengthProgression"] = _sp.apply_checkin(
+            ath.get("strengthProgression"), d_iso, bool(rec["legs"]), bool(rec["upper"]),
+            ath.get("days") or [])
+        return sim, "strength_checkin", ""
+
     # Særtilfælde (blok 9): forslag. entryId er 'proposal:<id>'; forslaget
     # læses fra data/proposals/<id>.json (eller params['proposal'] — samme
     # struktur — så offline-anvendelse og tests går gennem præcis denne vej).
@@ -208,6 +221,28 @@ def _simulate_mutation(plan: dict, action: str, entry_id: str,
 
 
 STRENGTH_NOTE_MAX = 140
+
+
+def strength_checkin_record(entry_id: str, params: Optional[dict]) -> tuple[str, dict]:
+    """Validerer et check-in (blok 10): entryId 'chk:YYYY-MM-DD' (eller
+    params['date']), legs og upper hver 0/1. Record {legs, upper, at}."""
+    params = params or {}
+    raw = entry_id or ""
+    d_raw = raw[4:] if raw.startswith("chk:") else params.get("date")
+    try:
+        d_iso = date.fromisoformat(str(d_raw)[:10]).isoformat()
+    except (TypeError, ValueError):
+        raise ValueError(f"strength_checkin kræver entryId 'chk:YYYY-MM-DD' (fik {entry_id!r})")
+    out = {}
+    for k in ("legs", "upper"):
+        v = params.get(k)
+        if isinstance(v, bool):
+            v = int(v)
+        if v not in (0, 1, "0", "1"):
+            raise ValueError(f"strength_checkin: {k} skal være 0 eller 1")
+        out[k] = int(v)
+    out["at"] = datetime.now(timezone.utc).replace(microsecond=0).isoformat().replace("+00:00", "Z")
+    return d_iso, out
 
 
 def strength_log_record(entry_id: str, params: Optional[dict]) -> tuple[str, dict]:
@@ -368,6 +403,8 @@ def apply_edit(plan_json_raw: str, action: str, entry_id: str,
     if action == "strength_log":
         # Ingen Friel-gate: loggen ændrer ingen pas, kun atletens strengthLog.
         gate = {"status": "ok", "flags": [], "msg": "Styrkelog gemt"}
+    elif action == "strength_checkin":
+        gate = {"status": "ok", "flags": [], "msg": "Check-in gemt"}
     elif action == "reject_proposal":
         gate = {"status": "ok", "flags": [], "msg": "Forslag afvist"}
     else:
@@ -387,7 +424,7 @@ def apply_edit(plan_json_raw: str, action: str, entry_id: str,
 
     # set_zones/strength_log/reject_proposal rører ingen dage. Uden dette ville
     # orkestratoren forsøge intervals_delete_date("zones") og outlook_sync_date(...).
-    if action in ("set_zones", "strength_log", "reject_proposal"):
+    if action in ("set_zones", "strength_log", "strength_checkin", "reject_proposal"):
         dates = []
     elif action == "apply_proposal":
         dates = list(primary_date)            # alle datoer i forslaget

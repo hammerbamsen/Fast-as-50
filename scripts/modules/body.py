@@ -476,7 +476,7 @@ def _template_for(letter, rounds, templates):
     return cands[0] if cands else None
 
 
-def next_strength(plan, strength_log, today, templates, athlete='kennet', target=2):
+def next_strength(plan, strength_log, today, templates, athlete='kennet', target=2, progression=None):
     """{ab, templateId, name, reasoning, date} — det styrkepas der står i planen
     næste gang (entry med libraryId/templateId eller navn 'Styrke A…'/'Styrke B…'
     fra i dag, ikke gennemført), ellers skiftevis A/B ud fra seneste log.
@@ -489,11 +489,15 @@ def next_strength(plan, strength_log, today, templates, athlete='kennet', target
     two_full = len(weeks) == 2 and all(v >= target for v in weeks.values())
     rounds = 3 if (iso_week(today) >= 41 and two_full) else 2
 
-    def _pick(letter, reasoning, d_iso=None, tid=None):
+    def _pick(letter, reasoning, d_iso=None, tid=None, recovery=False):
+        from . import strength_progression as _sp
         t = by_id.get(tid) or _template_for(letter, rounds, tpls)
+        st = _sp.state_for_date(progression, d_iso or today)
+        exs = _sp.apply_state(t.get('exercises') if t else [], st)
         return {'ab': letter, 'templateId': t['id'] if t else None,
                 'name': t['name'] if t else None, 'rounds': t.get('rounds') if t else rounds,
-                'date': d_iso, 'reasoning': reasoning}
+                'date': d_iso, 'reasoning': reasoning, 'recovery': recovery,
+                'exercises': exs, 'state': st, 'stateSummary': _sp.state_summary(st)}
 
     days = (plan.get('athletes') or {}).get(athlete, {}).get('days', [])
     for d in sorted(days, key=lambda x: x.get('date', '')):
@@ -509,8 +513,9 @@ def next_strength(plan, strength_log, today, templates, athlete='kennet', target
             letter = ab_of(wo.get('name'), tid if tid in by_id else None)
             if not letter:
                 continue
+            _rec = 'recovery' in f"{e.get('note') or ''} {wo.get('name') or ''}".lower()
             return _pick(letter, f"Planlagt {dk_short(d['date'])}: {wo.get('name')}", d['date'],
-                         tid if tid in by_id else None)
+                         tid if tid in by_id else None, recovery=_rec)
 
     last = None
     for s in reversed((strength_log or {}).get('sessions') or []):
@@ -539,12 +544,18 @@ def strength_last4(strength_log, n=4):
 
 
 def build_strength(plan, strength_log, today=None, templates=None, athlete='kennet', target=2):
-    """data['strength'] = {templates, next, last4} (blok 8)."""
+    """data['strength'] = {templates, next, last4, checkin} (blok 8 + 10).
+    next.exercises har progressionen (strengthProgression) lagt på; checkin
+    er 14-dages check-in-status til kortet i I dag."""
+    from . import strength_progression as _sp
     today = _to_date(today) if today else date.today()
     tpls = templates if templates is not None else load_workout_library()
+    ath = (plan.get('athletes') or {}).get(athlete, {}) if isinstance(plan, dict) else {}
+    prog = ath.get('strengthProgression')
     return {'templates': strength_templates(tpls),
-            'next': next_strength(plan, strength_log, today, tpls, athlete, target),
-            'last4': strength_last4(strength_log)}
+            'next': next_strength(plan, strength_log, today, tpls, athlete, target, progression=prog),
+            'last4': strength_last4(strength_log),
+            'checkin': _sp.build_checkin(ath.get('strengthCheckin'), prog, today, ath.get('days'))}
 
 
 def strength_by_week(strength_log, today, weeks=4):

@@ -518,7 +518,7 @@ details.fold[open] > summary::after { content:"▴"; }
 .pt-btns button:disabled { opacity:.5; cursor:default; }
 .sheet textarea.pt-note { width:100%; min-height:80px; border:1.5px solid var(--line); border-radius:10px; background:var(--bg); color:var(--ink); padding:10px 12px; font:14px 'Hanken Grotesk',sans-serif; resize:vertical; }
 
-/* ── Blok 8 (8/9-26): styrke-log-ark, styrke-kort (Krop), Martin-mail (Mere) ── */
+/* ── Blok 8 (8/9-26): styrke-kort (nu Plan, blok 10), check-in-kort (I dag, blok 10), Martin-mail (Mere) ── */
 .opts.c5 { grid-template-columns:repeat(5,1fr); }
 .opts.c5 .opt { padding:10px 2px; min-height:44px; font-family:'Space Mono',monospace; font-weight:700; }
 .sl-count { font-family:'Space Mono',monospace; font-size:10px; color:var(--muted); text-align:right; margin-top:4px; }
@@ -536,6 +536,11 @@ details.fold[open] > summary::after { content:"▴"; }
 .st-last .d { color:var(--muted); }
 .st-last .ok { color:var(--ok); } .st-last .no { color:var(--act); } .st-last .nd { color:var(--muted); }
 .st-last .note { font-family:'Hanken Grotesk',sans-serif; font-size:12px; color:var(--muted); overflow:hidden; text-overflow:ellipsis; white-space:nowrap; min-width:0; }
+.st-state { font-family:'Space Mono',monospace; font-size:10.5px; color:var(--muted); line-height:1.5; margin:0 0 8px; }
+.st-state b { color:var(--gold); font-weight:600; }
+.st-ex .v.up { color:var(--gold); }
+.ck-card { border:1.5px solid var(--gold); }
+.ck-q { font-family:'Newsreader',serif; font-size:19px; font-weight:600; color:var(--ink); line-height:1.25; margin:2px 0 10px; }
 .st-log { margin-top:12px; width:100%; background:var(--wine); color:#fff; border:0; border-radius:10px; padding:11px; font:600 14px 'Hanken Grotesk',sans-serif; cursor:pointer; }
 .kpi4-t .kpi-link { display:block; width:100%; margin-top:6px; background:transparent; border:1px solid var(--line); border-radius:7px; padding:4px 0; font:600 10px 'Hanken Grotesk',sans-serif; color:var(--wine); cursor:pointer; }
 @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .kpi4-t .kpi-link { color:var(--gold); } }
@@ -684,12 +689,7 @@ details.fold[open] > summary::after { content:"▴"; }
   <div id="plan-sheet-body"></div>
 </div>
 
-<!-- STYRKE-LOG-ARK (blok 8): RPE · alle runder × reps · note → Worker /plan-edit (action strength_log) -->
-<div class="scrim" id="sl-scrim" onclick="slCloseSheet()"></div>
-<div class="sheet" id="sl-sheet" role="dialog" aria-label="Styrke-log" aria-hidden="true">
-  <div class="handle"></div>
-  <div id="sl-sheet-body"></div>
-</div>
+<!-- Styrke-log-arket (blok 8) er fjernet i blok 10 — 14-dages check-in ligger inline i I dag (ckCardHtml). -->
 
 <script>
 // ── Static config ─────────────────────────────────────────────
@@ -868,7 +868,7 @@ let D = {
   planTab: null,    // data.json planTab (scripts/modules/plan_tab.py) — Plan-fanen
   proposals: [],    // data.json proposals (blok 9): ventende plan-forslag med før/efter pr. uge
   body: null,       // data.json body (scripts/modules/body.py): glidepath, fat, ffm, cutCheck, strengthWeek
-  strength: null,   // data.json strength (blok 8): templates[], next{a|b, templateId, name, reasoning}, last4[]
+  strength: null,   // data.json strength (blok 8+10): templates[], next{ab, templateId, name, reasoning, exercises[], stateSummary, recovery}, last4[], checkin{due, date, next, ...}
   martinMail: null, // data.json martinMail (blok 8, martin_signals.build_weekly): {week, isoWeek, lines[8], generatedAt}
 };
 
@@ -1337,6 +1337,8 @@ function renderToday() {
     </div>
   </div>
   ${weekStripV2()}
+  ${ckCardHtml()}
+  ${todayStrengthHtml()}
   ${oneThing(r)}
   ${kpiStripV2()}
   ${coachVoiceCard()}
@@ -1686,11 +1688,12 @@ function ptWeekDetail(i){
 function renderPlan() {
   if (!D.planTab || !ptWeeks().length) {
     return `<div class="banner info"><span>ℹ️</span><span>Plan-fanens nye visning kommer når pipelinen har skrevet planTab til data.json.</span></div>
-      ${renderWeek()}`;
+      ${renderWeek()}${strengthCardHtml()}`;
   }
   const sel = ptSelIdx();
   setTimeout(() => ptScrollToSel('auto'), 0);   // aktuel/valgt uge centreret ved åbning
   return `${ptProposalsHtml()}${ptStrip()}${ptCtlChart()}<div id="pt-detail">${ptWeekDetail(sel)}</div>
+    ${strengthCardHtml()}
     ${coachFoldedCard()}`;
 }
 
@@ -2782,51 +2785,145 @@ function bodyTiles(b) {
   return `<div class="kpi3">
     ${tile('FEDT 14D', f.avg14 != null ? fmtDa(f.avg14)+'<span style="font-size:13px;color:var(--muted)"> %</span>' : '—', fatSub, pre ? 'var(--num)' : stCol(f.status))}
     ${tile('FEDTFRI', m.now != null ? fmtDa(m.now) : '—', ffmSub, ffmCol)}
-    ${tile('STYRKE', swVal, `pas · uge ${isoWeekOf(new Date())}`, swCol, `<button class="kpi-link" onclick="slOpenSheet()">Log pas</button>`)}
-  </div>
-  ${strengthCardHtml()}`;
+    ${tile('STYRKE', swVal, `pas · uge ${isoWeekOf(new Date())}`, swCol)}
+  </div>`;
 }
 
-// ── Krop: styrke-kort (blok 8) — næste template, øvelser, progression, seneste 4 ──
+// ── Styrke-kort (blok 8 → Plan-fanen i blok 10) — næste template med progression lagt på ──
+// Ingen "Log pas" og ingen RPE-liste længere: progressionen kommer fra 14-dages
+// check-in'et (data.strength.checkin / plan.strengthProgression), og
+// data.strength.next.exercises har allerede de aktuelle kg/reps.
 function _stLetter(name){ const m = String(name || '').match(/Styrke\s+([AB])\b/i); return m ? m[1].toUpperCase() : null; }
 function _stDate(iso){ const m = String(iso || '').match(/^(\d{4})-(\d{2})-(\d{2})/); return m ? `${+m[3]}/${+m[2]}` : '—'; }
-function strengthCardHtml() {
-  const s = D.strength;
-  const nx = s && s.next;
-  const tpl = nx && (s.templates || []).find(t => t.id === nx.templateId) || null;
-  if (!s || (!nx && !(s.last4 || []).length)) {
-    return `<div class="card" id="strength-card"><div class="label" style="margin-bottom:6px">Styrke</div>
-      <div class="sys-note">Templates kommer med blok 8-pipeline.</div>
-      <button class="st-log" onclick="slOpenSheet()">Log pas</button></div>`;
-  }
-  // Navn fra next (fx "Styrke A · Functional 4 · 2 runder"); runder tilføjes kun hvis navnet ikke selv siger det.
-  const baseName = nx ? (nx.name || (tpl && tpl.name) || `Styrke ${String(nx.ab || '').toUpperCase()}`) : '—';
-  const rounds = tpl && tpl.rounds && !/runder/i.test(baseName) ? ` · ${tpl.rounds} runder` : '';
-  const title = esc(baseName) + rounds;
-  const exs = tpl && Array.isArray(tpl.exercises) ? tpl.exercises : [];
-  const exHtml = exs.map(e => {
+function _stExRows(exs){
+  return (exs || []).map(e => {
     const load = e.load != null && e.load !== '' ? (typeof e.load === 'number' ? `${fmtDa(e.load, e.load % 1 ? 1 : 0)} kg` : esc(e.load)) : '—';
     // unit fra workout_library: "reps" → ×10, "reps/side" → ×8/side, "m" → 40 m.
     const u = String(e.unit || '');
     const reps = e.reps == null ? '' : /^reps/i.test(u) ? `×${esc(e.reps)}${esc(u.slice(4))}` : u ? `${esc(e.reps)} ${esc(u)}` : `×${esc(e.reps)}`;
-    return `<div class="st-ex"><span class="n">${esc(e.name)}${e.group ? `<i>${esc(String(e.group).toUpperCase())}</i>` : ''}</span><span class="v">${load}${reps ? ` <span>·</span> ${reps}` : ''}</span></div>`;
+    const up = (e.baseLoad != null && e.baseLoad !== e.load) || (e.baseReps != null && e.baseReps !== e.reps);
+    return `<div class="st-ex"><span class="n">${esc(e.name)}${e.group ? `<i>${esc(String(e.group).toUpperCase())}</i>` : ''}${e.capped ? '<i title="største vægt hjemme">MAX</i>' : ''}</span><span class="v${up ? ' up' : ''}">${load}${reps ? ` <span>·</span> ${reps}` : ''}</span></div>`;
   }).join('');
+}
+function _stNext(){
+  const s = D.strength, nx = s && s.next;
+  const tpl = nx && (s.templates || []).find(t => t.id === nx.templateId) || null;
+  const exs = nx && Array.isArray(nx.exercises) && nx.exercises.length ? nx.exercises : (tpl && Array.isArray(tpl.exercises) ? tpl.exercises : []);
+  return { s, nx, tpl, exs };
+}
+function strengthCardHtml() {
+  const { s, nx, tpl, exs } = _stNext();
+  if (!s || !nx) return '';
+  // Navn fra next (fx "Styrke A · Functional 4 · 2 runder"); runder tilføjes kun hvis navnet ikke selv siger det.
+  const baseName = nx.name || (tpl && tpl.name) || `Styrke ${String(nx.ab || '').toUpperCase()}`;
+  const rounds = tpl && tpl.rounds && !/runder/i.test(baseName) ? ` · ${tpl.rounds} runder` : '';
+  const title = esc(baseName) + rounds;
+  const exHtml = _stExRows(exs);
+  const ck = s.checkin || {};
+  const stateLine = [nx.stateSummary ? esc(nx.stateSummary) : '', nx.recovery ? '<b>Recovery-uge — ingen progression</b>' : '',
+                     ck.next ? `check-in ${_stDate(ck.due ? ck.date : ck.next)}${ck.due ? ' — venter i I dag' : ''}` : ''].filter(Boolean).join(' · ');
   const prog = tpl && tpl.progression ? `<div class="st-prog">${esc(tpl.progression)}</div>` : '';
-  const last = (s.last4 || []).filter(Boolean).slice().sort((a, b) => String(b.date || '').localeCompare(String(a.date || ''))).slice(0, 4);
-  const lastHtml = last.length ? `<div class="label" style="margin:14px 0 2px">Seneste 4</div><div class="st-last">${last.map(l => {
-      const ab = (l.ab ? String(l.ab).toUpperCase() : null) || _stLetter(l.name) || (l.name ? esc(String(l.name).slice(0, 1)) : '·');
-      const comp = l.complete == null ? '<span class="nd">–</span>' : l.complete ? '<span class="ok">✓</span>' : '<span class="no">✗</span>';
-      return `<span class="d">${_stDate(l.date)}</span><span>${ab}</span><span>${l.rpe != null ? 'RPE ' + esc(l.rpe) : '<span class="nd">RPE –</span>'}</span>${comp}<span class="note" title="${esc(l.note || '')}">${esc(l.note || '')}</span>`;
-    }).join('')}</div>` : `<div class="sys-note" style="margin-top:12px">Ingen loggede pas endnu — RPE, runder og note kommer fra styrke-loggen.</div>`;
   return `<div class="card" id="strength-card">
     <div class="label" style="margin-bottom:6px">Styrke</div>
     <div class="st-next"><small>NÆSTE</small>${title}</div>
-    ${nx && nx.reasoning ? `<div class="st-why">${esc(nx.reasoning)}</div>` : ''}
-    ${exHtml || (tpl ? '' : '<div class="sys-note">Øvelseslisten kommer når templaten findes i data.strength.templates.</div>')}
+    ${nx.reasoning ? `<div class="st-why">${esc(nx.reasoning)}</div>` : ''}
+    ${stateLine ? `<div class="st-state">${stateLine}</div>` : ''}
+    ${exHtml || '<div class="sys-note">Øvelseslisten kommer når templaten findes i data.strength.templates.</div>'}
     ${prog}
-    ${lastHtml}
-    <button class="st-log" onclick="slOpenSheet(${tpl ? `'${esc(tpl.id)}'` : ''})">Log pas</button>
   </div>`;
+}
+// I dag: øvelseslisten inline når dagens (første) pas er styrke og data.strength.next peger på i dag.
+function todayStrengthHtml(){
+  const first = todaySessionsNorm()[0] || null;
+  if (!first || !(first.discipline === 'strength' || /styrke/i.test(first.title || ''))) return '';
+  const { nx, exs } = _stNext();
+  if (!nx || !exs.length) return '';
+  if (nx.date && nx.date !== todayIso()) return '';
+  const stateLine = [nx.stateSummary ? esc(nx.stateSummary) : '', nx.recovery ? '<b>Recovery — ingen progression</b>' : ''].filter(Boolean).join(' · ');
+  return `<div class="card" id="today-strength"><div class="label" style="margin-bottom:6px">Dagens styrke</div>
+    ${stateLine ? `<div class="st-state">${stateLine}</div>` : ''}${_stExRows(exs)}</div>`;
+}
+
+// ── 14-dages styrke-check-in (blok 10) — kort i I dag ─────────────────
+// data.strength.checkin = {due, date (søndagen), next, question, recoveryNext,
+// last, state, stateSummary}. Kortet vises når due er sandt og bliver stående
+// til det er gemt. Gem → /plan-edit {action:'strength_checkin', entryId:'chk:<date>',
+// params:{legs 0/1, upper 0/1}} + polling af edit_result.json (som ptRunEdit).
+// Efter "Gemt ✓" skjules kortet lokalt (faf-checkin-<date>) indtil data.json følger med.
+const CK_KEY_PREFIX = 'faf-checkin-';
+let CK_POLL_MS = 3000, CK_POLL_MAX = 60;
+const CK = { date: null, legs: null, upper: null, busy: false };
+function ckHiddenLocal(date){ try { return !!localStorage.getItem(CK_KEY_PREFIX + date); } catch(e) { return false; } }
+function ckCardHtml(){
+  const ck = D.strength && D.strength.checkin;
+  if (!ck || !ck.due || !ck.date || ckHiddenLocal(ck.date)) return '';
+  if (CK.date !== ck.date) Object.assign(CK, { date: ck.date, legs: null, upper: null, busy: false });
+  const q = esc(ck.question || 'Alle runder × reps med RPE ≤ 7 på de sidste 2 pas?');
+  const opts = (k, v) => `<div class="opts c2" id="ck-${k}">
+      <button class="opt${v === 1 ? ' on' : ''}" onclick="ckPick('${k}',1)">Ja<small>alle runder · RPE ≤ 7</small></button>
+      <button class="opt bad${v === 0 ? ' on' : ''}" onclick="ckPick('${k}',0)">Nej<small>uændret næste 14 dage</small></button></div>`;
+  return `<div class="card ck-card" id="ck-card">
+    <div class="label" style="margin-bottom:4px">Styrke check-in · ${_stDate(ck.date)}</div>
+    <div class="ck-q">${q}</div>
+    ${ck.stateSummary ? `<div class="st-state">Nu: ${esc(ck.stateSummary)}${ck.recoveryNext ? ' · <b>Recovery-uge først — progression fra ugen efter</b>' : ''}</div>` : ''}
+    <div class="q"><span class="lab">Ben</span>${opts('legs', CK.legs)}</div>
+    <div class="q"><span class="lab">Overkrop (inkl. core)</span>${opts('upper', CK.upper)}</div>
+    <div class="pt-msg" id="ck-msg"></div>
+    <button class="st-log" id="ck-go" onclick="ckSave()" ${CK.legs == null || CK.upper == null || CK.busy ? 'disabled' : ''}>Gem check-in</button>
+  </div>`;
+}
+function ckPick(k, v){
+  CK[k] = v;
+  document.querySelectorAll(`#ck-${k} .opt`).forEach((b, i) => b.classList.toggle('on', (i === 0 ? 1 : 0) === v));
+  const go = document.getElementById('ck-go'); if (go) go.disabled = (CK.legs == null || CK.upper == null || CK.busy);
+}
+async function ckSave(){
+  if (CK.legs == null || CK.upper == null || CK.busy) return;
+  const msg = document.getElementById('ck-msg'), go = document.getElementById('ck-go');
+  CK.busy = true; if (go) go.disabled = true;
+  const requestId = "r" + Date.now().toString(36) + Math.random().toString(36).slice(2,6);
+  const payload = { requestId, action: 'strength_checkin', entryId: `chk:${CK.date}`, params: { legs: CK.legs, upper: CK.upper }, athlete: 'kennet' };
+  msg.innerHTML = `<span style="color:var(--muted)">Gemmer…</span>`;
+  try {
+    await dispatchViaWorker('/plan-edit', payload);
+  } catch(err) {
+    if (err.code === 'NO_SECRET' || err.status === 401 || err.status === 403) {
+      const val = (window.prompt(err.code === 'NO_SECRET'
+        ? 'App-koden mangler på denne enhed.\n\nIndsæt app-koden (den delte hemmelighed til Worker\'en):'
+        : 'App-koden blev afvist af Worker\'en.\n\nIndsæt den rigtige kode:') || '').trim();
+      CK.busy = false;
+      if (val) { setSecret(val); return ckSave(); }
+      msg.innerHTML = `<span style="color:var(--act)">Ikke gemt — app-kode mangler.</span>`;
+    } else {
+      msg.innerHTML = `<span style="color:var(--act)">Ikke gemt — ${esc(err.code === 'NO_URL' ? 'Worker-URL mangler' : err.status ? 'Worker svarede ' + err.status : 'netværksfejl')}.</span>`;
+    }
+    CK.busy = false; if (go) go.disabled = false;
+    return;
+  }
+  msg.innerHTML = `<span style="color:var(--muted)">Sendt — venter på bekræftelse…</span>`;
+  const forDate = CK.date;
+  for (let i = 0; i < CK_POLL_MAX; i++) {
+    await new Promise(r => setTimeout(r, CK_POLL_MS));
+    if (CK.date !== forDate) return;
+    try {
+      const res = await fetch(`https://raw.githubusercontent.com/hammerbamsen/fast-as-50/main/data/edit_result.json?t=${Date.now()}`);
+      if (!res.ok) continue;
+      const r = (await res.json())[requestId];
+      if (!r) continue;
+      if (r.status === 'reject' || r.status === 'error') {
+        msg.innerHTML = `<span style="color:var(--act)"><b>Ikke gemt:</b> ${esc(r.gate && r.gate.msg || r.error || r.msg || 'afvist')}</span>`;
+        CK.busy = false; if (go) go.disabled = false;
+        return;
+      }
+      try { localStorage.setItem(CK_KEY_PREFIX + forDate, new Date().toISOString()); } catch(e) {}
+      msg.innerHTML = `<span style="color:var(--ok)">Gemt ✓ — progressionen ligger i næste pas ved næste opdatering.</span>`;
+      if (D.strength && D.strength.checkin) { D.strength.checkin.due = false; D.strength.checkin.last = { date: forDate, legs: CK.legs, upper: CK.upper }; }
+      setTimeout(() => { const c = document.getElementById('ck-card'); if (c) c.remove(); }, 1500);
+      return;
+    } catch(e) { /* fortsæt polling */ }
+  }
+  msg.innerHTML = `<span style="color:var(--muted)">Det tager længere end normalt. Svaret er sandsynligvis gemt — træk ned for at genindlæse.</span>`;
+  CK.busy = false; if (go) go.disabled = false;
 }
 
 // ── Krop: cut-tjek ───────────────────────────────────────────
@@ -3941,162 +4038,7 @@ document.addEventListener('click', ev => {
 });
 document.addEventListener('keydown', ev => { if (ev.key === 'Escape') showLogSheet(false); });
 
-// ── Styrke-log-ark (blok 8, 8/9-26) ───────────────────────────
-// Tre felter efter et styrkepas: RPE 1-10, "alle runder × reps?" ja/nej, note
-// (≤ 140 tegn). Åbnes automatisk fra "Markér gennemført" på et styrkepas
-// (toggleDone) og fra Krop → STYRKE-tilen / styrke-kortet ("Log pas").
-// Gem → dispatchViaWorker('/plan-edit', {action:'strength_log', entryId:'log:YYYY-MM-DD',
-// params:{rpe, complete, note, template?}, athlete:'kennet'}) og polling af
-// data/edit_result.json som de andre plan-edits (ptSubmit). Dagens værdier
-// huskes i localStorage (faf-strength-YYYY-MM-DD) så arket kan genåbnes udfyldt.
-const SL_KEY_PREFIX = 'faf-strength-';
-const SL_NOTE_MAX = 140;
-let SL_POLL_MS = 3000, SL_POLL_MAX = 60;   // overskrives i Playwright-testen
-const SL = { open: false, date: null, template: null, rpe: null, complete: null, note: '', saved: null };
-
-function slLocal(date){ try { return JSON.parse(localStorage.getItem(SL_KEY_PREFIX + date) || 'null') || null; } catch(e) { return null; } }
-function slPersist(){ try { localStorage.setItem(SL_KEY_PREFIX + SL.date, JSON.stringify({ rpe: SL.rpe, complete: SL.complete, note: SL.note, template: SL.template, saved: SL.saved })); } catch(e) {} }
-function slEl(){ return document.getElementById('sl-sheet-body'); }
-
-// Dagens template: I dag-passets navn ("Styrke A …" / "Styrke B …") matchet mod
-// data.strength.templates, ellers data.strength.next, ellers det der blev givet.
-function slGuessTemplate(given){
-  const s = D.strength || {};
-  const tpls = s.templates || [];
-  if (given) return tpls.find(t => t.id === given) || { id: given, name: given };
-  const todayTitle = (todaySessionsNorm().find(x => (x.discipline === 'strength') || /styrke/i.test(x.title || '')) || {}).title || '';
-  const letter = _stLetter(todayTitle);
-  if (letter) {
-    const rounds = (todayTitle.match(/(\d)\s*runder/i) || [])[1];
-    const cands = tpls.filter(t => _stLetter(t.name) === letter);
-    const hit = cands.find(t => rounds && String(t.rounds) === rounds) || cands[0];
-    if (hit) return hit;
-  }
-  if (s.next && s.next.templateId) return tpls.find(t => t.id === s.next.templateId) || { id: s.next.templateId, name: s.next.name || s.next.templateId };
-  return null;
-}
-
-function slOpenSheet(templateId){
-  const date = todayIso();
-  const tpl = slGuessTemplate(templateId || null);
-  const loc = slLocal(date) || {};
-  Object.assign(SL, { open: true, date, template: (loc.template && !templateId) ? loc.template : (tpl ? tpl.id : null),
-    rpe: loc.rpe != null ? loc.rpe : null, complete: loc.complete != null ? loc.complete : null, note: loc.note || '', saved: loc.saved || null });
-  SL.templateName = tpl ? tpl.name : (SL.template || null);
-  slRender();
-  slShowSheet(true);
-}
-function slShowSheet(on){
-  const sheet = document.getElementById('sl-sheet'), scrim = document.getElementById('sl-scrim');
-  if (!sheet) return;
-  sheet.classList.toggle('show', on); scrim.classList.toggle('show', on);
-  sheet.setAttribute('aria-hidden', on ? 'false' : 'true');
-  if (!on) SL.open = false;
-}
-function slCloseSheet(){ slShowSheet(false); }
-
-function slRender(){
-  const el = slEl(); if (!el) return;
-  const dt = new Date(SL.date + 'T12:00:00');
-  const dk = ["Søndag","Mandag","Tirsdag","Onsdag","Torsdag","Fredag","Lørdag"];
-  const sub = [`${dk[dt.getDay()]} ${dt.getDate()}. ${DK_MON_SHORT[dt.getMonth()]}`, SL.templateName ? esc(SL.templateName) : ''].filter(Boolean).join(' · ');
-  const chips = Array.from({length: 10}, (_, i) => i + 1).map(n =>
-    `<button class="opt${SL.rpe === n ? ' on' : ''}${n >= 9 ? ' bad' : ''}" data-rpe="${n}" onclick="slPickRpe(${n})">${n}</button>`).join('');
-  const savedTxt = SL.saved ? `Gemt ✓ ${SL.saved}` : '';
-  el.innerHTML = `<h2>Styrke-log</h2><p class="sub">${sub}</p>
-    <div class="saved" id="sl-saved">${esc(savedTxt)}</div>
-    <div class="q"><span class="lab">RPE — hvor hårdt? (1 let · 10 max)</span><div class="opts c5" id="sl-rpe">${chips}</div></div>
-    <div class="q"><span class="lab">Alle runder × reps?</span>
-      <div class="opts c2" id="sl-complete"><button class="opt${SL.complete === 1 ? ' on' : ''}" data-complete="1" onclick="slPickComplete(1)">Ja<small>alt gennemført</small></button><button class="opt bad${SL.complete === 0 ? ' on' : ''}" data-complete="0" onclick="slPickComplete(0)">Nej<small>ikke alle runder</small></button></div>
-    </div>
-    <div class="q"><span class="lab">Note</span>
-      <textarea class="pt-note" id="sl-note" maxlength="${SL_NOTE_MAX}" placeholder="fx swing 16 næste gang" oninput="slNoteInput(this)">${esc(SL.note)}</textarea>
-      <div class="sl-count" id="sl-count">${SL.note.length}/${SL_NOTE_MAX}</div>
-    </div>
-    <div class="pt-msg" id="sl-msg"></div>
-    <div class="pt-btns"><button class="sec" onclick="slCloseSheet()">Luk</button><button class="pri" id="sl-go" onclick="slSave()" ${SL.rpe == null || SL.complete == null ? 'disabled' : ''}>Gem</button></div>`;
-}
-function slSyncGo(){ const go = document.getElementById('sl-go'); if (go) go.disabled = (SL.rpe == null || SL.complete == null); }
-function slPickRpe(n){
-  SL.rpe = n; slPersist();
-  document.querySelectorAll('#sl-rpe .opt').forEach(b => b.classList.toggle('on', +b.dataset.rpe === n));
-  slSyncGo();
-}
-function slPickComplete(v){
-  SL.complete = v; slPersist();
-  document.querySelectorAll('#sl-complete .opt').forEach(b => b.classList.toggle('on', +b.dataset.complete === v));
-  slSyncGo();
-}
-function slNoteInput(ta){
-  SL.note = String(ta.value || '').slice(0, SL_NOTE_MAX);
-  if (ta.value.length > SL_NOTE_MAX) ta.value = SL.note;
-  const c = document.getElementById('sl-count'); if (c) { c.textContent = `${SL.note.length}/${SL_NOTE_MAX}`; c.classList.toggle('over', SL.note.length >= SL_NOTE_MAX); }
-  slPersist();
-}
-
-async function slSave(){
-  if (SL.rpe == null || SL.complete == null) return;
-  const msg = document.getElementById('sl-msg'), go = document.getElementById('sl-go');
-  if (go) go.disabled = true;
-  const requestId = "r" + Date.now().toString(36) + Math.random().toString(36).slice(2,6);
-  const params = { rpe: SL.rpe, complete: SL.complete, note: SL.note.slice(0, SL_NOTE_MAX) };
-  if (SL.template) params.template = SL.template;
-  const payload = { requestId, action: 'strength_log', entryId: `log:${SL.date}`, params, athlete: 'kennet' };
-  msg.innerHTML = `<span style="color:var(--muted)">Gemmer…</span>`;
-  try {
-    await dispatchViaWorker('/plan-edit', payload);
-  } catch(err) {
-    if (err.code === 'NO_SECRET' || err.status === 401 || err.status === 403) {
-      const val = (window.prompt(err.code === 'NO_SECRET'
-        ? 'App-koden mangler på denne enhed.\n\nIndsæt app-koden (den delte hemmelighed til Worker\'en):'
-        : 'App-koden blev afvist af Worker\'en.\n\nIndsæt den rigtige kode:') || '').trim();
-      if (val) { setSecret(val); if (go) go.disabled = false; return slSave(); }
-      msg.innerHTML = `<span style="color:var(--act)">Ikke gemt — app-kode mangler.</span>`;
-    } else {
-      msg.innerHTML = `<span style="color:var(--act)">Ikke gemt — ${esc(err.code === 'NO_URL' ? 'Worker-URL mangler' : err.status ? 'Worker svarede ' + err.status : 'netværksfejl')}.</span>`;
-    }
-    if (go) go.disabled = false;
-    return;
-  }
-  msg.innerHTML = `<span style="color:var(--muted)">Sendt — venter på bekræftelse…</span>`;
-  const openedFor = SL.date;
-  for (let i = 0; i < SL_POLL_MAX; i++) {
-    await new Promise(r => setTimeout(r, SL_POLL_MS));
-    if (!SL.open || SL.date !== openedFor) return;   // arket er lukket imens
-    try {
-      const res = await fetch(`https://raw.githubusercontent.com/hammerbamsen/fast-as-50/main/data/edit_result.json?t=${Date.now()}`);
-      if (!res.ok) continue;
-      const r = (await res.json())[requestId];
-      if (!r) continue;
-      if (r.status === 'reject' || r.status === 'error') {
-        msg.innerHTML = `<span style="color:var(--act)"><b>Ikke gemt:</b> ${esc(r.gate && r.gate.msg || r.error || r.msg || 'afvist')}</span>`;
-        if (go) go.disabled = false;
-        return;
-      }
-      SL.saved = new Date().toLocaleTimeString('da-DK', {hour:'2-digit', minute:'2-digit'}); slPersist();
-      msg.innerHTML = `<span style="color:var(--ok)">Gemt ✓</span>`;
-      const sv = document.getElementById('sl-saved'); if (sv) sv.textContent = `Gemt ✓ ${SL.saved}`;
-      slApplyLocal();
-      setTimeout(() => { if (SL.open && SL.date === openedFor) slCloseSheet(); }, 1200);
-      return;
-    } catch(e) { /* fortsæt polling */ }
-  }
-  msg.innerHTML = `<span style="color:var(--muted)">Det tager længere end normalt. Loggen er sandsynligvis gemt — luk og træk ned for at genindlæse.</span>`;
-  if (go) go.disabled = false;
-}
-
-// Optimistisk: læg dagens log ind i D.strength.last4 så Krop-kortet svarer til
-// det gemte indtil data.json er regenereret.
-function slApplyLocal(){
-  if (!D.strength) return;
-  const list = Array.isArray(D.strength.last4) ? D.strength.last4 : (D.strength.last4 = []);
-  const entry = { date: SL.date, name: SL.templateName || SL.template || 'Styrke', rpe: SL.rpe, complete: SL.complete, note: SL.note, template: SL.template };
-  const i = list.findIndex(x => x && x.date === SL.date);
-  if (i >= 0) list[i] = { ...list[i], ...entry }; else list.unshift(entry);
-  D.strength.last4 = list.slice(0, 4);
-  if (activePage === 'body') { const c = document.getElementById('strength-card'); if (c) c.outerHTML = strengthCardHtml(); }
-}
-document.addEventListener('keydown', ev => { if (ev.key === 'Escape') slCloseSheet(); });
+// Styrke-log-arket (blok 8) er fjernet i blok 10 — se ckCardHtml/ckSave (14-dages check-in).
 
 // ── Navigation ────────────────────────────────────────────────
 // Én kilde for faner: sidebar, bottom-nav, swipe og hash-routing læser herfra.
@@ -4175,9 +4117,6 @@ function toggleDone(btn, idx) {
   btn.className = 'btn fill done';
   btn.textContent = 'Gennemført ✓';
   btn.disabled = true;
-  // Blok 8: styrkepas → åbn styrke-log-arket (RPE · alle runder · note) med det samme.
-  const s = todaySessionsNorm()[idx] || {};
-  if (s.discipline === 'strength' || /styrke/i.test(s.title || '')) setTimeout(() => slOpenSheet(), 150);
 }
 
 // Bannere (stale / datafejl / readiness) går alle gennem ét slot øverst på

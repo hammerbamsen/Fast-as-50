@@ -37,7 +37,7 @@
         "hjemme"
       ],
       "rounds": 2,
-      "progression": "Ben først: når alle runder × reps er gennemført med RPE ≤ 7 to pas i træk, næste KB-trin (12,5→16→20). Overkrop: +2 reps (max +4) før +2,5 kg, så tilbage til grund-reps. Recovery-uger: 2 runder, ingen progression. 3 runder fra uge 41 hvis loggen viser to fulde uger.",
+      "progression": "Ben først: check-in hver 14. dag (søndag) i I dag — 'alle runder × reps med RPE ≤ 7 på de sidste 2 pas?'. Ja på ben → næste trin (KB 12,5→16→20 · DB 5→7→10→12,5→15). Ja på overkrop (inkl. core) → +2 reps (max +4), derefter næste trin og tilbage til grund-reps. Recovery-uger: 2 runder, ingen progression. 3 runder fra uge 41 hvis loggen viser to fulde uger.",
       "exercises": [
         {
           "name": "Thruster",
@@ -87,11 +87,11 @@
         "hjemme"
       ],
       "rounds": 2,
-      "progression": "Ben først: når alle runder × reps er gennemført med RPE ≤ 7 to pas i træk, næste KB-trin (12,5→16→20). Overkrop: +2 reps (max +4) før +2,5 kg, så tilbage til grund-reps. Recovery-uger: 2 runder, ingen progression. 3 runder fra uge 41 hvis loggen viser to fulde uger.",
+      "progression": "Ben først: check-in hver 14. dag (søndag) i I dag — 'alle runder × reps med RPE ≤ 7 på de sidste 2 pas?'. Ja på ben → næste trin (KB 12,5→16→20 · DB 5→7→10→12,5→15). Ja på overkrop (inkl. core) → +2 reps (max +4), derefter næste trin og tilbage til grund-reps. Recovery-uger: 2 runder, ingen progression. 3 runder fra uge 41 hvis loggen viser to fulde uger.",
       "exercises": [
         {
           "name": "RDL",
-          "load": "12 kg",
+          "load": "12,5 kg KB",
           "reps": 12,
           "unit": "reps",
           "group": "ben"
@@ -119,7 +119,7 @@
         },
         {
           "name": "Farmers walk",
-          "load": "2×10 kg",
+          "load": "2×10 kg DB",
           "reps": 40,
           "unit": "m",
           "group": "core"
@@ -137,7 +137,7 @@
         "hjemme"
       ],
       "rounds": 3,
-      "progression": "Ben først: når alle runder × reps er gennemført med RPE ≤ 7 to pas i træk, næste KB-trin (12,5→16→20). Overkrop: +2 reps (max +4) før +2,5 kg, så tilbage til grund-reps. Recovery-uger: 2 runder, ingen progression. 3 runder fra uge 41 hvis loggen viser to fulde uger.",
+      "progression": "Ben først: check-in hver 14. dag (søndag) i I dag — 'alle runder × reps med RPE ≤ 7 på de sidste 2 pas?'. Ja på ben → næste trin (KB 12,5→16→20 · DB 5→7→10→12,5→15). Ja på overkrop (inkl. core) → +2 reps (max +4), derefter næste trin og tilbage til grund-reps. Recovery-uger: 2 runder, ingen progression. 3 runder fra uge 41 hvis loggen viser to fulde uger.",
       "exercises": [
         {
           "name": "Thruster",
@@ -187,11 +187,11 @@
         "hjemme"
       ],
       "rounds": 3,
-      "progression": "Ben først: når alle runder × reps er gennemført med RPE ≤ 7 to pas i træk, næste KB-trin (12,5→16→20). Overkrop: +2 reps (max +4) før +2,5 kg, så tilbage til grund-reps. Recovery-uger: 2 runder, ingen progression. 3 runder fra uge 41 hvis loggen viser to fulde uger.",
+      "progression": "Ben først: check-in hver 14. dag (søndag) i I dag — 'alle runder × reps med RPE ≤ 7 på de sidste 2 pas?'. Ja på ben → næste trin (KB 12,5→16→20 · DB 5→7→10→12,5→15). Ja på overkrop (inkl. core) → +2 reps (max +4), derefter næste trin og tilbage til grund-reps. Recovery-uger: 2 runder, ingen progression. 3 runder fra uge 41 hvis loggen viser to fulde uger.",
       "exercises": [
         {
           "name": "RDL",
-          "load": "12 kg",
+          "load": "12,5 kg KB",
           "reps": 12,
           "unit": "reps",
           "group": "ben"
@@ -219,7 +219,7 @@
         },
         {
           "name": "Farmers walk",
-          "load": "2×10 kg",
+          "load": "2×10 kg DB",
           "reps": 40,
           "unit": "m",
           "group": "core"
