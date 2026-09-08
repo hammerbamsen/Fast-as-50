@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-09-08 17:46",
+    "updated": "2026-09-08 18:07",
     "week": 1,
     "totalWeeks": 51,
     "blockType": "RECOVERY",
@@ -3167,7 +3167,7 @@
       "note": "Nøgle virker"
     }
   },
-  "credentialsCheckedTs": "2026-09-08T15:46:32.700945",
+  "credentialsCheckedTs": "2026-09-08T16:07:43.754691",
   "coachAssessmentTsFull": "2026-09-08T13:49:26",
   "coachAssessmentWeightAtGen": 72.3,
   "coachAssessmentAfAtGen": 2,
@@ -9187,7 +9187,7 @@
       "Næste uge (38, RACE): TSS-mål 250 · hårde/lange dage: tir 15/9 Løb 4×3 min halvmaraton-tempo (4:35-4:45) efter fornemmelse 45 min, søn 20/9 CPH HALF — 21,1 km, B-løb kontrolleret 4:35-4:45/km 90 min",
       "Planændringer siden sidst: 1 — se martin_signals.md"
     ],
-    "generatedAt": "2026-09-08T15:46:32Z"
+    "generatedAt": "2026-09-08T16:07:43Z"
   },
   "proposals": []
 }
