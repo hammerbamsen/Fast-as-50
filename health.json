@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-09-08T17:24:03Z",
+  "generatedAt": "2026-09-08T17:24:21Z",
   "workflows": {
     "CI — pytest": {
-      "lastRun": "2026-09-08T17:18:54Z",
+      "lastRun": "2026-09-08T17:23:56Z",
       "conclusion": "success",
-      "event": "pull_request",
-      "runUrl": "https://github.com/hammerbamsen/fast-as-50/actions/runs/34256282610",
-      "durationS": 33
+      "event": "push",
+      "runUrl": "https://github.com/hammerbamsen/fast-as-50/actions/runs/34256797198",
+      "durationS": 31
     },
     "Daglig dashboard-opdatering": {
       "lastRun": "2026-09-08T17:23:49Z",
