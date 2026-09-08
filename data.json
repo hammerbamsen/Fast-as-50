@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-09-08 03:18",
+    "updated": "2026-09-08 08:18",
     "week": 1,
     "totalWeeks": 51,
     "blockType": "RECOVERY",
@@ -46,9 +46,9 @@
       "color": "#27AE60"
     },
     "sleep": {
-      "value": "7,7",
+      "value": "7,6",
       "unit": "t",
-      "sub": "Snit 7d 7,3t · mål 7t",
+      "sub": "Snit 7d 7,2t · mål 7t",
       "color": "#27AE60"
     },
     "runKm": {
@@ -58,13 +58,13 @@
       "color": "#7A6A58"
     },
     "hrv": {
-      "value": "53,0",
+      "value": "54,7",
       "unit": "ms",
       "sub": "Snit 7d",
       "color": "#7A6A58"
     },
     "rhr": {
-      "value": "45",
+      "value": "44",
       "unit": "slag",
       "sub": "Hvilepuls · snit 7d",
       "color": "#7A6A58"
@@ -105,8 +105,8 @@
     "target": 6,
     "streak": 1
   },
-  "coachSpeech": "Du er i uge 1 af RECOVERY-blokken efter Marathon du Médoc — mesocyklus R i Tour des Stations 2027 (51 uger). Ugen er bygget til gang, svøm og let cykel; første løb er tidligst lørdag 12/9. {HL} I dag er planen Gang let 60 min. Mandag gennemførte du Gang let 45 min med 18 TSS faktisk mod 14 planlagt — fint. Ugen har 6 pas tilbage.",
-  "coachHighlight": "Gå Gang let 60 min i dag — roligt tempo, ingen løb.",
+  "coachSpeech": "Tirsdag — uge 1 af 51. {HL} Godt: Søvn på 7,2 timer er solid. Fokus: Vægt på 72,3 kg (målt 3/9) — protein ved hvert måltid, alkohol som bevidst valg, søvn 7-8 t. Vægt/fedt vurderes på 7d-snit mod planen, ikke på én vejning. 1 AF-dage i 2 afsluttede dage — 5 mangler i 5 dage tilbage. Keep moving forward.  \"Det er ikke at have for lidt, der gør et menneske fattigt, men at ville have mere.\" — Seneca",
+  "coachHighlight": "Lavere belastning er meningen i en restitutionsuge — der er ingen ugeprocent at jagte",
   "weekFocus": "Restituer komplet — let bevægelse, ingen pres, sov 7-8 timer",
   "today": [
     {
@@ -971,7 +971,11 @@
       "v": 50.0,
       "real": true
     },
-    null
+    {
+      "date": "2026-09-08",
+      "v": 65.0,
+      "real": true
+    }
   ],
   "sleepHistory": [
     {
@@ -1419,7 +1423,11 @@
       "v": 7.7,
       "real": true
     },
-    null
+    {
+      "date": "2026-09-08",
+      "v": 7.6,
+      "real": true
+    }
   ],
   "tsbHistory": [
     {
@@ -2861,9 +2869,7 @@
     {
       "type": "alcohol_cluster",
       "level": "critical",
-      "message": "3 drikkedage i træk 4/9–6/9 — klynger rammer HRV hårdere end spredte dage.",
-      "action": null,
-      "source": "rule"
+      "message": "3 drikkedage i træk 4/9–6/9 — klynger rammer HRV hårdere end spredte dage."
     }
   ],
   "tsb": 3.7,
@@ -3129,7 +3135,7 @@
       "note": "Nøgle virker"
     }
   },
-  "credentialsCheckedTs": "2026-09-08T01:18:45.336324",
+  "credentialsCheckedTs": "2026-09-08T06:18:27.402892",
   "coachAssessmentTsFull": "2026-09-08T01:18:45",
   "coachAssessmentWeightAtGen": 72.3,
   "coachAssessmentAfAtGen": 1,
@@ -3939,7 +3945,7 @@
     },
     {
       "date": "2026-09-08",
-      "v": 48,
+      "v": 43,
       "real": true
     }
   ],
@@ -8181,10 +8187,6 @@
       ],
       "projection": [
         {
-          "d": "2026-09-08",
-          "ctl": 49.6
-        },
-        {
           "d": "2026-09-09",
           "ctl": 48.9
         },
@@ -8206,7 +8208,7 @@
         },
         {
           "d": "2026-09-14",
-          "ctl": 46.2
+          "ctl": 46.1
         },
         {
           "d": "2026-09-15",
@@ -8230,7 +8232,7 @@
         },
         {
           "d": "2026-09-20",
-          "ctl": 44.8
+          "ctl": 44.7
         },
         {
           "d": "2026-09-21",
@@ -8386,7 +8388,7 @@
         },
         {
           "d": "2026-10-29",
-          "ctl": 49.8
+          "ctl": 49.7
         },
         {
           "d": "2026-10-30",
@@ -8666,7 +8668,7 @@
     "error": null,
     "validationError": null,
     "notes": null,
-    "stale": false
+    "stale": true
   },
   "weekFocusNext": {
     "week": 1,
@@ -9122,14 +9124,14 @@
     "lines": [
       "Uge 37: TSS 18 af 255 (7 %) · CTL 49,6 (mål 47) · TSB +3,7",
       "Vægt 7d 72,3 kg · fedt 14d 21,6 % · cut starter uge 39 (21/9)",
-      "HRV 7d 53 (28d 57) · hvilepuls 45 · søvn 7d 7,2 t",
+      "HRV 7d 55 (28d 58) · hvilepuls 44 · søvn 7d 7,2 t",
       "AF 2/7 · protein 3/3 0/7 · aftensult —/7",
       "Styrke 0/2 · seneste RPE —",
       "Cut-tjek: inaktivt — Aktiveres uge 39 (21/9)",
       "Næste uge (38, RACE): TSS-mål 250 · hårde/lange dage: tir 15/9 Løb 4×3 min halvmaraton-tempo (4:35-4:45) efter fornemmelse 45 min, søn 20/9 CPH HALF — 21,1 km, B-løb kontrolleret 4:35-4:45/km 90 min",
       "Planændringer siden sidst: 1 — se martin_signals.md"
     ],
-    "generatedAt": "2026-09-08T01:18:23Z"
+    "generatedAt": "2026-09-08T06:18:27Z"
   },
   "proposals": []
 }
