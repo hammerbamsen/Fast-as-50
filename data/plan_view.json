@@ -1,5 +1,5 @@
 {
- "generated": "2026-09-08T01:18:48Z",
+ "generated": "2026-09-08T06:18:30Z",
  "kennet": {
   "programId": "tds-2027",
   "seed": {
@@ -2132,7 +2132,7 @@
    "suggestion": null,
    "phase_guard": null
   },
-  "readiness": "NORMAL"
+  "readiness": "HIGH"
  },
- "inputsHash": "b4ff5f575ba96a73"
+ "inputsHash": "bf0fe24766f16b24"
 }
