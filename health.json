@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-08T17:24:21Z",
+  "generatedAt": "2026-09-08T19:30:32Z",
   "workflows": {
     "CI — pytest": {
       "lastRun": "2026-09-08T17:23:56Z",
@@ -9,10 +9,10 @@
       "durationS": 31
     },
     "Daglig dashboard-opdatering": {
-      "lastRun": "2026-09-08T17:23:49Z",
+      "lastRun": "2026-09-08T19:30:16Z",
       "conclusion": "success",
-      "event": "workflow_dispatch",
-      "runUrl": "https://github.com/hammerbamsen/fast-as-50/actions/runs/34256795776",
+      "event": "schedule",
+      "runUrl": "https://github.com/hammerbamsen/fast-as-50/actions/runs/34269295208",
       "durationS": 25,
       "expectedEveryMin": 60
     },
