@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-09-08 13:35",
+    "updated": "2026-09-08 15:48",
     "week": 1,
     "totalWeeks": 51,
     "blockType": "RECOVERY",
@@ -34,13 +34,13 @@
       "color": "#7A6A58"
     },
     "ctl": {
-      "value": "49,6",
+      "value": "49,7",
       "unit": "",
       "sub": "Uge 1-mål 47 · RECOVERY",
       "color": "#27AE60"
     },
     "tsb": {
-      "value": "3,7",
+      "value": "3,0",
       "unit": "",
       "sub": "Form · CTL−ATL, frisk >0",
       "color": "#27AE60"
@@ -70,16 +70,16 @@
       "color": "#7A6A58"
     },
     "tssComp": {
-      "value": "18",
+      "value": "36",
       "unit": "TSS",
-      "sub": "18 af 255 planlagt TSS",
+      "sub": "36 af 255 planlagt TSS",
       "color": "#C0392B"
     },
     "bikeKm": {
-      "value": "0,0",
+      "value": "21,3",
       "unit": "km",
       "sub": "Cykel denne uge",
-      "color": "#7A6A58"
+      "color": "#C0392B"
     },
     "swimM": {
       "value": "0",
@@ -105,8 +105,8 @@
     "target": 6,
     "streak": 2
   },
-  "coachSpeech": "Tirsdag — uge 1 af 51. {HL} Godt: Søvn på 7,2 timer er solid. 2 AF-dage i 2 gennemførte dage — på rette spor. 4 mere og ugens mål er i hus. Fokus: Vægt på 72,3 kg (målt 3/9) — protein ved hvert måltid, alkohol som bevidst valg, søvn 7-8 t. Vægt/fedt vurderes på 7d-snit mod planen, ikke på én vejning. Keep moving forward.  \"Det er ikke at have for lidt, der gør et menneske fattigt, men at ville have mere.\" — Seneca",
-  "coachHighlight": "Lavere belastning er meningen i en restitutionsuge — der er ingen ugeprocent at jagte",
+  "coachSpeech": "Det er uge 1 af RECOVERY-blokken efter Marathon du Médoc — meso-uge R i TdS 2027-programmet. Ingen løb, ingen hård belastning: cykel og gang bærer den aerobe base frem mod CPH Half om 12 dage. {HL} Mandag er i hus: Gang let 45 min blev til 221 min og 15,5 km — du bevægede dig markant mere end planlagt, men belastningen holdt sig lav.",
+  "coachHighlight": "Tag gang-turen på 60 min nu — roligt tempo, ingen løb.",
   "weekFocus": "Restituer komplet — let bevægelse, ingen pres, sov 7-8 timer",
   "today": [
     {
@@ -116,6 +116,14 @@
       "zone": "–",
       "desc": "",
       "completed": false
+    },
+    {
+      "discipline": "commute",
+      "title": "Arcachon Cykling",
+      "duration": "",
+      "zone": "–",
+      "desc": "",
+      "completed": true
     }
   ],
   "week_sessions": [
@@ -141,6 +149,17 @@
       "planned_tss": 18,
       "planned_mins": 60,
       "planned_distance_m": null,
+      "today": true
+    },
+    {
+      "day": "Tir",
+      "disc": "commute",
+      "label": "Arcachon Cykling",
+      "done": true,
+      "extra": true,
+      "actual_tss": 18,
+      "actual_mins": 88,
+      "actual_distance_m": 21269.19,
       "today": true
     },
     {
@@ -199,7 +218,7 @@
     }
   ],
   "ctlCurve": [
-    49.6
+    49.7
   ],
   "weightHistory": [
     null,
@@ -1872,12 +1891,12 @@
     },
     {
       "date": "2026-09-07",
-      "v": 0.1,
+      "v": 1.7,
       "real": true
     },
     {
       "date": "2026-09-08",
-      "v": 3.7,
+      "v": 3.0,
       "real": true
     }
   ],
@@ -2008,6 +2027,17 @@
           "planned_tss": 18,
           "planned_mins": 60,
           "planned_distance_m": null,
+          "today": true
+        },
+        {
+          "day": "Tir",
+          "disc": "commute",
+          "label": "Arcachon Cykling",
+          "done": true,
+          "extra": true,
+          "actual_tss": 18,
+          "actual_mins": 88,
+          "actual_distance_m": 21269.19,
           "today": true
         },
         {
@@ -2535,9 +2565,10 @@
     }
   ],
   "train_mins": {
+    "commute": 88.0,
     "walk": 221.0,
     "planned": 426.0,
-    "actual_total": 221.0
+    "actual_total": 309.0
   },
   "fatHistory": [
     null,
@@ -2863,17 +2894,19 @@
     null,
     null
   ],
-  "coachAssessmentHtml": "<p class=\"coach-head\"><strong>Dag 2 af 357 · Tirsdag · Uge 1</strong></p><p class=\"coach-sec coach-big\">Kennet er i uge 1 af en RECOVERY-blok (Tour des Stations 2027, fase TRANSITION) efter Marathon du Médoc. Ugen er bevidst holdt lav med gang, let cykel og svøm — ingen løb før lørdag 12/9, og ingen hårde pas overhovedet denne uge.</p><p class=\"coach-sec\"><span class=\"coach-sec-h\">Træning &amp; load</span>I dag er planen Gang let 60 min. Mandag gennemførte du Gang let 45 min med 18 TSS mod planlagt 14 — fint. Ugen har 6 pas tilbage og en tssTarget på 150; du er på 18 af 255 planlagt, men i RECOVERY tæller retningen mere end tallet. CTL er 49.6 mod mål på 47.0 — du er 2.6 over, hvilket er præcis hvad restitutionsblokken skal sænke gradvist.</p><p class=\"coach-sec\"><span class=\"coach-sec-h\">Krop &amp; kost</span>7-dages snitvægt er 72.3 kg og fedtprocent 72.3/21.3 — begge stabile (vægten uændret over 28 dage, fedtprocent ned 0.3 procentpoint, under grænsen for en retningsmærkning). Cut starter om 13 dage fra 2026-09-21; der er ingen akut kosthandling i dag.</p><p class=\"coach-sec\"><span class=\"coach-sec-h\">Vaner</span>2 alkoholfri dage ud af et mål på 6 denne uge — og der er registreret 4 valgte drikkedage. Protein er registreret 5 af 7 dage, men 0 proteindage er slået til — hold protein som første prioritet ved hvert måltid. Søvn snit 7.2 timer over 7 dage, senest 7.6 — det er over minimumskravet på 7.0. Energi snit 1.8, ingen sultdage.</p>",
-  "coachAssessmentTs": "11:00",
+  "coachAssessmentHtml": "<p class=\"coach-head\"><strong>Dag 2 af 357 · Tirsdag · Uge 1</strong></p><p class=\"coach-sec coach-big\">Det er uge 1 af RECOVERY-blokken efter Marathon du Médoc — meso-uge R i TdS 2027-programmet. Ingen løb, ingen hård belastning: cykel og gang bærer den aerobe base frem mod CPH Half om 12 dage.</p><p class=\"coach-sec\"><span class=\"coach-sec-h\">Træning &amp; load</span>Mandag er i hus: Gang let 45 min blev til 221 min og 15,5 km — du bevægede dig markant mere end planlagt, men belastningen holdt sig lav. I dag er planen Gang let 60 min (ikke udført endnu) plus Arcachon Cykling på 88 min og 18 TSS, som allerede er klaret som ekstra. CTL er 49,7 mod et mål på 47,0 — du er 2,7 point over målet, hvilket er fint i en RECOVERY-uge. TSB er 3,0, ramp er -1,1. Ingen hårde pas denne uge — kvoten er 0.</p><p class=\"coach-sec\"><span class=\"coach-sec-h\">Krop &amp; kost</span>7-dages snit på vægt er 72,3 kg — uændret over 28 dage (0,0 kg). Fedtprocent på 7-dages snit er 21,3 — ændringen på 28 dage er -0,3 procentpoint, så retningen er ikke definitiv endnu. Cut starter først 2026-09-21, så ingen cut-handlinger nu. Protein-princippet gælder dog stadig: protein ved hvert måltid.</p><p class=\"coach-sec\"><span class=\"coach-sec-h\">Vaner</span>AF-dage: 2 af 6 denne uge — men der var en klynge på 3 drikkedage 4/9–6/9, og autopilot-dage er 0 denne uge, så de 4 valgte drikkedage de seneste 7 dage var bevidste valg. Protein registreret 5 af 7 dage — fortsæt. Søvn snit 7,2 timer (mål 7,0) og i nat 7,6 timer. Energi snit 1,8 — lavt, men readiness er HIGH med HRV 65,0 mod 42-dages snit på 55,0.</p>",
+  "coachAssessmentTs": "15:48",
   "commute_pairing_warnings": [],
   "warnings": [
     {
       "type": "alcohol_cluster",
       "level": "critical",
-      "message": "3 drikkedage i træk 4/9–6/9 — klynger rammer HRV hårdere end spredte dage."
+      "message": "3 drikkedage i træk 4/9–6/9 — klynger rammer HRV hårdere end spredte dage.",
+      "action": null,
+      "source": "rule"
     }
   ],
-  "tsb": 3.7,
+  "tsb": 3.0,
   "swimHistory": [
     {
       "week": 1,
@@ -2882,7 +2915,7 @@
       "cumulative": 0
     }
   ],
-  "coachAssessmentLastActId": "i184288910",
+  "coachAssessmentLastActId": "i184580896",
   "weekFocusWeek": 1,
   "coachAssessmentPlanAtGen": "Gang let 60 min",
   "weightGoal": 68,
@@ -3136,8 +3169,8 @@
       "note": "Nøgle virker"
     }
   },
-  "credentialsCheckedTs": "2026-09-08T11:35:22.386574",
-  "coachAssessmentTsFull": "2026-09-08T09:00:43",
+  "credentialsCheckedTs": "2026-09-08T13:49:26.261462",
+  "coachAssessmentTsFull": "2026-09-08T13:49:26",
   "coachAssessmentWeightAtGen": 72.3,
   "coachAssessmentAfAtGen": 2,
   "event_structure_warnings": [
@@ -3234,7 +3267,7 @@
     }
   },
   "weekTssActual": {
-    "1": 18
+    "1": 36
   },
   "racesUpcoming": [
     {
@@ -4376,7 +4409,7 @@
         "mesoWeek": "R",
         "ctlTarget": 47,
         "tssTarget": 150,
-        "tssActual": 18,
+        "tssActual": 36,
         "purpose": "Restitution efter Médoc — gang, svøm og let cykel; første korte løb tidligst lør 12/9.",
         "note": "Restitution efter Marathon du Médoc. Intet løb før tidligst lør 12/9 — 42 km excentrisk belastning kræver 10-14 dage. Cykel bærer den aerobe base.",
         "quota": {
@@ -6599,6 +6632,24 @@
                 "note": "Gang i Bordeaux — restitution",
                 "isKey": false,
                 "optional": false
+              },
+              {
+                "id": null,
+                "name": "Arcachon Cykling",
+                "type": null,
+                "disc": "commute",
+                "mins": 88,
+                "libraryId": null,
+                "load": "let",
+                "erg": null,
+                "purpose": null,
+                "zwiftName": null,
+                "done": true,
+                "actualMins": 88,
+                "actualTss": 18,
+                "note": null,
+                "isKey": false,
+                "extra": true
               }
             ],
             "restNote": null,
@@ -8183,7 +8234,7 @@
           "week": 1,
           "programId": "tds-2027",
           "start": "2026-09-07",
-          "ctl": 49.6
+          "ctl": 49.7
         }
       ],
       "projection": [
@@ -8611,56 +8662,56 @@
     ]
   },
   "coach": {
-    "generatedAt": "2026-09-08T09:00:43Z",
-    "inputsHash": "041c545ee551bf16673bf1984396705941ac6131",
+    "generatedAt": "2026-09-08T13:49:26Z",
+    "inputsHash": "96fa42d075c96f25d7d37ba3e4f73af221471596",
     "model": "claude-sonnet-4-6",
     "mode": "daily",
     "oneThing": {
-      "action": "Gang let 60 min i dag — hold det roligt og nyd bevægelsen uden at presse tempo eller varighed.",
-      "why": "Du er i uge 1 af restitutionsblokken efter Médoc; lav belastning er planen, ikke et kompromis."
+      "action": "Tag gang-turen på 60 min nu — roligt tempo, ingen løb.",
+      "why": "RECOVERY-uge efter Médoc: ben skal bevæges, ikke belastes. Dagens planlagte pas er Gang let 60 min."
     },
     "training": {
-      "text": "I dag er planen Gang let 60 min. Mandag gennemførte du Gang let 45 min med 18 TSS mod planlagt 14 — fint. Ugen har 6 pas tilbage og en tssTarget på 150; du er på 18 af 255 planlagt, men i RECOVERY tæller retningen mere end tallet. CTL er 49.6 mod mål på 47.0 — du er 2.6 over, hvilket er præcis hvad restitutionsblokken skal sænke gradvist.",
+      "text": "Mandag er i hus: Gang let 45 min blev til 221 min og 15,5 km — du bevægede dig markant mere end planlagt, men belastningen holdt sig lav. I dag er planen Gang let 60 min (ikke udført endnu) plus Arcachon Cykling på 88 min og 18 TSS, som allerede er klaret som ekstra. CTL er 49,7 mod et mål på 47,0 — du er 2,7 point over målet, hvilket er fint i en RECOVERY-uge. TSB er 3,0, ramp er -1,1. Ingen hårde pas denne uge — kvoten er 0.",
       "refs": [
+        221.0,
+        15.5,
         60.0,
+        88.0,
         18.0,
-        14.0,
-        6.0,
-        150.0,
-        18.0,
-        255.0,
-        49.6,
+        49.7,
         47.0,
-        2.6
+        2.7,
+        3.0,
+        -1.1,
+        0.0
       ]
     },
     "body": {
-      "text": "7-dages snitvægt er 72.3 kg og fedtprocent 72.3/21.3 — begge stabile (vægten uændret over 28 dage, fedtprocent ned 0.3 procentpoint, under grænsen for en retningsmærkning). Cut starter om 13 dage fra 2026-09-21; der er ingen akut kosthandling i dag.",
+      "text": "7-dages snit på vægt er 72,3 kg — uændret over 28 dage (0,0 kg). Fedtprocent på 7-dages snit er 21,3 — ændringen på 28 dage er -0,3 procentpoint, så retningen er ikke definitiv endnu. Cut starter først 2026-09-21, så ingen cut-handlinger nu. Protein-princippet gælder dog stadig: protein ved hvert måltid.",
       "refs": [
         72.3,
+        0.0,
         21.3,
-        0.3,
-        13.0
+        -0.3
       ]
     },
     "habits": {
-      "text": "2 alkoholfri dage ud af et mål på 6 denne uge — og der er registreret 4 valgte drikkedage. Protein er registreret 5 af 7 dage, men 0 proteindage er slået til — hold protein som første prioritet ved hvert måltid. Søvn snit 7.2 timer over 7 dage, senest 7.6 — det er over minimumskravet på 7.0. Energi snit 1.8, ingen sultdage.",
+      "text": "AF-dage: 2 af 6 denne uge — men der var en klynge på 3 drikkedage 4/9–6/9, og autopilot-dage er 0 denne uge, så de 4 valgte drikkedage de seneste 7 dage var bevidste valg. Protein registreret 5 af 7 dage — fortsæt. Søvn snit 7,2 timer (mål 7,0) og i nat 7,6 timer. Energi snit 1,8 — lavt, men readiness er HIGH med HRV 65,0 mod 42-dages snit på 55,0.",
       "refs": [
         2.0,
         6.0,
         4.0,
         5.0,
         7.0,
-        0.0,
         7.2,
         7.0,
         7.6,
-        7.0,
         1.8,
-        0.0
+        65.0,
+        55.0
       ]
     },
-    "bigPicture": "Kennet er i uge 1 af en RECOVERY-blok (Tour des Stations 2027, fase TRANSITION) efter Marathon du Médoc. Ugen er bevidst holdt lav med gang, let cykel og svøm — ingen løb før lørdag 12/9, og ingen hårde pas overhovedet denne uge.",
+    "bigPicture": "Det er uge 1 af RECOVERY-blokken efter Marathon du Médoc — meso-uge R i TdS 2027-programmet. Ingen løb, ingen hård belastning: cykel og gang bærer den aerobe base frem mod CPH Half om 12 dage.",
     "weekFocus": null,
     "weekFocusFor": null,
     "warnings": [
@@ -9122,14 +9173,14 @@
     ]
   },
   "weekTss": {
-    "actual": 18,
+    "actual": 36,
     "planned": 255
   },
   "martinMail": {
     "week": 1,
     "isoWeek": 37,
     "lines": [
-      "Uge 37: TSS 18 af 255 (7 %) · CTL 49,6 (mål 47) · TSB +3,7",
+      "Uge 37: TSS 36 af 255 (14 %) · CTL 49,7 (mål 47) · TSB +3,0",
       "Vægt 7d 72,3 kg · fedt 14d 21,6 % · cut starter uge 39 (21/9)",
       "HRV 7d 55 (28d 58) · hvilepuls 44 · søvn 7d 7,2 t",
       "AF 3/7 · protein 3/3 0/7 · aftensult —/7",
@@ -9138,7 +9189,7 @@
       "Næste uge (38, RACE): TSS-mål 250 · hårde/lange dage: tir 15/9 Løb 4×3 min halvmaraton-tempo (4:35-4:45) efter fornemmelse 45 min, søn 20/9 CPH HALF — 21,1 km, B-løb kontrolleret 4:35-4:45/km 90 min",
       "Planændringer siden sidst: 1 — se martin_signals.md"
     ],
-    "generatedAt": "2026-09-08T11:35:22Z"
+    "generatedAt": "2026-09-08T13:48:59Z"
   },
   "proposals": []
 }
