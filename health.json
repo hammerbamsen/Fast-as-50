@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-08T08:45:57Z",
+  "generatedAt": "2026-09-08T09:01:09Z",
   "workflows": {
     "CI — pytest": {
       "lastRun": "2026-09-07T20:01:47Z",
@@ -9,11 +9,11 @@
       "durationS": 28
     },
     "Daglig dashboard-opdatering": {
-      "lastRun": "2026-09-08T06:18:34Z",
+      "lastRun": "2026-09-08T09:00:50Z",
       "conclusion": "success",
       "event": "schedule",
-      "runUrl": "https://github.com/hammerbamsen/fast-as-50/actions/runs/34194063323",
-      "durationS": 31,
+      "runUrl": "https://github.com/hammerbamsen/fast-as-50/actions/runs/34207564679",
+      "durationS": 43,
       "expectedEveryMin": 60
     },
     "Regenerér Word-master fra plan.json": {
