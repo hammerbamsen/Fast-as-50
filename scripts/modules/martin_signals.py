@@ -289,14 +289,16 @@ def _line_strength(data, plan, today):
         n = ((data.get("body") or {}).get("strengthWeek") or {}).get("done")
     program, _w, _m = _prog_week(plan, today)
     target = int(((program or {}).get("goals") or {}).get("strengthPerWeek") or 2)
-    last = next((s for s in reversed(sessions) if s.get("rpe") is not None), None)
-    if last:
-        comp = last.get("complete")
-        tail = "" if comp is None else (" (alle runder)" if int(comp) == 1 else " (ikke alle runder)")
-        rpe = f"{int(last['rpe'])}{tail}"
+    # Blok 10: 14-dages check-in i stedet for RPE pr. pas.
+    ck = ((data.get("strength") or {}).get("checkin") or {}) if isinstance(data.get("strength"), dict) else {}
+    last = ck.get("last") if isinstance(ck, dict) else None
+    if last and last.get("date"):
+        mark = lambda v: "✓" if v else "✗"
+        _ld = date.fromisoformat(str(last["date"])[:10])
+        ci = f"{_ld.day}/{_ld.month} ben {mark(last.get('legs'))} overkrop {mark(last.get('upper'))}"
     else:
-        rpe = "—"
-    return f"Styrke {_da(n, 0)}/{target} · seneste RPE {rpe}"
+        ci = "—"
+    return f"Styrke {_da(n, 0)}/{target} · check-in {ci}"
 
 
 def _line_cut(data):
