@@ -415,7 +415,9 @@ def main():
                                                 templates=_body.load_workout_library(),
                                                 target=int(GOALS.get('strengthPerWeek') or 2))
         _nx = data['strength']['next']
-        print(f"  Styrke: {len(_plan_slog)} loggede pas · næste {_nx['ab'].upper()} {_nx['templateId']} ({_nx['reasoning']})")
+        _ck = data['strength'].get('checkin') or {}
+        print(f"  Styrke: {len(_plan_slog)} loggede pas · næste {_nx['ab'].upper()} {_nx['templateId']} ({_nx['reasoning']}) · "
+              f"{_nx.get('stateSummary')} · check-in {'DUE ' + str(_ck.get('date')) if _ck.get('due') else 'næste ' + str(_ck.get('next'))}")
     except Exception as _e:
         print(f"  Styrke-templates fejlede (ikke-blokerende): {_e}")
     # af_log hentes her (ét kald) så cut-tjekkets alkohol-signal ser dagens
