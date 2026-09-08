@@ -397,6 +397,15 @@ details.fold[open] > summary::after { content:"▴"; }
 .dots i.af { background:var(--ok); } .dots i.af.v { background:var(--watch); } .dots i.af.x { background:var(--act); }
 .dots i.p2 { background:var(--ok); } .dots i.p1 { background:var(--watch); } .dots i.p0 { background:var(--act); }
 .dots i.none { background:var(--line); }
+/* 8/9-26: prikkerne kan trykkes → ret en tidligere dag. Valgt dag markeres. */
+.dots div { cursor:pointer; border-radius:8px; padding:3px 0 2px; border:1.5px solid transparent; }
+.dots div.sel { border-color:var(--ink); }
+.dots div.sel .lab { color:var(--ink); font-weight:700; }
+.log-head { display:flex; align-items:center; gap:8px; margin:0 0 2px; }
+.log-head h2 { flex:1; margin:0; }
+.log-head button { font-family:'Space Mono',monospace; font-size:13px; line-height:1; width:34px; height:34px; border-radius:17px; border:1px solid var(--line); background:transparent; color:var(--ink); cursor:pointer; }
+.log-head button:disabled { opacity:.3; cursor:default; }
+.log-head button.today { width:auto; padding:0 10px; font-size:10px; letter-spacing:.06em; text-transform:uppercase; }
 .legend { font-size:11px; color:var(--muted); margin-top:8px; }
 .close { margin-top:12px; width:100%; background:var(--bg-2); border:0; border-radius:10px; padding:12px; font:600 14px 'Hanken Grotesk',sans-serif; color:var(--ink); cursor:pointer; }
 
@@ -638,15 +647,20 @@ details.fold[open] > summary::after { content:"▴"; }
 
 </div>
 
-<!-- LOG-ARK (Registrér i dag) — 4 spørgsmål, gemmer ved hvert tryk -->
+<!-- LOG-ARK (Registrér i dag) — 4 spørgsmål, gemmer ved hvert tryk. 8/9-26: ‹ › og prikkerne vælger en tidligere dag (op til 27 dage bagud) -->
 <div class="scrim" id="log-scrim" onclick="showLogSheet(false)"></div>
 <div class="sheet" id="log-sheet" role="dialog" aria-label="Registrér i dag" aria-hidden="true">
   <div class="handle"></div>
-  <h2 id="log-title">I dag</h2>
-  <p class="sub">Tryk — det gemmes med det samme. Intet er obligatorisk.</p>
+  <div class="log-head">
+    <button type="button" id="log-prev" onclick="logStep(-1)" aria-label="Forrige dag">‹</button>
+    <h2 id="log-title">I dag</h2>
+    <button type="button" id="log-today" class="today" onclick="logSetDate(null)">I dag</button>
+    <button type="button" id="log-next" onclick="logStep(1)" aria-label="Næste dag">›</button>
+  </div>
+  <p class="sub">Tryk — det gemmes med det samme. Intet er obligatorisk. Brug ‹ › eller tryk på en prik for at rette en tidligere dag.</p>
   <div class="saved" id="log-saved"></div>
 
-  <div class="q"><span class="lab">Alkohol i dag?</span>
+  <div class="q"><span class="lab" id="log-af-lab">Alkohol i dag?</span>
     <div class="opts c2"><button class="opt" data-q="af" data-v="nej">Nej<small>AF-dag</small></button><button class="opt bad" data-q="af" data-v="ja">Ja</button></div>
     <div class="opts c2 sub-q" id="log-af-sub"><button class="opt" data-q="afv" data-v="valgt">Valgt<small>bevidst — tæller ikke som fejl</small></button><button class="opt bad" data-q="afv" data-v="skete">Bare skete<small>autopilot</small></button></div>
   </div>
@@ -659,7 +673,7 @@ details.fold[open] > summary::after { content:"▴"; }
 
   <span class="q lab" style="display:block;font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin:4px 0 6px">Sidste 7 dage</span>
   <div class="dots" id="log-dots"></div>
-  <div class="legend">Øverste række: AF-dag (grøn) · valgt (gul) · bare skete / før 4/9 (rød). Nederste: protein 3/3 · 2/3 · ≤1.</div>
+  <div class="legend">Tryk på en dag for at se eller rette den. Øverste række: AF-dag (grøn) · valgt (gul) · bare skete / før 4/9 (rød). Nederste: protein 3/3 · 2/3 · ≤1.</div>
   <button class="close" onclick="showLogSheet(false)">Luk</button>
 </div>
 
@@ -1234,7 +1248,7 @@ function updateDataAge(){
 }
 
 function logStateText(){
-  const e = logCurrent();
+  const e = logCurrent(todayIso());
   const n = ['alkohol','protein','energi'].filter(k => e[k] != null).length;
   return n ? `${n} af 3 registreret` : 'AF · protein · energi';
 }
@@ -3758,19 +3772,31 @@ function trainingDonut() {
 // dagens valg gemmes i localStorage og lægges oven på data.checkinLog, så
 // arket viser det rigtige før data.json har kørt.
 const LOG_KEY_PREFIX = 'faf-log-';
-let _logSendTimer = null;
+// 8/9-26: arket kan vise og rette en tidligere dag (som den gamle af.html).
+// LOG_DATE = null betyder i dag. Bagud-grænsen er LOG_BACK_DAYS (data.json's
+// checkinLog dækker 28 dage). Backend'en (Worker /checkin → af-registrering.yml)
+// PUT'er til Intervals' wellness/<date> og har altid taget datoen fra payloaden,
+// så rettelser bagud kræver ingen ændring der. Rettede dage ligger lokalt
+// (faf-log-<dato>) indtil næste cron har skrevet checkinLog.
+const LOG_BACK_DAYS = 27;
+let LOG_DATE = null;
+const _logSendTimers = {};
 
-function logLocal(){
-  try { return JSON.parse(localStorage.getItem(LOG_KEY_PREFIX + todayIso()) || '{}') || {}; } catch(e) { return {}; }
+function logDate(){ return LOG_DATE || todayIso(); }
+function logMinIso(){ const d = new Date(); d.setDate(d.getDate() - LOG_BACK_DAYS); return isoOf(d); }
+function logIsToday(){ return logDate() === todayIso(); }
+
+function logLocal(iso){
+  try { return JSON.parse(localStorage.getItem(LOG_KEY_PREFIX + (iso || logDate())) || '{}') || {}; } catch(e) { return {}; }
 }
-function logPersist(o){ try { localStorage.setItem(LOG_KEY_PREFIX + todayIso(), JSON.stringify(o)); } catch(e) {} }
+function logPersist(o, iso){ try { localStorage.setItem(LOG_KEY_PREFIX + (iso || logDate()), JSON.stringify(o)); } catch(e) {} }
 
-// Dagens værdier: data.json (server) med lokale, nyere valg oven på.
-function logCurrent(){
-  const t = todayIso();
+// Valgt dags værdier: data.json (server) med lokale, nyere valg oven på.
+function logCurrent(iso){
+  const t = iso || logDate();
   const remote = (D.checkinLog||[]).find(e => e && e.date === t) || {};
-  const local = logLocal();
-  const out = { date: t };
+  const local = logLocal(t);
+  const out = { date: t, _localAlk: ('alkohol' in local) };
   ['alkohol','protein','energi','sult'].forEach(k => {
     // Nøgle findes lokalt = nyere end data.json (null = fravalgt lokalt).
     out[k] = (k in local) ? local[k] : (remote[k] != null ? remote[k] : null);
@@ -3778,13 +3804,38 @@ function logCurrent(){
   return out;
 }
 
+// Skift dag: null = i dag; ellers ISO inden for [i dag − LOG_BACK_DAYS, i dag].
+function logSetDate(iso){
+  if (iso === todayIso()) iso = null;
+  if (iso && (iso > todayIso() || iso < logMinIso())) return;
+  LOG_DATE = iso;
+  logSay('');
+  logRenderTitle();
+  renderLogSheet();
+}
+function logStep(n){
+  const d = new Date(logDate() + 'T12:00:00'); d.setDate(d.getDate() + n);
+  logSetDate(isoOf(d));
+}
+function logRenderTitle(){
+  const iso = logDate();
+  const d = new Date(iso + 'T12:00:00');
+  const dk = ["Søndag","Mandag","Tirsdag","Onsdag","Torsdag","Fredag","Lørdag"];
+  const t = document.getElementById('log-title'); if (!t) return;
+  t.textContent = `${dk[d.getDay()]} ${d.getDate()}. ${DK_MON_SHORT[d.getMonth()]}` + (logIsToday() ? '' : ' · rettes bagud');
+  const lab = document.getElementById('log-af-lab'); if (lab) lab.textContent = logIsToday() ? 'Alkohol i dag?' : 'Alkohol den dag?';
+  const prev = document.getElementById('log-prev'), next = document.getElementById('log-next'), tod = document.getElementById('log-today');
+  if (prev) prev.disabled = iso <= logMinIso();
+  if (next) next.disabled = logIsToday();
+  if (tod) tod.style.visibility = logIsToday() ? 'hidden' : 'visible';
+}
+
 function showLogSheet(on){
   const sheet = document.getElementById('log-sheet'), scrim = document.getElementById('log-scrim');
   if (!sheet) return;
   if (on) {
-    const now = new Date();
-    const dk = ["Søndag","Mandag","Tirsdag","Onsdag","Torsdag","Fredag","Lørdag"];
-    document.getElementById('log-title').textContent = `${dk[now.getDay()]} ${now.getDate()}. ${DK_MON_SHORT[now.getMonth()]}`;
+    LOG_DATE = null;   // åbner altid på i dag
+    logRenderTitle();
     renderLogSheet();
   }
   sheet.classList.toggle('show', on); scrim.classList.toggle('show', on);
@@ -3808,18 +3859,17 @@ function renderLogSheet(){
 
 function renderLogDots(){
   const box = document.getElementById('log-dots'); if (!box) return;
-  const t = todayIso();
-  const byDate = {}; (D.checkinLog||[]).forEach(x => { if (x && x.date) byDate[x.date] = x; });
-  const cur = logCurrent();
+  const sel = logDate();
   const days = [];
   for (let i = 6; i >= 0; i--) {
     const dt = new Date(); dt.setDate(dt.getDate() - i);
     const iso = isoOf(dt);
-    const e = iso === t ? cur : (byDate[iso] || {});
-    const kind = (D.af_kind || {})[e.date];
+    const e = logCurrent(iso);   // lokale rettelser oven på data.json — også bagud
+    // af_kind (pipelinen) gælder kun hvis dagen ikke er rettet lokalt siden.
+    const kind = e._localAlk ? null : (D.af_kind || {})[iso];
     const af = e.alkohol == null ? 'none' : (e.alkohol === 0 ? 'af' : (e.alkohol === 2 || kind === 'drak' || kind === 'autopilot') ? 'af x' : 'af v');
     const pr = e.protein == null ? 'none' : 'p' + e.protein;
-    days.push(`<div><span class="lab">${DK_DAY_SHORT[(dt.getDay()+6)%7]}</span><i class="${af}"></i><i class="${pr}"></i></div>`);
+    days.push(`<div class="${iso === sel ? 'sel' : ''}" data-iso="${iso}" role="button" aria-label="${iso}"><span class="lab">${DK_DAY_SHORT[(dt.getDay()+6)%7]}</span><i class="${af}"></i><i class="${pr}"></i></div>`);
   }
   box.innerHTML = days.join('');
 }
@@ -3854,24 +3904,28 @@ function logPick(q, v){
   logPersist(local);
   renderLogSheet();
   logSay('Gemmer…');
-  clearTimeout(_logSendTimer);
-  _logSendTimer = setTimeout(logSend, 600);
+  // Debounce pr. dato, så et dagskift midt i de 600 ms ikke sender den
+  // forkerte dags værdier.
+  const iso = cur.date;
+  clearTimeout(_logSendTimers[iso]);
+  _logSendTimers[iso] = setTimeout(() => logSend(iso), 600);
 }
 
-async function logSend(){
-  const e = logCurrent();
+async function logSend(iso){
+  const e = logCurrent(iso);
   const payload = { date: e.date };
   ['alkohol','protein','energi'].forEach(k => { if (e[k] != null) payload[k] = e[k]; });
   if (Object.keys(payload).length === 1) { logSay(''); return; }   // alt fravalgt — intet at sende
   try {
     await dispatchViaWorker('/checkin', payload);
-    logSay('Gemt ' + new Date().toLocaleTimeString('da-DK', {hour:'2-digit', minute:'2-digit'}));
+    logSay('Gemt ' + new Date().toLocaleTimeString('da-DK', {hour:'2-digit', minute:'2-digit'})
+      + (e.date === todayIso() ? '' : ' · ' + parseInt(e.date.slice(8,10),10) + '/' + parseInt(e.date.slice(5,7),10) + ' — vises i Krop efter næste opdatering'));
   } catch(err) {
     if (err.code === 'NO_SECRET' || err.status === 401) {
       const val = (window.prompt(err.code === 'NO_SECRET'
         ? 'App-koden mangler på denne enhed.\n\nIndsæt app-koden (den delte hemmelighed til Worker\'en):'
         : 'App-koden blev afvist af Worker\'en.\n\nIndsæt den rigtige kode:') || '').trim();
-      if (val) { setSecret(val); return logSend(); }
+      if (val) { setSecret(val); return logSend(iso); }
       logSay('Ikke gemt — app-kode mangler', true);
     } else {
       logSay('Ikke gemt — ' + (err.code === 'NO_URL' ? 'Worker-URL mangler' : err.status ? 'Worker svarede ' + err.status : 'netværksfejl'), true);
@@ -3880,6 +3934,8 @@ async function logSend(){
 }
 
 document.addEventListener('click', ev => {
+  const dot = ev.target.closest('#log-dots [data-iso]');
+  if (dot) { logSetDate(dot.dataset.iso); return; }
   const o = ev.target.closest('#log-sheet .opt'); if (!o) return;
   logPick(o.dataset.q, o.dataset.v);
 });
